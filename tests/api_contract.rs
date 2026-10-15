@@ -1,0 +1,211 @@
+//! P1.1 signature and argument-contract checks, not lexicon behavior acceptance.
+
+use lingose::{Error, Result};
+
+type PronunciationQuery = fn(&str) -> Result<Vec<String>>;
+type OptionalFieldQuery = fn(&str) -> Result<Option<String>>;
+
+fn assert_not_implemented<T>(result: Result<T>) {
+    assert!(matches!(result, Err(Error::NotImplemented { .. })));
+}
+
+#[test]
+fn public_signatures_own_results_and_report_unimplemented_operations() {
+    let lists: [PronunciationQuery; 6] = [
+        lingose::ipa,
+        lingose::IPA,
+        lingose::ips,
+        lingose::IPS,
+        lingose::ipsm,
+        lingose::IPSM,
+    ];
+    let optional: [OptionalFieldQuery; 4] = [
+        lingose::ism,
+        lingose::ISM,
+        lingose::root_lemma,
+        lingose::meaning,
+    ];
+    let meaning: fn(&str, &str) -> Result<Option<String>> = lingose::meaning_with_lang;
+    let kind: fn(&str) -> Result<bool> = lingose::kind;
+    let kind_with_label: fn(&str, &str) -> Result<bool> = lingose::kind_with_label;
+    let word_lists: [fn() -> Result<Vec<String>>; 2] = [lingose::kind_list, lingose::labels];
+    let kind_list: fn(&str) -> Result<Vec<String>> = lingose::kind_list_with_label;
+    let annotate: fn(&str) -> Result<String> = lingose::annotate_ips;
+    let annotate_with_skip_top: fn(&str, i64) -> Result<String> =
+        lingose::annotate_ips_with_skip_top;
+
+    for word in ["apple", "zzzzunknownword"] {
+        for query in lists {
+            assert_not_implemented(query(word));
+        }
+        for query in optional {
+            assert_not_implemented(query(word));
+        }
+        assert_not_implemented(meaning(word, "en"));
+        assert_not_implemented(meaning(word, "zh"));
+        assert_not_implemented(kind(word));
+        assert_not_implemented(kind_with_label(word, "CET4"));
+    }
+    for query in word_lists {
+        assert_not_implemented(query());
+    }
+    assert_not_implemented(kind_list("CET4"));
+    for text in ["", "中文 123 e\u{0301}", "Abandon the book."] {
+        assert_not_implemented(annotate(text));
+        for threshold in [0, 1000, 5062, 5063, i64::MAX] {
+            assert_not_implemented(annotate_with_skip_top(text, threshold));
+        }
+    }
+}
+
+fn assert_invalid_word<T>(query: impl Fn(&str) -> Result<T>) {
+    for word in [
+        "", "\0", "ap\0ple", " apple", "apple ", "\tapple", "apple\n",
+    ] {
+        assert!(matches!(
+            query(word),
+            Err(Error::InvalidArgument {
+                parameter: "word",
+                ..
+            })
+        ));
+    }
+}
+
+#[test]
+fn every_word_entry_point_rejects_invalid_content() {
+    assert_invalid_word(lingose::ipa);
+    assert_invalid_word(lingose::IPA);
+    assert_invalid_word(lingose::ips);
+    assert_invalid_word(lingose::IPS);
+    assert_invalid_word(lingose::ism);
+    assert_invalid_word(lingose::ISM);
+    assert_invalid_word(lingose::ipsm);
+    assert_invalid_word(lingose::IPSM);
+    assert_invalid_word(lingose::root_lemma);
+    assert_invalid_word(lingose::meaning);
+    assert_invalid_word(|word| lingose::meaning_with_lang(word, "zh"));
+    assert_invalid_word(lingose::kind);
+    assert_invalid_word(|word| lingose::kind_with_label(word, "CET4"));
+}
+
+#[test]
+fn word_boundaries_match_python_whitespace_without_normalizing_text() {
+    // All 29 Python 3.12 str.isspace() code points, independent of Rust's UCD.
+    let whitespace = [
+        0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x1c, 0x1d, 0x1e, 0x1f, 0x20, 0x85, 0xa0, 0x1680, 0x2000,
+        0x2001, 0x2002, 0x2003, 0x2004, 0x2005, 0x2006, 0x2007, 0x2008, 0x2009, 0x200a, 0x2028,
+        0x2029, 0x202f, 0x205f, 0x3000,
+    ];
+    for codepoint in whitespace {
+        let character = char::from_u32(codepoint).unwrap();
+        for word in [format!("{character}apple"), format!("apple{character}")] {
+            assert!(matches!(
+                lingose::ipa(&word),
+                Err(Error::InvalidArgument {
+                    parameter: "word",
+                    ..
+                })
+            ));
+        }
+    }
+    for word in [
+        "new york",
+        "don't",
+        "mother-in-law",
+        "a\u{001c}b",
+        "e\u{0301}",
+        "\u{200b}apple",
+        "apple\u{feff}",
+        "\u{180e}apple",
+        "\u{0008}apple",
+    ] {
+        assert_not_implemented(lingose::ipa(word));
+    }
+}
+
+#[test]
+fn word_validation_precedes_language_and_label_processing() {
+    assert!(matches!(
+        lingose::meaning_with_lang(" apple", "ZH"),
+        Err(Error::InvalidArgument {
+            parameter: "word",
+            ..
+        })
+    ));
+    for lang in ["", "EN", "ZH", " en", "zh ", "fr", "en\0"] {
+        assert!(matches!(
+            lingose::meaning_with_lang("zzzzunknownword", lang),
+            Err(Error::InvalidArgument {
+                parameter: "lang",
+                ..
+            })
+        ));
+    }
+    assert!(matches!(
+        lingose::kind_with_label(" apple", "not-a-label"),
+        Err(Error::InvalidArgument {
+            parameter: "word",
+            ..
+        })
+    ));
+    // P1.1 has no validated registry and must not pretend to validate labels.
+    assert_not_implemented(lingose::kind_with_label("apple", "not-a-label"));
+    assert_not_implemented(lingose::kind_list_with_label("not-a-label"));
+}
+
+#[test]
+fn annotation_checks_threshold_before_text_nul() {
+    for threshold in [-1, i64::MIN] {
+        for text in ["", "apple", "apple\0"] {
+            assert!(matches!(
+                lingose::annotate_ips_with_skip_top(text, threshold),
+                Err(Error::InvalidArgument {
+                    parameter: "skip_top",
+                    ..
+                })
+            ));
+        }
+    }
+    assert!(matches!(
+        lingose::annotate_ips("apple\0"),
+        Err(Error::InvalidArgument {
+            parameter: "text",
+            ..
+        })
+    ));
+    assert!(matches!(
+        lingose::annotate_ips_with_skip_top("apple\0", i64::MAX),
+        Err(Error::InvalidArgument {
+            parameter: "text",
+            ..
+        })
+    ));
+}
+
+#[test]
+fn default_functions_and_case_aliases_share_their_entry_points() {
+    assert_eq!(lingose::ipa("apple"), lingose::IPA("apple"));
+    assert_eq!(lingose::ips("apple"), lingose::IPS("apple"));
+    assert_eq!(lingose::ism("apple"), lingose::ISM("apple"));
+    assert_eq!(lingose::ipsm("apple"), lingose::IPSM("apple"));
+    assert_eq!(
+        lingose::meaning("apple"),
+        lingose::meaning_with_lang("apple", "en")
+    );
+    assert_eq!(
+        lingose::kind("apple"),
+        lingose::kind_with_label("apple", "CET4")
+    );
+    assert_eq!(lingose::kind_list(), lingose::kind_list_with_label("CET4"));
+    assert_eq!(
+        lingose::annotate_ips("apple"),
+        lingose::annotate_ips_with_skip_top("apple", 0)
+    );
+}
+
+#[test]
+fn errors_support_standard_thread_safe_error_handling() {
+    fn require_error<T: std::error::Error + Send + Sync + 'static>() {}
+    require_error::<Error>();
+}

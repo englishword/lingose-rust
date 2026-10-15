@@ -1,0 +1,25 @@
+[package]
+name = "lingose"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+authors = ["ZHAN Xianjue"]
+description = "Offline English lexicon for the IPSM Approach to pronunciation, spelling and meaning"
+license = "CC-BY-4.0"
+readme = "README.md"
+homepage = "https://lingose.com/"
+repository = "https://github.com/englishword"
+keywords = ["english", "lexicon", "pronunciation", "ipsm"]
+build = false
+# P5.3 must remove this guard after the implementation and release checks pass.
+publish = false
+include = ["/src/**", "/examples/**", "/README.md", "/LICENSE", "/SOURCES.md"]
+
+[dependencies]
+
+[lints.rust]
+unsafe_code = "forbid"
+missing_docs = "deny"
+
+[lints.rustdoc]
+broken_intra_doc_links = "deny"

@@ -1,6 +1,6 @@
 # Rust 首版 API 行为基线
 
-本文件固定 P0 的行为契约，不表示 Rust 实现已完成。范围来自相邻 Python [README](../../lingose-python/README.md)：14 个公共名称对应 10 种行为，排除公开 `lookup` 和 `rank`。Rust 参数类型、默认参数表达、结果所有权、错误类型和最低 Rust 版本留给 P1.1。
+本文件固定 P0 的行为契约，不表示 Rust 实现已完成。范围来自相邻 Python [README](../../lingose-python/README.md)：14 个公共名称对应 10 种行为，排除公开 `lookup` 和 `rank`。P1.1 的 Rust 参数类型、默认参数表达、结果所有权、错误类型和最低 Rust 版本见[接口契约](rust-api.md)。
 
 行为与数据基线为本机已安装的 Lingose **0.2.0**，安装目录为 `D:\Python\Python312\Lib\site-packages\lingose`。相邻 Python 源码声明 **0.2.1**，补充四组小写别名；已核对其 `query.py`、`annotation.py`、`ranking.py`、`types.py` 与安装版逐字节相同。安装版没有小写别名，因此对照工具须将小写公共名称显式映射到安装版大写函数，不能把这种映射称为安装版已原生支持。
 
