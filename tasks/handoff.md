@@ -2,8 +2,8 @@
 
 ## 当前任务与状态
 
-- 当前任务：**P0.2，API 行为矩阵与固定 Python 对照样例（收尾核验中）**。
-- P0.1 已完成：固定已安装 Python Lingose 0.2.0、实际缓存、源码/数据身份，完整审计与重复核验一致。
+- 当前恢复任务：**P1.1，建立 crate 骨架并固定 Rust 接口（未开始）**。
+- P0.1/P0.2 已完成：参考基线、API 行为矩阵与 311 条固定对照向量均已验证，重复核验一致。
 - 分支 `main`；P0 开始前工作区干净，起点为 `b99849a`。本次按 P0.1/P0.2 分别聚焦提交，实施历史以 Git 为准。
 - 本轮只执行 P0，结束后停在 P1.1。尚未创建 Cargo 工程、导出 Rust 生产数据或进行 Rust 性能/发布验收。
 
@@ -12,7 +12,8 @@
 - [todo.md](todo.md)：剩余任务及依赖；[AGENTS.md](../AGENTS.md)：既定开发约束。
 - [reference-baseline.md](../docs/reference-baseline.md)、[JSON](../docs/reference-baseline.json)：完整环境、路径、参考仓库状态、数据版本/摘要和审计结果。
 - [reference.py](../tools/reference.py)、[audit_reference.py](../tools/audit_reference.py)：只读保护与可重复基线核验。
-- P0.2 在工作区准备中的产物：`docs/api.md`、`tools/capture_api_vectors.py`、`tests/test_api_vectors.py`、`tests/fixtures/python-api-v1.json`。尚不能把旧样例文件当作补强后的最终结果。
+- [API 行为契约](../docs/api.md)、[固定样例](../tests/fixtures/python-api-v1.json)：14 个名称/10 种行为，区分真实快照与隔离夹具。
+- [capture_api_vectors.py](../tools/capture_api_vectors.py)、[test_api_vectors.py](../tests/test_api_vectors.py)：生成/核对样例及规则适配测试。
 
 ## 已确定的决策
 
@@ -33,11 +34,12 @@
 - `python -I -B -X utf8 tools/audit_reference.py --write`：首次创建成功。
 - `python -I -B -X utf8 tools/audit_reference.py --check`：完整重复审计通过，JSON/Markdown 均 unchanged。
 - P0.1 的 7 项只读/拒绝恢复/拒绝覆盖/编码/版本解析保护测试通过。
-- 含 P0.2 的当前 16 项测试均通过；首轮 310 样例已生成，复核后补强状态阻断与单字母词干夹具，最终候选正在 `.local/python-api-v1-reviewed.json` 重新生成。
+- `python -I -B -X utf8 tools/capture_api_vectors.py --check`：311 条向量重复生成 unchanged；268 条真实快照、37 条规则夹具、6 条资源夹具。真实分类列表摘要覆盖完整有序列表，不只首尾样例。
+- `python -I -B -X utf8 -m unittest discover -s tests -v`：16/16 通过，包含可观察的状态阻断、派生失效、Unicode、排序、阈值、大整数及资源错误/无需资源路径。
 - Rust/Cargo 检查尚未执行；不将 Python 对照准备视为 Rust 实现通过。没有已知业务阻塞。
 
 ## 下一步精确动作
 
-1. 完成 P0.1 聚焦提交，仅包含基线工具、记录、测试、忽略规则及任务状态。
-2. 等待/核对补强后的候选输出；仅更新尚未提交的 API 样例，再运行 `capture_api_vectors.py --check`，确认完整复现、14 名称覆盖及源摘要不变。
-3. 完成 P0.2 文档/样例核对并单独提交；更新交接指向 P1.1 后停止。下次恢复时核对 Git 与任务状态，再建立 Rust 工程，不重新规划既定范围。
+1. 下次执行时先核对 Git 状态、当前分支、相关提交、本交接和 todo，恢复 P1.1；不重新规划已确认范围，不重新生成已固定数据以掩盖漂移。
+2. 阅读 docs/api.md 与基线说明，确定 Rust 同步接口、默认参数表达、返回值所有权、错误映射、别名、edition、最低 Rust 版本及依赖策略，然后建立 lingose 0.1.0 最小可检查工程。
+3. 只做 P1.1 的接口与工程验证；生产数据布局和性能预算由 P1.2 决定。Python 工具和机器路径仅供开发，不引入正式 crate 的构建/运行依赖。

@@ -1,0 +1,5874 @@
+{
+  "aliases": {
+    "ipa": "IPA",
+    "ips": "IPS",
+    "ipsm": "IPSM",
+    "ism": "ISM"
+  },
+  "canonical_json": "UTF-8, ensure_ascii=false, sorted object keys, compact separators, no NaN, no normalization",
+  "cases": [
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "apple"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "æpəl"
+        ]
+      },
+      "id": "snapshot-0001",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "apple"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "apple"
+        ]
+      },
+      "id": "snapshot-0002",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "apple"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "app-le"
+      },
+      "id": "snapshot-0003",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "apple"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "app-le"
+        ]
+      },
+      "id": "snapshot-0004",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "apple"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "ap"
+      },
+      "id": "snapshot-0005",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "apple"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "n. fruit with red or yellow or green skin and sweet to tart crisp whitish flesh"
+      },
+      "id": "snapshot-0006",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "apple"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": true
+      },
+      "id": "snapshot-0007",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "running"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "rʌnɪŋ"
+        ]
+      },
+      "id": "snapshot-0008",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "running"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "rûnning"
+        ]
+      },
+      "id": "snapshot-0009",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "running"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "runn-ing"
+      },
+      "id": "snapshot-0010",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "running"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "rûnn-ing"
+        ]
+      },
+      "id": "snapshot-0011",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "running"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "run"
+      },
+      "id": "snapshot-0012",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "running"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "n. the act or state of moving fast on foot\na. happening continuously; in operation"
+      },
+      "id": "snapshot-0013",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "running"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": false
+      },
+      "id": "snapshot-0014",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "Apple"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "æpəl"
+        ]
+      },
+      "id": "snapshot-0015",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "Apple"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "apple"
+        ]
+      },
+      "id": "snapshot-0016",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "Apple"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "app-le"
+      },
+      "id": "snapshot-0017",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "Apple"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "app-le"
+        ]
+      },
+      "id": "snapshot-0018",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "Apple"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "ap"
+      },
+      "id": "snapshot-0019",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "Apple"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "n. fruit with red or yellow or green skin and sweet to tart crisp whitish flesh"
+      },
+      "id": "snapshot-0020",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "Apple"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": true
+      },
+      "id": "snapshot-0021",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "APPLE"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0022",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "APPLE"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0023",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "APPLE"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0024",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "APPLE"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0025",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "APPLE"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0026",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "APPLE"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0027",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "APPLE"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": false
+      },
+      "id": "snapshot-0028",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "May"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "meɪ"
+        ]
+      },
+      "id": "snapshot-0029",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "May"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "Māy"
+        ]
+      },
+      "id": "snapshot-0030",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "May"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "May"
+      },
+      "id": "snapshot-0031",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "May"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "Māy"
+        ]
+      },
+      "id": "snapshot-0032",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "May"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "may"
+      },
+      "id": "snapshot-0033",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "May"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "aux. expressing possibility or permission\nn. the fifth month of the year"
+      },
+      "id": "snapshot-0034",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "May"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": true
+      },
+      "id": "snapshot-0035",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "may"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "meɪ"
+        ]
+      },
+      "id": "snapshot-0036",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "may"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "māy"
+        ]
+      },
+      "id": "snapshot-0037",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "may"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "may"
+      },
+      "id": "snapshot-0038",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "may"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "māy"
+        ]
+      },
+      "id": "snapshot-0039",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "may"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "may"
+      },
+      "id": "snapshot-0040",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "may"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "aux. expressing possibility or permission\nn. the fifth month of the year"
+      },
+      "id": "snapshot-0041",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "may"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": true
+      },
+      "id": "snapshot-0042",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "US"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0043",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "US"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0044",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "US"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0045",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "US"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0046",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "US"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0047",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "US"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0048",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "US"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": false
+      },
+      "id": "snapshot-0049",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "us"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "ʌs"
+        ]
+      },
+      "id": "snapshot-0050",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "us"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "ûs"
+        ]
+      },
+      "id": "snapshot-0051",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "us"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "us"
+      },
+      "id": "snapshot-0052",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "us"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "ûs"
+        ]
+      },
+      "id": "snapshot-0053",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "us"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "us"
+      },
+      "id": "snapshot-0054",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "us"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "pron. objective case of we"
+      },
+      "id": "snapshot-0055",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "us"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": true
+      },
+      "id": "snapshot-0056",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "iPhone"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0057",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "iPhone"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0058",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "iPhone"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0059",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "iPhone"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0060",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "iPhone"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0061",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "iPhone"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0062",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "iPhone"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": false
+      },
+      "id": "snapshot-0063",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "McDonald"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0064",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "McDonald"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0065",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "McDonald"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0066",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "McDonald"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0067",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "McDonald"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0068",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "McDonald"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0069",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "McDonald"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": false
+      },
+      "id": "snapshot-0070",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "present"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "prezənt"
+        ]
+      },
+      "id": "snapshot-0071",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "present"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "prėṡent"
+        ]
+      },
+      "id": "snapshot-0072",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "present"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "pre-sent"
+      },
+      "id": "snapshot-0073",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "present"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "prė-ṡent"
+        ]
+      },
+      "id": "snapshot-0074",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "present"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "sent"
+      },
+      "id": "snapshot-0075",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "present"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "a. existing or occurring at this time; current\nn. the period of time now occurring\nvt. to give something to someone; to show or offer something for others to consider"
+      },
+      "id": "snapshot-0076",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "present"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": true
+      },
+      "id": "snapshot-0077",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "largely"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "lɑːdʒli"
+        ]
+      },
+      "id": "snapshot-0078",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "largely"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "làrg𝕖lẏ"
+        ]
+      },
+      "id": "snapshot-0079",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "largely"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "large-ly"
+      },
+      "id": "snapshot-0080",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "largely"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "làrg𝕖-lẏ"
+        ]
+      },
+      "id": "snapshot-0081",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "largely"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "large"
+      },
+      "id": "snapshot-0082",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "largely"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "adv. to a great extent; on the whole; mostly"
+      },
+      "id": "snapshot-0083",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "largely"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": true
+      },
+      "id": "snapshot-0084",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "Marxism"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "mɑːksɪsɪm"
+        ]
+      },
+      "id": "snapshot-0085",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "Marxism"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "Màrxiṡm"
+        ]
+      },
+      "id": "snapshot-0086",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "Marxism"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "marx-ism"
+      },
+      "id": "snapshot-0087",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "Marxism"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0088",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "Marxism"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "marx"
+      },
+      "id": "snapshot-0089",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "Marxism"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "n. the political and economic theories of Karl Marx"
+      },
+      "id": "snapshot-0090",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "Marxism"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": true
+      },
+      "id": "snapshot-0091",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "has"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "hæz"
+        ]
+      },
+      "id": "snapshot-0092",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "has"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "haṡ"
+        ]
+      },
+      "id": "snapshot-0093",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "has"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "has"
+      },
+      "id": "snapshot-0094",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "has"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "haṡ"
+        ]
+      },
+      "id": "snapshot-0095",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "has"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0096",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "has"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "v. third person singular present of \"have\""
+      },
+      "id": "snapshot-0097",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "has"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": false
+      },
+      "id": "snapshot-0098",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "sh"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "ʃ"
+        ]
+      },
+      "id": "snapshot-0099",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "sh"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "sh"
+        ]
+      },
+      "id": "snapshot-0100",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "sh"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "sh"
+      },
+      "id": "snapshot-0101",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "sh"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": [
+          "sh"
+        ]
+      },
+      "id": "snapshot-0102",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "sh"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0103",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "sh"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": "int. be quiet!"
+      },
+      "id": "snapshot-0104",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "sh"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": false
+      },
+      "id": "snapshot-0105",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "unknownwordzz"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0106",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "unknownwordzz"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0107",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "unknownwordzz"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0108",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "unknownwordzz"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0109",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "unknownwordzz"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0110",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "unknownwordzz"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0111",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "unknownwordzz"
+        ],
+        "group": "word-query"
+      },
+      "expected": {
+        "value": false
+      },
+      "id": "snapshot-0112",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ipa",
+        "args": [
+          "apple"
+        ],
+        "group": "lowercase-alias"
+      },
+      "expected": {
+        "value": [
+          "æpəl"
+        ]
+      },
+      "id": "snapshot-0113",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ipa",
+        "args": [
+          "running"
+        ],
+        "group": "lowercase-alias"
+      },
+      "expected": {
+        "value": [
+          "rʌnɪŋ"
+        ]
+      },
+      "id": "snapshot-0114",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ipa",
+        "args": [
+          "unknownwordzz"
+        ],
+        "group": "lowercase-alias"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0115",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ips",
+        "args": [
+          "apple"
+        ],
+        "group": "lowercase-alias"
+      },
+      "expected": {
+        "value": [
+          "apple"
+        ]
+      },
+      "id": "snapshot-0116",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ips",
+        "args": [
+          "running"
+        ],
+        "group": "lowercase-alias"
+      },
+      "expected": {
+        "value": [
+          "rûnning"
+        ]
+      },
+      "id": "snapshot-0117",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ips",
+        "args": [
+          "unknownwordzz"
+        ],
+        "group": "lowercase-alias"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0118",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ism",
+        "args": [
+          "apple"
+        ],
+        "group": "lowercase-alias"
+      },
+      "expected": {
+        "value": "app-le"
+      },
+      "id": "snapshot-0119",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ism",
+        "args": [
+          "running"
+        ],
+        "group": "lowercase-alias"
+      },
+      "expected": {
+        "value": "runn-ing"
+      },
+      "id": "snapshot-0120",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ism",
+        "args": [
+          "unknownwordzz"
+        ],
+        "group": "lowercase-alias"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0121",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ipsm",
+        "args": [
+          "apple"
+        ],
+        "group": "lowercase-alias"
+      },
+      "expected": {
+        "value": [
+          "app-le"
+        ]
+      },
+      "id": "snapshot-0122",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ipsm",
+        "args": [
+          "running"
+        ],
+        "group": "lowercase-alias"
+      },
+      "expected": {
+        "value": [
+          "rûnn-ing"
+        ]
+      },
+      "id": "snapshot-0123",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ipsm",
+        "args": [
+          "unknownwordzz"
+        ],
+        "group": "lowercase-alias"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "snapshot-0124",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "apple",
+          "zh"
+        ],
+        "group": "meaning-zh"
+      },
+      "expected": {
+        "value": "n. 苹果, 家伙"
+      },
+      "id": "snapshot-0125",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "May",
+          "zh"
+        ],
+        "group": "meaning-zh"
+      },
+      "expected": {
+        "value": "n. 五月\naux. 愿能, 可以, 愿意"
+      },
+      "id": "snapshot-0126",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "may",
+          "zh"
+        ],
+        "group": "meaning-zh"
+      },
+      "expected": {
+        "value": "n. 五月\naux. 愿能, 可以, 愿意"
+      },
+      "id": "snapshot-0127",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "unknownwordzz",
+          "zh"
+        ],
+        "group": "meaning-zh"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "snapshot-0128",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "labels",
+        "group": "labels"
+      },
+      "expected": {
+        "value": [
+          "OXFORD_3000",
+          "OXFORD_5000",
+          "CET4",
+          "CET6",
+          "CET4_CET6",
+          "IELTS",
+          "TEM-4",
+          "TEM-8",
+          "TOEFL",
+          "SAT",
+          "GMAT",
+          "GRE",
+          "BEC",
+          "Primary",
+          "Junior",
+          "Senior",
+          "College",
+          "COCA_20000",
+          "White",
+          "Yellow",
+          "Green",
+          "Blue",
+          "Red",
+          "Black"
+        ]
+      },
+      "id": "snapshot-0129",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "group": "category-list-default"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "a",
+            "able",
+            "ability",
+            "disable",
+            "enable",
+            "unable",
+            "ache",
+            "acid",
+            "acre",
+            "act"
+          ],
+          "length": 5225,
+          "sha256": "f8a57f8bb483f3c92fa0bcdde69cc9bb6cdf78555c81a4a5e5edbe209a3f22ac",
+          "tail": [
+            "roman",
+            "saturday",
+            "september",
+            "soviet",
+            "sunday",
+            "thursday",
+            "true",
+            "tuesday",
+            "wednesday",
+            "x-ray"
+          ]
+        }
+      },
+      "id": "snapshot-0130",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "OXFORD_3000"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "a",
+            "able",
+            "ability",
+            "disabled",
+            "enable",
+            "inability",
+            "unable",
+            "acid",
+            "act",
+            "action"
+          ],
+          "length": 3447,
+          "sha256": "35d942dd25967ddcd79843a02dbe77634a3fd7c5cad26b5876ed1f213afc2eb1",
+          "tail": [
+            "monday",
+            "november",
+            "october",
+            "saturday",
+            "september",
+            "sunday",
+            "thursday",
+            "true",
+            "tuesday",
+            "wednesday"
+          ]
+        }
+      },
+      "id": "snapshot-0131",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "OXFORD_5000"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "a",
+            "able",
+            "ability",
+            "disabled",
+            "disability",
+            "enable",
+            "inability",
+            "unable",
+            "acid",
+            "acre"
+          ],
+          "length": 5103,
+          "sha256": "c3e96d47b461f13e64d90c7dd76d38d03b04321bc19dc1d32e5e56cee82b4cab",
+          "tail": [
+            "monday",
+            "november",
+            "october",
+            "saturday",
+            "september",
+            "sunday",
+            "thursday",
+            "true",
+            "tuesday",
+            "wednesday"
+          ]
+        }
+      },
+      "id": "snapshot-0132",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "CET4"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "a",
+            "able",
+            "ability",
+            "disable",
+            "enable",
+            "unable",
+            "ache",
+            "acid",
+            "acre",
+            "act"
+          ],
+          "length": 5225,
+          "sha256": "f8a57f8bb483f3c92fa0bcdde69cc9bb6cdf78555c81a4a5e5edbe209a3f22ac",
+          "tail": [
+            "roman",
+            "saturday",
+            "september",
+            "soviet",
+            "sunday",
+            "thursday",
+            "true",
+            "tuesday",
+            "wednesday",
+            "x-ray"
+          ]
+        }
+      },
+      "id": "snapshot-0133",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "CET6"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "a",
+            "able",
+            "ability",
+            "disable",
+            "enable",
+            "unable",
+            "ache",
+            "acid",
+            "acre",
+            "act"
+          ],
+          "length": 7232,
+          "sha256": "7e06f3e800ad88f3c7493e32bc63456ac7bcdbe76fea0e69fa7e18dd1e9b4a1e",
+          "tail": [
+            "september",
+            "soviet",
+            "sunday",
+            "thanksgiving",
+            "thursday",
+            "true",
+            "tuesday",
+            "venus",
+            "wednesday",
+            "x-ray"
+          ]
+        }
+      },
+      "id": "snapshot-0134",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "CET4_CET6"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "a",
+            "an",
+            "able",
+            "ability",
+            "disable",
+            "disabled",
+            "disability",
+            "enable",
+            "ace",
+            "ache"
+          ],
+          "length": 7994,
+          "sha256": "6d0225a82b071fe8dc250dd793195d16c9336b460dd05cbf5beed30afb26ac8b",
+          "tail": [
+            "october",
+            "saturday",
+            "september",
+            "sunday",
+            "thanksgiving",
+            "thursday",
+            "true",
+            "tuesday",
+            "wednesday",
+            "x-ray"
+          ]
+        }
+      },
+      "id": "snapshot-0135",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "IELTS"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "ability",
+            "disable",
+            "enable",
+            "exacerbate",
+            "acid",
+            "activate",
+            "actual",
+            "enact",
+            "exact",
+            "interact"
+          ],
+          "length": 5254,
+          "sha256": "52f08907969ffee2e403354bd515ab03e1acf0c051451983db1948782a47f5da",
+          "tail": [
+            "beyond",
+            "zeal",
+            "zest",
+            "zone",
+            "zoology",
+            "zoological",
+            "enzyme",
+            "catholic",
+            "christian",
+            "mercury"
+          ]
+        }
+      },
+      "id": "snapshot-0136",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "TEM-4"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "Jew",
+            "an",
+            "able",
+            "ability",
+            "disable",
+            "disability",
+            "enable",
+            "inability",
+            "unable",
+            "ace"
+          ],
+          "length": 8795,
+          "sha256": "2961f180e34e723b527e57e2ebe3e8b7159e2c4a2e0147422e676153a4053035",
+          "tail": [
+            "september",
+            "soviet",
+            "sunday",
+            "thanksgiving",
+            "thursday",
+            "true",
+            "tuesday",
+            "venus",
+            "wednesday",
+            "x-ray"
+          ]
+        }
+      },
+      "id": "snapshot-0137",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "TEM-8"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "Jew",
+            "Maori",
+            "a",
+            "an",
+            "abbot",
+            "able",
+            "ability",
+            "ably",
+            "disable",
+            "disability"
+          ],
+          "length": 12952,
+          "sha256": "5c70d6ea44a6ee778285fb330e2a42dc5b6e9458e14d79f87ae144dddd417e4d",
+          "tail": [
+            "september",
+            "soviet",
+            "sunday",
+            "thanksgiving",
+            "thursday",
+            "true",
+            "tuesday",
+            "venus",
+            "wednesday",
+            "x-ray"
+          ]
+        }
+      },
+      "id": "snapshot-0138",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "TOEFL"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "Holland",
+            "Illinois",
+            "Iraq",
+            "Iroquois",
+            "Jewett",
+            "Jules",
+            "Kenya",
+            "London",
+            "Lowa",
+            "Maine"
+          ],
+          "length": 11246,
+          "sha256": "112de3d1baf20b9cefa0e0d745d3e91424788f1540912e607751cbd2ed416081",
+          "tail": [
+            "miss",
+            "november",
+            "october",
+            "roman",
+            "saturday",
+            "saturn",
+            "september",
+            "soviet",
+            "venus",
+            "x-ray"
+          ]
+        }
+      },
+      "id": "snapshot-0139",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "SAT"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "abbess",
+            "abyss",
+            "acerbity",
+            "exacerbate",
+            "acid",
+            "acidify",
+            "acme",
+            "acne",
+            "acoustics",
+            "acreage"
+          ],
+          "length": 4437,
+          "sha256": "9d4ae8dd150f4d05a5a6755e0d13571a8e2bbf8819083b7bef37bdd96895af56",
+          "tail": [
+            "zeal",
+            "zealot",
+            "zealous",
+            "zenith",
+            "zephyr",
+            "zero",
+            "zest",
+            "enzyme",
+            "august",
+            "x-ray"
+          ]
+        }
+      },
+      "id": "snapshot-0140",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "GMAT"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "Kelvin",
+            "disability",
+            "inability",
+            "exacerbate",
+            "acidity",
+            "acreage",
+            "activate",
+            "activism",
+            "activist",
+            "enact"
+          ],
+          "length": 3300,
+          "sha256": "39ee4a893dfac8e834c2d9458b369bbd25e955a624b2a69e5b90a9cfa5a56f4a",
+          "tail": [
+            "underwrite",
+            "underwriter",
+            "yard",
+            "yeast",
+            "yen",
+            "yield",
+            "nonzero",
+            "paleozoologist",
+            "enzyme",
+            "catholic"
+          ]
+        }
+      },
+      "id": "snapshot-0141",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "GRE"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "abyss",
+            "abysmal",
+            "acedia",
+            "acerbity",
+            "exacerbate",
+            "coacervate",
+            "acidic",
+            "acidulous",
+            "acme",
+            "acne"
+          ],
+          "length": 10952,
+          "sha256": "fe92be3fcd690724a811f0be7c13449228e6533ae666902dc188764ba72a84a6",
+          "tail": [
+            "zone",
+            "protozoan",
+            "zoom",
+            "zoster",
+            "zygote",
+            "enzyme",
+            "august",
+            "bible",
+            "catholic",
+            "n"
+          ]
+        }
+      },
+      "id": "snapshot-0142",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "BEC"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "able",
+            "ability",
+            "enable",
+            "act",
+            "acting",
+            "action",
+            "actual",
+            "activity",
+            "actually",
+            "actuals"
+          ],
+          "length": 2814,
+          "sha256": "04db25696ee5534bb98d1315f61829641c2a9cc6644a1206c431220a79c8eb69",
+          "tail": [
+            "wreckage",
+            "wrestle",
+            "writ",
+            "write-off",
+            "copywriter",
+            "yearly",
+            "yen",
+            "yield",
+            "zero",
+            "false"
+          ]
+        }
+      },
+      "id": "snapshot-0143",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "Primary"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "London",
+            "a",
+            "an",
+            "active",
+            "after",
+            "afternoon",
+            "Alaska",
+            "all",
+            "also",
+            "a.m."
+          ],
+          "length": 847,
+          "sha256": "0738df41a099c956f5213fbb14a6669adaa1671e95a78c78d4ddb5a9acf4e953",
+          "tail": [
+            "november",
+            "october",
+            "saturday",
+            "september",
+            "sunday",
+            "thanksgiving",
+            "thursday",
+            "tuesday",
+            "wednesday",
+            "has"
+          ]
+        }
+      },
+      "id": "snapshot-0144",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "Junior"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "Jason",
+            "Jerry",
+            "Jessica",
+            "Jew",
+            "Julie",
+            "Katie",
+            "Kevin",
+            "Lausanne",
+            "London",
+            "Luke"
+          ],
+          "length": 2876,
+          "sha256": "db44dca9349da7d60a24ee524a705d3a777420419bc0a46daeb8a22b751e5bb1",
+          "tail": [
+            "saturday",
+            "september",
+            "sunday",
+            "thanksgiving",
+            "thursday",
+            "true",
+            "tuesday",
+            "wednesday",
+            "x-ray",
+            "has"
+          ]
+        }
+      },
+      "id": "snapshot-0145",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "Senior"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "Jason",
+            "Jerry",
+            "Jessica",
+            "Jew",
+            "Julie",
+            "Katie",
+            "Kevin",
+            "Lausanne",
+            "London",
+            "Luke"
+          ],
+          "length": 4334,
+          "sha256": "eceaf80ad9a762cb6fa94e6c48ab2af04c4a09c4a21359e531802ab72277739d",
+          "tail": [
+            "saturday",
+            "september",
+            "sunday",
+            "thanksgiving",
+            "thursday",
+            "true",
+            "tuesday",
+            "wednesday",
+            "x-ray",
+            "has"
+          ]
+        }
+      },
+      "id": "snapshot-0146",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "College"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "Hippomenes",
+            "Hobart",
+            "Horace",
+            "Houston",
+            "Ithaca",
+            "Jamie",
+            "Janice",
+            "Janson",
+            "Jason",
+            "Jem"
+          ],
+          "length": 7874,
+          "sha256": "924e92a4b0062f9048001a1e0c2736e127c2f994794d9f15ac9276e0a638ac88",
+          "tail": [
+            "september",
+            "sunday",
+            "thanksgiving",
+            "thursday",
+            "true",
+            "tuesday",
+            "venus",
+            "wednesday",
+            "x-ray",
+            "has"
+          ]
+        }
+      },
+      "id": "snapshot-0147",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "COCA_20000"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "Jew",
+            "a",
+            "able",
+            "ability",
+            "disable",
+            "disabled",
+            "disability",
+            "enable",
+            "inability",
+            "unable"
+          ],
+          "length": 16840,
+          "sha256": "6099fb8e3cbac8e3ed8a983fb0fed9dcbbdc6077dae8b59659f6c0ccf84838cc",
+          "tail": [
+            "mercury",
+            "miss",
+            "mister",
+            "negro",
+            "roman",
+            "soviet",
+            "thanksgiving",
+            "true",
+            "x-ray",
+            "sh"
+          ]
+        }
+      },
+      "id": "snapshot-0148",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "White"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "London",
+            "a",
+            "an",
+            "active",
+            "after",
+            "afternoon",
+            "Alaska",
+            "all",
+            "also",
+            "a.m."
+          ],
+          "length": 847,
+          "sha256": "0738df41a099c956f5213fbb14a6669adaa1671e95a78c78d4ddb5a9acf4e953",
+          "tail": [
+            "november",
+            "october",
+            "saturday",
+            "september",
+            "sunday",
+            "thanksgiving",
+            "thursday",
+            "tuesday",
+            "wednesday",
+            "has"
+          ]
+        }
+      },
+      "id": "snapshot-0149",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "Yellow"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "Jason",
+            "Jerry",
+            "Jessica",
+            "Jew",
+            "Julie",
+            "Katie",
+            "Kevin",
+            "Lausanne",
+            "London",
+            "Luke"
+          ],
+          "length": 2876,
+          "sha256": "db44dca9349da7d60a24ee524a705d3a777420419bc0a46daeb8a22b751e5bb1",
+          "tail": [
+            "saturday",
+            "september",
+            "sunday",
+            "thanksgiving",
+            "thursday",
+            "true",
+            "tuesday",
+            "wednesday",
+            "x-ray",
+            "has"
+          ]
+        }
+      },
+      "id": "snapshot-0150",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "Green"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "Jason",
+            "Jerry",
+            "Jessica",
+            "Jew",
+            "Julie",
+            "Katie",
+            "Kevin",
+            "Lausanne",
+            "London",
+            "Luke"
+          ],
+          "length": 6473,
+          "sha256": "ef2f9d3f16debfaee444ea02b4ce0b6ad30115e4c05153b63d76334cfb5750f3",
+          "tail": [
+            "september",
+            "soviet",
+            "sunday",
+            "thanksgiving",
+            "thursday",
+            "true",
+            "tuesday",
+            "wednesday",
+            "x-ray",
+            "has"
+          ]
+        }
+      },
+      "id": "snapshot-0151",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "Blue"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "Hippomenes",
+            "Hobart",
+            "Horace",
+            "Houston",
+            "Ithaca",
+            "Jamie",
+            "Janice",
+            "Janson",
+            "Jason",
+            "Jem"
+          ],
+          "length": 9622,
+          "sha256": "cddd540ab95ebe6a9540d161443885af99d4cf9852ec00a945ecc3353c69f780",
+          "tail": [
+            "soviet",
+            "sunday",
+            "thanksgiving",
+            "thursday",
+            "true",
+            "tuesday",
+            "venus",
+            "wednesday",
+            "x-ray",
+            "has"
+          ]
+        }
+      },
+      "id": "snapshot-0152",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "Red"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "Hippomenes",
+            "Hobart",
+            "Holland",
+            "Horace",
+            "Houston",
+            "Illinois",
+            "Iraq",
+            "Iroquois",
+            "Ithaca",
+            "Jamie"
+          ],
+          "length": 22999,
+          "sha256": "e1371927e9d4cd37014d7da579a63f25c7ec00a09377022419d69e6a0172b390",
+          "tail": [
+            "soviet",
+            "sunday",
+            "thanksgiving",
+            "thursday",
+            "true",
+            "tuesday",
+            "venus",
+            "wednesday",
+            "x-ray",
+            "has"
+          ]
+        }
+      },
+      "id": "snapshot-0153",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "Black"
+        ],
+        "group": "category-list"
+      },
+      "expected": {
+        "ordered_list": {
+          "head": [
+            "Hippomenes",
+            "Hobart",
+            "Holland",
+            "Horace",
+            "Houston",
+            "Illinois",
+            "Iraq",
+            "Iroquois",
+            "Ithaca",
+            "Jamie"
+          ],
+          "length": 45420,
+          "sha256": "a93f5496b2d8b333dc11a71909c024f20ab2e47dac7b4c0f947df9ec6c0ccba3",
+          "tail": [
+            "sunday",
+            "thanksgiving",
+            "thursday",
+            "true",
+            "tuesday",
+            "venus",
+            "wednesday",
+            "x-ray",
+            "has",
+            "sh"
+          ]
+        }
+      },
+      "id": "snapshot-0154",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          ""
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0155",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          " apple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0156",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "apple "
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0157",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "ap\u0000ple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0158",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          null
+        ],
+        "error": "TypeError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0159",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          42
+        ],
+        "error": "TypeError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0160",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          ""
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0161",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          " apple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0162",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "apple "
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0163",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "ap\u0000ple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0164",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          null
+        ],
+        "error": "TypeError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0165",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          42
+        ],
+        "error": "TypeError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0166",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          ""
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0167",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          " apple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0168",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "apple "
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0169",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          "ap\u0000ple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0170",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          null
+        ],
+        "error": "TypeError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0171",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "ISM",
+        "args": [
+          42
+        ],
+        "error": "TypeError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0172",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          ""
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0173",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          " apple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0174",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "apple "
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0175",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "ap\u0000ple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0176",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          null
+        ],
+        "error": "TypeError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0177",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          42
+        ],
+        "error": "TypeError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0178",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          ""
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0179",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          " apple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0180",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "apple "
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0181",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          "ap\u0000ple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0182",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          null
+        ],
+        "error": "TypeError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0183",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "root_lemma",
+        "args": [
+          42
+        ],
+        "error": "TypeError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0184",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          ""
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0185",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          " apple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0186",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "apple "
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0187",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "ap\u0000ple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0188",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          null
+        ],
+        "error": "TypeError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0189",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          42
+        ],
+        "error": "TypeError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0190",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          ""
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0191",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          " apple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0192",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "apple "
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0193",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "ap\u0000ple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0194",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          null
+        ],
+        "error": "TypeError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0195",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          42
+        ],
+        "error": "TypeError",
+        "group": "invalid-word"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0196",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "unknownwordzz",
+          "EN"
+        ],
+        "error": "ValueError",
+        "group": "invalid-language"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0197",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "unknownwordzz",
+          "fr"
+        ],
+        "error": "ValueError",
+        "group": "invalid-language"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0198",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "unknownwordzz",
+          null
+        ],
+        "error": "TypeError",
+        "group": "invalid-language"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0199",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "unknownwordzz",
+          "cet4"
+        ],
+        "error": "ValueError",
+        "group": "invalid-label"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0200",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "cet4"
+        ],
+        "error": "ValueError",
+        "group": "invalid-label"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0201",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "unknownwordzz",
+          "COLLINS"
+        ],
+        "error": "ValueError",
+        "group": "invalid-label"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0202",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "COLLINS"
+        ],
+        "error": "ValueError",
+        "group": "invalid-label"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0203",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "unknownwordzz",
+          "Band"
+        ],
+        "error": "ValueError",
+        "group": "invalid-label"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0204",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          "Band"
+        ],
+        "error": "ValueError",
+        "group": "invalid-label"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0205",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "unknownwordzz",
+          null
+        ],
+        "error": "TypeError",
+        "group": "invalid-label"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0206",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "args": [
+          null
+        ],
+        "error": "TypeError",
+        "group": "invalid-label"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0207",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "Abandon the book."
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "Åbando̊n ṫhe̊ book."
+      },
+      "id": "snapshot-0208",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "Abandon the book."
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": "Åbando̊n the book."
+      },
+      "id": "snapshot-0209",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "Abandon the book."
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "Abandon the book."
+      },
+      "id": "snapshot-0210",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the apple THE book The hour the university the"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "ṫhē apple ṪHE̊ book Ṫhe̊ 𝕙òur ṫhē ūnive̊rsitẏ ṫhe̊"
+      },
+      "id": "snapshot-0211",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the apple THE book The hour the university the"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": "the apple THE book The hour the ūnive̊rsitẏ the"
+      },
+      "id": "snapshot-0212",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the apple THE book The hour the university the"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "the apple THE book The hour the university the"
+      },
+      "id": "snapshot-0213",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the, apple; the\napple; the\n\napple"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "ṫhe̊, apple; ṫhē\napple; ṫhe̊\n\napple"
+      },
+      "id": "snapshot-0214",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the, apple; the\napple; the\n\napple"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": "the, apple; the\napple; the\n\napple"
+      },
+      "id": "snapshot-0215",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the, apple; the\napple; the\n\napple"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "the, apple; the\napple; the\n\napple"
+      },
+      "id": "snapshot-0216",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "Apple APPLE aPpLe May may US us iPhone McDonald"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "Apple APPLE aPpLe Māy māy ÛS ûs īPhōne [McDonald]"
+      },
+      "id": "snapshot-0217",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "Apple APPLE aPpLe May may US us iPhone McDonald"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": "Apple APPLE aPpLe May may US us īPhōne [McDonald]"
+      },
+      "id": "snapshot-0218",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "Apple APPLE aPpLe May may US us iPhone McDonald"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "Apple APPLE aPpLe May may US us īPhōne [McDonald]"
+      },
+      "id": "snapshot-0219",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "present record address largely"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "prėṡent record åddress làrg𝕖lẏ"
+      },
+      "id": "snapshot-0220",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "present record address largely"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": "present record åddress làrg𝕖lẏ"
+      },
+      "id": "snapshot-0221",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "present record address largely"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "present record address làrg𝕖lẏ"
+      },
+      "id": "snapshot-0222",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "don't doesn't aren't I'm you're o'clock don’t doesn’t aren’t I’m you’re o’clock"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "don't dô𝕖ṡn't àr𝕖n't I'm yoū're o̊'clock don’t dô𝕖ṡn’t àr𝕖n’t I’m yoū’re o̊’clock"
+      },
+      "id": "snapshot-0223",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "don't doesn't aren't I'm you're o'clock don’t doesn’t aren’t I’m you’re o’clock"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": "don't dô𝕖ṡn't àr𝕖n't I'm yoū're o̊'clock don’t dô𝕖ṡn’t àr𝕖n’t I’m yoū’re o̊’clock"
+      },
+      "id": "snapshot-0224",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "don't doesn't aren't I'm you're o'clock don’t doesn’t aren’t I’m you’re o’clock"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "don't dô𝕖ṡn't àr𝕖n't I'm yoū're o'clock don’t dô𝕖ṡn’t àr𝕖n’t I’m yoū’re o’clock"
+      },
+      "id": "snapshot-0225",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "walks boxes baked baking studies studied stopped stopping plays tying"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "wãlks boxėṡ bāk𝕖ḋ bāking stûdĩ𝕖ṡ stûdĩ𝕖d stopp𝕖ḋ stopping plāyṡ tȳing"
+      },
+      "id": "snapshot-0226",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "walks boxes baked baking studies studied stopped stopping plays tying"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": "walks boxes bāk𝕖ḋ bāking stûdĩ𝕖ṡ stûdĩ𝕖d stopped stopping plays tȳing"
+      },
+      "id": "snapshot-0227",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "walks boxes baked baking studies studied stopped stopping plays tying"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "walks boxes baked baking studies studied stopped stopping plays tying"
+      },
+      "id": "snapshot-0228",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "ageing singeing tingeing queueing busing singing axes is"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "āgėing singeing tingeing q𝕦eūeing bûsing singing axes iṡ"
+      },
+      "id": "snapshot-0229",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "ageing singeing tingeing queueing busing singing axes is"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": "āgėing singeing tingeing q𝕦eūeing bûsing singing axes is"
+      },
+      "id": "snapshot-0230",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "ageing singeing tingeing queueing busing singing axes is"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "āgėing singeing tingeing q𝕦eūeing bûsing singing axes is"
+      },
+      "id": "snapshot-0231",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "first-rate second-rate second-puldsm pending-compound"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "fi̊rst-rāte seco̊nd-rāte seco̊nd-[puldsm] pending-co̊mpòund"
+      },
+      "id": "snapshot-0232",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "first-rate second-rate second-puldsm pending-compound"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": "fi̊rst-rāte second-rāte second-[puldsm] pending-co̊mpòund"
+      },
+      "id": "snapshot-0233",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "first-rate second-rate second-puldsm pending-compound"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "fi̊rst-rāte second-rate second-[puldsm] pending-co̊mpòund"
+      },
+      "id": "snapshot-0234",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "WHALE WHIM YUM w̄ 𝕙 e̊"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "WHĀLE WℍIM YÛM w̄ 𝕙 e̊"
+      },
+      "id": "snapshot-0235",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "WHALE WHIM YUM w̄ 𝕙 e̊"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": "WHĀLE WℍIM YÛM w̄ 𝕙 e̊"
+      },
+      "id": "snapshot-0236",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "WHALE WHIM YUM w̄ 𝕙 e̊"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "WHALE WℍIM YUM w̄ 𝕙 e̊"
+      },
+      "id": "snapshot-0237",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "unknownwordzz unknown-wordzz who'unknown"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "[unknownwordzz] ûn𝕜nōwn-[wordzz] 𝕨hõ'unknown"
+      },
+      "id": "snapshot-0238",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "unknownwordzz unknown-wordzz who'unknown"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": "[unknownwordzz] ûn𝕜nōwn-[wordzz] who'unknown"
+      },
+      "id": "snapshot-0239",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "unknownwordzz unknown-wordzz who'unknown"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "[unknownwordzz] unknown-[wordzz] who'unknown"
+      },
+      "id": "snapshot-0240",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "café apple123 中文apple 中文\t123 é é\n😀"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "café apple123 中文apple 中文\t123 é é\n😀"
+      },
+      "id": "snapshot-0241",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "café apple123 中文apple 中文\t123 é é\n😀"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": "café apple123 中文apple 中文\t123 é é\n😀"
+      },
+      "id": "snapshot-0242",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "café apple123 中文apple 中文\t123 é é\n😀"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "café apple123 中文apple 中文\t123 é é\n😀"
+      },
+      "id": "snapshot-0243",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "Messrs. p.m. a lot a lottery puldsm"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "[Messrs]. [p].m. å lot å lotte̊rẏ [puldsm]"
+      },
+      "id": "snapshot-0244",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "Messrs. p.m. a lot a lottery puldsm"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": "Messrs. [p].m. a lot a lotte̊rẏ [puldsm]"
+      },
+      "id": "snapshot-0245",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "Messrs. p.m. a lot a lottery puldsm"
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "Messrs. p.m. a lot a lottery [puldsm]"
+      },
+      "id": "snapshot-0246",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "  Abandon\t  the (apple).\n\nThe book.  "
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "  Åbando̊n\t  ṫhē (apple).\n\nṪhe̊ book.  "
+      },
+      "id": "snapshot-0247",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "  Abandon\t  the (apple).\n\nThe book.  "
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": "  Åbando̊n\t  the (apple).\n\nThe book.  "
+      },
+      "id": "snapshot-0248",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "  Abandon\t  the (apple).\n\nThe book.  "
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "  Abandon\t  the (apple).\n\nThe book.  "
+      },
+      "id": "snapshot-0249",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          ""
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": ""
+      },
+      "id": "snapshot-0250",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          ""
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 1000
+        }
+      },
+      "expected": {
+        "value": ""
+      },
+      "id": "snapshot-0251",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          ""
+        ],
+        "group": "annotation",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": ""
+      },
+      "id": "snapshot-0252",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "Abandon the book."
+        ],
+        "expect": "Åbando̊n ṫhe̊ book.",
+        "group": "annotation-default"
+      },
+      "expected": {
+        "value": "Åbando̊n ṫhe̊ book."
+      },
+      "id": "snapshot-0253",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the book abandon tail"
+        ],
+        "group": "threshold-boundary",
+        "kwargs": {
+          "skip_top": 1
+        }
+      },
+      "expected": {
+        "value": "ṫhe̊ book åbando̊n tāil"
+      },
+      "id": "snapshot-0254",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the book abandon tail"
+        ],
+        "group": "threshold-boundary",
+        "kwargs": {
+          "skip_top": 29
+        }
+      },
+      "expected": {
+        "value": "the book åbando̊n tāil"
+      },
+      "id": "snapshot-0255",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the book abandon tail"
+        ],
+        "group": "threshold-boundary",
+        "kwargs": {
+          "skip_top": 30
+        }
+      },
+      "expected": {
+        "value": "the book åbando̊n tāil"
+      },
+      "id": "snapshot-0256",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the book abandon tail"
+        ],
+        "group": "threshold-boundary",
+        "kwargs": {
+          "skip_top": 31
+        }
+      },
+      "expected": {
+        "value": "the book åbando̊n tāil"
+      },
+      "id": "snapshot-0257",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the book abandon tail"
+        ],
+        "group": "threshold-boundary",
+        "kwargs": {
+          "skip_top": 5061
+        }
+      },
+      "expected": {
+        "value": "the book abandon tail"
+      },
+      "id": "snapshot-0258",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the book abandon tail"
+        ],
+        "group": "threshold-boundary",
+        "kwargs": {
+          "skip_top": 5063
+        }
+      },
+      "expected": {
+        "value": "the book abandon tail"
+      },
+      "id": "snapshot-0259",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the book abandon tail"
+        ],
+        "group": "threshold-boundary",
+        "kwargs": {
+          "skip_top": {
+            "$integer": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          }
+        }
+      },
+      "expected": {
+        "value": "the book abandon tail"
+      },
+      "id": "snapshot-0260",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          null
+        ],
+        "error": "TypeError",
+        "group": "invalid-text"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0261",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          42
+        ],
+        "error": "TypeError",
+        "group": "invalid-text"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0262",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "\u0000"
+        ],
+        "error": "ValueError",
+        "group": "invalid-text"
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0263",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "apple"
+        ],
+        "error": "TypeError",
+        "group": "invalid-threshold",
+        "kwargs": {
+          "skip_top": true
+        }
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0264",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "apple"
+        ],
+        "error": "TypeError",
+        "group": "invalid-threshold",
+        "kwargs": {
+          "skip_top": 1.5
+        }
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0265",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "apple"
+        ],
+        "error": "TypeError",
+        "group": "invalid-threshold",
+        "kwargs": {
+          "skip_top": "1"
+        }
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0266",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "apple"
+        ],
+        "error": "ValueError",
+        "group": "invalid-threshold",
+        "kwargs": {
+          "skip_top": -1
+        }
+      },
+      "expected": {
+        "error": "ValueError"
+      },
+      "id": "snapshot-0267",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "apple",
+          1
+        ],
+        "error": "TypeError",
+        "group": "keyword-only"
+      },
+      "expected": {
+        "error": "TypeError"
+      },
+      "id": "snapshot-0268",
+      "source": "snapshot"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "Apple"
+        ],
+        "group": "query-fixture"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "fixture-0269",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "APPLE"
+        ],
+        "group": "query-fixture"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "fixture-0270",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "May"
+        ],
+        "group": "query-fixture"
+      },
+      "expected": {
+        "value": [
+          "Māy"
+        ]
+      },
+      "id": "fixture-0271",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "May"
+        ],
+        "group": "query-fixture"
+      },
+      "expected": {
+        "value": null
+      },
+      "id": "fixture-0272",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "meaning",
+        "args": [
+          "may"
+        ],
+        "group": "query-fixture"
+      },
+      "expected": {
+        "value": "modal. fixture may"
+      },
+      "id": "fixture-0273",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "pair"
+        ],
+        "group": "query-fixture"
+      },
+      "expected": {
+        "value": [
+          "known-ipa"
+        ]
+      },
+      "id": "fixture-0274",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "pair"
+        ],
+        "group": "query-fixture"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "fixture-0275",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "IPA",
+        "args": [
+          "present"
+        ],
+        "group": "query-fixture"
+      },
+      "expected": {
+        "value": [
+          "selected"
+        ]
+      },
+      "id": "fixture-0276",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "present"
+        ],
+        "group": "query-fixture"
+      },
+      "expected": {
+        "value": [
+          "prėṡent"
+        ]
+      },
+      "id": "fixture-0277",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "apple"
+        ],
+        "group": "query-fixture"
+      },
+      "expected": {
+        "value": [
+          "app-le"
+        ]
+      },
+      "id": "fixture-0278",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "stale"
+        ],
+        "group": "query-fixture"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "fixture-0279",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "IPSM",
+        "args": [
+          "noderivation"
+        ],
+        "group": "query-fixture"
+      },
+      "expected": {
+        "value": []
+      },
+      "id": "fixture-0280",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "kind_list",
+        "group": "category-fixture"
+      },
+      "expected": {
+        "value": [
+          "zeta",
+          "apple",
+          "orphan"
+        ]
+      },
+      "id": "fixture-0281",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "kind",
+        "args": [
+          "apple",
+          "CET6"
+        ],
+        "group": "category-fixture"
+      },
+      "expected": {
+        "value": false
+      },
+      "id": "fixture-0282",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "Apple APPLE aPpLe May may"
+        ],
+        "group": "annotation-fixture"
+      },
+      "expected": {
+        "value": "[Apple] APPLE aPpLe Māy mãy"
+      },
+      "id": "fixture-0283",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the book THE apple The hour the university the"
+        ],
+        "group": "annotation-fixture"
+      },
+      "expected": {
+        "value": "ṫhe̊ book ṪHĒ apple Ṫhe̊ [hour] ṫhē [university] ṫhe̊"
+      },
+      "id": "fixture-0284",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the \"apple\" the (apple) the\napple the, apple the\n\napple"
+        ],
+        "group": "annotation-fixture"
+      },
+      "expected": {
+        "value": "ṫhē \"apple\" ṫhē (apple) ṫhē\napple ṫhe̊, apple ṫhe̊\n\napple"
+      },
+      "id": "fixture-0285",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "WHALE WHIM YUM bad BAD"
+        ],
+        "group": "annotation-fixture"
+      },
+      "expected": {
+        "value": "W̅ℍĀLE W̊ℍI̊M Y̊U̇M [bad] [BAD]"
+      },
+      "id": "fixture-0286",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "walks boxes baked baking studies studied stopped stopping plays tying"
+        ],
+        "group": "annotation-fixture"
+      },
+      "expected": {
+        "value": "[walks] bòxes [baked] bāking stûdies stûdied stòpped stòpping [plays] tying"
+      },
+      "id": "fixture-0287",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "ageing singeing queueing busing singing axes is"
+        ],
+        "group": "annotation-fixture"
+      },
+      "expected": {
+        "value": "āgeing si̊ngeing qūeueing bûsing sĩnging [axes] [is]"
+      },
+      "id": "fixture-0288",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "first-rate second-rate second-puldsm pending-compound empty"
+        ],
+        "group": "annotation-fixture"
+      },
+      "expected": {
+        "value": "fi̊rst-rāte seco̊nd-rāte seco̊nd-[puldsm] [pending-compound] [empty]"
+      },
+      "id": "fixture-0289",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "don't doesn't aren't I'm you're o'clock don’t doesn’t aren’t I’m you’re o’clock"
+        ],
+        "group": "annotation-fixture"
+      },
+      "expected": {
+        "value": "[don't] dô𝕖ṡn't àr𝕖n't I'm yoū're o̊'clock [don’t] dô𝕖ṡn’t àr𝕖n’t I’m yoū’re o̊’clock"
+      },
+      "id": "fixture-0290",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "café apple123 中文apple é 中文 😀"
+        ],
+        "group": "annotation-fixture"
+      },
+      "expected": {
+        "value": "café apple123 中文apple é 中文 😀"
+      },
+      "id": "fixture-0291",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "unknownwordzz"
+        ],
+        "group": "annotation-fixture"
+      },
+      "expected": {
+        "value": "[unknownwordzz]"
+      },
+      "id": "fixture-0292",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "Messrs. p.m. a lot a lottery unlisted tail abandoned"
+        ],
+        "group": "annotation-fixture"
+      },
+      "expected": {
+        "value": "[Messrs]. [p].[m]. [a] [lot] [a] [lottery] [unlisted] tãil åbando̊ned"
+      },
+      "id": "fixture-0293",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "walks plays baked don't is"
+        ],
+        "expect": "[walks] [plays] [baked] [don't] [is]",
+        "group": "blocked-fallback-fixture"
+      },
+      "expected": {
+        "value": "[walks] [plays] [baked] [don't] [is]"
+      },
+      "id": "fixture-0294",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the abandon abandoned unlisted Messrs. p.m. a lot tail"
+        ],
+        "group": "frequency-fixture",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "ṫhē åbando̊n åbando̊ned [unlisted] [Messrs]. [p].[m]. [a] [lot] tãil"
+      },
+      "id": "fixture-0295",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the abandon abandoned unlisted Messrs. p.m. a lot tail"
+        ],
+        "group": "frequency-fixture",
+        "kwargs": {
+          "skip_top": 1
+        }
+      },
+      "expected": {
+        "value": "the åbando̊n åbando̊ned [unlisted] [Messrs]. [p].[m]. [a] [lot] tãil"
+      },
+      "id": "fixture-0296",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the abandon abandoned unlisted Messrs. p.m. a lot tail"
+        ],
+        "group": "frequency-fixture",
+        "kwargs": {
+          "skip_top": 2
+        }
+      },
+      "expected": {
+        "value": "the abandon abandoned [unlisted] [Messrs]. [p].[m]. [a] [lot] tãil"
+      },
+      "id": "fixture-0297",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the abandon abandoned unlisted Messrs. p.m. a lot tail"
+        ],
+        "group": "frequency-fixture",
+        "kwargs": {
+          "skip_top": 3
+        }
+      },
+      "expected": {
+        "value": "the abandon abandoned unlisted [Messrs]. [p].[m]. [a] [lot] tãil"
+      },
+      "id": "fixture-0298",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the abandon abandoned unlisted Messrs. p.m. a lot tail"
+        ],
+        "group": "frequency-fixture",
+        "kwargs": {
+          "skip_top": 4
+        }
+      },
+      "expected": {
+        "value": "the abandon abandoned unlisted Messrs. [p].[m]. [a] [lot] tãil"
+      },
+      "id": "fixture-0299",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the abandon abandoned unlisted Messrs. p.m. a lot tail"
+        ],
+        "group": "frequency-fixture",
+        "kwargs": {
+          "skip_top": 5
+        }
+      },
+      "expected": {
+        "value": "the abandon abandoned unlisted Messrs. p.m. [a] [lot] tãil"
+      },
+      "id": "fixture-0300",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the abandon abandoned unlisted Messrs. p.m. a lot tail"
+        ],
+        "group": "frequency-fixture",
+        "kwargs": {
+          "skip_top": 6
+        }
+      },
+      "expected": {
+        "value": "the abandon abandoned unlisted Messrs. p.m. a lot tãil"
+      },
+      "id": "fixture-0301",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the abandon abandoned unlisted Messrs. p.m. a lot tail"
+        ],
+        "group": "frequency-fixture",
+        "kwargs": {
+          "skip_top": 5061
+        }
+      },
+      "expected": {
+        "value": "the abandon abandoned unlisted Messrs. p.m. a lot tãil"
+      },
+      "id": "fixture-0302",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the abandon abandoned unlisted Messrs. p.m. a lot tail"
+        ],
+        "group": "frequency-fixture",
+        "kwargs": {
+          "skip_top": 5062
+        }
+      },
+      "expected": {
+        "value": "the abandon abandoned unlisted Messrs. p.m. a lot tail"
+      },
+      "id": "fixture-0303",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the abandon abandoned unlisted Messrs. p.m. a lot tail"
+        ],
+        "group": "frequency-fixture",
+        "kwargs": {
+          "skip_top": 5063
+        }
+      },
+      "expected": {
+        "value": "the abandon abandoned unlisted Messrs. p.m. a lot tail"
+      },
+      "id": "fixture-0304",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "the abandon abandoned unlisted Messrs. p.m. a lot tail"
+        ],
+        "group": "frequency-fixture",
+        "kwargs": {
+          "skip_top": {
+            "$integer": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          }
+        }
+      },
+      "expected": {
+        "value": "the abandon abandoned unlisted Messrs. p.m. a lot tail"
+      },
+      "id": "fixture-0305",
+      "source": "fixture"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "apple"
+        ],
+        "error": "LexiconDataError",
+        "group": "missing-main"
+      },
+      "expected": {
+        "error": "LexiconDataError"
+      },
+      "id": "resource-fixture-0306",
+      "source": "resource-fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "apple"
+        ],
+        "error": "LexiconDataError",
+        "group": "missing-frequency",
+        "kwargs": {
+          "skip_top": 1
+        }
+      },
+      "expected": {
+        "error": "LexiconDataError"
+      },
+      "id": "resource-fixture-0307",
+      "source": "resource-fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "apple"
+        ],
+        "expect": "apple",
+        "group": "zero-no-frequency",
+        "kwargs": {
+          "skip_top": 0
+        }
+      },
+      "expected": {
+        "value": "apple"
+      },
+      "id": "resource-fixture-0308",
+      "source": "resource-fixture"
+    },
+    {
+      "call": {
+        "api": "annotate_ips",
+        "args": [
+          "中文 123 😀 é"
+        ],
+        "expect": "中文 123 😀 é",
+        "group": "no-token-no-resources",
+        "kwargs": {
+          "skip_top": 1
+        }
+      },
+      "expected": {
+        "value": "中文 123 😀 é"
+      },
+      "id": "resource-fixture-0309",
+      "source": "resource-fixture"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "apple"
+        ],
+        "error": "SchemaVersionError",
+        "group": "schema-version"
+      },
+      "expected": {
+        "error": "SchemaVersionError"
+      },
+      "id": "resource-fixture-0310",
+      "source": "resource-fixture"
+    },
+    {
+      "call": {
+        "api": "IPS",
+        "args": [
+          "apple"
+        ],
+        "error": "LexiconDataError",
+        "group": "missing-table"
+      },
+      "expected": {
+        "error": "LexiconDataError"
+      },
+      "id": "resource-fixture-0311",
+      "source": "resource-fixture"
+    }
+  ],
+  "fixture_spec": {
+    "entries": {
+      "Apple": {
+        "reason": "fixture_pending",
+        "state": "pending_review"
+      },
+      "I": {
+        "pronunciations": [
+          {
+            "ips": "ī"
+          }
+        ]
+      },
+      "May": {
+        "fields": {
+          "meaning_en": {
+            "reason": "empty_cell",
+            "status": "missing"
+          }
+        },
+        "pronunciations": [
+          {
+            "ips": "Māy"
+          }
+        ]
+      },
+      "abandon": {
+        "pronunciations": [
+          {
+            "ips": "åbando̊n"
+          }
+        ]
+      },
+      "age": {
+        "pronunciations": [
+          {
+            "ips": "āge"
+          }
+        ]
+      },
+      "apple": {
+        "fields": {
+          "ism": "app-le",
+          "kind:CET4": true,
+          "kind:CET6": false,
+          "meaning_en": "n. fixture apple",
+          "rank": "20",
+          "root_lemma": "apple"
+        },
+        "pronunciations": [
+          {
+            "ipa": "æpəl",
+            "ips": "apple",
+            "ipsm": "app-le"
+          }
+        ]
+      },
+      "ax": {
+        "pronunciations": [
+          {
+            "ips": "ãx"
+          }
+        ]
+      },
+      "axe": {
+        "pronunciations": [
+          {
+            "ips": "āxe"
+          }
+        ]
+      },
+      "bad": {
+        "pronunciations": [
+          {
+            "ips": "bādextra"
+          }
+        ]
+      },
+      "bake": {
+        "pronunciations": [
+          {
+            "ips": "bāke"
+          }
+        ]
+      },
+      "baked": {
+        "pronunciations": [
+          {
+            "ips": {
+              "reason": "fixture_invalid",
+              "status": "invalid"
+            }
+          }
+        ]
+      },
+      "book": {
+        "pronunciations": [
+          {
+            "ips": "book"
+          }
+        ]
+      },
+      "box": {
+        "pronunciations": [
+          {
+            "ips": "bòx"
+          }
+        ]
+      },
+      "bus": {
+        "pronunciations": [
+          {
+            "ips": "bûs"
+          }
+        ]
+      },
+      "don't": {
+        "pronunciations": [
+          {
+            "ips": {
+              "reason": "fixture_invalid",
+              "status": "invalid"
+            }
+          }
+        ]
+      },
+      "empty": {
+        "pronunciations": [
+          {
+            "ips": {
+              "reason": "empty_cell",
+              "status": "missing"
+            }
+          }
+        ]
+      },
+      "first-rate": {
+        "pronunciations": [
+          {
+            "ips": "fi̊rst-rāte"
+          }
+        ]
+      },
+      "i": {
+        "pronunciations": [
+          {
+            "ips": "ī"
+          }
+        ]
+      },
+      "may": {
+        "fields": {
+          "meaning_en": "modal. fixture may"
+        },
+        "pronunciations": [
+          {
+            "ips": "mãy"
+          }
+        ]
+      },
+      "noderivation": {
+        "derivation": "missing",
+        "fields": {
+          "ism": "no-derivation"
+        },
+        "pronunciations": [
+          {
+            "ips": "noderivation",
+            "ipsm": "no-derivation"
+          }
+        ]
+      },
+      "orphan": {
+        "fields": {
+          "kind:CET4": true
+        }
+      },
+      "pair": {
+        "pronunciations": [
+          {
+            "ipa": "known-ipa"
+          }
+        ]
+      },
+      "pending-compound": {
+        "reason": "fixture_pending",
+        "state": "pending_review"
+      },
+      "play": {
+        "pronunciations": [
+          {
+            "ips": "plāy"
+          }
+        ]
+      },
+      "plays": {
+        "reason": "fixture_conflict",
+        "state": "conflict"
+      },
+      "present": {
+        "pronunciations": [
+          {
+            "ipa": "first",
+            "ips": "prīṡent"
+          },
+          {
+            "ipa": "selected",
+            "ips": "prėṡent"
+          }
+        ],
+        "selected": 1
+      },
+      "queue": {
+        "pronunciations": [
+          {
+            "ips": "qūeue"
+          }
+        ]
+      },
+      "rate": {
+        "pronunciations": [
+          {
+            "ips": "rāte"
+          }
+        ]
+      },
+      "second": {
+        "pronunciations": [
+          {
+            "ips": "seco̊nd"
+          }
+        ]
+      },
+      "second-rate": {
+        "reason": "source_record_missing",
+        "state": "missing"
+      },
+      "sing": {
+        "pronunciations": [
+          {
+            "ips": "sĩng"
+          }
+        ]
+      },
+      "singe": {
+        "pronunciations": [
+          {
+            "ips": "si̊nge"
+          }
+        ]
+      },
+      "stale": {
+        "derivation": "stale",
+        "fields": {
+          "ism": "sta-le"
+        },
+        "pronunciations": [
+          {
+            "ips": "stale",
+            "ipsm": "sta-le"
+          }
+        ]
+      },
+      "stop": {
+        "pronunciations": [
+          {
+            "ips": "stòp"
+          }
+        ]
+      },
+      "study": {
+        "pronunciations": [
+          {
+            "ips": "stûdẏ"
+          }
+        ]
+      },
+      "tail": {
+        "pronunciations": [
+          {
+            "ips": "tãil"
+          }
+        ]
+      },
+      "the": {
+        "pronunciations": [
+          {
+            "ips": "ṫhe̊"
+          }
+        ]
+      },
+      "tie": {
+        "pronunciations": [
+          {
+            "ips": "tīe"
+          }
+        ]
+      },
+      "walk": {
+        "pronunciations": [
+          {
+            "ips": "wàlk"
+          }
+        ]
+      },
+      "walks": {
+        "pronunciations": [
+          {
+            "ips": {
+              "reason": "empty_cell",
+              "status": "missing"
+            }
+          }
+        ]
+      },
+      "whale": {
+        "pronunciations": [
+          {
+            "ips": "w̄𝕙āle"
+          }
+        ]
+      },
+      "whim": {
+        "pronunciations": [
+          {
+            "ips": "ẘ𝕙i̊m"
+          }
+        ]
+      },
+      "yum": {
+        "pronunciations": [
+          {
+            "ips": "ẙu̇m"
+          }
+        ]
+      },
+      "zeta": {
+        "fields": {
+          "kind:CET4": true,
+          "rank": "10",
+          "root_lemma": "apple"
+        }
+      }
+    },
+    "frequency": {
+      "a lot": 6,
+      "abandon": 2,
+      "abandoned": 2,
+      "messrs.": 4,
+      "p.m.": 5,
+      "tail": 5062,
+      "the": 1,
+      "unlisted": 3
+    }
+  },
+  "format_version": 1,
+  "reference": {
+    "fingerprints": {
+      "modules": {
+        "__init__.py": {
+          "bytes": 498,
+          "sha256": "f5d7957c9aa07ce95d5eb9bde70e9eb913cf040ce5b6632bff716ed82a039f77"
+        },
+        "_packed.py": {
+          "bytes": 11675,
+          "sha256": "4abefea71301eff3e4c5596e0b35e5cdffffaee9a8feffba31b4415628d3c496"
+        },
+        "_resources.py": {
+          "bytes": 3294,
+          "sha256": "ab4fc48b73d0516d63cf17b7a4c6a053cad6ba8dd361d59e5a0ef0153050a486"
+        },
+        "annotation.py": {
+          "bytes": 14266,
+          "sha256": "76355b9a0d71882f8407640740865529744e8eb9c6400081a0f764188bd4cbfc"
+        },
+        "query.py": {
+          "bytes": 15574,
+          "sha256": "df4fc1c12c769b17918c056cb19570a79536991590926601b57dbb682e0c86b4"
+        },
+        "ranking.py": {
+          "bytes": 3849,
+          "sha256": "8a5d60c77a5c03d66097f1aa143573b88f5219ed43e1b2b006e901f163dddfac"
+        },
+        "types.py": {
+          "bytes": 2097,
+          "sha256": "624331756853b630c139a05f3d33d35706fa768a4a2a2aa6ff380af3bd792f0a"
+        }
+      },
+      "resources": {
+        "frequency.sqlite": {
+          "bytes": 1929216,
+          "path": "D:\\Python\\Python312\\Lib\\site-packages\\lingose\\frequency.sqlite",
+          "sha256": "d8da3788e62ec7c2df27a9f7b148ef018e83c8ea5b189b72819a2a8c911ca269"
+        },
+        "lexicon.lpk": {
+          "bytes": 89292019,
+          "path": "D:\\Python\\Python312\\Lib\\site-packages\\lingose\\lexicon.lpk",
+          "sha256": "cf0b3dd5aa7c5f89a88143c0503f089f82ccebd57aec1fc65e1cb3c5b65a3d96"
+        },
+        "lexicon.sqlite": {
+          "bytes": 1023238144,
+          "path": "C:\\Users\\Threadman\\AppData\\Local\\lingose\\cache\\0e18bb818031f60d2d068f45dd4389ae0eafe2968758cb0d5813846b28498833\\lexicon.sqlite",
+          "sha256": "ada92a2b51de23f9f82e403f3593e3b783311f8aaa34071d926f3546f84b52fe"
+        }
+      }
+    },
+    "version": "0.2.0"
+  },
+  "summary": {
+    "by_source": {
+      "fixture": 37,
+      "resource-fixture": 6,
+      "snapshot": 268
+    },
+    "public_names": [
+      "IPA",
+      "IPS",
+      "IPSM",
+      "ISM",
+      "annotate_ips",
+      "ipa",
+      "ips",
+      "ipsm",
+      "ism",
+      "kind",
+      "kind_list",
+      "labels",
+      "meaning",
+      "root_lemma"
+    ],
+    "total": 311
+  }
+}

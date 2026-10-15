@@ -16,11 +16,11 @@
 
 - [x] P0.1 审计并固定参考代码、安装包和数据基线。
   - 依赖：D0.1。记录本机已安装 Lingose 0.2.0、实际查询库和频率库的位置、版本、schema、行数及 SHA-256；记录用到的相邻参考代码版本和相关差异。
-  - 产物：可重复的只读核验工具与基线记录；现存缓存须先验证，必要的快照恢复只写本项目隔离目录。
+  - 产物：[参考基线](../docs/reference-baseline.md)及 JSON、tools/reference.py、tools/audit_reference.py、tests/test_reference.py；现存缓存已只读验证，必要的快照恢复只写本项目隔离目录。
   - 验收：安装包、数据库和相关源码身份明确；前后摘要不变，重复核验通过；没有混用相邻 Python 源码库。
-- [ ] P0.2 建立 API 行为矩阵和 Python 对照样例。
+- [x] P0.2 建立 API 行为矩阵和 Python 对照样例。
   - 依赖：P0.1。逐项覆盖四组大小写名称、root_lemma、meaning、kind、kind_list、labels、annotate_ips；记录默认值、大小写规则、未知词、参数错误和数据错误。
-  - 产物：行为契约与固定样例/规则向量；区分 README 必需接口与内部排序字段，不新增 lookup。
+  - 产物：[API 行为契约](../docs/api.md)、tests/fixtures/python-api-v1.json、tools/capture_api_vectors.py、tests/test_api_vectors.py；区分 README 必需接口与内部排序字段，不新增 lookup。
   - 验收：README 中每个必需函数均有对应任务和对照入口；发音投影、分类顺序、标注回退及 Unicode 规则可检查。
 
 ## P1：Rust 接口、工程与数据方案
