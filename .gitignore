@@ -1,0 +1,4 @@
+/.local/
+/target/
+__pycache__/
+*.py[cod]

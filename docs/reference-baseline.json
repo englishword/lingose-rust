@@ -1,0 +1,1494 @@
+{
+  "archive_manifest": {
+    "application_id": 0,
+    "data_version": "17a1d0a15cbeec8e323b4a1750eccd88e372a65339e11bee3a7cf55c4f4b0dbd",
+    "database_bytes": 993206272,
+    "dictionary_count": 2107943,
+    "format_version": 1,
+    "indexes": [
+      "CREATE UNIQUE INDEX entry_field_unique ON field_value(entry_id, field_key) WHERE scope = 'entry'",
+      "CREATE INDEX field_candidate_value ON field_candidate(value_id)",
+      "CREATE INDEX field_value_entry ON field_value(entry_id)",
+      "CREATE INDEX field_value_pronunciation ON field_value(pronunciation_id, entry_id)",
+      "CREATE INDEX ipsm_derivation_ips ON ipsm_derivation(ips_value_id)",
+      "CREATE INDEX ipsm_derivation_ism ON ipsm_derivation(ism_value_id)",
+      "CREATE INDEX kind_true ON field_value(field_key, entry_id)\n    WHERE status = 'available' AND value_json = 'true'",
+      "CREATE UNIQUE INDEX pronunciation_field_unique ON field_value(pronunciation_id, field_key) WHERE scope = 'pronunciation'",
+      "CREATE INDEX source_record_word ON source_record(source_word COLLATE BINARY)",
+      "CREATE INDEX source_snapshot_key ON source_snapshot(source_key)"
+    ],
+    "payload_bytes": 89280144,
+    "payload_sha256": "e28a7df674feac76dfd9650533e9f811224ac74c523ebdfb0993de68175dd9b4",
+    "schema_version": 2,
+    "source_file_sha256": "a5716bb08e53fd975e84c88bcb2e05b5d890edd3547e4f8e25a0db69ca614578",
+    "tables": [
+      {
+        "columns": [
+          "singleton",
+          "schema_version",
+          "data_version",
+          "rules_version",
+          "built_at",
+          "manifest_json"
+        ],
+        "id_columns": [],
+        "name": "build_info",
+        "order": [
+          "_rowid_"
+        ],
+        "rows": 1,
+        "sha256": "c3f48a315db08c1b94774c3ae68a446616ca4a960c18acd095712953f7aa4fdb",
+        "sql": "CREATE TABLE build_info (\n    singleton INTEGER PRIMARY KEY CHECK (singleton = 1),\n    schema_version INTEGER NOT NULL CHECK (schema_version = 2),\n    data_version TEXT NOT NULL,\n    rules_version TEXT NOT NULL,\n    built_at TEXT NOT NULL,\n    manifest_json TEXT NOT NULL CHECK (json_valid(manifest_json))\n)"
+      },
+      {
+        "columns": [
+          "candidate_id",
+          "record_id",
+          "column_name"
+        ],
+        "id_columns": [
+          0,
+          1
+        ],
+        "name": "candidate_origin",
+        "order": [
+          "_rowid_"
+        ],
+        "rows": 4,
+        "sha256": "4d3ce46fe12042e507ecb3f381ed41df544eb6cf7752c291dcec4f267c6d9f70",
+        "sql": "CREATE TABLE candidate_origin (\n    candidate_id TEXT NOT NULL REFERENCES field_candidate(candidate_id),\n    record_id TEXT NOT NULL REFERENCES source_record(record_id),\n    column_name TEXT NOT NULL,\n    PRIMARY KEY (candidate_id, record_id, column_name)\n)"
+      },
+      {
+        "columns": [
+          "entry_id",
+          "word"
+        ],
+        "id_columns": [
+          0
+        ],
+        "name": "entry",
+        "order": [
+          "_rowid_"
+        ],
+        "rows": 50335,
+        "sha256": "ad6ea4f20523c5ec20774f09df00efa359c768bdf1487be0a4274c5e340809c9",
+        "sql": "CREATE TABLE entry (\n    entry_id TEXT PRIMARY KEY NOT NULL,\n    word TEXT NOT NULL COLLATE BINARY UNIQUE CHECK (length(word) > 0)\n)"
+      },
+      {
+        "columns": [
+          "entry_id",
+          "manifest_id"
+        ],
+        "id_columns": [
+          0,
+          1
+        ],
+        "name": "entry_input",
+        "order": [
+          "_rowid_"
+        ],
+        "rows": 50335,
+        "sha256": "d8023b61ddf2c919d25f82d4ecc50e209c9be59c5c75271c5fb6e5ba3d73314a",
+        "sql": "CREATE TABLE entry_input (\n    entry_id TEXT PRIMARY KEY NOT NULL REFERENCES entry(entry_id),\n    manifest_id TEXT NOT NULL REFERENCES input_manifest(manifest_id)\n)"
+      },
+      {
+        "columns": [
+          "candidate_id",
+          "value_id",
+          "value_json",
+          "reason",
+          "review_state",
+          "review_event_id"
+        ],
+        "id_columns": [
+          0,
+          1,
+          5
+        ],
+        "name": "field_candidate",
+        "order": [
+          "_rowid_"
+        ],
+        "rows": 4,
+        "sha256": "49452fd2ec4c0cb38b9a63ca1b76b7413c34105ea9939530c0bb0590c5971c7f",
+        "sql": "CREATE TABLE field_candidate (\n    candidate_id TEXT PRIMARY KEY NOT NULL,\n    value_id TEXT NOT NULL REFERENCES field_value(value_id),\n    value_json TEXT NOT NULL CHECK (json_valid(value_json)),\n    reason TEXT NOT NULL,\n    review_state TEXT NOT NULL CHECK (review_state IN ('pending', 'accepted', 'rejected')),\n    review_event_id TEXT REFERENCES review_event(event_id),\n    CHECK (review_state = 'pending' OR review_event_id IS NOT NULL)\n)"
+      },
+      {
+        "columns": [
+          "field_key",
+          "scope",
+          "domain",
+          "value_type",
+          "label",
+          "ordinal"
+        ],
+        "id_columns": [],
+        "name": "field_definition",
+        "order": [
+          "_rowid_"
+        ],
+        "rows": 36,
+        "sha256": "533e65dc97f0c888cc08e3821b7bc747dc803cf8b693560c69519c096920325d",
+        "sql": "CREATE TABLE field_definition (\n    field_key TEXT PRIMARY KEY NOT NULL,\n    scope TEXT NOT NULL CHECK (scope IN ('entry', 'pronunciation')),\n    domain TEXT NOT NULL CHECK (domain IN ('pronunciation', 'morphology', 'meaning', 'pos', 'category', 'attribute')),\n    value_type TEXT NOT NULL CHECK (value_type IN ('text', 'boolean', 'integer_or_text', 'text_list')),\n    label TEXT UNIQUE,\n    ordinal INTEGER NOT NULL CHECK (ordinal >= 0),\n    CHECK ((domain = 'category' AND label IS NOT NULL AND scope = 'entry' AND value_type = 'boolean')\n        OR (domain <> 'category' AND label IS NULL)),\n    UNIQUE (field_key, scope, value_type)\n)"
+      },
+      {
+        "columns": [
+          "value_id",
+          "entry_id",
+          "pronunciation_id",
+          "field_key",
+          "scope",
+          "value_type",
+          "status",
+          "value_json",
+          "basis",
+          "matched_word",
+          "match_type",
+          "reason",
+          "review_event_id"
+        ],
+        "id_columns": [
+          0,
+          1,
+          2,
+          12
+        ],
+        "name": "field_value",
+        "order": [
+          "_rowid_"
+        ],
+        "rows": 1811325,
+        "sha256": "9429890932ba939374a570f2eced27b88aef2545559cfb6060c119e25cf5a8eb",
+        "sql": "CREATE TABLE field_value (\n    value_id TEXT PRIMARY KEY NOT NULL,\n    entry_id TEXT NOT NULL REFERENCES entry(entry_id),\n    pronunciation_id TEXT,\n    field_key TEXT NOT NULL,\n    scope TEXT NOT NULL,\n    value_type TEXT NOT NULL,\n    status TEXT NOT NULL CHECK (status IN ('available', 'missing', 'conflict', 'pending_review', 'invalid')),\n    value_json TEXT,\n    basis TEXT CHECK (basis IN ('source', 'human', 'derived')),\n    matched_word TEXT COLLATE BINARY,\n    match_type TEXT CHECK (match_type IN ('exact', 'lowercase')),\n    reason TEXT,\n    review_event_id TEXT REFERENCES review_event(event_id),\n    FOREIGN KEY (field_key, scope, value_type) REFERENCES field_definition(field_key, scope, value_type),\n    FOREIGN KEY (pronunciation_id, entry_id) REFERENCES pronunciation(pronunciation_id, entry_id),\n    CHECK ((scope = 'entry' AND pronunciation_id IS NULL)\n        OR (scope = 'pronunciation' AND pronunciation_id IS NOT NULL)),\n    CHECK ((matched_word IS NULL AND match_type IS NULL)\n        OR (matched_word IS NOT NULL AND match_type IS NOT NULL)),\n    CHECK ((status = 'available' AND value_json IS NOT NULL AND basis IS NOT NULL)\n        OR (status <> 'available' AND value_json IS NULL AND basis IS NULL)),\n    CHECK (basis IS NULL OR basis <> 'human' OR review_event_id IS NOT NULL),\n    CHECK (value_json IS NULL OR CASE WHEN json_valid(value_json) THEN\n        CASE value_type\n            WHEN 'text' THEN json_type(value_json) = 'text'\n            WHEN 'boolean' THEN json_type(value_json) IN ('true', 'false')\n            WHEN 'integer_or_text' THEN json_type(value_json) IN ('integer', 'text')\n            WHEN 'text_list' THEN json_type(value_json) = 'array'\n            ELSE 0\n        END ELSE 0 END)\n)"
+      },
+      {
+        "columns": [
+          "manifest_id",
+          "manifest_json"
+        ],
+        "id_columns": [
+          0
+        ],
+        "name": "input_manifest",
+        "order": [
+          "_rowid_"
+        ],
+        "rows": 1,
+        "sha256": "1f1aef9082dd6a88704da3ba3cc132c921bc91b061e68bd0c201183aabfe5a19",
+        "sql": "CREATE TABLE input_manifest (\n    manifest_id TEXT PRIMARY KEY NOT NULL,\n    manifest_json TEXT NOT NULL CHECK (json_valid(manifest_json))\n)"
+      },
+      {
+        "columns": [
+          "result_value_id",
+          "ips_value_id",
+          "ism_value_id",
+          "ips_sha256",
+          "ism_sha256",
+          "algorithm_version",
+          "alignment_json"
+        ],
+        "id_columns": [
+          0,
+          1,
+          2
+        ],
+        "name": "ipsm_derivation",
+        "order": [
+          "_rowid_"
+        ],
+        "rows": 50004,
+        "sha256": "9cecf1673c87fe3092d65eeb5a4d9b8e13c31f86abbaa629bbf565254c3f9a77",
+        "sql": "CREATE TABLE ipsm_derivation (\n    result_value_id TEXT PRIMARY KEY NOT NULL REFERENCES field_value(value_id),\n    ips_value_id TEXT NOT NULL REFERENCES field_value(value_id),\n    ism_value_id TEXT NOT NULL REFERENCES field_value(value_id),\n    ips_sha256 TEXT NOT NULL CHECK (length(ips_sha256) = 64 AND ips_sha256 NOT GLOB '*[^0-9a-f]*'),\n    ism_sha256 TEXT NOT NULL CHECK (length(ism_sha256) = 64 AND ism_sha256 NOT GLOB '*[^0-9a-f]*'),\n    algorithm_version TEXT NOT NULL,\n    alignment_json TEXT NOT NULL CHECK (json_valid(alignment_json))\n)"
+      },
+      {
+        "columns": [
+          "pronunciation_id",
+          "entry_id",
+          "ordinal",
+          "review_state",
+          "review_event_id"
+        ],
+        "id_columns": [
+          0,
+          1,
+          4
+        ],
+        "name": "pronunciation",
+        "order": [
+          "_rowid_"
+        ],
+        "rows": 50090,
+        "sha256": "b319242995bda7b5886de789acb6d708ed06bb5f46d992218901bcac1d0939be",
+        "sql": "CREATE TABLE pronunciation (\n    pronunciation_id TEXT PRIMARY KEY NOT NULL,\n    entry_id TEXT NOT NULL REFERENCES entry(entry_id),\n    ordinal INTEGER NOT NULL CHECK (ordinal >= 0),\n    review_state TEXT NOT NULL CHECK (review_state IN ('unreviewed', 'confirmed', 'rejected')),\n    review_event_id TEXT REFERENCES review_event(event_id),\n    CHECK ((review_state = 'unreviewed' AND review_event_id IS NULL)\n        OR (review_state <> 'unreviewed' AND review_event_id IS NOT NULL)),\n    UNIQUE (entry_id, ordinal),\n    UNIQUE (pronunciation_id, entry_id)\n)"
+      },
+      {
+        "columns": [
+          "entry_id",
+          "status",
+          "selected_id",
+          "reason",
+          "selection_event_id"
+        ],
+        "id_columns": [
+          0,
+          2,
+          4
+        ],
+        "name": "pronunciation_set",
+        "order": [
+          "_rowid_"
+        ],
+        "rows": 50335,
+        "sha256": "030d9e5eb9d6a0e09c194034eb1a1b3589be18b19e7a4e64d1478222f1567320",
+        "sql": "CREATE TABLE pronunciation_set (\n    entry_id TEXT PRIMARY KEY NOT NULL REFERENCES entry(entry_id),\n    status TEXT NOT NULL CHECK (status IN ('available', 'missing', 'conflict', 'pending_review', 'invalid')),\n    selected_id TEXT,\n    reason TEXT,\n    selection_event_id TEXT REFERENCES review_event(event_id),\n    CHECK ((status = 'available' AND selected_id IS NOT NULL)\n        OR (status <> 'available' AND selected_id IS NULL)),\n    CHECK (selection_event_id IS NULL OR selected_id IS NOT NULL),\n    FOREIGN KEY (selected_id, entry_id) REFERENCES pronunciation(pronunciation_id, entry_id)\n)"
+      },
+      {
+        "columns": [
+          "event_id",
+          "decided_at",
+          "reviewer",
+          "decision",
+          "receipt_json"
+        ],
+        "id_columns": [
+          0
+        ],
+        "name": "review_event",
+        "order": [
+          "_rowid_"
+        ],
+        "rows": 656,
+        "sha256": "4fac4d31fb87ea0f705604dd435148c8f2420aad4d1649ed20a2c6f108171267",
+        "sql": "CREATE TABLE review_event (\n    event_id TEXT PRIMARY KEY NOT NULL,\n    decided_at TEXT NOT NULL,\n    reviewer TEXT NOT NULL,\n    decision TEXT NOT NULL CHECK (decision IN ('approve', 'reject')),\n    receipt_json TEXT NOT NULL CHECK (json_valid(receipt_json))\n)"
+      },
+      {
+        "columns": [
+          "record_id",
+          "snapshot_id",
+          "sheet",
+          "row_number",
+          "source_word",
+          "row_sha256",
+          "raw_json"
+        ],
+        "id_columns": [
+          0,
+          1
+        ],
+        "name": "source_record",
+        "order": [
+          "_rowid_"
+        ],
+        "rows": 195527,
+        "sha256": "ce192395c2fede85aaadb21406269371b5c20b7f6d8f046903d295b35c50c03b",
+        "sql": "CREATE TABLE source_record (\n    record_id TEXT PRIMARY KEY NOT NULL,\n    snapshot_id TEXT NOT NULL REFERENCES source_snapshot(snapshot_id),\n    sheet TEXT NOT NULL,\n    row_number INTEGER NOT NULL CHECK (row_number >= 2),\n    source_word TEXT COLLATE BINARY,\n    row_sha256 TEXT NOT NULL CHECK (length(row_sha256) = 64 AND row_sha256 NOT GLOB '*[^0-9a-f]*'),\n    raw_json TEXT NOT NULL CHECK (json_valid(raw_json)),\n    UNIQUE (snapshot_id, sheet, row_number)\n)"
+      },
+      {
+        "columns": [
+          "snapshot_id",
+          "source_key",
+          "relative_path",
+          "format",
+          "domain",
+          "sha256"
+        ],
+        "id_columns": [
+          0
+        ],
+        "name": "source_snapshot",
+        "order": [
+          "_rowid_"
+        ],
+        "rows": 5,
+        "sha256": "a8fe0e87be3458d8ccc082d53e5e68b9757c40cb5b2496771cbbbebceb66103c",
+        "sql": "CREATE TABLE source_snapshot (\n    snapshot_id TEXT PRIMARY KEY NOT NULL,\n    source_key TEXT NOT NULL,\n    relative_path TEXT NOT NULL,\n    format TEXT NOT NULL CHECK (format IN ('xlsx', 'csv')),\n    domain TEXT NOT NULL CHECK (domain IN ('pronunciation', 'morphology', 'meaning', 'classification')),\n    sha256 TEXT NOT NULL CHECK (length(sha256) = 64 AND sha256 NOT GLOB '*[^0-9a-f]*')\n)"
+      },
+      {
+        "columns": [
+          "value_id",
+          "record_id",
+          "column_name"
+        ],
+        "id_columns": [
+          0,
+          1
+        ],
+        "name": "value_origin",
+        "order": [
+          "value_id",
+          "record_id",
+          "column_name"
+        ],
+        "rows": 1618527,
+        "sha256": "d21a63080d22fd05f19c55349816225c633ccad9ead107b467abfb10289e3698",
+        "sql": "CREATE TABLE value_origin (\n    value_id TEXT NOT NULL REFERENCES field_value(value_id),\n    record_id TEXT NOT NULL REFERENCES source_record(record_id),\n    column_name TEXT NOT NULL,\n    PRIMARY KEY (value_id, record_id, column_name)\n) WITHOUT ROWID"
+      }
+    ]
+  },
+  "archive_payload": {
+    "bytes": 89280144,
+    "offset": 11875,
+    "sha256": "e28a7df674feac76dfd9650533e9f811224ac74c523ebdfb0993de68175dd9b4"
+  },
+  "environment": {
+    "executable": "D:\\Python\\Python312\\python.exe",
+    "platform": "win32",
+    "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+    "sqlite_version": "3.45.3",
+    "unicode_version": "15.0.0"
+  },
+  "fingerprints": {
+    "modules": {
+      "__init__.py": {
+        "bytes": 498,
+        "sha256": "f5d7957c9aa07ce95d5eb9bde70e9eb913cf040ce5b6632bff716ed82a039f77"
+      },
+      "_packed.py": {
+        "bytes": 11675,
+        "sha256": "4abefea71301eff3e4c5596e0b35e5cdffffaee9a8feffba31b4415628d3c496"
+      },
+      "_resources.py": {
+        "bytes": 3294,
+        "sha256": "ab4fc48b73d0516d63cf17b7a4c6a053cad6ba8dd361d59e5a0ef0153050a486"
+      },
+      "annotation.py": {
+        "bytes": 14266,
+        "sha256": "76355b9a0d71882f8407640740865529744e8eb9c6400081a0f764188bd4cbfc"
+      },
+      "query.py": {
+        "bytes": 15574,
+        "sha256": "df4fc1c12c769b17918c056cb19570a79536991590926601b57dbb682e0c86b4"
+      },
+      "ranking.py": {
+        "bytes": 3849,
+        "sha256": "8a5d60c77a5c03d66097f1aa143573b88f5219ed43e1b2b006e901f163dddfac"
+      },
+      "types.py": {
+        "bytes": 2097,
+        "sha256": "624331756853b630c139a05f3d33d35706fa768a4a2a2aa6ff380af3bd792f0a"
+      }
+    },
+    "resources": {
+      "frequency.sqlite": {
+        "bytes": 1929216,
+        "path": "D:\\Python\\Python312\\Lib\\site-packages\\lingose\\frequency.sqlite",
+        "sha256": "d8da3788e62ec7c2df27a9f7b148ef018e83c8ea5b189b72819a2a8c911ca269"
+      },
+      "lexicon.lpk": {
+        "bytes": 89292019,
+        "path": "D:\\Python\\Python312\\Lib\\site-packages\\lingose\\lexicon.lpk",
+        "sha256": "cf0b3dd5aa7c5f89a88143c0503f089f82ccebd57aec1fc65e1cb3c5b65a3d96"
+      },
+      "lexicon.sqlite": {
+        "bytes": 1023238144,
+        "path": "C:\\Users\\Threadman\\AppData\\Local\\lingose\\cache\\0e18bb818031f60d2d068f45dd4389ae0eafe2968758cb0d5813846b28498833\\lexicon.sqlite",
+        "sha256": "ada92a2b51de23f9f82e403f3593e3b783311f8aaa34071d926f3546f84b52fe"
+      }
+    }
+  },
+  "format_version": 1,
+  "frequency": {
+    "checks": {
+      "foreign_key_violations": [],
+      "integrity_check": [
+        "ok"
+      ],
+      "query_only": 1
+    },
+    "metadata": {
+      "data_version": "b6b9e367024c584afd814a8eac80a1f7abfa4b0cdbaa9ff20e810a28c34d0f09",
+      "max_rank": 5062,
+      "row_count": 5061,
+      "schema_version": 1,
+      "sheet": "The List - Frequency List",
+      "singleton": 1,
+      "source_filename": "frequency_List.xlsx",
+      "source_sha256": "8fada71c75023eb068661e57c1803ae54f949d91f2d61061c22e767f659bc0ce"
+    },
+    "rank_range": [
+      1,
+      5062
+    ],
+    "record_rank_gaps": [
+      30
+    ],
+    "schema": [
+      {
+        "name": "frequency_issue",
+        "sql": "CREATE TABLE frequency_issue (\n    row_number INTEGER NOT NULL REFERENCES frequency_record(row_number),\n    code TEXT NOT NULL,\n    token TEXT NOT NULL,\n    PRIMARY KEY (row_number, code, token)\n)",
+        "tbl_name": "frequency_issue",
+        "type": "table"
+      },
+      {
+        "name": "frequency_metadata",
+        "sql": "CREATE TABLE frequency_metadata (\n    singleton INTEGER PRIMARY KEY CHECK (singleton = 1),\n    schema_version INTEGER NOT NULL CHECK (schema_version = 1),\n    max_rank INTEGER NOT NULL CHECK (max_rank = 5062),\n    source_sha256 TEXT NOT NULL,\n    source_filename TEXT NOT NULL,\n    sheet TEXT NOT NULL,\n    row_count INTEGER NOT NULL,\n    data_version TEXT NOT NULL\n)",
+        "tbl_name": "frequency_metadata",
+        "type": "table"
+      },
+      {
+        "name": "frequency_origin",
+        "sql": "CREATE TABLE frequency_origin (\n    word TEXT NOT NULL REFERENCES frequency_word(word),\n    row_number INTEGER NOT NULL REFERENCES frequency_record(row_number),\n    column_name TEXT NOT NULL CHECK (column_name IN ('LEMMA', 'INFLECTIONS')),\n    token_index INTEGER NOT NULL,\n    raw_word TEXT NOT NULL,\n    PRIMARY KEY (row_number, column_name, token_index)\n)",
+        "tbl_name": "frequency_origin",
+        "type": "table"
+      },
+      {
+        "name": "frequency_record",
+        "sql": "CREATE TABLE frequency_record (\n    row_number INTEGER PRIMARY KEY,\n    rank INTEGER NOT NULL CHECK (rank BETWEEN 1 AND 5062),\n    lemma TEXT NOT NULL,\n    inflections TEXT,\n    row_sha256 TEXT NOT NULL\n)",
+        "tbl_name": "frequency_record",
+        "type": "table"
+      },
+      {
+        "name": "frequency_word",
+        "sql": "CREATE TABLE frequency_word (\n    word TEXT PRIMARY KEY COLLATE BINARY,\n    rank INTEGER NOT NULL CHECK (rank BETWEEN 1 AND 5062)\n)",
+        "tbl_name": "frequency_word",
+        "type": "table"
+      }
+    ],
+    "schema_version": 1,
+    "table_counts": {
+      "frequency_issue": 1,
+      "frequency_metadata": 1,
+      "frequency_origin": 16709,
+      "frequency_record": 5061,
+      "frequency_word": 10620
+    }
+  },
+  "installed": {
+    "lowercase_aliases_available": {
+      "ipa": false,
+      "ips": false,
+      "ipsm": false,
+      "ism": false
+    },
+    "package": "D:\\Python\\Python312\\Lib\\site-packages\\lingose",
+    "public_names": [
+      "__version__",
+      "IPA",
+      "IPS",
+      "IPSM",
+      "ISM",
+      "root_lemma",
+      "rank",
+      "meaning",
+      "kind",
+      "kind_list",
+      "lookup",
+      "labels",
+      "LexiconDataError",
+      "SchemaVersionError",
+      "annotate_ips"
+    ],
+    "version": "0.2.0"
+  },
+  "lexicon": {
+    "binary_ordered_words_sha256": "5310a0fbeb403ec9c0dcaa319e88a41bdc6b195e5a0298a987203b5ca990c2f6",
+    "build_info": {
+      "built_at": "2026-10-11T06:00:19.858056+00:00",
+      "data_version": "17a1d0a15cbeec8e323b4a1750eccd88e372a65339e11bee3a7cf55c4f4b0dbd",
+      "manifest_json": "{\"config\":{\"config_version\":1,\"sources\":[{\"columns\":[\"word\",\"IPA\",\"IPS\"],\"csv_excel_types\":true,\"domain\":\"pronunciation\",\"encoding\":\"utf-8-sig\",\"format\":\"csv\",\"id\":\"ips_main\",\"migration_csv_sha256\":\"205d72af5921b751c8c52cdf5525a937a2d7777b326ba76f2cedb8eea987487d\",\"migration_xlsx_sha256\":\"277bff6edbd7a2c655e03de8b6e24dffe47ee2ad67dd7cbbaae204ee25dfb696\",\"path\":\"IPS/lingose_notation_words.csv\",\"sheet\":\"Sheet1\"},{\"columns\":[\"word\",\"IPA\",\"IPS\"],\"csv_excel_types\":true,\"domain\":\"pronunciation\",\"encoding\":\"utf-8-sig\",\"format\":\"csv\",\"id\":\"ips_more\",\"path\":\"IPS/more_notation_words.csv\"},{\"columns\":[\"word\",\"ISM\",\"rank\",\"root lemma\"],\"domain\":\"morphology\",\"encoding\":\"utf-8-sig\",\"format\":\"csv\",\"id\":\"ism\",\"path\":\"ISM/all_ISM_list.csv\"},{\"columns\":[\"word\",\"meaning_en\",\"meaning_zh\"],\"csv_excel_types\":true,\"domain\":\"meaning\",\"encoding\":\"utf-8-sig\",\"format\":\"csv\",\"id\":\"meaning\",\"path\":\"meaning/40k_words_meaning.csv\"},{\"attribute_columns\":[\"COLLINS\",\"Band\"],\"boolean_columns\":[\"OXFORD_3000\",\"OXFORD_5000\",\"CET4\",\"CET6\",\"CET4_CET6\",\"IELTS\",\"TEM-4\",\"TEM-8\",\"TOEFL\",\"SAT\",\"GMAT\",\"GRE\",\"BEC\",\"Primary\",\"Junior\",\"Senior\",\"College\",\"COCA_20000\",\"White\",\"Yellow\",\"Green\",\"Blue\",\"Red\",\"Black\"],\"columns\":[\"word\",\"COLLINS\",\"Band\",\"OXFORD_3000\",\"OXFORD_5000\",\"CET4\",\"CET6\",\"CET4_CET6\",\"IELTS\",\"TEM-4\",\"TEM-8\",\"TOEFL\",\"SAT\",\"GMAT\",\"GRE\",\"BEC\",\"Primary\",\"Junior\",\"Senior\",\"College\",\"COCA_20000\",\"White\",\"Yellow\",\"Green\",\"Blue\",\"Red\",\"Black\"],\"csv_excel_types\":true,\"domain\":\"classification\",\"encoding\":\"utf-8-sig\",\"format\":\"csv\",\"id\":\"kind\",\"migration_csv_sha256\":\"2505214ced531e0f5c23193af4ac3536d53f78e56590d5c8883b295ea4710be4\",\"migration_xlsx_sha256\":\"6608ba51a004afe9ec7208cd2d7d196626cfc97c115701677069e0e64beccd95\",\"path\":\"kind/all_words_list.csv\",\"sheet\":\"单词总表\"}]},\"ledger_sha256\":\"80220fb16e209859a085be8becacc678baa08b958a2080ffaebc924331c718d1\",\"rules_version\":\"3\",\"schema_sha256\":\"5c33251f648ea2f9c95d14ec93dc1edf6df0a24df3998ad3288ce3a5c31375ce\",\"sources\":[{\"domain\":\"pronunciation\",\"format\":\"csv\",\"relative_path\":\"IPS/lingose_notation_words.csv\",\"sha256\":\"ef1ccc9a79b1e753f1ac9a77e8e61e71b8ace46688519bd391afdcec710cde69\",\"snapshot_id\":\"c2a36bdb-e6f0-5eac-96b6-de88fdcc4c91\",\"source_key\":\"ips_main\"},{\"domain\":\"pronunciation\",\"format\":\"csv\",\"relative_path\":\"IPS/more_notation_words.csv\",\"sha256\":\"54e4b8a0f86c222f565628da8ba8dd5dca0bf281c3ca87d5b00add09729e7c86\",\"snapshot_id\":\"2fe6a1e0-fb6e-5523-88c5-a20843563cf3\",\"source_key\":\"ips_more\"},{\"domain\":\"morphology\",\"format\":\"csv\",\"relative_path\":\"ISM/all_ISM_list.csv\",\"sha256\":\"f0e82a87e2a5b14bec01869bb87c9c5fa993b24e837fb672ff5b02540bf5e8ef\",\"snapshot_id\":\"1117d4bb-d6d5-5536-b44c-21c685c20371\",\"source_key\":\"ism\"},{\"domain\":\"classification\",\"format\":\"csv\",\"relative_path\":\"kind/all_words_list.csv\",\"sha256\":\"2505214ced531e0f5c23193af4ac3536d53f78e56590d5c8883b295ea4710be4\",\"snapshot_id\":\"a5d06aab-655b-56ba-afcf-a9e1406d9f38\",\"source_key\":\"kind\"},{\"domain\":\"meaning\",\"format\":\"csv\",\"relative_path\":\"meaning/40k_words_meaning.csv\",\"sha256\":\"facd8c6f9b0a6594c42347eb9eafb838ed1489b127ae8c7f5b85ece2c14ea534\",\"snapshot_id\":\"be055437-7ddd-5c14-8311-135ca4aee0da\",\"source_key\":\"meaning\"}]}",
+      "rules_version": "3",
+      "schema_version": 2,
+      "singleton": 1
+    },
+    "checks": {
+      "foreign_key_violations": [],
+      "integrity_check": [
+        "ok"
+      ],
+      "query_only": 1
+    },
+    "field_definitions": [
+      {
+        "domain": "pronunciation",
+        "field_key": "ipa",
+        "label": null,
+        "ordinal": 0,
+        "scope": "pronunciation",
+        "value_type": "text"
+      },
+      {
+        "domain": "pronunciation",
+        "field_key": "ips",
+        "label": null,
+        "ordinal": 1,
+        "scope": "pronunciation",
+        "value_type": "text"
+      },
+      {
+        "domain": "pronunciation",
+        "field_key": "ipsm",
+        "label": null,
+        "ordinal": 2,
+        "scope": "pronunciation",
+        "value_type": "text"
+      },
+      {
+        "domain": "morphology",
+        "field_key": "ism",
+        "label": null,
+        "ordinal": 3,
+        "scope": "entry",
+        "value_type": "text"
+      },
+      {
+        "domain": "morphology",
+        "field_key": "root_lemma",
+        "label": null,
+        "ordinal": 4,
+        "scope": "entry",
+        "value_type": "text"
+      },
+      {
+        "domain": "morphology",
+        "field_key": "rank",
+        "label": null,
+        "ordinal": 5,
+        "scope": "entry",
+        "value_type": "text"
+      },
+      {
+        "domain": "meaning",
+        "field_key": "meaning_en",
+        "label": null,
+        "ordinal": 6,
+        "scope": "entry",
+        "value_type": "text"
+      },
+      {
+        "domain": "meaning",
+        "field_key": "meaning_zh",
+        "label": null,
+        "ordinal": 7,
+        "scope": "entry",
+        "value_type": "text"
+      },
+      {
+        "domain": "pos",
+        "field_key": "pos_en",
+        "label": null,
+        "ordinal": 8,
+        "scope": "entry",
+        "value_type": "text_list"
+      },
+      {
+        "domain": "pos",
+        "field_key": "pos_zh",
+        "label": null,
+        "ordinal": 9,
+        "scope": "entry",
+        "value_type": "text_list"
+      },
+      {
+        "domain": "attribute",
+        "field_key": "COLLINS",
+        "label": null,
+        "ordinal": 10,
+        "scope": "entry",
+        "value_type": "integer_or_text"
+      },
+      {
+        "domain": "attribute",
+        "field_key": "Band",
+        "label": null,
+        "ordinal": 11,
+        "scope": "entry",
+        "value_type": "text"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:OXFORD_3000",
+        "label": "OXFORD_3000",
+        "ordinal": 12,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:OXFORD_5000",
+        "label": "OXFORD_5000",
+        "ordinal": 13,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:CET4",
+        "label": "CET4",
+        "ordinal": 14,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:CET6",
+        "label": "CET6",
+        "ordinal": 15,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:CET4_CET6",
+        "label": "CET4_CET6",
+        "ordinal": 16,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:IELTS",
+        "label": "IELTS",
+        "ordinal": 17,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:TEM-4",
+        "label": "TEM-4",
+        "ordinal": 18,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:TEM-8",
+        "label": "TEM-8",
+        "ordinal": 19,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:TOEFL",
+        "label": "TOEFL",
+        "ordinal": 20,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:SAT",
+        "label": "SAT",
+        "ordinal": 21,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:GMAT",
+        "label": "GMAT",
+        "ordinal": 22,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:GRE",
+        "label": "GRE",
+        "ordinal": 23,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:BEC",
+        "label": "BEC",
+        "ordinal": 24,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:Primary",
+        "label": "Primary",
+        "ordinal": 25,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:Junior",
+        "label": "Junior",
+        "ordinal": 26,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:Senior",
+        "label": "Senior",
+        "ordinal": 27,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:College",
+        "label": "College",
+        "ordinal": 28,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:COCA_20000",
+        "label": "COCA_20000",
+        "ordinal": 29,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:White",
+        "label": "White",
+        "ordinal": 30,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:Yellow",
+        "label": "Yellow",
+        "ordinal": 31,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:Green",
+        "label": "Green",
+        "ordinal": 32,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:Blue",
+        "label": "Blue",
+        "ordinal": 33,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:Red",
+        "label": "Red",
+        "ordinal": 34,
+        "scope": "entry",
+        "value_type": "boolean"
+      },
+      {
+        "domain": "category",
+        "field_key": "kind:Black",
+        "label": "Black",
+        "ordinal": 35,
+        "scope": "entry",
+        "value_type": "boolean"
+      }
+    ],
+    "field_states": [
+      [
+        "Band",
+        "available",
+        45561
+      ],
+      [
+        "Band",
+        "missing",
+        4774
+      ],
+      [
+        "COLLINS",
+        "available",
+        45561
+      ],
+      [
+        "COLLINS",
+        "missing",
+        4774
+      ],
+      [
+        "ipa",
+        "available",
+        50090
+      ],
+      [
+        "ips",
+        "available",
+        50090
+      ],
+      [
+        "ipsm",
+        "available",
+        50003
+      ],
+      [
+        "ipsm",
+        "invalid",
+        1
+      ],
+      [
+        "ipsm",
+        "missing",
+        86
+      ],
+      [
+        "ism",
+        "available",
+        50250
+      ],
+      [
+        "ism",
+        "missing",
+        85
+      ],
+      [
+        "kind:BEC",
+        "available",
+        45561
+      ],
+      [
+        "kind:BEC",
+        "missing",
+        4774
+      ],
+      [
+        "kind:Black",
+        "available",
+        45561
+      ],
+      [
+        "kind:Black",
+        "missing",
+        4774
+      ],
+      [
+        "kind:Blue",
+        "available",
+        45561
+      ],
+      [
+        "kind:Blue",
+        "missing",
+        4774
+      ],
+      [
+        "kind:CET4",
+        "available",
+        45561
+      ],
+      [
+        "kind:CET4",
+        "missing",
+        4774
+      ],
+      [
+        "kind:CET4_CET6",
+        "available",
+        45561
+      ],
+      [
+        "kind:CET4_CET6",
+        "missing",
+        4774
+      ],
+      [
+        "kind:CET6",
+        "available",
+        45561
+      ],
+      [
+        "kind:CET6",
+        "missing",
+        4774
+      ],
+      [
+        "kind:COCA_20000",
+        "available",
+        45561
+      ],
+      [
+        "kind:COCA_20000",
+        "missing",
+        4774
+      ],
+      [
+        "kind:College",
+        "available",
+        45561
+      ],
+      [
+        "kind:College",
+        "missing",
+        4774
+      ],
+      [
+        "kind:GMAT",
+        "available",
+        45561
+      ],
+      [
+        "kind:GMAT",
+        "missing",
+        4774
+      ],
+      [
+        "kind:GRE",
+        "available",
+        45561
+      ],
+      [
+        "kind:GRE",
+        "missing",
+        4774
+      ],
+      [
+        "kind:Green",
+        "available",
+        45561
+      ],
+      [
+        "kind:Green",
+        "missing",
+        4774
+      ],
+      [
+        "kind:IELTS",
+        "available",
+        45561
+      ],
+      [
+        "kind:IELTS",
+        "missing",
+        4774
+      ],
+      [
+        "kind:Junior",
+        "available",
+        45561
+      ],
+      [
+        "kind:Junior",
+        "missing",
+        4774
+      ],
+      [
+        "kind:OXFORD_3000",
+        "available",
+        45561
+      ],
+      [
+        "kind:OXFORD_3000",
+        "missing",
+        4774
+      ],
+      [
+        "kind:OXFORD_5000",
+        "available",
+        45561
+      ],
+      [
+        "kind:OXFORD_5000",
+        "missing",
+        4774
+      ],
+      [
+        "kind:Primary",
+        "available",
+        45561
+      ],
+      [
+        "kind:Primary",
+        "missing",
+        4774
+      ],
+      [
+        "kind:Red",
+        "available",
+        45561
+      ],
+      [
+        "kind:Red",
+        "missing",
+        4774
+      ],
+      [
+        "kind:SAT",
+        "available",
+        45561
+      ],
+      [
+        "kind:SAT",
+        "missing",
+        4774
+      ],
+      [
+        "kind:Senior",
+        "available",
+        45561
+      ],
+      [
+        "kind:Senior",
+        "missing",
+        4774
+      ],
+      [
+        "kind:TEM-4",
+        "available",
+        45561
+      ],
+      [
+        "kind:TEM-4",
+        "missing",
+        4774
+      ],
+      [
+        "kind:TEM-8",
+        "available",
+        45561
+      ],
+      [
+        "kind:TEM-8",
+        "missing",
+        4774
+      ],
+      [
+        "kind:TOEFL",
+        "available",
+        45561
+      ],
+      [
+        "kind:TOEFL",
+        "missing",
+        4774
+      ],
+      [
+        "kind:White",
+        "available",
+        45561
+      ],
+      [
+        "kind:White",
+        "missing",
+        4774
+      ],
+      [
+        "kind:Yellow",
+        "available",
+        45561
+      ],
+      [
+        "kind:Yellow",
+        "missing",
+        4774
+      ],
+      [
+        "meaning_en",
+        "available",
+        45719
+      ],
+      [
+        "meaning_en",
+        "missing",
+        4616
+      ],
+      [
+        "meaning_zh",
+        "available",
+        45739
+      ],
+      [
+        "meaning_zh",
+        "missing",
+        4596
+      ],
+      [
+        "pos_en",
+        "available",
+        44937
+      ],
+      [
+        "pos_en",
+        "missing",
+        5398
+      ],
+      [
+        "pos_zh",
+        "available",
+        45717
+      ],
+      [
+        "pos_zh",
+        "missing",
+        4618
+      ],
+      [
+        "rank",
+        "available",
+        50250
+      ],
+      [
+        "rank",
+        "missing",
+        85
+      ],
+      [
+        "root_lemma",
+        "available",
+        50248
+      ],
+      [
+        "root_lemma",
+        "conflict",
+        2
+      ],
+      [
+        "root_lemma",
+        "missing",
+        85
+      ]
+    ],
+    "pronunciation_states": [
+      [
+        "available",
+        50089
+      ],
+      [
+        "missing",
+        246
+      ]
+    ],
+    "schema": [
+      {
+        "name": "entry_field_unique",
+        "sql": "CREATE UNIQUE INDEX entry_field_unique ON field_value(entry_id, field_key) WHERE scope = 'entry'",
+        "tbl_name": "field_value",
+        "type": "index"
+      },
+      {
+        "name": "field_candidate_value",
+        "sql": "CREATE INDEX field_candidate_value ON field_candidate(value_id)",
+        "tbl_name": "field_candidate",
+        "type": "index"
+      },
+      {
+        "name": "field_value_entry",
+        "sql": "CREATE INDEX field_value_entry ON field_value(entry_id)",
+        "tbl_name": "field_value",
+        "type": "index"
+      },
+      {
+        "name": "field_value_pronunciation",
+        "sql": "CREATE INDEX field_value_pronunciation ON field_value(pronunciation_id, entry_id)",
+        "tbl_name": "field_value",
+        "type": "index"
+      },
+      {
+        "name": "ipsm_derivation_ips",
+        "sql": "CREATE INDEX ipsm_derivation_ips ON ipsm_derivation(ips_value_id)",
+        "tbl_name": "ipsm_derivation",
+        "type": "index"
+      },
+      {
+        "name": "ipsm_derivation_ism",
+        "sql": "CREATE INDEX ipsm_derivation_ism ON ipsm_derivation(ism_value_id)",
+        "tbl_name": "ipsm_derivation",
+        "type": "index"
+      },
+      {
+        "name": "kind_true",
+        "sql": "CREATE INDEX kind_true ON field_value(field_key, entry_id)\n    WHERE status = 'available' AND value_json = 'true'",
+        "tbl_name": "field_value",
+        "type": "index"
+      },
+      {
+        "name": "pronunciation_field_unique",
+        "sql": "CREATE UNIQUE INDEX pronunciation_field_unique ON field_value(pronunciation_id, field_key) WHERE scope = 'pronunciation'",
+        "tbl_name": "field_value",
+        "type": "index"
+      },
+      {
+        "name": "source_record_word",
+        "sql": "CREATE INDEX source_record_word ON source_record(source_word COLLATE BINARY)",
+        "tbl_name": "source_record",
+        "type": "index"
+      },
+      {
+        "name": "source_snapshot_key",
+        "sql": "CREATE INDEX source_snapshot_key ON source_snapshot(source_key)",
+        "tbl_name": "source_snapshot",
+        "type": "index"
+      },
+      {
+        "name": "build_info",
+        "sql": "CREATE TABLE build_info (\n    singleton INTEGER PRIMARY KEY CHECK (singleton = 1),\n    schema_version INTEGER NOT NULL CHECK (schema_version = 2),\n    data_version TEXT NOT NULL,\n    rules_version TEXT NOT NULL,\n    built_at TEXT NOT NULL,\n    manifest_json TEXT NOT NULL CHECK (json_valid(manifest_json))\n)",
+        "tbl_name": "build_info",
+        "type": "table"
+      },
+      {
+        "name": "candidate_origin",
+        "sql": "CREATE TABLE candidate_origin (\n    candidate_id TEXT NOT NULL REFERENCES field_candidate(candidate_id),\n    record_id TEXT NOT NULL REFERENCES source_record(record_id),\n    column_name TEXT NOT NULL,\n    PRIMARY KEY (candidate_id, record_id, column_name)\n)",
+        "tbl_name": "candidate_origin",
+        "type": "table"
+      },
+      {
+        "name": "entry",
+        "sql": "CREATE TABLE entry (\n    entry_id TEXT PRIMARY KEY NOT NULL,\n    word TEXT NOT NULL COLLATE BINARY UNIQUE CHECK (length(word) > 0)\n)",
+        "tbl_name": "entry",
+        "type": "table"
+      },
+      {
+        "name": "entry_input",
+        "sql": "CREATE TABLE entry_input (\n    entry_id TEXT PRIMARY KEY NOT NULL REFERENCES entry(entry_id),\n    manifest_id TEXT NOT NULL REFERENCES input_manifest(manifest_id)\n)",
+        "tbl_name": "entry_input",
+        "type": "table"
+      },
+      {
+        "name": "field_candidate",
+        "sql": "CREATE TABLE field_candidate (\n    candidate_id TEXT PRIMARY KEY NOT NULL,\n    value_id TEXT NOT NULL REFERENCES field_value(value_id),\n    value_json TEXT NOT NULL CHECK (json_valid(value_json)),\n    reason TEXT NOT NULL,\n    review_state TEXT NOT NULL CHECK (review_state IN ('pending', 'accepted', 'rejected')),\n    review_event_id TEXT REFERENCES review_event(event_id),\n    CHECK (review_state = 'pending' OR review_event_id IS NOT NULL)\n)",
+        "tbl_name": "field_candidate",
+        "type": "table"
+      },
+      {
+        "name": "field_definition",
+        "sql": "CREATE TABLE field_definition (\n    field_key TEXT PRIMARY KEY NOT NULL,\n    scope TEXT NOT NULL CHECK (scope IN ('entry', 'pronunciation')),\n    domain TEXT NOT NULL CHECK (domain IN ('pronunciation', 'morphology', 'meaning', 'pos', 'category', 'attribute')),\n    value_type TEXT NOT NULL CHECK (value_type IN ('text', 'boolean', 'integer_or_text', 'text_list')),\n    label TEXT UNIQUE,\n    ordinal INTEGER NOT NULL CHECK (ordinal >= 0),\n    CHECK ((domain = 'category' AND label IS NOT NULL AND scope = 'entry' AND value_type = 'boolean')\n        OR (domain <> 'category' AND label IS NULL)),\n    UNIQUE (field_key, scope, value_type)\n)",
+        "tbl_name": "field_definition",
+        "type": "table"
+      },
+      {
+        "name": "field_value",
+        "sql": "CREATE TABLE field_value (\n    value_id TEXT PRIMARY KEY NOT NULL,\n    entry_id TEXT NOT NULL REFERENCES entry(entry_id),\n    pronunciation_id TEXT,\n    field_key TEXT NOT NULL,\n    scope TEXT NOT NULL,\n    value_type TEXT NOT NULL,\n    status TEXT NOT NULL CHECK (status IN ('available', 'missing', 'conflict', 'pending_review', 'invalid')),\n    value_json TEXT,\n    basis TEXT CHECK (basis IN ('source', 'human', 'derived')),\n    matched_word TEXT COLLATE BINARY,\n    match_type TEXT CHECK (match_type IN ('exact', 'lowercase')),\n    reason TEXT,\n    review_event_id TEXT REFERENCES review_event(event_id),\n    FOREIGN KEY (field_key, scope, value_type) REFERENCES field_definition(field_key, scope, value_type),\n    FOREIGN KEY (pronunciation_id, entry_id) REFERENCES pronunciation(pronunciation_id, entry_id),\n    CHECK ((scope = 'entry' AND pronunciation_id IS NULL)\n        OR (scope = 'pronunciation' AND pronunciation_id IS NOT NULL)),\n    CHECK ((matched_word IS NULL AND match_type IS NULL)\n        OR (matched_word IS NOT NULL AND match_type IS NOT NULL)),\n    CHECK ((status = 'available' AND value_json IS NOT NULL AND basis IS NOT NULL)\n        OR (status <> 'available' AND value_json IS NULL AND basis IS NULL)),\n    CHECK (basis IS NULL OR basis <> 'human' OR review_event_id IS NOT NULL),\n    CHECK (value_json IS NULL OR CASE WHEN json_valid(value_json) THEN\n        CASE value_type\n            WHEN 'text' THEN json_type(value_json) = 'text'\n            WHEN 'boolean' THEN json_type(value_json) IN ('true', 'false')\n            WHEN 'integer_or_text' THEN json_type(value_json) IN ('integer', 'text')\n            WHEN 'text_list' THEN json_type(value_json) = 'array'\n            ELSE 0\n        END ELSE 0 END)\n)",
+        "tbl_name": "field_value",
+        "type": "table"
+      },
+      {
+        "name": "input_manifest",
+        "sql": "CREATE TABLE input_manifest (\n    manifest_id TEXT PRIMARY KEY NOT NULL,\n    manifest_json TEXT NOT NULL CHECK (json_valid(manifest_json))\n)",
+        "tbl_name": "input_manifest",
+        "type": "table"
+      },
+      {
+        "name": "ipsm_derivation",
+        "sql": "CREATE TABLE ipsm_derivation (\n    result_value_id TEXT PRIMARY KEY NOT NULL REFERENCES field_value(value_id),\n    ips_value_id TEXT NOT NULL REFERENCES field_value(value_id),\n    ism_value_id TEXT NOT NULL REFERENCES field_value(value_id),\n    ips_sha256 TEXT NOT NULL CHECK (length(ips_sha256) = 64 AND ips_sha256 NOT GLOB '*[^0-9a-f]*'),\n    ism_sha256 TEXT NOT NULL CHECK (length(ism_sha256) = 64 AND ism_sha256 NOT GLOB '*[^0-9a-f]*'),\n    algorithm_version TEXT NOT NULL,\n    alignment_json TEXT NOT NULL CHECK (json_valid(alignment_json))\n)",
+        "tbl_name": "ipsm_derivation",
+        "type": "table"
+      },
+      {
+        "name": "pronunciation",
+        "sql": "CREATE TABLE pronunciation (\n    pronunciation_id TEXT PRIMARY KEY NOT NULL,\n    entry_id TEXT NOT NULL REFERENCES entry(entry_id),\n    ordinal INTEGER NOT NULL CHECK (ordinal >= 0),\n    review_state TEXT NOT NULL CHECK (review_state IN ('unreviewed', 'confirmed', 'rejected')),\n    review_event_id TEXT REFERENCES review_event(event_id),\n    CHECK ((review_state = 'unreviewed' AND review_event_id IS NULL)\n        OR (review_state <> 'unreviewed' AND review_event_id IS NOT NULL)),\n    UNIQUE (entry_id, ordinal),\n    UNIQUE (pronunciation_id, entry_id)\n)",
+        "tbl_name": "pronunciation",
+        "type": "table"
+      },
+      {
+        "name": "pronunciation_set",
+        "sql": "CREATE TABLE pronunciation_set (\n    entry_id TEXT PRIMARY KEY NOT NULL REFERENCES entry(entry_id),\n    status TEXT NOT NULL CHECK (status IN ('available', 'missing', 'conflict', 'pending_review', 'invalid')),\n    selected_id TEXT,\n    reason TEXT,\n    selection_event_id TEXT REFERENCES review_event(event_id),\n    CHECK ((status = 'available' AND selected_id IS NOT NULL)\n        OR (status <> 'available' AND selected_id IS NULL)),\n    CHECK (selection_event_id IS NULL OR selected_id IS NOT NULL),\n    FOREIGN KEY (selected_id, entry_id) REFERENCES pronunciation(pronunciation_id, entry_id)\n)",
+        "tbl_name": "pronunciation_set",
+        "type": "table"
+      },
+      {
+        "name": "review_event",
+        "sql": "CREATE TABLE review_event (\n    event_id TEXT PRIMARY KEY NOT NULL,\n    decided_at TEXT NOT NULL,\n    reviewer TEXT NOT NULL,\n    decision TEXT NOT NULL CHECK (decision IN ('approve', 'reject')),\n    receipt_json TEXT NOT NULL CHECK (json_valid(receipt_json))\n)",
+        "tbl_name": "review_event",
+        "type": "table"
+      },
+      {
+        "name": "source_record",
+        "sql": "CREATE TABLE source_record (\n    record_id TEXT PRIMARY KEY NOT NULL,\n    snapshot_id TEXT NOT NULL REFERENCES source_snapshot(snapshot_id),\n    sheet TEXT NOT NULL,\n    row_number INTEGER NOT NULL CHECK (row_number >= 2),\n    source_word TEXT COLLATE BINARY,\n    row_sha256 TEXT NOT NULL CHECK (length(row_sha256) = 64 AND row_sha256 NOT GLOB '*[^0-9a-f]*'),\n    raw_json TEXT NOT NULL CHECK (json_valid(raw_json)),\n    UNIQUE (snapshot_id, sheet, row_number)\n)",
+        "tbl_name": "source_record",
+        "type": "table"
+      },
+      {
+        "name": "source_snapshot",
+        "sql": "CREATE TABLE source_snapshot (\n    snapshot_id TEXT PRIMARY KEY NOT NULL,\n    source_key TEXT NOT NULL,\n    relative_path TEXT NOT NULL,\n    format TEXT NOT NULL CHECK (format IN ('xlsx', 'csv')),\n    domain TEXT NOT NULL CHECK (domain IN ('pronunciation', 'morphology', 'meaning', 'classification')),\n    sha256 TEXT NOT NULL CHECK (length(sha256) = 64 AND sha256 NOT GLOB '*[^0-9a-f]*')\n)",
+        "tbl_name": "source_snapshot",
+        "type": "table"
+      },
+      {
+        "name": "value_origin",
+        "sql": "CREATE TABLE value_origin (\n    value_id TEXT NOT NULL REFERENCES field_value(value_id),\n    record_id TEXT NOT NULL REFERENCES source_record(record_id),\n    column_name TEXT NOT NULL,\n    PRIMARY KEY (value_id, record_id, column_name)\n) WITHOUT ROWID",
+        "tbl_name": "value_origin",
+        "type": "table"
+      }
+    ],
+    "schema_version": 2,
+    "tables": {
+      "build_info": {
+        "rows": 1,
+        "sha256": "c3f48a315db08c1b94774c3ae68a446616ca4a960c18acd095712953f7aa4fdb"
+      },
+      "candidate_origin": {
+        "rows": 4,
+        "sha256": "4d3ce46fe12042e507ecb3f381ed41df544eb6cf7752c291dcec4f267c6d9f70"
+      },
+      "entry": {
+        "rows": 50335,
+        "sha256": "ad6ea4f20523c5ec20774f09df00efa359c768bdf1487be0a4274c5e340809c9"
+      },
+      "entry_input": {
+        "rows": 50335,
+        "sha256": "d8023b61ddf2c919d25f82d4ecc50e209c9be59c5c75271c5fb6e5ba3d73314a"
+      },
+      "field_candidate": {
+        "rows": 4,
+        "sha256": "49452fd2ec4c0cb38b9a63ca1b76b7413c34105ea9939530c0bb0590c5971c7f"
+      },
+      "field_definition": {
+        "rows": 36,
+        "sha256": "533e65dc97f0c888cc08e3821b7bc747dc803cf8b693560c69519c096920325d"
+      },
+      "field_value": {
+        "rows": 1811325,
+        "sha256": "9429890932ba939374a570f2eced27b88aef2545559cfb6060c119e25cf5a8eb"
+      },
+      "input_manifest": {
+        "rows": 1,
+        "sha256": "1f1aef9082dd6a88704da3ba3cc132c921bc91b061e68bd0c201183aabfe5a19"
+      },
+      "ipsm_derivation": {
+        "rows": 50004,
+        "sha256": "9cecf1673c87fe3092d65eeb5a4d9b8e13c31f86abbaa629bbf565254c3f9a77"
+      },
+      "pronunciation": {
+        "rows": 50090,
+        "sha256": "b319242995bda7b5886de789acb6d708ed06bb5f46d992218901bcac1d0939be"
+      },
+      "pronunciation_set": {
+        "rows": 50335,
+        "sha256": "030d9e5eb9d6a0e09c194034eb1a1b3589be18b19e7a4e64d1478222f1567320"
+      },
+      "review_event": {
+        "rows": 656,
+        "sha256": "4fac4d31fb87ea0f705604dd435148c8f2420aad4d1649ed20a2c6f108171267"
+      },
+      "source_record": {
+        "rows": 195527,
+        "sha256": "ce192395c2fede85aaadb21406269371b5c20b7f6d8f046903d295b35c50c03b"
+      },
+      "source_snapshot": {
+        "rows": 5,
+        "sha256": "a8fe0e87be3458d8ccc082d53e5e68b9757c40cb5b2496771cbbbebceb66103c"
+      },
+      "value_origin": {
+        "rows": 1618527,
+        "sha256": "d21a63080d22fd05f19c55349816225c633ccad9ead107b467abfb10289e3698"
+      }
+    },
+    "word_count": 50335
+  },
+  "references": {
+    "chrome-extension": {
+      "branch": "main",
+      "files": {
+        "README.md": {
+          "bytes": 12989,
+          "sha256": "e0222d817a43816d43bcd61ffd1abbecca4770a566722f1bb9c7717dede50db1"
+        },
+        "package.json": {
+          "bytes": 1279,
+          "sha256": "0248b60ae7aa72672a038edea5da87c3bbbd59d246331c833c96ee99da2f2038"
+        }
+      },
+      "head": "54fd0ec8d2485ab0dd14cc518e3ac78bad7a6daf",
+      "path": "E:\\git\\claude\\words\\chrome-extension",
+      "status": []
+    },
+    "lingose-python": {
+      "branch": "main",
+      "files": {
+        "LICENSE": {
+          "bytes": 17023,
+          "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+        },
+        "README.md": {
+          "bytes": 3347,
+          "sha256": "7d831ce4dcd08ef06485a86cb2dfe676c307baa1ff8e1016b5d4c2c56725dfce"
+        },
+        "SOURCES.md": {
+          "bytes": 1457,
+          "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+        },
+        "docs/api.md": {
+          "bytes": 18474,
+          "sha256": "b3f07e1163d16fef645f9b1345c5a2e26052ea3805e71cf43438eba160ac561e"
+        },
+        "pyproject.toml": {
+          "bytes": 915,
+          "sha256": "4e1d0a3ed8944e8f4be069730fe0a54577238ce8f96a50797d40cc695697f0e5"
+        },
+        "src/lingose/__init__.py": {
+          "bytes": 581,
+          "sha256": "e926c78c6ab3b1c1307e394fee64c8d3bdc622d5663d4431af88cfce2b520f0a"
+        },
+        "src/lingose/_packed.py": {
+          "bytes": 11675,
+          "sha256": "4abefea71301eff3e4c5596e0b35e5cdffffaee9a8feffba31b4415628d3c496"
+        },
+        "src/lingose/_resources.py": {
+          "bytes": 3294,
+          "sha256": "ab4fc48b73d0516d63cf17b7a4c6a053cad6ba8dd361d59e5a0ef0153050a486"
+        },
+        "src/lingose/annotation.py": {
+          "bytes": 14266,
+          "sha256": "76355b9a0d71882f8407640740865529744e8eb9c6400081a0f764188bd4cbfc"
+        },
+        "src/lingose/frequency.sqlite": {
+          "bytes": 1929216,
+          "sha256": "d8da3788e62ec7c2df27a9f7b148ef018e83c8ea5b189b72819a2a8c911ca269"
+        },
+        "src/lingose/lexicon.lpk": {
+          "bytes": 89292019,
+          "sha256": "cf0b3dd5aa7c5f89a88143c0503f089f82ccebd57aec1fc65e1cb3c5b65a3d96"
+        },
+        "src/lingose/query.py": {
+          "bytes": 15574,
+          "sha256": "df4fc1c12c769b17918c056cb19570a79536991590926601b57dbb682e0c86b4"
+        },
+        "src/lingose/ranking.py": {
+          "bytes": 3849,
+          "sha256": "8a5d60c77a5c03d66097f1aa143573b88f5219ed43e1b2b006e901f163dddfac"
+        },
+        "src/lingose/types.py": {
+          "bytes": 2097,
+          "sha256": "624331756853b630c139a05f3d33d35706fa768a4a2a2aa6ff380af3bd792f0a"
+        }
+      },
+      "head": "b36baf6d55fa259ecc38acea9e881ae6d1477d33",
+      "path": "E:\\git\\claude\\words\\lingose-python",
+      "status": [],
+      "version": "0.2.1"
+    },
+    "lingose-typescript": {
+      "branch": "main",
+      "files": {
+        "README.md": {
+          "bytes": 6605,
+          "sha256": "686a213abf92576993f7b956fbd4f19c094749b7f6ca9e2e32e8e5fa81d1e539"
+        },
+        "package.json": {
+          "bytes": 1061,
+          "sha256": "b5c8ce407ed94defe3e2ce706f5b530b4f871eb59c65d5f4d0e932cc064a7a50"
+        },
+        "tools/audit_reference.py": {
+          "bytes": 5120,
+          "sha256": "f34dd0be43621fe06ea297a7d510e0433642655ccca2ce1d14b8f5d4bbad554a"
+        },
+        "tools/reference.py": {
+          "bytes": 2571,
+          "sha256": "f50e48e0d21064c542662a0947f423701d1039eb185294cbdf8141885b2bc298"
+        }
+      },
+      "head": "27e6cce8cf968f1ce1bf246670c2c4a428d464dc",
+      "path": "E:\\git\\claude\\words\\lingose-typescript",
+      "status": [
+        " M tasks/handoff.md",
+        " M tasks/todo.md",
+        "?? docs/release-operation.md"
+      ]
+    }
+  },
+  "verification": {
+    "packed_tables_match_cache": true,
+    "source_files_unchanged": true
+  }
+}
