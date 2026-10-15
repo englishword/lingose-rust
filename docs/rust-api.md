@@ -18,6 +18,8 @@
   保留 `Cargo.lock` 用于本项目验证。P1.2 根据完整数据的实测选择加载依赖，
   Unicode 等依赖随具体实现引入；引入时核对 MSRV、许可、体积和离线行为。
   不预先绑定 Python、Node、SQLite、压缩库、网络客户端或异步执行器。
+- P1.2 已比较完整数据布局并固定[静态镜像/共享索引方案](data-layout.md)与
+  [性能预算](performance-budget.md)。这些决定尚未接入公共 API；主 crate 仍为 std-only 骨架。
 - 正式 crate 的构建和运行不得读取开发机路径、相邻 checkout 或 Python 缓存。
   Python 工具及固定向量仅作开发对照，不在当前 Cargo `include` 分发清单中。
 - `publish = false` 标识尚未就绪的工程。P5.3 在完整实现和相应检查通过后移除此保护，

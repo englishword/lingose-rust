@@ -1,0 +1,36 @@
+{
+  "budget_version": 1,
+  "status": "fixed_for_future_P2_P4_P5_acceptance_not_yet_satisfied_by_public_APIs",
+  "selected_layout": "static-hash",
+  "conditions": {
+    "reference_cpu": "13th Gen Intel Core i7-1360P",
+    "reference_target": "x86_64-pc-windows-msvc",
+    "profile": "release",
+    "repeats": 7,
+    "statistics": "median and nearest-rank p95 of seven independent samples; p95 equals maximum",
+    "data": "pinned Python 0.2.0 full effective projection",
+    "correctness_prerequisite": "full P4.1 differential tests pass"
+  },
+  "limits": {
+    "packaged_crate_bytes": 5000000,
+    "raw_runtime_resources_bytes": 12000000,
+    "lexicon_initialization_including_index_ms": {"median": 75, "p95": 125},
+    "frequency_initialization_ms": {"median": 5, "p95": 10},
+    "cold_process_first_public_query_ms": {"median": 200, "p95": 300},
+    "hot_query_batch_ns_per_operation": {"median": 2000, "p95": 3000},
+    "labels_complete_owned_us": {"median": 5, "p95": 10},
+    "all_24_kind_lists_complete_owned_ms": {"median": 30, "p95": 45},
+    "annotate_ips_10000_words_ms_each_skip_0_1000_5062": {"median": 100, "p95": 150},
+    "annotate_ips_100000_words_ms_each_skip_0_1000_5062": {"median": 1000, "p95": 1500},
+    "loaded_process_working_set_bytes": 33554432,
+    "loaded_process_private_commit_bytes": 8388608,
+    "loaded_process_peak_private_commit_bytes": 12582912,
+    "annotation_100000_peak_working_set_bytes": 100663296,
+    "annotation_100000_peak_private_commit_bytes": 67108864
+  },
+  "corpora": {
+    "10000": {"bytes": 92862, "sha256": "8efef7b9731cd7f46059a10ef96368e8a2730e41f1e673bd325b24b2c66b2777"},
+    "100000": {"bytes": 930474, "sha256": "37c2864e135d8503dbda18c6ed4c5fb37c79bdd85e2e782093d6eae53de9fc58"}
+  },
+  "change_policy": "Do not silently relax thresholds. Record failed samples, cause, correctness impact, and explicit rationale in a focused change. Re-establish comparable conditions when hardware or toolchain changes."
+}
