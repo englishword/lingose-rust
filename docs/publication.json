@@ -1,0 +1,227 @@
+{
+  "authorization": "User explicitly requested commit then continue P6.2; P6.1 committed before upload",
+  "candidate": {
+    "bytes": 4048633,
+    "documented_registry_limit": "10MB",
+    "files": 41,
+    "fixed_budget_bytes": 5000000,
+    "local_links": 13,
+    "normalized_manifest_and_notices_audited": true,
+    "path": ".local/p61-5db9824/lingose-0.1.0.crate",
+    "registry_rule_url": "https://doc.rust-lang.org/cargo/reference/publishing.html",
+    "sha256": "fb1a40407222053fa2acf6b92be99e59648d8e2a7ceac3c7f20182bbb393c6a8",
+    "source_snapshot": ".local/p61-5db9824/source",
+    "source_strategy": "Byte-checked snapshot without .git; no fabricated VCS metadata. Source input hashes bind the archive to the working tree.",
+    "vcs_metadata_absent": true
+  },
+  "guard_script": {
+    "bytes": 7020,
+    "path": ".local/p62-1313330/publish_once.py",
+    "sha256": "cef88f17247a0f7d19b224a365c19af97baaec934c3d51455a9b5871c8efa43a"
+  },
+  "historical_evidence": "P4/P5 and P6.1 records remain unchanged; the old candidate is historical only",
+  "independent_review": {
+    "checked_at_utc": "2026-10-16T13:18:16.535328+00:00",
+    "passed": true,
+    "reviewer_mutated_files_or_uploaded": false,
+    "reviewer_read_credentials": false,
+    "scope": [
+      "original upload receipt/log/remote-response hashes",
+      "candidate/upload/version/index/download identical",
+      "live anonymous version/owners/index return 200; publisher and owner Prefee; yanked false",
+      "downloaded manual README/SOURCES byte-identical; registry README sections and links",
+      "production inputs and P6.1 evidence unchanged; P6.3 unstarted; no duplicate publication"
+    ]
+  },
+  "next_action": "P6.3: fresh standalone Cargo consumer with lingose = =0.1.0 from crates.io, independently prepare dependencies, verify registry checksum/source, build and run all public APIs, then repeat offline and verify documentation links.",
+  "official_references": [
+    "https://doc.rust-lang.org/cargo/reference/publishing.html",
+    "https://doc.rust-lang.org/cargo/commands/cargo-publish.html"
+  ],
+  "phase": "P6.2",
+  "preflight_commit": "1313330bfe852dd50d207f73c8f52083a6dfc5ec",
+  "preflight_record": {
+    "bytes": 24671,
+    "path": "docs/publication-preflight.json",
+    "sha256": "f3273631263d60c55fdc0d22e82f42ec49b59271edd53654004abcd1ce6bed47"
+  },
+  "registry": {
+    "checksum": "fb1a40407222053fa2acf6b92be99e59648d8e2a7ceac3c7f20182bbb393c6a8",
+    "crate_size": 4048633,
+    "created_at": "2026-10-16T13:14:35.292061Z",
+    "download_matches_candidate": true,
+    "homepage": "https://lingose.com/",
+    "index_available": true,
+    "license": "CC-BY-4.0",
+    "manual_readme_sources_exact": true,
+    "name": "lingose",
+    "owners": [
+      "Prefee"
+    ],
+    "published_by": "Prefee",
+    "registry_readme_html_and_links_verified": true,
+    "repository": "https://github.com/englishword",
+    "version": "0.1.0",
+    "yanked": false
+  },
+  "remote_observations": {
+    "crate": {
+      "bytes": 2951,
+      "checked_at_utc": "2026-10-16T13:15:12.648520+00:00",
+      "content_type": "application/json",
+      "final_url": "https://crates.io/api/v1/crates/lingose",
+      "http_status": 200,
+      "path": ".local/p62-1313330/crate.body",
+      "sha256": "86e4ef941a909fa308db5d6417f2eb3a3ab293ff2014c5c242f417b0a0ce1f5e",
+      "url": "https://crates.io/api/v1/crates/lingose"
+    },
+    "download": {
+      "bytes": 4048633,
+      "checked_at_utc": "2026-10-16T13:15:14.365407+00:00",
+      "content_type": "application/gzip",
+      "final_url": "https://static.crates.io/crates/lingose/lingose-0.1.0.crate",
+      "http_status": 200,
+      "path": ".local/p62-1313330/download.crate",
+      "sha256": "fb1a40407222053fa2acf6b92be99e59648d8e2a7ceac3c7f20182bbb393c6a8",
+      "url": "https://crates.io/api/v1/crates/lingose/0.1.0/download"
+    },
+    "index": {
+      "bytes": 319,
+      "checked_at_utc": "2026-10-16T13:15:12.409240+00:00",
+      "content_type": "text/plain",
+      "final_url": "https://index.crates.io/li/ng/lingose",
+      "http_status": 200,
+      "path": ".local/p62-1313330/index.body",
+      "sha256": "9793414a74209f882984228d90fb3d0d491502d088df062d87bf74e00a39f859",
+      "url": "https://index.crates.io/li/ng/lingose"
+    },
+    "owners": {
+      "bytes": 209,
+      "checked_at_utc": "2026-10-16T13:15:12.415241+00:00",
+      "content_type": "application/json",
+      "final_url": "https://crates.io/api/v1/crates/lingose/owners",
+      "http_status": 200,
+      "path": ".local/p62-1313330/owners.body",
+      "sha256": "6fdaeb116e4a5bcde556a9c4520a86935490cbf1f97e18227e0046c656b7edcd",
+      "url": "https://crates.io/api/v1/crates/lingose/owners"
+    },
+    "readme": {
+      "bytes": 13105,
+      "checked_at_utc": "2026-10-16T13:15:12.474729+00:00",
+      "content_type": "text/html",
+      "final_url": "https://static.crates.io/readmes/lingose/lingose-0.1.0.html",
+      "http_status": 200,
+      "path": ".local/p62-1313330/readme.body",
+      "sha256": "c1644bf8f21fd2ec934e8459e667dcb6759e1e506ab3d2f541b8c1900af26c1c",
+      "url": "https://crates.io/api/v1/crates/lingose/0.1.0/readme"
+    },
+    "version": {
+      "bytes": 1593,
+      "checked_at_utc": "2026-10-16T13:15:12.345344+00:00",
+      "content_type": "application/json",
+      "final_url": "https://crates.io/api/v1/crates/lingose/0.1.0",
+      "http_status": 200,
+      "path": ".local/p62-1313330/version.body",
+      "sha256": "6b3dfc11f182596d0c3e235e0d626a8204337ba2cf0faee6acb04a9b33b8d74b",
+      "url": "https://crates.io/api/v1/crates/lingose/0.1.0"
+    }
+  },
+  "schema_version": 1,
+  "scope": {
+    "P6_3_started": false,
+    "browser_rendered_page_checked": false,
+    "full_differential_or_performance_repeated": false,
+    "index_acceptance": true,
+    "other_platforms_validated": false,
+    "public_download_identity": true,
+    "real_upload": true,
+    "registry_consumer_installation": false,
+    "registry_readme_html": true
+  },
+  "secrets": {
+    "credential_used": "Existing local default Cargo credential store",
+    "token_in_arguments": false,
+    "token_in_logs": false,
+    "token_override_used": false,
+    "token_stored_in_workspace_or_receipts": false
+  },
+  "source_document_commit": "5db98249ef75be4bd2ae38a832b3a99999c9bf99",
+  "status": "published_and_index_verified",
+  "upload": {
+    "actual_archive": {
+      "bytes": 4048633,
+      "path": ".local/p61-5db9824/package-target/package/tmp-crate/lingose-0.1.0.crate",
+      "sha256": "fb1a40407222053fa2acf6b92be99e59648d8e2a7ceac3c7f20182bbb393c6a8"
+    },
+    "actual_archive_matches_candidate": true,
+    "authorization": "User explicitly requested commit then continue P6.2",
+    "candidate": {
+      "bytes": 4048633,
+      "path": ".local/p61-5db9824/lingose-0.1.0.crate",
+      "sha256": "fb1a40407222053fa2acf6b92be99e59648d8e2a7ceac3c7f20182bbb393c6a8"
+    },
+    "command": [
+      "cargo",
+      "publish",
+      "--locked",
+      "--all-features",
+      "--registry",
+      "crates-io",
+      "--manifest-path",
+      "E:\\git\\claude\\words\\lingose-rust\\.local\\p61-5db9824\\source\\Cargo.toml"
+    ],
+    "command_finished_at_utc": "2026-10-16T13:14:35.704329+00:00",
+    "command_started_at_utc": "2026-10-16T13:14:21.965228+00:00",
+    "commit": "1313330bfe852dd50d207f73c8f52083a6dfc5ec",
+    "confirmed_account": "Prefee",
+    "credential_redactions": 0,
+    "credential_source": "Default Cargo credential store; no token override or copied secret",
+    "exit_code": 0,
+    "phase": "P6.2",
+    "pre_upload_observations": [
+      {
+        "checked_at_utc": "2026-10-16T13:14:21.676560+00:00",
+        "http_status": 404,
+        "response_sha256": "22372a2a72e0a1e892b408f0b90eab5c9fa866ea2efa71b47c875b0c5aa510e7",
+        "url": "https://crates.io/api/v1/crates/lingose"
+      },
+      {
+        "checked_at_utc": "2026-10-16T13:14:21.964722+00:00",
+        "http_status": 404,
+        "response_sha256": "d95a44ba0c5e6162bfa0375ee7181d87c52db59c266a63a24cbe8f33748b3200",
+        "url": "https://index.crates.io/li/ng/lingose"
+      }
+    ],
+    "snapshot": ".local/p61-5db9824/source",
+    "source_inputs_unchanged": true,
+    "started_at_utc": "2026-10-16T13:14:20.956385+00:00",
+    "status": "cargo_upload_succeeded_pending_remote_verification",
+    "stderr": {
+      "bytes": 1106,
+      "path": ".local/p62-1313330/cargo-publish.stderr.log",
+      "sha256": "4aa9c122ec3c3c274818cceb211a010b96ec7d1cdbcbcfe0b1ae3537a3c798c6"
+    },
+    "stdout": {
+      "bytes": 0,
+      "path": ".local/p62-1313330/cargo-publish.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "upload_started": true
+  },
+  "upload_receipt": {
+    "bytes": 2229,
+    "path": ".local/p62-1313330/attempt.json",
+    "sha256": "a694c82f0c45d8fac3b9001c2e3e8a242b9e6a4bab1e02547027e5113dcc15cf"
+  },
+  "verified_at_utc": "2026-10-16T13:15:52.300495+00:00",
+  "verified_checks": [
+    "pre-upload API and sparse index absent",
+    "all distribution inputs unchanged vs preflight and snapshot before and after upload",
+    "Cargo upload and index availability returned success",
+    "actual Cargo archive, candidate, version checksum, sparse-index checksum and public download all identical",
+    "version is not yanked; publisher and owner are Prefee",
+    "registry homepage/repository/license/name/version/size/rust-version match candidate",
+    "downloaded README.md and SOURCES.md match user manual edits byte-for-byte",
+    "registry README HTML includes all checked sections, homepage and GitHub links"
+  ]
+}

@@ -2,59 +2,59 @@
 
 ## 当前任务与状态
 
-- **P6.1 已完成；下一阶段 P6.2 上传 lingose 0.1.0，本轮未开始**。
-- 用户已手改 README.md/SOURCES.md 并提交 `5db9824`；本轮从该提交恢复，开始时
-  工作区干净。手改稿保持原样，未恢复删文。沿用此前不 commit 要求，本轮未提交。
-- 用户确认“已确认许可，勾选即可”：此前 Frequency List/外部分类词表的许可处置项
-  按用户确认完成，未声称新增独立审计文件；历史来源记录不变。
-- 用户确认“本机具备发布 lingose ，账号名Prefee”：账号 `Prefee` 和首次发布
-  `lingose` 的权限按用户确认通过。默认 Cargo 凭据已配置，令牌未复制或输出。
-- 只读 API 返回网站专用接口/范围限制；结合官方源码可推断令牌被服务识别，但无法
-  独立读出账号/发布范围。当前无可用浏览器；账号和权限依据是用户确认，而非 403/dry-run。
-- crates.io API 与 sparse index 于 2026-10-16 返回 404，未发现 lingose/0.1.0。
-  这不是名称预留，上传前必须重查。
-- **真实上传、crates.io 独立安装均未执行**，P6.2/P6.3 未勾选。
+- **P6.2 已完成；下一任务 P6.3，从 crates.io 独立安装验收（未开始）**。
+- 用户已明确要求“commit 之后继续P6.2”，覆盖此前不 commit 的限制。
+  P6.1 记录先提交为 `1313330`；本阶段完成后按项目流程提交 P6.2 记录。
+- **lingose 0.1.0 已真实发布并进入索引；不要再次上传同一版本。**
+- [版本页](https://crates.io/crates/lingose/0.1.0)；发布时间
+  2026-10-16 13:14:35 UTC（北京时间 21:14:35）。注册表发布者及所有者为 `Prefee`，
+  版本未撤回；官网/GitHub/许可/名称/版本与候选一致。
+- 用户手改 README/SOURCES 提交 `5db9824` 保持原样；生产代码/数据/依赖未改。
+  许可处置和发布账号/首次发布权限已由用户确认，P6.1 历史记录保留。
 
-## 当前候选与证据
+## 发布身份与恢复文件
 
-- [todo.md](todo.md)：P6 既定顺序。
-- [发布条件核对](../docs/publication-preflight.md)与
-  [完整脱敏收据](../docs/publication-preflight.json)：条件、逐输入身份、日志索引与边界。
-- 新候选：`.local/p61-5db9824/lingose-0.1.0.crate`。
-  - **4,048,633 字节，41 文件，13 个有效本地文档链接**。
-  - SHA-256 `fb1a40407222053fa2acf6b92be99e59648d8e2a7ceac3c7f20182bbb393c6a8`。
-  - 相对旧候选仅 README/SOURCES 分发输入不同；源码、资源、派生表、依赖不变。
-- 源码快照：`.local/p61-5db9824/source`；无 `.git` 和 `.cargo_vcs_info.json`。
-  以用户提交和完整输入摘要绑定来源；不能将 checkout 直接重打的包当作同一归档。
-- 正常用户 dry-run 日志：`.local/p61-5db9824/logs/publish-dry-run.log`。
-  实际产物 `.local/p61-5db9824/package-target/package/tmp-crate/lingose-0.1.0.crate`
-  与候选身份相同；Cargo 明确因 dry-run 中止上传。
-- 包内 5 文档测试日志：`.local/p61-5db9824/logs/package-doc-tests.log`。
-- `.local/p53-package-9ofxsdk1/report.json`：新候选初始打包及两套独立消费者成功，
-  最后沙箱 dry-run 遇 Schannel 凭据错误；原失败保留，正常用户重试另记成功。
-- 旧候选 `.local/p53-readable/lingose-0.1.0.crate`（SHA `db227b4d...`）和原 P5.3
-  收据保留为历史，**含旧版文档，不能作为本次手改版发布**。
-- docs/packaging.md、docs/package-verification.json、旧 P4/P5 JSON 均未重写。
+- [todo.md](todo.md)：P6.3 任务。
+- [发布说明](../docs/publication.md)、[完整收据](../docs/publication.json)：
+  真实上传、注册表 API、README HTML、索引、匿名下载及原始日志身份。
+- [P6.1 核对](../docs/publication-preflight.md)与 JSON：前置验证和完整分发输入。
+- 正式发布包：**4,048,633 字节，41 文件，13 个有效本地文档链接**。
+- SHA-256：`fb1a40407222053fa2acf6b92be99e59648d8e2a7ceac3c7f20182bbb393c6a8`。
+  P6.1 候选、实际上传归档、版本 API、sparse index、匿名重新下载的包全部匹配。
+- 本地已发布候选：`.local/p61-5db9824/lingose-0.1.0.crate`；
+  源码快照 `.local/p61-5db9824/source`，无 .git，提交/逐文件摘要绑定来源。
+- 真实 Cargo 上传归档：
+  `.local/p61-5db9824/package-target/package/tmp-crate/lingose-0.1.0.crate`。
+- 远端重新下载：`.local/p62-1313330/download.crate`。
+- 上传收据/日志：`.local/p62-1313330/attempt.json`、`cargo-publish.*.log`。
+  Cargo 退出码 0，明确 Uploaded/Published，等待索引完成；仅一次上传。
+- 远端证据：同目录 `remote-observations.json`、`remote-summary.json` 及各 `*.body`。
+  本地 `publish_once.py` 拒绝重复执行；若恢复任务不得绕过该重复上传保护。
+- 旧 `.local/p53-readable` 候选含旧文档，仅保留历史，不是本次发布包。
+- docs/packaging.md、docs/package-verification.json、P4/P5/P6.1 JSON 均为保留历史。
 
-## 本轮验证与边界
+## 已验证与尚未验证
 
-- 新候选真实 package --list/package、逐输入/清单/摘要、必要资源/许可、本地链接及
-  主机路径检查通过；低于固定 5,000,000 字节预算和当日官方 10MB 归档限制。
-- 真实归档在独立临时工程解包，空 Cargo home 配 vendored 依赖，1.93.1/1.85.0
-  各自 offline locked release 构建及 18 公共入口内容断言通过；运行时仅有二进制，
-  源码路径局限隔离目录，无 registry cache，两套输出相同。
-- 当前包内 5 文档测试、正常用户联网 dry-run 通过，全部分发输入验证后仍不变。
-  文档日志的 PowerShell NativeCommandError 包装来自 stderr，Cargo 退出码实际为 0。
-- 独立只读复核确认归档、日志及来源身份一致，原始项目/Unicode 许可与上游声明完整。
-- 未重跑全量差分/性能；平台仍仅 Windows x86_64 MSVC。P4.2 新路径首启超预算
-  的历史事实保留。未改源数据、相邻仓库、安装库或原始历史记录。
-- 官网/GitHub 链接保持用户版本，不编造具体仓库地址；令牌不进入聊天、仓库或日志。
+- P6.2 上传前再次检查远端不存在、凭据已配置、候选与全部当前分发输入一致；
+  使用正常用户环境运行 cargo publish --locked --all-features --registry crates-io。
+- 发布后版本 API/索引/所有者/README HTML/真实下载通过；手改 README/SOURCES 与
+  下载包内文件逐字节一致，全部输入前后不变，令牌不进入命令参数、日志或仓库。
+- P6.1 两套 Rust 1.93.1/1.85.0 独立离线消费者的 18 入口、5 文档测试及 dry-run
+  已通过，但消费者当时使用本地解包 path 依赖，**不计为 P6.3 注册表安装验收**。
+- 本阶段未新测其他平台、全量差分/性能，也未声称浏览器页面渲染验证。
+  P4.2 新路径首启超预算事实和 Windows x86_64 MSVC 范围继续保留。
+- 用户许可确认不描述为独立授权审计；不重写来源数据库/历史收据/相邻仓库。
 
 ## 下一步精确动作
 
-1. 后续进入 P6.2 时，重查远端名称/0.1.0 是否已存在、配置凭据、候选全部输入及摘要。
-   不重复询问已确认的许可、账号与发布权限。执行阶段授权以届时用户指令/既有授权为准。
-2. 使用本轮 `.local/p61-5db9824/source/Cargo.toml` 准备发布；保留相同分发输入和
-   归档身份。输入有变时建立新候选，不把含 VCS 信息的新包冒充本次候选。
-3. P6.2 若上传中断，先查远端状态；成功后记录实际上传和索引可用证据。
-4. P6.3 从 crates.io 正式版本建立独立工程，依赖获取后离线重跑公共 API 并核对文档链接。
+1. 核对 Git 与本交接，恢复 **P6.3**。先读取 docs/publication.json，并查远端版本仍为
+   上述 SHA；已有真实发布，不执行 cargo publish。
+2. 在本项目之外的新临时目录建立独立消费者，依赖为 crates.io 的
+   `lingose = "=0.1.0"`，不能使用 path/patch 指向 checkout 或候选解包。
+   使用独立 Cargo home/target；依赖准备后，核对 metadata 中 lingose registry 来源、
+   Cargo.lock 的 checksum 与正式 SHA，避免借用本地词库或相邻项目。
+3. 复用 tools/package_consumer.rs 的 18 入口内容断言（先核对其身份）进行基本调用；
+   依赖准备完毕后离线 locked release 构建，并从只有二进制的目录运行。
+   平台/工具链覆盖按本阶段实际执行结果记录，不能扩大支持声明。
+4. 核对官网/GitHub 和正式版本文档可访问性；docs.rs 可能尚在异步构建，先查实际状态。
+5. 验证后勾选 P6.3，新增独立验收证据，更新最终交接并聚焦提交。
