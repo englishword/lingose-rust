@@ -1,0 +1,13 @@
+[package]
+name = "lingose-performance-probe"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+lingose = { path = "../.." }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true

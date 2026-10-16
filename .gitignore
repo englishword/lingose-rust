@@ -1,5 +1,6 @@
 /.local/
 /target/
 /tools/differential-probe/target/
+/tools/performance-probe/target/
 __pycache__/
 *.py[cod]

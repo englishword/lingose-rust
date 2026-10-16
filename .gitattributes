@@ -16,6 +16,11 @@
 /tools/generate_annotation_context_vectors.py text eol=lf
 /tools/generate_annotation_frequency_vectors.py text eol=lf
 /tools/check_full_differential.py text eol=lf
+/tools/check_performance.py text eol=lf
+/tests/test_performance.py text eol=lf
+/tools/performance-probe/Cargo.toml text eol=lf
+/tools/performance-probe/Cargo.lock text eol=lf
+/tools/performance-probe/src/*.rs text eol=lf
 /tools/generate_error_vectors.py text eol=lf
 /tools/differential-probe/Cargo.toml text eol=lf
 /tools/differential-probe/Cargo.lock text eol=lf
@@ -30,6 +35,7 @@
 /docs/annotation-frequency-verification.json text eol=lf
 /docs/full-differential-verification.json text eol=lf
 /docs/correctness-regression-verification.json text eol=lf
+/docs/performance-verification.json text eol=lf
 /third_party/unicode/LICENSE.txt -text
 /data/*.bin binary
 /data/*.json -text
