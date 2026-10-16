@@ -195,6 +195,9 @@ mod category_tests;
 #[path = "annotation_tests.rs"]
 mod annotation_tests;
 
+#[path = "annotation_context_vectors.rs"]
+mod annotation_context_vectors;
+
 #[test]
 fn simple_query_exact_entries_block_lowercase_even_with_unavailable_fields() {
     let lexicon = query_fixture(&[

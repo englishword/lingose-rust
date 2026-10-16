@@ -1,0 +1,361 @@
+{
+  "annotation_context_coverage": {
+    "context_separator_inputs": 3112,
+    "morph_candidate_inputs": 3034,
+    "morph_candidate_tuples": 5109,
+    "public_assertions": 134,
+    "public_curated": 51,
+    "public_p0": 16,
+    "python_whitespace_scalars": 29,
+    "stem_predicate_inputs": 1018,
+    "wire_assertions": 47,
+    "wire_p0": 13,
+    "wire_specs": 20
+  },
+  "annotation_coverage": {
+    "accepted_scalar_bases": 298,
+    "base_inputs": 497,
+    "case_inputs": 1024,
+    "public_assertions": 30,
+    "public_curated": 10,
+    "public_p0": 5,
+    "scanner_inputs": 83
+  },
+  "annotation_generators": {
+    "generate_annotation_context_vectors.py": {
+      "bytes": 23073,
+      "sha256": "17dd3c7e0d224cb095812ac5814a99f51b937acc836ad52766ce2a62ef5ae514"
+    },
+    "generate_annotation_unicode.py": {
+      "bytes": 6425,
+      "sha256": "934a137b4ece5c07811a03f7ee66ad10f52261da8e7ee9e3d80ae93fb381be9f"
+    },
+    "generate_annotation_vectors.py": {
+      "bytes": 15464,
+      "sha256": "90a47ddbd00d921857d980cfa23497bdd47463a1451ae4b97cabbc101da7de49"
+    }
+  },
+  "annotation_unicode": {
+    "compiler_unicode": "Never consulted; no Unicode runtime dependency or MSRV change",
+    "counts": {
+      "accepted_base_scalars": 243,
+      "accepted_mark_scalars": 9,
+      "property_ranges": 1106,
+      "scalars": 1112064
+    },
+    "digest_format": "Ascending scalar: u32 LE codepoint, u8 flags (isalnum=1, isalpha=2, category M=4), u8 accepted NFD ASCII base or zero, u8 accepted NFD-mark predicate; when base nonzero, lower then upper as u32 LE UTF-8 length and UTF-8 bytes",
+    "format_version": 1,
+    "generator": {
+      "bytes": 6425,
+      "path": "tools/generate_annotation_unicode.py",
+      "sha256": "934a137b4ece5c07811a03f7ee66ad10f52261da8e7ee9e3d80ae93fb381be9f"
+    },
+    "license": "third_party/unicode/LICENSE.txt",
+    "nfd_scope": "Freeze Python 3.12/UCD 15 scanner properties and IPS-domain NFD/casing.\n\nNo general-purpose normalizer is shipped: a cluster is accepted only if its\nfirst scalar decomposes to ASCII plus permitted marks and every subsequent\nscalar decomposes solely to permitted marks. Reordering cannot change this\npredicate. Original clusters, not their decompositions, are cased and emitted.\n",
+    "provenance": {
+      "baseline": {
+        "bytes": 54162,
+        "path": "docs/reference-baseline.json",
+        "sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
+      },
+      "installed_annotation": {
+        "bytes": 14266,
+        "path": "D:\\Python\\Python312\\Lib\\site-packages\\lingose\\annotation.py",
+        "sha256": "76355b9a0d71882f8407640740865529744e8eb9c6400081a0f764188bd4cbfc"
+      },
+      "installed_query": {
+        "bytes": 15574,
+        "path": "D:\\Python\\Python312\\Lib\\site-packages\\lingose\\query.py",
+        "sha256": "df4fc1c12c769b17918c056cb19570a79536991590926601b57dbb682e0c86b4"
+      },
+      "python": {
+        "executable": "D:\\Python\\Python312\\python.exe",
+        "implementation": "cpython",
+        "unicode_version": "15.0.0",
+        "version": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]"
+      },
+      "unicode_license": {
+        "bytes": 1995,
+        "copied_to": "third_party/unicode/LICENSE.txt",
+        "name": "Unicode License V3",
+        "reference_checkout": {
+          "head": "27e6cce8cf968f1ce1bf246670c2c4a428d464dc",
+          "path": "../lingose-typescript",
+          "status": [
+            " M tasks/handoff.md",
+            " M tasks/todo.md",
+            "?? docs/release-operation.md"
+          ]
+        },
+        "reference_path": "../lingose-typescript/tools/unicode/LICENSE.txt",
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+        "source_manifest": {
+          "bytes": 619,
+          "path": "../lingose-typescript/tools/unicode/sources.json",
+          "sha256": "3f2e6724d3a56a7b6440475eee8ebb4334fc399d04dfee8067f29bf320db9571"
+        },
+        "url": "https://www.unicode.org/license.txt"
+      }
+    },
+    "scalar_sha256": "a9163d15442bfb25bcdda2f63ad2af30a0bcfe9ca1026c9add06a4093b8f5e78",
+    "tables": {
+      "bytes": 40416,
+      "path": "src/annotation_unicode_tables.rs",
+      "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+    },
+    "unicode_version": "15.0.0"
+  },
+  "build_arguments": [
+    "cargo",
+    "test",
+    "--offline",
+    "--locked",
+    "--release",
+    "--all-features",
+    "--lib",
+    "--tests",
+    "--no-run",
+    "--message-format=json"
+  ],
+  "cargo": "cargo 1.93.1 (083ac5135 2025-12-15)",
+  "category_coverage": {
+    "complete_list_checks": 25,
+    "default_label": "CET4",
+    "distinct_ordered_members": 209759,
+    "exact_membership_checks": 1208040,
+    "labels": 24
+  },
+  "copy_directory": "E:\\git\\claude\\words\\lingose-rust\\.local\\queries-p3_2-j0g__rp6",
+  "inputs": {
+    "Cargo.lock": {
+      "bytes": 2390,
+      "sha256": "3ba42486751b118af6f60b3d2d58466ba36040d581de2f32c2ca893239a88df2"
+    },
+    "Cargo.toml": {
+      "bytes": 723,
+      "sha256": "715f23c990f9aafc768b0eeffaf8f6aa89990319e2953df77279350dfe9720b1"
+    },
+    "LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "README.md": {
+      "bytes": 7609,
+      "sha256": "b3cf1fa17383db3a4a655f818948902119c993756c42ede897bb3d4a5fc9bb37"
+    },
+    "SOURCES.md": {
+      "bytes": 3968,
+      "sha256": "942e0d7360cecabf22dce420a592b9a376bf9db913f591d5b830a11cbf927d21"
+    },
+    "data/frequency.bin": {
+      "bytes": 200272,
+      "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+    },
+    "data/lexicon.bin": {
+      "bytes": 10259743,
+      "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+    },
+    "src/annotation.rs": {
+      "bytes": 15801,
+      "sha256": "4777e5f045814459812badd3289e414ef662251b3f5af97a61d13c953ac7fbf0"
+    },
+    "src/annotation_context_vectors.rs": {
+      "bytes": 321810,
+      "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+    },
+    "src/annotation_unicode.rs": {
+      "bytes": 3734,
+      "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+    },
+    "src/annotation_unicode_tables.rs": {
+      "bytes": 40416,
+      "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+    },
+    "src/annotation_vectors.rs": {
+      "bytes": 65657,
+      "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+    },
+    "src/category.rs": {
+      "bytes": 1653,
+      "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+    },
+    "src/data/annotation_context_vectors.rs": {
+      "bytes": 37586,
+      "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+    },
+    "src/data/annotation_tests.rs": {
+      "bytes": 3391,
+      "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+    },
+    "src/data/cache_tests.rs": {
+      "bytes": 19027,
+      "sha256": "e8eea1a96694dc914135d755708300ad2780fe91b39dd542220f290167382a22"
+    },
+    "src/data/category_tests.rs": {
+      "bytes": 4243,
+      "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+    },
+    "src/data/image.rs": {
+      "bytes": 14997,
+      "sha256": "577f631304ec0158155d7c4e3b7793da9cbb492a35a9901297e6acb8f71f48f3"
+    },
+    "src/data/mod.rs": {
+      "bytes": 5509,
+      "sha256": "6f8474afc369e5fe44d7736f0b2bfc6660ba8cc9954de69c05d7a260be0421c5"
+    },
+    "src/data/tests.rs": {
+      "bytes": 23747,
+      "sha256": "561249c9fca3daaa6ac86e3ce1f70a8b413316d6c04f601074329373111369be"
+    },
+    "src/data_meta.rs": {
+      "bytes": 1531,
+      "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+    },
+    "src/error.rs": {
+      "bytes": 2637,
+      "sha256": "f2aa193be2a6f91ae48f1e67b39797d8f2903981abddccee2b2d17459457f44e"
+    },
+    "src/lib.rs": {
+      "bytes": 5263,
+      "sha256": "98483f021fbd5afca92bddeb6c49f7b25e685355eaf418cefabf41cb44a0c65e"
+    },
+    "src/query.rs": {
+      "bytes": 1207,
+      "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+    },
+    "src/query_case.rs": {
+      "bytes": 5074,
+      "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+    },
+    "src/query_case_tables.rs": {
+      "bytes": 52751,
+      "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+    },
+    "src/validation.rs": {
+      "bytes": 1624,
+      "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+    },
+    "tests/annotation_context_vectors.rs": {
+      "bytes": 19512,
+      "sha256": "e5978ca90cbeb487516b23b00f5cb2c2440059ca6137f4f464ab7aa9be588624"
+    },
+    "tests/annotation_vectors.rs": {
+      "bytes": 3919,
+      "sha256": "cdf1eed04d635b55e12ddb82ac7bf1c273299acd11dfb81b1632ac1c78f5a9e4"
+    },
+    "tests/api_contract.rs": {
+      "bytes": 11094,
+      "sha256": "723e528c8d5f2ca84a70c4b900b99a09bcff2a0b787bd92039a73482249bae06"
+    },
+    "tests/category_vectors.rs": {
+      "bytes": 23168,
+      "sha256": "2a9847a84ea05858410e0be8be3020771b0e2027a13426b077fa61fc9b5e1072"
+    },
+    "tests/query_vectors.rs": {
+      "bytes": 11219,
+      "sha256": "440c7634cddb9494a37b0c0e89e1723ac53d9e2e92be125ca32057cbc187cbce"
+    },
+    "third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    }
+  },
+  "installed_reference_unchanged": true,
+  "outputs": {
+    "annotation_context_vectors": "running 1 test\ntest pinned_python_complete_zero_threshold_annotation_outputs_match ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s",
+    "annotation_vectors": "running 1 test\ntest pinned_python_direct_annotation_outputs_match_public_default_and_zero_threshold ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s",
+    "api_contract": "running 11 tests\ntest annotation_checks_threshold_before_text_nul ... ok\ntest errors_support_standard_thread_safe_error_handling ... ok\ntest every_word_entry_point_rejects_invalid_content ... ok\ntest simple_queries_return_empty_unknowns_and_independent_owned_values ... ok\ntest word_validation_precedes_language_and_label_processing ... ok\ntest word_boundaries_match_python_whitespace_without_normalizing_text ... ok\ntest concurrent_public_queries_return_identical_results ... ok\ntest public_signatures_own_results_and_preserve_remaining_phase_boundaries ... ok\ntest default_functions_and_case_aliases_share_their_entry_points ... ok\ntest annotations_are_owned_and_concurrent_and_have_a_separate_case_policy ... ok\ntest category_results_are_owned_and_safe_for_concurrent_callers ... ok\n\ntest result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s",
+    "category_vectors": "running 5 tests\ntest canonical_list_serializer_matches_independent_python_json_fixtures ... ok\ntest p0_snapshot_invalid_list_labels_match_python ... ok\ntest p0_snapshot_labels_match_python_configuration_order ... ok\ntest p0_snapshot_membership_values_and_errors_match_python ... ok\ntest p0_snapshot_complete_ordered_lists_match_python ... ok\n\ntest result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s",
+    "lingose": "running 65 tests\ntest data::cache_tests::cold_process_loader_probe ... ignored, loader-only release measurement in fresh processes via tools/check_loader.py\ntest annotation::context_vectors::pinned_python_context_separator_includes_all_29_whitespace_characters ... ok\ntest annotation::vectors::pinned_python_scanner_uses_utf8_byte_ranges ... ok\ntest annotation::vectors::pinned_python_case_alignment_preserves_clusters_and_input_punctuation ... ok\ntest annotation::context_vectors::pinned_python_stem_predicates_match_spelling_rules ... ok\ntest annotation::vectors::pinned_python_cluster_bases_cover_all_accepted_scalars_and_invalid_marks ... ok\ntest data::cache_tests::shared_types_are_send_and_sync ... ok\ntest data::cache_tests::nonzero_annotation_reports_frequency_before_lexicon_and_caches_each_failure ... ok\ntest data::tests::annotation_context_vectors::pinned_python_apostrophe_first_prefix_blocked ... ok\ntest data::tests::annotation_context_vectors::pinned_python_apostrophe_first_prefix_fallback ... ok\ntest data::cache_tests::concurrent_initialization_failure_is_cached_and_cloned_as_an_error ... ok\ntest data::tests::annotation_context_vectors::pinned_python_apostrophe_first_prefix_malformed ... ok\ntest data::tests::annotation_context_vectors::pinned_python_apostrophe_prefers_nt_prefix_and_cuts_unicode_scalars ... ok\ntest data::tests::annotation_context_vectors::pinned_python_inflection_buses_absent_first ... ok\ntest data::tests::annotation_context_vectors::pinned_python_inflection_buses_absent_second ... ok\ntest data::tests::annotation_context_vectors::pinned_python_inflection_buses_blocked_first ... ok\ntest data::tests::annotation_context_vectors::pinned_python_inflection_buses_blocked_second ... ok\ntest annotation::context_vectors::pinned_python_morph_candidates_match_all_sorted_candidates ... ok\ntest data::tests::annotation_context_vectors::pinned_python_inflection_buses_both_fallback ... ok\ntest data::tests::annotation_context_vectors::pinned_python_inflection_buses_both_malformed ... ok\ntest data::tests::annotation_context_vectors::pinned_python_inflection_buses_different_outputs ... ok\ntest data::tests::annotation_context_vectors::pinned_python_inflection_buses_fallback_first ... ok\ntest data::tests::annotation_context_vectors::pinned_python_inflection_buses_fallback_second ... ok\ntest data::tests::annotation_context_vectors::pinned_python_inflection_buses_malformed_first ... ok\ntest data::tests::annotation_context_vectors::pinned_python_inflection_buses_malformed_second ... ok\ntest data::tests::annotation_context_vectors::pinned_python_inflection_buses_same_outputs ... ok\ntest data::tests::annotation_context_vectors::pinned_python_inflection_candidate_first_existing_variant ... ok\ntest data::tests::annotation_context_vectors::pinned_python_inflection_projection_keeps_clusters_and_spelling ... ok\ntest data::tests::annotation_context_vectors::pinned_python_p0_complete_fixture ... ok\ntest data::tests::annotation_tests::direct_annotation_stops_at_first_existing_variant_and_keeps_all_other_bytes ... ok\ntest data::tests::annotation_context_vectors::pinned_python_saved_states_precede_context_and_fallback ... ok\ntest data::tests::category_tests::category_queries_preserve_registry_order_empty_classes_and_exact_membership ... ok\ntest data::tests::category_tests::category_queries_support_all_32_bits_and_a_zero_label_registry ... ok\ntest data::tests::fixture_frequency_keeps_raw_number_gaps_phrases_and_punctuation ... ok\ntest data::tests::every_truncation_and_huge_section_count_returns_error_without_panicking ... ok\ntest data::tests::fixture_preserves_null_empty_unicode_states_and_business_order ... ok\ntest data::tests::fixture_supports_all_32_category_bits_and_scalar_order ... ok\ntest data::tests::incompatible_versions_take_precedence_over_the_changed_hash ... ok\ntest data::tests::pinned_identity_checks_length_hash_and_each_expected_count ... ok\ntest data::tests::rejects_bad_magic_extra_bytes_and_cross_resource_sections ... ok\ntest data::tests::rejects_frequency_bad_keys_numbers_duplicates_and_order ... ok\ntest data::tests::rejects_invalid_entry_references_spelling_order_and_annotation_states ... ok\ntest data::tests::rejects_invalid_pool_boundaries_utf8_and_string_order ... ok\ntest data::tests::rejects_label_range_member_and_bitmap_disagreement ... ok\ntest data::tests::simple_query_exact_entries_block_lowercase_even_with_unavailable_fields ... ok\ntest data::tests::simple_query_preserves_independent_projection_empty_text_and_original_bytes ... ok\ntest query_case::tests::accepted_queries_cannot_trigger_contextual_final_sigma ... ok\ntest query_case::tests::fallback_predicate_is_first_uppercase_and_no_later_uppercase ... ok\ntest query_case::tests::full_lowercase_preserves_python_titlecase_expansion_and_uppercase_properties ... ok\ntest query_case::tests::post_baseline_unicode_assignments_keep_the_unicode_15_behavior ... ok\ntest data::cache_tests::frequency_search_preserves_exact_spelling_and_inclusive_original_thresholds ... ok\ntest data::tests::single_byte_mutations_never_panic_even_with_recomputed_identities ... ok\ntest data::cache_tests::incompatible_version_failure_is_cached_without_becoming_a_missing_word ... ok\ntest data::cache_tests::simple_query_validates_before_loading_and_propagates_cached_resource_errors ... ok\ntest query_case::tests::every_scalar_matches_the_pinned_python_uppercase_and_lowercase_digest ... ok\ntest data::cache_tests::real_resources_are_independent_lazy_and_reused_without_rebuilding ... ok\ntest data::cache_tests::sixteen_threads_share_one_initialization_and_identical_borrowed_outputs ... ok\ntest data::cache_tests::unused_resources_and_skip_zero_obey_the_annotation_loading_policy ... ok\ntest data::cache_tests::category_queries_validate_word_then_resource_then_label_without_frequency ... ok\ntest data::cache_tests::annotation_uses_real_scanner_before_resources_and_propagates_errors ... ok\ntest data::cache_tests::exact_index_retains_every_precise_key_and_borrows_resource_strings ... ok\ntest data::cache_tests::complete_decoded_logical_content_matches_the_independent_p2_1_identity ... ok\ntest annotation_unicode::tests::every_scalar_matches_python_scanning_nfd_predicate_and_accepted_casing ... ok\ntest data::cache_tests::category_public_membership_matches_complete_lists_for_every_exact_word ... ok\ntest data::tests::annotation_tests::repeated_apostrophe_tails_use_heap_frames_and_do_not_change_shared_queries ... ok\n\ntest result: ok. 64 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.44s",
+    "query_vectors": "running 1 test\ntest p0_snapshot_simple_queries_match_python ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s"
+  },
+  "p0_fixture": {
+    "bytes": 118971,
+    "sha256": "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1"
+  },
+  "p0_simple_query_assertions": 112,
+  "phase": "P3.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "runtime_inputs": [
+    "annotation_vectors-2f9f11bb49627850.exe",
+    "annotation_context_vectors-85c3e62012c615c2.exe",
+    "category_vectors-a96f1923f3fe09f9.exe",
+    "api_contract-1b86ea98351b0453.exe",
+    "query_vectors-87a3388ae9ce2b51.exe",
+    "lingose-dcf2e19cb253101b.exe"
+  ],
+  "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)\nbinary: rustc\ncommit-hash: 01f6ddf7588f42ae2d7eb0a2f21d44e8e96674cf\ncommit-date: 2026-02-11\nhost: x86_64-pc-windows-msvc\nrelease: 1.93.1\nLLVM version: 21.1.8",
+  "scope": "Zero-threshold IPS annotation including the context, explicit contractions, hyphen/apostrophe fallback and s/es/ed/ing candidate projection/ambiguity/blocking, against pinned Python full outputs and independent wire fixtures; includes P3.1 Unicode/scanner/casing and P2 regressions. Positive frequency filtering (P3.3) remains incomplete. Not final P4 full-query/annotation/performance acceptance, minimum-version testing, packaged-crate checks or publication.",
+  "unicode": {
+    "artifacts": {
+      "src/query_case_tables.rs": {
+        "bytes": 52751,
+        "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+      },
+      "third_party/unicode/LICENSE.txt": {
+        "bytes": 1995,
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+      }
+    },
+    "compiler_unicode": "Rust compiler Unicode properties and casing are never consulted",
+    "counts": {
+      "nonidentity_lowercase_mappings": 1433,
+      "scalars": 1112064,
+      "uppercase_ranges": 651,
+      "uppercase_scalars": 1951
+    },
+    "format_version": 1,
+    "generator": {
+      "bytes": 11187,
+      "path": "tools/generate_query_case.py",
+      "sha256": "23716d0616d641108dff27ccd128f96b6a03b4c0a484972fa50c60f5408166f3"
+    },
+    "lowercase_equivalence": "Python default lower has one language-independent contextual mapping, Final_Sigma. Capital Sigma U+03A3 is Uppercase, so accepted fallback input can contain it only at index zero. Final_Sigma requires a preceding cased character, which is impossible there. Thus per-scalar full lower mappings equal whole-string lower on this accepted input domain. Later titlecase scalars are permitted and must also be lowered.",
+    "provenance": {
+      "baseline": {
+        "bytes": 54162,
+        "path": "docs/reference-baseline.json",
+        "sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
+      },
+      "installed_query": {
+        "bytes": 15574,
+        "path": "D:\\Python\\Python312\\Lib\\site-packages\\lingose\\query.py",
+        "sha256": "df4fc1c12c769b17918c056cb19570a79536991590926601b57dbb682e0c86b4"
+      },
+      "python": {
+        "executable": "D:\\Python\\Python312\\python.exe",
+        "implementation": "cpython",
+        "unicode_version": "15.0.0",
+        "version": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]"
+      },
+      "unicode_license": {
+        "bytes": 1995,
+        "copied_to": "third_party/unicode/LICENSE.txt",
+        "name": "Unicode License V3",
+        "reference_checkout": {
+          "head": "27e6cce8cf968f1ce1bf246670c2c4a428d464dc",
+          "path": "../lingose-typescript",
+          "status": [
+            " M tasks/handoff.md",
+            " M tasks/todo.md",
+            "?? docs/release-operation.md"
+          ]
+        },
+        "reference_path": "../lingose-typescript/tools/unicode/LICENSE.txt",
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+        "source_manifest": {
+          "bytes": 619,
+          "path": "../lingose-typescript/tools/unicode/sources.json",
+          "sha256": "3f2e6724d3a56a7b6440475eee8ebb4334fc399d04dfee8067f29bf320db9571"
+        },
+        "url": "https://www.unicode.org/license.txt"
+      }
+    },
+    "reproduce": "D:\\Python\\Python312\\python.exe -I -B -X utf8 tools/generate_query_case.py --check",
+    "scalar_digest_format": "For every Unicode scalar in ascending numeric order: u32 little-endian scalar, u8 Python isupper (0/1), u32 little-endian byte length of Python scalar.lower(), then its UTF-8 bytes; surrogates excluded",
+    "scalar_sha256": "82f0038842bd8f142215338cc3b3e04ee7269dbe93dfc6446c3dd926a4068837",
+    "scope": "Simple-query fallback only; no normalization, case folding, locale tailoring, or annotation casing",
+    "selection": "Only first scalar Uppercase and no later scalar Uppercase; return a variant only when the lowered string changes",
+    "unicode_version": "15.0.0"
+  }
+}

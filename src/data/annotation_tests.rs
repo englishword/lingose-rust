@@ -5,6 +5,35 @@ use crate::annotation::annotate_from;
 use crate::data::AnnotationResources;
 
 #[test]
+fn repeated_apostrophe_tails_use_heap_frames_and_do_not_change_shared_queries() {
+    let records = [Record {
+        word: "a",
+        fields: [None, Some("ā"), None, None, None, None, None],
+        state: 2,
+    }];
+    let lexicon = lexicon_fixture(encode(&records, &[], &[]));
+    for root in ["a", "qz"] {
+        let tail = "n’t".repeat(4096);
+        let word = format!("{root}{tail}");
+        let result = annotate_from(&word, 0, |_, _| {
+            Ok(Some(AnnotationResources {
+                lexicon: &lexicon,
+                frequency: None,
+            }))
+        })
+        .unwrap();
+        let expected = if root == "a" {
+            format!("ā{tail}")
+        } else {
+            format!("[{word}]")
+        };
+        assert_eq!(result, expected);
+        assert!(lexicon.find_exact(&word).is_none());
+        assert_eq!(lexicon.image.field(0, crate::data::Field::Ips), Some("ā"));
+    }
+}
+
+#[test]
 fn direct_annotation_stops_at_first_existing_variant_and_keeps_all_other_bytes() {
     let entries = [
         ("Apple", None, 1), // Missing source still stops lowercase variant search.

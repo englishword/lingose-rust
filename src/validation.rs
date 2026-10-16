@@ -16,7 +16,7 @@ pub(crate) fn word(word: &str) -> Result<()> {
 
 // Python 3.12 / Unicode 15.0 str.isspace(), including U+001C..U+001F.
 // Keep this explicit rather than relying on the compiler's Unicode version.
-fn python_whitespace(character: char) -> bool {
+pub(crate) fn python_whitespace(character: char) -> bool {
     matches!(
         character,
         '\u{0009}'..='\u{000d}'

@@ -125,8 +125,8 @@ pub fn labels() -> Result<Vec<String>> {
 /// Annotates plain text using IPS, with `skip_top = 0`.
 ///
 /// Equivalent to [`annotate_ips_with_skip_top`] with zero threshold.
-/// Basic direct annotation is implemented; context and word-form fallback are
-/// under development. Preserves whitespace, punctuation and non-English spans.
+/// Includes `the` context, contractions, compound and word-form fallback.
+/// Preserves whitespace, punctuation and non-English spans.
 pub fn annotate_ips(text: &str) -> Result<String> {
     annotate_ips_with_skip_top(text, 0)
 }

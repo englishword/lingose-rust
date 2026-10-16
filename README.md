@@ -4,9 +4,9 @@
 [IPSM Approach](https://lingose.com/) to English pronunciation, spelling and
 meaning. The planned first release is **0.1.0**.
 
-This checkout implements offline word/category queries and **P3.1 basic text
-annotation**. Direct IPS values, spelling case and Unicode boundaries work;
-context, compound/word-form fallback and frequency filtering remain under development.
+This checkout implements offline word/category queries and **P3.2 text
+annotation**. Direct IPS values, spelling case, Unicode boundaries, `the` context,
+contractions and compound/word-form fallback work; frequency filtering remains under development.
 Positive `skip_top` returns `Error::NotImplemented` when English tokens occur.
 Registry publication is disabled in `Cargo.toml` during development.
 
@@ -20,7 +20,7 @@ Simple queries use fixed Python 3.12 / Unicode 15.0 casing tables, with
 fallback, unavailable-field and resource-error cases.
 All 24 category lists and membership queries are covered by
 [category verification](docs/categories.md).
-The basic annotation scope and its Unicode 15.0 rules are documented in
+The annotation scope and its Unicode 15.0 rules are documented in
 [annotation verification](docs/annotation.md).
 
 The completed release will bundle all required data for offline use, without
@@ -74,7 +74,7 @@ labels return an error even for unknown words; registered empty lists succeed.
 
 ```rust
 fn main() -> lingose::Result<()> {
-    let text = "Abandon apple.";
+    let text = "Abandon the book. The apple and the hour.";
     println!("{}", lingose::annotate_ips(text)?); // skip_top = 0
     Ok(())
 }
@@ -82,10 +82,17 @@ fn main() -> lingose::Result<()> {
 
 Rust expresses Python's default arguments through the default entry points and
 explicit `*_with_lang`, `*_with_label` and `*_with_skip_top` functions. `skip_top`
-is an `i64`; negative values are rejected. Basic annotation supports zero and
+is an `i64`; negative values are rejected. Annotation supports zero and
 preserves case, whitespace and punctuation. Empty text or text without a complete
 English token is returned unchanged without accessing either resource, for any
 nonnegative threshold. Positive frequency filtering is pending P3.3.
+
+`the` uses the next English token's first letter across whitespace and selected
+quotes/brackets, stopping at punctuation or blank lines. Saved whole-word IPS
+values take priority over contraction, hyphen, apostrophe and `s/es/ed/ing`
+fallback. Blocked entries stop fallback; unknown parts use `[brackets]`.
+Word-form fallback retains aligned stem marks and original suffix spelling;
+ambiguous results remain bracketed. These text rules never update word queries.
 
 ## Results and errors
 

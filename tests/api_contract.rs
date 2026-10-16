@@ -325,7 +325,8 @@ fn category_results_are_owned_and_safe_for_concurrent_callers() {
 fn annotations_are_owned_and_concurrent_and_have_a_separate_case_policy() {
     assert!(lingose::ips("APPLE").unwrap().is_empty());
     assert_eq!(lingose::annotate_ips("APPLE").unwrap(), "APPLE");
-    let input = String::from("  Abandon\tAPPLE.\r\n中文 😀 unknownwordzz");
+    let input =
+        String::from("  Abandon\tAPPLE.\r\nthe apple can’t study; second-unknownwordzz 中文 😀");
     let mut output = lingose::annotate_ips(&input).unwrap();
     let expected = output.clone();
     drop(input);
@@ -333,7 +334,10 @@ fn annotations_are_owned_and_concurrent_and_have_a_separate_case_policy() {
     let threads: Vec<_> = (0..16)
         .map(|_| {
             std::thread::spawn(|| {
-                lingose::annotate_ips("  Abandon\tAPPLE.\r\n中文 😀 unknownwordzz").unwrap()
+                lingose::annotate_ips(
+                    "  Abandon\tAPPLE.\r\nthe apple can’t study; second-unknownwordzz 中文 😀",
+                )
+                .unwrap()
             })
         })
         .collect();
