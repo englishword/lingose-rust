@@ -176,7 +176,10 @@ fn assert_data(bytes: &[u8], kind: Kind) {
 }
 
 fn query_fixture(records: &[Record<'_>]) -> super::Lexicon {
-    let fixture = encode(records, &[], &[]);
+    lexicon_fixture(encode(records, &[], &[]))
+}
+
+fn lexicon_fixture(fixture: Fixture) -> super::Lexicon {
     // Only test fixtures are leaked, to exercise the production static view.
     let bytes = Box::leak(fixture.bytes.into_boxed_slice());
     let image = parse(bytes, Kind::Lexicon).unwrap();
@@ -185,6 +188,9 @@ fn query_fixture(records: &[Record<'_>]) -> super::Lexicon {
         .collect();
     super::Lexicon { image, words }
 }
+
+#[path = "category_tests.rs"]
+mod category_tests;
 
 #[test]
 fn simple_query_exact_entries_block_lowercase_even_with_unavailable_fields() {

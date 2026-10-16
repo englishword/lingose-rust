@@ -2,8 +2,8 @@
 
 已实现 `ipa`/`IPA`、`ips`/`IPS`、`ism`/`ISM`、`ipsm`/`IPSM`、`root_lemma`、
 `meaning`/`meaning_with_lang`。公共签名和所有权继续遵循 [Rust 契约](rust-api.md)，
-业务采用规则遵循 [P0 契约](api.md)。分类、文本标注、P4 全库公共 API 差分及性能验收
-仍未完成；打包保护和发布阶段不变。
+业务采用规则遵循 [P0 契约](api.md)。P2.4 分类查询另见[分类说明](categories.md)；
+文本标注、P4 全库公共 API 差分及性能验收仍未完成；打包保护和发布阶段不变。
 
 ## 查询与资源
 

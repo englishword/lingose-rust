@@ -57,6 +57,84 @@ fn simple_query_validates_before_loading_and_propagates_cached_resource_errors()
 }
 
 #[test]
+fn category_queries_validate_word_then_resource_then_label_without_frequency() {
+    let mut incompatible = LEXICON_BYTES.to_vec();
+    incompatible[8..12].copy_from_slice(&999_u32.to_le_bytes());
+    for bytes in [&[][..], Box::leak(incompatible.into_boxed_slice())] {
+        let resources = Resources::new(bytes, &[]);
+        assert!(matches!(
+            crate::category::kind_from(" apple", "bad label", || resources.lexicon()),
+            Err(Error::InvalidArgument {
+                parameter: "word",
+                ..
+            })
+        ));
+        assert_eq!(attempts(&resources), (0, 0));
+        let expected = resources.lexicon().err().unwrap();
+        for label in ["CET4", "", "cet4", "\0", "unknown"] {
+            for word in ["unknownwordzz", "apple"] {
+                assert_eq!(
+                    crate::category::kind_from(word, label, || resources.lexicon()).unwrap_err(),
+                    expected
+                );
+            }
+            assert_eq!(
+                crate::category::list_from(label, || resources.lexicon()).unwrap_err(),
+                expected
+            );
+        }
+        assert_eq!(
+            crate::category::labels_from(|| resources.lexicon()).unwrap_err(),
+            expected
+        );
+        assert_eq!(attempts(&resources), (1, 0));
+    }
+    let resources = Resources::new(LEXICON_BYTES, &[]);
+    assert!(crate::category::kind_from("apple", "CET4", || resources.lexicon()).unwrap());
+    assert!(
+        !crate::category::list_from("CET4", || resources.lexicon())
+            .unwrap()
+            .is_empty()
+    );
+    assert!(
+        !crate::category::labels_from(|| resources.lexicon())
+            .unwrap()
+            .is_empty()
+    );
+    assert!(matches!(
+        crate::category::kind_from("unknownwordzz", "cet4", || resources.lexicon()),
+        Err(Error::InvalidArgument {
+            parameter: "label",
+            ..
+        })
+    ));
+    assert_eq!(attempts(&resources), (1, 0));
+}
+
+#[test]
+fn category_public_membership_matches_complete_lists_for_every_exact_word() {
+    let lexicon = crate::data::lexicon().unwrap();
+    let labels = crate::labels().unwrap();
+    let mut total = 0;
+    for label in labels {
+        let members = crate::kind_list_with_label(&label).unwrap();
+        let set: std::collections::HashSet<_> = members.iter().map(String::as_str).collect();
+        assert_eq!(set.len(), members.len(), "duplicate members in {label}");
+        total += members.len();
+        for index in 0..lexicon.image.counts().entries {
+            let word = lexicon.image.word(index);
+            assert_eq!(
+                crate::kind_with_label(word, &label).unwrap(),
+                set.contains(word),
+                "{word}/{label}"
+            );
+        }
+        assert!(!crate::kind_with_label("unknownwordzz", &label).unwrap());
+    }
+    assert_eq!(total, crate::data_meta::LEXICON_MEMBERS);
+}
+
+#[test]
 fn real_resources_are_independent_lazy_and_reused_without_rebuilding() {
     let resources = Resources::new(LEXICON_BYTES, FREQUENCY_BYTES);
     assert_eq!(attempts(&resources), (0, 0));

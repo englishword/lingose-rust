@@ -82,6 +82,35 @@ class ExportProjectionTests(unittest.TestCase):
         self.assertEqual(words["\ue000"][8], 0)
         self.assertIn(["tail", 5062], projection.frequency)
 
+    def test_unavailable_category_fields_block_lowercase_membership(self):
+        import lingose
+        spec = fixture_spec()
+        pairs = []
+        for status in ("false", "missing", "pending_review", "conflict", "invalid"):
+            lower = "category" + status
+            upper = lower.capitalize()
+            value = False if status == "false" else {"status": status, "reason": "fixture_category"}
+            spec["entries"][lower] = {"fields": {"kind:CET4": True}}
+            spec["entries"][upper] = {"fields": {"kind:CET4": value}}
+            pairs.append((upper, lower))
+        main, frequency = self.root / "category.sqlite", self.root / "category-frequency.sqlite"
+        build_fixture(main, frequency, self.baseline, spec)
+        before = [file_record(path) for path in (main, frequency)]
+        with closing(connect(main)) as db, closing(connect(frequency)) as freq:
+            projection = project(db, freq)
+        bit = 1 << projection.labels.index("CET4")
+        entries = {row[0]: row for row in projection.entries}
+        with fixture_paths(main, frequency):
+            for upper, lower in pairs:
+                self.assertFalse(lingose.kind(upper))
+                self.assertTrue(lingose.kind(lower))
+                self.assertEqual(entries[upper][8] & bit, 0)
+                self.assertEqual(entries[lower][8] & bit, bit)
+            position = projection.labels.index("CET4")
+            self.assertEqual([projection.entries[index][0] for index in projection.lists[position]],
+                             lingose.kind_list())
+        self.assertEqual([file_record(path) for path in (main, frequency)], before)
+
     def test_empty_available_ips_is_a_data_error(self):
         self.mutate("UPDATE field_value SET value_json='\"\"' WHERE value_id='apple:p0:ips'")
         with self.assertRaisesRegex(ReferenceError, "nonempty"):

@@ -1,7 +1,8 @@
 #![doc = include_str!("../README.md")]
 
-// Category and annotation resource access is connected in P2.4/P3.
+// Annotation resource access is connected in P3.
 // Keep this temporary allowance confined to that module.
+mod category;
 #[allow(dead_code)]
 mod data;
 mod data_meta;
@@ -81,46 +82,43 @@ pub fn meaning_with_lang(word: &str, lang: &str) -> Result<Option<String>> {
 
 /// Returns whether `word` belongs to `CET4`.
 ///
-/// Equivalent to [`kind_with_label`] with `label = "CET4"`. This skeleton
-/// validates `word`, then returns [`Error::NotImplemented`].
+/// Equivalent to [`kind_with_label`] with `label = "CET4"`.
 pub fn kind(word: &str) -> Result<bool> {
     kind_with_label(word, "CET4")
 }
 
 /// Returns whether `word` belongs to the exact, case-sensitive category.
 ///
-/// In the completed implementation resource validation will precede label
-/// validation; a valid unknown word will return `false`. This skeleton validates
-/// `word`, then returns [`Error::NotImplemented`] without validating the label.
+/// Validates `word`, loads the lexicon, then validates the exact category label
+/// before lookup. Unknown words and unavailable or false membership return
+/// `false`. Uses the same word matching rules as [`ipa`].
 pub fn kind_with_label(word: &str, label: &str) -> Result<bool> {
-    validation::word(word)?;
-    // The category registry will come from validated bundled data in P2.4.
-    let _ = label;
-    not_implemented("kind_with_label")
+    category::kind(word, label)
 }
 
 /// Returns the complete ordered `CET4` word list.
 ///
-/// Equivalent to [`kind_list_with_label`] with `label = "CET4"`. This skeleton
-/// returns [`Error::NotImplemented`].
+/// Equivalent to [`kind_list_with_label`] with `label = "CET4"`.
 pub fn kind_list() -> Result<Vec<String>> {
     kind_list_with_label("CET4")
 }
 
 /// Returns the complete word list for the exact, case-sensitive category.
 ///
-/// The completed implementation will preserve Python's root/rank/word order.
-/// This skeleton returns [`Error::NotImplemented`] without validating the label.
+/// Preserves the saved Python root/rank/word business order and original word
+/// keys. Loads the lexicon before validating the label; registered empty
+/// categories return an empty list. The result owns its strings.
 pub fn kind_list_with_label(label: &str) -> Result<Vec<String>> {
-    let _ = label;
-    not_implemented("kind_list_with_label")
+    category::list(label)
 }
 
 /// Returns the registered category labels in baseline configuration order.
 ///
-/// This skeleton returns [`Error::NotImplemented`].
+/// Returns owned strings from the validated lexicon, in configuration order.
+/// Only boolean categories are registered; attributes such as `COLLINS` and
+/// `Band` are excluded.
 pub fn labels() -> Result<Vec<String>> {
-    not_implemented("labels")
+    category::labels()
 }
 
 /// Annotates plain text using IPS, with `skip_top = 0`.

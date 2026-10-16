@@ -1,10 +1,12 @@
-"""Verify P2.3 in an isolated offline source copy and data-free runtime directory.
+"""Verify P2 queries in an isolated offline copy and data-free runtime directory.
 
-Not a packaged-crate check or a P4 full-data/performance acceptance run.
+Default: P2.3 evidence. --categories: P2.4 evidence, preserving the P2.3 report.
+Not a packaged-crate check or final P4 acceptance run.
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
 from pathlib import Path
@@ -28,17 +30,24 @@ def run(arguments, directory, environment):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--categories", action="store_true", help="Verify P2.4 and write category-verification.json")
+    args = parser.parse_args()
+    phase = "P2.4" if args.categories else "P2.3"
+    test_names = ["api_contract", "query_vectors"]
+    if args.categories:
+        test_names.append("category_vectors")
     before = require_baseline()["fingerprints"]
     local = ROOT / ".local"
     local.mkdir(exist_ok=True)
-    directory = Path(tempfile.mkdtemp(prefix="queries-p2_3-", dir=local)).resolve()
+    directory = Path(tempfile.mkdtemp(prefix=f"queries-{phase.lower().replace('.', '_')}-", dir=local)).resolve()
     require(directory.is_relative_to(local.resolve()), "Copy escaped workspace")
     checkout, runtime = directory / "checkout", directory / "runtime"
     checkout.mkdir()
     runtime.mkdir()
     names = ["Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "SOURCES.md",
-             "data/lexicon.bin", "data/frequency.bin", "third_party/unicode/LICENSE.txt",
-             "tests/api_contract.rs", "tests/query_vectors.rs"]
+             "data/lexicon.bin", "data/frequency.bin", "third_party/unicode/LICENSE.txt"]
+    names += [f"tests/{name}.rs" for name in test_names]
     names += [path.relative_to(ROOT).as_posix() for path in sorted((ROOT / "src").rglob("*.rs"))]
     identities = {}
     for name in names:
@@ -57,7 +66,7 @@ def main():
     binaries = {item["target"]["name"]: Path(item["executable"]) for item in artifacts
                 if item.get("reason") == "compiler-artifact" and item.get("executable")
                 and item.get("profile", {}).get("test")}
-    require(set(binaries) == {"lingose", "api_contract", "query_vectors"}, "Unexpected test artifacts")
+    require(set(binaries) == {"lingose", *test_names}, "Unexpected test artifacts")
     # Copy all binaries before running, so the runtime directory has no resources.
     for binary in binaries.values():
         shutil.copyfile(binary, runtime / binary.name)
@@ -73,8 +82,8 @@ def main():
                 f"Input changed: {name}")
     require(fingerprints() == before, "Installed reference changed")
     evidence = {
-        "phase": "P2.3", "platform": platform.platform(),
-        "scope": "Simple-query P0 samples, isolated unavailable/exact/fallback/error fixtures, Unicode 15.0 scalar parity, ownership/concurrency and remaining phase boundaries. Not P4 exhaustive public-query or performance acceptance, minimum-version testing, packaged-crate checks or publication.",
+        "phase": phase, "platform": platform.platform(),
+        "scope": ("All 24 complete ordered category lists against P0 Python digests, all 50,335 exact keys across 24 public membership labels, category validation/resource/empty/order/ownership/concurrency fixtures, plus P2.3 regressions. " if args.categories else "Simple-query P0 samples, isolated unavailable/exact/fallback/error fixtures, Unicode 15.0 scalar parity, ownership/concurrency and remaining phase boundaries. ") + "Not final P4 full-query/annotation/performance acceptance, minimum-version testing, packaged-crate checks or publication.",
         "rustc": run(["rustc", "-Vv"], ROOT, environment).stdout.strip(),
         "cargo": run(["cargo", "-V"], ROOT, environment).stdout.strip(),
         "build_arguments": arguments, "copy_directory": str(directory),
@@ -85,8 +94,15 @@ def main():
         "p0_simple_query_assertions": 112,
         "unicode": json.loads((ROOT / "docs/query-case.json").read_text(encoding="utf-8")),
     }
-    (ROOT / "docs/query-verification.json").write_text(json_text(evidence), encoding="utf-8", newline="\n")
-    print("P2.3 isolated offline release checks passed; reference and copied inputs unchanged")
+    if args.categories:
+        evidence["category_coverage"] = {
+            "labels": 24, "distinct_ordered_members": 209759,
+            "complete_list_checks": 25, "default_label": "CET4",
+            "exact_membership_checks": 50335 * 24,
+        }
+    report = "category-verification.json" if args.categories else "query-verification.json"
+    (ROOT / "docs" / report).write_text(json_text(evidence), encoding="utf-8", newline="\n")
+    print(f"{phase} isolated offline release checks passed; reference and copied inputs unchanged")
 
 
 if __name__ == "__main__":

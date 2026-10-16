@@ -2,8 +2,8 @@
 
 本文件固定 `lingose` **0.1.0** 的 Rust 表达方式；业务语义继续由
 [P0 行为契约](api.md)与[已安装 Python 基线](reference-baseline.md)约束。
-当前已完成 P2.3 发音、构词、词族及释义查询，使用正式离线资源与共享加载器；
-分类和文本标注尚未实现。简单查询的样例及隔离验证见[查询说明](simple-queries.md)，
+当前已完成 P2.4 全部单词和分类查询，使用正式离线资源与共享加载器；
+文本标注尚未实现。简单查询验证见[查询说明](simple-queries.md)，分类验证见[分类说明](categories.md)，
 全库公共 API 差分和最终性能验收仍属于 P4。
 
 ## 工具链和依赖
@@ -21,7 +21,7 @@
   不预先绑定 Python、Node、SQLite、压缩库、网络客户端或异步执行器。
 - P1.2 已比较完整数据布局并固定[静态镜像/共享索引方案](data-layout.md)与
   [性能预算](performance-budget.md)。P2.2 的[加载器/索引/并发与错误缓存](data-loader.md)
-  已验证；P2.3 已接入简单查询，分类和标注入口留给 P2.4/P3。
+  已验证；P2.3/P2.4 已接入单词和分类查询，标注入口留给 P3。
 - 正式 crate 的构建和运行不得读取开发机路径、相邻 checkout 或 Python 缓存。
   Python 工具及固定向量仅作开发对照，不在当前 Cargo `include` 分发清单中。
 - `publish = false` 标识尚未就绪的工程。P5.3 在完整实现和相应检查通过后移除此保护，
@@ -125,19 +125,22 @@ Rust 不直接接受任意精度 Python 整数。P4 向量适配器读取 `{"$in
 - ipa/IPA、ips/IPS、ism/ISM、ipsm/IPSM、root_lemma 和 meaning/meaning_with_lang
   已实现。资源成功加载后的未知/不可用值返回空 Vec 或 None，空字符串及原文保留；
   三种发音列表独立投影，IPSM 不重算、不补用未采用或过期候选。
-- 分类及标注仍返回 `NotImplemented`，包括空文本、非英语文本和合法未知词；
+- kind/kind_with_label、kind_list/kind_list_with_label、labels 已实现。分类标签精确匹配
+  已验证资源注册表（不硬编码）；默认 CET4。kind 在 word 验证及资源加载后验证 label，
+  然后按简单查询规则查词；未知词及 unavailable/false 为 false，精确不可用词条阻断小写回退。
+  kind_list 直接复制已冻结业务顺序的完整实际词键；labels 保留配置顺序，结果拥有所有权。
+- 标注仍返回 `NotImplemented`，包括空文本、非英语文本和合法未知词；
   没有部分标注成功路径。默认入口的错误 operation 为其转发的显式入口名。
-- 分类注册表来自未来的已验证数据，P1.1 不硬编码 24 类来提前验证标签。
-  当前 label 输入会遇到 `NotImplemented`；这不是分类错误优先级或资源错误验收。
 - `Data` / `IncompatibleDataVersion` 的资源校验、缓存已在 P2.2 验证，P2.3 同一路径的
   查询夹具证实 word/lang 验证先于资源加载，未知词仍传播加载错误，且不访问频率。
-  分类标签错误及词表排序留给 P2.4，标注及全库差分留给 P3/P4。
+  P2.4 已验证分类标签错误、完整词表及全部精确词键的成员关系；标注及全部接口的联合差分留给 P3/P4。
 - 在 P5.1 发布文档收口前移除 `NotImplemented` 变体及所有占位返回；不在首版分发。
 
 基础示例为 [query.rs](../examples/query.rs) 和 [annotate.rs](../examples/annotate.rs)。
 README 的简单查询与参数错误示例用 rustdoc 实际执行，标注代码仍用 `no_run` 编译检查。
 `tests/api_contract.rs` 验证函数签名、拥有所有权的结果类型、别名/默认入口、参数边界与
-剩余接口的未实现错误；112 条固定 P0 查询断言位于 `tests/query_vectors.rs`。
+标注接口的未实现错误；112 条固定 P0 查询断言位于 `tests/query_vectors.rs`，分类 P0 向量
+位于 `tests/category_vectors.rs`，含全部 24 分类的完整有序词表摘要及默认 CET4 入口。
 验证证据见[查询说明](simple-queries.md)，精确恢复动作记录在 [handoff](../tasks/handoff.md)。
 
 Cargo 的 `rust-version` 用法及其验证预期参见

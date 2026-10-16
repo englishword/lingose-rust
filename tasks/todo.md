@@ -49,9 +49,11 @@
   - 验收：样例、精确/小写回退、缺失及无效数据、en/zh、别名行为均与固定基线一致；不补用未采用候选。
   - 产物：src/query.rs、Lexicon.find、固定 Unicode 15.0 helper/表、两个受保护生成器、tests/query_vectors.rs、[查询说明](../docs/simple-queries.md)、[Unicode 身份](../docs/query-case.json)、[离线 release 证据](../docs/query-verification.json)及 Unicode License V3；README/示例/接口契约同步更新。
   - 验证：112 条 P0 snapshot 断言；精确不可用阻断/独立字段/空字符串/Unicode/错误顺序夹具；全部 1,112,064 个 scalar 的 Python 大写/小写摘要一致；16 线程公共查询及结果所有权验证。30 库测试、9 契约、1 向量测试（112 断言）、5 文档测试及 55 Python 回归通过；fmt/Clippy/文档构建及实际查询示例通过。最小副本离线 locked release 构建，三测试二进制在无源码/资源目录独立运行通过。唯一忽略项为 P2.2 手动性能探针；仅验证 Windows/Rust 1.93.1。未修改源库、P0/P2.1 固定数据，未进入分类/标注/打包/发布。
-- [ ] P2.4 实现分类及完整有序词表。
+- [x] P2.4 实现分类及完整有序词表。
   - 依赖：P2.3。完成 kind、kind_list、labels，保留默认 CET4、标签大小写、成员和词族/rank/原词业务排序。
   - 验收：每个注册分类的成员与完整顺序均与 Python 一致，非法标签错误与未知词 false 结果分离。
+  - 产物：src/category.rs、独立 src/data/category_tests.rs、公共契约/缓存/投影测试、tools/generate_category_vectors.py 与 tests/category_vectors.rs、check_queries.py --categories、[分类说明](../docs/categories.md)及[离线 release 证据](../docs/category-verification.json)；README/示例/接口契约已更新。
+  - 验证：24 类/209,759 有序成员的完整 P0 摘要和默认 CET4；50,335 精确词键×24 类共 1,208,040 组公共成员结果与词表一致；标签/资源优先级、精确阻断、空分类/注册表、32 位、所有权及并发夹具通过。50 Rust 测试、5 文档测试、56 Python 回归、311 条 Python 固定向量、生成器检查、fmt/Clippy/文档构建及实际示例通过。最小副本离线 locked release 构建，四测试二进制脱离源码/资源运行通过。仅测 Windows/MSVC Rust 1.93.1；受保护数据/基线/历史证据未改，未进入 P3、性能验收、打包或发布。
 
 ## P3：纯文本 IPS 标注
 

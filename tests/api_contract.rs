@@ -43,13 +43,13 @@ fn public_signatures_own_results_and_preserve_remaining_phase_boundaries() {
         }
         assert!(meaning(word, "en").is_ok());
         assert!(meaning(word, "zh").is_ok());
-        assert_not_implemented(kind(word));
-        assert_not_implemented(kind_with_label(word, "CET4"));
+        assert!(kind(word).is_ok());
+        assert!(kind_with_label(word, "CET4").is_ok());
     }
     for query in word_lists {
-        assert_not_implemented(query());
+        assert!(query().is_ok());
     }
-    assert_not_implemented(kind_list("CET4"));
+    assert!(kind_list("CET4").is_ok());
     for text in ["", "中文 123 e\u{0301}", "Abandon the book."] {
         assert_not_implemented(annotate(text));
         for threshold in [0, 1000, 5062, 5063, i64::MAX] {
@@ -149,9 +149,33 @@ fn word_validation_precedes_language_and_label_processing() {
             ..
         })
     ));
-    // P1.1 has no validated registry and must not pretend to validate labels.
-    assert_not_implemented(lingose::kind_with_label("apple", "not-a-label"));
-    assert_not_implemented(lingose::kind_list_with_label("not-a-label"));
+    for label in [
+        "",
+        "not-a-label",
+        "cet4",
+        "CET4 ",
+        " CET4",
+        "CET4\0",
+        "COLLINS",
+        "Band",
+    ] {
+        for word in ["apple", "unknownwordzz"] {
+            assert!(matches!(
+                lingose::kind_with_label(word, label),
+                Err(Error::InvalidArgument {
+                    parameter: "label",
+                    ..
+                })
+            ));
+        }
+        assert!(matches!(
+            lingose::kind_list_with_label(label),
+            Err(Error::InvalidArgument {
+                parameter: "label",
+                ..
+            })
+        ));
+    }
 }
 
 #[test]
@@ -257,4 +281,37 @@ fn concurrent_public_queries_return_identical_results() {
         .map(|task| task.join().unwrap())
         .collect();
     assert!(results.iter().all(|result| result == &results[0]));
+}
+
+#[test]
+fn category_results_are_owned_and_safe_for_concurrent_callers() {
+    let label = String::from("CET4");
+    let mut members = lingose::kind_list_with_label(&label).unwrap();
+    let expected_members = members.clone();
+    drop(label);
+    members[0].clear();
+    members.reverse();
+    assert_eq!(lingose::kind_list().unwrap(), expected_members);
+    let mut labels = lingose::labels().unwrap();
+    let expected_labels = labels.clone();
+    labels[0].clear();
+    labels.pop();
+    assert_eq!(lingose::labels().unwrap(), expected_labels);
+    let threads: Vec<_> = (0..16)
+        .map(|_| {
+            std::thread::spawn(|| {
+                (
+                    lingose::kind("apple").unwrap(),
+                    lingose::labels().unwrap(),
+                    lingose::kind_list().unwrap(),
+                )
+            })
+        })
+        .collect();
+    for task in threads {
+        assert_eq!(
+            task.join().unwrap(),
+            (true, expected_labels.clone(), expected_members.clone())
+        );
+    }
 }

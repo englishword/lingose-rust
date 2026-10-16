@@ -4,9 +4,9 @@
 [IPSM Approach](https://lingose.com/) to English pronunciation, spelling and
 meaning. The planned first release is **0.1.0**.
 
-This checkout implements **P2.3 pronunciation, morphology, root and meaning queries**
-using the bundled offline lexicon. Category queries and text annotation remain
-under development and return `Error::NotImplemented`, including empty text.
+This checkout implements **P2.4 offline word and category queries**, including
+complete ordered category lists. Text annotation remains under development and
+returns `Error::NotImplemented`, including empty text.
 Registry publication is disabled in `Cargo.toml` during development.
 
 The reproducible lexicon/frequency resources, expected Rust identities and
@@ -17,6 +17,8 @@ including cached initialization failures. See [loader validation](docs/data-load
 Simple queries use fixed Python 3.12 / Unicode 15.0 casing tables, with
 [query verification](docs/simple-queries.md) covering the P0 samples and isolated
 fallback, unavailable-field and resource-error cases.
+All 24 category lists and membership queries are covered by
+[category verification](docs/categories.md).
 
 The completed release will bundle all required data for offline use, without
 Python, Node, adjacent source repositories, configuration or lexicon downloads
@@ -39,6 +41,11 @@ fn main() -> Result<()> {
     println!("{:?}", lingose::root_lemma("running")?);
     println!("{:?}", lingose::meaning("apple")?); // English by default
     println!("{:?}", lingose::meaning_with_lang("apple", "zh")?);
+    println!("{}", lingose::kind("apple")?); // CET4 by default
+    println!("{}", lingose::kind_with_label("apple", "IELTS")?);
+    println!("{}", lingose::kind_list()?.len()); // Complete CET4 list
+    println!("{}", lingose::kind_list_with_label("IELTS")?.len());
+    println!("{:?}", lingose::labels()?);
     Ok(())
 }
 ```
@@ -53,9 +60,12 @@ the lowercase form: `Apple` can fall back, while `US`, `iPhone` and `McDonald`
 cannot. An existing entry with an unavailable field stops lookup. Saved values
 are returned unchanged, without adjusting their case or deriving new forms.
 
-Category functions (`kind`, `kind_with_label`, `kind_list`,
-`kind_list_with_label`, `labels`) will be implemented in P2.4; the default
-category is `CET4`.
+`kind` and `kind_list` default to `CET4`; their `*_with_label` forms accept an
+exact registered label such as `IELTS`. Labels are case-sensitive and are listed
+by `labels()` in configuration order. `COLLINS` and `Band` are attributes, not
+registered categories. `kind_list` returns every member's original word key in
+saved root/rank/word business order, without generating case aliases. Invalid
+labels return an error even for unknown words; registered empty lists succeed.
 
 ## Annotate plain text
 
@@ -85,7 +95,10 @@ and `Ok(None)` for optional fields. Present empty strings, original Unicode and
 newlines are preserved. IPA, IPS and IPSM lists are independent and must not be
 paired by index. `meaning` defaults to English; `meaning_with_lang` accepts only
 exact `en` or `zh`. Parameter errors and damaged or incompatible data return `Err`.
-Completed category queries will return `Ok(false)` for an unknown word.
+Category queries return `Ok(false)` for unknown words or unavailable/false
+membership. An exact entry with false or unavailable membership blocks
+lowercase fallback. Word validation precedes resource loading, which precedes
+category-label validation.
 `Error` implements `std::error::Error` and `Display` and is non-exhaustive.
 
 ```rust
