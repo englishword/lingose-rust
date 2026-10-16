@@ -16,6 +16,7 @@ publish = false
 include = ["/src/**", "/examples/**", "/README.md", "/LICENSE", "/SOURCES.md"]
 
 [dependencies]
+sha2 = "0.10.9"
 
 [lints.rust]
 unsafe_code = "forbid"

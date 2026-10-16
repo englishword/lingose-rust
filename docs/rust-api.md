@@ -2,7 +2,7 @@
 
 本文件固定 `lingose` **0.1.0** 的 Rust 表达方式；业务语义继续由
 [P0 行为契约](api.md)与[已安装 Python 基线](reference-baseline.md)约束。
-当前实现仅有工程骨架和参数内容验证，尚无生产数据、查询、分类或标注算法。
+当前已有参数内容验证、正式离线数据及 P2.2 私有加载器；公共查询、分类和标注算法尚未实现。
 接口可编译不表示查询行为已经验收。
 
 ## 工具链和依赖
@@ -14,12 +14,13 @@
 - 最低版本目前**未实测**。本机只有 Rust/Cargo 1.93.1，已验证平台仅为
   `x86_64-pc-windows-msvc`；P5.2 在 1.85 上执行实际验证，不由高版本通过推断。
   不创建锁定开发机版本的 `rust-toolchain.toml`。
-- P1.1 仅依赖标准库，无运行时、开发或构建依赖；`build = false`。
+- P1.1 仅依赖标准库；P2.2 新增 `sha2` 0.10.9，用于一次性资源完整性校验；`build = false`。
   保留 `Cargo.lock` 用于本项目验证。P1.2 根据完整数据的实测选择加载依赖，
   Unicode 等依赖随具体实现引入；引入时核对 MSRV、许可、体积和离线行为。
   不预先绑定 Python、Node、SQLite、压缩库、网络客户端或异步执行器。
 - P1.2 已比较完整数据布局并固定[静态镜像/共享索引方案](data-layout.md)与
-  [性能预算](performance-budget.md)。这些决定尚未接入公共 API；主 crate 仍为 std-only 骨架。
+  [性能预算](performance-budget.md)。P2.2 的[加载器/索引/并发与错误缓存](data-loader.md)
+  已验证；公共入口仍待 P2.3/P2.4/P3 接入。
 - 正式 crate 的构建和运行不得读取开发机路径、相邻 checkout 或 Python 缓存。
   Python 工具及固定向量仅作开发对照，不在当前 Cargo `include` 分发清单中。
 - `publish = false` 标识尚未就绪的工程。P5.3 在完整实现和相应检查通过后移除此保护，
@@ -118,7 +119,7 @@ Rust 不直接接受任意精度 Python 整数。P4 向量适配器读取 `{"$in
   四组大小写别名的 operation 为小写规范名称。
 - 分类注册表来自未来的已验证数据，P1.1 不硬编码 24 类来提前验证标签。
   当前 label 输入会遇到 `NotImplemented`；这不是分类错误优先级或资源错误验收。
-- `Data` / `IncompatibleDataVersion` 的真实触发测试留给 P2.2，分类标签错误留给
+- `Data` / `IncompatibleDataVersion` 的真实资源及夹具触发、缓存已在 P2.2 验证，分类标签错误留给
   P2.4；查询值、排序和标注对照留给 P2/P3/P4。负阈值与 NUL 等参数测试不能替代它们。
 - 在 P5.1 发布文档收口前移除 `NotImplemented` 变体及所有占位返回；不在首版分发。
 

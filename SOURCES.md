@@ -44,3 +44,13 @@ text in the pinned reference. The Rust port and its
 behavioral specification are adaptations of Lingose, with changes recorded in
 this repository's Git history. The project license does not relicense
 third-party works.
+
+## Rust runtime dependencies
+
+The P2.2 loader uses `sha2` 0.10.9 from the RustCrypto Developers
+([upstream](https://github.com/RustCrypto/hashes)), licensed under
+`MIT OR Apache-2.0`. Cargo resolves its separately licensed dependencies; the
+locked versions, declared licenses and minimum Rust versions are recorded in
+[loader-verification.json](docs/loader-verification.json). These software
+licenses remain separate from the Lingose data license. Final distribution
+notice review remains P5.1 work.

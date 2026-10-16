@@ -1,0 +1,552 @@
+{
+  "build": {
+    "command": [
+      "cargo",
+      "test",
+      "--offline",
+      "--locked",
+      "--release",
+      "--lib",
+      "--no-run",
+      "--message-format=json"
+    ],
+    "copied_source_and_resources": {
+      "Cargo.lock": {
+        "bytes": 2390,
+        "sha256": "3ba42486751b118af6f60b3d2d58466ba36040d581de2f32c2ca893239a88df2"
+      },
+      "Cargo.toml": {
+        "bytes": 723,
+        "sha256": "715f23c990f9aafc768b0eeffaf8f6aa89990319e2953df77279350dfe9720b1"
+      },
+      "LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "README.md": {
+        "bytes": 5040,
+        "sha256": "2592585f8f29cc679dc8b6efe4c9222f0d2201b7f36ee21386723e7278ed5b92"
+      },
+      "SOURCES.md": {
+        "bytes": 3134,
+        "sha256": "a30b7a864ce328c8e973e54b43f6d3ed30565e2d0d6d4b01998274cc45e94b07"
+      },
+      "data/frequency.bin": {
+        "bytes": 200272,
+        "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+      },
+      "data/lexicon.bin": {
+        "bytes": 10259743,
+        "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+      },
+      "src/data/cache_tests.rs": {
+        "bytes": 12768,
+        "sha256": "7588e53cd2c7c332187bbb28bae308e8933bbcace42cf12e5863e12fff16a0bd"
+      },
+      "src/data/image.rs": {
+        "bytes": 14997,
+        "sha256": "577f631304ec0158155d7c4e3b7793da9cbb492a35a9901297e6acb8f71f48f3"
+      },
+      "src/data/mod.rs": {
+        "bytes": 5082,
+        "sha256": "3b6f36d87ad4545a2aa62e30d6c692989e866acc5d73358f9c33a86ec9e70f2a"
+      },
+      "src/data/tests.rs": {
+        "bytes": 19161,
+        "sha256": "feea30503137a7e8009eb927fd0214f3c0ebe34aaa5036d0259ec174fae3b0f3"
+      },
+      "src/data_meta.rs": {
+        "bytes": 1531,
+        "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+      },
+      "src/error.rs": {
+        "bytes": 2637,
+        "sha256": "f2aa193be2a6f91ae48f1e67b39797d8f2903981abddccee2b2d17459457f44e"
+      },
+      "src/lib.rs": {
+        "bytes": 5624,
+        "sha256": "d18d8e99edf10f3c21bfc87590ec5b477fca2c7c456e0017bddd11f9be711c11"
+      },
+      "src/validation.rs": {
+        "bytes": 1613,
+        "sha256": "8266f5df8682b8053b296ede0d7639ad2b7e51d0df3c3f0925bf1ac03862e19b"
+      }
+    },
+    "inputs_unchanged": true,
+    "minimal_copy": ".local/loader-p2_2-mtl2f3dx/checkout",
+    "offline": true,
+    "profile": "release"
+  },
+  "checks": {
+    "api_contract_tests_passed": 7,
+    "cargo_doc": true,
+    "clippy_all_targets_all_features_deny_warnings": true,
+    "fmt": true,
+    "git_checkout_autocrlf_true_eol_crlf_all_measured_inputs_identical": true,
+    "independent_review_passed": true,
+    "new_rust_tests_passed": 22,
+    "one_embedded_copy_per_resource": true,
+    "python_tests_passed": 55,
+    "release_probe_explicit_fresh_process_runs": 7,
+    "rust_doctests_passed": 5
+  },
+  "cold_start_follow_up": "Unexplained first-process wall-clock outliers: prior const run806.48 ms, current static run732.77 ms. Both raw seven-sample series retained; investigate real public API cold startup in P4.2 without relaxing budgets.",
+  "dependencies": [
+    {
+      "declared_rust_version": null,
+      "license": "MIT OR Apache-2.0",
+      "name": "block-buffer",
+      "version": "0.10.4"
+    },
+    {
+      "declared_rust_version": "1.32",
+      "license": "MIT OR Apache-2.0",
+      "name": "cfg-if",
+      "version": "1.0.5"
+    },
+    {
+      "declared_rust_version": null,
+      "license": "MIT OR Apache-2.0",
+      "name": "cpufeatures",
+      "version": "0.2.17"
+    },
+    {
+      "declared_rust_version": null,
+      "license": "MIT OR Apache-2.0",
+      "name": "crypto-common",
+      "version": "0.1.7"
+    },
+    {
+      "declared_rust_version": null,
+      "license": "MIT OR Apache-2.0",
+      "name": "digest",
+      "version": "0.10.7"
+    },
+    {
+      "declared_rust_version": null,
+      "license": "MIT",
+      "name": "generic-array",
+      "version": "0.14.7"
+    },
+    {
+      "declared_rust_version": "1.65",
+      "license": "MIT OR Apache-2.0",
+      "name": "libc",
+      "version": "0.2.190"
+    },
+    {
+      "declared_rust_version": null,
+      "license": "MIT OR Apache-2.0",
+      "name": "sha2",
+      "version": "0.10.9"
+    },
+    {
+      "declared_rust_version": "1.41.0",
+      "license": "MIT OR Apache-2.0",
+      "name": "typenum",
+      "version": "1.20.1"
+    },
+    {
+      "declared_rust_version": null,
+      "license": "MIT/Apache-2.0",
+      "name": "version_check",
+      "version": "0.9.5"
+    }
+  ],
+  "environment": {
+    "cargo": "cargo 1.93.1 (083ac5135 2025-12-15)",
+    "cpu": "13th Gen Intel(R) Core(TM) i7-1360P",
+    "machine": "AMD64",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)"
+  },
+  "measurement_tool_identity": {
+    "bytes": 7238,
+    "sha256": "97f67512c3dbcedb4d9fd632eac2754da205fb08f7f7b0a02b48c3bee5850e28"
+  },
+  "method": {
+    "cold_note": "Fresh process, not cleared OS file cache. Internal times exclude test harness startup; wall time includes process startup/test harness/exit.",
+    "repeats": 7,
+    "statistics": "median and nearest-rank p95 of independent fresh processes",
+    "warm_iterations_per_sample": 100000,
+    "warm_note": "OnceLock access plus exact HashMap lookup only; no public argument/case checks or owned output. Test-only initialization counters enabled."
+  },
+  "prior_const_binding_run": {
+    "reason": "Changed resource byte-slice bindings from const to static to eliminate duplicated embedded resources. All seven prior raw samples and their original source identities are retained. Current samples use the static bindings.",
+    "report": {
+      "build": {
+        "command": [
+          "cargo",
+          "test",
+          "--offline",
+          "--locked",
+          "--release",
+          "--lib",
+          "--no-run",
+          "--message-format=json"
+        ],
+        "copied_source_and_resources": {
+          "Cargo.lock": {
+            "bytes": 2390,
+            "sha256": "3ba42486751b118af6f60b3d2d58466ba36040d581de2f32c2ca893239a88df2"
+          },
+          "Cargo.toml": {
+            "bytes": 723,
+            "sha256": "715f23c990f9aafc768b0eeffaf8f6aa89990319e2953df77279350dfe9720b1"
+          },
+          "LICENSE": {
+            "bytes": 17023,
+            "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+          },
+          "README.md": {
+            "bytes": 5040,
+            "sha256": "2592585f8f29cc679dc8b6efe4c9222f0d2201b7f36ee21386723e7278ed5b92"
+          },
+          "SOURCES.md": {
+            "bytes": 3134,
+            "sha256": "a30b7a864ce328c8e973e54b43f6d3ed30565e2d0d6d4b01998274cc45e94b07"
+          },
+          "data/frequency.bin": {
+            "bytes": 200272,
+            "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+          },
+          "data/lexicon.bin": {
+            "bytes": 10259743,
+            "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+          },
+          "src/data/cache_tests.rs": {
+            "bytes": 12768,
+            "sha256": "7588e53cd2c7c332187bbb28bae308e8933bbcace42cf12e5863e12fff16a0bd"
+          },
+          "src/data/image.rs": {
+            "bytes": 14997,
+            "sha256": "577f631304ec0158155d7c4e3b7793da9cbb492a35a9901297e6acb8f71f48f3"
+          },
+          "src/data/mod.rs": {
+            "bytes": 5080,
+            "sha256": "0499ab344ae336339efe39eef5e883579324c25ca6eee57097db210f3771489f"
+          },
+          "src/data/tests.rs": {
+            "bytes": 19161,
+            "sha256": "feea30503137a7e8009eb927fd0214f3c0ebe34aaa5036d0259ec174fae3b0f3"
+          },
+          "src/data_meta.rs": {
+            "bytes": 1531,
+            "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+          },
+          "src/error.rs": {
+            "bytes": 2637,
+            "sha256": "f2aa193be2a6f91ae48f1e67b39797d8f2903981abddccee2b2d17459457f44e"
+          },
+          "src/lib.rs": {
+            "bytes": 5624,
+            "sha256": "d18d8e99edf10f3c21bfc87590ec5b477fca2c7c456e0017bddd11f9be711c11"
+          },
+          "src/validation.rs": {
+            "bytes": 1613,
+            "sha256": "8266f5df8682b8053b296ede0d7639ad2b7e51d0df3c3f0925bf1ac03862e19b"
+          }
+        },
+        "inputs_unchanged": true,
+        "minimal_copy": ".local/loader-p2_2-2j4k3nrr/checkout",
+        "offline": true,
+        "profile": "release"
+      },
+      "checks": {
+        "api_contract_tests_passed": 7,
+        "cargo_doc": true,
+        "clippy_all_targets_all_features_deny_warnings": true,
+        "fmt": true,
+        "git_checkout_autocrlf_true_eol_crlf_all_measured_inputs_identical": true,
+        "independent_review_passed": true,
+        "new_rust_tests_passed": 22,
+        "python_tests_passed": 55,
+        "release_probe_explicit_fresh_process_runs": 7,
+        "rust_doctests_passed": 5
+      },
+      "cold_start_follow_up": "One 806.48 ms process-wall sample includes only 28.41 ms lexicon initialization. Cause not isolated; preserve raw samples and investigate with real public API in P4.2, without relaxing budgets.",
+      "dependencies": [
+        {
+          "declared_rust_version": null,
+          "license": "MIT OR Apache-2.0",
+          "name": "block-buffer",
+          "version": "0.10.4"
+        },
+        {
+          "declared_rust_version": "1.32",
+          "license": "MIT OR Apache-2.0",
+          "name": "cfg-if",
+          "version": "1.0.5"
+        },
+        {
+          "declared_rust_version": null,
+          "license": "MIT OR Apache-2.0",
+          "name": "cpufeatures",
+          "version": "0.2.17"
+        },
+        {
+          "declared_rust_version": null,
+          "license": "MIT OR Apache-2.0",
+          "name": "crypto-common",
+          "version": "0.1.7"
+        },
+        {
+          "declared_rust_version": null,
+          "license": "MIT OR Apache-2.0",
+          "name": "digest",
+          "version": "0.10.7"
+        },
+        {
+          "declared_rust_version": null,
+          "license": "MIT",
+          "name": "generic-array",
+          "version": "0.14.7"
+        },
+        {
+          "declared_rust_version": "1.65",
+          "license": "MIT OR Apache-2.0",
+          "name": "libc",
+          "version": "0.2.190"
+        },
+        {
+          "declared_rust_version": null,
+          "license": "MIT OR Apache-2.0",
+          "name": "sha2",
+          "version": "0.10.9"
+        },
+        {
+          "declared_rust_version": "1.41.0",
+          "license": "MIT OR Apache-2.0",
+          "name": "typenum",
+          "version": "1.20.1"
+        },
+        {
+          "declared_rust_version": null,
+          "license": "MIT/Apache-2.0",
+          "name": "version_check",
+          "version": "0.9.5"
+        }
+      ],
+      "environment": {
+        "cargo": "cargo 1.93.1 (083ac5135 2025-12-15)",
+        "cpu": "13th Gen Intel(R) Core(TM) i7-1360P",
+        "machine": "AMD64",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+        "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)"
+      },
+      "measurement_tool_identity": {
+        "bytes": 7238,
+        "sha256": "97f67512c3dbcedb4d9fd632eac2754da205fb08f7f7b0a02b48c3bee5850e28"
+      },
+      "method": {
+        "cold_note": "Fresh process, not cleared OS file cache. Internal times exclude test harness startup; wall time includes process startup/test harness/exit.",
+        "repeats": 7,
+        "statistics": "median and nearest-rank p95 of independent fresh processes",
+        "warm_iterations_per_sample": 100000,
+        "warm_note": "OnceLock access plus exact HashMap lookup only; no public argument/case checks or owned output. Test-only initialization counters enabled."
+      },
+      "runtime": {
+        "directory": ".local/loader-p2_2-2j4k3nrr/runtime",
+        "embedded_complete_resource_copies": {
+          "frequency.bin": 2,
+          "lexicon.bin": 2
+        },
+        "evidence_basis": "Loader source review shows no file/database/network APIs; executable-only working directory run. No OS file-open tracing was performed.",
+        "executable_identity": {
+          "bytes": 21814784,
+          "sha256": "aea0477819d15aa6ecdcc7312a14c310e970cc25b0c63651ed423761532ab6ef"
+        },
+        "only_test_executable_present": true,
+        "source_or_data_files_opened_by_loader": false
+      },
+      "samples": [
+        {
+          "cold_process_wall_ms": 806.4838999998756,
+          "frequency_initializations": 1,
+          "frequency_load_ms": 0.6714,
+          "lexicon_initializations": 1,
+          "lexicon_load_and_index_ms": 28.4092,
+          "warm_cached_exact_lookup_ns": 13.843,
+          "warm_iterations": 100000
+        },
+        {
+          "cold_process_wall_ms": 36.26269998494536,
+          "frequency_initializations": 1,
+          "frequency_load_ms": 0.5714,
+          "lexicon_initializations": 1,
+          "lexicon_load_and_index_ms": 23.4101,
+          "warm_cached_exact_lookup_ns": 13.371,
+          "warm_iterations": 100000
+        },
+        {
+          "cold_process_wall_ms": 34.16310000466183,
+          "frequency_initializations": 1,
+          "frequency_load_ms": 0.5761,
+          "lexicon_initializations": 1,
+          "lexicon_load_and_index_ms": 22.7193,
+          "warm_cached_exact_lookup_ns": 13.242,
+          "warm_iterations": 100000
+        },
+        {
+          "cold_process_wall_ms": 39.19739997945726,
+          "frequency_initializations": 1,
+          "frequency_load_ms": 0.6579,
+          "lexicon_initializations": 1,
+          "lexicon_load_and_index_ms": 25.989,
+          "warm_cached_exact_lookup_ns": 15.827,
+          "warm_iterations": 100000
+        },
+        {
+          "cold_process_wall_ms": 42.125799984205514,
+          "frequency_initializations": 1,
+          "frequency_load_ms": 0.5754999999999999,
+          "lexicon_initializations": 1,
+          "lexicon_load_and_index_ms": 23.841,
+          "warm_cached_exact_lookup_ns": 13.591,
+          "warm_iterations": 100000
+        },
+        {
+          "cold_process_wall_ms": 40.18720000749454,
+          "frequency_initializations": 1,
+          "frequency_load_ms": 0.554,
+          "lexicon_initializations": 1,
+          "lexicon_load_and_index_ms": 26.6117,
+          "warm_cached_exact_lookup_ns": 13.663,
+          "warm_iterations": 100000
+        },
+        {
+          "cold_process_wall_ms": 36.740300012752414,
+          "frequency_initializations": 1,
+          "frequency_load_ms": 0.5868,
+          "lexicon_initializations": 1,
+          "lexicon_load_and_index_ms": 24.0398,
+          "warm_cached_exact_lookup_ns": 13.451,
+          "warm_iterations": 100000
+        }
+      ],
+      "scope": "Private loader and exact-key index only; excludes public query semantics/output allocation, annotation, memory budgets, packaged crate and final P4 acceptance",
+      "stage": "P2.2",
+      "statistics": {
+        "cold_process_wall_ms": {
+          "median": 39.19739997945726,
+          "p95": 806.4838999998756
+        },
+        "frequency_load_ms": {
+          "median": 0.5761,
+          "p95": 0.6714
+        },
+        "lexicon_load_and_index_ms": {
+          "median": 24.0398,
+          "p95": 28.4092
+        },
+        "warm_cached_exact_lookup_ns": {
+          "median": 13.591,
+          "p95": 15.827
+        }
+      },
+      "verified_on": "2026-10-16"
+    }
+  },
+  "runtime": {
+    "directory": ".local/loader-p2_2-mtl2f3dx/runtime",
+    "embedded_complete_resource_copies": {
+      "frequency.bin": 1,
+      "lexicon.bin": 1
+    },
+    "evidence_basis": "Loader source review shows no file/database/network APIs; executable-only working directory run. No OS file-open tracing was performed. Complete resource byte patterns counted in release executable: exactly one of each.",
+    "executable_identity": {
+      "bytes": 11355136,
+      "sha256": "ff76d63752e6eab4ea73cb7ed4b5e10887c19f3efd7a6a682e0ae61da6508a16"
+    },
+    "only_test_executable_present": true,
+    "source_or_data_files_opened_by_loader": false
+  },
+  "samples": [
+    {
+      "cold_process_wall_ms": 732.7713000122458,
+      "frequency_initializations": 1,
+      "frequency_load_ms": 0.6163,
+      "lexicon_initializations": 1,
+      "lexicon_load_and_index_ms": 33.8717,
+      "warm_cached_exact_lookup_ns": 14.121,
+      "warm_iterations": 100000
+    },
+    {
+      "cold_process_wall_ms": 35.63659999053925,
+      "frequency_initializations": 1,
+      "frequency_load_ms": 0.5992999999999999,
+      "lexicon_initializations": 1,
+      "lexicon_load_and_index_ms": 22.431,
+      "warm_cached_exact_lookup_ns": 13.746,
+      "warm_iterations": 100000
+    },
+    {
+      "cold_process_wall_ms": 39.88640004536137,
+      "frequency_initializations": 1,
+      "frequency_load_ms": 0.6024,
+      "lexicon_initializations": 1,
+      "lexicon_load_and_index_ms": 24.4592,
+      "warm_cached_exact_lookup_ns": 13.363,
+      "warm_iterations": 100000
+    },
+    {
+      "cold_process_wall_ms": 36.21579997707158,
+      "frequency_initializations": 1,
+      "frequency_load_ms": 0.5674,
+      "lexicon_initializations": 1,
+      "lexicon_load_and_index_ms": 22.7814,
+      "warm_cached_exact_lookup_ns": 13.552,
+      "warm_iterations": 100000
+    },
+    {
+      "cold_process_wall_ms": 36.784600000828505,
+      "frequency_initializations": 1,
+      "frequency_load_ms": 0.5785,
+      "lexicon_initializations": 1,
+      "lexicon_load_and_index_ms": 23.4236,
+      "warm_cached_exact_lookup_ns": 13.666,
+      "warm_iterations": 100000
+    },
+    {
+      "cold_process_wall_ms": 40.24439997738227,
+      "frequency_initializations": 1,
+      "frequency_load_ms": 0.5987,
+      "lexicon_initializations": 1,
+      "lexicon_load_and_index_ms": 25.2819,
+      "warm_cached_exact_lookup_ns": 13.242,
+      "warm_iterations": 100000
+    },
+    {
+      "cold_process_wall_ms": 35.862699965946376,
+      "frequency_initializations": 1,
+      "frequency_load_ms": 0.5664,
+      "lexicon_initializations": 1,
+      "lexicon_load_and_index_ms": 22.0581,
+      "warm_cached_exact_lookup_ns": 13.558,
+      "warm_iterations": 100000
+    }
+  ],
+  "scope": "Private loader and exact-key index only; excludes public query semantics/output allocation, annotation, memory budgets, packaged crate and final P4 acceptance",
+  "stage": "P2.2",
+  "statistics": {
+    "cold_process_wall_ms": {
+      "median": 36.784600000828505,
+      "p95": 732.7713000122458
+    },
+    "frequency_load_ms": {
+      "median": 0.5987,
+      "p95": 0.6163
+    },
+    "lexicon_load_and_index_ms": {
+      "median": 23.4236,
+      "p95": 33.8717
+    },
+    "warm_cached_exact_lookup_ns": {
+      "median": 13.558,
+      "p95": 14.121
+    }
+  },
+  "verified_on": "2026-10-16"
+}

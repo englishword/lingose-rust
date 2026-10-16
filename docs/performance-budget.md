@@ -133,7 +133,8 @@ runner 构建四个互斥 feature 并复制各自二进制，构建与测量顺�
 探针锁定 flate2 1.1.10/miniz_oxide 0.9.1、sha2 0.10.9、serde 1.0.229 和
 serde_json 1.0.154；gzip 使用纯 Rust 后端，无额外 C 压缩库。
 [flate2 后端说明](https://docs.rs/flate2/1.1.10/flate2/)。
-主 crate 当前仍为 P1.1 std-only 骨架，不发布探针或 .local 数据。
+主 crate 已接入 P2.2 私有加载器与 sha2；公共 API 仍为骨架，不发布探针或 .local 数据。
+P2.2 的[加载器检查](data-loader.md)不替代此处的完整公共 API 性能验收，数值预算不变。
 
 硬件、工具链或语料变化时先记录条件差异；预算变更必须保留失败样本、原因、
 正确性影响及明确理由，形成聚焦变更，不能无解释地放宽阈值以通过验收。

@@ -1,4 +1,12 @@
 # Preserve byte identities across checkouts even when core.autocrlf=true.
+# Loader evidence also fingerprints these minimal offline-build inputs.
+/Cargo.toml text eol=lf
+/Cargo.lock text eol=lf
+/README.md text eol=lf
+/SOURCES.md text eol=lf
+/src/*.rs text eol=lf
+/src/data/*.rs text eol=lf
+/tools/check_loader.py text eol=lf
 /data/*.bin binary
 /data/*.json -text
 /data/UPSTREAM-SOURCES.md -text

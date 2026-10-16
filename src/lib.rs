@@ -1,5 +1,10 @@
 #![doc = include_str!("../README.md")]
 
+// Internal resource access is connected to public queries in P2.3/P2.4 and
+// annotation in P3. Keep this temporary allowance confined to that module.
+#[allow(dead_code)]
+mod data;
+mod data_meta;
 mod error;
 mod validation;
 

@@ -4,9 +4,9 @@
 [IPSM Approach](https://lingose.com/) to English pronunciation, spelling and
 meaning. The planned first release is **0.1.0**.
 
-This checkout has the **P1.1 interface skeleton and P2.1 data resources**.
-Argument validation works; production data loading, queries and text annotation
-are not implemented yet.
+This checkout has the **P2.2 offline resource loader and query indices**.
+Argument validation and private data loading work; public query results and text
+annotation are not implemented yet.
 Valid calls return `Error::NotImplemented`, including unknown words and empty
 text. The examples compile but cannot yet produce lexicon or annotation output.
 Registry publication is disabled in `Cargo.toml` during development.
@@ -14,6 +14,8 @@ Registry publication is disabled in `Cargo.toml` during development.
 The reproducible lexicon/frequency resources, expected Rust identities and
 source notices are checked in. Their export and independent full-record
 verification are described in [the data export guide](docs/data-export.md).
+The loader validates and shares the two embedded resources independently,
+including cached initialization failures. See [loader validation](docs/data-loader.md).
 
 The completed release will bundle all required data for offline use, without
 Python, Node, adjacent source repositories, configuration or lexicon downloads
@@ -102,8 +104,10 @@ boundaries are recorded in [the Rust interface contract](docs/rust-api.md).
 Edition **2024**, intended minimum Rust version **1.85**. The minimum version
 has not yet been tested; the P1.1 skeleton is checked on Rust/Cargo **1.93.1**,
 `x86_64-pc-windows-msvc`. This is not cross-platform or final-release validation.
-There are currently no third-party dependencies or build scripts. Later runtime
-dependencies must support the declared minimum version and offline data use.
+The resource loader uses `sha2` 0.10.9 for SHA-256 integrity checks. The crate has
+no build script, database driver or download step. Declared dependency minimum
+versions are recorded in the loader evidence; actual minimum-toolchain testing
+remains P5.2 work.
 
 ```sh
 cargo check --offline --all-targets --all-features
