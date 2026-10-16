@@ -127,6 +127,8 @@
   - 验收：有实际上传及索引可用证据；不得以 dry-run 结果勾选此项。
   - 用户授权先 commit 再执行 P6.2；P6.1 已提交 1313330。真实上传退出码 0，注册表时间 2026-10-16 13:14:35 UTC，发布者/所有者 Prefee；API、索引、README HTML 与链接、真实下载验证通过。见 [发布说明](../docs/publication.md)及 JSON。
   - 正式包 4,048,633 字节，SHA-256 fb1a40407222053fa2acf6b92be99e59648d8e2a7ceac3c7f20182bbb393c6a8，与 P6.1 候选/实际 Cargo 归档/索引/匿名下载一致。只上传一次，未改手改文档、生产输入或历史证据；不要再次上传 0.1.0。P6.3 注册表独立安装尚未执行。
-- [ ] P6.3 从 crates.io 独立安装并验收。
+- [x] P6.3 从 crates.io 独立安装并验收。
   - 依赖：P6.2。在干净消费工程引用发布版本，验证查询、分类和标注，依赖获取后离线重跑；核对官网/GitHub 链接和文档可访问性。
   - 验收：真实发布包可独立使用，记录版本和实测环境，更新最终交接状态。
+  - 产物：tools/check_registry_consumer.py、[正式注册表消费验收](../docs/registry-consumer.md)及 JSON。checkout 外新工程/空 Cargo home 从 crates.io 获取 =0.1.0，锁文件/metadata/下载包与正式 SHA 一致，全部 registry 源码限于新 cache，无 path/patch/旧缓存或根锁文件。
+  - 验证：Windows x86_64 MSVC / 1.93.1 正常 release 与 1.93.1/1.85.0 两套全新 target 离线 locked release 均通过，三次独立 exe 的 18 入口 smoke 输出相同。正式 docs.rs 18 入口、官网/GitHub 与构建页通过 HTTP/内容核对，独立复核通过；初次 GitHub 传输中断与成功轮 Cargo 网络重试警告保留，不扩大为零警告、全量差分、系统级断网或其他平台验收。P0–P6 全部完成，未重复上传，生产输入和历史证据不变。
