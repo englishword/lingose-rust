@@ -20,6 +20,43 @@ fn attempts(resources: &Resources) -> (usize, usize) {
 }
 
 #[test]
+fn simple_query_validates_before_loading_and_propagates_cached_resource_errors() {
+    let mut incompatible = LEXICON_BYTES.to_vec();
+    incompatible[8..12].copy_from_slice(&999_u32.to_le_bytes());
+    for bytes in [&[][..], Box::leak(incompatible.into_boxed_slice())] {
+        let resources = Resources::new(bytes, &[]);
+        let query = |word, lang| {
+            crate::query::value_from(word, Field::MeaningEn, Some(lang), || resources.lexicon())
+        };
+        assert!(matches!(
+            query(" apple", "ZH"),
+            Err(Error::InvalidArgument {
+                parameter: "word",
+                ..
+            })
+        ));
+        assert!(matches!(
+            query("unknown", "ZH"),
+            Err(Error::InvalidArgument {
+                parameter: "lang",
+                ..
+            })
+        ));
+        assert_eq!(attempts(&resources), (0, 0));
+        for word in ["unknown", "apple", "Apple"] {
+            let error = query(word, "en").unwrap_err();
+            if bytes.is_empty() {
+                assert!(matches!(error, Error::Data { .. }));
+            } else {
+                assert!(matches!(error, Error::IncompatibleDataVersion { .. }));
+            }
+            assert_eq!(query(word, "zh").unwrap_err(), error);
+        }
+        assert_eq!(attempts(&resources), (1, 0));
+    }
+}
+
+#[test]
 fn real_resources_are_independent_lazy_and_reused_without_rebuilding() {
     let resources = Resources::new(LEXICON_BYTES, FREQUENCY_BYTES);
     assert_eq!(attempts(&resources), (0, 0));

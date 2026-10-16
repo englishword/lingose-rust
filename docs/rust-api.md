@@ -2,8 +2,9 @@
 
 本文件固定 `lingose` **0.1.0** 的 Rust 表达方式；业务语义继续由
 [P0 行为契约](api.md)与[已安装 Python 基线](reference-baseline.md)约束。
-当前已有参数内容验证、正式离线数据及 P2.2 私有加载器；公共查询、分类和标注算法尚未实现。
-接口可编译不表示查询行为已经验收。
+当前已完成 P2.3 发音、构词、词族及释义查询，使用正式离线资源与共享加载器；
+分类和文本标注尚未实现。简单查询的样例及隔离验证见[查询说明](simple-queries.md)，
+全库公共 API 差分和最终性能验收仍属于 P4。
 
 ## 工具链和依赖
 
@@ -20,7 +21,7 @@
   不预先绑定 Python、Node、SQLite、压缩库、网络客户端或异步执行器。
 - P1.2 已比较完整数据布局并固定[静态镜像/共享索引方案](data-layout.md)与
   [性能预算](performance-budget.md)。P2.2 的[加载器/索引/并发与错误缓存](data-loader.md)
-  已验证；公共入口仍待 P2.3/P2.4/P3 接入。
+  已验证；P2.3 已接入简单查询，分类和标注入口留给 P2.4/P3。
 - 正式 crate 的构建和运行不得读取开发机路径、相邻 checkout 或 Python 缓存。
   Python 工具及固定向量仅作开发对照，不在当前 Cargo `include` 分发清单中。
 - `publish = false` 标识尚未就绪的工程。P5.3 在完整实现和相应检查通过后移除此保护，
@@ -105,6 +106,13 @@ U+0009–000D、001C–0020、0085、00A0、1680、2000–200A、2028、2029、2
 `trim()`。内部空格、撇号、连字符及 U+200B 等非空白字符不清洗、不规范化。
 此处只是输入验证，不预先实现查询大小写或标注 Unicode 算法。
 
+P2.3 简单查询先精确匹配词键，存在即停止（包括字段不可用）。只有精确词条不存在、
+首字符为 Python `isupper()` 且后续每个字符均不是大写时，才尝试一次有变化的
+`word.lower()`。返回已保存原值，不按输入调整输出大小写。固定 Unicode 15.0 表
+来自已审计 CPython，保留标题字符、单字符展开和非 BMP 行为；
+见[生成身份](query-case.json)及[Unicode 许可](../third_party/unicode/LICENSE.txt)。
+标注使用另一套规则，不能复用此简单查询回退函数。
+
 `skip_top` 选择 `i64`，便于 Rust 调用方传入并获得负数的内容错误。
 非负值最终按 `min(skip_top, 5062)` 解释；`i64::MAX` 也合法。
 Rust 不直接接受任意精度 Python 整数。P4 向量适配器读取 `{"$integer":"..."}` 时，
@@ -114,19 +122,23 @@ Rust 不直接接受任意精度 Python 整数。P4 向量适配器读取 `{"$in
 ## 当前实现与阶段边界
 
 - 已实现所有签名、别名、默认入口转发、错误表示和 word/lang/text/负阈值验证。
-- 所有通过现有验证的查询及标注均返回 `NotImplemented`，包括空文本、非英语文本和
-  合法未知词；没有部分标注成功路径。默认入口的错误 operation 为其转发的显式入口名，
-  四组大小写别名的 operation 为小写规范名称。
+- ipa/IPA、ips/IPS、ism/ISM、ipsm/IPSM、root_lemma 和 meaning/meaning_with_lang
+  已实现。资源成功加载后的未知/不可用值返回空 Vec 或 None，空字符串及原文保留；
+  三种发音列表独立投影，IPSM 不重算、不补用未采用或过期候选。
+- 分类及标注仍返回 `NotImplemented`，包括空文本、非英语文本和合法未知词；
+  没有部分标注成功路径。默认入口的错误 operation 为其转发的显式入口名。
 - 分类注册表来自未来的已验证数据，P1.1 不硬编码 24 类来提前验证标签。
   当前 label 输入会遇到 `NotImplemented`；这不是分类错误优先级或资源错误验收。
-- `Data` / `IncompatibleDataVersion` 的真实资源及夹具触发、缓存已在 P2.2 验证，分类标签错误留给
-  P2.4；查询值、排序和标注对照留给 P2/P3/P4。负阈值与 NUL 等参数测试不能替代它们。
+- `Data` / `IncompatibleDataVersion` 的资源校验、缓存已在 P2.2 验证，P2.3 同一路径的
+  查询夹具证实 word/lang 验证先于资源加载，未知词仍传播加载错误，且不访问频率。
+  分类标签错误及词表排序留给 P2.4，标注及全库差分留给 P3/P4。
 - 在 P5.1 发布文档收口前移除 `NotImplemented` 变体及所有占位返回；不在首版分发。
 
 基础示例为 [query.rs](../examples/query.rs) 和 [annotate.rs](../examples/annotate.rs)。
-README 的查询、标注代码用 rustdoc `no_run` 编译检查；参数错误示例实际执行。
+README 的简单查询与参数错误示例用 rustdoc 实际执行，标注代码仍用 `no_run` 编译检查。
 `tests/api_contract.rs` 验证函数签名、拥有所有权的结果类型、别名/默认入口、参数边界与
-明确的未实现错误。P1.1 检查结果与精确恢复动作记录在 [handoff](../tasks/handoff.md)。
+剩余接口的未实现错误；112 条固定 P0 查询断言位于 `tests/query_vectors.rs`。
+验证证据见[查询说明](simple-queries.md)，精确恢复动作记录在 [handoff](../tasks/handoff.md)。
 
 Cargo 的 `rust-version` 用法及其验证预期参见
 [官方说明](https://doc.rust-lang.org/cargo/reference/rust-version.html)；

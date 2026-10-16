@@ -1,0 +1,194 @@
+{
+  "build_arguments": [
+    "cargo",
+    "test",
+    "--offline",
+    "--locked",
+    "--release",
+    "--all-features",
+    "--lib",
+    "--tests",
+    "--no-run",
+    "--message-format=json"
+  ],
+  "cargo": "cargo 1.93.1 (083ac5135 2025-12-15)",
+  "copy_directory": "E:\\git\\claude\\words\\lingose-rust\\.local\\queries-p2_3-lvvkkop5",
+  "inputs": {
+    "Cargo.lock": {
+      "bytes": 2390,
+      "sha256": "3ba42486751b118af6f60b3d2d58466ba36040d581de2f32c2ca893239a88df2"
+    },
+    "Cargo.toml": {
+      "bytes": 723,
+      "sha256": "715f23c990f9aafc768b0eeffaf8f6aa89990319e2953df77279350dfe9720b1"
+    },
+    "LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "README.md": {
+      "bytes": 5905,
+      "sha256": "3fa546c46b13fd79c8b6729e41aeb42ab1ca6f684dabe992153cc96811844658"
+    },
+    "SOURCES.md": {
+      "bytes": 3524,
+      "sha256": "ac478f69eeef72d227d224524f2d47495dd038a52383eab207b10aaee0931c56"
+    },
+    "data/frequency.bin": {
+      "bytes": 200272,
+      "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+    },
+    "data/lexicon.bin": {
+      "bytes": 10259743,
+      "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+    },
+    "src/data/cache_tests.rs": {
+      "bytes": 14112,
+      "sha256": "6d2dbab8e876eed43b0fb1f5481702cea57ceb222e90a3e0b8b78f04a61c8dd5"
+    },
+    "src/data/image.rs": {
+      "bytes": 14997,
+      "sha256": "577f631304ec0158155d7c4e3b7793da9cbb492a35a9901297e6acb8f71f48f3"
+    },
+    "src/data/mod.rs": {
+      "bytes": 5490,
+      "sha256": "aad16ecf4d7c3c50e6cc8fc6b664bf0b2edbc696b4861e95ae44d10fcd4506fc"
+    },
+    "src/data/tests.rs": {
+      "bytes": 23504,
+      "sha256": "13d047c111e9e02d4e43d2435b7424f04a0f8c3e8d2545dc07fc8794eb8627c3"
+    },
+    "src/data_meta.rs": {
+      "bytes": 1531,
+      "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+    },
+    "src/error.rs": {
+      "bytes": 2637,
+      "sha256": "f2aa193be2a6f91ae48f1e67b39797d8f2903981abddccee2b2d17459457f44e"
+    },
+    "src/lib.rs": {
+      "bytes": 5505,
+      "sha256": "477e70c4c87b71e97e56ad301ffddea9696616cae9f9ce198a4c182d934c712b"
+    },
+    "src/query.rs": {
+      "bytes": 1207,
+      "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+    },
+    "src/query_case.rs": {
+      "bytes": 5074,
+      "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+    },
+    "src/query_case_tables.rs": {
+      "bytes": 52751,
+      "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+    },
+    "src/validation.rs": {
+      "bytes": 1613,
+      "sha256": "8266f5df8682b8053b296ede0d7639ad2b7e51d0df3c3f0925bf1ac03862e19b"
+    },
+    "tests/api_contract.rs": {
+      "bytes": 8569,
+      "sha256": "799b8eb6651c1d16d409ecaf3eb3ac6aa94de7df983d3aadf5b01733600f50f6"
+    },
+    "tests/query_vectors.rs": {
+      "bytes": 11219,
+      "sha256": "440c7634cddb9494a37b0c0e89e1723ac53d9e2e92be125ca32057cbc187cbce"
+    },
+    "third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    }
+  },
+  "installed_reference_unchanged": true,
+  "outputs": {
+    "api_contract": "running 9 tests\ntest annotation_checks_threshold_before_text_nul ... ok\ntest errors_support_standard_thread_safe_error_handling ... ok\ntest word_validation_precedes_language_and_label_processing ... ok\ntest every_word_entry_point_rejects_invalid_content ... ok\ntest simple_queries_return_empty_unknowns_and_independent_owned_values ... ok\ntest word_boundaries_match_python_whitespace_without_normalizing_text ... ok\ntest public_signatures_own_results_and_preserve_remaining_phase_boundaries ... ok\ntest default_functions_and_case_aliases_share_their_entry_points ... ok\ntest concurrent_public_queries_return_identical_results ... ok\n\ntest result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s",
+    "lingose": "running 31 tests\ntest data::cache_tests::cold_process_loader_probe ... ignored, loader-only release measurement in fresh processes via tools/check_loader.py\ntest data::tests::every_truncation_and_huge_section_count_returns_error_without_panicking ... ok\ntest data::cache_tests::shared_types_are_send_and_sync ... ok\ntest data::cache_tests::nonzero_annotation_reports_frequency_before_lexicon_and_caches_each_failure ... ok\ntest data::tests::fixture_frequency_keeps_raw_number_gaps_phrases_and_punctuation ... ok\ntest data::tests::fixture_preserves_null_empty_unicode_states_and_business_order ... ok\ntest data::tests::fixture_supports_all_32_category_bits_and_scalar_order ... ok\ntest data::tests::incompatible_versions_take_precedence_over_the_changed_hash ... ok\ntest data::tests::pinned_identity_checks_length_hash_and_each_expected_count ... ok\ntest data::tests::rejects_bad_magic_extra_bytes_and_cross_resource_sections ... ok\ntest data::tests::rejects_frequency_bad_keys_numbers_duplicates_and_order ... ok\ntest data::tests::rejects_invalid_entry_references_spelling_order_and_annotation_states ... ok\ntest data::tests::rejects_invalid_pool_boundaries_utf8_and_string_order ... ok\ntest data::tests::rejects_label_range_member_and_bitmap_disagreement ... ok\ntest data::tests::simple_query_exact_entries_block_lowercase_even_with_unavailable_fields ... ok\ntest data::tests::simple_query_preserves_independent_projection_empty_text_and_original_bytes ... ok\ntest data::cache_tests::concurrent_initialization_failure_is_cached_and_cloned_as_an_error ... ok\ntest query_case::tests::accepted_queries_cannot_trigger_contextual_final_sigma ... ok\ntest query_case::tests::fallback_predicate_is_first_uppercase_and_no_later_uppercase ... ok\ntest query_case::tests::full_lowercase_preserves_python_titlecase_expansion_and_uppercase_properties ... ok\ntest query_case::tests::post_baseline_unicode_assignments_keep_the_unicode_15_behavior ... ok\ntest data::tests::single_byte_mutations_never_panic_even_with_recomputed_identities ... ok\ntest data::cache_tests::frequency_search_preserves_exact_spelling_and_inclusive_original_thresholds ... ok\ntest data::cache_tests::incompatible_version_failure_is_cached_without_becoming_a_missing_word ... ok\ntest data::cache_tests::simple_query_validates_before_loading_and_propagates_cached_resource_errors ... ok\ntest query_case::tests::every_scalar_matches_the_pinned_python_uppercase_and_lowercase_digest ... ok\ntest data::cache_tests::sixteen_threads_share_one_initialization_and_identical_borrowed_outputs ... ok\ntest data::cache_tests::real_resources_are_independent_lazy_and_reused_without_rebuilding ... ok\ntest data::cache_tests::unused_resources_and_skip_zero_obey_the_annotation_loading_policy ... ok\ntest data::cache_tests::exact_index_retains_every_precise_key_and_borrows_resource_strings ... ok\ntest data::cache_tests::complete_decoded_logical_content_matches_the_independent_p2_1_identity ... ok\n\ntest result: ok. 30 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.06s",
+    "query_vectors": "running 1 test\ntest p0_snapshot_simple_queries_match_python ... ok\n\ntest result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s"
+  },
+  "p0_fixture": {
+    "bytes": 118971,
+    "sha256": "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1"
+  },
+  "p0_simple_query_assertions": 112,
+  "phase": "P2.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "runtime_inputs": [
+    "api_contract-1b86ea98351b0453.exe",
+    "query_vectors-87a3388ae9ce2b51.exe",
+    "lingose-dcf2e19cb253101b.exe"
+  ],
+  "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)\nbinary: rustc\ncommit-hash: 01f6ddf7588f42ae2d7eb0a2f21d44e8e96674cf\ncommit-date: 2026-02-11\nhost: x86_64-pc-windows-msvc\nrelease: 1.93.1\nLLVM version: 21.1.8",
+  "scope": "Simple-query P0 samples, isolated unavailable/exact/fallback/error fixtures, Unicode 15.0 scalar parity, ownership/concurrency and remaining phase boundaries. Not P4 exhaustive public-query or performance acceptance, minimum-version testing, packaged-crate checks or publication.",
+  "unicode": {
+    "artifacts": {
+      "src/query_case_tables.rs": {
+        "bytes": 52751,
+        "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+      },
+      "third_party/unicode/LICENSE.txt": {
+        "bytes": 1995,
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+      }
+    },
+    "compiler_unicode": "Rust compiler Unicode properties and casing are never consulted",
+    "counts": {
+      "nonidentity_lowercase_mappings": 1433,
+      "scalars": 1112064,
+      "uppercase_ranges": 651,
+      "uppercase_scalars": 1951
+    },
+    "format_version": 1,
+    "generator": {
+      "bytes": 11187,
+      "path": "tools/generate_query_case.py",
+      "sha256": "23716d0616d641108dff27ccd128f96b6a03b4c0a484972fa50c60f5408166f3"
+    },
+    "lowercase_equivalence": "Python default lower has one language-independent contextual mapping, Final_Sigma. Capital Sigma U+03A3 is Uppercase, so accepted fallback input can contain it only at index zero. Final_Sigma requires a preceding cased character, which is impossible there. Thus per-scalar full lower mappings equal whole-string lower on this accepted input domain. Later titlecase scalars are permitted and must also be lowered.",
+    "provenance": {
+      "baseline": {
+        "bytes": 54162,
+        "path": "docs/reference-baseline.json",
+        "sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
+      },
+      "installed_query": {
+        "bytes": 15574,
+        "path": "D:\\Python\\Python312\\Lib\\site-packages\\lingose\\query.py",
+        "sha256": "df4fc1c12c769b17918c056cb19570a79536991590926601b57dbb682e0c86b4"
+      },
+      "python": {
+        "executable": "D:\\Python\\Python312\\python.exe",
+        "implementation": "cpython",
+        "unicode_version": "15.0.0",
+        "version": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]"
+      },
+      "unicode_license": {
+        "bytes": 1995,
+        "copied_to": "third_party/unicode/LICENSE.txt",
+        "name": "Unicode License V3",
+        "reference_checkout": {
+          "head": "27e6cce8cf968f1ce1bf246670c2c4a428d464dc",
+          "path": "../lingose-typescript",
+          "status": [
+            " M tasks/handoff.md",
+            " M tasks/todo.md",
+            "?? docs/release-operation.md"
+          ]
+        },
+        "reference_path": "../lingose-typescript/tools/unicode/LICENSE.txt",
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+        "source_manifest": {
+          "bytes": 619,
+          "path": "../lingose-typescript/tools/unicode/sources.json",
+          "sha256": "3f2e6724d3a56a7b6440475eee8ebb4334fc399d04dfee8067f29bf320db9571"
+        },
+        "url": "https://www.unicode.org/license.txt"
+      }
+    },
+    "reproduce": "D:\\Python\\Python312\\python.exe -I -B -X utf8 tools/generate_query_case.py --check",
+    "scalar_digest_format": "For every Unicode scalar in ascending numeric order: u32 little-endian scalar, u8 Python isupper (0/1), u32 little-endian byte length of Python scalar.lower(), then its UTF-8 bytes; surrogates excluded",
+    "scalar_sha256": "82f0038842bd8f142215338cc3b3e04ee7269dbe93dfc6446c3dd926a4068837",
+    "scope": "Simple-query fallback only; no normalization, case folding, locale tailoring, or annotation casing",
+    "selection": "Only first scalar Uppercase and no later scalar Uppercase; return a variant only when the lowered string changes",
+    "unicode_version": "15.0.0"
+  }
+}

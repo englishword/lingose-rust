@@ -1,4 +1,4 @@
-//! P1.1 signature and argument-contract checks, not lexicon behavior acceptance.
+//! Public signatures, argument order, ownership, and remaining phase boundaries.
 
 use lingose::{Error, Result};
 
@@ -10,7 +10,7 @@ fn assert_not_implemented<T>(result: Result<T>) {
 }
 
 #[test]
-fn public_signatures_own_results_and_report_unimplemented_operations() {
+fn public_signatures_own_results_and_preserve_remaining_phase_boundaries() {
     let lists: [PronunciationQuery; 6] = [
         lingose::ipa,
         lingose::IPA,
@@ -36,13 +36,13 @@ fn public_signatures_own_results_and_report_unimplemented_operations() {
 
     for word in ["apple", "zzzzunknownword"] {
         for query in lists {
-            assert_not_implemented(query(word));
+            assert!(query(word).is_ok());
         }
         for query in optional {
-            assert_not_implemented(query(word));
+            assert!(query(word).is_ok());
         }
-        assert_not_implemented(meaning(word, "en"));
-        assert_not_implemented(meaning(word, "zh"));
+        assert!(meaning(word, "en").is_ok());
+        assert!(meaning(word, "zh").is_ok());
         assert_not_implemented(kind(word));
         assert_not_implemented(kind_with_label(word, "CET4"));
     }
@@ -120,7 +120,7 @@ fn word_boundaries_match_python_whitespace_without_normalizing_text() {
         "\u{180e}apple",
         "\u{0008}apple",
     ] {
-        assert_not_implemented(lingose::ipa(word));
+        assert!(lingose::ipa(word).is_ok());
     }
 }
 
@@ -208,4 +208,53 @@ fn default_functions_and_case_aliases_share_their_entry_points() {
 fn errors_support_standard_thread_safe_error_handling() {
     fn require_error<T: std::error::Error + Send + Sync + 'static>() {}
     require_error::<Error>();
+}
+
+#[test]
+fn simple_queries_return_empty_unknowns_and_independent_owned_values() {
+    for query in [lingose::ipa, lingose::IPS, lingose::ipsm] {
+        assert_eq!(query("unknownwordzz").unwrap(), Vec::<String>::new());
+    }
+    for query in [lingose::ism, lingose::root_lemma, lingose::meaning] {
+        assert_eq!(query("unknownwordzz").unwrap(), None);
+    }
+    assert_eq!(
+        lingose::meaning_with_lang("unknownwordzz", "zh").unwrap(),
+        None
+    );
+    let input = String::from("apple");
+    let mut result = lingose::IPA(&input).unwrap();
+    let saved = result.clone();
+    drop(input);
+    result[0].clear();
+    result.push("caller owned".into());
+    assert_eq!(lingose::IPA("apple").unwrap(), saved);
+    let mut meaning = lingose::meaning("apple").unwrap().unwrap();
+    let saved = meaning.clone();
+    meaning.clear();
+    assert_eq!(lingose::meaning("apple").unwrap(), Some(saved));
+}
+
+#[test]
+fn concurrent_public_queries_return_identical_results() {
+    let threads: Vec<_> = (0..16)
+        .map(|_| {
+            std::thread::spawn(|| {
+                (
+                    lingose::ipa("Apple"),
+                    lingose::IPS("Apple"),
+                    lingose::ism("running"),
+                    lingose::IPSM("running"),
+                    lingose::root_lemma("running"),
+                    lingose::meaning("apple"),
+                    lingose::meaning_with_lang("apple", "zh"),
+                )
+            })
+        })
+        .collect();
+    let results: Vec<_> = threads
+        .into_iter()
+        .map(|task| task.join().unwrap())
+        .collect();
+    assert!(results.iter().all(|result| result == &results[0]));
 }

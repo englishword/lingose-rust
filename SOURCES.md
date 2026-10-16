@@ -38,8 +38,14 @@ Per-resource source identities, snapshot credits and license references are in
 [data/SOURCES.json](data/SOURCES.json); the original Python source notice is
 preserved verbatim in [data/UPSTREAM-SOURCES.md](data/UPSTREAM-SOURCES.md).
 
-No derived Unicode tables are included yet. Final distribution notices remain
-P5.1 work, including the separately documented absence of frequency-list license
+The simple-query casing tables in `src/query_case_tables.rs` derive from the
+pinned CPython 3.12 / Unicode 15.0 database. Copyright Unicode, Inc.; licensed
+under [Unicode License V3](third_party/unicode/LICENSE.txt). The complete notice
+is preserved, with generator, interpreter, input and output identities in
+[query-case.json](docs/query-case.json). No compiler Unicode data or JavaScript
+UTF-16 ordering is used for these tables.
+
+Final distribution notices remain P5.1 work, including the separately documented absence of frequency-list license
 text in the pinned reference. The Rust port and its
 behavioral specification are adaptations of Lingose, with changes recorded in
 this repository's Git history. The project license does not relicense

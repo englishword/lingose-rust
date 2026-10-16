@@ -1,0 +1,72 @@
+{
+  "artifacts": {
+    "src/query_case_tables.rs": {
+      "bytes": 52751,
+      "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+    },
+    "third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    }
+  },
+  "compiler_unicode": "Rust compiler Unicode properties and casing are never consulted",
+  "counts": {
+    "nonidentity_lowercase_mappings": 1433,
+    "scalars": 1112064,
+    "uppercase_ranges": 651,
+    "uppercase_scalars": 1951
+  },
+  "format_version": 1,
+  "generator": {
+    "bytes": 11187,
+    "path": "tools/generate_query_case.py",
+    "sha256": "23716d0616d641108dff27ccd128f96b6a03b4c0a484972fa50c60f5408166f3"
+  },
+  "lowercase_equivalence": "Python default lower has one language-independent contextual mapping, Final_Sigma. Capital Sigma U+03A3 is Uppercase, so accepted fallback input can contain it only at index zero. Final_Sigma requires a preceding cased character, which is impossible there. Thus per-scalar full lower mappings equal whole-string lower on this accepted input domain. Later titlecase scalars are permitted and must also be lowered.",
+  "provenance": {
+    "baseline": {
+      "bytes": 54162,
+      "path": "docs/reference-baseline.json",
+      "sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
+    },
+    "installed_query": {
+      "bytes": 15574,
+      "path": "D:\\Python\\Python312\\Lib\\site-packages\\lingose\\query.py",
+      "sha256": "df4fc1c12c769b17918c056cb19570a79536991590926601b57dbb682e0c86b4"
+    },
+    "python": {
+      "executable": "D:\\Python\\Python312\\python.exe",
+      "implementation": "cpython",
+      "unicode_version": "15.0.0",
+      "version": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]"
+    },
+    "unicode_license": {
+      "bytes": 1995,
+      "copied_to": "third_party/unicode/LICENSE.txt",
+      "name": "Unicode License V3",
+      "reference_checkout": {
+        "head": "27e6cce8cf968f1ce1bf246670c2c4a428d464dc",
+        "path": "../lingose-typescript",
+        "status": [
+          " M tasks/handoff.md",
+          " M tasks/todo.md",
+          "?? docs/release-operation.md"
+        ]
+      },
+      "reference_path": "../lingose-typescript/tools/unicode/LICENSE.txt",
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+      "source_manifest": {
+        "bytes": 619,
+        "path": "../lingose-typescript/tools/unicode/sources.json",
+        "sha256": "3f2e6724d3a56a7b6440475eee8ebb4334fc399d04dfee8067f29bf320db9571"
+      },
+      "url": "https://www.unicode.org/license.txt"
+    }
+  },
+  "reproduce": "D:\\Python\\Python312\\python.exe -I -B -X utf8 tools/generate_query_case.py --check",
+  "scalar_digest_format": "For every Unicode scalar in ascending numeric order: u32 little-endian scalar, u8 Python isupper (0/1), u32 little-endian byte length of Python scalar.lower(), then its UTF-8 bytes; surrogates excluded",
+  "scalar_sha256": "82f0038842bd8f142215338cc3b3e04ee7269dbe93dfc6446c3dd926a4068837",
+  "scope": "Simple-query fallback only; no normalization, case folding, locale tailoring, or annotation casing",
+  "selection": "Only first scalar Uppercase and no later scalar Uppercase; return a variant only when the lowered string changes",
+  "unicode_version": "15.0.0"
+}

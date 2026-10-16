@@ -4,11 +4,9 @@
 [IPSM Approach](https://lingose.com/) to English pronunciation, spelling and
 meaning. The planned first release is **0.1.0**.
 
-This checkout has the **P2.2 offline resource loader and query indices**.
-Argument validation and private data loading work; public query results and text
-annotation are not implemented yet.
-Valid calls return `Error::NotImplemented`, including unknown words and empty
-text. The examples compile but cannot yet produce lexicon or annotation output.
+This checkout implements **P2.3 pronunciation, morphology, root and meaning queries**
+using the bundled offline lexicon. Category queries and text annotation remain
+under development and return `Error::NotImplemented`, including empty text.
 Registry publication is disabled in `Cargo.toml` during development.
 
 The reproducible lexicon/frequency resources, expected Rust identities and
@@ -16,6 +14,9 @@ source notices are checked in. Their export and independent full-record
 verification are described in [the data export guide](docs/data-export.md).
 The loader validates and shares the two embedded resources independently,
 including cached initialization failures. See [loader validation](docs/data-loader.md).
+Simple queries use fixed Python 3.12 / Unicode 15.0 casing tables, with
+[query verification](docs/simple-queries.md) covering the P0 samples and isolated
+fallback, unavailable-field and resource-error cases.
 
 The completed release will bundle all required data for offline use, without
 Python, Node, adjacent source repositories, configuration or lexicon downloads
@@ -27,7 +28,7 @@ divides a word into morphemes; IPSM combines IPS with ISM. Learn more at
 
 ## Query a word
 
-```rust,no_run
+```rust
 use lingose::Result;
 
 fn main() -> Result<()> {
@@ -38,9 +39,6 @@ fn main() -> Result<()> {
     println!("{:?}", lingose::root_lemma("running")?);
     println!("{:?}", lingose::meaning("apple")?); // English by default
     println!("{:?}", lingose::meaning_with_lang("apple", "zh")?);
-    println!("{}", lingose::kind("apple")?); // CET4 by default
-    println!("{:?}", lingose::kind_list_with_label("IELTS")?);
-    println!("{:?}", lingose::labels()?);
     Ok(())
 }
 ```
@@ -48,6 +46,16 @@ fn main() -> Result<()> {
 `IPA`, `IPS`, `ISM` and `IPSM` are re-exports of the corresponding lowercase
 functions, with the same signatures and behavior. No public `lookup` or `rank`
 API is planned.
+
+Queries first use the exact word. Only when no such entry exists, the first
+character is uppercase and every later character is not uppercase, they try
+the lowercase form: `Apple` can fall back, while `US`, `iPhone` and `McDonald`
+cannot. An existing entry with an unavailable field stops lookup. Saved values
+are returned unchanged, without adjusting their case or deriving new forms.
+
+Category functions (`kind`, `kind_with_label`, `kind_list`,
+`kind_list_with_label`, `labels`) will be implemented in P2.4; the default
+category is `CET4`.
 
 ## Annotate plain text
 
@@ -72,9 +80,12 @@ All calls are synchronous and return `lingose::Result<T>`. Lists own their
 annotation returns a `String`. Callers can retain or modify results independently
 of the input and internal lexicon.
 
-Once implemented, valid unknown or unavailable results will be `Ok(Vec::new())`
-for pronunciations, `Ok(None)` for optional fields, and `Ok(false)` for category
-membership. Parameter errors and damaged or incompatible data will return `Err`.
+Valid unknown or unavailable results are `Ok(Vec::new())` for pronunciations
+and `Ok(None)` for optional fields. Present empty strings, original Unicode and
+newlines are preserved. IPA, IPS and IPSM lists are independent and must not be
+paired by index. `meaning` defaults to English; `meaning_with_lang` accepts only
+exact `en` or `zh`. Parameter errors and damaged or incompatible data return `Err`.
+Completed category queries will return `Ok(false)` for an unknown word.
 `Error` implements `std::error::Error` and `Display` and is non-exhaustive.
 
 ```rust
@@ -102,7 +113,7 @@ boundaries are recorded in [the Rust interface contract](docs/rust-api.md).
 ## Development requirements
 
 Edition **2024**, intended minimum Rust version **1.85**. The minimum version
-has not yet been tested; the P1.1 skeleton is checked on Rust/Cargo **1.93.1**,
+has not yet been tested; this implementation is checked on Rust/Cargo **1.93.1**,
 `x86_64-pc-windows-msvc`. This is not cross-platform or final-release validation.
 The resource loader uses `sha2` 0.10.9 for SHA-256 integrity checks. The crate has
 no build script, database driver or download step. Declared dependency minimum
@@ -115,11 +126,14 @@ cargo test --offline --all-features
 ```
 
 Complete compilable examples are in `examples/query.rs` and
-`examples/annotate.rs`. Running them currently reports `Error::NotImplemented`.
+`examples/annotate.rs`. The query example runs offline; annotation currently
+reports `Error::NotImplemented`.
 
 ## License and credits
 
 [CC BY 4.0](./LICENSE). Original Lingose data and notation by **詹先觉 (ZHAN Xianjue)**,
 [lingose.com](https://lingose.com/). The existing upstream license and
 [source attributions](SOURCES.md) are preserved. Third-party works retain their
-own licenses; resource-specific notices will be completed when data is bundled.
+own licenses. Derived Unicode casing tables retain the
+[Unicode License V3](third_party/unicode/LICENSE.txt); their provenance is in
+[query-case.json](docs/query-case.json). Final distribution review remains P5.1.

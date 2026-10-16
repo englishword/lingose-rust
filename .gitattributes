@@ -7,6 +7,13 @@
 /src/*.rs text eol=lf
 /src/data/*.rs text eol=lf
 /tools/check_loader.py text eol=lf
+/tools/check_queries.py text eol=lf
+/tools/generate_query_case.py text eol=lf
+/tools/generate_query_vectors.py text eol=lf
+/tests/*.rs text eol=lf
+/docs/query-case.json text eol=lf
+/docs/query-verification.json text eol=lf
+/third_party/unicode/LICENSE.txt -text
 /data/*.bin binary
 /data/*.json -text
 /data/UPSTREAM-SOURCES.md -text

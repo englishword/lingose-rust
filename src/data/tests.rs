@@ -175,6 +175,159 @@ fn assert_data(bytes: &[u8], kind: Kind) {
     );
 }
 
+fn query_fixture(records: &[Record<'_>]) -> super::Lexicon {
+    let fixture = encode(records, &[], &[]);
+    // Only test fixtures are leaked, to exercise the production static view.
+    let bytes = Box::leak(fixture.bytes.into_boxed_slice());
+    let image = parse(bytes, Kind::Lexicon).unwrap();
+    let words = (0..image.counts().entries)
+        .map(|index| (image.word(index), index))
+        .collect();
+    super::Lexicon { image, words }
+}
+
+#[test]
+fn simple_query_exact_entries_block_lowercase_even_with_unavailable_fields() {
+    let lexicon = query_fixture(&[
+        Record {
+            word: "Apple",
+            fields: [None; 7],
+            state: 0,
+        },
+        Record {
+            word: "May",
+            fields: [Some("exact IPA"), None, None, None, None, None, None],
+            state: 0,
+        },
+        Record {
+            word: "apple",
+            fields: [Some("lower"); 7],
+            state: 2,
+        },
+        Record {
+            word: "may",
+            fields: [Some("lower"); 7],
+            state: 2,
+        },
+    ]);
+    for field in [
+        Field::Ipa,
+        Field::Ips,
+        Field::Ism,
+        Field::Ipsm,
+        Field::RootLemma,
+        Field::MeaningEn,
+        Field::MeaningZh,
+    ] {
+        assert_eq!(
+            crate::query::value_from("Apple", field, None, || Ok(&lexicon)),
+            Ok(None)
+        );
+        assert_eq!(
+            crate::query::value_from("APPLE", field, None, || Ok(&lexicon)),
+            Ok(None)
+        );
+        assert_eq!(
+            crate::query::value_from("aPple", field, None, || Ok(&lexicon)),
+            Ok(None)
+        );
+        assert_eq!(
+            crate::query::value_from("unknown", field, None, || Ok(&lexicon)),
+            Ok(None)
+        );
+    }
+    assert_eq!(
+        crate::query::value_from("May", Field::Ipa, None, || Ok(&lexicon)),
+        Ok(Some("exact IPA".into()))
+    );
+    assert_eq!(
+        crate::query::value_from("May", Field::MeaningEn, Some("en"), || Ok(&lexicon)),
+        Ok(None)
+    );
+    // A titlecase character later in the word is allowed and must be lowered.
+    let lexicon = query_fixture(&[
+        Record {
+            word: "aǆ",
+            fields: [Some("titlecase tail"); 7],
+            state: 2,
+        },
+        Record {
+            word: "i\u{307}",
+            fields: [Some("expanded"); 7],
+            state: 2,
+        },
+        Record {
+            word: "σ",
+            fields: [Some("sigma"); 7],
+            state: 2,
+        },
+        Record {
+            word: "ⅰ",
+            fields: [Some("roman"); 7],
+            state: 2,
+        },
+        Record {
+            word: "𐐨",
+            fields: [Some("non-BMP"); 7],
+            state: 2,
+        },
+    ]);
+    for (word, expected) in [
+        ("Aǅ", "titlecase tail"),
+        ("İ", "expanded"),
+        ("Σ", "sigma"),
+        ("Ⅰ", "roman"),
+        ("𐐀", "non-BMP"),
+    ] {
+        assert_eq!(
+            crate::query::value_from(word, Field::Ips, None, || Ok(&lexicon)),
+            Ok(Some(expected.into()))
+        );
+    }
+}
+
+#[test]
+fn simple_query_preserves_independent_projection_empty_text_and_original_bytes() {
+    let lexicon = query_fixture(&[
+        Record {
+            word: "a",
+            fields: [
+                Some(""),
+                None,
+                Some(""),
+                Some("independent IPSM"),
+                Some("0"),
+                Some("line one\nline two"),
+                Some("e\u{301} é 中文"),
+            ],
+            state: 0,
+        },
+        Record {
+            word: "stale",
+            fields: [None, Some("stale"), Some("sta-le"), None, None, None, None],
+            state: 2,
+        },
+    ]);
+    for (field, expected) in [
+        (Field::Ipa, Some("")),
+        (Field::Ips, None),
+        (Field::Ism, Some("")),
+        (Field::Ipsm, Some("independent IPSM")),
+        (Field::RootLemma, Some("0")),
+        (Field::MeaningEn, Some("line one\nline two")),
+        (Field::MeaningZh, Some("e\u{301} é 中文")),
+    ] {
+        assert_eq!(
+            crate::query::value_from("A", field, None, || Ok(&lexicon)),
+            Ok(expected.map(str::to_owned))
+        );
+    }
+    assert_eq!(
+        crate::query::value_from("stale", Field::Ipsm, None, || Ok(&lexicon)),
+        Ok(None)
+    );
+}
+
 fn sample() -> Fixture {
     encode(
         &[

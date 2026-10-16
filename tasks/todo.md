@@ -44,9 +44,11 @@
   - 依赖：P2.1。按固定方案复用只读数据，验证格式/版本并支持并发调用；错误不得转为未知词。
   - 产物：src/data/{image,mod,tests,cache_tests}.rs、接入 src/data_meta.rs、sha2 0.10.9/Cargo.lock、[加载器说明](../docs/data-loader.md)、tools/check_loader.py 与[原始证据](../docs/loader-verification.json)。
   - 验收：22 项新 Rust 测试覆盖独立格式/损坏/全字节变异、全量逻辑身份、全词借用索引/频率、16 线程单次初始化、成功/错误缓存和访问顺序；7 契约/5 文档/55 Python 测试、fmt/Clippy/文档构建通过。最小副本离线 release 构建，单独二进制七新进程在无数据目录运行通过。改为 static 避免资源重复嵌入，最终每资源一份；主初始化中位数/最大 23.42/33.87 ms、频率 0.599/0.616 ms，旧轮全部样本保留；公共 API 和 P4 性能预算尚未验收。
-- [ ] P2.3 实现发音、构词、词族和释义查询。
+- [x] P2.3 实现发音、构词、词族和释义查询。
   - 依赖：P2.2。完成 ipa/IPA、ips/IPS、ism/ISM、ipsm/IPSM、root_lemma、meaning。
   - 验收：样例、精确/小写回退、缺失及无效数据、en/zh、别名行为均与固定基线一致；不补用未采用候选。
+  - 产物：src/query.rs、Lexicon.find、固定 Unicode 15.0 helper/表、两个受保护生成器、tests/query_vectors.rs、[查询说明](../docs/simple-queries.md)、[Unicode 身份](../docs/query-case.json)、[离线 release 证据](../docs/query-verification.json)及 Unicode License V3；README/示例/接口契约同步更新。
+  - 验证：112 条 P0 snapshot 断言；精确不可用阻断/独立字段/空字符串/Unicode/错误顺序夹具；全部 1,112,064 个 scalar 的 Python 大写/小写摘要一致；16 线程公共查询及结果所有权验证。30 库测试、9 契约、1 向量测试（112 断言）、5 文档测试及 55 Python 回归通过；fmt/Clippy/文档构建及实际查询示例通过。最小副本离线 locked release 构建，三测试二进制在无源码/资源目录独立运行通过。唯一忽略项为 P2.2 手动性能探针；仅验证 Windows/Rust 1.93.1。未修改源库、P0/P2.1 固定数据，未进入分类/标注/打包/发布。
 - [ ] P2.4 实现分类及完整有序词表。
   - 依赖：P2.3。完成 kind、kind_list、labels，保留默认 CET4、标签大小写、成员和词族/rank/原词业务排序。
   - 验收：每个注册分类的成员与完整顺序均与 Python 一致，非法标签错误与未知词 false 结果分离。
@@ -85,6 +87,7 @@
 - [ ] P5.3 验证真实归档、独立离线消费和发布预检。
   - 依赖：P5.2。完整实现和必要检查通过后移除 Cargo.toml 的 publish=false 保护；更新 include 以涵盖生产数据、必要文档和许可，再检查 cargo package 文件清单和真实 .crate 压缩体积，复核当时 crates.io 限制；在隔离工程使用打包内容，依赖准备完成后验证离线构建与公共 API。
   - 验收：无维护源库、缓存、绝对路径或缺失资源；不借用当前 checkout 数据；cargo publish --dry-run 通过。结果仅记为本地发布就绪。
+  - 分发清单须包含 P2.3 新增的 third_party/unicode/LICENSE.txt 及实际使用的所有派生表许可。
 
 ## P6：crates.io 正式发布与验收
 

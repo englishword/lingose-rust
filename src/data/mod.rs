@@ -9,6 +9,8 @@ use image::{Counts, Expected, Image, Kind, corrupt};
 
 mod image;
 
+pub(crate) use image::Field;
+
 static LEXICON_BYTES: &[u8] = include_bytes!("../../data/lexicon.bin");
 static FREQUENCY_BYTES: &[u8] = include_bytes!("../../data/frequency.bin");
 
@@ -61,6 +63,14 @@ impl Lexicon {
 
     pub(crate) fn find_exact(&self, word: &str) -> Option<usize> {
         self.words.get(word).copied()
+    }
+
+    // An exact entry stops lookup even when its requested field is unavailable.
+    // Annotation uses a different fallback policy and must not call this helper.
+    pub(crate) fn find(&self, word: &str) -> Option<usize> {
+        self.find_exact(word).or_else(|| {
+            crate::query_case::lower_variant(word).and_then(|lower| self.find_exact(&lower))
+        })
     }
 }
 
