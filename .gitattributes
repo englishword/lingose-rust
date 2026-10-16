@@ -14,6 +14,7 @@
 /tools/generate_annotation_unicode.py text eol=lf
 /tools/generate_annotation_vectors.py text eol=lf
 /tools/generate_annotation_context_vectors.py text eol=lf
+/tools/generate_annotation_frequency_vectors.py text eol=lf
 /tests/*.rs text eol=lf
 /docs/query-case.json text eol=lf
 /docs/query-verification.json text eol=lf
@@ -21,6 +22,7 @@
 /docs/annotation-unicode.json text eol=lf
 /docs/annotation-verification.json text eol=lf
 /docs/annotation-context-verification.json text eol=lf
+/docs/annotation-frequency-verification.json text eol=lf
 /third_party/unicode/LICENSE.txt -text
 /data/*.bin binary
 /data/*.json -text

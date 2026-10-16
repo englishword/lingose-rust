@@ -189,6 +189,24 @@ fn lexicon_fixture(fixture: Fixture) -> super::Lexicon {
     super::Lexicon { image, words }
 }
 
+fn frequency_fixture(fixture: Fixture) -> super::Frequency {
+    let bytes = Box::leak(fixture.bytes.into_boxed_slice());
+    super::Frequency::from_image(parse(bytes, Kind::Frequency).unwrap()).unwrap()
+}
+
+#[test]
+fn frequency_matching_rejects_non_ascii_keys_without_corrupting_the_wire_parser() {
+    let fixture = encode(&[], &[], &[("café", 1)]);
+    let image = parse(Box::leak(fixture.bytes.into_boxed_slice()), Kind::Frequency).unwrap();
+    assert!(matches!(
+        super::Frequency::from_image(image),
+        Err(Error::Data {
+            resource: "frequency",
+            ..
+        })
+    ));
+}
+
 #[path = "category_tests.rs"]
 mod category_tests;
 
@@ -197,6 +215,9 @@ mod annotation_tests;
 
 #[path = "annotation_context_vectors.rs"]
 mod annotation_context_vectors;
+
+#[path = "annotation_frequency_vectors.rs"]
+mod annotation_frequency_vectors;
 
 #[test]
 fn simple_query_exact_entries_block_lowercase_even_with_unavailable_fields() {

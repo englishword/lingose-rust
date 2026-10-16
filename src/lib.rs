@@ -3,8 +3,6 @@
 mod annotation;
 mod annotation_unicode;
 mod category;
-// Frequency access is completed in P3.3; keep the temporary allowance local.
-#[allow(dead_code)]
 mod data;
 mod data_meta;
 mod error;
@@ -134,9 +132,9 @@ pub fn annotate_ips(text: &str) -> Result<String> {
 /// Annotates plain text, leaving words up to an inclusive frequency threshold.
 ///
 /// Validates the nonnegative threshold before text NUL. With no English token,
-/// returns the input without loading resources. With English tokens, currently
-/// supports zero only; positive thresholds return [`Error::NotImplemented`]
-/// until frequency filtering is implemented. Zero never loads frequency data.
+/// returns the input without loading resources. Uses the original inclusive
+/// frequency NUMBER, capped at 5062, including stored inflections and phrases.
+/// Zero never loads frequency data; positive values check frequency then lexicon.
 pub fn annotate_ips_with_skip_top(text: &str, skip_top: i64) -> Result<String> {
     annotation::annotate(text, skip_top)
 }

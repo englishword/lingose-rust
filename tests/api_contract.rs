@@ -5,12 +5,8 @@ use lingose::{Error, Result};
 type PronunciationQuery = fn(&str) -> Result<Vec<String>>;
 type OptionalFieldQuery = fn(&str) -> Result<Option<String>>;
 
-fn assert_not_implemented<T>(result: Result<T>) {
-    assert!(matches!(result, Err(Error::NotImplemented { .. })));
-}
-
 #[test]
-fn public_signatures_own_results_and_preserve_remaining_phase_boundaries() {
+fn public_signatures_own_results_and_support_all_annotation_thresholds() {
     let lists: [PronunciationQuery; 6] = [
         lingose::ipa,
         lingose::IPA,
@@ -55,11 +51,46 @@ fn public_signatures_own_results_and_preserve_remaining_phase_boundaries() {
         assert!(annotate_with_skip_top(text, 0).is_ok());
         for threshold in [1000, 5062, 5063, i64::MAX] {
             if text == "Abandon the book." {
-                assert_not_implemented(annotate_with_skip_top(text, threshold));
+                assert!(annotate_with_skip_top(text, threshold).is_ok());
             } else {
                 assert_eq!(annotate_with_skip_top(text, threshold).unwrap(), text);
             }
         }
+    }
+}
+
+#[test]
+fn frequency_annotations_are_owned_clamped_and_safe_for_concurrent_callers() {
+    let input =
+        String::from("the Abandon abandoned ma’am o’clock Messrs. one hundred unknownwordzz");
+    let thresholds = [0, 1000, 5062, 5063, i64::MAX];
+    let expected: Vec<_> = thresholds
+        .iter()
+        .map(|&threshold| lingose::annotate_ips_with_skip_top(&input, threshold).unwrap())
+        .collect();
+    assert_eq!(expected[2], expected[3]);
+    assert_eq!(expected[2], expected[4]);
+    let mut owned = expected[1].clone();
+    owned.clear();
+    drop(input);
+    let threads: Vec<_> = (0..16)
+        .map(|_| {
+            std::thread::spawn(move || {
+                thresholds
+                    .iter()
+                    .map(|&threshold| {
+                        lingose::annotate_ips_with_skip_top(
+                            "the Abandon abandoned ma’am o’clock Messrs. one hundred unknownwordzz",
+                            threshold,
+                        )
+                        .unwrap()
+                    })
+                    .collect::<Vec<_>>()
+            })
+        })
+        .collect();
+    for thread in threads {
+        assert_eq!(thread.join().unwrap(), expected);
     }
 }
 

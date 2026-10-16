@@ -35,6 +35,7 @@ fn annotation_uses_real_scanner_before_resources_and_propagates_errors() {
         "\u{903}apple",
         "a\u{20dd}",
         "a-中文",
+        "911 9-1-1",
     ] {
         for threshold in [0, 1, 5062, i64::MAX] {
             assert_eq!(annotate(text, threshold).unwrap(), text);
@@ -81,6 +82,72 @@ fn annotation_uses_real_scanner_before_resources_and_propagates_errors() {
         .is_ok()
     );
     assert_eq!(attempts(&resources), (1, 0));
+}
+
+#[test]
+fn real_annotation_frequency_loading_errors_precede_skips_and_are_cached() {
+    let resources = Resources::new(b"broken lexicon", b"broken frequency");
+    let annotate = |text, skip| {
+        crate::annotation::annotate_from(text, skip, |tokens, threshold| {
+            resources.for_annotation(tokens, threshold)
+        })
+    };
+    let first = annotate("the", i64::MAX).unwrap_err();
+    assert!(matches!(
+        first,
+        Error::Data {
+            resource: "frequency",
+            ..
+        }
+    ));
+    assert_eq!(annotate("unknownwordzz", 1).unwrap_err(), first);
+    assert_eq!(attempts(&resources), (0, 1));
+    let resources = Resources::new(b"broken lexicon", FREQUENCY_BYTES);
+    // Even a completely skipped English token must still check the lexicon.
+    assert!(matches!(
+        crate::annotation::annotate_from("the", 1, |tokens, threshold| resources
+            .for_annotation(tokens, threshold)),
+        Err(Error::Data {
+            resource: "lexicon",
+            ..
+        })
+    ));
+    assert_eq!(attempts(&resources), (1, 1));
+    let mut incompatible = FREQUENCY_BYTES.to_vec();
+    incompatible[8..12].copy_from_slice(&999_u32.to_le_bytes());
+    let resources = Resources::new(LEXICON_BYTES, Box::leak(incompatible.into_boxed_slice()));
+    let annotate = |skip| {
+        crate::annotation::annotate_from("the", skip, |tokens, threshold| {
+            resources.for_annotation(tokens, threshold)
+        })
+    };
+    assert!(annotate(0).is_ok());
+    assert_eq!(attempts(&resources), (1, 0));
+    let first = annotate(1).unwrap_err();
+    assert!(matches!(
+        first,
+        Error::IncompatibleDataVersion {
+            resource: "frequency",
+            ..
+        }
+    ));
+    assert_eq!(annotate(5062).unwrap_err(), first);
+    assert_eq!(attempts(&resources), (1, 1));
+}
+
+#[test]
+fn annotation_caps_the_threshold_before_the_resource_request() {
+    let resources = Resources::new(LEXICON_BYTES, FREQUENCY_BYTES);
+    for skip in [0, 1, 1000, 5062, 5063, i64::MAX] {
+        let expected = skip.min(5062) as u32;
+        crate::annotation::annotate_from("the", skip, |tokens, threshold| {
+            assert!(tokens);
+            assert_eq!(threshold, expected);
+            resources.for_annotation(tokens, threshold)
+        })
+        .unwrap();
+    }
+    assert_eq!(attempts(&resources), (1, 1));
 }
 
 #[test]
@@ -388,6 +455,7 @@ fn frequency_search_preserves_exact_spelling_and_inclusive_original_thresholds()
     let frequency = resources.frequency().unwrap();
     for index in 0..frequency.image.counts().frequency_words {
         let (word, number) = frequency.image.frequency(index);
+        assert!(word.is_ascii());
         assert_eq!(frequency.image.find_frequency(word), Some(number));
         assert!(frequency.contains(word, number));
         assert!(!frequency.contains(word, number - 1));
@@ -411,6 +479,28 @@ fn frequency_search_preserves_exact_spelling_and_inclusive_original_thresholds()
     assert!(!frequency.contains("The", 5062));
     assert!(!frequency.contains("unknownwordzz", 5062));
     assert!(!frequency.contains("the", 0));
+    assert_eq!(attempts(&resources), (0, 1));
+}
+
+#[test]
+fn shared_special_frequency_index_has_python_priority_and_original_numbers() {
+    let resources = Resources::new(LEXICON_BYTES, FREQUENCY_BYTES);
+    let frequency = resources.frequency().unwrap();
+    assert_eq!(frequency.special.len(), 26);
+    assert!(frequency.special.windows(2).all(|pair| {
+        pair[0].0.len() > pair[1].0.len()
+            || (pair[0].0.len() == pair[1].0.len() && pair[0].0 < pair[1].0)
+    }));
+    for &(word, rank) in &frequency.special {
+        assert!(!crate::annotation::is_english(word));
+        assert_eq!(frequency.image.find_frequency(word), Some(rank));
+    }
+    assert!(frequency.special.contains(&("winded ; wind", 1914)));
+    assert!(frequency.special.contains(&("one hundred fifty", 3941)));
+    assert_eq!(
+        frequency.special.as_ptr(),
+        resources.frequency().unwrap().special.as_ptr()
+    );
     assert_eq!(attempts(&resources), (0, 1));
 }
 

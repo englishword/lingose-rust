@@ -76,13 +76,32 @@ impl Lexicon {
 
 pub(crate) struct Frequency {
     pub(crate) image: Image<'static>,
+    pub(crate) special: Vec<(&'static str, u32)>,
 }
 
 impl Frequency {
     fn load(bytes: &'static [u8]) -> Result<Self> {
-        Ok(Self {
-            image: Image::parse(bytes, FREQUENCY_EXPECTED)?,
-        })
+        Self::from_image(Image::parse(bytes, FREQUENCY_EXPECTED)?)
+    }
+
+    fn from_image(image: Image<'static>) -> Result<Self> {
+        let mut special = Vec::new();
+        for index in 0..image.counts().frequency_words {
+            let (word, number) = image.frequency(index);
+            // Pinned v1 frequency keys are all lowercase ASCII. The literal
+            // IGNORECASE matcher relies on this explicit, checked domain.
+            if !word.is_ascii() {
+                return Err(corrupt(
+                    "frequency",
+                    "v1 matching requires ASCII frequency keys",
+                ));
+            }
+            if !crate::annotation::is_english(word) {
+                special.push((word, number));
+            }
+        }
+        special.sort_unstable_by(|a, b| b.0.len().cmp(&a.0.len()).then(a.0.cmp(b.0)));
+        Ok(Self { image, special })
     }
 
     pub(crate) fn contains(&self, word: &str, skip_top: u32) -> bool {

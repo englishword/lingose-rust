@@ -68,9 +68,11 @@
   - 验收：固定 Python 向量逐字一致，跨标点/段落上下文正确，不把推导值写回词库。
   - 产物：src/annotation.rs 上下文/明确缩写/连字符/直弯撇号/词形候选与投影；复用固定 Python 空白表；前缀搜索使用显式堆栈。新增 tools/generate_annotation_context_vectors.py 及三个独立 P3.2 向量文件，保留 P0/P3.1 产物；check_queries.py --annotation-context 生成独立[离线 release 证据](../docs/annotation-context-verification.json)。
   - 验证：3,112 个分隔符（全部 29 个 Python 空白）、1,018 个词干谓词、3,034 个词形输入/5,109 个候选元组；16 条 P0+51 条新全文共 134 公共断言，20 组 wire 夹具/47 全文断言含全部 13 条 P0 零阈值夹具。阻断/歧义/同输出/无法对齐/混合大小写/多弯撇号/4,096 连续尾缀通过；83 Rust/5 文档/56 Python 回归、311 条固定 Python 向量、六个生成器 --check、fmt/Clippy/文档构建/示例及六二进制无资源 release 运行通过。仅 Windows MSVC/Rust 1.93.1；正阈值仍显式 NotImplemented，未进入 P3.3、P4 或发布。
-- [ ] P3.3 实现高频词及词形屏蔽。
+- [x] P3.3 实现高频词及词形屏蔽。
   - 依赖：P3.2。按原始 NUMBER 阈值包含 LEMMA/INFLECTIONS，重复词使用最小序号；处理短语和带标点形式，保留频率序号缺口。
   - 验收：skip_top=0/1000/5062、阈值相等、超过上限及非法参数检查通过，完整标注样例与 Python 一致。
+  - 产物：src/annotation.rs 频率优先与特殊形式保护/重扫描；Frequency 共享 26 个特殊键索引并检查固定 ASCII 键域，去除 data 模块临时 dead_code allowance。新增 tools/generate_annotation_frequency_vectors.py 及三个独立向量文件，check_queries.py --annotation-frequency 保存单独[离线 release 证据](../docs/annotation-frequency-verification.json)；README/契约/示例同步更新。
+  - 验证：656 字面匹配输入；221 公共输入/248 断言覆盖全部 53 条合法 P0 snapshot 和 2 条 ValueError（6 条动态 TypeError 明确在 Rust 域外）；6 组 wire/226 输入含 23 条 P0 标注夹具，另有 3 项 P0 资源行为。26 真实特殊键的阈值前/相等/满阈值、重叠消费/Unicode/上下文/已存词形/损坏资源/缓存/截顶/16线程通过。98 Rust/5 文档/56 Python 回归、311 固定 Python 向量、七生成器检查、16 项新生成器保护探针、fmt/Clippy/文档构建/示例和七二进制无资源 release 运行通过；仅 Windows MSVC/Rust 1.93.1。未改 P0/生产数据/旧向量或证据，未进入 P4、打包或发布。
 
 ## P4：全量正确性与性能验收
 

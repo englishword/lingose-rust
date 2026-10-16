@@ -4,10 +4,10 @@
 [IPSM Approach](https://lingose.com/) to English pronunciation, spelling and
 meaning. The planned first release is **0.1.0**.
 
-This checkout implements offline word/category queries and **P3.2 text
+This checkout implements offline word/category queries and **P3.3 text
 annotation**. Direct IPS values, spelling case, Unicode boundaries, `the` context,
-contractions and compound/word-form fallback work; frequency filtering remains under development.
-Positive `skip_top` returns `Error::NotImplemented` when English tokens occur.
+contractions, compound/word-form fallback and frequency filtering are implemented.
+Full-corpus differential and performance acceptance remain P4 work.
 Registry publication is disabled in `Cargo.toml` during development.
 
 The reproducible lexicon/frequency resources, expected Rust identities and
@@ -76,16 +76,25 @@ labels return an error even for unknown words; registered empty lists succeed.
 fn main() -> lingose::Result<()> {
     let text = "Abandon the book. The apple and the hour.";
     println!("{}", lingose::annotate_ips(text)?); // skip_top = 0
+    println!("{}", lingose::annotate_ips_with_skip_top(text, 1000)?);
     Ok(())
 }
 ```
 
 Rust expresses Python's default arguments through the default entry points and
 explicit `*_with_lang`, `*_with_label` and `*_with_skip_top` functions. `skip_top`
-is an `i64`; negative values are rejected. Annotation supports zero and
+is an `i64`; negative values are rejected, and values above 5062 use 5062. Annotation
 preserves case, whitespace and punctuation. Empty text or text without a complete
 English token is returned unchanged without accessing either resource, for any
-nonnegative threshold. Positive frequency filtering is pending P3.3.
+nonnegative threshold. Zero never loads frequency data. Positive thresholds check
+the frequency resource followed by the lexicon, even when every token is skipped.
+
+Frequency filtering keeps stored words and inflections with original
+`NUMBER <= skip_top` unchanged, including equality and original numbering gaps.
+Repeated words use their earliest number. It also protects complete stored phrases
+and punctuation forms such as `one hundred` and `Messrs.`. Longer forms take priority,
+and Unicode word boundaries keep adjacent unknown text separate. Filtering precedes
+unavailable-state checks and fallback; it does not invent new skipped inflections.
 
 `the` uses the next English token's first letter across whitespace and selected
 quotes/brackets, stopping at punctuation or blank lines. Saved whole-word IPS
