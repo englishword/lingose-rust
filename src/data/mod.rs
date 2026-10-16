@@ -199,4 +199,6 @@ pub(crate) fn for_annotation(
 #[cfg(test)]
 mod cache_tests;
 #[cfg(test)]
+mod p41_joint_error_tests;
+#[cfg(test)]
 mod tests;

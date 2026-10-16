@@ -1,4 +1,5 @@
 /.local/
 /target/
+/tools/differential-probe/target/
 __pycache__/
 *.py[cod]

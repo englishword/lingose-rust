@@ -76,9 +76,11 @@
 
 ## P4：全量正确性与性能验收
 
-- [ ] P4.1 完成全量差分与必要错误场景验证。
+- [x] P4.1 完成全量差分与必要错误场景验证。
   - 依赖：P3.3。对全部词条的查询结果、全部分类词表及固定长文本进行 Python 对照；用独立夹具覆盖真实数据中未出现的错误与冲突路径。
   - 验收：逐字段、逐列表和逐文本输出一致，数据版本/摘要可追踪；不以抽样取代完整对照。
+  - 产物：tools/check_full_differential.py、独立 tools/differential-probe、tools/generate_error_vectors.py、两组 P4.1 Rust 夹具、验证器回归；[完整说明](../docs/full-differential.md)、[全量差分证据](../docs/full-differential-verification.json)及[隔离 release 回归](../docs/correctness-regression-verification.json)。check_queries.py --full-correctness 保留历史报告。
+  - 验证：50,335 精确词键×37 公共调用、24 类/209,759 完整有序成员及默认词表、245 条适用 P0 snapshot、18 次规则文本、10,000/100,000 词×三个阈值全文，共 1,862,690 个完整结果零差异；23 条动态 TypeError 明确在 Rust 类型/调用域外。六份长文本输出同时匹配 P1.2 固定身份。211 条独立夹具断言含全部 14 条 P0 查询/分类夹具及十种不可用状态；四种联合资源错误/缓存顺序和全屏蔽后的主库错误通过。102 Rust/5 文档/61 Python 测试、311 P0 向量、八生成器检查、fmt/Clippy/文档构建及七二进制无资源离线 release 运行通过。固定输入/正式数据/历史证据未改，仅实测 Windows MSVC/Rust 1.93.1；性能验收留给 P4.2。
 - [ ] P4.2 验收并优化 release 性能。
   - 依赖：P4.1。按 [固定预算及语料](../docs/performance-budget.md)测量冷进程/首次访问、热查询、完整词表、10,000/100,000 词文本、skip_top=0/1000/5062、内存和并发调用；Rust 完整输出须与本轮固定的 Python 输出身份及 P4.1 对照一致，不以索引负载代替真实标注。
   - 验收：达到 P1.2 固定预算，报告测量条件、样本量和统计方法；优化后重跑受影响正确性检查，不删减数据或截断输出。

@@ -219,6 +219,9 @@ mod annotation_context_vectors;
 #[path = "annotation_frequency_vectors.rs"]
 mod annotation_frequency_vectors;
 
+#[path = "p41_query_fixture_tests.rs"]
+mod p41_query_fixture_tests;
+
 #[test]
 fn simple_query_exact_entries_block_lowercase_even_with_unavailable_fields() {
     let lexicon = query_fixture(&[
