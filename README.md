@@ -4,11 +4,16 @@
 [IPSM Approach](https://lingose.com/) to English pronunciation, spelling and
 meaning. The planned first release is **0.1.0**.
 
-This checkout is the **P1.1 interface skeleton**. Argument validation works;
-production lexicon data, queries and text annotation are not implemented yet.
+This checkout has the **P1.1 interface skeleton and P2.1 data resources**.
+Argument validation works; production data loading, queries and text annotation
+are not implemented yet.
 Valid calls return `Error::NotImplemented`, including unknown words and empty
 text. The examples compile but cannot yet produce lexicon or annotation output.
 Registry publication is disabled in `Cargo.toml` during development.
+
+The reproducible lexicon/frequency resources, expected Rust identities and
+source notices are checked in. Their export and independent full-record
+verification are described in [the data export guide](docs/data-export.md).
 
 The completed release will bundle all required data for offline use, without
 Python, Node, adjacent source repositories, configuration or lexicon downloads

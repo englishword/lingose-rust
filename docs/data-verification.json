@@ -1,0 +1,99 @@
+{
+  "checked_annotation_states": 50335,
+  "checked_categories": 24,
+  "checked_category_members": 209759,
+  "checked_fields_per_record": 7,
+  "checked_frequency_words": 10620,
+  "checked_p0_snapshot_vectors": 154,
+  "checked_records": 50335,
+  "checks": {
+    "cargo_clippy_all_targets_all_features_warnings_denied_offline": true,
+    "cargo_doc_no_deps_all_features_offline": true,
+    "cargo_fmt_check": true,
+    "generated_rustfmt_check": true,
+    "independent_export_review": "passed; separate decoder/source-comparison implementation and review agent",
+    "python_unittests": {
+      "new_p2_1_tests": 37,
+      "passed": 55
+    },
+    "rust_api_contract_tests": 7,
+    "rust_doctests": 5,
+    "rust_toolchain": "1.93.1-x86_64-pc-windows-msvc"
+  },
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.4"
+  },
+  "reproducibility": {
+    "byte_identical_files": {
+      "data/SOURCES.json": {
+        "bytes": 4997,
+        "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+      },
+      "data/UPSTREAM-SOURCES.md": {
+        "bytes": 1457,
+        "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+      },
+      "data/frequency.bin": {
+        "bytes": 200272,
+        "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+      },
+      "data/lexicon.bin": {
+        "bytes": 10259743,
+        "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+      },
+      "data/manifest.json": {
+        "bytes": 3900,
+        "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+      },
+      "src/data_meta.rs": {
+        "bytes": 1531,
+        "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+      }
+    },
+    "export_check_passed": true,
+    "export_write_passed": true,
+    "git_checkout": {
+      "byte_identical_files": [
+        "data/lexicon.bin",
+        "data/frequency.bin",
+        "data/manifest.json",
+        "data/SOURCES.json",
+        "data/UPSTREAM-SOURCES.md",
+        "src/data_meta.rs",
+        "LICENSE",
+        "docs/reference-baseline.json",
+        "tests/fixtures/python-api-v1.json"
+      ],
+      "core_autocrlf": true,
+      "core_eol": "crlf",
+      "metadata_check_passed": true
+    },
+    "isolated_rebuild_pythonhashseed": 20261016
+  },
+  "resources": {
+    "frequency.bin": {
+      "bytes": 200272,
+      "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+    },
+    "lexicon.bin": {
+      "bytes": 10259743,
+      "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+    }
+  },
+  "scope": "P2.1 binary projections, full installed Python field/state/category/frequency comparison; excludes production Rust API, concurrency, annotation text and performance acceptance",
+  "source_comparison_seconds": 278.266,
+  "source_files_unchanged": true,
+  "source_invalid_selected_ipsm": 0,
+  "unchanged_p0_artifacts": {
+    "docs/reference-baseline.json": {
+      "bytes": 54162,
+      "sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
+    },
+    "tests/fixtures/python-api-v1.json": {
+      "bytes": 118971,
+      "sha256": "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1"
+    }
+  },
+  "verified_on": "2026-10-16"
+}

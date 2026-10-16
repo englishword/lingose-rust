@@ -1,0 +1,136 @@
+{
+  "annotation_states": {
+    "1": 246,
+    "2": 50089
+  },
+  "available_fields": {
+    "ipa": 50089,
+    "ips": 50089,
+    "ipsm": 50003,
+    "ism": 50250,
+    "meaning_en": 45719,
+    "meaning_zh": 45739,
+    "root_lemma": 50248
+  },
+  "baseline_sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01",
+  "category_lengths": {
+    "BEC": 2814,
+    "Black": 45420,
+    "Blue": 9622,
+    "CET4": 5225,
+    "CET4_CET6": 7994,
+    "CET6": 7232,
+    "COCA_20000": 16840,
+    "College": 7874,
+    "GMAT": 3300,
+    "GRE": 10952,
+    "Green": 6473,
+    "IELTS": 5254,
+    "Junior": 2876,
+    "OXFORD_3000": 3447,
+    "OXFORD_5000": 5103,
+    "Primary": 847,
+    "Red": 22999,
+    "SAT": 4437,
+    "Senior": 4334,
+    "TEM-4": 8795,
+    "TEM-8": 12952,
+    "TOEFL": 11246,
+    "White": 847,
+    "Yellow": 2876
+  },
+  "exporter_version": 1,
+  "format_version": 1,
+  "frequency_data_version": "b6b9e367024c584afd814a8eac80a1f7abfa4b0cdbaa9ff20e810a28c34d0f09",
+  "frequency_schema": 1,
+  "generated_files": {
+    "data/SOURCES.json": {
+      "bytes": 4997,
+      "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+    },
+    "data/UPSTREAM-SOURCES.md": {
+      "bytes": 1457,
+      "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+    },
+    "src/data_meta.rs": {
+      "bytes": 1531,
+      "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+    }
+  },
+  "input_identities": {
+    "modules": {
+      "__init__.py": {
+        "bytes": 498,
+        "sha256": "f5d7957c9aa07ce95d5eb9bde70e9eb913cf040ce5b6632bff716ed82a039f77"
+      },
+      "_packed.py": {
+        "bytes": 11675,
+        "sha256": "4abefea71301eff3e4c5596e0b35e5cdffffaee9a8feffba31b4415628d3c496"
+      },
+      "_resources.py": {
+        "bytes": 3294,
+        "sha256": "ab4fc48b73d0516d63cf17b7a4c6a053cad6ba8dd361d59e5a0ef0153050a486"
+      },
+      "annotation.py": {
+        "bytes": 14266,
+        "sha256": "76355b9a0d71882f8407640740865529744e8eb9c6400081a0f764188bd4cbfc"
+      },
+      "query.py": {
+        "bytes": 15574,
+        "sha256": "df4fc1c12c769b17918c056cb19570a79536991590926601b57dbb682e0c86b4"
+      },
+      "ranking.py": {
+        "bytes": 3849,
+        "sha256": "8a5d60c77a5c03d66097f1aa143573b88f5219ed43e1b2b006e901f163dddfac"
+      },
+      "types.py": {
+        "bytes": 2097,
+        "sha256": "624331756853b630c139a05f3d33d35706fa768a4a2a2aa6ff380af3bd792f0a"
+      }
+    },
+    "resources": {
+      "frequency.sqlite": {
+        "bytes": 1929216,
+        "sha256": "d8da3788e62ec7c2df27a9f7b148ef018e83c8ea5b189b72819a2a8c911ca269"
+      },
+      "lexicon.lpk": {
+        "bytes": 89292019,
+        "sha256": "cf0b3dd5aa7c5f89a88143c0503f089f82ccebd57aec1fc65e1cb3c5b65a3d96"
+      },
+      "lexicon.sqlite": {
+        "bytes": 1023238144,
+        "sha256": "ada92a2b51de23f9f82e403f3593e3b783311f8aaa34071d926f3546f84b52fe"
+      }
+    }
+  },
+  "invalid_selected_ipsm": 0,
+  "ipsm_algorithm": 1,
+  "lexicon_data_version": "17a1d0a15cbeec8e323b4a1750eccd88e372a65339e11bee3a7cf55c4f4b0dbd",
+  "lexicon_schema": 2,
+  "max_skip_top": 5062,
+  "null_string_id": 4294967295,
+  "ordering": "Original UTF-8 bytes; labels in configured order; category lists in pinned Python business order",
+  "reference_version": "0.2.0",
+  "resources": {
+    "frequency.bin": {
+      "bytes": 200272,
+      "entries": 0,
+      "frequency_words": 10620,
+      "labels": 0,
+      "members": 0,
+      "pool_bytes": 72716,
+      "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264",
+      "strings": 10620
+    },
+    "lexicon.bin": {
+      "bytes": 10259743,
+      "entries": 50335,
+      "frequency_words": 0,
+      "labels": 24,
+      "members": 209759,
+      "pool_bytes": 6131671,
+      "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6",
+      "strings": 318808
+    }
+  }
+}

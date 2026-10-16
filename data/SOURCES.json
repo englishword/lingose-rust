@@ -1,0 +1,121 @@
+{
+  "author": "詹先觉 (ZHAN Xianjue)",
+  "format_version": 1,
+  "homepage": "https://lingose.com/",
+  "license": "CC-BY-4.0",
+  "license_file": "LICENSE",
+  "notice_scope": "Preserves pinned upstream assertions and links, not a new license grant. Third-party works retain their licenses. Full distribution notice review remains P5.1; no separate frequency-list license text is supplied by the pinned reference.",
+  "reference": {
+    "baseline_sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01",
+    "distribution": "lingose",
+    "source_commit": "b36baf6d55fa259ecc38acea9e881ae6d1477d33",
+    "version": "0.2.0"
+  },
+  "repository": "https://github.com/englishword",
+  "resources": {
+    "frequency.bin": {
+      "adaptation": "Exact Python-lowercase tokens and minimum original NUMBER, including phrases/punctuation and gaps",
+      "metadata": {
+        "data_version": "b6b9e367024c584afd814a8eac80a1f7abfa4b0cdbaa9ff20e810a28c34d0f09",
+        "max_rank": 5062,
+        "row_count": 5061,
+        "schema_version": 1,
+        "sheet": "The List - Frequency List",
+        "singleton": 1,
+        "source_filename": "frequency_List.xlsx",
+        "source_sha256": "8fada71c75023eb068661e57c1803ae54f949d91f2d61061c22e767f659bc0ce"
+      },
+      "source": "Frequency List by Fabien Snauwaert, https://frequencylist.com/",
+      "source_identity": {
+        "bytes": 1929216,
+        "sha256": "d8da3788e62ec7c2df27a9f7b148ef018e83c8ea5b189b72819a2a8c911ca269"
+      }
+    },
+    "lexicon.bin": {
+      "adaptation": "Effective adopted public fields, annotation state and ordered category membership; UTF-8 v1 binary projection",
+      "fields": {
+        "categories": "Primarily original Lingose data; some labels rebuilt with external vocabulary lists",
+        "ipa": "Phonemizer 3.3.0 and eSpeak NG 1.52.0 generated IPA",
+        "ips/ism/root_lemma": "Original Lingose data",
+        "ipsm": "Stored selected Lingose derivation with valid IPS/ISM dependencies; not recalculated",
+        "meaning_en": "Adapted from ECDICT with extensive rewriting",
+        "meaning_zh": "Translated from the English meanings"
+      },
+      "snapshots": [
+        {
+          "domain": "pronunciation",
+          "format": "csv",
+          "relative_path": "IPS/lingose_notation_words.csv",
+          "sha256": "ef1ccc9a79b1e753f1ac9a77e8e61e71b8ace46688519bd391afdcec710cde69",
+          "snapshot_id": "c2a36bdb-e6f0-5eac-96b6-de88fdcc4c91",
+          "source_key": "ips_main"
+        },
+        {
+          "domain": "pronunciation",
+          "format": "csv",
+          "relative_path": "IPS/more_notation_words.csv",
+          "sha256": "54e4b8a0f86c222f565628da8ba8dd5dca0bf281c3ca87d5b00add09729e7c86",
+          "snapshot_id": "2fe6a1e0-fb6e-5523-88c5-a20843563cf3",
+          "source_key": "ips_more"
+        },
+        {
+          "domain": "morphology",
+          "format": "csv",
+          "relative_path": "ISM/all_ISM_list.csv",
+          "sha256": "f0e82a87e2a5b14bec01869bb87c9c5fa993b24e837fb672ff5b02540bf5e8ef",
+          "snapshot_id": "1117d4bb-d6d5-5536-b44c-21c685c20371",
+          "source_key": "ism"
+        },
+        {
+          "domain": "classification",
+          "format": "csv",
+          "relative_path": "kind/all_words_list.csv",
+          "sha256": "2505214ced531e0f5c23193af4ac3536d53f78e56590d5c8883b295ea4710be4",
+          "snapshot_id": "a5d06aab-655b-56ba-afcf-a9e1406d9f38",
+          "source_key": "kind"
+        },
+        {
+          "domain": "meaning",
+          "format": "csv",
+          "relative_path": "meaning/40k_words_meaning.csv",
+          "sha256": "facd8c6f9b0a6594c42347eb9eafb838ed1489b127ae8c7f5b85ece2c14ea534",
+          "snapshot_id": "be055437-7ddd-5c14-8311-135ca4aee0da",
+          "source_key": "meaning"
+        }
+      ],
+      "source": "Installed Lingose lexicon.sqlite, verified against its packed snapshot",
+      "source_identity": {
+        "bytes": 1023238144,
+        "sha256": "ada92a2b51de23f9f82e403f3593e3b783311f8aaa34071d926f3546f84b52fe"
+      }
+    }
+  },
+  "third_party": [
+    {
+      "credit": "Mathieu Bernard and Hadrien Titeux, JOSS 6(68), 3958 (2021)",
+      "license_reference": "https://github.com/bootphon/phonemizer#licence",
+      "name": "Phonemizer"
+    },
+    {
+      "credit": "eSpeak NG contributors, based on Jonathan Duddington's eSpeak",
+      "license_reference": "https://github.com/espeak-ng/espeak-ng/blob/master/COPYING",
+      "name": "eSpeak NG"
+    },
+    {
+      "credit": "Copyright (c) 2025 Linwei",
+      "license": "MIT",
+      "license_reference": "https://github.com/skywind3000/ECDICT/blob/master/LICENSE",
+      "name": "ECDICT"
+    },
+    {
+      "credit": "Fabien Snauwaert",
+      "license_reference": "https://frequencylist.com/",
+      "name": "Frequency List"
+    }
+  ],
+  "upstream_notices": {
+    "bytes": 1457,
+    "file": "data/UPSTREAM-SOURCES.md",
+    "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+  }
+}

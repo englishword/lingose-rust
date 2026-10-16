@@ -30,9 +30,17 @@ The attribution above and the accompanying `LICENSE` are preserved from the
 Python reference at commit `b36baf6d55fa259ecc38acea9e881ae6d1477d33`.
 Tool versions above describe that reference, not Rust runtime requirements.
 
-The Rust P1.1 skeleton contains no production lexicon or derived Unicode data
-tables. Data projection and per-resource provenance are scheduled for P2.1;
-final distribution notices will be checked in P5.1. The Rust port and its
+The P2.1 resources in `data/lexicon.bin` and `data/frequency.bin` are reproducible
+projections of the pinned installed Python Lingose 0.2.0 snapshot. They contain
+effective public fields, annotation eligibility, full ordered category lists,
+and original frequency thresholds. They omit the maintenance/review database.
+Per-resource source identities, snapshot credits and license references are in
+[data/SOURCES.json](data/SOURCES.json); the original Python source notice is
+preserved verbatim in [data/UPSTREAM-SOURCES.md](data/UPSTREAM-SOURCES.md).
+
+No derived Unicode tables are included yet. Final distribution notices remain
+P5.1 work, including the separately documented absence of frequency-list license
+text in the pinned reference. The Rust port and its
 behavioral specification are adaptations of Lingose, with changes recorded in
 this repository's Git history. The project license does not relicense
 third-party works.

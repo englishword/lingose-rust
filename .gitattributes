@@ -1,0 +1,8 @@
+# Preserve byte identities across checkouts even when core.autocrlf=true.
+/data/*.bin binary
+/data/*.json -text
+/data/UPSTREAM-SOURCES.md -text
+/src/data_meta.rs -text
+/docs/reference-baseline.json -text
+/tests/fixtures/python-api-v1.json -text
+/LICENSE -text
