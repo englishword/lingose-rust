@@ -1,0 +1,629 @@
+{
+  "authorization": {
+    "P6_2_started": false,
+    "commit_policy": "No commit; previous user instruction retained",
+    "preflight": "User explicitly requested P6.1",
+    "upload_performed": false
+  },
+  "base_commit": "5db98249ef75be4bd2ae38a832b3a99999c9bf99",
+  "candidate": {
+    "bytes": 4048633,
+    "documented_registry_limit": "10MB",
+    "files": 41,
+    "fixed_budget_bytes": 5000000,
+    "local_links": 13,
+    "normalized_manifest_and_notices_audited": true,
+    "path": ".local/p61-5db9824/lingose-0.1.0.crate",
+    "registry_rule_url": "https://doc.rust-lang.org/cargo/reference/publishing.html",
+    "sha256": "fb1a40407222053fa2acf6b92be99e59648d8e2a7ceac3c7f20182bbb393c6a8",
+    "source_inputs": {
+      "Cargo.lock": {
+        "bytes": 2390,
+        "sha256": "3ba42486751b118af6f60b3d2d58466ba36040d581de2f32c2ca893239a88df2"
+      },
+      "Cargo.toml": {
+        "bytes": 916,
+        "sha256": "05a99b15db1276bd4353883d93244d0a2e23d7759593e3b6b83ea139eacc3ed2"
+      },
+      "LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "README.md": {
+        "bytes": 9488,
+        "sha256": "ff695b01b200f134e429c015b6de9c46974491f0bb1a82ed0bacaa8505229e5f"
+      },
+      "SOURCES.md": {
+        "bytes": 1445,
+        "sha256": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5"
+      },
+      "data/LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "data/SOURCES.json": {
+        "bytes": 4997,
+        "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+      },
+      "data/UPSTREAM-SOURCES.md": {
+        "bytes": 1457,
+        "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+      },
+      "data/frequency.bin": {
+        "bytes": 200272,
+        "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+      },
+      "data/lexicon.bin": {
+        "bytes": 10259743,
+        "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+      },
+      "data/manifest.json": {
+        "bytes": 3900,
+        "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+      },
+      "docs/distribution-provenance.json": {
+        "bytes": 5569,
+        "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+      },
+      "docs/rust-api.md": {
+        "bytes": 8458,
+        "sha256": "86f418aa7ee57db786635ef26ba03d9f9d6cb04a29d19886674469a143358fcb"
+      },
+      "examples/annotate.rs": {
+        "bytes": 423,
+        "sha256": "c604152bbe8995e5c439c0122fa9674d9c38d87f53890929a34cdb15798bd6cd"
+      },
+      "examples/query.rs": {
+        "bytes": 871,
+        "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+      },
+      "src/annotation.rs": {
+        "bytes": 19775,
+        "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+      },
+      "src/annotation_context_vectors.rs": {
+        "bytes": 321810,
+        "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+      },
+      "src/annotation_frequency_vectors.rs": {
+        "bytes": 24615,
+        "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+      },
+      "src/annotation_unicode.rs": {
+        "bytes": 3734,
+        "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+      },
+      "src/annotation_unicode_tables.rs": {
+        "bytes": 40416,
+        "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+      },
+      "src/annotation_vectors.rs": {
+        "bytes": 65657,
+        "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+      },
+      "src/category.rs": {
+        "bytes": 1653,
+        "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+      },
+      "src/data/annotation_context_vectors.rs": {
+        "bytes": 37586,
+        "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+      },
+      "src/data/annotation_frequency_vectors.rs": {
+        "bytes": 87772,
+        "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+      },
+      "src/data/annotation_tests.rs": {
+        "bytes": 3391,
+        "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+      },
+      "src/data/cache_tests.rs": {
+        "bytes": 22365,
+        "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+      },
+      "src/data/category_tests.rs": {
+        "bytes": 4243,
+        "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+      },
+      "src/data/image.rs": {
+        "bytes": 15144,
+        "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+      },
+      "src/data/mod.rs": {
+        "bytes": 6395,
+        "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+      },
+      "src/data/p41_joint_error_tests.rs": {
+        "bytes": 4967,
+        "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+      },
+      "src/data/p41_query_fixture_tests.rs": {
+        "bytes": 62352,
+        "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+      },
+      "src/data/tests.rs": {
+        "bytes": 24506,
+        "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+      },
+      "src/data_meta.rs": {
+        "bytes": 1531,
+        "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+      },
+      "src/error.rs": {
+        "bytes": 2127,
+        "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+      },
+      "src/lib.rs": {
+        "bytes": 5169,
+        "sha256": "60568d3c77278def9cd8d3e3c56ccf71007f6e6194ea70dcce3b15830003eeef"
+      },
+      "src/query.rs": {
+        "bytes": 1207,
+        "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+      },
+      "src/query_case.rs": {
+        "bytes": 5074,
+        "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+      },
+      "src/query_case_tables.rs": {
+        "bytes": 52751,
+        "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+      },
+      "src/validation.rs": {
+        "bytes": 1624,
+        "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+      },
+      "third_party/unicode/LICENSE.txt": {
+        "bytes": 1995,
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+      }
+    },
+    "source_snapshot": ".local/p61-5db9824/source",
+    "source_strategy": "Byte-checked snapshot without .git; no fabricated VCS metadata. Source input hashes bind the archive to the working tree.",
+    "vcs_metadata_absent": true
+  },
+  "checked_at_utc": "2026-10-16T13:10:26.916515+00:00",
+  "credentials": {
+    "account": "Prefee",
+    "browser_inventory": "No enabled browsers or tabs available",
+    "crate_scope_allows_lingose": true,
+    "default_crates_io_token_present": true,
+    "endpoint_sources": [
+      "https://raw.githubusercontent.com/rust-lang/crates.io/main/src/controllers/user/me.rs",
+      "https://raw.githubusercontent.com/rust-lang/crates.io/main/src/controllers/token.rs",
+      "https://raw.githubusercontent.com/rust-lang/crates.io/main/src/controllers/krate/publish.rs"
+    ],
+    "permission_evidence": {
+      "independently_introspected": false,
+      "scope": "Configured local token can first-publish lingose; not inferred from dry-run or 403",
+      "statement": "本机具备发布 lingose ，账号名Prefee",
+      "type": "user_confirmation"
+    },
+    "public_account_observation": {
+      "checked_at_utc": "2026-10-16T13:10:27.471511+00:00",
+      "does_not_link_token_to_account": true,
+      "http_status": 200,
+      "url": "https://crates.io/api/v1/users/Prefee",
+      "user": {
+        "id": 379268,
+        "login": "Prefee",
+        "name": "Oceanus.E.Data"
+      }
+    },
+    "publish_new_permission": true,
+    "read_only_observations": [
+      {
+        "checked_at_utc": "2026-10-16T13:07:24.912722+00:00",
+        "errors": [
+          "this action can only be performed on the crates.io website"
+        ],
+        "http_status": 403,
+        "url": "https://crates.io/api/v1/me"
+      },
+      {
+        "checked_at_utc": "2026-10-16T13:07:25.365153+00:00",
+        "errors": [
+          "this token does not have the required permissions to perform this action"
+        ],
+        "http_status": 403,
+        "url": "https://crates.io/api/v1/me/tokens/0"
+      }
+    ],
+    "scope_source": "https://raw.githubusercontent.com/rust-lang/crates.io/main/src/auth.rs",
+    "secret_logged_or_copied": false,
+    "valid_scoped_token": "Inferred from authenticated rejection behavior and upstream AuthCheck ordering; exact account and publish-new/crate scope cannot be read through these endpoints."
+  },
+  "license_disposition": {
+    "confirmation": "已确认许可，勾选即可",
+    "evidence_level": "User confirmation; no new independent license documents supplied or claimed",
+    "historical_records_preserved": true,
+    "scope": "Previously recorded Frequency List and external category vocabulary license gaps",
+    "status": "confirmed_by_user"
+  },
+  "manual_document_edits": {
+    "changed_distribution_inputs": [
+      "README.md",
+      "SOURCES.md"
+    ],
+    "commit": "5db98249ef75be4bd2ae38a832b3a99999c9bf99",
+    "preserved": true,
+    "production_data_code_dependencies_unchanged": true
+  },
+  "next_phase": "P6.2 remains unstarted; recheck name/version, candidate inputs and configured credential immediately before any upload.",
+  "phase": "P6.1",
+  "registry": {
+    "interpretation": "No crate or version was found at check time. This does not reserve the name or guarantee publication acceptance.",
+    "observations": [
+      {
+        "checked_at_utc": "2026-10-16T13:07:24.188117+00:00",
+        "crate_present": false,
+        "http_status": 404,
+        "response_sha256": "22372a2a72e0a1e892b408f0b90eab5c9fa866ea2efa71b47c875b0c5aa510e7",
+        "url": "https://crates.io/api/v1/crates/lingose"
+      },
+      {
+        "checked_at_utc": "2026-10-16T13:07:24.508870+00:00",
+        "crate_present": false,
+        "http_status": 404,
+        "response_sha256": "4cf01f841dcbaf0cfda6c22479ed29d0a2abfaad53d564520e1cfb02632fadd4",
+        "url": "https://index.crates.io/li/ng/lingose"
+      }
+    ]
+  },
+  "remaining": [],
+  "status": "preflight_complete",
+  "verification": {
+    "all_candidate_inputs_unchanged": true,
+    "dry_run": {
+      "archive_identity": {
+        "bytes": 4048633,
+        "sha256": "fb1a40407222053fa2acf6b92be99e59648d8e2a7ceac3c7f20182bbb393c6a8"
+      },
+      "archive_path": ".local/p61-5db9824/package-target/package/tmp-crate/lingose-0.1.0.crate",
+      "candidate_identical": true,
+      "exit_code": 0,
+      "log": ".local/p61-5db9824/logs/publish-dry-run.log",
+      "log_identity": {
+        "bytes": 905,
+        "sha256": "fb059bfae461780073862d49ac4b761ce92225ac0ba61a4fe96927f94901eea8"
+      },
+      "normal_user_context": true,
+      "upload_aborted": true
+    },
+    "full_differential_and_performance_repeated": false,
+    "independent_read_only_review": {
+      "passed": true,
+      "scope": "Candidate/dry-run exact bytes; all inputs vs HEAD/workspace/snapshot; archive links/licenses; original consumer and doc-test log hashes; two toolchain outputs and all 18 public entries"
+    },
+    "package_and_consumers": {
+      "bytes": 27051,
+      "commands": [
+        {
+          "argv": [
+            "D:/Python/Python312/python.exe",
+            "-I",
+            "-B",
+            "-X",
+            "utf8",
+            "tools/prepare_package_sources.py",
+            "--check"
+          ],
+          "cwd": "E:\\git\\claude\\words\\lingose-rust",
+          "elapsed_seconds": 0.106423,
+          "exit_code": 0,
+          "label": "portable-notice-check",
+          "stderr": {
+            "bytes": 0,
+            "path": ".local/p53-package-9ofxsdk1/logs/portable-notice-check.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "stdout": {
+            "bytes": 49,
+            "path": ".local/p53-package-9ofxsdk1/logs/portable-notice-check.stdout.log",
+            "sha256": "513a7e374cbb23ea3e7cd0481f7419bc4c5a6c1d32d302b02c36b48372d8422b"
+          }
+        },
+        {
+          "argv": [
+            "cargo",
+            "package",
+            "--list",
+            "--offline",
+            "--locked"
+          ],
+          "cwd": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-9ofxsdk1\\source",
+          "elapsed_seconds": 0.143393,
+          "exit_code": 0,
+          "label": "package-list",
+          "stderr": {
+            "bytes": 0,
+            "path": ".local/p53-package-9ofxsdk1/logs/package-list.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "stdout": {
+            "bytes": 886,
+            "path": ".local/p53-package-9ofxsdk1/logs/package-list.stdout.log",
+            "sha256": "e724098a9f653fe3d6d7db6317fa277480b040fe4c284419e74248236cee47f5"
+          }
+        },
+        {
+          "argv": [
+            "cargo",
+            "package",
+            "--offline",
+            "--locked",
+            "--all-features"
+          ],
+          "cwd": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-9ofxsdk1\\source",
+          "elapsed_seconds": 6.6251,
+          "exit_code": 0,
+          "label": "package",
+          "stderr": {
+            "bytes": 727,
+            "path": ".local/p53-package-9ofxsdk1/logs/package.stderr.log",
+            "sha256": "3c087de71b8e18221b0716eef5e0d04db9a4e2a10aab32db5750f4e33601e205"
+          },
+          "stdout": {
+            "bytes": 0,
+            "path": ".local/p53-package-9ofxsdk1/logs/package.stdout.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        {
+          "argv": [
+            "cargo",
+            "vendor",
+            "--offline",
+            "--locked",
+            "--versioned-dirs",
+            "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-32w343f0\\consumer\\vendor"
+          ],
+          "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-32w343f0\\unpacked\\lingose-0.1.0",
+          "elapsed_seconds": 1.14388,
+          "exit_code": 0,
+          "label": "vendor-preparation",
+          "stderr": {
+            "bytes": 2637,
+            "path": ".local/p53-package-9ofxsdk1/logs/vendor-preparation.stderr.log",
+            "sha256": "df07fbc19b336c6a6c450958c130cd79f89755b18afff8d7812bfacc30724112"
+          },
+          "stdout": {
+            "bytes": 178,
+            "path": ".local/p53-package-9ofxsdk1/logs/vendor-preparation.stdout.log",
+            "sha256": "208c7af4a7a52f4d637537e4ba3ada086f6586b41ef6efddaa0de0fddbf04538"
+          }
+        },
+        {
+          "argv": [
+            "cargo",
+            "generate-lockfile",
+            "--offline"
+          ],
+          "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-32w343f0\\consumer",
+          "elapsed_seconds": 0.226484,
+          "exit_code": 0,
+          "label": "consumer-lock",
+          "stderr": {
+            "bytes": 123,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-lock.stderr.log",
+            "sha256": "fb770e910f813d2a5ae2cb9198e09e4b56315160d99d052a11ea4d8754934ef5"
+          },
+          "stdout": {
+            "bytes": 0,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-lock.stdout.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        {
+          "argv": [
+            "cargo",
+            "metadata",
+            "--offline",
+            "--locked",
+            "--format-version",
+            "1"
+          ],
+          "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-32w343f0\\consumer",
+          "elapsed_seconds": 0.180879,
+          "exit_code": 0,
+          "label": "consumer-metadata",
+          "stderr": {
+            "bytes": 56,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-metadata.stderr.log",
+            "sha256": "89a81c69479edde956538fa1b681b9188480027de78812f27e2bbc265f4818af"
+          },
+          "stdout": {
+            "bytes": 34305,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-metadata.stdout.log",
+            "sha256": "867305c23b96de445bf3b1589729cacbf4271cd721eb075127b62552ed2e238e"
+          }
+        },
+        {
+          "argv": [
+            "cargo",
+            "build",
+            "--offline",
+            "--locked",
+            "--release"
+          ],
+          "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-32w343f0\\consumer",
+          "elapsed_seconds": 4.573883,
+          "exit_code": 0,
+          "label": "consumer-current-build",
+          "stderr": {
+            "bytes": 643,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-current-build.stderr.log",
+            "sha256": "8f751dc6b250523d8d52653d1c50251953fbccc26d74978ddbfa9f8c08c111b6"
+          },
+          "stdout": {
+            "bytes": 0,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-current-build.stdout.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        {
+          "argv": [
+            "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-32w343f0\\runtime\\current.exe"
+          ],
+          "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-32w343f0\\runtime",
+          "elapsed_seconds": 0.638879,
+          "exit_code": 0,
+          "label": "consumer-current-runtime",
+          "stderr": {
+            "bytes": 0,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-current-runtime.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "stdout": {
+            "bytes": 163,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-current-runtime.stdout.log",
+            "sha256": "2bea52435555c42178b7817ba45c64666c02762e00d0f615d1c1ec557d7b6544"
+          }
+        },
+        {
+          "argv": [
+            "rustup",
+            "run",
+            "1.85.0-x86_64-pc-windows-msvc",
+            "cargo",
+            "build",
+            "--offline",
+            "--locked",
+            "--release"
+          ],
+          "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-32w343f0\\consumer",
+          "elapsed_seconds": 5.069137,
+          "exit_code": 0,
+          "label": "consumer-minimum-build",
+          "stderr": {
+            "bytes": 587,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-minimum-build.stderr.log",
+            "sha256": "d556b15f7b8ccacdbdcfdef31fffc7a194497baba0a665d7bd5106cc861bb488"
+          },
+          "stdout": {
+            "bytes": 0,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-minimum-build.stdout.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        {
+          "argv": [
+            "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-32w343f0\\runtime\\minimum.exe"
+          ],
+          "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-32w343f0\\runtime",
+          "elapsed_seconds": 1.224479,
+          "exit_code": 0,
+          "label": "consumer-minimum-runtime",
+          "stderr": {
+            "bytes": 0,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-minimum-runtime.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "stdout": {
+            "bytes": 163,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-minimum-runtime.stdout.log",
+            "sha256": "2bea52435555c42178b7817ba45c64666c02762e00d0f615d1c1ec557d7b6544"
+          }
+        },
+        {
+          "argv": [
+            "rustc",
+            "-Vv"
+          ],
+          "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-32w343f0\\consumer",
+          "elapsed_seconds": 0.100118,
+          "exit_code": 0,
+          "label": "consumer-current-version",
+          "stderr": {
+            "bytes": 56,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-current-version.stderr.log",
+            "sha256": "89a81c69479edde956538fa1b681b9188480027de78812f27e2bbc265f4818af"
+          },
+          "stdout": {
+            "bytes": 194,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-current-version.stdout.log",
+            "sha256": "f133056ecf1576257a2bcb9da126bfb7e84725ccc144caee31dc2f70b42f6f20"
+          }
+        },
+        {
+          "argv": [
+            "rustup",
+            "run",
+            "1.85.0-x86_64-pc-windows-msvc",
+            "rustc",
+            "-Vv"
+          ],
+          "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-32w343f0\\consumer",
+          "elapsed_seconds": 0.069602,
+          "exit_code": 0,
+          "label": "consumer-minimum-version",
+          "stderr": {
+            "bytes": 0,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-minimum-version.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "stdout": {
+            "bytes": 194,
+            "path": ".local/p53-package-9ofxsdk1/logs/consumer-minimum-version.stdout.log",
+            "sha256": "32773cf1f17324f81b3423be1da95ce0a5c4e9f253e71481a8aa68e604748997"
+          }
+        },
+        {
+          "argv": [
+            "cargo",
+            "publish",
+            "--dry-run",
+            "--locked",
+            "--all-features"
+          ],
+          "cwd": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-9ofxsdk1\\source",
+          "elapsed_seconds": 11.173312,
+          "exit_code": 101,
+          "label": "publish-dry-run",
+          "stderr": {
+            "bytes": 722,
+            "path": ".local/p53-package-9ofxsdk1/logs/publish-dry-run.stderr.log",
+            "sha256": "9acab696196b69fed88e5a7d339a49721a6aa13afaba2ac87426dfd6a8f913ee"
+          },
+          "stdout": {
+            "bytes": 0,
+            "path": ".local/p53-package-9ofxsdk1/logs/publish-dry-run.stdout.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      ],
+      "consumer": {
+        "all_18_public_entries": true,
+        "empty_cargo_home_registry_absent": true,
+        "outputs_identical": true,
+        "runtime_files": [
+          "current.exe",
+          "minimum.exe"
+        ],
+        "source": {
+          "bytes": 7829,
+          "sha256": "1f8c62db06cfc3b7b390dd5c711cdb5daab320de63d5549eb7ce8fcdd94f5f9d"
+        },
+        "source_paths_confined_to_isolation": true,
+        "toolchains": {
+          "current": "rustc 1.93.1 (01f6ddf75 2026-02-11)\nbinary: rustc\ncommit-hash: 01f6ddf7588f42ae2d7eb0a2f21d44e8e96674cf\ncommit-date: 2026-02-11\nhost: x86_64-pc-windows-msvc\nrelease: 1.93.1\nLLVM version: 21.1.8",
+          "minimum": "rustc 1.85.0 (4d91de4e4 2025-02-17)\nbinary: rustc\ncommit-hash: 4d91de4e48198da2e33413efdcd9cd2cc0c46688\ncommit-date: 2025-02-17\nhost: x86_64-pc-windows-msvc\nrelease: 1.85.0\nLLVM version: 19.1.7"
+        },
+        "vendored_dependencies_only": true
+      },
+      "overall_status": "failed only at sandbox networking dry-run; preceding packaging and consumers passed",
+      "receipt": ".local/p53-package-9ofxsdk1/report.json",
+      "sha256": "892f6de7c633f3f65f8fb396c9766307ee70523c7c2c6dcfc131f0f6a1376b52"
+    },
+    "packaged_documentation_tests": {
+      "bytes": 2778,
+      "exit_code": 0,
+      "log": ".local/p61-5db9824/logs/package-doc-tests.log",
+      "passed": 5,
+      "powershell_stderr_wrapper": "PowerShell labels native stderr as NativeCommandError in log; cargo exit status is 0 and all 5 doctests passed",
+      "sha256": "8a6f108162e62969ff6d1116735530bbc0bc1a43634f9079202af43687cb6ff7",
+      "toolchain": "Rust 1.93.1 Windows x86_64 MSVC"
+    },
+    "prior_protected_records_rewritten": false
+  }
+}
