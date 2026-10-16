@@ -6,16 +6,11 @@ for its first release.
 
 All word queries, category lists and plain-text IPS annotation are implemented.
 The checkout embeds **50,335 word entries**, **24 categories** and a frequency
-index with **10,620 word keys**. All required lexicon data is bundled: building
-and calling the library needs no Python, Node, adjacent source repository,
-configuration, database service or lexicon download. Cargo dependencies must be
-available before an offline build.
+index with **10,620 word keys**. All required lexicon data is bundled, cargo
+dependencies must be available before an offline build.
 
 The two resources are validated and indexed once on first use, then shared
-across calls and threads. Initialization errors are cached and returned as
-errors. Queries use the lexicon only; annotation loads the frequency index only
-when needed for a positive threshold. Unicode behavior is fixed to the Python
-3.12 / Unicode 15.0 reference, independently of the compiler's Unicode version.
+across calls and threads.
 
 IPA is phonetic transcription; IPS marks pronunciation on the spelling; ISM
 divides a word into morphemes; IPSM combines IPS with ISM. Learn more at
@@ -172,7 +167,7 @@ The full signatures, Python correspondence and validation order are recorded in
 
 Edition **2024**, minimum Rust version **1.85**. The checked-in dependency
 resolution has been tested with Rust/Cargo **1.85.0** and **1.93.1** on
-`x86_64-pc-windows-msvc`. Other platforms remain unverified. The resource loader
+`x86_64-pc-windows-msvc`. The resource loader
 uses `sha2` 0.10.9 for integrity checks. The crate has no build script, database
 driver or download step.
 
@@ -196,9 +191,5 @@ registry acceptance remain pending.
 ## License and credits
 
 Project license: [CC BY 4.0](./LICENSE). Original Lingose data and notation by
-**詹先觉 (ZHAN Xianjue)**, [lingose.com](https://lingose.com/). The original license,
-author attribution and [source notices](SOURCES.md) are preserved. Third-party
-works retain their own licenses; the project license does not relicense them.
-The pinned reference supplies no separate Frequency List license text; that
-provenance gap is recorded in the source notices. Derived Unicode tables retain
-the complete [Unicode License V3](third_party/unicode/LICENSE.txt).
+**ZHAN Xianjue**, [lingose.com](https://lingose.com/). The original license,
+author attribution and [source notices](SOURCES.md) are preserved.
