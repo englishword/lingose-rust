@@ -2,8 +2,7 @@
 
 `lingose` is a Rust library for the [IPSM Approach](https://lingose.com/) to
 English pronunciation, spelling and meaning. Version **0.1.0** is being prepared
-for its first release; registry publication remains disabled while
-packaged-crate checks are pending.
+for its first release.
 
 All word queries, category lists and plain-text IPS annotation are implemented.
 The checkout embeds **50,335 word entries**, **24 categories** and a frequency
@@ -191,8 +190,8 @@ The pre-documentation baseline passed a full Python differential comparison of
 1,862,690 public results and release performance checks under fixed warmup
 conditions. These are historical Windows results, rather than measurements of
 the final package. A newly copied executable's first run exceeded the startup
-budget; the measurements do not guarantee that latency. Packaged-crate,
-other-platform and registry acceptance remain pending.
+budget; the measurements do not guarantee that latency. Other-platform and
+registry acceptance remain pending.
 
 ## License and credits
 

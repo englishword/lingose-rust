@@ -1,0 +1,1528 @@
+{
+  "archive": {
+    "budget_passed": true,
+    "bytes": 4052577,
+    "files": {
+      "Cargo.lock": {
+        "bytes": 2390,
+        "sha256": "3ba42486751b118af6f60b3d2d58466ba36040d581de2f32c2ca893239a88df2"
+      },
+      "Cargo.toml": {
+        "bytes": 1662,
+        "sha256": "3a4f5723ee4fdf07dca0c4203b851891cef47521ecd8a5573162bee794fbdc75"
+      },
+      "Cargo.toml.orig": {
+        "bytes": 916,
+        "sha256": "05a99b15db1276bd4353883d93244d0a2e23d7759593e3b6b83ea139eacc3ed2"
+      },
+      "LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "README.md": {
+        "bytes": 10273,
+        "sha256": "b6da9fb94e83748158628ece490b3dc91bfcfc7e3fc1120a0b5a519d3513b44b"
+      },
+      "SOURCES.md": {
+        "bytes": 6094,
+        "sha256": "05804ca022084697802eedcfaf030dc65aee6ad806bf564601f2e88f0b04e7aa"
+      },
+      "data/LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "data/SOURCES.json": {
+        "bytes": 4997,
+        "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+      },
+      "data/UPSTREAM-SOURCES.md": {
+        "bytes": 1457,
+        "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+      },
+      "data/frequency.bin": {
+        "bytes": 200272,
+        "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+      },
+      "data/lexicon.bin": {
+        "bytes": 10259743,
+        "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+      },
+      "data/manifest.json": {
+        "bytes": 3900,
+        "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+      },
+      "docs/distribution-provenance.json": {
+        "bytes": 5569,
+        "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+      },
+      "docs/rust-api.md": {
+        "bytes": 8458,
+        "sha256": "86f418aa7ee57db786635ef26ba03d9f9d6cb04a29d19886674469a143358fcb"
+      },
+      "examples/annotate.rs": {
+        "bytes": 423,
+        "sha256": "c604152bbe8995e5c439c0122fa9674d9c38d87f53890929a34cdb15798bd6cd"
+      },
+      "examples/query.rs": {
+        "bytes": 871,
+        "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+      },
+      "src/annotation.rs": {
+        "bytes": 19775,
+        "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+      },
+      "src/annotation_context_vectors.rs": {
+        "bytes": 321810,
+        "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+      },
+      "src/annotation_frequency_vectors.rs": {
+        "bytes": 24615,
+        "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+      },
+      "src/annotation_unicode.rs": {
+        "bytes": 3734,
+        "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+      },
+      "src/annotation_unicode_tables.rs": {
+        "bytes": 40416,
+        "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+      },
+      "src/annotation_vectors.rs": {
+        "bytes": 65657,
+        "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+      },
+      "src/category.rs": {
+        "bytes": 1653,
+        "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+      },
+      "src/data/annotation_context_vectors.rs": {
+        "bytes": 37586,
+        "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+      },
+      "src/data/annotation_frequency_vectors.rs": {
+        "bytes": 87772,
+        "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+      },
+      "src/data/annotation_tests.rs": {
+        "bytes": 3391,
+        "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+      },
+      "src/data/cache_tests.rs": {
+        "bytes": 22365,
+        "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+      },
+      "src/data/category_tests.rs": {
+        "bytes": 4243,
+        "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+      },
+      "src/data/image.rs": {
+        "bytes": 15144,
+        "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+      },
+      "src/data/mod.rs": {
+        "bytes": 6395,
+        "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+      },
+      "src/data/p41_joint_error_tests.rs": {
+        "bytes": 4967,
+        "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+      },
+      "src/data/p41_query_fixture_tests.rs": {
+        "bytes": 62352,
+        "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+      },
+      "src/data/tests.rs": {
+        "bytes": 24506,
+        "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+      },
+      "src/data_meta.rs": {
+        "bytes": 1531,
+        "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+      },
+      "src/error.rs": {
+        "bytes": 2127,
+        "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+      },
+      "src/lib.rs": {
+        "bytes": 5169,
+        "sha256": "60568d3c77278def9cd8d3e3c56ccf71007f6e6194ea70dcce3b15830003eeef"
+      },
+      "src/query.rs": {
+        "bytes": 1207,
+        "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+      },
+      "src/query_case.rs": {
+        "bytes": 5074,
+        "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+      },
+      "src/query_case_tables.rs": {
+        "bytes": 52751,
+        "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+      },
+      "src/validation.rs": {
+        "bytes": 1624,
+        "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+      },
+      "third_party/unicode/LICENSE.txt": {
+        "bytes": 1995,
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+      }
+    },
+    "fixed_budget_bytes": 5000000,
+    "local_links": [
+      {
+        "href": "docs/rust-api.md",
+        "source": "README.md",
+        "target": "docs/rust-api.md"
+      },
+      {
+        "href": "examples/query.rs",
+        "source": "README.md",
+        "target": "examples/query.rs"
+      },
+      {
+        "href": "examples/annotate.rs",
+        "source": "README.md",
+        "target": "examples/annotate.rs"
+      },
+      {
+        "href": "./LICENSE",
+        "source": "README.md",
+        "target": "LICENSE"
+      },
+      {
+        "href": "SOURCES.md",
+        "source": "README.md",
+        "target": "SOURCES.md"
+      },
+      {
+        "href": "third_party/unicode/LICENSE.txt",
+        "source": "README.md",
+        "target": "third_party/unicode/LICENSE.txt"
+      },
+      {
+        "href": "LICENSE",
+        "source": "SOURCES.md",
+        "target": "LICENSE"
+      },
+      {
+        "href": "data/SOURCES.json",
+        "source": "SOURCES.md",
+        "target": "data/SOURCES.json"
+      },
+      {
+        "href": "data/UPSTREAM-SOURCES.md",
+        "source": "SOURCES.md",
+        "target": "data/UPSTREAM-SOURCES.md"
+      },
+      {
+        "href": "data/LICENSE",
+        "source": "SOURCES.md",
+        "target": "data/LICENSE"
+      },
+      {
+        "href": "third_party/unicode/LICENSE.txt",
+        "source": "SOURCES.md",
+        "target": "third_party/unicode/LICENSE.txt"
+      },
+      {
+        "href": "docs/distribution-provenance.json",
+        "source": "SOURCES.md",
+        "target": "docs/distribution-provenance.json"
+      },
+      {
+        "href": "docs/distribution-provenance.json",
+        "source": "SOURCES.md",
+        "target": "docs/distribution-provenance.json"
+      },
+      {
+        "href": "docs/distribution-provenance.json",
+        "source": "SOURCES.md",
+        "target": "docs/distribution-provenance.json"
+      },
+      {
+        "href": "LICENSE",
+        "source": "data/UPSTREAM-SOURCES.md",
+        "target": "data/LICENSE"
+      },
+      {
+        "href": "../README.md",
+        "source": "docs/rust-api.md",
+        "target": "README.md"
+      },
+      {
+        "href": "distribution-provenance.json",
+        "source": "docs/rust-api.md",
+        "target": "docs/distribution-provenance.json"
+      },
+      {
+        "href": "../third_party/unicode/LICENSE.txt",
+        "source": "docs/rust-api.md",
+        "target": "third_party/unicode/LICENSE.txt"
+      },
+      {
+        "href": "distribution-provenance.json",
+        "source": "docs/rust-api.md",
+        "target": "docs/distribution-provenance.json"
+      },
+      {
+        "href": "../data/manifest.json",
+        "source": "docs/rust-api.md",
+        "target": "data/manifest.json"
+      },
+      {
+        "href": "../SOURCES.md",
+        "source": "docs/rust-api.md",
+        "target": "SOURCES.md"
+      }
+    ],
+    "path": ".local/p53-readable/lingose-0.1.0.crate",
+    "sha256": "db227b4d53065bca47bf20bc5ea6d4987ff578fd9d3b0f8d98b5c6cda5b7d3ad",
+    "vcs_metadata": "Absent: source snapshot deliberately has no .git; base commit and exact source identities are recorded separately"
+  },
+  "base_commit": "ab87d5177f04b5b43667be72ce9d4f3d30056b27",
+  "cargo": "cargo 1.93.1 (083ac5135 2025-12-15)",
+  "commands": [
+    {
+      "argv": [
+        "D:/Python/Python312/python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/prepare_package_sources.py",
+        "--check"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "elapsed_seconds": 0.080404,
+      "exit_code": 0,
+      "label": "portable-notice-check",
+      "stderr": {
+        "bytes": 0,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/portable-notice-check.stderr.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-portable-notice-check.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 49,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/portable-notice-check.stdout.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-portable-notice-check.stdout.log",
+        "sha256": "513a7e374cbb23ea3e7cd0481f7419bc4c5a6c1d32d302b02c36b48372d8422b"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "package",
+        "--list",
+        "--offline",
+        "--locked"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-1pq09dd9\\source",
+      "elapsed_seconds": 0.138429,
+      "exit_code": 0,
+      "label": "package-list",
+      "stderr": {
+        "bytes": 0,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/package-list.stderr.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-package-list.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 886,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/package-list.stdout.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-package-list.stdout.log",
+        "sha256": "e724098a9f653fe3d6d7db6317fa277480b040fe4c284419e74248236cee47f5"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "package",
+        "--offline",
+        "--locked",
+        "--all-features"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-1pq09dd9\\source",
+      "elapsed_seconds": 6.521341,
+      "exit_code": 0,
+      "label": "package",
+      "stderr": {
+        "bytes": 727,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/package.stderr.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-package.stderr.log",
+        "sha256": "9db317fb103194ba27414873eaf3394014c7d930aac1eddd9e1f972e06e7d2d2"
+      },
+      "stdout": {
+        "bytes": 0,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/package.stdout.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-package.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "vendor",
+        "--offline",
+        "--locked",
+        "--versioned-dirs",
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\consumer\\vendor"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\unpacked\\lingose-0.1.0",
+      "elapsed_seconds": 1.08465,
+      "exit_code": 0,
+      "label": "vendor-preparation",
+      "stderr": {
+        "bytes": 2637,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/vendor-preparation.stderr.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-vendor-preparation.stderr.log",
+        "sha256": "65514793afd05bf0233a4b0635140cd9fbcab16053412bd5a10d65b6b2751091"
+      },
+      "stdout": {
+        "bytes": 178,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/vendor-preparation.stdout.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-vendor-preparation.stdout.log",
+        "sha256": "1206b061a6ea53f6cc84b0c6867a164fa17f2c12765ecbc8122261961099f925"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "generate-lockfile",
+        "--offline"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\consumer",
+      "elapsed_seconds": 0.19079,
+      "exit_code": 0,
+      "label": "consumer-lock",
+      "stderr": {
+        "bytes": 123,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/consumer-lock.stderr.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-consumer-lock.stderr.log",
+        "sha256": "fb770e910f813d2a5ae2cb9198e09e4b56315160d99d052a11ea4d8754934ef5"
+      },
+      "stdout": {
+        "bytes": 0,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/consumer-lock.stdout.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-consumer-lock.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "metadata",
+        "--offline",
+        "--locked",
+        "--format-version",
+        "1"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\consumer",
+      "elapsed_seconds": 0.272862,
+      "exit_code": 0,
+      "label": "consumer-metadata",
+      "stderr": {
+        "bytes": 56,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/consumer-metadata.stderr.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-consumer-metadata.stderr.log",
+        "sha256": "89a81c69479edde956538fa1b681b9188480027de78812f27e2bbc265f4818af"
+      },
+      "stdout": {
+        "bytes": 34305,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/consumer-metadata.stdout.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-consumer-metadata.stdout.log",
+        "sha256": "f146707250ef7718e1aa854e71a461ddc5c80a57c55ffe45c8033fa320d18c1b"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "build",
+        "--offline",
+        "--locked",
+        "--release"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\consumer",
+      "elapsed_seconds": 4.516844,
+      "exit_code": 0,
+      "label": "consumer-current-build",
+      "stderr": {
+        "bytes": 643,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/consumer-current-build.stderr.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-consumer-current-build.stderr.log",
+        "sha256": "c54c5845946e677691507a83f289bf5ac17af2f2ef1c4105c4ff425650052293"
+      },
+      "stdout": {
+        "bytes": 0,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/consumer-current-build.stdout.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-consumer-current-build.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\runtime\\current.exe"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\runtime",
+      "elapsed_seconds": 0.643877,
+      "exit_code": 0,
+      "label": "consumer-current-runtime",
+      "stderr": {
+        "bytes": 0,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/consumer-current-runtime.stderr.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-consumer-current-runtime.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 163,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/consumer-current-runtime.stdout.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-consumer-current-runtime.stdout.log",
+        "sha256": "2bea52435555c42178b7817ba45c64666c02762e00d0f615d1c1ec557d7b6544"
+      }
+    },
+    {
+      "argv": [
+        "rustup",
+        "run",
+        "1.85.0-x86_64-pc-windows-msvc",
+        "cargo",
+        "build",
+        "--offline",
+        "--locked",
+        "--release"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\consumer",
+      "elapsed_seconds": 4.513104,
+      "exit_code": 0,
+      "label": "consumer-minimum-build",
+      "stderr": {
+        "bytes": 587,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/consumer-minimum-build.stderr.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-consumer-minimum-build.stderr.log",
+        "sha256": "0a2f6666128c435601c1dc92e43fa8559db35d99fab90d2492197893f290cfde"
+      },
+      "stdout": {
+        "bytes": 0,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/consumer-minimum-build.stdout.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-consumer-minimum-build.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\runtime\\minimum.exe"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\runtime",
+      "elapsed_seconds": 1.262717,
+      "exit_code": 0,
+      "label": "consumer-minimum-runtime",
+      "stderr": {
+        "bytes": 0,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/consumer-minimum-runtime.stderr.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-consumer-minimum-runtime.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 163,
+        "copied_from": ".local/p53-package-1pq09dd9/logs/consumer-minimum-runtime.stdout.log",
+        "path": ".local/p53-readable/evidence/p53-package-1pq09dd9-consumer-minimum-runtime.stdout.log",
+        "sha256": "2bea52435555c42178b7817ba45c64666c02762e00d0f615d1c1ec557d7b6544"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "publish",
+        "--dry-run",
+        "--locked",
+        "--all-features"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-readable\\source",
+      "elapsed_seconds": 2.812724,
+      "exit_code": 0,
+      "label": "publish-dry-run",
+      "stderr": {
+        "bytes": 611,
+        "copied_from": ".local/p53-readable-verified/dry-run.stderr.log",
+        "path": ".local/p53-readable/evidence/p53-readable-verified-dry-run.stderr.log",
+        "sha256": "97ef1aea80c17c2b4133178647d0cee1fed6e4efc304f2b45a5b4b029269cd3e"
+      },
+      "stdout": {
+        "bytes": 0,
+        "copied_from": ".local/p53-readable-verified/dry-run.stdout.log",
+        "path": ".local/p53-readable/evidence/p53-readable-verified-dry-run.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "completed_at_utc": "2026-10-16T10:29:21.110424+00:00",
+  "consumer": {
+    "all_18_public_entries": true,
+    "empty_cargo_home_registry_absent": true,
+    "outputs_identical": true,
+    "runtime_files": [
+      "current.exe",
+      "minimum.exe"
+    ],
+    "source": {
+      "bytes": 7829,
+      "sha256": "1f8c62db06cfc3b7b390dd5c711cdb5daab320de63d5549eb7ce8fcdd94f5f9d"
+    },
+    "source_paths_confined_to_isolation": true,
+    "toolchains": [
+      "1.93.1",
+      "1.85.0"
+    ],
+    "vendored_dependencies_only": true
+  },
+  "consumer_dependencies": [
+    {
+      "manifest": "consumer\\vendor\\block-buffer-0.10.4\\Cargo.toml",
+      "name": "block-buffer",
+      "version": "0.10.4"
+    },
+    {
+      "manifest": "consumer\\vendor\\cfg-if-1.0.5\\Cargo.toml",
+      "name": "cfg-if",
+      "version": "1.0.5"
+    },
+    {
+      "manifest": "consumer\\vendor\\cpufeatures-0.2.17\\Cargo.toml",
+      "name": "cpufeatures",
+      "version": "0.2.17"
+    },
+    {
+      "manifest": "consumer\\vendor\\crypto-common-0.1.7\\Cargo.toml",
+      "name": "crypto-common",
+      "version": "0.1.7"
+    },
+    {
+      "manifest": "consumer\\vendor\\digest-0.10.7\\Cargo.toml",
+      "name": "digest",
+      "version": "0.10.7"
+    },
+    {
+      "manifest": "consumer\\vendor\\generic-array-0.14.7\\Cargo.toml",
+      "name": "generic-array",
+      "version": "0.14.7"
+    },
+    {
+      "manifest": "consumer\\vendor\\libc-0.2.190\\Cargo.toml",
+      "name": "libc",
+      "version": "0.2.190"
+    },
+    {
+      "manifest": "unpacked\\lingose-0.1.0\\Cargo.toml",
+      "name": "lingose",
+      "version": "0.1.0"
+    },
+    {
+      "manifest": "consumer\\Cargo.toml",
+      "name": "lingose-package-consumer",
+      "version": "0.0.0"
+    },
+    {
+      "manifest": "consumer\\vendor\\sha2-0.10.9\\Cargo.toml",
+      "name": "sha2",
+      "version": "0.10.9"
+    },
+    {
+      "manifest": "consumer\\vendor\\typenum-1.20.1\\Cargo.toml",
+      "name": "typenum",
+      "version": "1.20.1"
+    },
+    {
+      "manifest": "consumer\\vendor\\version_check-0.9.5\\Cargo.toml",
+      "name": "version_check",
+      "version": "0.9.5"
+    }
+  ],
+  "consumer_directory": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_",
+  "directory": ".local/p53-readable",
+  "dry_run_archive": {
+    "bytes": 4052577,
+    "path": ".local/p53-readable/package-target/package/tmp-crate/lingose-0.1.0.crate",
+    "sha256": "db227b4d53065bca47bf20bc5ea6d4987ff578fd9d3b0f8d98b5c6cda5b7d3ad"
+  },
+  "dry_run_archive_identical": true,
+  "method_execution_note": "Initial verifier completed packaging/consumers but its offline dry-run failed. Preserved independent retries used an identical inherited-permission snapshot and checked Cargo's actual package/tmp-crate artifact. The reusable verifier incorporates those resolved findings; its guard tests and final archive audit passed without repeating unchanged consumer builds.",
+  "method_files_at_final_review": {
+    "tests/test_package.py": {
+      "bytes": 3770,
+      "sha256": "35e17c917be9b326f70a3893d79b648b3c1b3fb4fd2fc00dc43940ed25214f55"
+    },
+    "tools/check_package.py": {
+      "bytes": 14893,
+      "sha256": "af8db2075005f8656070845f3066b952ad68fe2dd24e4704b5fdc95d2ebf84da"
+    },
+    "tools/package_consumer.rs": {
+      "bytes": 7829,
+      "sha256": "1f8c62db06cfc3b7b390dd5c711cdb5daab320de63d5549eb7ce8fcdd94f5f9d"
+    },
+    "tools/prepare_package_sources.py": {
+      "bytes": 4296,
+      "sha256": "f35dbb22fb08765149f29570879ce72830aa4b9c6bbbe028d19d0c9c5cc7bbea"
+    }
+  },
+  "original_failed_report": ".local/p53-package-1pq09dd9/report.json",
+  "package_self_checks": {
+    "archive": {
+      "bytes": 4052577,
+      "path": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-readable\\lingose-0.1.0.crate",
+      "sha256": "db227b4d53065bca47bf20bc5ea6d4987ff578fd9d3b0f8d98b5c6cda5b7d3ad"
+    },
+    "archive_matches_after": true,
+    "archive_matches_before": true,
+    "cargo": "cargo 1.93.1 (083ac5135 2025-12-15)",
+    "cargo_home": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\empty-cargo-home",
+    "cargo_home_files_after": [
+      ".global-cache",
+      ".package-cache",
+      ".package-cache-mutate"
+    ],
+    "cargo_home_files_before": [
+      ".global-cache",
+      ".package-cache",
+      ".package-cache-mutate"
+    ],
+    "cargo_home_registry_absent_after": true,
+    "cargo_home_registry_absent_before": true,
+    "commands": [
+      {
+        "argv": [
+          "cargo",
+          "-V"
+        ],
+        "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\unpacked\\lingose-0.1.0",
+        "elapsed_seconds": 0.070052,
+        "exit_code": 0,
+        "label": "cargo-identity",
+        "stderr": {
+          "bytes": 56,
+          "copied_from": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-tests\\cargo-identity.stderr.log",
+          "path": ".local/p53-readable/evidence/p53-package-tests-cargo-identity.stderr.log",
+          "sha256": "89a81c69479edde956538fa1b681b9188480027de78812f27e2bbc265f4818af"
+        },
+        "stdout": {
+          "bytes": 36,
+          "copied_from": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-tests\\cargo-identity.stdout.log",
+          "path": ".local/p53-readable/evidence/p53-package-tests-cargo-identity.stdout.log",
+          "sha256": "57d704d9ad73ec7cc1b1a79aed6703333615865be6e3dc1ce269ea4ca7068227"
+        }
+      },
+      {
+        "argv": [
+          "rustc",
+          "-Vv"
+        ],
+        "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\unpacked\\lingose-0.1.0",
+        "elapsed_seconds": 0.067571,
+        "exit_code": 0,
+        "label": "rustc-identity",
+        "stderr": {
+          "bytes": 56,
+          "copied_from": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-tests\\rustc-identity.stderr.log",
+          "path": ".local/p53-readable/evidence/p53-package-tests-rustc-identity.stderr.log",
+          "sha256": "89a81c69479edde956538fa1b681b9188480027de78812f27e2bbc265f4818af"
+        },
+        "stdout": {
+          "bytes": 194,
+          "copied_from": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-tests\\rustc-identity.stdout.log",
+          "path": ".local/p53-readable/evidence/p53-package-tests-rustc-identity.stdout.log",
+          "sha256": "f133056ecf1576257a2bcb9da126bfb7e84725ccc144caee31dc2f70b42f6f20"
+        }
+      },
+      {
+        "argv": [
+          "cargo",
+          "test",
+          "--lib",
+          "--all-features",
+          "--offline",
+          "--locked",
+          "--config",
+          "source.crates-io.replace-with=\"vendored-sources\"",
+          "--config",
+          "source.vendored-sources.directory=\"C:/Users/Threadman/AppData/Local/Temp/lingose-p53-consumer-qm9m5mp_/consumer/vendor\""
+        ],
+        "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\unpacked\\lingose-0.1.0",
+        "elapsed_seconds": 16.14187,
+        "exit_code": 0,
+        "label": "test-lib",
+        "stderr": {
+          "bytes": 689,
+          "copied_from": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-tests\\test-lib.stderr.log",
+          "path": ".local/p53-readable/evidence/p53-package-tests-test-lib.stderr.log",
+          "sha256": "ee4d4536c7779a28cc74d8d573820ec377ca20d79074ac87b27b0c63cd91040f"
+        },
+        "stdout": {
+          "bytes": 8239,
+          "copied_from": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-tests\\test-lib.stdout.log",
+          "path": ".local/p53-readable/evidence/p53-package-tests-test-lib.stdout.log",
+          "sha256": "25ad1935856cd9713122ed3a349593f7fce9d6302dc7ded6e2156cf34a31d6bf"
+        }
+      },
+      {
+        "argv": [
+          "cargo",
+          "test",
+          "--doc",
+          "--all-features",
+          "--offline",
+          "--locked",
+          "--config",
+          "source.crates-io.replace-with=\"vendored-sources\"",
+          "--config",
+          "source.vendored-sources.directory=\"C:/Users/Threadman/AppData/Local/Temp/lingose-p53-consumer-qm9m5mp_/consumer/vendor\""
+        ],
+        "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\unpacked\\lingose-0.1.0",
+        "elapsed_seconds": 5.629736,
+        "exit_code": 0,
+        "label": "test-doc",
+        "stderr": {
+          "bytes": 271,
+          "copied_from": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-tests\\test-doc.stderr.log",
+          "path": ".local/p53-readable/evidence/p53-package-tests-test-doc.stderr.log",
+          "sha256": "ec69bccb2cc372f001087954325486f73923a417912aa37138a5ed7e862d37f9"
+        },
+        "stdout": {
+          "bytes": 530,
+          "copied_from": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-tests\\test-doc.stdout.log",
+          "path": ".local/p53-readable/evidence/p53-package-tests-test-doc.stdout.log",
+          "sha256": "17e0b935c19629101d859b7095ccdce67925715b12df0284cde4efc6f496c4d4"
+        }
+      },
+      {
+        "argv": [
+          "cargo",
+          "doc",
+          "--no-deps",
+          "--all-features",
+          "--offline",
+          "--locked",
+          "--config",
+          "source.crates-io.replace-with=\"vendored-sources\"",
+          "--config",
+          "source.vendored-sources.directory=\"C:/Users/Threadman/AppData/Local/Temp/lingose-p53-consumer-qm9m5mp_/consumer/vendor\""
+        ],
+        "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\unpacked\\lingose-0.1.0",
+        "elapsed_seconds": 1.941858,
+        "exit_code": 0,
+        "label": "doc",
+        "stderr": {
+          "bytes": 614,
+          "copied_from": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-tests\\doc.stderr.log",
+          "path": ".local/p53-readable/evidence/p53-package-tests-doc.stderr.log",
+          "sha256": "c694218d1a44b5793d4da0e756edda471a5abe28d915291287a3a12beb900fe8"
+        },
+        "stdout": {
+          "bytes": 0,
+          "copied_from": "E:\\git\\claude\\words\\lingose-rust\\.local\\p53-package-tests\\doc.stdout.log",
+          "path": ".local/p53-readable/evidence/p53-package-tests-doc.stdout.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "completed_at_utc": "2026-10-16T10:32:35.563087+00:00",
+    "package": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\unpacked\\lingose-0.1.0",
+    "package_file_count": 41,
+    "package_files_after": {
+      "Cargo.lock": {
+        "bytes": 2390,
+        "sha256": "3ba42486751b118af6f60b3d2d58466ba36040d581de2f32c2ca893239a88df2"
+      },
+      "Cargo.toml": {
+        "bytes": 1662,
+        "sha256": "3a4f5723ee4fdf07dca0c4203b851891cef47521ecd8a5573162bee794fbdc75"
+      },
+      "Cargo.toml.orig": {
+        "bytes": 916,
+        "sha256": "05a99b15db1276bd4353883d93244d0a2e23d7759593e3b6b83ea139eacc3ed2"
+      },
+      "LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "README.md": {
+        "bytes": 10273,
+        "sha256": "b6da9fb94e83748158628ece490b3dc91bfcfc7e3fc1120a0b5a519d3513b44b"
+      },
+      "SOURCES.md": {
+        "bytes": 6094,
+        "sha256": "05804ca022084697802eedcfaf030dc65aee6ad806bf564601f2e88f0b04e7aa"
+      },
+      "data/LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "data/SOURCES.json": {
+        "bytes": 4997,
+        "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+      },
+      "data/UPSTREAM-SOURCES.md": {
+        "bytes": 1457,
+        "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+      },
+      "data/frequency.bin": {
+        "bytes": 200272,
+        "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+      },
+      "data/lexicon.bin": {
+        "bytes": 10259743,
+        "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+      },
+      "data/manifest.json": {
+        "bytes": 3900,
+        "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+      },
+      "docs/distribution-provenance.json": {
+        "bytes": 5569,
+        "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+      },
+      "docs/rust-api.md": {
+        "bytes": 8458,
+        "sha256": "86f418aa7ee57db786635ef26ba03d9f9d6cb04a29d19886674469a143358fcb"
+      },
+      "examples/annotate.rs": {
+        "bytes": 423,
+        "sha256": "c604152bbe8995e5c439c0122fa9674d9c38d87f53890929a34cdb15798bd6cd"
+      },
+      "examples/query.rs": {
+        "bytes": 871,
+        "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+      },
+      "src/annotation.rs": {
+        "bytes": 19775,
+        "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+      },
+      "src/annotation_context_vectors.rs": {
+        "bytes": 321810,
+        "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+      },
+      "src/annotation_frequency_vectors.rs": {
+        "bytes": 24615,
+        "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+      },
+      "src/annotation_unicode.rs": {
+        "bytes": 3734,
+        "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+      },
+      "src/annotation_unicode_tables.rs": {
+        "bytes": 40416,
+        "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+      },
+      "src/annotation_vectors.rs": {
+        "bytes": 65657,
+        "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+      },
+      "src/category.rs": {
+        "bytes": 1653,
+        "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+      },
+      "src/data/annotation_context_vectors.rs": {
+        "bytes": 37586,
+        "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+      },
+      "src/data/annotation_frequency_vectors.rs": {
+        "bytes": 87772,
+        "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+      },
+      "src/data/annotation_tests.rs": {
+        "bytes": 3391,
+        "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+      },
+      "src/data/cache_tests.rs": {
+        "bytes": 22365,
+        "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+      },
+      "src/data/category_tests.rs": {
+        "bytes": 4243,
+        "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+      },
+      "src/data/image.rs": {
+        "bytes": 15144,
+        "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+      },
+      "src/data/mod.rs": {
+        "bytes": 6395,
+        "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+      },
+      "src/data/p41_joint_error_tests.rs": {
+        "bytes": 4967,
+        "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+      },
+      "src/data/p41_query_fixture_tests.rs": {
+        "bytes": 62352,
+        "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+      },
+      "src/data/tests.rs": {
+        "bytes": 24506,
+        "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+      },
+      "src/data_meta.rs": {
+        "bytes": 1531,
+        "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+      },
+      "src/error.rs": {
+        "bytes": 2127,
+        "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+      },
+      "src/lib.rs": {
+        "bytes": 5169,
+        "sha256": "60568d3c77278def9cd8d3e3c56ccf71007f6e6194ea70dcce3b15830003eeef"
+      },
+      "src/query.rs": {
+        "bytes": 1207,
+        "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+      },
+      "src/query_case.rs": {
+        "bytes": 5074,
+        "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+      },
+      "src/query_case_tables.rs": {
+        "bytes": 52751,
+        "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+      },
+      "src/validation.rs": {
+        "bytes": 1624,
+        "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+      },
+      "third_party/unicode/LICENSE.txt": {
+        "bytes": 1995,
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+      }
+    },
+    "package_files_before": {
+      "Cargo.lock": {
+        "bytes": 2390,
+        "sha256": "3ba42486751b118af6f60b3d2d58466ba36040d581de2f32c2ca893239a88df2"
+      },
+      "Cargo.toml": {
+        "bytes": 1662,
+        "sha256": "3a4f5723ee4fdf07dca0c4203b851891cef47521ecd8a5573162bee794fbdc75"
+      },
+      "Cargo.toml.orig": {
+        "bytes": 916,
+        "sha256": "05a99b15db1276bd4353883d93244d0a2e23d7759593e3b6b83ea139eacc3ed2"
+      },
+      "LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "README.md": {
+        "bytes": 10273,
+        "sha256": "b6da9fb94e83748158628ece490b3dc91bfcfc7e3fc1120a0b5a519d3513b44b"
+      },
+      "SOURCES.md": {
+        "bytes": 6094,
+        "sha256": "05804ca022084697802eedcfaf030dc65aee6ad806bf564601f2e88f0b04e7aa"
+      },
+      "data/LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "data/SOURCES.json": {
+        "bytes": 4997,
+        "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+      },
+      "data/UPSTREAM-SOURCES.md": {
+        "bytes": 1457,
+        "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+      },
+      "data/frequency.bin": {
+        "bytes": 200272,
+        "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+      },
+      "data/lexicon.bin": {
+        "bytes": 10259743,
+        "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+      },
+      "data/manifest.json": {
+        "bytes": 3900,
+        "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+      },
+      "docs/distribution-provenance.json": {
+        "bytes": 5569,
+        "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+      },
+      "docs/rust-api.md": {
+        "bytes": 8458,
+        "sha256": "86f418aa7ee57db786635ef26ba03d9f9d6cb04a29d19886674469a143358fcb"
+      },
+      "examples/annotate.rs": {
+        "bytes": 423,
+        "sha256": "c604152bbe8995e5c439c0122fa9674d9c38d87f53890929a34cdb15798bd6cd"
+      },
+      "examples/query.rs": {
+        "bytes": 871,
+        "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+      },
+      "src/annotation.rs": {
+        "bytes": 19775,
+        "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+      },
+      "src/annotation_context_vectors.rs": {
+        "bytes": 321810,
+        "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+      },
+      "src/annotation_frequency_vectors.rs": {
+        "bytes": 24615,
+        "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+      },
+      "src/annotation_unicode.rs": {
+        "bytes": 3734,
+        "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+      },
+      "src/annotation_unicode_tables.rs": {
+        "bytes": 40416,
+        "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+      },
+      "src/annotation_vectors.rs": {
+        "bytes": 65657,
+        "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+      },
+      "src/category.rs": {
+        "bytes": 1653,
+        "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+      },
+      "src/data/annotation_context_vectors.rs": {
+        "bytes": 37586,
+        "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+      },
+      "src/data/annotation_frequency_vectors.rs": {
+        "bytes": 87772,
+        "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+      },
+      "src/data/annotation_tests.rs": {
+        "bytes": 3391,
+        "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+      },
+      "src/data/cache_tests.rs": {
+        "bytes": 22365,
+        "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+      },
+      "src/data/category_tests.rs": {
+        "bytes": 4243,
+        "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+      },
+      "src/data/image.rs": {
+        "bytes": 15144,
+        "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+      },
+      "src/data/mod.rs": {
+        "bytes": 6395,
+        "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+      },
+      "src/data/p41_joint_error_tests.rs": {
+        "bytes": 4967,
+        "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+      },
+      "src/data/p41_query_fixture_tests.rs": {
+        "bytes": 62352,
+        "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+      },
+      "src/data/tests.rs": {
+        "bytes": 24506,
+        "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+      },
+      "src/data_meta.rs": {
+        "bytes": 1531,
+        "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+      },
+      "src/error.rs": {
+        "bytes": 2127,
+        "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+      },
+      "src/lib.rs": {
+        "bytes": 5169,
+        "sha256": "60568d3c77278def9cd8d3e3c56ccf71007f6e6194ea70dcce3b15830003eeef"
+      },
+      "src/query.rs": {
+        "bytes": 1207,
+        "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+      },
+      "src/query_case.rs": {
+        "bytes": 5074,
+        "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+      },
+      "src/query_case_tables.rs": {
+        "bytes": 52751,
+        "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+      },
+      "src/validation.rs": {
+        "bytes": 1624,
+        "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+      },
+      "third_party/unicode/LICENSE.txt": {
+        "bytes": 1995,
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+      }
+    },
+    "package_unchanged": true,
+    "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)\nbinary: rustc\ncommit-hash: 01f6ddf7588f42ae2d7eb0a2f21d44e8e96674cf\ncommit-date: 2026-02-11\nhost: x86_64-pc-windows-msvc\nrelease: 1.93.1\nLLVM version: 21.1.8",
+    "started_at_utc": "2026-10-16T10:32:11.558525+00:00",
+    "status": "passed",
+    "target": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\current-target",
+    "vendor": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-p53-consumer-qm9m5mp_\\consumer\\vendor"
+  },
+  "phase": "P5.3",
+  "prior_failed_dry_run": {
+    "bytes": 26372,
+    "reason": "--offline prevents Cargo publish registry metadata HTTP; package and independent offline consumers already passed",
+    "report": ".local/p53-readable/report.json",
+    "sha256": "66e32ed5965d4a36db3a092b3671f62d00059fe3d8de9ce022082f0ef04913eb"
+  },
+  "prior_sandbox_network_failure": {
+    "reason": "Windows Schannel sandbox credentials unavailable; actual dry-run succeeded in normal user environment against the same source inputs",
+    "resolved": true,
+    "stderr": {
+      "bytes": 722,
+      "path": ".local/p53-readable/evidence/sandbox-network-dry-run.stderr.log",
+      "sha256": "9acab696196b69fed88e5a7d339a49721a6aa13afaba2ac87426dfd6a8f913ee"
+    }
+  },
+  "production_rust_and_examples_unchanged_since_P5_2": true,
+  "protected_files_unchanged": {
+    "Cargo.lock": {
+      "bytes": 2390,
+      "sha256": "3ba42486751b118af6f60b3d2d58466ba36040d581de2f32c2ca893239a88df2"
+    },
+    "LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "data/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "data/SOURCES.json": {
+      "bytes": 4997,
+      "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+    },
+    "data/UPSTREAM-SOURCES.md": {
+      "bytes": 1457,
+      "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+    },
+    "data/frequency.bin": {
+      "bytes": 200272,
+      "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+    },
+    "data/lexicon.bin": {
+      "bytes": 10259743,
+      "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+    },
+    "data/manifest.json": {
+      "bytes": 3900,
+      "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+    },
+    "docs/annotation-context-verification.json": {
+      "bytes": 23061,
+      "sha256": "61b9647f906e29e4ab8a3da895ca0bece42eb0f05627e0c7413504bd6b6be763"
+    },
+    "docs/annotation-frequency-verification.json": {
+      "bytes": 26209,
+      "sha256": "1dd1f88263ecf046069739543426920aec76275df0f128c01ed7c64f42bbf071"
+    },
+    "docs/annotation-unicode.json": {
+      "bytes": 3135,
+      "sha256": "521a545a791b054acb135197034305434dce11e67ffe8547952340fcc3254fb1"
+    },
+    "docs/annotation-verification.json": {
+      "bytes": 19296,
+      "sha256": "f7dc9cdcef58b74bab900eb4a91d53c1283befe80011fe56b697273479acaaa8"
+    },
+    "docs/category-verification.json": {
+      "bytes": 13470,
+      "sha256": "f589f774e7ba3edfc8d8995756dd515a5556589c4a10f9cfe41809f53686ed58"
+    },
+    "docs/correctness-regression-verification.json": {
+      "bytes": 27574,
+      "sha256": "aa323f5a9bff1e4cdf3fa0372914dfa6d21227ade121daa8942863fee2d65412"
+    },
+    "docs/data-verification.json": {
+      "bytes": 3327,
+      "sha256": "712b5b8be598b5cd9bebae98ffd5350aadf709cd47f660f34f571944568a9c14"
+    },
+    "docs/engineering-verification.json": {
+      "bytes": 41258,
+      "sha256": "44216e41cd716ab39d339256bc78c9a03ae05d2fc29d34f5e9bec97c698d339a"
+    },
+    "docs/full-differential-verification.json": {
+      "bytes": 25610,
+      "sha256": "72ea9e2fafea9501e8977d9e7e31a7ccb16bddad752a0e57ce6355ed4c23e528"
+    },
+    "docs/layout-probe-results.json": {
+      "bytes": 93875,
+      "sha256": "981736620f03435decd4613f89233bd68169c8c0e404a30af262591d3eed8c2a"
+    },
+    "docs/loader-verification.json": {
+      "bytes": 19072,
+      "sha256": "64e2ca459bafe707971bc67b6f3e1c39e5d1e60d28d15d79a32bd4e853d09eb4"
+    },
+    "docs/p5-documentation-verification.json": {
+      "bytes": 14032,
+      "sha256": "ecd50b647ae4b3bffc5cee609921d5b5da7d1dff4f8b41890bc491ce88313a98"
+    },
+    "docs/performance-budget.json": {
+      "bytes": 1967,
+      "sha256": "3f54b4d54240eb8039cb461829c76d2ccd2cda7fe6cb4060b013d5d882cd4e82"
+    },
+    "docs/performance-verification.json": {
+      "bytes": 88511,
+      "sha256": "daf22261dadd266d935f9066a21aefcb27f296ee7aa9ecfe32cd87bc01b3eb36"
+    },
+    "docs/query-case.json": {
+      "bytes": 3387,
+      "sha256": "4ea010b0509185e14b311263911f3fe3ba17f9204d6eb4b7b3119ab34871fabc"
+    },
+    "docs/query-verification.json": {
+      "bytes": 11767,
+      "sha256": "dbe8894eea010602289254c8f7819f0841edbc74c2e93df46cdaacf9d00b337b"
+    },
+    "docs/reference-baseline.json": {
+      "bytes": 54162,
+      "sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
+    },
+    "src/annotation_unicode_tables.rs": {
+      "bytes": 40416,
+      "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+    },
+    "src/data_meta.rs": {
+      "bytes": 1531,
+      "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+    },
+    "src/query_case_tables.rs": {
+      "bytes": 52751,
+      "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+    },
+    "tests/fixtures/python-api-v1.json": {
+      "bytes": 118971,
+      "sha256": "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1"
+    },
+    "third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    }
+  },
+  "python_checks": {
+    "new_archive_guard_tests": 5,
+    "passed": 75,
+    "stderr": {
+      "bytes": 25202,
+      "path": ".local/p53-python.stderr.log",
+      "sha256": "6527c748d420cc89773d84a9d819682356be4a54e287e5130c752cdbf9c28596"
+    },
+    "stdout": {
+      "bytes": 0,
+      "path": ".local/p53-python.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "raw_receipt_copies": {
+    ".local/p53-package-1pq09dd9/report.json": {
+      "bytes": 26317,
+      "path": ".local/p53-readable/evidence/p53-package-1pq09dd9.json",
+      "sha256": "528bb41cf1f95a5f75287c66992cc6c0d7ec678665b1e5c301c45376047608c4"
+    },
+    ".local/p53-package-tests/report.json": {
+      "bytes": 17912,
+      "path": ".local/p53-readable/evidence/p53-package-tests.json",
+      "sha256": "1d84bf11fda1b0d23f7ecdbee4728b5fefe776951487a4a9bd8b475f049a0b08"
+    },
+    ".local/p53-readable-verified/report.json": {
+      "bytes": 27552,
+      "path": ".local/p53-readable/evidence/p53-readable-verified.json",
+      "sha256": "ee4eac04958517d79494f5a8d660d74354976fb26687b449710772ab1dcf8645"
+    }
+  },
+  "recorded_at_utc": "2026-10-16T10:35:04.720812+00:00",
+  "registry_rule": {
+    "checked_on": "2026-10-16",
+    "conservative_bytes_check": 10000000,
+    "documented_limit": "10MB",
+    "local_budget_is_stricter": true,
+    "url": "https://doc.rust-lang.org/cargo/reference/publishing.html"
+  },
+  "remaining": [
+    "P6.1 execution authorization, account/name/version and provenance-gap disposition",
+    "Actual upload and registry installation acceptance"
+  ],
+  "report_directory": ".local/p53-readable-verified",
+  "resolved_initial_error": "Command failed: publish-dry-run",
+  "root_checks": [
+    "cargo fmt --all -- --check: passed",
+    "cargo clippy --offline --locked --all-targets --all-features -- -D warnings: passed"
+  ],
+  "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)\nbinary: rustc\ncommit-hash: 01f6ddf7588f42ae2d7eb0a2f21d44e8e96674cf\ncommit-date: 2026-02-11\nhost: x86_64-pc-windows-msvc\nrelease: 1.93.1\nLLVM version: 21.1.8",
+  "scope": "Local package/consumer/dry-run only; no upload, permission or registry installation acceptance",
+  "source_inputs": {
+    "Cargo.lock": {
+      "bytes": 2390,
+      "sha256": "3ba42486751b118af6f60b3d2d58466ba36040d581de2f32c2ca893239a88df2"
+    },
+    "Cargo.toml": {
+      "bytes": 916,
+      "sha256": "05a99b15db1276bd4353883d93244d0a2e23d7759593e3b6b83ea139eacc3ed2"
+    },
+    "LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "README.md": {
+      "bytes": 10273,
+      "sha256": "b6da9fb94e83748158628ece490b3dc91bfcfc7e3fc1120a0b5a519d3513b44b"
+    },
+    "SOURCES.md": {
+      "bytes": 6094,
+      "sha256": "05804ca022084697802eedcfaf030dc65aee6ad806bf564601f2e88f0b04e7aa"
+    },
+    "data/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "data/SOURCES.json": {
+      "bytes": 4997,
+      "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+    },
+    "data/UPSTREAM-SOURCES.md": {
+      "bytes": 1457,
+      "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+    },
+    "data/frequency.bin": {
+      "bytes": 200272,
+      "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+    },
+    "data/lexicon.bin": {
+      "bytes": 10259743,
+      "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+    },
+    "data/manifest.json": {
+      "bytes": 3900,
+      "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+    },
+    "docs/distribution-provenance.json": {
+      "bytes": 5569,
+      "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+    },
+    "docs/rust-api.md": {
+      "bytes": 8458,
+      "sha256": "86f418aa7ee57db786635ef26ba03d9f9d6cb04a29d19886674469a143358fcb"
+    },
+    "examples/annotate.rs": {
+      "bytes": 423,
+      "sha256": "c604152bbe8995e5c439c0122fa9674d9c38d87f53890929a34cdb15798bd6cd"
+    },
+    "examples/query.rs": {
+      "bytes": 871,
+      "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+    },
+    "src/annotation.rs": {
+      "bytes": 19775,
+      "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+    },
+    "src/annotation_context_vectors.rs": {
+      "bytes": 321810,
+      "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+    },
+    "src/annotation_frequency_vectors.rs": {
+      "bytes": 24615,
+      "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+    },
+    "src/annotation_unicode.rs": {
+      "bytes": 3734,
+      "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+    },
+    "src/annotation_unicode_tables.rs": {
+      "bytes": 40416,
+      "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+    },
+    "src/annotation_vectors.rs": {
+      "bytes": 65657,
+      "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+    },
+    "src/category.rs": {
+      "bytes": 1653,
+      "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+    },
+    "src/data/annotation_context_vectors.rs": {
+      "bytes": 37586,
+      "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+    },
+    "src/data/annotation_frequency_vectors.rs": {
+      "bytes": 87772,
+      "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+    },
+    "src/data/annotation_tests.rs": {
+      "bytes": 3391,
+      "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+    },
+    "src/data/cache_tests.rs": {
+      "bytes": 22365,
+      "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+    },
+    "src/data/category_tests.rs": {
+      "bytes": 4243,
+      "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+    },
+    "src/data/image.rs": {
+      "bytes": 15144,
+      "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+    },
+    "src/data/mod.rs": {
+      "bytes": 6395,
+      "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+    },
+    "src/data/p41_joint_error_tests.rs": {
+      "bytes": 4967,
+      "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+    },
+    "src/data/p41_query_fixture_tests.rs": {
+      "bytes": 62352,
+      "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+    },
+    "src/data/tests.rs": {
+      "bytes": 24506,
+      "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+    },
+    "src/data_meta.rs": {
+      "bytes": 1531,
+      "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+    },
+    "src/error.rs": {
+      "bytes": 2127,
+      "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+    },
+    "src/lib.rs": {
+      "bytes": 5169,
+      "sha256": "60568d3c77278def9cd8d3e3c56ccf71007f6e6194ea70dcce3b15830003eeef"
+    },
+    "src/query.rs": {
+      "bytes": 1207,
+      "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+    },
+    "src/query_case.rs": {
+      "bytes": 5074,
+      "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+    },
+    "src/query_case_tables.rs": {
+      "bytes": 52751,
+      "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+    },
+    "src/validation.rs": {
+      "bytes": 1624,
+      "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+    },
+    "third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    }
+  },
+  "source_inputs_unchanged": true,
+  "source_strategy": "Byte-checked snapshot without .git; no fabricated VCS metadata. Source input hashes bind the archive to the working tree.",
+  "status": "local_upload_ready",
+  "warnings": [
+    "Cargo intentionally reports aborting upload due to dry run",
+    "Package self-check rustup logs retain could not canonicalize path environment notices"
+  ]
+}

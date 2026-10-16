@@ -44,14 +44,14 @@ The simple-query casing tables in `src/query_case_tables.rs` derive from the
 pinned CPython 3.12 / Unicode 15.0 database. Copyright Unicode, Inc.; licensed
 under [Unicode License V3](third_party/unicode/LICENSE.txt). The complete notice
 is preserved, with generator, interpreter, input and output identities in
-[query-case.json](docs/query-case.json). No compiler Unicode data or JavaScript
+[distribution-provenance.json](docs/distribution-provenance.json). No compiler Unicode data or JavaScript
 UTF-16 ordering is used for these tables.
 
 The P3.1 scanner and restricted IPS NFD/casing tables in
 `src/annotation_unicode_tables.rs` also derive from pinned CPython 3.12 /
 Unicode 15.0, under the same preserved Unicode License V3. Their generator,
 interpreter, installed annotation source and output identities are recorded in
-[annotation-unicode.json](docs/annotation-unicode.json). Normalization is used
+[distribution-provenance.json](docs/distribution-provenance.json). Normalization is used
 only to generate alignment predicates; output retains original cluster forms.
 
 The Rust port adapts the Lingose behavior to owned Rust results, bundled binary
@@ -90,7 +90,13 @@ The P2.2 loader uses `sha2` 0.10.9 from the RustCrypto Developers
 ([upstream](https://github.com/RustCrypto/hashes)), licensed under
 `MIT OR Apache-2.0`. Cargo resolves its separately licensed dependencies; the
 locked versions, declared licenses and minimum Rust versions are recorded in
-[loader-verification.json](docs/loader-verification.json). These software
+[distribution-provenance.json](docs/distribution-provenance.json). These software
 licenses remain separate from the Lingose data license. The referenced loader
 record describes the P2.2 locked dependency snapshot; it is not a new audit of
 future dependency resolutions.
+
+The distribution provenance summary preserves source-record hashes, table and
+license identities, interpreter versions and dependency notices from the fixed
+development records. Those complete historical records remain in the development
+checkout; their machine-specific installation and cache paths are omitted from
+the distributed summary. The summary is attribution metadata, not a runtime input.

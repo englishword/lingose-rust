@@ -50,7 +50,7 @@
   不因返回 owned 值而重复解析全库。
 
 查询大小写固定为 Python 3.12 / Unicode 15.0，不随编译器 Unicode 版本改变。
-派生表身份见 [query-case.json](query-case.json)，完整许可见
+派生表身份见 [分发来源摘要](distribution-provenance.json)，完整许可见
 [Unicode License V3](../third_party/unicode/LICENSE.txt)。标题字符、展开及非 BMP
 字符按固定基线处理；不做通用 Unicode 清洗或规范化。
 
@@ -74,7 +74,7 @@
 
 没有完整英语词段时不访问任何资源。零阈值只访问主词库；正阈值先验证频率，
 再验证主词库，即使全部词都被屏蔽也传播主词库错误。分词、对齐和大小写表身份见
-[annotation-unicode.json](annotation-unicode.json)，同样保留 Unicode 许可。
+[分发来源摘要](distribution-provenance.json)，同样保留 Unicode 许可。
 
 ## 参数与错误映射
 
@@ -122,4 +122,5 @@ Edition 2024，MSRV 为 1.85；P5.2 已在 Rust/Cargo 1.85.0 和 1.93.1 上用�
 P4.1/P4.2 的全量正确性与固定预热
 性能记录属于文档收口前的输入身份，不能充当当前归档验收；原始证据保持不变。
 P5.1 移除了开发期过渡错误变体，当前公共错误仅上表三类。
-实际归档、独立消费、dry-run 和正式上传仍为后续阶段；`publish = false` 保护保留。
+归档与独立离线消费只验证本地使用；dry-run 与真实上传、注册表消费分别记录。
+真实上传及注册表消费属于 P6，不能以本地验证替代。

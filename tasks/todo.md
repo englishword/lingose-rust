@@ -104,11 +104,15 @@
   - 产物：[工程验证说明](../docs/engineering.md)、[本轮证据](../docs/engineering-verification.json)，README/Rust 契约同步实际最低版本状态。Rust 1.85.0 Clippy 触发 format_collect，唯一生产修改为版本错误 hex 诊断改用预分配 String + write!，不改变输出或提高 MSRV。
   - 验证：Rust/Cargo 1.85.0 和 1.93.1 在 Windows x86_64 MSVC 的 fmt、全目标/全 feature Clippy -D warnings、完整测试、显式文档测试及文档构建均通过；各 102 Rust + 5 文档通过、1 个既有手动探针忽略。最低版本另通过全目标 check 和两个运行示例，70 项 Python 回归通过。最终文案更新后两套文档复核通过，代码块未变；重复的同一 5 项文档测试不累计为新增覆盖。
   - 边界：1.85.0 隔离安装在 .local/p52-rustup-home，默认用户工具链仍为 1.93.1；依赖/资源/30 个受保护文件和历史 JSON 不变。完整最终轮均有跑前/跑后身份与原始日志；其他平台、未来依赖解析、归档、dry-run 和发布未验收，publish=false/过渡 include 保留。
-- [ ] P5.3 验证真实归档、独立离线消费和发布预检。
+- [x] P5.3 验证真实归档、独立离线消费和发布预检。
   - 依赖：P5.2。完整实现和必要检查通过后移除 Cargo.toml 的 publish=false 保护；更新 include 以涵盖生产数据、必要文档和许可，再检查 cargo package 文件清单和真实 .crate 压缩体积，复核当时 crates.io 限制；在隔离工程使用打包内容，依赖准备完成后验证离线构建与公共 API。
   - 验收：无维护源库、缓存、绝对路径或缺失资源；不借用当前 checkout 数据；cargo publish --dry-run 通过。结果仅记为本地发布就绪。
   - 分发清单须包含 P2.3 新增的 third_party/unicode/LICENSE.txt 及实际使用的所有派生表许可。
   - 以 P5.1 [候选清单](../docs/distribution-review.md)核对真实归档与本地链接；包含 data/LICENSE 以保留原始 UPSTREAM-SOURCES 的相对许可链接。
+  - 产物：最终 Cargo include/发布保护调整、[便携来源摘要](../docs/distribution-provenance.json)、tools/prepare_package_sources.py、tools/check_package.py、tools/package_consumer.rs、5 项打包保护测试；[打包说明](../docs/packaging.md)和[真实验收证据](../docs/package-verification.json)。原候选三份含主机路径的历史 JSON 不分发，由便携摘要保留身份，历史文件未改。
+  - 验证：真实 .crate 为 4,052,577 字节/41 文件，SHA-256 db227b4d53065bca47bf20bc5ea6d4987ff578fd9d3b0f8d98b5c6cda5b7d3ad；低于固定 5,000,000 字节预算和当日官方 10MB 规则。21 个本地链接及资源/表/许可身份完整；无维护库、缓存、主机绝对路径或开发工具。
+  - 消费：从真实归档在系统临时目录解包，新空 Cargo home 配 vendored 依赖，全部源码路径局限隔离目录；1.93.1/1.85.0 release offline locked 构建及 18 入口内容断言通过。实际包另通过 80 库/5 文档测试、文档构建（1 既有探针忽略）；75 Python、根 fmt/Clippy 通过，生产 Rust 和原始数据不变。
+  - dry-run：真实联网 cargo publish --dry-run --locked --all-features 通过，tmp-crate 实测与候选完全相同；明确中止上传。原离线 dry-run/Schannel 环境失败保留，正常用户进程对同字节快照成功。快照不含 .git，源码由起点提交+逐文件 SHA 绑定；仅本地就绪，不代表账号权限、真实上传或 crates.io 消费。
 
 ## P6：crates.io 正式发布与验收
 

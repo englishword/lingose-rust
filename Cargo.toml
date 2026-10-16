@@ -11,9 +11,22 @@ homepage = "https://lingose.com/"
 repository = "https://github.com/englishword"
 keywords = ["english", "lexicon", "pronunciation", "ipsm"]
 build = false
-# P5.3 must remove this guard after the implementation and release checks pass.
-publish = false
-include = ["/src/**", "/examples/**", "/README.md", "/LICENSE", "/SOURCES.md"]
+include = [
+    "/src/**",
+    "/examples/**",
+    "/README.md",
+    "/LICENSE",
+    "/SOURCES.md",
+    "/data/lexicon.bin",
+    "/data/frequency.bin",
+    "/data/manifest.json",
+    "/data/SOURCES.json",
+    "/data/UPSTREAM-SOURCES.md",
+    "/data/LICENSE",
+    "/third_party/unicode/LICENSE.txt",
+    "/docs/rust-api.md",
+    "/docs/distribution-provenance.json",
+]
 
 [dependencies]
 sha2 = "0.10.9"
