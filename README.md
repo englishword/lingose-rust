@@ -4,9 +4,10 @@
 [IPSM Approach](https://lingose.com/) to English pronunciation, spelling and
 meaning. The planned first release is **0.1.0**.
 
-This checkout implements **P2.4 offline word and category queries**, including
-complete ordered category lists. Text annotation remains under development and
-returns `Error::NotImplemented`, including empty text.
+This checkout implements offline word/category queries and **P3.1 basic text
+annotation**. Direct IPS values, spelling case and Unicode boundaries work;
+context, compound/word-form fallback and frequency filtering remain under development.
+Positive `skip_top` returns `Error::NotImplemented` when English tokens occur.
 Registry publication is disabled in `Cargo.toml` during development.
 
 The reproducible lexicon/frequency resources, expected Rust identities and
@@ -19,6 +20,8 @@ Simple queries use fixed Python 3.12 / Unicode 15.0 casing tables, with
 fallback, unavailable-field and resource-error cases.
 All 24 category lists and membership queries are covered by
 [category verification](docs/categories.md).
+The basic annotation scope and its Unicode 15.0 rules are documented in
+[annotation verification](docs/annotation.md).
 
 The completed release will bundle all required data for offline use, without
 Python, Node, adjacent source repositories, configuration or lexicon downloads
@@ -69,19 +72,20 @@ labels return an error even for unknown words; registered empty lists succeed.
 
 ## Annotate plain text
 
-```rust,no_run
+```rust
 fn main() -> lingose::Result<()> {
-    let text = "Abandon the book.";
+    let text = "Abandon apple.";
     println!("{}", lingose::annotate_ips(text)?); // skip_top = 0
-    println!("{}", lingose::annotate_ips_with_skip_top(text, 1000)?);
     Ok(())
 }
 ```
 
 Rust expresses Python's default arguments through the default entry points and
 explicit `*_with_lang`, `*_with_label` and `*_with_skip_top` functions. `skip_top`
-is an `i64`; negative values are rejected. The completed annotation will cap
-nonnegative thresholds at 5062 and preserve case, whitespace and punctuation.
+is an `i64`; negative values are rejected. Basic annotation supports zero and
+preserves case, whitespace and punctuation. Empty text or text without a complete
+English token is returned unchanged without accessing either resource, for any
+nonnegative threshold. Positive frequency filtering is pending P3.3.
 
 ## Results and errors
 
@@ -139,8 +143,7 @@ cargo test --offline --all-features
 ```
 
 Complete compilable examples are in `examples/query.rs` and
-`examples/annotate.rs`. The query example runs offline; annotation currently
-reports `Error::NotImplemented`.
+`examples/annotate.rs`. Both examples run offline within the implemented scope.
 
 ## License and credits
 
@@ -149,4 +152,5 @@ reports `Error::NotImplemented`.
 [source attributions](SOURCES.md) are preserved. Third-party works retain their
 own licenses. Derived Unicode casing tables retain the
 [Unicode License V3](third_party/unicode/LICENSE.txt); their provenance is in
-[query-case.json](docs/query-case.json). Final distribution review remains P5.1.
+[query-case.json](docs/query-case.json) and
+[annotation-unicode.json](docs/annotation-unicode.json). Final distribution review remains P5.1.

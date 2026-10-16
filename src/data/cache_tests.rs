@@ -20,6 +20,70 @@ fn attempts(resources: &Resources) -> (usize, usize) {
 }
 
 #[test]
+fn annotation_uses_real_scanner_before_resources_and_propagates_errors() {
+    let resources = Resources::new(&[], &[]);
+    let annotate = |text, threshold| {
+        crate::annotation::annotate_from(text, threshold, |tokens, skip| {
+            resources.for_annotation(tokens, skip)
+        })
+    };
+    for text in [
+        "",
+        "中文 123 😀 e\u{301}",
+        "中文apple",
+        "apple123",
+        "\u{903}apple",
+        "a\u{20dd}",
+        "a-中文",
+    ] {
+        for threshold in [0, 1, 5062, i64::MAX] {
+            assert_eq!(annotate(text, threshold).unwrap(), text);
+        }
+    }
+    assert_eq!(attempts(&resources), (0, 0));
+    assert!(matches!(
+        annotate("apple\0", -1),
+        Err(Error::InvalidArgument {
+            parameter: "skip_top",
+            ..
+        })
+    ));
+    assert!(matches!(
+        annotate("apple\0", 0),
+        Err(Error::InvalidArgument {
+            parameter: "text",
+            ..
+        })
+    ));
+    assert_eq!(attempts(&resources), (0, 0));
+    let first = annotate("apple", 0).unwrap_err();
+    assert!(matches!(
+        first,
+        Error::Data {
+            resource: "lexicon",
+            ..
+        }
+    ));
+    assert_eq!(annotate("unknownwordzz", 0).unwrap_err(), first);
+    assert_eq!(attempts(&resources), (1, 0));
+    let mut incompatible = LEXICON_BYTES.to_vec();
+    incompatible[8..12].copy_from_slice(&999_u32.to_le_bytes());
+    let resources = Resources::new(Box::leak(incompatible.into_boxed_slice()), &[]);
+    assert!(matches!(
+        crate::annotation::annotate_from("apple", 0, |tokens, skip| resources
+            .for_annotation(tokens, skip)),
+        Err(Error::IncompatibleDataVersion { .. })
+    ));
+    let resources = Resources::new(LEXICON_BYTES, &[]);
+    assert!(
+        crate::annotation::annotate_from("apple", 0, |tokens, skip| resources
+            .for_annotation(tokens, skip))
+        .is_ok()
+    );
+    assert_eq!(attempts(&resources), (1, 0));
+}
+
+#[test]
 fn simple_query_validates_before_loading_and_propagates_cached_resource_errors() {
     let mut incompatible = LEXICON_BYTES.to_vec();
     incompatible[8..12].copy_from_slice(&999_u32.to_le_bytes());

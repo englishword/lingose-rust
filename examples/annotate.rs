@@ -1,8 +1,8 @@
-//! Annotation usage; currently exits with the skeleton's explicit unimplemented error.
+//! Basic direct annotation; context and frequency filtering are still in development.
 
 fn main() -> lingose::Result<()> {
-    let text = "Abandon the book.";
+    let text = "Abandon apple.\nAPPLE unknownwordzz 中文";
     println!("{}", lingose::annotate_ips(text)?);
-    println!("{}", lingose::annotate_ips_with_skip_top(text, 1000)?);
+    assert_eq!(lingose::annotate_ips("中文 123")?, "中文 123");
     Ok(())
 }

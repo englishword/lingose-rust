@@ -45,6 +45,13 @@ is preserved, with generator, interpreter, input and output identities in
 [query-case.json](docs/query-case.json). No compiler Unicode data or JavaScript
 UTF-16 ordering is used for these tables.
 
+The P3.1 scanner and restricted IPS NFD/casing tables in
+`src/annotation_unicode_tables.rs` also derive from pinned CPython 3.12 /
+Unicode 15.0, under the same preserved Unicode License V3. Their generator,
+interpreter, installed annotation source and output identities are recorded in
+[annotation-unicode.json](docs/annotation-unicode.json). Normalization is used
+only to generate alignment predicates; output retains original cluster forms.
+
 Final distribution notices remain P5.1 work, including the separately documented absence of frequency-list license
 text in the pinned reference. The Rust port and its
 behavioral specification are adaptations of Lingose, with changes recorded in

@@ -51,9 +51,14 @@ fn public_signatures_own_results_and_preserve_remaining_phase_boundaries() {
     }
     assert!(kind_list("CET4").is_ok());
     for text in ["", "中文 123 e\u{0301}", "Abandon the book."] {
-        assert_not_implemented(annotate(text));
-        for threshold in [0, 1000, 5062, 5063, i64::MAX] {
-            assert_not_implemented(annotate_with_skip_top(text, threshold));
+        assert!(annotate(text).is_ok());
+        assert!(annotate_with_skip_top(text, 0).is_ok());
+        for threshold in [1000, 5062, 5063, i64::MAX] {
+            if text == "Abandon the book." {
+                assert_not_implemented(annotate_with_skip_top(text, threshold));
+            } else {
+                assert_eq!(annotate_with_skip_top(text, threshold).unwrap(), text);
+            }
         }
     }
 }
@@ -313,5 +318,26 @@ fn category_results_are_owned_and_safe_for_concurrent_callers() {
             task.join().unwrap(),
             (true, expected_labels.clone(), expected_members.clone())
         );
+    }
+}
+
+#[test]
+fn annotations_are_owned_and_concurrent_and_have_a_separate_case_policy() {
+    assert!(lingose::ips("APPLE").unwrap().is_empty());
+    assert_eq!(lingose::annotate_ips("APPLE").unwrap(), "APPLE");
+    let input = String::from("  Abandon\tAPPLE.\r\n中文 😀 unknownwordzz");
+    let mut output = lingose::annotate_ips(&input).unwrap();
+    let expected = output.clone();
+    drop(input);
+    output.clear();
+    let threads: Vec<_> = (0..16)
+        .map(|_| {
+            std::thread::spawn(|| {
+                lingose::annotate_ips("  Abandon\tAPPLE.\r\n中文 😀 unknownwordzz").unwrap()
+            })
+        })
+        .collect();
+    for thread in threads {
+        assert_eq!(thread.join().unwrap(), expected);
     }
 }

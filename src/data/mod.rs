@@ -9,7 +9,7 @@ use image::{Counts, Expected, Image, Kind, corrupt};
 
 mod image;
 
-pub(crate) use image::Field;
+pub(crate) use image::{AnnotationState, Field};
 
 static LEXICON_BYTES: &[u8] = include_bytes!("../../data/lexicon.bin");
 static FREQUENCY_BYTES: &[u8] = include_bytes!("../../data/frequency.bin");

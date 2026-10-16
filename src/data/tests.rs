@@ -192,6 +192,9 @@ fn lexicon_fixture(fixture: Fixture) -> super::Lexicon {
 #[path = "category_tests.rs"]
 mod category_tests;
 
+#[path = "annotation_tests.rs"]
+mod annotation_tests;
+
 #[test]
 fn simple_query_exact_entries_block_lowercase_even_with_unavailable_fields() {
     let lexicon = query_fixture(&[

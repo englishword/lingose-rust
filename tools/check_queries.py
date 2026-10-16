@@ -1,6 +1,7 @@
 """Verify P2 queries in an isolated offline copy and data-free runtime directory.
 
 Default: P2.3 evidence. --categories: P2.4 evidence, preserving the P2.3 report.
+--annotation: P3.1 evidence, preserving both P2 reports.
 Not a packaged-crate check or final P4 acceptance run.
 """
 
@@ -31,12 +32,16 @@ def run(arguments, directory, environment):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--categories", action="store_true", help="Verify P2.4 and write category-verification.json")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--categories", action="store_true", help="Verify P2.4 and write category-verification.json")
+    mode.add_argument("--annotation", action="store_true", help="Verify P3.1 and write annotation-verification.json")
     args = parser.parse_args()
-    phase = "P2.4" if args.categories else "P2.3"
+    phase = "P3.1" if args.annotation else "P2.4" if args.categories else "P2.3"
     test_names = ["api_contract", "query_vectors"]
-    if args.categories:
+    if args.categories or args.annotation:
         test_names.append("category_vectors")
+    if args.annotation:
+        test_names.append("annotation_vectors")
     before = require_baseline()["fingerprints"]
     local = ROOT / ".local"
     local.mkdir(exist_ok=True)
@@ -81,9 +86,12 @@ def main():
         require(file_record(ROOT / name) == file_record(checkout / name) == identity,
                 f"Input changed: {name}")
     require(fingerprints() == before, "Installed reference changed")
+    scope = ("Basic direct IPS annotation: pinned Python scanner/cluster/casing vectors, full Unicode scalar scanner/NFD-predicate/casing digest, 15 full direct/no-token public outputs, independent state/error/ownership/concurrency fixtures and P2 regressions. Context/morphology (P3.2) and positive frequency filtering (P3.3) remain incomplete. " if args.annotation else
+             "All 24 complete ordered category lists against P0 Python digests, all 50,335 exact keys across 24 public membership labels, category validation/resource/empty/order/ownership/concurrency fixtures, plus P2.3 regressions. " if args.categories else
+             "Simple-query P0 samples, isolated unavailable/exact/fallback/error fixtures, Unicode 15.0 scalar parity, ownership/concurrency and remaining phase boundaries. ")
     evidence = {
         "phase": phase, "platform": platform.platform(),
-        "scope": ("All 24 complete ordered category lists against P0 Python digests, all 50,335 exact keys across 24 public membership labels, category validation/resource/empty/order/ownership/concurrency fixtures, plus P2.3 regressions. " if args.categories else "Simple-query P0 samples, isolated unavailable/exact/fallback/error fixtures, Unicode 15.0 scalar parity, ownership/concurrency and remaining phase boundaries. ") + "Not final P4 full-query/annotation/performance acceptance, minimum-version testing, packaged-crate checks or publication.",
+        "scope": scope + "Not final P4 full-query/annotation/performance acceptance, minimum-version testing, packaged-crate checks or publication.",
         "rustc": run(["rustc", "-Vv"], ROOT, environment).stdout.strip(),
         "cargo": run(["cargo", "-V"], ROOT, environment).stdout.strip(),
         "build_arguments": arguments, "copy_directory": str(directory),
@@ -94,13 +102,22 @@ def main():
         "p0_simple_query_assertions": 112,
         "unicode": json.loads((ROOT / "docs/query-case.json").read_text(encoding="utf-8")),
     }
-    if args.categories:
+    if args.categories or args.annotation:
         evidence["category_coverage"] = {
             "labels": 24, "distinct_ordered_members": 209759,
             "complete_list_checks": 25, "default_label": "CET4",
             "exact_membership_checks": 50335 * 24,
         }
-    report = "category-verification.json" if args.categories else "query-verification.json"
+    if args.annotation:
+        from generate_annotation_vectors import generate
+        generated, coverage = generate()
+        for path, expected in generated.items():
+            require(path.read_bytes() == expected, f"Generated annotation vectors drifted: {path}")
+        evidence["annotation_coverage"] = coverage
+        evidence["annotation_unicode"] = json.loads((ROOT / "docs/annotation-unicode.json").read_text(encoding="utf-8"))
+        evidence["annotation_generators"] = {name: file_record(ROOT / "tools" / name) for name in (
+            "generate_annotation_unicode.py", "generate_annotation_vectors.py")}
+    report = "annotation-verification.json" if args.annotation else "category-verification.json" if args.categories else "query-verification.json"
     (ROOT / "docs" / report).write_text(json_text(evidence), encoding="utf-8", newline="\n")
     print(f"{phase} isolated offline release checks passed; reference and copied inputs unchanged")
 

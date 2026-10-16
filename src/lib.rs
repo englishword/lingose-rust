@@ -1,8 +1,9 @@
 #![doc = include_str!("../README.md")]
 
-// Annotation resource access is connected in P3.
-// Keep this temporary allowance confined to that module.
+mod annotation;
+mod annotation_unicode;
 mod category;
+// Frequency access is completed in P3.3; keep the temporary allowance local.
 #[allow(dead_code)]
 mod data;
 mod data_meta;
@@ -123,23 +124,19 @@ pub fn labels() -> Result<Vec<String>> {
 
 /// Annotates plain text using IPS, with `skip_top = 0`.
 ///
-/// Equivalent to [`annotate_ips_with_skip_top`]. This skeleton validates its
-/// arguments, then returns [`Error::NotImplemented`], including for empty text.
+/// Equivalent to [`annotate_ips_with_skip_top`] with zero threshold.
+/// Basic direct annotation is implemented; context and word-form fallback are
+/// under development. Preserves whitespace, punctuation and non-English spans.
 pub fn annotate_ips(text: &str) -> Result<String> {
     annotate_ips_with_skip_top(text, 0)
 }
 
 /// Annotates plain text, leaving words up to an inclusive frequency threshold.
 ///
-/// `skip_top` must be nonnegative. The completed implementation will cap it at
-/// 5062 and preserve spelling case, whitespace and punctuation. This skeleton
-/// validates the threshold before checking text for NUL, then returns
-/// [`Error::NotImplemented`]; it does not yet tokenize or access resources.
+/// Validates the nonnegative threshold before text NUL. With no English token,
+/// returns the input without loading resources. With English tokens, currently
+/// supports zero only; positive thresholds return [`Error::NotImplemented`]
+/// until frequency filtering is implemented. Zero never loads frequency data.
 pub fn annotate_ips_with_skip_top(text: &str, skip_top: i64) -> Result<String> {
-    validation::annotation(text, skip_top)?;
-    not_implemented("annotate_ips_with_skip_top")
-}
-
-fn not_implemented<T>(operation: &'static str) -> Result<T> {
-    Err(Error::NotImplemented { operation })
+    annotation::annotate(text, skip_top)
 }
