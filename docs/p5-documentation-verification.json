@@ -1,0 +1,441 @@
+{
+  "candidate_files": [
+    "LICENSE",
+    "README.md",
+    "SOURCES.md",
+    "data/LICENSE",
+    "data/SOURCES.json",
+    "data/UPSTREAM-SOURCES.md",
+    "data/frequency.bin",
+    "data/lexicon.bin",
+    "data/manifest.json",
+    "docs/annotation-unicode.json",
+    "docs/loader-verification.json",
+    "docs/query-case.json",
+    "docs/rust-api.md",
+    "examples/annotate.rs",
+    "examples/query.rs",
+    "src/annotation.rs",
+    "src/annotation_context_vectors.rs",
+    "src/annotation_frequency_vectors.rs",
+    "src/annotation_unicode.rs",
+    "src/annotation_unicode_tables.rs",
+    "src/annotation_vectors.rs",
+    "src/category.rs",
+    "src/data/annotation_context_vectors.rs",
+    "src/data/annotation_frequency_vectors.rs",
+    "src/data/annotation_tests.rs",
+    "src/data/cache_tests.rs",
+    "src/data/category_tests.rs",
+    "src/data/image.rs",
+    "src/data/mod.rs",
+    "src/data/p41_joint_error_tests.rs",
+    "src/data/p41_query_fixture_tests.rs",
+    "src/data/tests.rs",
+    "src/data_meta.rs",
+    "src/error.rs",
+    "src/lib.rs",
+    "src/query.rs",
+    "src/query_case.rs",
+    "src/query_case_tables.rs",
+    "src/validation.rs",
+    "third_party/unicode/LICENSE.txt"
+  ],
+  "candidate_scope_only": true,
+  "commands": [
+    {
+      "command": "cargo fmt --all -- --check",
+      "result": "passed"
+    },
+    {
+      "command": "cargo fmt --manifest-path tools/differential-probe/Cargo.toml --all -- --check",
+      "result": "passed"
+    },
+    {
+      "command": "cargo test --offline --locked --doc --all-features",
+      "result": "5 passed; Rust blocks unchanged after subsequent Markdown-link correction"
+    },
+    {
+      "command": "cargo test --offline --locked --lib --tests --all-features",
+      "result": "102 passed (80 library, 22 integration); 1 pre-existing manual loader probe ignored"
+    },
+    {
+      "command": "cargo clippy --offline --locked --all-targets --all-features -- -D warnings",
+      "result": "passed"
+    },
+    {
+      "command": "cargo clippy --offline --locked --manifest-path tools/differential-probe/Cargo.toml --all-targets --all-features -- -D warnings",
+      "result": "passed"
+    },
+    {
+      "command": "cargo doc --offline --locked --no-deps --all-features",
+      "result": "passed after correcting README license href to ./LICENSE"
+    },
+    {
+      "command": "cargo run --offline --locked --example query",
+      "result": "passed; all query/default/explicit-category APIs called"
+    },
+    {
+      "command": "cargo run --offline --locked --example annotate",
+      "result": "passed; default, positive threshold and non-English passthrough called"
+    },
+    {
+      "command": "python -I -B -X utf8 -m unittest discover -s tests -p test_full_differential.py -v",
+      "result": "5 passed"
+    },
+    {
+      "command": "python -I -B -X utf8 tools/check_full_differential.py --smoke",
+      "result": "881 complete public results; zero differences; all current inputs and pinned reference unchanged during run"
+    },
+    {
+      "command": "cargo metadata --offline --locked --no-deps --format-version 1",
+      "result": "passed; required package metadata matches Cargo.toml"
+    }
+  ],
+  "corrected_validation_findings": [
+    "README LICENSE link required ./ prefix for rustdoc",
+    "Preserved upstream notice needed byte-identical data/LICENSE relative-link target"
+  ],
+  "current_inputs": {
+    ".gitattributes": {
+      "bytes": 2248,
+      "sha256": "18c1acabd068cb5c6a124122e4377efc889b96f73cbac6f0a7248283eee501fa"
+    },
+    "README.md": {
+      "bytes": 10378,
+      "sha256": "db9ed6c9632235554a175145b3e2fdc66a05c6ca65cc39a22b4663e0bd31acb1"
+    },
+    "SOURCES.md": {
+      "bytes": 5649,
+      "sha256": "098446f9f2e01df0225fbc73ff4c6035de72b00f1804103013efbe125dbfb215"
+    },
+    "data/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "docs/annotation.md": {
+      "bytes": 13033,
+      "sha256": "74fb14c208832c83e59cc00627f239a73506779f2108b85c7c17e4549f4c06ff"
+    },
+    "docs/categories.md": {
+      "bytes": 5238,
+      "sha256": "c1b62ebfcb34bbd7b0e508abf41f4c7443f8a7a133a5ca3144fcc59ca983c3c0"
+    },
+    "docs/data-loader.md": {
+      "bytes": 6006,
+      "sha256": "1aba33adf458a8abd1c5dcba299a2da748a208282615d43d0b029ba80858a43b"
+    },
+    "docs/distribution-review.md": {
+      "bytes": 5122,
+      "sha256": "1506200d59a5d1068dcbfc2adb337f324ef634223c68abe417d3cbb045a303bc"
+    },
+    "docs/performance-budget.md": {
+      "bytes": 9464,
+      "sha256": "a890bd490d7dc02264afcb4a1692f3cdfa0f2a927cceca298a79c7867a39300a"
+    },
+    "docs/rust-api.md": {
+      "bytes": 8302,
+      "sha256": "46fb20f149e6dbdf2d9aa56ca8f40c90ff017a494f303e73549e6921e7e9b676"
+    },
+    "docs/simple-queries.md": {
+      "bytes": 5447,
+      "sha256": "4a84765687363917cb11c5866593eaebb4e7c6d675d78bf8e3497a03bb371ef4"
+    },
+    "src/error.rs": {
+      "bytes": 2127,
+      "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+    },
+    "tests/api_contract.rs": {
+      "bytes": 12203,
+      "sha256": "3a8b4c00aeff18ebc0f4fc65f5b9c93a04847e09e7e52f7e5a02c9c092e921a8"
+    },
+    "tools/differential-probe/src/main.rs": {
+      "bytes": 4516,
+      "sha256": "e44dc7015be426d302706699f8e00039b0c8bf1b7c0d5f371274c371ce6dd057"
+    }
+  },
+  "environment": {
+    "cargo": "cargo 1.93.1 (083ac5135 2025-12-15)",
+    "platform": "x86_64-pc-windows-msvc",
+    "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)"
+  },
+  "fixed_inputs_unchanged": {
+    "Cargo.lock": {
+      "bytes": 2390,
+      "sha256": "3ba42486751b118af6f60b3d2d58466ba36040d581de2f32c2ca893239a88df2"
+    },
+    "Cargo.toml": {
+      "bytes": 723,
+      "sha256": "715f23c990f9aafc768b0eeffaf8f6aa89990319e2953df77279350dfe9720b1"
+    },
+    "LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "data/SOURCES.json": {
+      "bytes": 4997,
+      "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+    },
+    "data/UPSTREAM-SOURCES.md": {
+      "bytes": 1457,
+      "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+    },
+    "data/frequency.bin": {
+      "bytes": 200272,
+      "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+    },
+    "data/lexicon.bin": {
+      "bytes": 10259743,
+      "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+    },
+    "data/manifest.json": {
+      "bytes": 3900,
+      "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+    },
+    "docs/annotation-unicode.json": {
+      "bytes": 3135,
+      "sha256": "521a545a791b054acb135197034305434dce11e67ffe8547952340fcc3254fb1"
+    },
+    "docs/correctness-regression-verification.json": {
+      "bytes": 27574,
+      "sha256": "aa323f5a9bff1e4cdf3fa0372914dfa6d21227ade121daa8942863fee2d65412"
+    },
+    "docs/full-differential-verification.json": {
+      "bytes": 25610,
+      "sha256": "72ea9e2fafea9501e8977d9e7e31a7ccb16bddad752a0e57ce6355ed4c23e528"
+    },
+    "docs/performance-budget.json": {
+      "bytes": 1967,
+      "sha256": "3f54b4d54240eb8039cb461829c76d2ccd2cda7fe6cb4060b013d5d882cd4e82"
+    },
+    "docs/performance-verification.json": {
+      "bytes": 88511,
+      "sha256": "daf22261dadd266d935f9066a21aefcb27f296ee7aa9ecfe32cd87bc01b3eb36"
+    },
+    "docs/query-case.json": {
+      "bytes": 3387,
+      "sha256": "4ea010b0509185e14b311263911f3fe3ba17f9204d6eb4b7b3119ab34871fabc"
+    },
+    "docs/reference-baseline.json": {
+      "bytes": 54162,
+      "sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
+    },
+    "src/annotation_unicode_tables.rs": {
+      "bytes": 40416,
+      "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+    },
+    "src/data_meta.rs": {
+      "bytes": 1531,
+      "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+    },
+    "src/query_case_tables.rs": {
+      "bytes": 52751,
+      "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+    },
+    "tests/fixtures/python-api-v1.json": {
+      "bytes": 118971,
+      "sha256": "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1"
+    },
+    "third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    }
+  },
+  "historical_evidence": {
+    "docs/full-differential-verification.json": {
+      "changed_inputs_since_measurement": [
+        "README.md",
+        "SOURCES.md",
+        "src/error.rs",
+        "tools/differential-probe/src/main.rs"
+      ],
+      "receipt_unchanged": true,
+      "scope": "Historical identities only; not re-measured or rewritten in P5.1"
+    },
+    "docs/performance-verification.json": {
+      "changed_inputs_since_measurement": [
+        "README.md",
+        "SOURCES.md",
+        "src/error.rs"
+      ],
+      "receipt_unchanged": true,
+      "scope": "Historical identities only; not re-measured or rewritten in P5.1"
+    }
+  },
+  "implementation_change": "Removed transitional unused Error::NotImplemented and development bridge error mapping; query/annotation algorithms and dependencies unchanged",
+  "local_license_copy_matches": true,
+  "local_links": [
+    {
+      "href": "docs/rust-api.md",
+      "source": "README.md",
+      "target": "docs/rust-api.md"
+    },
+    {
+      "href": "examples/query.rs",
+      "source": "README.md",
+      "target": "examples/query.rs"
+    },
+    {
+      "href": "examples/annotate.rs",
+      "source": "README.md",
+      "target": "examples/annotate.rs"
+    },
+    {
+      "href": "./LICENSE",
+      "source": "README.md",
+      "target": "LICENSE"
+    },
+    {
+      "href": "SOURCES.md",
+      "source": "README.md",
+      "target": "SOURCES.md"
+    },
+    {
+      "href": "third_party/unicode/LICENSE.txt",
+      "source": "README.md",
+      "target": "third_party/unicode/LICENSE.txt"
+    },
+    {
+      "href": "LICENSE",
+      "source": "SOURCES.md",
+      "target": "LICENSE"
+    },
+    {
+      "href": "data/SOURCES.json",
+      "source": "SOURCES.md",
+      "target": "data/SOURCES.json"
+    },
+    {
+      "href": "data/UPSTREAM-SOURCES.md",
+      "source": "SOURCES.md",
+      "target": "data/UPSTREAM-SOURCES.md"
+    },
+    {
+      "href": "data/LICENSE",
+      "source": "SOURCES.md",
+      "target": "data/LICENSE"
+    },
+    {
+      "href": "third_party/unicode/LICENSE.txt",
+      "source": "SOURCES.md",
+      "target": "third_party/unicode/LICENSE.txt"
+    },
+    {
+      "href": "docs/query-case.json",
+      "source": "SOURCES.md",
+      "target": "docs/query-case.json"
+    },
+    {
+      "href": "docs/annotation-unicode.json",
+      "source": "SOURCES.md",
+      "target": "docs/annotation-unicode.json"
+    },
+    {
+      "href": "docs/loader-verification.json",
+      "source": "SOURCES.md",
+      "target": "docs/loader-verification.json"
+    },
+    {
+      "href": "LICENSE",
+      "source": "data/UPSTREAM-SOURCES.md",
+      "target": "data/LICENSE"
+    },
+    {
+      "href": "../README.md",
+      "source": "docs/rust-api.md",
+      "target": "README.md"
+    },
+    {
+      "href": "query-case.json",
+      "source": "docs/rust-api.md",
+      "target": "docs/query-case.json"
+    },
+    {
+      "href": "../third_party/unicode/LICENSE.txt",
+      "source": "docs/rust-api.md",
+      "target": "third_party/unicode/LICENSE.txt"
+    },
+    {
+      "href": "annotation-unicode.json",
+      "source": "docs/rust-api.md",
+      "target": "docs/annotation-unicode.json"
+    },
+    {
+      "href": "../data/manifest.json",
+      "source": "docs/rust-api.md",
+      "target": "data/manifest.json"
+    },
+    {
+      "href": "../SOURCES.md",
+      "source": "docs/rust-api.md",
+      "target": "SOURCES.md"
+    }
+  ],
+  "metadata": {
+    "authors": [
+      "ZHAN Xianjue"
+    ],
+    "build": false,
+    "edition": "2024",
+    "homepage": "https://lingose.com/",
+    "license": "CC-BY-4.0",
+    "name": "lingose",
+    "publish": false,
+    "repository": "https://github.com/englishword",
+    "rust-version": "1.85",
+    "version": "0.1.0"
+  },
+  "metadata_unchanged": true,
+  "phase": "P5.1",
+  "provenance_gaps": [
+    "Pinned Frequency List reference supplies no separate license text or derivative distribution-terms record",
+    "Some external category vocabulary lists lack per-label source identities and separate license texts",
+    "Phonemizer/eSpeak NG/ECDICT notices retain upstream credits and license links without new permission verification"
+  ],
+  "public_function_names": [
+    "IPA",
+    "IPS",
+    "IPSM",
+    "ISM",
+    "annotate_ips",
+    "annotate_ips_with_skip_top",
+    "ipa",
+    "ips",
+    "ipsm",
+    "ism",
+    "kind",
+    "kind_list",
+    "kind_list_with_label",
+    "kind_with_label",
+    "labels",
+    "meaning",
+    "meaning_with_lang",
+    "root_lemma"
+  ],
+  "recorded_at_utc": "2026-10-16T09:53:44.416577+00:00",
+  "remaining": [
+    "P5.2 required engineering checks and actual MSRV verification",
+    "P5.3 candidate include, real archive size/list, isolated offline consumer and dry-run",
+    "P6.1 review source-notice gaps with formal publication conditions",
+    "P6 publication and registry consumer acceptance"
+  ],
+  "scope": "Documentation, metadata, notices, existing API regression and differential smoke; no MSRV/package/dry-run/publication acceptance",
+  "smoke": {
+    "differences": 0,
+    "full_differential_rerun": false,
+    "identity": {
+      "bytes": 22038,
+      "sha256": "5ced8c6a51ae4d515881bca81f3a5d4c21e99c519547402cb44fbdd7612e2bd1"
+    },
+    "inputs_match_current": true,
+    "receipt": ".local/p41-smoke-89egrloa/smoke-evidence.json",
+    "total_results": 881
+  },
+  "status": "documentation_and_notice_review_passed_with_provenance_gaps_recorded",
+  "upstream": {
+    "head": "b36baf6d55fa259ecc38acea9e881ae6d1477d33",
+    "original_notices_match": true,
+    "read_only": true,
+    "status": "clean"
+  }
+}

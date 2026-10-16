@@ -1,7 +1,9 @@
 # 性能预算与测量方法（P1.2）
 
-本轮固定 [performance-budget.json](performance-budget.json) 中的数值，供后续
-P2/P4/P5 验收。**公共查询及 annotate_ips 仍未实现，这些预算尚未通过最终验收。**
+P1.2 固定 [performance-budget.json](performance-budget.json) 中的数值，供后续
+P2/P4/P5 验收。本文保留当时的测量方法；公共查询和标注现已实现，
+当前接口见 [Rust 契约](rust-api.md)，后续真实 API 的验收及首次文件启动边界见
+[P4.2 性能结果](performance.md)。实际归档体积仍待 P5.3 验证。
 布局证据为 [layout-probe-results.json](layout-probe-results.json)，选择与格式见
 [data-layout.md](data-layout.md)。不能以本轮布局负载代替端到端标注。
 
@@ -133,7 +135,8 @@ runner 构建四个互斥 feature 并复制各自二进制，构建与测量顺�
 探针锁定 flate2 1.1.10/miniz_oxide 0.9.1、sha2 0.10.9、serde 1.0.229 和
 serde_json 1.0.154；gzip 使用纯 Rust 后端，无额外 C 压缩库。
 [flate2 后端说明](https://docs.rs/flate2/1.1.10/flate2/)。
-主 crate 已接入 P2.2 私有加载器与 sha2；公共 API 仍为骨架，不发布探针或 .local 数据。
+P2.2 时主 crate 已接入私有加载器与 sha2；其后公共 API 已完成。
+探针和 .local 数据仅供开发，不属于正式 crate 的候选分发范围。
 P2.2 的[加载器检查](data-loader.md)不替代此处的完整公共 API 性能验收，数值预算不变。
 
 硬件、工具链或语料变化时先记录条件差异；预算变更必须保留失败样本、原因、

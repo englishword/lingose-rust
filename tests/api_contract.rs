@@ -1,4 +1,4 @@
-//! Public signatures, argument order, ownership, and remaining phase boundaries.
+//! Public signatures, argument order, ownership, aliases, and default arguments.
 
 use lingose::{Error, Result};
 

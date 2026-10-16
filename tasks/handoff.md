@@ -2,63 +2,65 @@
 
 ## 当前任务与状态
 
-- 当前恢复任务：**P5.1，完成用户文档、元数据和来源声明（未开始）**。
-- P4.2 已完成：P1.2 固定完整预热/OS 缓存条件下，真实公共 API 的运行时间、
-  原始资源与内存预算全部通过；数值预算未修改。新文件首次执行超限另列，见下方边界。
-- 分支 main，本轮起点 6c8a71b，开始时工作区干净；聚焦提交及实施历史以 Git 为准。
-- 本轮仅增加性能工具、测试、正式证据和文档，以及相应 Git 文件规则；
-  生产实现/数据/依赖/Cargo 元数据、P0/P4.1/既往证据、源库和相邻参考仓库未改。
-- publish=false/include 保护保留；未执行最低版本验证、打包、dry-run、上传或 crates.io 验收。
+- 当前恢复任务：**P5.2，工程检查和最低版本验证（未开始）**。
+- P5.1 已完成：README/接口契约、元数据核对、来源声明及开发期过渡错误清理已验证。
+- 分支 main，本轮起点 e139695，开始时工作区干净；实施和聚焦提交以 Git 历史为准。
+- 生产变更仅移除未被调用的 `Error::NotImplemented` 及 Display 分支；开发差分桥同步
+  删除其映射。查询/标注算法、依赖、生产资源、派生表和固定基线未改。
+- `publish = false` 和现有过渡 include 保留；尚未验证 MSRV、真实归档、dry-run 或发布。
 
 ## 恢复所需文件
 
-- [todo.md](todo.md)：后续既定阶段；[性能说明](../docs/performance.md)说明完整方法及范围。
-- docs/performance-verification.json：正式原始样本、预算判定、机器/工具链/输入/可执行文件身份；
-  为 .local/p42-performance-bc6s84hu/report.json 的逐字节副本，全部输入/源基线前后不变。
-- tools/check_performance.py、tools/performance-probe：最小副本 offline locked release 消费探针，
-  thin LTO、codegen-units=1、strip=true；真实公共调用，完整 owned 输出和全文核对。
-- tests/test_performance.py：9 项验收保护，含样本/场景/全文标记缺失、p95 极值、绝对内存峰值、
-  单位转换和失败子进程日志保留；内存握手有整体 watchdog。
-- docs/performance-budget.{md,json}：P1.2 固定条件与数值；原始 JSON 保持不变。
-- docs/full-differential-verification.json、docs/correctness-regression-verification.json：P4.1 历史全量
-  正确性/隔离 release 证据；本轮逐项核对所有输入身份，无生产修改，未重捕获或重写旧证据。
-- docs/{api,rust-api,simple-queries,categories,annotation}.md：现有行为契约；README、Cargo.toml、
-  SOURCES.md、data/SOURCES.json、third_party/unicode/LICENSE.txt 是 P5.1 的相关文件。
+- [todo.md](todo.md)：后续既定阶段。
+- README.md、docs/rust-api.md：18 个公共入口、默认参数、所有权、参数顺序、离线和错误行为。
+  README 五个 Rust 代码块作为 crate rustdoc 测试；examples/query.rs 和 annotate.rs 均可运行。
+- docs/distribution-review.md：P5.1 审查范围、声明缺口及 P5.3 候选 include。
+  当前 include 仍缺编译必需数据，不能当作最终发布清单。
+- docs/p5-documentation-verification.json：本轮命令结果、当前身份、受保护文件身份、
+  40 个候选文件、21 个本地链接，以及历史证据与当前输入的差异。
+- SOURCES.md：保留署名/工具版本/许可链接，补充当前审查说明，不推定第三方授权。
+- data/LICENSE：新增与根 LICENSE 逐字节相同的副本，修复原始 UPSTREAM-SOURCES 中
+  `(LICENSE)` 的 data/ 相对链接；两份均为 SHA-256 d557539d…3744。
+  `.gitattributes` 保留其原始字节，相关新/改文档和 receipt 使用 LF。
+- data/SOURCES.json、data/manifest.json、data/UPSTREAM-SOURCES.md：受保护的 P2.1 原始
+  产物未改；SOURCES.json 中“P5.1 待审查”是生成时状态，由当前说明补充，不重写摘要。
+- 当前 smoke 原始证据：.local/p41-smoke-89egrloa/smoke-evidence.json；匹配全部当前输入，
+  881 项完整公共结果零差异。它不能代替 P4.1 的 1,862,690 项正式全量证据。
 
-## 关键结果与边界
+## 关键决定与边界
 
-- 7 个独立时间样本，min/median/max/nearest-rank p95（7 样本 p95=max），无异常值剔除。
-  66 组全词键/混合查询、24 类完整词表、10,000/100,000 词×三个阈值均达标；
-  100,000 词中位数 117.84/167.74/188.88 ms，全部完整输出与 P4.1 Python 期望相同。
-- 新进程首次公共查询在固定完整预热条件下中位数/p95 45.84/49.33 ms。
-  **新路径文件第一次执行仍为 534.24 ms，超过 300 ms**；其中 Popen 返回前为 495.69 ms，
-  库内首调用 26.78 ms。四份相同字节的新路径 control/query 对照中无库调用也有创建等待。
-  仅定位到库调用之外的父进程创建阶段，未识别 OS 组件，不归因具体扫描器。
-  artifact-first 与诊断全部保留；正式统计遵循 P1.2 先完整预热，不保证新文件首次执行延迟。
-- 每个内存场景 3 个新进程、所有绝对值分别验收；100,000 词三个阈值均通过，
-  全局峰值工作集/私有提交为 21,110,784 / 9,302,016 字节。包含完整输入/输出和临时分配；
-  Python 期望在快照后才载入。7×8 个并发首访线程的完整 100,000 词输出核对通过。
-- 重复 n't 长词仍有二次成本，4,096 次尾缀补充样本 29.721 ms，无原生栈风险；
-  当前完整真实语料有充足余量，未增加缓存或改写算法。
-- 本轮仅 Windows 11/MSVC/Rust 1.93.1；不代表 MSRV、其他平台、归档或发布验收。
+- Cargo 名称/版本/作者/许可证、官网与 https://github.com/englishword 原已符合需求，未改元数据。
+- 根 LICENSE 与原始 UPSTREAM-SOURCES 仍与固定 Python 参考逐字节一致；相邻 Python
+  HEAD b36baf6d55fa259ecc38acea9e881ae6d1477d33、工作树干净，只读访问。
+- Frequency List 固定参考缺单独许可文本/本次派生分发条件记录，部分外部分类词表缺
+  逐标签来源/许可记录；已准确保留缺口。Phonemizer/eSpeak NG/ECDICT 保留上游署名及
+  许可链接，未获取新增授权或声称全部第三方分发条件已独立核实。P6.1 需复核处置状态。
+- P4.1/P4.2 原始 JSON 未改。README/SOURCES、error.rs、差分桥及测试说明现已改变，
+  历史报告不可描述为当前输入的新验证。正式性能工具会按既定身份保护拒绝当前差异，
+  不为消除该拒绝而覆盖旧报告；本轮未重测性能。
+- P4.2 历史结果仅在固定完整预热条件下通过；新路径文件首次执行 534.24 ms，超过
+  300 ms 的事实仍保留，不保证首次文件执行或其他平台延迟。详见 docs/performance.md。
+- 新增许可副本和候选链接清单不代表实际归档已合格；正式 include 修改属于 P5.3。
 
 ## 本轮验证
 
-- 正式性能自动验收 passed_under_fixed_warmup_conditions；原始资源 10,460,015 字节。
-- 102 Rust 测试（80 库、22 集成）、5 文档测试、70 Python 测试通过；
-  唯一忽略项仍为 P2.2 手动加载器探针。根工程与开发探针 fmt/Clippy -D warnings 通过。
-- 正式 JSON 与原始 report 完全相同，自动预算重判定和全部输入身份复核通过；
-  P4.1 的 1,862,690 项全量差分结论因所有相关输入不变而继续有效。
-- 工具和测量范围经过独立只读审阅。首次执行超限已明确记录，未放宽预算。
+- 102 Rust 测试（80 库、22 集成）、5 文档测试、5 差分工具 Python 测试通过。
+  唯一忽略项仍为 P2.2 手动加载器探针。
+- 根工程和差分桥 fmt、全目标/全 feature Clippy `-D warnings` 通过。
+- 文档构建、两个实际示例、Cargo metadata、18 入口/元数据/本地链接核对通过。
+  文档构建发现 README 许可证链接需 `./LICENSE`，修正后通过；Rust 代码块未改。
+- 当前输入的 881 项差分 smoke 零差异；固定安装输入及受保护文件前后摘要不变。
+- 仅 Windows MSVC / Rust/Cargo 1.93.1；未运行最低版本、归档、dry-run 或上传。
+- 原始全量/P4 性能证据和固定预算均未重写；独立只读审阅的两项发现均已修复。
 
 ## 下一步精确动作
 
-1. 核对 Git、本交接及 todo，执行 P5.1，不重做计划或提前进入打包/发布。
-2. 对照全部已实现公共 API 整理 README、可编译例子、默认参数、错误与离线行为；
-   保留官网与用户指定 https://github.com/englishword，不编造具体仓库 URL。
-3. 移除过渡 Error::NotImplemented 变体和相关占位断言/文档，更新开发工具中的错误映射；
-   该变更会改变 P4.1/P4.2 输入身份，明确区分历史证据与下一阶段的新验证。
-4. 核对作者/项目/Unicode/第三方声明及未来 include；Frequency List 基线缺独立许可文本，
-   不以项目许可证推定其授权，不伪造来源证明。
-5. 完成 P5.1 最小相关验证、更新 todo/handoff 并聚焦提交，交接 P5.2；
-   最低版本、真实 .crate 体积、独立打包消费、dry-run 和正式上传仍按后续阶段执行。
+1. 核对 Git、本交接和 todo，恢复 P5.2，不重做计划或提前发布。
+2. 检查实际可用工具链；在声明最低 Rust 1.85 上执行真实验证，准确记录可用平台。
+   本阶段前不要将 1.93.1 通过推断为 MSRV 通过；必要工具链准备按实际环境处理。
+3. 使用项目现有 `.local/cargo-home` 缓存，执行 P5.2 必需的格式、Clippy、完整测试、
+   文档测试和文档构建；开发脚本使用 D:/Python/Python312/python.exe 的固定基线。
+   需要新阶段证据时另建 receipt，不调用会覆盖 P4 原始报告的正式验证模式。
+4. 完成并验证 P5.2 后更新 todo/handoff、聚焦提交，再交接 P5.3。
+5. P5.3 才移除发布保护并修改 include，采用 docs/distribution-review.md 的候选清单，
+   对真实归档清单/体积/许可和链接、独立离线消费及 dry-run 逐项实测。

@@ -35,13 +35,6 @@ pub enum Error {
         /// The version found in the resource.
         found: String,
     },
-    /// This development skeleton has not implemented the requested operation.
-    ///
-    /// This transitional variant must be removed before the first release.
-    NotImplemented {
-        /// The canonical operation that is not yet implemented.
-        operation: &'static str,
-    },
 }
 
 impl fmt::Display for Error {
@@ -61,12 +54,6 @@ impl fmt::Display for Error {
                 formatter,
                 "incompatible {resource} data version: expected {expected}, found {found}"
             ),
-            Self::NotImplemented { operation } => {
-                write!(
-                    formatter,
-                    "{operation} is not implemented in this development skeleton"
-                )
-            }
         }
     }
 }

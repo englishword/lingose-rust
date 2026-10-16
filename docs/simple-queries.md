@@ -3,7 +3,9 @@
 已实现 `ipa`/`IPA`、`ips`/`IPS`、`ism`/`ISM`、`ipsm`/`IPSM`、`root_lemma`、
 `meaning`/`meaning_with_lang`。公共签名和所有权继续遵循 [Rust 契约](rust-api.md)，
 业务采用规则遵循 [P0 契约](api.md)。P2.4 分类查询另见[分类说明](categories.md)；
-文本标注、P4 全库公共 API 差分及性能验收仍未完成；打包保护和发布阶段不变。
+本文保留 P2.3 实施和验收范围；后续标注及 P4 验收已完成。当前接口见
+[Rust 契约](rust-api.md)，历史全量结果见 [P4.1](full-differential.md) 与
+[P4.2](performance.md)；打包与发布仍待后续阶段。
 
 ## 查询与资源
 
@@ -33,7 +35,7 @@ Unicode 15 之后分配的字符保持基线未分配时的行为，不随编译
 默认小写的唯一非语言限定上下文规则 Final_Sigma 需要 Σ 前存在 cased 字符。
 简单查询回退条件不允许后续位置出现大写 Σ；它只能是首字符，因而永远没有前置字符，
 无法触发此规则。该输入域使用单字符完整小写映射与 Python 整串 `lower()` 一致。
-本辅助函数仅用于简单查询，不能用于未来文本标注的任意字符串小写。
+本辅助函数仅用于简单查询，不用于文本标注的任意字符串小写。
 
 [query-case.json](query-case.json) 固定生成器、Python/Unicode 版本、输入/输出摘要、
 字符数及全字符逻辑摘要；生成器不联网，拒绝覆盖已有不同内容，前后核对输入身份。
@@ -69,5 +71,5 @@ cargo clippy --offline --locked --all-targets --all-features -- -D warnings
 python -I -B -X utf8 tools/check_queries.py
 ```
 
-此处验证 P2.3 的样例和隔离路径；P4 仍需对所有词条逐字段调用公共 API 差分，
+此处保留 P2.3 的样例和隔离路径验证；后续 P4 已对所有词条逐字段调用公共 API 差分，
 并按原预算测量真实 API 和完整标注。没有执行 Cargo 打包、dry-run 或上传。

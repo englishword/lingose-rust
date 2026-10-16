@@ -58,7 +58,6 @@ fn write_value(output: &mut impl Write, result: lingose::Result<Value>) -> io::R
                 lingose::Error::InvalidArgument { .. } => "InvalidArgument",
                 lingose::Error::Data { .. } => "Data",
                 lingose::Error::IncompatibleDataVersion { .. } => "IncompatibleDataVersion",
-                lingose::Error::NotImplemented { .. } => "NotImplemented",
                 _ => return Err(io::Error::other("unmapped public error")),
             };
             output.write_all(&[4])?;

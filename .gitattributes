@@ -1,5 +1,6 @@
 # Preserve byte identities across checkouts even when core.autocrlf=true.
 # Loader evidence also fingerprints these minimal offline-build inputs.
+/.gitattributes text eol=lf
 /Cargo.toml text eol=lf
 /Cargo.lock text eol=lf
 /README.md text eol=lf
@@ -36,10 +37,19 @@
 /docs/full-differential-verification.json text eol=lf
 /docs/correctness-regression-verification.json text eol=lf
 /docs/performance-verification.json text eol=lf
+/docs/p5-documentation-verification.json text eol=lf
+/docs/rust-api.md text eol=lf
+/docs/distribution-review.md text eol=lf
+/docs/simple-queries.md text eol=lf
+/docs/categories.md text eol=lf
+/docs/annotation.md text eol=lf
+/docs/data-loader.md text eol=lf
+/docs/performance-budget.md text eol=lf
 /third_party/unicode/LICENSE.txt -text
 /data/*.bin binary
 /data/*.json -text
 /data/UPSTREAM-SOURCES.md -text
+/data/LICENSE -text
 /src/data_meta.rs -text
 /docs/reference-baseline.json -text
 /tests/fixtures/python-api-v1.json -text

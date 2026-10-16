@@ -2,7 +2,8 @@
 
 已实现 `kind`、`kind_with_label`、`kind_list`、`kind_list_with_label` 和 `labels`。
 接口、所有权及参数表达保持 [Rust 契约](rust-api.md)，采用规则遵循 [P0 契约](api.md)。
-标注尚未实现，`NotImplemented` 仍为过渡错误；打包及发布保护不变。
+本文保留 P2.4 实施和验收范围；标注及 P4 验收现已完成，开发期过渡错误已在 P5.1
+移除。当前接口见 [Rust 契约](rust-api.md)；打包及发布保护保留。
 
 ## 实现与行为
 
@@ -63,5 +64,5 @@ cargo clippy --offline --locked --all-targets --all-features -- -D warnings
 python -I -B -X utf8 tools/check_queries.py --categories
 ```
 
-上述结论验收分类接口及其完整数据；P4 仍需对所有查询字段和完整标注进行联合差分，
-并测量真实 release 性能。MSRV、其他平台、.crate 离线消费和发布尚未验收。
+上述历史结论验收 P2.4 分类接口及其完整数据；后续 P4 联合差分与 release 性能
+见本文开头的当前状态。MSRV、其他平台、.crate 离线消费和发布尚未验收。

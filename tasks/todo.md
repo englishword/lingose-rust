@@ -91,10 +91,13 @@
 
 ## P5：文档与发布准备
 
-- [ ] P5.1 完成用户文档、元数据和来源声明。
+- [x] P5.1 完成用户文档、元数据和来源声明。
   - 依赖：P4.2。README 包含全部接口、可编译示例、默认参数、错误、离线行为及 IPSM 概念；Cargo 元数据和 README 均链接 https://lingose.com/ 与 https://github.com/englishword。
   - 验收：名称/版本正确，示例和真实 API 一致，许可证、作者署名及第三方资源声明齐全；移除过渡性的 NotImplemented 错误及占位返回/验收断言，更新骨架状态说明。核对 README 的接口文档链接与最终分发清单。
   - 来源核对项：P2.1 已原样保留上游 SOURCES/作者/项目 LICENSE，并在 data/SOURCES.json 记录第三方引用；固定参考未附独立 Frequency List 许可文本，不能据项目许可证推定其授权。
+  - 产物：更新 README、Rust 契约和现有行为说明的阶段状态；移除 Error::NotImplemented 及差分桥映射。新增 data/LICENSE 原始许可证副本，修复保留的上游声明相对链接；[分发声明核对](../docs/distribution-review.md)及[本轮验证](../docs/p5-documentation-verification.json)列出候选 include、当前/历史身份及资料缺口。
+  - 验证：18 个入口和元数据核对通过；候选 40 文件中的 21 个本地链接均可解析。102 Rust/5 文档/5 差分工具测试、两个实际示例、文档构建、根工程及差分桥 fmt/Clippy 通过；当前输入的 881 项公共结果 smoke 零差异。唯一忽略项仍为 P2.2 手动探针；仅 Windows MSVC/Rust 1.93.1。
+  - 边界：生产资源、派生表、依赖、原始 LICENSE/上游声明及 P0/P4 JSON 不变；P4.1/P4.2 属于历史输入，没有重捕获或重测。Frequency List 与部分外部分类来源的许可资料缺口已明确，未推定授权。Cargo 元数据原已合规，publish=false/过渡 include 保留；MSRV、真实归档和发布尚未执行。
 - [ ] P5.2 完成工程检查和最低版本验证。
   - 依赖：P5.1。执行格式、Clippy、测试、文档测试及文档构建；在约定最低版本和实际可用平台执行相应验证。
   - 验收：必要检查通过，报告准确区分目标平台、已验证平台和未验证项。
@@ -102,12 +105,14 @@
   - 依赖：P5.2。完整实现和必要检查通过后移除 Cargo.toml 的 publish=false 保护；更新 include 以涵盖生产数据、必要文档和许可，再检查 cargo package 文件清单和真实 .crate 压缩体积，复核当时 crates.io 限制；在隔离工程使用打包内容，依赖准备完成后验证离线构建与公共 API。
   - 验收：无维护源库、缓存、绝对路径或缺失资源；不借用当前 checkout 数据；cargo publish --dry-run 通过。结果仅记为本地发布就绪。
   - 分发清单须包含 P2.3 新增的 third_party/unicode/LICENSE.txt 及实际使用的所有派生表许可。
+  - 以 P5.1 [候选清单](../docs/distribution-review.md)核对真实归档与本地链接；包含 data/LICENSE 以保留原始 UPSTREAM-SOURCES 的相对许可链接。
 
 ## P6：crates.io 正式发布与验收
 
 - [ ] P6.1 核对正式发布条件。
   - 依赖：P5.3。确认该阶段执行授权、名称、账号权限、0.1.0 是否可发布及归档身份；已有授权无需重复询问。
   - 验收：凭据和外部状态足以执行发布；令牌不进入仓库或日志。若有实际阻塞，记录具体原因和恢复动作。
+  - 复核 P5.1 记录的 Frequency List/外部分类词表许可资料缺口处置状态，不将保留来源声明描述为已独立确认全部第三方分发条件。
 - [ ] P6.2 上传 lingose 0.1.0。
   - 依赖：P6.1。执行真实发布并核对 crates.io 的版本、说明和链接。
   - 验收：有实际上传及索引可用证据；不得以 dry-run 结果勾选此项。
