@@ -1,6 +1,7 @@
 //! Checked, borrowed views of the frozen v1 resources. No source data is rebuilt.
 
 use std::collections::HashSet;
+use std::fmt::Write;
 
 use sha2::{Digest, Sha256};
 
@@ -399,7 +400,11 @@ fn matches_hex(bytes: &[u8], expected: &str) -> bool {
 }
 
 fn hex(bytes: &[u8]) -> String {
-    bytes.iter().map(|byte| format!("{byte:02x}")).collect()
+    let mut output = String::with_capacity(bytes.len() * 2);
+    for byte in bytes {
+        write!(&mut output, "{byte:02x}").expect("writing to a String cannot fail");
+    }
+    output
 }
 
 pub(super) fn corrupt(resource: &'static str, message: &str) -> Error {

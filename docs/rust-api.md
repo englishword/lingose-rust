@@ -117,8 +117,9 @@ Python 的动态类型错误不计为 Rust 运行时接口。
 资源版本和计数见 [data/manifest.json](../data/manifest.json)，来源声明见
 [SOURCES.md](../SOURCES.md)。
 
-Edition 2024，声明 MSRV 为 1.85；最低版本仍待 P5.2 实测。
-目前验证平台仅 Windows MSVC / Rust 1.93.1。P4.1/P4.2 的全量正确性与固定预热
+Edition 2024，MSRV 为 1.85；P5.2 已在 Rust/Cargo 1.85.0 和 1.93.1 上用当前锁定
+依赖完成实际工程检查。验证平台仅 Windows x86_64 MSVC；其他平台尚未验证。
+P4.1/P4.2 的全量正确性与固定预热
 性能记录属于文档收口前的输入身份，不能充当当前归档验收；原始证据保持不变。
 P5.1 移除了开发期过渡错误变体，当前公共错误仅上表三类。
 实际归档、独立消费、dry-run 和正式上传仍为后续阶段；`publish = false` 保护保留。

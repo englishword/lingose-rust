@@ -98,9 +98,12 @@
   - 产物：更新 README、Rust 契约和现有行为说明的阶段状态；移除 Error::NotImplemented 及差分桥映射。新增 data/LICENSE 原始许可证副本，修复保留的上游声明相对链接；[分发声明核对](../docs/distribution-review.md)及[本轮验证](../docs/p5-documentation-verification.json)列出候选 include、当前/历史身份及资料缺口。
   - 验证：18 个入口和元数据核对通过；候选 40 文件中的 21 个本地链接均可解析。102 Rust/5 文档/5 差分工具测试、两个实际示例、文档构建、根工程及差分桥 fmt/Clippy 通过；当前输入的 881 项公共结果 smoke 零差异。唯一忽略项仍为 P2.2 手动探针；仅 Windows MSVC/Rust 1.93.1。
   - 边界：生产资源、派生表、依赖、原始 LICENSE/上游声明及 P0/P4 JSON 不变；P4.1/P4.2 属于历史输入，没有重捕获或重测。Frequency List 与部分外部分类来源的许可资料缺口已明确，未推定授权。Cargo 元数据原已合规，publish=false/过渡 include 保留；MSRV、真实归档和发布尚未执行。
-- [ ] P5.2 完成工程检查和最低版本验证。
+- [x] P5.2 完成工程检查和最低版本验证。
   - 依赖：P5.1。执行格式、Clippy、测试、文档测试及文档构建；在约定最低版本和实际可用平台执行相应验证。
   - 验收：必要检查通过，报告准确区分目标平台、已验证平台和未验证项。
+  - 产物：[工程验证说明](../docs/engineering.md)、[本轮证据](../docs/engineering-verification.json)，README/Rust 契约同步实际最低版本状态。Rust 1.85.0 Clippy 触发 format_collect，唯一生产修改为版本错误 hex 诊断改用预分配 String + write!，不改变输出或提高 MSRV。
+  - 验证：Rust/Cargo 1.85.0 和 1.93.1 在 Windows x86_64 MSVC 的 fmt、全目标/全 feature Clippy -D warnings、完整测试、显式文档测试及文档构建均通过；各 102 Rust + 5 文档通过、1 个既有手动探针忽略。最低版本另通过全目标 check 和两个运行示例，70 项 Python 回归通过。最终文案更新后两套文档复核通过，代码块未变；重复的同一 5 项文档测试不累计为新增覆盖。
+  - 边界：1.85.0 隔离安装在 .local/p52-rustup-home，默认用户工具链仍为 1.93.1；依赖/资源/30 个受保护文件和历史 JSON 不变。完整最终轮均有跑前/跑后身份与原始日志；其他平台、未来依赖解析、归档、dry-run 和发布未验收，publish=false/过渡 include 保留。
 - [ ] P5.3 验证真实归档、独立离线消费和发布预检。
   - 依赖：P5.2。完整实现和必要检查通过后移除 Cargo.toml 的 publish=false 保护；更新 include 以涵盖生产数据、必要文档和许可，再检查 cargo package 文件清单和真实 .crate 压缩体积，复核当时 crates.io 限制；在隔离工程使用打包内容，依赖准备完成后验证离线构建与公共 API。
   - 验收：无维护源库、缓存、绝对路径或缺失资源；不借用当前 checkout 数据；cargo publish --dry-run 通过。结果仅记为本地发布就绪。

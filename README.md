@@ -2,8 +2,8 @@
 
 `lingose` is a Rust library for the [IPSM Approach](https://lingose.com/) to
 English pronunciation, spelling and meaning. Version **0.1.0** is being prepared
-for its first release; registry publication remains disabled while minimum
-toolchain and packaged-crate checks are pending.
+for its first release; registry publication remains disabled while
+packaged-crate checks are pending.
 
 All word queries, category lists and plain-text IPS annotation are implemented.
 The checkout embeds **50,335 word entries**, **24 categories** and a frequency
@@ -171,10 +171,11 @@ The full signatures, Python correspondence and validation order are recorded in
 
 ## Development and validation
 
-Edition **2024**, intended minimum Rust version **1.85**. The minimum version
-has not yet been tested; the verified platform is Rust/Cargo **1.93.1**,
-`x86_64-pc-windows-msvc`. The resource loader uses `sha2` 0.10.9 for integrity
-checks. The crate has no build script, database driver or download step.
+Edition **2024**, minimum Rust version **1.85**. The checked-in dependency
+resolution has been tested with Rust/Cargo **1.85.0** and **1.93.1** on
+`x86_64-pc-windows-msvc`. Other platforms remain unverified. The resource loader
+uses `sha2` 0.10.9 for integrity checks. The crate has no build script, database
+driver or download step.
 
 ```sh
 cargo check --offline --locked --all-targets --all-features
@@ -190,8 +191,8 @@ The pre-documentation baseline passed a full Python differential comparison of
 1,862,690 public results and release performance checks under fixed warmup
 conditions. These are historical Windows results, rather than measurements of
 the final package. A newly copied executable's first run exceeded the startup
-budget; the measurements do not guarantee that latency. Minimum-toolchain,
-packaged-crate, other-platform and registry acceptance remain pending.
+budget; the measurements do not guarantee that latency. Packaged-crate,
+other-platform and registry acceptance remain pending.
 
 ## License and credits
 
