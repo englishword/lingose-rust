@@ -1,0 +1,3818 @@
+{
+  "phase": "CLI4.1",
+  "base_commit": "003a128efe987ded7ef10c6692ab5ba31cc39d5c",
+  "completed_utc": "2026-10-17T22:54:47.033097+00:00",
+  "status": "passed_under_recorded_conditions",
+  "engineering_checks": [
+    {
+      "label": "current-rustc",
+      "argv": [
+        "C:\\Users\\Threadman\\.cargo\\bin\\rustc.EXE",
+        "-Vv"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:37:49.020294+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 0.1861666000331752,
+      "finished_utc": "2026-10-17T22:37:49.206988+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/current-rustc.stdout.log",
+        "bytes": 194,
+        "sha256": "f133056ecf1576257a2bcb9da126bfb7e84725ccc144caee31dc2f70b42f6f20"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/current-rustc.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "current-cargo",
+      "argv": [
+        "C:\\Users\\Threadman\\.cargo\\bin\\cargo.EXE",
+        "-V"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:37:49.230052+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 0.18950100004440174,
+      "finished_utc": "2026-10-17T22:37:49.423132+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/current-cargo.stdout.log",
+        "bytes": 36,
+        "sha256": "57d704d9ad73ec7cc1b1a79aed6703333615865be6e3dc1ce269ea4ca7068227"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/current-cargo.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "current-fmt",
+      "argv": [
+        "C:\\Users\\Threadman\\.cargo\\bin\\cargo.EXE",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:37:49.443682+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 0.524295799958054,
+      "finished_utc": "2026-10-17T22:37:49.970227+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/current-fmt.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/current-fmt.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "current-clippy",
+      "argv": [
+        "C:\\Users\\Threadman\\.cargo\\bin\\cargo.EXE",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--offline",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:37:49.993778+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 4.812923299963586,
+      "finished_utc": "2026-10-17T22:37:54.807916+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/current-clippy.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/current-clippy.stderr.log",
+        "bytes": 777,
+        "sha256": "ea40151eaf7f5df426f289d8e14c40d88810844f37c865a26b12891190f41a61"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "current-tests",
+      "argv": [
+        "C:\\Users\\Threadman\\.cargo\\bin\\cargo.EXE",
+        "test",
+        "--workspace",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:37:54.885404+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 55.42156370001612,
+      "finished_utc": "2026-10-17T22:38:50.309059+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/current-tests.stdout.log",
+        "bytes": 13389,
+        "sha256": "3e0576d488c45cb9f5f0799b8c1649a3ed5ffdddc2b1ca44aebdfe6ba157f442"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/current-tests.stderr.log",
+        "bytes": 2022,
+        "sha256": "97d3b76402d73d2a7de3f48e66966848f96e81a8b7216dd62697f0b0b47dfbd7"
+      },
+      "counts": {
+        "rust_test_results": [
+          {
+            "status": "ok",
+            "passed": 80,
+            "failed": 0,
+            "ignored": 1,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 1,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 2,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 1,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 12,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 5,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 1,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 4,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 17,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 8,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 3,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 3,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          }
+        ],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "current-doc-tests",
+      "argv": [
+        "C:\\Users\\Threadman\\.cargo\\bin\\cargo.EXE",
+        "test",
+        "--workspace",
+        "--doc",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:38:50.385845+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 2.415928600006737,
+      "finished_utc": "2026-10-17T22:38:52.808733+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/current-doc-tests.stdout.log",
+        "bytes": 676,
+        "sha256": "d6e30e006a0213859858a17a9317eb7af2ae4e0727f51bf6643eeebec5bbe6a3"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/current-doc-tests.stderr.log",
+        "bytes": 94,
+        "sha256": "38c554b18838ece8cc5cb62f7ea1b50f09b00b7a36c5ea5f58d6159a34d917cb"
+      },
+      "counts": {
+        "rust_test_results": [
+          {
+            "status": "ok",
+            "passed": 3,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 3,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          }
+        ],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "current-doc",
+      "argv": [
+        "C:\\Users\\Threadman\\.cargo\\bin\\cargo.EXE",
+        "doc",
+        "--workspace",
+        "--no-deps",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:38:52.884801+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 0.5922362999990582,
+      "finished_utc": "2026-10-17T22:38:53.480460+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/current-doc.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/current-doc.stderr.log",
+        "bytes": 258,
+        "sha256": "825b6d58b6c2ab784c14444ad017005f7412376efbbab83220b52e8c8f5c3c42"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "msrv-rustc",
+      "argv": [
+        "C:\\Users\\Threadman\\.cargo\\bin\\rustup.EXE",
+        "run",
+        "1.85.0",
+        "rustc",
+        "-Vv"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\msrv-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\p52-rustup-home",
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:38:53.567934+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 0.17785560002084821,
+      "finished_utc": "2026-10-17T22:38:53.751338+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/msrv-rustc.stdout.log",
+        "bytes": 194,
+        "sha256": "32773cf1f17324f81b3423be1da95ce0a5c4e9f253e71481a8aa68e604748997"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/msrv-rustc.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "msrv-cargo",
+      "argv": [
+        "C:\\Users\\Threadman\\.cargo\\bin\\rustup.EXE",
+        "run",
+        "1.85.0",
+        "cargo",
+        "-V"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\msrv-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\p52-rustup-home",
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:38:53.822063+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 0.12600270000984892,
+      "finished_utc": "2026-10-17T22:38:53.950186+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/msrv-cargo.stdout.log",
+        "bytes": 36,
+        "sha256": "2d3bc7bb1b2e9f3bfeadb1b2a370e8462c3c3a0bc7481c2d8d5fa4e6953465bf"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/msrv-cargo.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "msrv-clippy",
+      "argv": [
+        "C:\\Users\\Threadman\\.cargo\\bin\\rustup.EXE",
+        "run",
+        "1.85.0",
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--offline",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\msrv-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\p52-rustup-home",
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:38:54.025780+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 7.683723800000735,
+      "finished_utc": "2026-10-17T22:39:01.716245+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/msrv-clippy.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/msrv-clippy.stderr.log",
+        "bytes": 777,
+        "sha256": "6094583cffd0dad8e8f9a053451007e163c855efdca650f297a460344a1dd29f"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "msrv-tests",
+      "argv": [
+        "C:\\Users\\Threadman\\.cargo\\bin\\rustup.EXE",
+        "run",
+        "1.85.0",
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\msrv-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\p52-rustup-home",
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:39:01.794333+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 68.49200730002485,
+      "finished_utc": "2026-10-17T22:40:10.289841+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/msrv-tests.stdout.log",
+        "bytes": 13210,
+        "sha256": "c030f4541b75464e26d7a906f71f08f089a61cf529780abac894ff7e405827f8"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/msrv-tests.stderr.log",
+        "bytes": 1993,
+        "sha256": "ddd63a440751468235ac3a717bd4535170e19a4b2f8cfc77ddaa60b0d120f57f"
+      },
+      "counts": {
+        "rust_test_results": [
+          {
+            "status": "ok",
+            "passed": 80,
+            "failed": 0,
+            "ignored": 1,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 1,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 2,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 1,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 12,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 5,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 1,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 4,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 17,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 8,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          },
+          {
+            "status": "ok",
+            "passed": 6,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          }
+        ],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "msrv-doc-tests",
+      "argv": [
+        "C:\\Users\\Threadman\\.cargo\\bin\\rustup.EXE",
+        "run",
+        "1.85.0",
+        "cargo",
+        "test",
+        "--workspace",
+        "--doc",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\msrv-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\p52-rustup-home",
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:40:10.362995+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 4.238725500006694,
+      "finished_utc": "2026-10-17T22:40:14.604168+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/msrv-doc-tests.stdout.log",
+        "bytes": 497,
+        "sha256": "914238c40ce2e243d18e78fcc55e2263b5c3fca6c7ac418625d96f6e47abaf1e"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/msrv-doc-tests.stderr.log",
+        "bytes": 94,
+        "sha256": "38c554b18838ece8cc5cb62f7ea1b50f09b00b7a36c5ea5f58d6159a34d917cb"
+      },
+      "counts": {
+        "rust_test_results": [
+          {
+            "status": "ok",
+            "passed": 6,
+            "failed": 0,
+            "ignored": 0,
+            "measured": 0,
+            "filtered_out": 0
+          }
+        ],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "msrv-doc",
+      "argv": [
+        "C:\\Users\\Threadman\\.cargo\\bin\\rustup.EXE",
+        "run",
+        "1.85.0",
+        "cargo",
+        "doc",
+        "--workspace",
+        "--no-deps",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\msrv-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\p52-rustup-home",
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:40:14.676492+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 0.6475576999946497,
+      "finished_utc": "2026-10-17T22:40:15.327924+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/msrv-doc.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/msrv-doc.stderr.log",
+        "bytes": 255,
+        "sha256": "a69d1de406b28e97bbbc9e038c2d7f9f637c63f32f15b6e55df73ff6b0bd3954"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "python-tests",
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:40:23.405038+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 4.339132799999788,
+      "finished_utc": "2026-10-17T22:40:27.746313+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/python-tests.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/python-tests.stderr.log",
+        "bytes": 14717,
+        "sha256": "9456435939bb516e3cfca0b2167d9eaea8ad17db7854b583d8c15666e1ea47ab"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": {
+          "tests": 90,
+          "elapsed_seconds": 3.855
+        }
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "audit_reference",
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/audit_reference.py",
+        "--check"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:40:27.818623+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 252.17137499997625,
+      "finished_utc": "2026-10-17T22:44:39.995907+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/audit_reference.stdout.log",
+        "bytes": 751,
+        "sha256": "88d1908ba8d003cea5f17df532f3e37afb9578e7836b7a8c6d294e308c4162bc"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/audit_reference.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "capture_api_vectors",
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/capture_api_vectors.py",
+        "--check"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:44:40.064734+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 19.512431900016963,
+      "finished_utc": "2026-10-17T22:44:59.582282+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/capture_api_vectors.stdout.log",
+        "bytes": 245,
+        "sha256": "da676be98b5206ee45d3847b2de267688918e4073918c8c1c30e09e72a2d3e9a"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/capture_api_vectors.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "export_data",
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/export_data.py",
+        "--check"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:44:59.656085+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 68.1016959999688,
+      "finished_utc": "2026-10-17T22:46:07.765697+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/export_data.stdout.log",
+        "bytes": 691,
+        "sha256": "cad83eed420f355ceacb2797e4ad574d1878a91bec2b8d0647f29bb19ceb8b10"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/export_data.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "generate_query_case",
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_query_case.py",
+        "--check"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:46:07.834967+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 0.9707839000038803,
+      "finished_utc": "2026-10-17T22:46:08.813733+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/generate_query_case.stdout.log",
+        "bytes": 496,
+        "sha256": "eaad1ff847fb8a7282017f72da8bf3abe5cd8c10f8f13f53d07c92ac34110bfc"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/generate_query_case.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "generate_annotation_unicode",
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_annotation_unicode.py",
+        "--check"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:46:08.888643+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 1.44658009998966,
+      "finished_utc": "2026-10-17T22:46:10.344923+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/generate_annotation_unicode.stdout.log",
+        "bytes": 337,
+        "sha256": "cc85d60f7e7189d241ae86a0806be6042de814917bc643255324f50e370c3df0"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/generate_annotation_unicode.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "generate_query_vectors",
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_query_vectors.py",
+        "--check"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:46:10.411753+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 0.40343309997115284,
+      "finished_utc": "2026-10-17T22:46:10.821444+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/generate_query_vectors.stdout.log",
+        "bytes": 27,
+        "sha256": "835a5632adb96b2cb98ee306439476e264f0ba57d019b197008d8deee998e982"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/generate_query_vectors.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "generate_category_vectors",
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_category_vectors.py",
+        "--check"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:46:10.898912+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 0.42625820002285764,
+      "finished_utc": "2026-10-17T22:46:11.329887+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/generate_category_vectors.stdout.log",
+        "bytes": 240,
+        "sha256": "62c788273ce8d2630cea4c264b3a7cc1a60b4aa071ef5615f41285f5fefcc142"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/generate_category_vectors.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "generate_annotation_vectors",
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_annotation_vectors.py",
+        "--check"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:46:11.404056+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 2.439837699988857,
+      "finished_utc": "2026-10-17T22:46:13.849936+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/generate_annotation_vectors.stdout.log",
+        "bytes": 292,
+        "sha256": "66310a2f4f5480e67a739ad8b5565940a41116be02e8e8154bffdc00ba577a76"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/generate_annotation_vectors.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "generate_annotation_context_vectors",
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_annotation_context_vectors.py",
+        "--check"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:46:13.927755+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 3.7743884999654256,
+      "finished_utc": "2026-10-17T22:46:17.703130+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/generate_annotation_context_vectors.stdout.log",
+        "bytes": 509,
+        "sha256": "e981c6a50273e0ab362675804dfc64062252a50b79a8654adfd42e8d824741cf"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/generate_annotation_context_vectors.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "generate_annotation_frequency_vectors",
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_annotation_frequency_vectors.py",
+        "--check"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:46:17.776572+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 5.667146200023126,
+      "finished_utc": "2026-10-17T22:46:23.448843+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/generate_annotation_frequency_vectors.stdout.log",
+        "bytes": 749,
+        "sha256": "eadefbb7a8a8a813e753efd8f1d413471015e9ce3f7b6acf59255743457963bc"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/generate_annotation_frequency_vectors.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "generate_error_vectors",
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_error_vectors.py",
+        "--check"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:46:23.527928+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 2.8406543000019155,
+      "finished_utc": "2026-10-17T22:46:26.373675+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/generate_error_vectors.stdout.log",
+        "bytes": 214,
+        "sha256": "17ef2d527c2fe98b2c973930456f05ead35d81fe34a262a0c83d5ec0ac1fde63"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/generate_error_vectors.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    },
+    {
+      "label": "verify_data",
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/verify_data.py"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust",
+      "environment": {
+        "CARGO_HOME": "E:\\git\\claude\\words\\lingose-rust\\.local\\cargo-home",
+        "CARGO_TARGET_DIR": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\current-target",
+        "CARGO_NET_OFFLINE": "true",
+        "RUSTUP_HOME": null,
+        "TEMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "TMP": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-regression\\temp",
+        "LINGOSE_CACHE_DIR": null
+      },
+      "started_utc": "2026-10-17T22:46:26.456368+00:00",
+      "input_manifest_before_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "exit_code": 0,
+      "elapsed_seconds": 340.1931226999732,
+      "finished_utc": "2026-10-17T22:52:06.653697+00:00",
+      "stdout": {
+        "path": ".local/cli41-regression/verify_data.stdout.log",
+        "bytes": 671,
+        "sha256": "11d1751bb1ac8061e4ef2285e6770ab9e92a6c932e5ccdfd2a5dfa00a44b9796"
+      },
+      "stderr": {
+        "path": ".local/cli41-regression/verify_data.stderr.log",
+        "bytes": 250,
+        "sha256": "bc5b5bcd94f60f43e1bae9e162f62ecca528ae94d045b9152fe42cb1e5dc95f2"
+      },
+      "counts": {
+        "rust_test_results": [],
+        "python_unittest": null
+      },
+      "input_manifest_after_sha256": "1a054c0aa5591a4d352a889d11e9f8edd784e9960c3df595a4566bd318198413",
+      "inputs_unchanged": true
+    }
+  ],
+  "engineering_receipt": {
+    "path": ".local/cli41-regression/report.json",
+    "bytes": 84585,
+    "sha256": "e421229deafde12b306d3a0edf3a488dbff2af25029783b78f285c76c9d1563b"
+  },
+  "engineering_input_files": {
+    ".gitattributes": {
+      "bytes": 3689,
+      "sha256": "442f1c6e43d49bca709a41026eb8b235576cf0dff0f1e72daa6b50f1f07b7b97"
+    },
+    "Cargo.lock": {
+      "bytes": 5797,
+      "sha256": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e"
+    },
+    "Cargo.toml": {
+      "bytes": 240,
+      "sha256": "2c7d78c0cb89af8501739a315db12692f4141b8c70815a6fcdbad0dab7cb253b"
+    },
+    "crates/lingose-cli/Cargo.toml": {
+      "bytes": 809,
+      "sha256": "e50128430cf34e3da846eb17a97e5924ea39ddff7a9dbf14f34874f14abb788f"
+    },
+    "crates/lingose-cli/src/main.rs": {
+      "bytes": 12480,
+      "sha256": "b4a793a06b79443b9a185acd9fc35a22d50f31fde8c1922b0615786f4037d953"
+    },
+    "crates/lingose-cli/tests/annotate.rs": {
+      "bytes": 23174,
+      "sha256": "c4aea542d4ca130aa08fe53925f631567f561d934e066f81766098130356c742"
+    },
+    "crates/lingose-cli/tests/word.rs": {
+      "bytes": 5951,
+      "sha256": "e206bba4398dcfe185823e4eec780aa23e8bcd6180405d562ac7b940edf7d0bc"
+    },
+    "crates/lingose/Cargo.toml": {
+      "bytes": 945,
+      "sha256": "4e1e4c9532ef7e5b1f57da9173f133c54b0cf039e30e5b8d2a5fcd3cc7193101"
+    },
+    "crates/lingose/data/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "crates/lingose/data/SOURCES.json": {
+      "bytes": 4997,
+      "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+    },
+    "crates/lingose/data/UPSTREAM-SOURCES.md": {
+      "bytes": 1457,
+      "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+    },
+    "crates/lingose/data/frequency.bin": {
+      "bytes": 200272,
+      "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+    },
+    "crates/lingose/data/lexicon.bin": {
+      "bytes": 10259743,
+      "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+    },
+    "crates/lingose/data/manifest.json": {
+      "bytes": 3900,
+      "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+    },
+    "crates/lingose/examples/annotate.rs": {
+      "bytes": 414,
+      "sha256": "59e6d564a33328edbcc7dbe6e3145bdd75ebef0e6f0c99a5d6f9233ef4441c5a"
+    },
+    "crates/lingose/examples/query.rs": {
+      "bytes": 871,
+      "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+    },
+    "crates/lingose/src/annotation.rs": {
+      "bytes": 19775,
+      "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+    },
+    "crates/lingose/src/annotation_context_vectors.rs": {
+      "bytes": 321810,
+      "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+    },
+    "crates/lingose/src/annotation_frequency_vectors.rs": {
+      "bytes": 24615,
+      "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+    },
+    "crates/lingose/src/annotation_unicode.rs": {
+      "bytes": 3734,
+      "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+    },
+    "crates/lingose/src/annotation_unicode_tables.rs": {
+      "bytes": 40416,
+      "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+    },
+    "crates/lingose/src/annotation_vectors.rs": {
+      "bytes": 65657,
+      "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+    },
+    "crates/lingose/src/category.rs": {
+      "bytes": 1653,
+      "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+    },
+    "crates/lingose/src/data/annotation_context_vectors.rs": {
+      "bytes": 37586,
+      "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+    },
+    "crates/lingose/src/data/annotation_frequency_vectors.rs": {
+      "bytes": 87772,
+      "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+    },
+    "crates/lingose/src/data/annotation_tests.rs": {
+      "bytes": 3391,
+      "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+    },
+    "crates/lingose/src/data/cache_tests.rs": {
+      "bytes": 22365,
+      "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+    },
+    "crates/lingose/src/data/category_tests.rs": {
+      "bytes": 4243,
+      "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+    },
+    "crates/lingose/src/data/image.rs": {
+      "bytes": 15144,
+      "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+    },
+    "crates/lingose/src/data/mod.rs": {
+      "bytes": 6395,
+      "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+    },
+    "crates/lingose/src/data/p41_joint_error_tests.rs": {
+      "bytes": 4967,
+      "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+    },
+    "crates/lingose/src/data/p41_query_fixture_tests.rs": {
+      "bytes": 62352,
+      "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+    },
+    "crates/lingose/src/data/tests.rs": {
+      "bytes": 24506,
+      "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+    },
+    "crates/lingose/src/data_meta.rs": {
+      "bytes": 1531,
+      "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+    },
+    "crates/lingose/src/error.rs": {
+      "bytes": 2127,
+      "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+    },
+    "crates/lingose/src/lib.rs": {
+      "bytes": 5142,
+      "sha256": "661ea94997dcdb0d7a994a900acb1dbc6c3e0b897804d495beb3c90389d5ca12"
+    },
+    "crates/lingose/src/query.rs": {
+      "bytes": 1207,
+      "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+    },
+    "crates/lingose/src/query_case.rs": {
+      "bytes": 5074,
+      "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+    },
+    "crates/lingose/src/query_case_tables.rs": {
+      "bytes": 52751,
+      "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+    },
+    "crates/lingose/src/validation.rs": {
+      "bytes": 1624,
+      "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+    },
+    "crates/lingose/tests/annotation_context_vectors.rs": {
+      "bytes": 19503,
+      "sha256": "b35ab093c36a2e52657fcf363a8cf106eb40989f8c59f0a38f7b1d2f3c82fa5b"
+    },
+    "crates/lingose/tests/annotation_frequency_vectors.rs": {
+      "bytes": 95021,
+      "sha256": "5e7ece15934e19c81157ac7eaa668e6be61342ce7b94705e50d0a8c5925c572e"
+    },
+    "crates/lingose/tests/annotation_vectors.rs": {
+      "bytes": 3910,
+      "sha256": "36a1a975500fbe2a264dd8cae0c7535f08f782a9849e7d54f8bc85ccfcbae462"
+    },
+    "crates/lingose/tests/api_contract.rs": {
+      "bytes": 12105,
+      "sha256": "45626a7c12aeb1d42659854c1310f260fbcaeea8ac63d4a6a08ddbef4eaf7cdb"
+    },
+    "crates/lingose/tests/category_vectors.rs": {
+      "bytes": 23168,
+      "sha256": "2a9847a84ea05858410e0be8be3020771b0e2027a13426b077fa61fc9b5e1072"
+    },
+    "crates/lingose/tests/query_vectors.rs": {
+      "bytes": 11219,
+      "sha256": "440c7634cddb9494a37b0c0e89e1723ac53d9e2e92be125ca32057cbc187cbce"
+    },
+    "crates/lingose/third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    },
+    "docs/annotation-unicode.json": {
+      "bytes": 3135,
+      "sha256": "521a545a791b054acb135197034305434dce11e67ffe8547952340fcc3254fb1"
+    },
+    "docs/query-case.json": {
+      "bytes": 3387,
+      "sha256": "4ea010b0509185e14b311263911f3fe3ba17f9204d6eb4b7b3119ab34871fabc"
+    },
+    "docs/reference-baseline.json": {
+      "bytes": 54162,
+      "sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
+    },
+    "tests/fixtures/python-api-v1.json": {
+      "bytes": 118971,
+      "sha256": "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1"
+    },
+    "tests/test_api_vectors.py": {
+      "bytes": 4304,
+      "sha256": "dcd0f5715de13d12e7d4316a1adffcee42bf73088b8668ce684144fcb63138ae"
+    },
+    "tests/test_export_data.py": {
+      "bytes": 13055,
+      "sha256": "f93cf58bf5590e040c2e26fed3e0a721b025e49635d62b966d83f7c2a9cbff31"
+    },
+    "tests/test_full_differential.py": {
+      "bytes": 3000,
+      "sha256": "c2a6f63462a9fa405cca263438724f73a0483fa2cfb38e51bddf64e31efd40cc"
+    },
+    "tests/test_layout_probe.py": {
+      "bytes": 1798,
+      "sha256": "6812ffae2a695894774ade3abdfe798c8823cc3ea215ba17c86e51d4759e3ddc"
+    },
+    "tests/test_package.py": {
+      "bytes": 3770,
+      "sha256": "35e17c917be9b326f70a3893d79b648b3c1b3fb4fd2fc00dc43940ed25214f55"
+    },
+    "tests/test_performance.py": {
+      "bytes": 11135,
+      "sha256": "fcb91e9d7e571120f3bce4a13ba850207f9e8e54c9e12c7655edd30e2032da37"
+    },
+    "tests/test_reference.py": {
+      "bytes": 3835,
+      "sha256": "8ed53d4331e97846c73a164e8276187570730cd6f70425be60e67e97df807a2a"
+    },
+    "tests/test_verify_data.py": {
+      "bytes": 14415,
+      "sha256": "d06ff203781380988dc38921ae06362f4a3078e80e47e7bd1cbdc08b121305f3"
+    },
+    "tests/test_workspace_package.py": {
+      "bytes": 9581,
+      "sha256": "43980be3b6af573c02792d26972b2cdb6cb32a5a0be129615719d668c702970d"
+    },
+    "tests/test_workspace_tools.py": {
+      "bytes": 5626,
+      "sha256": "11fc2c31b0d81de140b5b3b89cb2c497c6cff55c156f5ea0a801b9dac0ee4b8d"
+    },
+    "tools/audit_reference.py": {
+      "bytes": 11186,
+      "sha256": "a433c4e88a15022bda5f2d2c51b1fa715796ff0c223b5b87cc5523f9a75a637b"
+    },
+    "tools/capture_api_vectors.py": {
+      "bytes": 17882,
+      "sha256": "f4100af2081ee52df16358c03ee8022d0146aa2a4d7c93e05c240df629f3543a"
+    },
+    "tools/check_full_differential.py": {
+      "bytes": 19292,
+      "sha256": "9fb8955758335b0348b1e87bfffc01e7deaa7c49a457ee2b90b69fbc52a654be"
+    },
+    "tools/check_layout_probe.py": {
+      "bytes": 6003,
+      "sha256": "ee1b75410b4e1a157bd1b43293b2b0710fe71e057cc8a78222146461d3bdca4a"
+    },
+    "tools/check_loader.py": {
+      "bytes": 7249,
+      "sha256": "4511aeeb421e37854e3c1d2803861a0c6e4e2237ceea82601d2f00c4515affd3"
+    },
+    "tools/check_package.py": {
+      "bytes": 14893,
+      "sha256": "af8db2075005f8656070845f3066b952ad68fe2dd24e4704b5fdc95d2ebf84da"
+    },
+    "tools/check_performance.py": {
+      "bytes": 23644,
+      "sha256": "e1a3a54894129be7d498b71e46ba2583a5b0cb0a7193863b1ca44d926652bf05"
+    },
+    "tools/check_queries.py": {
+      "bytes": 11238,
+      "sha256": "4949b91aa7cd4c48ca1375b8ce30e01701a137b7072cef3436618135ec0c4b54"
+    },
+    "tools/check_registry_consumer.py": {
+      "bytes": 18125,
+      "sha256": "d54e37d9bc7c7dd5932c1e23554e02c3a12df29e0c46f60d69f946c16743514f"
+    },
+    "tools/check_workspace_package.py": {
+      "bytes": 12171,
+      "sha256": "ee5b2548b4edc0e905c762e75e8605d73055ec5b5a3862503825702aaf0cd5a0"
+    },
+    "tools/differential-probe/Cargo.lock": {
+      "bytes": 2488,
+      "sha256": "2d1deee6bf72249ff2ee8cc24966a097113ddba161d23d72c8c6d07b42e029c5"
+    },
+    "tools/differential-probe/Cargo.toml": {
+      "bytes": 185,
+      "sha256": "9e8e1d8b69d342dab59705d9b557c16b0b37d280eaaff5e23952af93d7a5a6d7"
+    },
+    "tools/differential-probe/src/main.rs": {
+      "bytes": 4490,
+      "sha256": "d0a878f81836f811d6a09d452d71482d0e13a69bc58a2ad248584bbfc62add05"
+    },
+    "tools/export_data.py": {
+      "bytes": 22666,
+      "sha256": "903943454a312901edf14dd5a7819c26c4f032705c632a1b477b853bd0aa6b4a"
+    },
+    "tools/generate_annotation_context_vectors.py": {
+      "bytes": 23086,
+      "sha256": "b3500e3ed55fa39ad65ee43c3c87126cb4ab3169c2674773c4beee2821621ab8"
+    },
+    "tools/generate_annotation_frequency_vectors.py": {
+      "bytes": 25583,
+      "sha256": "ed8e89ff2034b2cc039e12a59cbcc0b4cc3b4a9cc3167e3101d8861e6e1a558b"
+    },
+    "tools/generate_annotation_unicode.py": {
+      "bytes": 6533,
+      "sha256": "7840ddbb651ade073a1bb6a5218273adaef9d3f70b98da9587938e59f026819e"
+    },
+    "tools/generate_annotation_vectors.py": {
+      "bytes": 15473,
+      "sha256": "05abef72af7368c46379e5806c6a8a3931e924b9b8e4e674f472182a3932a478"
+    },
+    "tools/generate_category_vectors.py": {
+      "bytes": 10164,
+      "sha256": "ce6bfc354a076c89b938d75aa7b5a80883fe39e69da2c0eff5ede6badccf58dc"
+    },
+    "tools/generate_error_vectors.py": {
+      "bytes": 12800,
+      "sha256": "5a88501e8cdc5ab63ddc47c1928a4f8103f9a58ff01f500e935dcf416d7f3365"
+    },
+    "tools/generate_query_case.py": {
+      "bytes": 11622,
+      "sha256": "d8b8774525e9c699ecb5ab226358f13ee9ade1744322717d35db8580b2c37c67"
+    },
+    "tools/generate_query_vectors.py": {
+      "bytes": 3313,
+      "sha256": "0974993b6abaa11f0d8d3254771629cdd6b86f3664018495cc058b0ec3c156cc"
+    },
+    "tools/layout-probe/Cargo.lock": {
+      "bytes": 6000,
+      "sha256": "c2a237512aca2e56d08be9b992f8b553c559ba6db6fc74960cc869b737d5ff99"
+    },
+    "tools/layout-probe/Cargo.toml": {
+      "bytes": 492,
+      "sha256": "9a97dc8bd4ecf3863c26a190767d5bed06914ff9baf11ca114522bd668597015"
+    },
+    "tools/layout-probe/src/image.rs": {
+      "bytes": 13321,
+      "sha256": "07d4fe88f114e1cc25e6acabf7a9334a209e78eefea4bad1e79975eee2bb15d3"
+    },
+    "tools/layout-probe/src/main.rs": {
+      "bytes": 13183,
+      "sha256": "22f6991b377485007ca75ece156e4916e906c55db0103db2c0bc453d775a61f9"
+    },
+    "tools/package_consumer.rs": {
+      "bytes": 7829,
+      "sha256": "1f8c62db06cfc3b7b390dd5c711cdb5daab320de63d5549eb7ce8fcdd94f5f9d"
+    },
+    "tools/package_consumer_020.rs": {
+      "bytes": 7801,
+      "sha256": "2c659500a1ff6161603e50f334243a6ddb18527f8e57b95add7bb367aee43d3b"
+    },
+    "tools/performance-probe/Cargo.lock": {
+      "bytes": 2487,
+      "sha256": "0aa959160d8193bda061bc7452caccf9d01bdc631d1d7337c4a124d604e62abc"
+    },
+    "tools/performance-probe/Cargo.toml": {
+      "bytes": 247,
+      "sha256": "9e341b9cc550bf6f9af59473e62eb935aaf126811ce74eb500b69b74c4b2b0c9"
+    },
+    "tools/performance-probe/src/main.rs": {
+      "bytes": 8680,
+      "sha256": "549faa1e536b86685ff6fbd7045af91fae56504ad7bdef5a5029da99f615426f"
+    },
+    "tools/prepare_layout_probe.py": {
+      "bytes": 15163,
+      "sha256": "aa7cc7dde791431c2f59537828708245cc655689239e3ddee2be92e07a54c70c"
+    },
+    "tools/prepare_package_sources.py": {
+      "bytes": 4296,
+      "sha256": "f35dbb22fb08765149f29570879ce72830aa4b9c6bbbe028d19d0c9c5cc7bbea"
+    },
+    "tools/reference.py": {
+      "bytes": 10351,
+      "sha256": "c583d04fdbd17ad3b1b00f4a8f7efb55f421a48f2cfebf221ed22317ed908ba0"
+    },
+    "tools/run_layout_probe.py": {
+      "bytes": 13416,
+      "sha256": "437554e3a52cb4ba7f14f65cf350de979ba571c31f894141ce84875897bd376d"
+    },
+    "tools/verify_data.py": {
+      "bytes": 24236,
+      "sha256": "e37e896a5eacb462d6255f8ecf4a51d4848eecbd9709f02758eb64c2fdc80876"
+    }
+  },
+  "build_environment": {
+    "RUSTFLAGS": null,
+    "CARGO_ENCODED_RUSTFLAGS": null,
+    "RUSTUP_TOOLCHAIN": null,
+    "CARGO_PROFILE_RELEASE_OPT_LEVEL": null,
+    "CARGO_PROFILE_RELEASE_LTO": null,
+    "CARGO_PROFILE_RELEASE_CODEGEN_UNITS": null,
+    "CARGO_PROFILE_RELEASE_STRIP": null
+  },
+  "post_engineering_metadata_change": {
+    "path": ".gitattributes",
+    "scope": "Only appended LF rules for new acceptance reports and new Python runner; all compiled/tested sources, tests, data, manifests and locks remain byte-identical.",
+    "before": {
+      "bytes": 3689,
+      "sha256": "442f1c6e43d49bca709a41026eb8b235576cf0dff0f1e72daa6b50f1f07b7b97"
+    },
+    "after": {
+      "path": ".gitattributes",
+      "bytes": 4069,
+      "sha256": "ec3201e12652d7888d2fa4743d8f76be96672922832b38922a62c64f14460a73"
+    },
+    "appended_rules": [
+      "/tools/check_cli_process.py text eol=lf",
+      "/docs/full-differential-verification-0.2.0.json text eol=lf",
+      "/docs/correctness-regression-verification-0.2.0.json text eol=lf",
+      "/docs/performance-verification-0.2.0.json text eol=lf",
+      "/docs/cli-process-verification-0.2.0.json text eol=lf",
+      "/docs/cli-workspace-acceptance.md text eol=lf",
+      "/docs/cli-workspace-acceptance-verification.json text eol=lf"
+    ]
+  },
+  "correctness_commands": {
+    "phase": "CLI4.1",
+    "base_commit": "003a128efe987ded7ef10c6692ab5ba31cc39d5c",
+    "started_utc": "2026-10-17T22:36:42.769951+00:00",
+    "checks": [
+      {
+        "label": "full-differential",
+        "argv": [
+          "D:/Python/Python312/python.exe",
+          "-I",
+          "-B",
+          "-X",
+          "utf8",
+          "tools/check_full_differential.py",
+          "--output",
+          "docs/full-differential-verification-0.2.0.json"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 782.0038815999869,
+        "logs": {
+          "stdout": {
+            "path": ".local/cli41-acceptance/full-differential.stdout.log",
+            "bytes": 667,
+            "sha256": "5ea5022c2941675ae01954baa55b808e0b34a2b423f2b6aa5fbb4ced50150722"
+          },
+          "stderr": {
+            "path": ".local/cli41-acceptance/full-differential.stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      },
+      {
+        "label": "isolated-release-regression",
+        "argv": [
+          "D:/Python/Python312/python.exe",
+          "-I",
+          "-B",
+          "-X",
+          "utf8",
+          "tools/check_queries.py",
+          "--full-correctness",
+          "--output",
+          "docs/correctness-regression-verification-0.2.0.json"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 71.81476440001279,
+        "logs": {
+          "stdout": {
+            "path": ".local/cli41-acceptance/isolated-release-regression.stdout.log",
+            "bytes": 84,
+            "sha256": "3d96eca33428ccc949a3dcb0968a5eced98da6a83ce780500956a877cbcf49f5"
+          },
+          "stderr": {
+            "path": ".local/cli41-acceptance/isolated-release-regression.stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      }
+    ],
+    "status": "passed",
+    "completed_utc": "2026-10-17T22:50:56.627541+00:00"
+  },
+  "performance_commands": {
+    "phase": "CLI4.1",
+    "started_utc": "2026-10-17T22:52:19.329150+00:00",
+    "checks": [
+      {
+        "label": "library-performance",
+        "argv": [
+          "D:/Python/Python312/python.exe",
+          "-I",
+          "-B",
+          "-X",
+          "utf8",
+          "tools/check_performance.py",
+          "--correctness",
+          "docs/full-differential-verification-0.2.0.json",
+          "--regressions",
+          "docs/correctness-regression-verification-0.2.0.json"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 31.70049369998742,
+        "logs": {
+          "stdout": {
+            "path": ".local/cli41-acceptance/library-performance.stdout.log",
+            "bytes": 424,
+            "sha256": "4700973f43842c76d74e962a52e5c8d62b102f340dcae61e05abfddee2d7718e"
+          },
+          "stderr": {
+            "path": ".local/cli41-acceptance/library-performance.stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "measured_report": ".local/p42-performance-qj3cyjsi/report.json",
+        "acceptance_passed": true
+      },
+      {
+        "label": "cli-process",
+        "argv": [
+          "D:/Python/Python312/python.exe",
+          "-I",
+          "-B",
+          "-X",
+          "utf8",
+          "tools/check_cli_process.py"
+        ],
+        "exit_code": 0,
+        "elapsed_seconds": 57.313864599971566,
+        "logs": {
+          "stdout": {
+            "path": ".local/cli41-acceptance/cli-process.stdout.log",
+            "bytes": 1083,
+            "sha256": "c3f98388cee9ba542b779118ecc0631486db8adf2edc22809af88d1304be5939"
+          },
+          "stderr": {
+            "path": ".local/cli41-acceptance/cli-process.stderr.log",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      }
+    ],
+    "status": "passed",
+    "completed_utc": "2026-10-17T22:53:48.453856+00:00"
+  },
+  "full_differential": {
+    "results": 1862690,
+    "differences": 0,
+    "exact_keys": 50335,
+    "queries_per_key": 37,
+    "ordered_category_members": 209759,
+    "complete_category_lists": 25,
+    "p0_snapshot_count": 245,
+    "p0_type_domain_exclusions": [
+      "snapshot-0159",
+      "snapshot-0160",
+      "snapshot-0165",
+      "snapshot-0166",
+      "snapshot-0171",
+      "snapshot-0172",
+      "snapshot-0177",
+      "snapshot-0178",
+      "snapshot-0183",
+      "snapshot-0184",
+      "snapshot-0189",
+      "snapshot-0190",
+      "snapshot-0195",
+      "snapshot-0196",
+      "snapshot-0199",
+      "snapshot-0206",
+      "snapshot-0207",
+      "snapshot-0261",
+      "snapshot-0262",
+      "snapshot-0264",
+      "snapshot-0265",
+      "snapshot-0266",
+      "snapshot-0268"
+    ],
+    "complete_values_equal_prior_release": true,
+    "full_result_bytes": {
+      "bytes": 26413537,
+      "sha256": "eee2267dca3ef8c273ad1fbe422a71609dfcb4c378b77cb7b0fa3634e6f6aa49"
+    },
+    "capture_directory": ".local/p41-differential-dpvncxg4",
+    "reference_unchanged": true
+  },
+  "performance_acceptance": {
+    "deferred_to_P5_3": [
+      "packaged_crate_bytes"
+    ],
+    "failures": [],
+    "initialization_note": "Public ips(apple) and first positive annotation include tiny public-call overhead; conservative upper bounds on loader initialization.",
+    "passed": true,
+    "statistics": {
+      "all_kind_lists_ms": {
+        "max": 13.27326,
+        "median": 12.40557,
+        "min": 11.99952,
+        "p95_nearest_rank": 13.27326,
+        "samples": [
+          11.99952,
+          12.40557,
+          12.23886,
+          12.69102,
+          13.27326,
+          12.34345,
+          12.83674
+        ]
+      },
+      "annotation_100000_0_ms": {
+        "max": 140.7696,
+        "median": 132.988,
+        "min": 129.1313,
+        "p95_nearest_rank": 140.7696,
+        "samples": [
+          130.8628,
+          129.1313,
+          132.988,
+          134.5712,
+          133.5313,
+          131.3331,
+          140.7696
+        ]
+      },
+      "annotation_100000_1000_ms": {
+        "max": 186.1189,
+        "median": 180.371,
+        "min": 177.9165,
+        "p95_nearest_rank": 186.1189,
+        "samples": [
+          179.0961,
+          180.371,
+          180.5611,
+          185.4273,
+          177.9165,
+          186.1189,
+          179.0376
+        ]
+      },
+      "annotation_100000_5062_ms": {
+        "max": 202.0827,
+        "median": 200.5116,
+        "min": 193.7001,
+        "p95_nearest_rank": 202.0827,
+        "samples": [
+          195.9215,
+          196.9025,
+          201.1873,
+          193.7001,
+          200.7225,
+          202.0827,
+          200.5116
+        ]
+      },
+      "annotation_10000_0_ms": {
+        "max": 14.5066,
+        "median": 13.4776,
+        "min": 12.6715,
+        "p95_nearest_rank": 14.5066,
+        "samples": [
+          12.805,
+          14.008,
+          13.4776,
+          13.882,
+          14.5066,
+          12.6715,
+          13.0498
+        ]
+      },
+      "annotation_10000_1000_ms": {
+        "max": 17.3153,
+        "median": 16.678,
+        "min": 15.9932,
+        "p95_nearest_rank": 17.3153,
+        "samples": [
+          17.3153,
+          17.2065,
+          16.1374,
+          15.9932,
+          17.3006,
+          16.0613,
+          16.678
+        ]
+      },
+      "annotation_10000_5062_ms": {
+        "max": 20.6718,
+        "median": 19.065,
+        "min": 17.4259,
+        "p95_nearest_rank": 20.6718,
+        "samples": [
+          18.4005,
+          17.4259,
+          19.2239,
+          19.065,
+          20.4945,
+          20.6718,
+          18.9431
+        ]
+      },
+      "cold_process_first_public_query_ms": {
+        "max": 38.74849999556318,
+        "median": 36.03309998288751,
+        "min": 33.16250001080334,
+        "p95_nearest_rank": 38.74849999556318,
+        "samples": [
+          35.0468999822624,
+          33.16250001080334,
+          35.823000012896955,
+          38.74849999556318,
+          38.08039997238666,
+          36.03309998288751,
+          36.88189998501912
+        ]
+      },
+      "default_kind_list_ms": {
+        "max": 0.330822,
+        "median": 0.28315,
+        "min": 0.223674,
+        "p95_nearest_rank": 0.330822,
+        "samples": [
+          0.31148,
+          0.267083,
+          0.223674,
+          0.28315,
+          0.330822,
+          0.294472,
+          0.282438
+        ]
+      },
+      "frequency_initialization_ms": {
+        "max": 0.8064,
+        "median": 0.7799,
+        "min": 0.7576,
+        "p95_nearest_rank": 0.8064,
+        "samples": [
+          0.7993,
+          0.7897,
+          0.7799,
+          0.7673,
+          0.8064,
+          0.7686,
+          0.7576
+        ]
+      },
+      "ipa_exact": {
+        "max": 159.84702493294924,
+        "median": 145.2875732591636,
+        "min": 136.088208999702,
+        "p95_nearest_rank": 159.84702493294924,
+        "samples": [
+          144.94784940895997,
+          148.20005960067547,
+          136.088208999702,
+          138.14741233733983,
+          159.84702493294924,
+          145.2875732591636,
+          158.26065362074104
+        ]
+      },
+      "ipa_mixed": {
+        "max": 68.7515625,
+        "median": 67.93125,
+        "min": 65.9828125,
+        "p95_nearest_rank": 68.7515625,
+        "samples": [
+          68.10625,
+          68.0078125,
+          68.7515625,
+          65.9828125,
+          67.93125,
+          66.0265625,
+          67.51875
+        ]
+      },
+      "ips_exact": {
+        "max": 142.01350948644085,
+        "median": 130.8880500645674,
+        "min": 112.27177908016291,
+        "p95_nearest_rank": 142.01350948644085,
+        "samples": [
+          135.7852388993742,
+          130.8880500645674,
+          112.27177908016291,
+          115.0948644084633,
+          142.01350948644085,
+          130.12118804013113,
+          138.1235720671501
+        ]
+      },
+      "ips_mixed": {
+        "max": 69.3078125,
+        "median": 67.9390625,
+        "min": 64.596875,
+        "p95_nearest_rank": 69.3078125,
+        "samples": [
+          69.3078125,
+          65.79375,
+          66.665625,
+          64.596875,
+          67.9390625,
+          68.178125,
+          68.54375
+        ]
+      },
+      "ipsm_exact": {
+        "max": 166.76169663256184,
+        "median": 131.0936723949538,
+        "min": 127.60305950134102,
+        "p95_nearest_rank": 166.76169663256184,
+        "samples": [
+          127.60305950134102,
+          166.76169663256184,
+          140.1668818913281,
+          128.38680838382834,
+          128.64110459918547,
+          131.0936723949538,
+          142.4048872553889
+        ]
+      },
+      "ipsm_mixed": {
+        "max": 82.11875,
+        "median": 70.8625,
+        "min": 67.415625,
+        "p95_nearest_rank": 82.11875,
+        "samples": [
+          82.11875,
+          67.415625,
+          70.8625,
+          71.20625,
+          67.5390625,
+          74.6328125,
+          70.021875
+        ]
+      },
+      "ism_exact": {
+        "max": 101.96284891228767,
+        "median": 94.90016886858051,
+        "min": 76.80043707162015,
+        "p95_nearest_rank": 101.96284891228767,
+        "samples": [
+          90.18674878315288,
+          94.90016886858051,
+          90.23840270189729,
+          76.80043707162015,
+          98.39872851892322,
+          101.96284891228767,
+          100.48077878215953
+        ]
+      },
+      "ism_mixed": {
+        "max": 59.6234375,
+        "median": 56.6703125,
+        "min": 54.79375,
+        "p95_nearest_rank": 59.6234375,
+        "samples": [
+          59.6234375,
+          56.1234375,
+          56.6703125,
+          56.9921875,
+          57.7234375,
+          55.453125,
+          54.79375
+        ]
+      },
+      "kind_BEC_exact": {
+        "max": 110.15297506705076,
+        "median": 84.23959471540678,
+        "min": 77.6437866295818,
+        "p95_nearest_rank": 110.15297506705076,
+        "samples": [
+          84.23959471540678,
+          77.6437866295818,
+          80.74500844342903,
+          105.62829045395848,
+          83.17572265819013,
+          110.15297506705076,
+          105.09883778682826
+        ]
+      },
+      "kind_BEC_mixed": {
+        "max": 82.2484375,
+        "median": 81.278125,
+        "min": 79.078125,
+        "p95_nearest_rank": 82.2484375,
+        "samples": [
+          82.1578125,
+          79.6703125,
+          79.76875,
+          81.278125,
+          81.9234375,
+          79.078125,
+          82.2484375
+        ]
+      },
+      "kind_Black_exact": {
+        "max": 139.67517631866494,
+        "median": 128.25370020860237,
+        "min": 122.26283897884176,
+        "p95_nearest_rank": 139.67517631866494,
+        "samples": [
+          124.17701400615874,
+          136.26899771530745,
+          139.67517631866494,
+          125.73755835899473,
+          128.25370020860237,
+          122.26283897884176,
+          130.90394357802722
+        ]
+      },
+      "kind_Black_mixed": {
+        "max": 152.965625,
+        "median": 144.8765625,
+        "min": 140.946875,
+        "p95_nearest_rank": 152.965625,
+        "samples": [
+          144.8765625,
+          143.0828125,
+          152.965625,
+          151.134375,
+          151.290625,
+          140.946875,
+          144.26875
+        ]
+      },
+      "kind_Blue_exact": {
+        "max": 117.3100228469256,
+        "median": 112.91347968610312,
+        "min": 104.3429025528956,
+        "p95_nearest_rank": 117.3100228469256,
+        "samples": [
+          104.3429025528956,
+          108.614284295222,
+          112.91347968610312,
+          117.3100228469256,
+          112.76149796364359,
+          114.34886262044303,
+          115.69782457534518
+        ]
+      },
+      "kind_Blue_mixed": {
+        "max": 112.6890625,
+        "median": 103.171875,
+        "min": 99.390625,
+        "p95_nearest_rank": 112.6890625,
+        "samples": [
+          101.9921875,
+          99.390625,
+          102.5078125,
+          104.4703125,
+          112.6890625,
+          103.171875,
+          104.840625
+        ]
+      },
+      "kind_CET4_CET6_exact": {
+        "max": 61.92410847322936,
+        "median": 56.213370418198075,
+        "min": 49.249031489023544,
+        "p95_nearest_rank": 61.92410847322936,
+        "samples": [
+          49.249031489023544,
+          58.77123274063773,
+          56.213370418198075,
+          50.078474222707854,
+          61.92410847322936,
+          53.891924108473226,
+          56.58984801827754
+        ]
+      },
+      "kind_CET4_CET6_mixed": {
+        "max": 63.8453125,
+        "median": 57.4078125,
+        "min": 56.0859375,
+        "p95_nearest_rank": 63.8453125,
+        "samples": [
+          61.696875,
+          57.4078125,
+          56.146875,
+          63.8453125,
+          56.0859375,
+          59.8875,
+          56.7640625
+        ]
+      },
+      "kind_CET4_exact": {
+        "max": 63.91973775702791,
+        "median": 51.079765570676464,
+        "min": 47.363663454852485,
+        "p95_nearest_rank": 63.91973775702791,
+        "samples": [
+          47.363663454852485,
+          51.55458428528857,
+          53.48862620443032,
+          51.079765570676464,
+          63.91973775702791,
+          48.611304261448296,
+          47.631866494486935
+        ]
+      },
+      "kind_CET4_mixed": {
+        "max": 55.796875,
+        "median": 50.65,
+        "min": 49.5203125,
+        "p95_nearest_rank": 55.796875,
+        "samples": [
+          51.4109375,
+          54.15,
+          49.7078125,
+          55.796875,
+          50.6046875,
+          49.5203125,
+          50.65
+        ]
+      },
+      "kind_CET6_exact": {
+        "max": 70.81454256481574,
+        "median": 58.13449885765372,
+        "min": 48.858647064666734,
+        "p95_nearest_rank": 70.81454256481574,
+        "samples": [
+          48.858647064666734,
+          61.38273567100427,
+          58.13449885765372,
+          50.35859739743717,
+          57.171947948743416,
+          60.348663951524784,
+          70.81454256481574
+        ]
+      },
+      "kind_CET6_mixed": {
+        "max": 62.428125,
+        "median": 57.778125,
+        "min": 54.51875,
+        "p95_nearest_rank": 62.428125,
+        "samples": [
+          54.51875,
+          57.778125,
+          55.7140625,
+          55.4390625,
+          62.428125,
+          60.4625,
+          59.9484375
+        ]
+      },
+      "kind_COCA_20000_exact": {
+        "max": 106.99612595609418,
+        "median": 93.31280421178107,
+        "min": 80.61488030197675,
+        "p95_nearest_rank": 106.99612595609418,
+        "samples": [
+          80.61488030197675,
+          100.20065560743022,
+          91.9658289460614,
+          106.99612595609418,
+          93.31280421178107,
+          92.55190225489223,
+          99.14373696235224
+        ]
+      },
+      "kind_COCA_20000_mixed": {
+        "max": 115.759375,
+        "median": 92.765625,
+        "min": 86.359375,
+        "p95_nearest_rank": 115.759375,
+        "samples": [
+          88.453125,
+          87.8,
+          92.765625,
+          86.359375,
+          115.759375,
+          96.4109375,
+          94.3515625
+        ]
+      },
+      "kind_College_exact": {
+        "max": 105.24585278633158,
+        "median": 95.99483460812556,
+        "min": 88.3341611204927,
+        "p95_nearest_rank": 105.24585278633158,
+        "samples": [
+          88.3341611204927,
+          100.8622231051952,
+          95.99483460812556,
+          93.36147809675177,
+          90.29800337737161,
+          104.32204231647958,
+          105.24585278633158
+        ]
+      },
+      "kind_College_mixed": {
+        "max": 100.409375,
+        "median": 89.9125,
+        "min": 88.40625,
+        "p95_nearest_rank": 100.409375,
+        "samples": [
+          100.409375,
+          95.0828125,
+          93.79375,
+          88.453125,
+          88.40625,
+          89.28125,
+          89.9125
+        ]
+      },
+      "kind_GMAT_exact": {
+        "max": 80.02582695937221,
+        "median": 76.24019072216151,
+        "min": 69.32253898877521,
+        "p95_nearest_rank": 80.02582695937221,
+        "samples": [
+          69.32253898877521,
+          69.42187344789907,
+          76.24019072216151,
+          72.08602364160127,
+          77.13618754345883,
+          80.02582695937221,
+          78.35502135690871
+        ]
+      },
+      "kind_GMAT_mixed": {
+        "max": 83.21875,
+        "median": 76.3828125,
+        "min": 71.834375,
+        "p95_nearest_rank": 83.21875,
+        "samples": [
+          76.240625,
+          83.21875,
+          71.834375,
+          79.15625,
+          74.08125,
+          76.4578125,
+          76.3828125
+        ]
+      },
+      "kind_GRE_exact": {
+        "max": 102.35422668123572,
+        "median": 84.21277441144333,
+        "min": 72.88566603754843,
+        "p95_nearest_rank": 102.35422668123572,
+        "samples": [
+          72.88566603754843,
+          81.47611006258072,
+          86.46766663355518,
+          84.21277441144333,
+          82.71381742326413,
+          102.35422668123572,
+          95.49816231250621
+        ]
+      },
+      "kind_GRE_mixed": {
+        "max": 88.0234375,
+        "median": 75.51875,
+        "min": 69.165625,
+        "p95_nearest_rank": 88.0234375,
+        "samples": [
+          74.365625,
+          75.51875,
+          71.915625,
+          80.9328125,
+          77.978125,
+          88.0234375,
+          69.165625
+        ]
+      },
+      "kind_Green_exact": {
+        "max": 128.55865699811264,
+        "median": 124.2376080262243,
+        "min": 109.02652230058608,
+        "p95_nearest_rank": 128.55865699811264,
+        "samples": [
+          128.55865699811264,
+          124.45614383629682,
+          121.34399523194597,
+          109.85397834508791,
+          124.2376080262243,
+          109.02652230058608,
+          126.45475315386908
+        ]
+      },
+      "kind_Green_mixed": {
+        "max": 142.73125,
+        "median": 136.775,
+        "min": 129.60625,
+        "p95_nearest_rank": 142.73125,
+        "samples": [
+          134.2046875,
+          132.1453125,
+          142.73125,
+          139.2234375,
+          141.56875,
+          129.60625,
+          136.775
+        ]
+      },
+      "kind_IELTS_exact": {
+        "max": 83.31280421178107,
+        "median": 58.872553888944076,
+        "min": 51.12545942187345,
+        "p95_nearest_rank": 83.31280421178107,
+        "samples": [
+          51.321148306347474,
+          51.12545942187345,
+          58.872553888944076,
+          71.98569583788617,
+          83.31280421178107,
+          58.07092480381444,
+          75.47332869772524
+        ]
+      },
+      "kind_IELTS_mixed": {
+        "max": 60.1796875,
+        "median": 57.240625,
+        "min": 55.84375,
+        "p95_nearest_rank": 60.1796875,
+        "samples": [
+          60.1796875,
+          57.240625,
+          56.521875,
+          59.3390625,
+          55.84375,
+          57.0796875,
+          57.759375
+        ]
+      },
+      "kind_Junior_exact": {
+        "max": 108.39276845137579,
+        "median": 90.80758915267707,
+        "min": 80.24734280321843,
+        "p95_nearest_rank": 108.39276845137579,
+        "samples": [
+          90.80758915267707,
+          83.61279427833516,
+          90.28608324227675,
+          80.24734280321843,
+          101.78007350749975,
+          100.8622231051952,
+          108.39276845137579
+        ]
+      },
+      "kind_Junior_mixed": {
+        "max": 87.8265625,
+        "median": 84.259375,
+        "min": 82.0953125,
+        "p95_nearest_rank": 87.8265625,
+        "samples": [
+          85.3375,
+          84.05,
+          87.8265625,
+          82.0953125,
+          84.259375,
+          83.8625,
+          86.434375
+        ]
+      },
+      "kind_OXFORD_3000_exact": {
+        "max": 62.85586569981126,
+        "median": 44.28032184364756,
+        "min": 39.478494089599685,
+        "p95_nearest_rank": 62.85586569981126,
+        "samples": [
+          44.28032184364756,
+          56.6683222409854,
+          51.53769742723751,
+          39.478494089599685,
+          43.43597894109467,
+          62.85586569981126,
+          39.72484354822688
+        ]
+      },
+      "kind_OXFORD_3000_mixed": {
+        "max": 58.0671875,
+        "median": 47.9453125,
+        "min": 46.9,
+        "p95_nearest_rank": 58.0671875,
+        "samples": [
+          47.865625,
+          47.9453125,
+          46.9,
+          47.334375,
+          58.0671875,
+          48.0921875,
+          49.09375
+        ]
+      },
+      "kind_OXFORD_5000_exact": {
+        "max": 80.50362570775802,
+        "median": 60.49369226184563,
+        "min": 52.70090394357803,
+        "p95_nearest_rank": 80.50362570775802,
+        "samples": [
+          56.9404986589848,
+          52.70090394357803,
+          60.49369226184563,
+          57.42127744114433,
+          61.21188040131121,
+          80.50362570775802,
+          60.88407668620244
+        ]
+      },
+      "kind_OXFORD_5000_mixed": {
+        "max": 62.55625,
+        "median": 57.525,
+        "min": 52.584375,
+        "p95_nearest_rank": 62.55625,
+        "samples": [
+          55.33125,
+          57.525,
+          52.584375,
+          62.55625,
+          58.9625,
+          52.7328125,
+          58.1421875
+        ]
+      },
+      "kind_Primary_exact": {
+        "max": 103.34558458329194,
+        "median": 89.23711135392868,
+        "min": 79.9513261150293,
+        "p95_nearest_rank": 103.34558458329194,
+        "samples": [
+          79.9513261150293,
+          99.73676368332174,
+          103.34558458329194,
+          83.97139167577232,
+          100.92381046985199,
+          89.23711135392868,
+          87.46895798152379
+        ]
+      },
+      "kind_Primary_mixed": {
+        "max": 88.7765625,
+        "median": 81.4953125,
+        "min": 80.05625,
+        "p95_nearest_rank": 88.7765625,
+        "samples": [
+          81.4953125,
+          82.4203125,
+          80.128125,
+          80.1265625,
+          80.05625,
+          83.7234375,
+          88.7765625
+        ]
+      },
+      "kind_Red_exact": {
+        "max": 201.4016092182378,
+        "median": 170.65858746399127,
+        "min": 152.36813350551307,
+        "p95_nearest_rank": 201.4016092182378,
+        "samples": [
+          152.36813350551307,
+          188.98778186152776,
+          183.78166285884572,
+          163.43299890732095,
+          162.25588556670309,
+          170.65858746399127,
+          201.4016092182378
+        ]
+      },
+      "kind_Red_mixed": {
+        "max": 132.4359375,
+        "median": 128.03125,
+        "min": 108.028125,
+        "p95_nearest_rank": 132.4359375,
+        "samples": [
+          130.8234375,
+          108.028125,
+          128.03125,
+          123.403125,
+          124.853125,
+          128.275,
+          132.4359375
+        ]
+      },
+      "kind_SAT_exact": {
+        "max": 95.13062481374789,
+        "median": 81.67676567001092,
+        "min": 74.39157643786629,
+        "p95_nearest_rank": 95.13062481374789,
+        "samples": [
+          88.42058209993047,
+          74.39157643786629,
+          95.13062481374789,
+          77.0199662262839,
+          85.79020562233039,
+          81.67676567001092,
+          77.67557365650144
+        ]
+      },
+      "kind_SAT_mixed": {
+        "max": 71.959375,
+        "median": 68.4671875,
+        "min": 62.696875,
+        "p95_nearest_rank": 71.959375,
+        "samples": [
+          67.675,
+          68.103125,
+          69.496875,
+          70.6484375,
+          68.4671875,
+          62.696875,
+          71.959375
+        ]
+      },
+      "kind_Senior_exact": {
+        "max": 113.83133008840767,
+        "median": 110.6953412138671,
+        "min": 90.13509486440846,
+        "p95_nearest_rank": 113.83133008840767,
+        "samples": [
+          90.13509486440846,
+          111.31121486043509,
+          111.03605840866196,
+          91.5863713122082,
+          113.83133008840767,
+          110.6953412138671,
+          99.9950332770438
+        ]
+      },
+      "kind_Senior_mixed": {
+        "max": 94.4296875,
+        "median": 87.59375,
+        "min": 87.003125,
+        "p95_nearest_rank": 94.4296875,
+        "samples": [
+          88.6265625,
+          87.003125,
+          87.59375,
+          91.984375,
+          87.5171875,
+          87.1984375,
+          94.4296875
+        ]
+      },
+      "kind_TEM-4_exact": {
+        "max": 84.22171451276448,
+        "median": 70.50362570775802,
+        "min": 63.19161617164995,
+        "p95_nearest_rank": 84.22171451276448,
+        "samples": [
+          63.19161617164995,
+          84.22171451276448,
+          70.50362570775802,
+          65.45048177212675,
+          74.43925697824575,
+          70.51554584285289,
+          69.21128439455647
+        ]
+      },
+      "kind_TEM-4_mixed": {
+        "max": 64.821875,
+        "median": 59.9390625,
+        "min": 58.525,
+        "p95_nearest_rank": 64.821875,
+        "samples": [
+          59.9390625,
+          61.7484375,
+          59.8875,
+          59.50625,
+          60.115625,
+          58.525,
+          64.821875
+        ]
+      },
+      "kind_TEM-8_exact": {
+        "max": 91.80590046687196,
+        "median": 73.92768451375782,
+        "min": 65.93722062183372,
+        "p95_nearest_rank": 91.80590046687196,
+        "samples": [
+          68.50302970100327,
+          65.93722062183372,
+          79.09108969901659,
+          77.72126750769841,
+          73.92768451375782,
+          91.80590046687196,
+          67.88318267607033
+        ]
+      },
+      "kind_TEM-8_mixed": {
+        "max": 71.0421875,
+        "median": 68.1453125,
+        "min": 66.76875,
+        "p95_nearest_rank": 71.0421875,
+        "samples": [
+          67.75625,
+          71.0421875,
+          67.9703125,
+          66.76875,
+          69.6703125,
+          68.81875,
+          68.1453125
+        ]
+      },
+      "kind_TOEFL_exact": {
+        "max": 81.08175225985894,
+        "median": 74.67865302473427,
+        "min": 64.80083440945664,
+        "p95_nearest_rank": 81.08175225985894,
+        "samples": [
+          64.80083440945664,
+          78.59839078176219,
+          67.6666335551803,
+          75.19618555676965,
+          81.08175225985894,
+          74.67865302473427,
+          67.29810271183074
+        ]
+      },
+      "kind_TOEFL_mixed": {
+        "max": 70.9859375,
+        "median": 68.659375,
+        "min": 67.603125,
+        "p95_nearest_rank": 70.9859375,
+        "samples": [
+          70.4515625,
+          68.2828125,
+          70.5921875,
+          68.659375,
+          70.9859375,
+          68.0875,
+          67.603125
+        ]
+      },
+      "kind_White_exact": {
+        "max": 157.18188139465582,
+        "median": 123.44690573159829,
+        "min": 96.98321247640807,
+        "p95_nearest_rank": 157.18188139465582,
+        "samples": [
+          123.44690573159829,
+          130.72514155160425,
+          125.66603754842555,
+          96.98321247640807,
+          157.18188139465582,
+          104.50481772126751,
+          112.03834310122181
+        ]
+      },
+      "kind_White_mixed": {
+        "max": 136.0453125,
+        "median": 127.8546875,
+        "min": 124.2375,
+        "p95_nearest_rank": 136.0453125,
+        "samples": [
+          124.2375,
+          125.365625,
+          133.1734375,
+          130.953125,
+          136.0453125,
+          127.8546875,
+          125.6203125
+        ]
+      },
+      "kind_Yellow_exact": {
+        "max": 127.82159531141353,
+        "median": 113.141948942088,
+        "min": 102.46846130922818,
+        "p95_nearest_rank": 127.82159531141353,
+        "samples": [
+          108.60335750471839,
+          115.08791099632462,
+          104.82864805801132,
+          102.46846130922818,
+          113.141948942088,
+          127.82159531141353,
+          124.98261646965332
+        ]
+      },
+      "kind_Yellow_mixed": {
+        "max": 111.840625,
+        "median": 98.26875,
+        "min": 95.4234375,
+        "p95_nearest_rank": 111.840625,
+        "samples": [
+          96.7125,
+          98.26875,
+          111.840625,
+          95.4234375,
+          110.971875,
+          98.0578125,
+          103.1234375
+        ]
+      },
+      "kind_exact": {
+        "max": 60.348663951524784,
+        "median": 50.50461905234926,
+        "min": 45.74749180490712,
+        "p95_nearest_rank": 60.348663951524784,
+        "samples": [
+          60.348663951524784,
+          45.74749180490712,
+          47.389490414224696,
+          51.35094864408463,
+          50.50461905234926,
+          53.13598887454058,
+          46.77957683520413
+        ]
+      },
+      "kind_mixed": {
+        "max": 51.7875,
+        "median": 50.0015625,
+        "min": 48.5140625,
+        "p95_nearest_rank": 51.7875,
+        "samples": [
+          49.028125,
+          48.5140625,
+          50.0015625,
+          50.128125,
+          51.7875,
+          49.984375,
+          50.2609375
+        ]
+      },
+      "labels_us": {
+        "max": 0.74503,
+        "median": 0.7206,
+        "min": 0.67425,
+        "p95_nearest_rank": 0.74503,
+        "samples": [
+          0.67425,
+          0.68543,
+          0.7206,
+          0.73339,
+          0.7042200000000001,
+          0.74266,
+          0.74503
+        ]
+      },
+      "lexicon_initialization_ms": {
+        "max": 25.1714,
+        "median": 24.0214,
+        "min": 22.2171,
+        "p95_nearest_rank": 25.1714,
+        "samples": [
+          23.7384,
+          22.2171,
+          24.2824,
+          25.0755,
+          25.1714,
+          23.2712,
+          24.0214
+        ]
+      },
+      "meaning_en_exact": {
+        "max": 172.27972583689282,
+        "median": 154.00019866891824,
+        "min": 142.23403198569585,
+        "p95_nearest_rank": 172.27972583689282,
+        "samples": [
+          154.00019866891824,
+          172.27972583689282,
+          142.23403198569585,
+          150.14800834409456,
+          158.6093175722658,
+          148.306347471938,
+          160.19072216151784
+        ]
+      },
+      "meaning_en_mixed": {
+        "max": 60.55,
+        "median": 58.5453125,
+        "min": 56.221875,
+        "p95_nearest_rank": 60.55,
+        "samples": [
+          56.221875,
+          59.778125,
+          60.55,
+          58.5125,
+          59.8875,
+          57.8375,
+          58.5453125
+        ]
+      },
+      "meaning_exact": {
+        "max": 186.39217244462102,
+        "median": 154.22866792490314,
+        "min": 121.54365749478494,
+        "p95_nearest_rank": 186.39217244462102,
+        "samples": [
+          167.29611602264825,
+          140.11125459421874,
+          149.82616469653323,
+          121.54365749478494,
+          186.39217244462102,
+          166.72792291645973,
+          154.22866792490314
+        ]
+      },
+      "meaning_mixed": {
+        "max": 60.4234375,
+        "median": 57.9859375,
+        "min": 55.765625,
+        "p95_nearest_rank": 60.4234375,
+        "samples": [
+          57.9859375,
+          57.80625,
+          60.4234375,
+          57.859375,
+          60.190625,
+          55.765625,
+          59.1046875
+        ]
+      },
+      "meaning_zh_exact": {
+        "max": 142.55488228866594,
+        "median": 125.05016390185756,
+        "min": 117.14612098937121,
+        "p95_nearest_rank": 142.55488228866594,
+        "samples": [
+          122.92937319956293,
+          122.05721664845535,
+          128.31330088407668,
+          117.14612098937121,
+          139.07122280719182,
+          142.55488228866594,
+          125.05016390185756
+        ]
+      },
+      "meaning_zh_mixed": {
+        "max": 65.3046875,
+        "median": 59.3671875,
+        "min": 56.6234375,
+        "p95_nearest_rank": 65.3046875,
+        "samples": [
+          56.6234375,
+          59.3671875,
+          59.303125,
+          64.7921875,
+          59.3328125,
+          65.3046875,
+          60.0890625
+        ]
+      },
+      "root_lemma_exact": {
+        "max": 129.09108969901658,
+        "median": 115.34320055627298,
+        "min": 85.72762491308235,
+        "p95_nearest_rank": 129.09108969901658,
+        "samples": [
+          115.34320055627298,
+          129.09108969901658,
+          106.42892619449687,
+          85.72762491308235,
+          115.93722062183372,
+          90.97645773318764,
+          117.98053044601173
+        ]
+      },
+      "root_lemma_mixed": {
+        "max": 63.371875,
+        "median": 57.8796875,
+        "min": 56.3203125,
+        "p95_nearest_rank": 63.371875,
+        "samples": [
+          56.3203125,
+          56.6859375,
+          62.0390625,
+          57.6734375,
+          57.8796875,
+          63.371875,
+          58.084375
+        ]
+      }
+    }
+  },
+  "artifact_first_library_execution": {
+    "exceeds_cold_p95_limit": true,
+    "metrics": {
+      "lexicon_initialization_ms": 27.0036
+    },
+    "process_creation_ms": 636.8215999682434,
+    "verified_annotations": [],
+    "wall_ms": 675.4293999983929
+  },
+  "artifact_first_cli_execution": {
+    "argv": [
+      "E:\\git\\claude\\words\\lingose-rust\\.local\\cli41-process-ro5ys0hc\\runtime\\lingose.exe",
+      "word",
+      "hello",
+      "--json"
+    ],
+    "complete_output_verified": true,
+    "exit_code": 0,
+    "process_creation_ms": 820.1572999823838,
+    "result": {
+      "bytes": 158,
+      "sha256": "7c4078433dc8d170ec2d8b5857788837558d39a8d70b208413a94349429f3cc5"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 158,
+      "sha256": "7c4078433dc8d170ec2d8b5857788837558d39a8d70b208413a94349429f3cc5"
+    },
+    "timed_out": false,
+    "wall_ms": 865.6747000059113
+  },
+  "cli_process": {
+    "scenarios": 26,
+    "measured_new_processes": 182,
+    "warmups": 26,
+    "first_execution_separate": true,
+    "complete_outputs_verified": true,
+    "latency_budget": null,
+    "statistics_ms": {
+      "file-file-10000-0-json": {
+        "max": 83.97039998089895,
+        "median": 77.35069998307154,
+        "min": 74.59189998917282,
+        "p95_nearest_rank": 83.97039998089895,
+        "samples": [
+          77.28979998501018,
+          77.24740001140162,
+          83.74749997165054,
+          74.59189998917282,
+          83.97039998089895,
+          82.41229999111965,
+          77.35069998307154
+        ]
+      },
+      "file-file-10000-0-plain": {
+        "max": 64.71160001819953,
+        "median": 55.09020003955811,
+        "min": 51.248000003397465,
+        "p95_nearest_rank": 64.71160001819953,
+        "samples": [
+          64.71160001819953,
+          58.82090004161,
+          51.248000003397465,
+          59.21500001568347,
+          51.720599993132055,
+          52.13790002744645,
+          55.09020003955811
+        ]
+      },
+      "file-file-10000-1000-json": {
+        "max": 89.63780000340194,
+        "median": 76.77919999696314,
+        "min": 74.69189999392256,
+        "p95_nearest_rank": 89.63780000340194,
+        "samples": [
+          76.00270002149045,
+          89.63780000340194,
+          76.77919999696314,
+          75.9966999758035,
+          83.93560000695288,
+          86.39519999269396,
+          74.69189999392256
+        ]
+      },
+      "file-file-10000-1000-plain": {
+        "max": 83.51969998329878,
+        "median": 62.54760001320392,
+        "min": 57.41489998763427,
+        "p95_nearest_rank": 83.51969998329878,
+        "samples": [
+          62.54760001320392,
+          59.53280004905537,
+          57.41489998763427,
+          57.57220002124086,
+          63.202999997884035,
+          63.66590003017336,
+          83.51969998329878
+        ]
+      },
+      "file-file-10000-5062-json": {
+        "max": 92.1733999857679,
+        "median": 86.7803999572061,
+        "min": 75.82529995124787,
+        "p95_nearest_rank": 92.1733999857679,
+        "samples": [
+          92.1733999857679,
+          86.31270000478253,
+          88.03730004001409,
+          89.73809995222837,
+          75.82529995124787,
+          81.83229999849573,
+          86.7803999572061
+        ]
+      },
+      "file-file-10000-5062-plain": {
+        "max": 74.91780002601445,
+        "median": 60.21990004228428,
+        "min": 52.453799988143146,
+        "p95_nearest_rank": 74.91780002601445,
+        "samples": [
+          55.16879999777302,
+          52.453799988143146,
+          74.91780002601445,
+          60.21990004228428,
+          61.67049997020513,
+          57.427799969445914,
+          66.00699998671189
+        ]
+      },
+      "file-file-100000-0-json": {
+        "max": 418.11369999777526,
+        "median": 393.87169998371974,
+        "min": 389.32989997556433,
+        "p95_nearest_rank": 418.11369999777526,
+        "samples": [
+          395.6250000046566,
+          393.19260005140677,
+          395.08499996736646,
+          418.11369999777526,
+          389.32989997556433,
+          391.2728000432253,
+          393.87169998371974
+        ]
+      },
+      "file-file-100000-0-plain": {
+        "max": 179.05630002496764,
+        "median": 165.8674000063911,
+        "min": 157.74920000694692,
+        "p95_nearest_rank": 179.05630002496764,
+        "samples": [
+          162.25049999775365,
+          179.05630002496764,
+          169.89030002150685,
+          161.01129999151453,
+          165.8674000063911,
+          176.16680002538487,
+          157.74920000694692
+        ]
+      },
+      "file-file-100000-1000-json": {
+        "max": 451.6035999986343,
+        "median": 445.46730001457036,
+        "min": 429.16069994680583,
+        "p95_nearest_rank": 451.6035999986343,
+        "samples": [
+          441.91829999908805,
+          449.82249999884516,
+          451.6035999986343,
+          445.46730001457036,
+          442.5554000190459,
+          429.16069994680583,
+          446.94449997041374
+        ]
+      },
+      "file-file-100000-1000-plain": {
+        "max": 228.1644000322558,
+        "median": 210.96769999712706,
+        "min": 206.16549998521805,
+        "p95_nearest_rank": 228.1644000322558,
+        "samples": [
+          228.1644000322558,
+          206.16549998521805,
+          213.61160004744306,
+          211.5165000432171,
+          207.10649999091402,
+          210.96769999712706,
+          207.62309996644035
+        ]
+      },
+      "file-file-100000-5062-json": {
+        "max": 479.277300008107,
+        "median": 471.8750999891199,
+        "min": 457.3583000455983,
+        "p95_nearest_rank": 479.277300008107,
+        "samples": [
+          471.8750999891199,
+          467.1476999646984,
+          479.277300008107,
+          478.71250001480803,
+          457.3583000455983,
+          465.94800002640113,
+          477.81859996030107
+        ]
+      },
+      "file-file-100000-5062-plain": {
+        "max": 259.49969998328015,
+        "median": 239.85480004921556,
+        "min": 227.65880002407357,
+        "p95_nearest_rank": 259.49969998328015,
+        "samples": [
+          239.85480004921556,
+          227.65880002407357,
+          238.84790000738576,
+          236.5392000065185,
+          243.30759997246787,
+          245.0902999844402,
+          259.49969998328015
+        ]
+      },
+      "stdin-stdout-10000-0-json": {
+        "max": 62.19490000512451,
+        "median": 52.62839997885749,
+        "min": 48.062700021546334,
+        "p95_nearest_rank": 62.19490000512451,
+        "samples": [
+          62.19490000512451,
+          48.062700021546334,
+          51.32129997946322,
+          53.19230002351105,
+          56.0088999918662,
+          51.62809998728335,
+          52.62839997885749
+        ]
+      },
+      "stdin-stdout-10000-0-plain": {
+        "max": 62.137699977029115,
+        "median": 49.24220003886148,
+        "min": 43.21979999076575,
+        "p95_nearest_rank": 62.137699977029115,
+        "samples": [
+          62.137699977029115,
+          43.21979999076575,
+          49.658100004307926,
+          49.24220003886148,
+          49.24990003928542,
+          46.148099994752556,
+          45.446000003721565
+        ]
+      },
+      "stdin-stdout-10000-1000-json": {
+        "max": 70.61329996213317,
+        "median": 61.13859999459237,
+        "min": 53.419899952132255,
+        "p95_nearest_rank": 70.61329996213317,
+        "samples": [
+          69.36470000073314,
+          53.419899952132255,
+          63.180799945257604,
+          70.61329996213317,
+          55.587800045032054,
+          61.13859999459237,
+          59.542000002693385
+        ]
+      },
+      "stdin-stdout-10000-1000-plain": {
+        "max": 65.08470000699162,
+        "median": 54.79139997623861,
+        "min": 50.78200000571087,
+        "p95_nearest_rank": 65.08470000699162,
+        "samples": [
+          53.031599964015186,
+          65.08470000699162,
+          56.81169999297708,
+          54.79139997623861,
+          57.14660004014149,
+          54.49609999777749,
+          50.78200000571087
+        ]
+      },
+      "stdin-stdout-10000-5062-json": {
+        "max": 73.0234999791719,
+        "median": 61.18740001693368,
+        "min": 55.522399954497814,
+        "p95_nearest_rank": 73.0234999791719,
+        "samples": [
+          57.55450000287965,
+          55.522399954497814,
+          70.66249998752028,
+          61.18740001693368,
+          55.68180000409484,
+          65.58219995349646,
+          73.0234999791719
+        ]
+      },
+      "stdin-stdout-10000-5062-plain": {
+        "max": 81.69060002546757,
+        "median": 57.50689998967573,
+        "min": 53.485299984458834,
+        "p95_nearest_rank": 81.69060002546757,
+        "samples": [
+          53.587300004437566,
+          53.485299984458834,
+          60.451800003647804,
+          56.152100034523755,
+          62.271100003272295,
+          81.69060002546757,
+          57.50689998967573
+        ]
+      },
+      "stdin-stdout-100000-0-json": {
+        "max": 194.1520000109449,
+        "median": 175.02289998810738,
+        "min": 164.28219998488203,
+        "p95_nearest_rank": 194.1520000109449,
+        "samples": [
+          194.1520000109449,
+          180.52749999333173,
+          175.22430000826716,
+          169.6802000515163,
+          175.02289998810738,
+          171.6520999907516,
+          164.28219998488203
+        ]
+      },
+      "stdin-stdout-100000-0-plain": {
+        "max": 165.14450003160164,
+        "median": 159.07419996801764,
+        "min": 156.10540000488982,
+        "p95_nearest_rank": 165.14450003160164,
+        "samples": [
+          160.9523000079207,
+          156.4422999508679,
+          165.14450003160164,
+          156.10540000488982,
+          159.07419996801764,
+          158.41239999281242,
+          159.49869999894872
+        ]
+      },
+      "stdin-stdout-100000-1000-json": {
+        "max": 237.80039994744584,
+        "median": 227.12510003475472,
+        "min": 222.57829998852685,
+        "p95_nearest_rank": 237.80039994744584,
+        "samples": [
+          237.80039994744584,
+          223.46400003880262,
+          227.12510003475472,
+          223.2236000127159,
+          230.02239997731522,
+          235.27559998910874,
+          222.57829998852685
+        ]
+      },
+      "stdin-stdout-100000-1000-plain": {
+        "max": 214.01360002346337,
+        "median": 208.9505000039935,
+        "min": 204.45680001284927,
+        "p95_nearest_rank": 214.01360002346337,
+        "samples": [
+          208.9505000039935,
+          208.91310001024976,
+          204.45680001284927,
+          211.14470000611618,
+          210.89639997808263,
+          214.01360002346337,
+          206.96969999698922
+        ]
+      },
+      "stdin-stdout-100000-5062-json": {
+        "max": 250.6677999626845,
+        "median": 241.77969997981563,
+        "min": 237.6339000184089,
+        "p95_nearest_rank": 250.6677999626845,
+        "samples": [
+          240.60729995835572,
+          237.6339000184089,
+          249.52170002507046,
+          245.37889997009188,
+          250.6677999626845,
+          241.77969997981563,
+          241.1687999847345
+        ]
+      },
+      "stdin-stdout-100000-5062-plain": {
+        "max": 243.2775999768637,
+        "median": 231.00829997565597,
+        "min": 225.40250001475215,
+        "p95_nearest_rank": 243.2775999768637,
+        "samples": [
+          231.00829997565597,
+          236.25140002695844,
+          227.29670000262558,
+          225.40250001475215,
+          243.2775999768637,
+          231.74869996728376,
+          228.00440003629774
+        ]
+      },
+      "word-json": {
+        "max": 42.328599956817925,
+        "median": 40.23400001460686,
+        "min": 34.77730002487078,
+        "p95_nearest_rank": 42.328599956817925,
+        "samples": [
+          39.41339999437332,
+          36.7409999598749,
+          42.328599956817925,
+          41.257399949245155,
+          40.2538999915123,
+          34.77730002487078,
+          40.23400001460686
+        ]
+      },
+      "word-plain": {
+        "max": 40.08609999436885,
+        "median": 38.1012000143528,
+        "min": 36.17230005329475,
+        "p95_nearest_rank": 40.08609999436885,
+        "samples": [
+          38.1012000143528,
+          40.08609999436885,
+          36.17230005329475,
+          39.20520003885031,
+          37.87169995484874,
+          38.91589998966083,
+          37.925400014501065
+        ]
+      }
+    }
+  },
+  "synthetic_timeout_check": {
+    "receipt": {
+      "path": ".local/cli41-acceptance/cli-failure-check.json",
+      "bytes": 309,
+      "sha256": "843c746d782ea8df781f974ccaee12b85572b84f0de2ae920e47330af0eb837f"
+    },
+    "result": {
+      "passed": true,
+      "synthetic": true,
+      "case": "Build timeout after partial output",
+      "directory": ".local/cli41-process-nrkgf7a9",
+      "checks": [
+        "Original partial output bytes retained, including non-UTF8 byte",
+        "Failed build status and timeout saved",
+        "No successful report produced"
+      ]
+    }
+  },
+  "evidence": {
+    "docs/full-differential-verification-0.2.0.json": {
+      "path": "docs/full-differential-verification-0.2.0.json",
+      "bytes": 26513,
+      "sha256": "d70b11b1938ed2a4ad289df5d1043f35fa48cb3fcd19a61998c2b48c0e269d12"
+    },
+    "docs/correctness-regression-verification-0.2.0.json": {
+      "path": "docs/correctness-regression-verification-0.2.0.json",
+      "bytes": 28585,
+      "sha256": "07f6e46f3ac9b701adde200fb3a5a43e000bae3a9151dac8f301338bc8a14ad7"
+    },
+    "docs/performance-verification-0.2.0.json": {
+      "path": "docs/performance-verification-0.2.0.json",
+      "bytes": 89636,
+      "sha256": "af88bf283d0217108c649fb733faa6b0ef3ec60ea7e89753e5e6f0a365a84e52"
+    },
+    "docs/cli-process-verification-0.2.0.json": {
+      "path": "docs/cli-process-verification-0.2.0.json",
+      "bytes": 260657,
+      "sha256": "adb30191a55b7e49645d4e5529904baebf216764912ae147d4719362d9a28b8c"
+    },
+    "docs/cli-workspace-acceptance.md": {
+      "path": "docs/cli-workspace-acceptance.md",
+      "bytes": 8241,
+      "sha256": "5b6e16487ddd644bffd43185ae8ab23611bca35f4958245c574262c7e2fe5b87"
+    }
+  },
+  "source_files": {
+    ".gitattributes": "ec3201e12652d7888d2fa4743d8f76be96672922832b38922a62c64f14460a73",
+    "tools/check_cli_process.py": "918abde334996336dc835d706944f5f443c47ef33a5e851629e50dae305eec07",
+    "docs/cli-workspace-acceptance.md": "5b6e16487ddd644bffd43185ae8ab23611bca35f4958245c574262c7e2fe5b87"
+  },
+  "protection": {
+    "before_tracked_files": 167,
+    "out_of_scope_original_files": 164,
+    "changed_outside_scope": [],
+    "before_index": {
+      "path": ".local/cli41-acceptance/before-sha256.json",
+      "bytes": 17485,
+      "sha256": "05d12d817dec11ce9853141973e1b2235ae6c3ebe643f2d44b84b7402a748cb2"
+    },
+    "unchanged_files": {
+      ".gitignore": "447c660594550004d09817ab16435cd7efe15f4cb1767384ea4b1830e3b2c27e",
+      "AGENTS.md": "fd2bec28f9c5ed2f6e4d3f9917d9a3716a3487cecec137ede632c837cce0158d",
+      "Cargo.lock": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e",
+      "Cargo.toml": "2c7d78c0cb89af8501739a315db12692f4141b8c70815a6fcdbad0dab7cb253b",
+      "LICENSE": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+      "README.md": "1061dc7d7052f6bc0260ffa6d12b5d683deed66929c5fa6a7a828e2d36e34e99",
+      "SOURCES.md": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5",
+      "TASK.md": "a3cdccdb623e59124e3dd404938538601d1497c85f983b0df8e1e266f0695cdc",
+      "TASK_CLI.md": "2f88982186954e22cadde46abf375f0ffc98424ccffe388a5ffb81f31814c7df",
+      "crates/lingose-cli/Cargo.toml": "e50128430cf34e3da846eb17a97e5924ea39ddff7a9dbf14f34874f14abb788f",
+      "crates/lingose-cli/LICENSE": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+      "crates/lingose-cli/README.md": "7eda5e34778bbbaec19e4c86ed5e208f396baea50c5ac387474de96082535dc0",
+      "crates/lingose-cli/SOURCES.md": "38687989709fe2b7a9ae15f83b885669eb39554da340c9741a1715f6be3e8bfe",
+      "crates/lingose-cli/src/main.rs": "b4a793a06b79443b9a185acd9fc35a22d50f31fde8c1922b0615786f4037d953",
+      "crates/lingose-cli/tests/annotate.rs": "c4aea542d4ca130aa08fe53925f631567f561d934e066f81766098130356c742",
+      "crates/lingose-cli/tests/word.rs": "e206bba4398dcfe185823e4eec780aa23e8bcd6180405d562ac7b940edf7d0bc",
+      "crates/lingose/Cargo.toml": "4e1e4c9532ef7e5b1f57da9173f133c54b0cf039e30e5b8d2a5fcd3cc7193101",
+      "crates/lingose/LICENSE": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+      "crates/lingose/README.md": "e59be46ebbf4111c1144d23d04774bc21baf3db4d0ae7c7a336eb31e401b20b0",
+      "crates/lingose/SOURCES.md": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5",
+      "crates/lingose/data/LICENSE": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+      "crates/lingose/data/SOURCES.json": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f",
+      "crates/lingose/data/UPSTREAM-SOURCES.md": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228",
+      "crates/lingose/data/frequency.bin": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264",
+      "crates/lingose/data/lexicon.bin": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6",
+      "crates/lingose/data/manifest.json": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03",
+      "crates/lingose/docs/distribution-provenance.json": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f",
+      "crates/lingose/docs/rust-api.md": "e0c7a6ef41a4a1f5a80c990775310b9b383cd22581077f2cf05bd12961dee6ce",
+      "crates/lingose/examples/annotate.rs": "59e6d564a33328edbcc7dbe6e3145bdd75ebef0e6f0c99a5d6f9233ef4441c5a",
+      "crates/lingose/examples/query.rs": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98",
+      "crates/lingose/src/annotation.rs": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247",
+      "crates/lingose/src/annotation_context_vectors.rs": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302",
+      "crates/lingose/src/annotation_frequency_vectors.rs": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6",
+      "crates/lingose/src/annotation_unicode.rs": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94",
+      "crates/lingose/src/annotation_unicode_tables.rs": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b",
+      "crates/lingose/src/annotation_vectors.rs": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12",
+      "crates/lingose/src/category.rs": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f",
+      "crates/lingose/src/data/annotation_context_vectors.rs": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df",
+      "crates/lingose/src/data/annotation_frequency_vectors.rs": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16",
+      "crates/lingose/src/data/annotation_tests.rs": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf",
+      "crates/lingose/src/data/cache_tests.rs": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8",
+      "crates/lingose/src/data/category_tests.rs": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918",
+      "crates/lingose/src/data/image.rs": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b",
+      "crates/lingose/src/data/mod.rs": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c",
+      "crates/lingose/src/data/p41_joint_error_tests.rs": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08",
+      "crates/lingose/src/data/p41_query_fixture_tests.rs": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6",
+      "crates/lingose/src/data/tests.rs": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a",
+      "crates/lingose/src/data_meta.rs": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0",
+      "crates/lingose/src/error.rs": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f",
+      "crates/lingose/src/lib.rs": "661ea94997dcdb0d7a994a900acb1dbc6c3e0b897804d495beb3c90389d5ca12",
+      "crates/lingose/src/query.rs": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd",
+      "crates/lingose/src/query_case.rs": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7",
+      "crates/lingose/src/query_case_tables.rs": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e",
+      "crates/lingose/src/validation.rs": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e",
+      "crates/lingose/tests/annotation_context_vectors.rs": "b35ab093c36a2e52657fcf363a8cf106eb40989f8c59f0a38f7b1d2f3c82fa5b",
+      "crates/lingose/tests/annotation_frequency_vectors.rs": "5e7ece15934e19c81157ac7eaa668e6be61342ce7b94705e50d0a8c5925c572e",
+      "crates/lingose/tests/annotation_vectors.rs": "36a1a975500fbe2a264dd8cae0c7535f08f782a9849e7d54f8bc85ccfcbae462",
+      "crates/lingose/tests/api_contract.rs": "45626a7c12aeb1d42659854c1310f260fbcaeea8ac63d4a6a08ddbef4eaf7cdb",
+      "crates/lingose/tests/category_vectors.rs": "2a9847a84ea05858410e0be8be3020771b0e2027a13426b077fa61fc9b5e1072",
+      "crates/lingose/tests/query_vectors.rs": "440c7634cddb9494a37b0c0e89e1723ac53d9e2e92be125ca32057cbc187cbce",
+      "crates/lingose/third_party/unicode/LICENSE.txt": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+      "docs/annotation-api-rename-verification.json": "dcd6d1d38215b71cff1f1868105f0f3a87c5c18a17ec01d0228f8b715a772cad",
+      "docs/annotation-api-rename.md": "bcc44d577b9aa7252dd09f79f97e5d66fd3a7deafda1922dcdc584d60033c2b6",
+      "docs/annotation-context-verification.json": "61b9647f906e29e4ab8a3da895ca0bece42eb0f05627e0c7413504bd6b6be763",
+      "docs/annotation-frequency-verification.json": "1dd1f88263ecf046069739543426920aec76275df0f128c01ed7c64f42bbf071",
+      "docs/annotation-unicode.json": "521a545a791b054acb135197034305434dce11e67ffe8547952340fcc3254fb1",
+      "docs/annotation-verification.json": "f7dc9cdcef58b74bab900eb4a91d53c1283befe80011fe56b697273479acaaa8",
+      "docs/annotation.md": "74fb14c208832c83e59cc00627f239a73506779f2108b85c7c17e4549f4c06ff",
+      "docs/api.md": "ae6e87cd60fb66f8291d82abce20b3bf77e0d17c9e53b6d2e0aefa6929d9372e",
+      "docs/categories.md": "c1b62ebfcb34bbd7b0e508abf41f4c7443f8a7a133a5ca3144fcc59ca983c3c0",
+      "docs/category-verification.json": "f589f774e7ba3edfc8d8995756dd515a5556589c4a10f9cfe41809f53686ed58",
+      "docs/cli-annotation-input-verification.json": "0f97073101de1a3b970d558d3ca2d3fd3bb61cc6866780c9b532b76e426a91b3",
+      "docs/cli-annotation-input.md": "f10ddfc0059e8b5aacd86acae24cfd87dbae12599de989373123f404d09132a9",
+      "docs/cli-annotation-output-verification.json": "a5cd99116244355e16513aed97134efbdabe51bcb6684de5b9a12edf868e413c",
+      "docs/cli-annotation-output.md": "3da0cf72cf3d2d1f34bed1b7e9cdc5288cd1101b144d7bc44a7578d74ce188d1",
+      "docs/cli-word-verification.json": "46848e876876d31553ce8cd8c4f11ed86715a23ffc2dd9c43a589eec45f0bff9",
+      "docs/cli-word.md": "eb350d7880752d0d95309ca5f72e7eb27158a3eec547ed518932c3c75d35d714",
+      "docs/correctness-regression-verification.json": "aa323f5a9bff1e4cdf3fa0372914dfa6d21227ade121daa8942863fee2d65412",
+      "docs/data-export.md": "cac2faad31d09cea22112ed3a91e9d725fb741b5634b54980f72a0ff448129a7",
+      "docs/data-layout.md": "3a7438852f6094ee5ca82205330fd09de3489c80a0a092ea3c97dcf6f4ef8daa",
+      "docs/data-loader.md": "1aba33adf458a8abd1c5dcba299a2da748a208282615d43d0b029ba80858a43b",
+      "docs/data-verification.json": "712b5b8be598b5cd9bebae98ffd5350aadf709cd47f660f34f571944568a9c14",
+      "docs/distribution-provenance.json": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f",
+      "docs/distribution-review.md": "1506200d59a5d1068dcbfc2adb337f324ef634223c68abe417d3cbb045a303bc",
+      "docs/engineering-verification.json": "44216e41cd716ab39d339256bc78c9a03ae05d2fc29d34f5e9bec97c698d339a",
+      "docs/engineering.md": "80ca241214cf62eae6dfeb2fd01fba7a6b0c774124cf88d9e44c07af957f5301",
+      "docs/full-differential-verification.json": "72ea9e2fafea9501e8977d9e7e31a7ccb16bddad752a0e57ce6355ed4c23e528",
+      "docs/full-differential.md": "0150d45ead564e35991bafd7016c3068630a165e82aae23a8a267670a066f160",
+      "docs/layout-probe-results.json": "981736620f03435decd4613f89233bd68169c8c0e404a30af262591d3eed8c2a",
+      "docs/loader-verification.json": "64e2ca459bafe707971bc67b6f3e1c39e5d1e60d28d15d79a32bd4e853d09eb4",
+      "docs/p5-documentation-verification.json": "ecd50b647ae4b3bffc5cee609921d5b5da7d1dff4f8b41890bc491ce88313a98",
+      "docs/package-verification.json": "96fe4ca4cd87f87ae31fecc151ccbe0ed523e630f64c3b9b7015367eb255dfbc",
+      "docs/packaging.md": "03101264d0206161b6ca2cead9c8090c6a40df9a4bcc1ed9bf58a9fb676a44ab",
+      "docs/performance-budget.json": "3f54b4d54240eb8039cb461829c76d2ccd2cda7fe6cb4060b013d5d882cd4e82",
+      "docs/performance-budget.md": "a890bd490d7dc02264afcb4a1692f3cdfa0f2a927cceca298a79c7867a39300a",
+      "docs/performance-verification.json": "daf22261dadd266d935f9066a21aefcb27f296ee7aa9ecfe32cd87bc01b3eb36",
+      "docs/performance.md": "c3dd77a902f0934fa4fe86582a6385bd2c8531da1ff175b7beb674aa95d3e154",
+      "docs/publication-preflight.json": "f3273631263d60c55fdc0d22e82f42ec49b59271edd53654004abcd1ce6bed47",
+      "docs/publication-preflight.md": "e65678a09ef514a2b46c8ee8ffabd44c9c1dc067d7aba371dd2e36e8e703f76a",
+      "docs/publication.json": "9557a72362d2c060053405e247215b1e2fa9b6e5d2ff2f7f2d44466019ad9f76",
+      "docs/publication.md": "42b8707906f62a769bb44e3f4f8b6534684d783bc8a03a064491f6539ff2b3f5",
+      "docs/query-case.json": "4ea010b0509185e14b311263911f3fe3ba17f9204d6eb4b7b3119ab34871fabc",
+      "docs/query-verification.json": "dbe8894eea010602289254c8f7819f0841edbc74c2e93df46cdaacf9d00b337b",
+      "docs/reference-baseline.json": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01",
+      "docs/reference-baseline.md": "e54ddf801c37185ee5b95f5503c726ab2c52d5044493101a4cbf87e01a4ee295",
+      "docs/registry-consumer-verification.json": "8ce02801c3a9c2a3dd07dae3b66c79a296413df9e095095f21854b82fa64e764",
+      "docs/registry-consumer.md": "355486a47b7ab9f01b69cd11c05a0df05ec80ecef2c349d771bf79fd764bb964",
+      "docs/rust-api.md": "9a70866da0046b0005579323118268953a84c1e85a80952c8b70b561034b0832",
+      "docs/simple-queries.md": "4a84765687363917cb11c5866593eaebb4e7c6d675d78bf8e3497a03bb371ef4",
+      "docs/workspace-migration-verification.json": "dc7c2c9bb1dcb2dd54e454a65f9906fbcbc77a667937cd5783d197f5effafa9a",
+      "docs/workspace-migration.md": "0a0d45e30baec86bed1388a4c20f45dd29c4244d80432985410a9b3fa364366a",
+      "docs/workspace-tools-verification.json": "f53339c7704b48213904d745a162a07502b29e9a752838a643dd2ca7d7713763",
+      "docs/workspace-tools.md": "5c66d9837826b929eb4a3ff0d8f6e6c0486cd36796433257d304316adefd7cc9",
+      "tasks/todo.md": "c3ae5bc0cc445eb5de1a860d54edf983b00476e16aa15f375f746c7e62f0bd57",
+      "tests/fixtures/python-api-v1.json": "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1",
+      "tests/test_api_vectors.py": "dcd0f5715de13d12e7d4316a1adffcee42bf73088b8668ce684144fcb63138ae",
+      "tests/test_export_data.py": "f93cf58bf5590e040c2e26fed3e0a721b025e49635d62b966d83f7c2a9cbff31",
+      "tests/test_full_differential.py": "c2a6f63462a9fa405cca263438724f73a0483fa2cfb38e51bddf64e31efd40cc",
+      "tests/test_layout_probe.py": "6812ffae2a695894774ade3abdfe798c8823cc3ea215ba17c86e51d4759e3ddc",
+      "tests/test_package.py": "35e17c917be9b326f70a3893d79b648b3c1b3fb4fd2fc00dc43940ed25214f55",
+      "tests/test_performance.py": "fcb91e9d7e571120f3bce4a13ba850207f9e8e54c9e12c7655edd30e2032da37",
+      "tests/test_reference.py": "8ed53d4331e97846c73a164e8276187570730cd6f70425be60e67e97df807a2a",
+      "tests/test_verify_data.py": "d06ff203781380988dc38921ae06362f4a3078e80e47e7bd1cbdc08b121305f3",
+      "tests/test_workspace_package.py": "43980be3b6af573c02792d26972b2cdb6cb32a5a0be129615719d668c702970d",
+      "tests/test_workspace_tools.py": "11fc2c31b0d81de140b5b3b89cb2c497c6cff55c156f5ea0a801b9dac0ee4b8d",
+      "third_party/unicode/LICENSE.txt": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+      "tools/audit_reference.py": "a433c4e88a15022bda5f2d2c51b1fa715796ff0c223b5b87cc5523f9a75a637b",
+      "tools/capture_api_vectors.py": "f4100af2081ee52df16358c03ee8022d0146aa2a4d7c93e05c240df629f3543a",
+      "tools/check_full_differential.py": "9fb8955758335b0348b1e87bfffc01e7deaa7c49a457ee2b90b69fbc52a654be",
+      "tools/check_layout_probe.py": "ee1b75410b4e1a157bd1b43293b2b0710fe71e057cc8a78222146461d3bdca4a",
+      "tools/check_loader.py": "4511aeeb421e37854e3c1d2803861a0c6e4e2237ceea82601d2f00c4515affd3",
+      "tools/check_package.py": "af8db2075005f8656070845f3066b952ad68fe2dd24e4704b5fdc95d2ebf84da",
+      "tools/check_performance.py": "e1a3a54894129be7d498b71e46ba2583a5b0cb0a7193863b1ca44d926652bf05",
+      "tools/check_queries.py": "4949b91aa7cd4c48ca1375b8ce30e01701a137b7072cef3436618135ec0c4b54",
+      "tools/check_registry_consumer.py": "d54e37d9bc7c7dd5932c1e23554e02c3a12df29e0c46f60d69f946c16743514f",
+      "tools/check_workspace_package.py": "ee5b2548b4edc0e905c762e75e8605d73055ec5b5a3862503825702aaf0cd5a0",
+      "tools/differential-probe/Cargo.lock": "2d1deee6bf72249ff2ee8cc24966a097113ddba161d23d72c8c6d07b42e029c5",
+      "tools/differential-probe/Cargo.toml": "9e8e1d8b69d342dab59705d9b557c16b0b37d280eaaff5e23952af93d7a5a6d7",
+      "tools/differential-probe/src/main.rs": "d0a878f81836f811d6a09d452d71482d0e13a69bc58a2ad248584bbfc62add05",
+      "tools/export_data.py": "903943454a312901edf14dd5a7819c26c4f032705c632a1b477b853bd0aa6b4a",
+      "tools/generate_annotation_context_vectors.py": "b3500e3ed55fa39ad65ee43c3c87126cb4ab3169c2674773c4beee2821621ab8",
+      "tools/generate_annotation_frequency_vectors.py": "ed8e89ff2034b2cc039e12a59cbcc0b4cc3b4a9cc3167e3101d8861e6e1a558b",
+      "tools/generate_annotation_unicode.py": "7840ddbb651ade073a1bb6a5218273adaef9d3f70b98da9587938e59f026819e",
+      "tools/generate_annotation_vectors.py": "05abef72af7368c46379e5806c6a8a3931e924b9b8e4e674f472182a3932a478",
+      "tools/generate_category_vectors.py": "ce6bfc354a076c89b938d75aa7b5a80883fe39e69da2c0eff5ede6badccf58dc",
+      "tools/generate_error_vectors.py": "5a88501e8cdc5ab63ddc47c1928a4f8103f9a58ff01f500e935dcf416d7f3365",
+      "tools/generate_query_case.py": "d8b8774525e9c699ecb5ab226358f13ee9ade1744322717d35db8580b2c37c67",
+      "tools/generate_query_vectors.py": "0974993b6abaa11f0d8d3254771629cdd6b86f3664018495cc058b0ec3c156cc",
+      "tools/layout-probe/AGENTS.md": "a90e0bad9b681713c3f4c4b757ae344ff512fd258062b0e7027eb2b66cd53db8",
+      "tools/layout-probe/Cargo.lock": "c2a237512aca2e56d08be9b992f8b553c559ba6db6fc74960cc869b737d5ff99",
+      "tools/layout-probe/Cargo.toml": "9a97dc8bd4ecf3863c26a190767d5bed06914ff9baf11ca114522bd668597015",
+      "tools/layout-probe/FORMAT.md": "e34829a26e2c514d9ae41a8735dc08060b58d613af4b8e76654244234382919c",
+      "tools/layout-probe/src/image.rs": "07d4fe88f114e1cc25e6acabf7a9334a209e78eefea4bad1e79975eee2bb15d3",
+      "tools/layout-probe/src/main.rs": "22f6991b377485007ca75ece156e4916e906c55db0103db2c0bc453d775a61f9",
+      "tools/package_consumer.rs": "1f8c62db06cfc3b7b390dd5c711cdb5daab320de63d5549eb7ce8fcdd94f5f9d",
+      "tools/package_consumer_020.rs": "2c659500a1ff6161603e50f334243a6ddb18527f8e57b95add7bb367aee43d3b",
+      "tools/performance-probe/Cargo.lock": "0aa959160d8193bda061bc7452caccf9d01bdc631d1d7337c4a124d604e62abc",
+      "tools/performance-probe/Cargo.toml": "9e341b9cc550bf6f9af59473e62eb935aaf126811ce74eb500b69b74c4b2b0c9",
+      "tools/performance-probe/src/main.rs": "549faa1e536b86685ff6fbd7045af91fae56504ad7bdef5a5029da99f615426f",
+      "tools/prepare_layout_probe.py": "aa7cc7dde791431c2f59537828708245cc655689239e3ddee2be92e07a54c70c",
+      "tools/prepare_package_sources.py": "f35dbb22fb08765149f29570879ce72830aa4b9c6bbbe028d19d0c9c5cc7bbea",
+      "tools/reference.py": "c583d04fdbd17ad3b1b00f4a8f7efb55f421a48f2cfebf221ed22317ed908ba0",
+      "tools/run_layout_probe.py": "437554e3a52cb4ba7f14f65cf350de979ba571c31f894141ce84875897bd376d",
+      "tools/verify_data.py": "e37e896a5eacb462d6255f8ecf4a51d4848eecbd9709f02758eb64c2fdc80876"
+    }
+  },
+  "local_runners": {
+    ".local/cli41-acceptance/run_correctness.py": {
+      "path": ".local/cli41-acceptance/run_correctness.py",
+      "bytes": 2087,
+      "sha256": "efd8218a05ffc8bd599acfc7777221255c30740f77b5f078a592a82b3f0b3495"
+    },
+    ".local/cli41-acceptance/run_performance.py": {
+      "path": ".local/cli41-acceptance/run_performance.py",
+      "bytes": 3110,
+      "sha256": "599ddee0f14b3627f475a328bd4ea2ed92ae5b7b5027bfa3973c2e8f187f7f23"
+    },
+    ".local/cli41-acceptance/check_cli_failure.py": {
+      "path": ".local/cli41-acceptance/check_cli_failure.py",
+      "bytes": 2028,
+      "sha256": "72cb85348d07110cd9a1fd2ecb4cfdc1a2b124542611c0b91ffb971993eafc1b"
+    },
+    ".local/cli41-regression/run.py": {
+      "path": ".local/cli41-regression/run.py",
+      "bytes": 7948,
+      "sha256": "69b45bae5d390239ec99f916bf8830441b2d93817c82bac6901ff34867a75881"
+    },
+    ".local/cli41-acceptance/finalize.py": {
+      "path": ".local/cli41-acceptance/finalize.py",
+      "bytes": 8904,
+      "sha256": "e884b55f89ce9fe42ae22359259bcb5af6b284871bef2ca26226b5d46d0ed540"
+    }
+  },
+  "review": "Read-only independent subagent reviewed prerequisite/tool semantics and new CLI runner. Separate subagent executed complete workspace current/MSRV and Python/generator checks.",
+  "boundaries": [
+    "Windows x86_64 MSVC only; cfg(unix) tests not run.",
+    "Seven formal library samples follow a full warmup; new-path first execution retained separately and historical >300 ms evidence unchanged.",
+    "CLI process/I/O measurements are separate from library budgets and have no invented numeric threshold.",
+    "No source data, production implementation, dependencies, lockfile, P0 expectations, historical evidence or adjacent checkout changed.",
+    "Both 0.2.0 packages remain publish=false. No real archive, package consumer, dry-run, registry upload, remote action or other-platform execution. CLI4.2 is next."
+  ]
+}

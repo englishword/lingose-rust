@@ -85,3 +85,10 @@
 /docs/cli-annotation-input-verification.json text eol=lf
 /docs/cli-annotation-output.md text eol=lf
 /docs/cli-annotation-output-verification.json text eol=lf
+/tools/check_cli_process.py text eol=lf
+/docs/full-differential-verification-0.2.0.json text eol=lf
+/docs/correctness-regression-verification-0.2.0.json text eol=lf
+/docs/performance-verification-0.2.0.json text eol=lf
+/docs/cli-process-verification-0.2.0.json text eol=lf
+/docs/cli-workspace-acceptance.md text eol=lf
+/docs/cli-workspace-acceptance-verification.json text eol=lf

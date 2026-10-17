@@ -1,0 +1,900 @@
+{
+  "artifacts": {
+    "corpus-10000.txt": {
+      "bytes": 92862,
+      "sha256": "8efef7b9731cd7f46059a10ef96368e8a2730e41f1e673bd325b24b2c66b2777"
+    },
+    "corpus-100000.txt": {
+      "bytes": 930474,
+      "sha256": "37c2864e135d8503dbda18c6ed4c5fb37c79bdd85e2e782093d6eae53de9fc58"
+    },
+    "python.bin": {
+      "bytes": 26413537,
+      "sha256": "eee2267dca3ef8c273ad1fbe422a71609dfcb4c378b77cb7b0fa3634e6f6aa49"
+    },
+    "reference-10000-skip-0.txt": {
+      "bytes": 120149,
+      "sha256": "30ad35578abaa08d490414a3586f723f21c7f2ff6cb271d26858771775bd1987"
+    },
+    "reference-10000-skip-1000.txt": {
+      "bytes": 117349,
+      "sha256": "742c494c846e5115f8065d1dedcaa42bf52f228dd1cc129db037682878ef2736"
+    },
+    "reference-10000-skip-5062.txt": {
+      "bytes": 112396,
+      "sha256": "e401f7acea654c0b175cee6c577b70fa0c299eebd95387d25ca405008d9f8daf"
+    },
+    "reference-100000-skip-0.txt": {
+      "bytes": 1203889,
+      "sha256": "3dd491a1391c3731e15a5e0b6d4cc5160b5b7b7d0fa9efeb72ad3699c7fc8e14"
+    },
+    "reference-100000-skip-1000.txt": {
+      "bytes": 1175457,
+      "sha256": "e76d143e2c50ee5394838ffc4a1169a769f8a243f8007bdf2e41b5ef2aa3c8f0"
+    },
+    "reference-100000-skip-5062.txt": {
+      "bytes": 1128337,
+      "sha256": "fa64804cc163e74b15a1c5985cf4142fbe89680e06b0b688dad0eb3a9f9b1499"
+    },
+    "requests.bin": {
+      "bytes": 57169598,
+      "sha256": "19628302fb9fd76cd837698847132e4d54a44bf6e0c9e3c4efbc2bedb637c197"
+    },
+    "rust.bin": {
+      "bytes": 26413537,
+      "sha256": "eee2267dca3ef8c273ad1fbe422a71609dfcb4c378b77cb7b0fa3634e6f6aa49"
+    }
+  },
+  "build_arguments": [
+    "cargo",
+    "build",
+    "--manifest-path",
+    "tools/differential-probe/Cargo.toml",
+    "--release",
+    "--offline",
+    "--locked"
+  ],
+  "capture_directory": ".local/p41-differential-dpvncxg4",
+  "cargo": "cargo 1.93.1 (083ac5135 2025-12-15)",
+  "comparison": "All typed values compared sequentially, then canonical full-result byte identities verified equal.",
+  "complete_category_lists": 25,
+  "coverage": {
+    "annotations": [
+      {
+        "case": "rules-0",
+        "input": {
+          "bytes": 62,
+          "sha256": "b2e687074ac6f6d31cf70575780bd565c16d35f434939a6cac6332785a78b257"
+        },
+        "output": {
+          "bytes": 90,
+          "sha256": "ca7ca1544b463a6a5771f6c31837e15853e4a021916d2c34478c7636944513f7"
+        },
+        "skip_top": 0
+      },
+      {
+        "case": "rules-0",
+        "input": {
+          "bytes": 62,
+          "sha256": "b2e687074ac6f6d31cf70575780bd565c16d35f434939a6cac6332785a78b257"
+        },
+        "output": {
+          "bytes": 67,
+          "sha256": "6230004bf0d0b2677756149aa13f70a1826f658ae2682d3e9512a3dc9ce353ff"
+        },
+        "skip_top": 1000
+      },
+      {
+        "case": "rules-0",
+        "input": {
+          "bytes": 62,
+          "sha256": "b2e687074ac6f6d31cf70575780bd565c16d35f434939a6cac6332785a78b257"
+        },
+        "output": {
+          "bytes": 62,
+          "sha256": "b2e687074ac6f6d31cf70575780bd565c16d35f434939a6cac6332785a78b257"
+        },
+        "skip_top": 5062
+      },
+      {
+        "case": "rules-1",
+        "input": {
+          "bytes": 83,
+          "sha256": "2dc3c4e28fbe05cd85cecb9a5e5d836ea205c21acacf018bfbc504bef94509ed"
+        },
+        "output": {
+          "bytes": 91,
+          "sha256": "a6bb12cf42fcc43e21462a5b251c47039aeaaadb137edeea922e629e9342cadd"
+        },
+        "skip_top": 0
+      },
+      {
+        "case": "rules-1",
+        "input": {
+          "bytes": 83,
+          "sha256": "2dc3c4e28fbe05cd85cecb9a5e5d836ea205c21acacf018bfbc504bef94509ed"
+        },
+        "output": {
+          "bytes": 87,
+          "sha256": "5bca0367e94e9d9ff70678a5179776a79088e9b75531815dfc091f320b9f2044"
+        },
+        "skip_top": 1000
+      },
+      {
+        "case": "rules-1",
+        "input": {
+          "bytes": 83,
+          "sha256": "2dc3c4e28fbe05cd85cecb9a5e5d836ea205c21acacf018bfbc504bef94509ed"
+        },
+        "output": {
+          "bytes": 87,
+          "sha256": "5bca0367e94e9d9ff70678a5179776a79088e9b75531815dfc091f320b9f2044"
+        },
+        "skip_top": 5062
+      },
+      {
+        "case": "rules-2",
+        "input": {
+          "bytes": 89,
+          "sha256": "a3f6277083f6c443d1a8333b4970e8a095d131f2fd27eb65a7bf0a55b7ec0c7f"
+        },
+        "output": {
+          "bytes": 118,
+          "sha256": "361f28b0f48fd9316a37e2535d6bd403a8b3d2e223ebd1d40f363627045e9d8d"
+        },
+        "skip_top": 0
+      },
+      {
+        "case": "rules-2",
+        "input": {
+          "bytes": 89,
+          "sha256": "a3f6277083f6c443d1a8333b4970e8a095d131f2fd27eb65a7bf0a55b7ec0c7f"
+        },
+        "output": {
+          "bytes": 112,
+          "sha256": "4fb6669be4b15fb0373d5c994f593b016eb11a6f2d3aed79d5694a5b85dd2dbe"
+        },
+        "skip_top": 1000
+      },
+      {
+        "case": "rules-2",
+        "input": {
+          "bytes": 89,
+          "sha256": "a3f6277083f6c443d1a8333b4970e8a095d131f2fd27eb65a7bf0a55b7ec0c7f"
+        },
+        "output": {
+          "bytes": 105,
+          "sha256": "284f97fad12a959db28b68a74147da7f561fb0f1785a26e39c4170509cbf457f"
+        },
+        "skip_top": 5062
+      },
+      {
+        "case": "rules-3",
+        "input": {
+          "bytes": 99,
+          "sha256": "3b8b7cd8a06122ef1ba6f9b88f6b2ffcad48267517e2db069d8a64e3ce5b0362"
+        },
+        "output": {
+          "bytes": 135,
+          "sha256": "313ebdf2d3189593e6e69bfa1511e49a33d8d5fee761b0db9d8a7accc4428740"
+        },
+        "skip_top": 0
+      },
+      {
+        "case": "rules-3",
+        "input": {
+          "bytes": 99,
+          "sha256": "3b8b7cd8a06122ef1ba6f9b88f6b2ffcad48267517e2db069d8a64e3ce5b0362"
+        },
+        "output": {
+          "bytes": 124,
+          "sha256": "d0618b7a3dde4062e85a698773cdb57947a476b717db693cef30cc259a0207b5"
+        },
+        "skip_top": 1000
+      },
+      {
+        "case": "rules-3",
+        "input": {
+          "bytes": 99,
+          "sha256": "3b8b7cd8a06122ef1ba6f9b88f6b2ffcad48267517e2db069d8a64e3ce5b0362"
+        },
+        "output": {
+          "bytes": 105,
+          "sha256": "d0f9b762e2cdb2dd02b2d566ff50ecfc15c746d178303d34beac214bc8136674"
+        },
+        "skip_top": 5062
+      },
+      {
+        "case": "rules-4",
+        "input": {
+          "bytes": 86,
+          "sha256": "b19e2be6a59ef5a61ae6ea88612bde6b36a4b6ecbae6536098b5803a7afd616a"
+        },
+        "output": {
+          "bytes": 106,
+          "sha256": "70eb95a0c6b43d99be189c4878512cd0de55da448ab915e1b6efc055064b0892"
+        },
+        "skip_top": 0
+      },
+      {
+        "case": "rules-4",
+        "input": {
+          "bytes": 86,
+          "sha256": "b19e2be6a59ef5a61ae6ea88612bde6b36a4b6ecbae6536098b5803a7afd616a"
+        },
+        "output": {
+          "bytes": 96,
+          "sha256": "6f1d2d62c97a7ff6d85173aff3d710ee45d4401ce5d8bdb2935070f10a201eed"
+        },
+        "skip_top": 1000
+      },
+      {
+        "case": "rules-4",
+        "input": {
+          "bytes": 86,
+          "sha256": "b19e2be6a59ef5a61ae6ea88612bde6b36a4b6ecbae6536098b5803a7afd616a"
+        },
+        "output": {
+          "bytes": 89,
+          "sha256": "acea776c1aec1a928ee1ce5d603f4a286565d02deed9a466897604f8a2bfbfa9"
+        },
+        "skip_top": 5062
+      },
+      {
+        "case": "rules-5",
+        "input": {
+          "bytes": 46,
+          "sha256": "44300f27a3317de01df3ab01728b97ae9387f8693725119bce557096f166b1c9"
+        },
+        "output": {
+          "bytes": 46,
+          "sha256": "44300f27a3317de01df3ab01728b97ae9387f8693725119bce557096f166b1c9"
+        },
+        "skip_top": 0
+      },
+      {
+        "case": "rules-5",
+        "input": {
+          "bytes": 46,
+          "sha256": "44300f27a3317de01df3ab01728b97ae9387f8693725119bce557096f166b1c9"
+        },
+        "output": {
+          "bytes": 46,
+          "sha256": "44300f27a3317de01df3ab01728b97ae9387f8693725119bce557096f166b1c9"
+        },
+        "skip_top": 1000
+      },
+      {
+        "case": "rules-5",
+        "input": {
+          "bytes": 46,
+          "sha256": "44300f27a3317de01df3ab01728b97ae9387f8693725119bce557096f166b1c9"
+        },
+        "output": {
+          "bytes": 46,
+          "sha256": "44300f27a3317de01df3ab01728b97ae9387f8693725119bce557096f166b1c9"
+        },
+        "skip_top": 5062
+      },
+      {
+        "case": "corpus-10000",
+        "input": {
+          "bytes": 92862,
+          "sha256": "8efef7b9731cd7f46059a10ef96368e8a2730e41f1e673bd325b24b2c66b2777"
+        },
+        "output": {
+          "bytes": 120149,
+          "sha256": "30ad35578abaa08d490414a3586f723f21c7f2ff6cb271d26858771775bd1987"
+        },
+        "skip_top": 0,
+        "words": 10000
+      },
+      {
+        "case": "corpus-10000",
+        "input": {
+          "bytes": 92862,
+          "sha256": "8efef7b9731cd7f46059a10ef96368e8a2730e41f1e673bd325b24b2c66b2777"
+        },
+        "output": {
+          "bytes": 117349,
+          "sha256": "742c494c846e5115f8065d1dedcaa42bf52f228dd1cc129db037682878ef2736"
+        },
+        "skip_top": 1000,
+        "words": 10000
+      },
+      {
+        "case": "corpus-10000",
+        "input": {
+          "bytes": 92862,
+          "sha256": "8efef7b9731cd7f46059a10ef96368e8a2730e41f1e673bd325b24b2c66b2777"
+        },
+        "output": {
+          "bytes": 112396,
+          "sha256": "e401f7acea654c0b175cee6c577b70fa0c299eebd95387d25ca405008d9f8daf"
+        },
+        "skip_top": 5062,
+        "words": 10000
+      },
+      {
+        "case": "corpus-100000",
+        "input": {
+          "bytes": 930474,
+          "sha256": "37c2864e135d8503dbda18c6ed4c5fb37c79bdd85e2e782093d6eae53de9fc58"
+        },
+        "output": {
+          "bytes": 1203889,
+          "sha256": "3dd491a1391c3731e15a5e0b6d4cc5160b5b7b7d0fa9efeb72ad3699c7fc8e14"
+        },
+        "skip_top": 0,
+        "words": 100000
+      },
+      {
+        "case": "corpus-100000",
+        "input": {
+          "bytes": 930474,
+          "sha256": "37c2864e135d8503dbda18c6ed4c5fb37c79bdd85e2e782093d6eae53de9fc58"
+        },
+        "output": {
+          "bytes": 1175457,
+          "sha256": "e76d143e2c50ee5394838ffc4a1169a769f8a243f8007bdf2e41b5ef2aa3c8f0"
+        },
+        "skip_top": 1000,
+        "words": 100000
+      },
+      {
+        "case": "corpus-100000",
+        "input": {
+          "bytes": 930474,
+          "sha256": "37c2864e135d8503dbda18c6ed4c5fb37c79bdd85e2e782093d6eae53de9fc58"
+        },
+        "output": {
+          "bytes": 1128337,
+          "sha256": "fa64804cc163e74b15a1c5985cf4142fbe89680e06b0b688dad0eb3a9f9b1499"
+        },
+        "skip_top": 5062,
+        "words": 100000
+      }
+    ],
+    "operations": {
+      "IPA": 50355,
+      "IPS": 50355,
+      "IPSM": 50355,
+      "ISM": 50355,
+      "annotate_ips": 2,
+      "annotate_ips_skip": 77,
+      "ipa": 50338,
+      "ips": 50338,
+      "ipsm": 50338,
+      "ism": 50338,
+      "kind": 50355,
+      "kind_list": 2,
+      "kind_list_with_label": 51,
+      "kind_with_label": 1208043,
+      "labels": 2,
+      "meaning": 50355,
+      "meaning_with_lang": 100676,
+      "root_lemma": 50355
+    },
+    "ordered_members_across_24_labels": 209759,
+    "p0_snapshot_ids": [
+      "snapshot-0001",
+      "snapshot-0002",
+      "snapshot-0003",
+      "snapshot-0004",
+      "snapshot-0005",
+      "snapshot-0006",
+      "snapshot-0007",
+      "snapshot-0008",
+      "snapshot-0009",
+      "snapshot-0010",
+      "snapshot-0011",
+      "snapshot-0012",
+      "snapshot-0013",
+      "snapshot-0014",
+      "snapshot-0015",
+      "snapshot-0016",
+      "snapshot-0017",
+      "snapshot-0018",
+      "snapshot-0019",
+      "snapshot-0020",
+      "snapshot-0021",
+      "snapshot-0022",
+      "snapshot-0023",
+      "snapshot-0024",
+      "snapshot-0025",
+      "snapshot-0026",
+      "snapshot-0027",
+      "snapshot-0028",
+      "snapshot-0029",
+      "snapshot-0030",
+      "snapshot-0031",
+      "snapshot-0032",
+      "snapshot-0033",
+      "snapshot-0034",
+      "snapshot-0035",
+      "snapshot-0036",
+      "snapshot-0037",
+      "snapshot-0038",
+      "snapshot-0039",
+      "snapshot-0040",
+      "snapshot-0041",
+      "snapshot-0042",
+      "snapshot-0043",
+      "snapshot-0044",
+      "snapshot-0045",
+      "snapshot-0046",
+      "snapshot-0047",
+      "snapshot-0048",
+      "snapshot-0049",
+      "snapshot-0050",
+      "snapshot-0051",
+      "snapshot-0052",
+      "snapshot-0053",
+      "snapshot-0054",
+      "snapshot-0055",
+      "snapshot-0056",
+      "snapshot-0057",
+      "snapshot-0058",
+      "snapshot-0059",
+      "snapshot-0060",
+      "snapshot-0061",
+      "snapshot-0062",
+      "snapshot-0063",
+      "snapshot-0064",
+      "snapshot-0065",
+      "snapshot-0066",
+      "snapshot-0067",
+      "snapshot-0068",
+      "snapshot-0069",
+      "snapshot-0070",
+      "snapshot-0071",
+      "snapshot-0072",
+      "snapshot-0073",
+      "snapshot-0074",
+      "snapshot-0075",
+      "snapshot-0076",
+      "snapshot-0077",
+      "snapshot-0078",
+      "snapshot-0079",
+      "snapshot-0080",
+      "snapshot-0081",
+      "snapshot-0082",
+      "snapshot-0083",
+      "snapshot-0084",
+      "snapshot-0085",
+      "snapshot-0086",
+      "snapshot-0087",
+      "snapshot-0088",
+      "snapshot-0089",
+      "snapshot-0090",
+      "snapshot-0091",
+      "snapshot-0092",
+      "snapshot-0093",
+      "snapshot-0094",
+      "snapshot-0095",
+      "snapshot-0096",
+      "snapshot-0097",
+      "snapshot-0098",
+      "snapshot-0099",
+      "snapshot-0100",
+      "snapshot-0101",
+      "snapshot-0102",
+      "snapshot-0103",
+      "snapshot-0104",
+      "snapshot-0105",
+      "snapshot-0106",
+      "snapshot-0107",
+      "snapshot-0108",
+      "snapshot-0109",
+      "snapshot-0110",
+      "snapshot-0111",
+      "snapshot-0112",
+      "snapshot-0113",
+      "snapshot-0114",
+      "snapshot-0115",
+      "snapshot-0116",
+      "snapshot-0117",
+      "snapshot-0118",
+      "snapshot-0119",
+      "snapshot-0120",
+      "snapshot-0121",
+      "snapshot-0122",
+      "snapshot-0123",
+      "snapshot-0124",
+      "snapshot-0125",
+      "snapshot-0126",
+      "snapshot-0127",
+      "snapshot-0128",
+      "snapshot-0129",
+      "snapshot-0130",
+      "snapshot-0131",
+      "snapshot-0132",
+      "snapshot-0133",
+      "snapshot-0134",
+      "snapshot-0135",
+      "snapshot-0136",
+      "snapshot-0137",
+      "snapshot-0138",
+      "snapshot-0139",
+      "snapshot-0140",
+      "snapshot-0141",
+      "snapshot-0142",
+      "snapshot-0143",
+      "snapshot-0144",
+      "snapshot-0145",
+      "snapshot-0146",
+      "snapshot-0147",
+      "snapshot-0148",
+      "snapshot-0149",
+      "snapshot-0150",
+      "snapshot-0151",
+      "snapshot-0152",
+      "snapshot-0153",
+      "snapshot-0154",
+      "snapshot-0155",
+      "snapshot-0156",
+      "snapshot-0157",
+      "snapshot-0158",
+      "snapshot-0161",
+      "snapshot-0162",
+      "snapshot-0163",
+      "snapshot-0164",
+      "snapshot-0167",
+      "snapshot-0168",
+      "snapshot-0169",
+      "snapshot-0170",
+      "snapshot-0173",
+      "snapshot-0174",
+      "snapshot-0175",
+      "snapshot-0176",
+      "snapshot-0179",
+      "snapshot-0180",
+      "snapshot-0181",
+      "snapshot-0182",
+      "snapshot-0185",
+      "snapshot-0186",
+      "snapshot-0187",
+      "snapshot-0188",
+      "snapshot-0191",
+      "snapshot-0192",
+      "snapshot-0193",
+      "snapshot-0194",
+      "snapshot-0197",
+      "snapshot-0198",
+      "snapshot-0200",
+      "snapshot-0201",
+      "snapshot-0202",
+      "snapshot-0203",
+      "snapshot-0204",
+      "snapshot-0205",
+      "snapshot-0208",
+      "snapshot-0209",
+      "snapshot-0210",
+      "snapshot-0211",
+      "snapshot-0212",
+      "snapshot-0213",
+      "snapshot-0214",
+      "snapshot-0215",
+      "snapshot-0216",
+      "snapshot-0217",
+      "snapshot-0218",
+      "snapshot-0219",
+      "snapshot-0220",
+      "snapshot-0221",
+      "snapshot-0222",
+      "snapshot-0223",
+      "snapshot-0224",
+      "snapshot-0225",
+      "snapshot-0226",
+      "snapshot-0227",
+      "snapshot-0228",
+      "snapshot-0229",
+      "snapshot-0230",
+      "snapshot-0231",
+      "snapshot-0232",
+      "snapshot-0233",
+      "snapshot-0234",
+      "snapshot-0235",
+      "snapshot-0236",
+      "snapshot-0237",
+      "snapshot-0238",
+      "snapshot-0239",
+      "snapshot-0240",
+      "snapshot-0241",
+      "snapshot-0242",
+      "snapshot-0243",
+      "snapshot-0244",
+      "snapshot-0245",
+      "snapshot-0246",
+      "snapshot-0247",
+      "snapshot-0248",
+      "snapshot-0249",
+      "snapshot-0250",
+      "snapshot-0251",
+      "snapshot-0252",
+      "snapshot-0253",
+      "snapshot-0254",
+      "snapshot-0255",
+      "snapshot-0256",
+      "snapshot-0257",
+      "snapshot-0258",
+      "snapshot-0259",
+      "snapshot-0260",
+      "snapshot-0263",
+      "snapshot-0267"
+    ],
+    "p0_type_domain_exclusions": [
+      "snapshot-0159",
+      "snapshot-0160",
+      "snapshot-0165",
+      "snapshot-0166",
+      "snapshot-0171",
+      "snapshot-0172",
+      "snapshot-0177",
+      "snapshot-0178",
+      "snapshot-0183",
+      "snapshot-0184",
+      "snapshot-0189",
+      "snapshot-0190",
+      "snapshot-0195",
+      "snapshot-0196",
+      "snapshot-0199",
+      "snapshot-0206",
+      "snapshot-0207",
+      "snapshot-0261",
+      "snapshot-0262",
+      "snapshot-0264",
+      "snapshot-0265",
+      "snapshot-0266",
+      "snapshot-0268"
+    ],
+    "total": 1862690
+  },
+  "differences": 0,
+  "executable": {
+    "bytes": 10791936,
+    "sha256": "89fc6946eabd719a9e59ea0acb2081be946bd259831b8b576ff03787ee17bf53"
+  },
+  "full_exact_keys": 50335,
+  "inputs": {
+    "Cargo.lock": {
+      "bytes": 5797,
+      "sha256": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e"
+    },
+    "Cargo.toml": {
+      "bytes": 240,
+      "sha256": "2c7d78c0cb89af8501739a315db12692f4141b8c70815a6fcdbad0dab7cb253b"
+    },
+    "crates/lingose-cli/Cargo.toml": {
+      "bytes": 809,
+      "sha256": "e50128430cf34e3da846eb17a97e5924ea39ddff7a9dbf14f34874f14abb788f"
+    },
+    "crates/lingose-cli/src/main.rs": {
+      "bytes": 12480,
+      "sha256": "b4a793a06b79443b9a185acd9fc35a22d50f31fde8c1922b0615786f4037d953"
+    },
+    "crates/lingose/Cargo.toml": {
+      "bytes": 945,
+      "sha256": "4e1e4c9532ef7e5b1f57da9173f133c54b0cf039e30e5b8d2a5fcd3cc7193101"
+    },
+    "crates/lingose/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "crates/lingose/README.md": {
+      "bytes": 9929,
+      "sha256": "e59be46ebbf4111c1144d23d04774bc21baf3db4d0ae7c7a336eb31e401b20b0"
+    },
+    "crates/lingose/SOURCES.md": {
+      "bytes": 1445,
+      "sha256": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5"
+    },
+    "crates/lingose/data/frequency.bin": {
+      "bytes": 200272,
+      "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+    },
+    "crates/lingose/data/lexicon.bin": {
+      "bytes": 10259743,
+      "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+    },
+    "crates/lingose/data/manifest.json": {
+      "bytes": 3900,
+      "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+    },
+    "crates/lingose/src/annotation.rs": {
+      "bytes": 19775,
+      "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+    },
+    "crates/lingose/src/annotation_context_vectors.rs": {
+      "bytes": 321810,
+      "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+    },
+    "crates/lingose/src/annotation_frequency_vectors.rs": {
+      "bytes": 24615,
+      "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+    },
+    "crates/lingose/src/annotation_unicode.rs": {
+      "bytes": 3734,
+      "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+    },
+    "crates/lingose/src/annotation_unicode_tables.rs": {
+      "bytes": 40416,
+      "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+    },
+    "crates/lingose/src/annotation_vectors.rs": {
+      "bytes": 65657,
+      "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+    },
+    "crates/lingose/src/category.rs": {
+      "bytes": 1653,
+      "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+    },
+    "crates/lingose/src/data/annotation_context_vectors.rs": {
+      "bytes": 37586,
+      "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+    },
+    "crates/lingose/src/data/annotation_frequency_vectors.rs": {
+      "bytes": 87772,
+      "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+    },
+    "crates/lingose/src/data/annotation_tests.rs": {
+      "bytes": 3391,
+      "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+    },
+    "crates/lingose/src/data/cache_tests.rs": {
+      "bytes": 22365,
+      "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+    },
+    "crates/lingose/src/data/category_tests.rs": {
+      "bytes": 4243,
+      "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+    },
+    "crates/lingose/src/data/image.rs": {
+      "bytes": 15144,
+      "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+    },
+    "crates/lingose/src/data/mod.rs": {
+      "bytes": 6395,
+      "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+    },
+    "crates/lingose/src/data/p41_joint_error_tests.rs": {
+      "bytes": 4967,
+      "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+    },
+    "crates/lingose/src/data/p41_query_fixture_tests.rs": {
+      "bytes": 62352,
+      "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+    },
+    "crates/lingose/src/data/tests.rs": {
+      "bytes": 24506,
+      "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+    },
+    "crates/lingose/src/data_meta.rs": {
+      "bytes": 1531,
+      "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+    },
+    "crates/lingose/src/error.rs": {
+      "bytes": 2127,
+      "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+    },
+    "crates/lingose/src/lib.rs": {
+      "bytes": 5142,
+      "sha256": "661ea94997dcdb0d7a994a900acb1dbc6c3e0b897804d495beb3c90389d5ca12"
+    },
+    "crates/lingose/src/query.rs": {
+      "bytes": 1207,
+      "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+    },
+    "crates/lingose/src/query_case.rs": {
+      "bytes": 5074,
+      "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+    },
+    "crates/lingose/src/query_case_tables.rs": {
+      "bytes": 52751,
+      "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+    },
+    "crates/lingose/src/validation.rs": {
+      "bytes": 1624,
+      "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+    },
+    "crates/lingose/third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    },
+    "docs/layout-probe-results.json": {
+      "bytes": 93875,
+      "sha256": "981736620f03435decd4613f89233bd68169c8c0e404a30af262591d3eed8c2a"
+    },
+    "docs/performance-budget.json": {
+      "bytes": 1967,
+      "sha256": "3f54b4d54240eb8039cb461829c76d2ccd2cda7fe6cb4060b013d5d882cd4e82"
+    },
+    "docs/reference-baseline.json": {
+      "bytes": 54162,
+      "sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
+    },
+    "tests/fixtures/python-api-v1.json": {
+      "bytes": 118971,
+      "sha256": "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1"
+    },
+    "tools/check_full_differential.py": {
+      "bytes": 19292,
+      "sha256": "9fb8955758335b0348b1e87bfffc01e7deaa7c49a457ee2b90b69fbc52a654be"
+    },
+    "tools/differential-probe/Cargo.lock": {
+      "bytes": 2488,
+      "sha256": "2d1deee6bf72249ff2ee8cc24966a097113ddba161d23d72c8c6d07b42e029c5"
+    },
+    "tools/differential-probe/Cargo.toml": {
+      "bytes": 185,
+      "sha256": "9e8e1d8b69d342dab59705d9b557c16b0b37d280eaaff5e23952af93d7a5a6d7"
+    },
+    "tools/differential-probe/src/main.rs": {
+      "bytes": 4490,
+      "sha256": "d0a878f81836f811d6a09d452d71482d0e13a69bc58a2ad248584bbfc62add05"
+    },
+    "tools/generate_annotation_vectors.py": {
+      "bytes": 15473,
+      "sha256": "05abef72af7368c46379e5806c6a8a3931e924b9b8e4e674f472182a3932a478"
+    },
+    "tools/generate_error_vectors.py": {
+      "bytes": 12800,
+      "sha256": "5a88501e8cdc5ab63ddc47c1928a4f8103f9a58ff01f500e935dcf416d7f3365"
+    },
+    "tools/reference.py": {
+      "bytes": 10351,
+      "sha256": "c583d04fdbd17ad3b1b00f4a8f7efb55f421a48f2cfebf221ed22317ed908ba0"
+    }
+  },
+  "labels": [
+    "OXFORD_3000",
+    "OXFORD_5000",
+    "CET4",
+    "CET6",
+    "CET4_CET6",
+    "IELTS",
+    "TEM-4",
+    "TEM-8",
+    "TOEFL",
+    "SAT",
+    "GMAT",
+    "GRE",
+    "BEC",
+    "Primary",
+    "Junior",
+    "Senior",
+    "College",
+    "COCA_20000",
+    "White",
+    "Yellow",
+    "Green",
+    "Blue",
+    "Red",
+    "Black"
+  ],
+  "oracle_adapter": "Unmodified installed public wrappers, aliases mapped to uppercase; validated read-only connection reused, original _lookup memoized only for current word; no exporter expectations.",
+  "ordered_members_across_24_labels": 209759,
+  "phase": "P4.1",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": {
+    "executable": "D:\\Python\\Python312\\python.exe",
+    "platform": "win32",
+    "python": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+    "sqlite_version": "3.45.3",
+    "unicode_version": "15.0.0"
+  },
+  "queries_per_key": 37,
+  "reference_unchanged": true,
+  "runtime_files": [
+    "lingose-differential-probe.exe",
+    "requests.bin",
+    "rust.bin"
+  ],
+  "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)\nbinary: rustc\ncommit-hash: 01f6ddf7588f42ae2d7eb0a2f21d44e8e96674cf\ncommit-date: 2026-02-11\nhost: x86_64-pc-windows-msvc\nrelease: 1.93.1\nLLVM version: 21.1.8",
+  "scope": "Complete public result values, lists and texts; no performance, MSRV, package or publication acceptance.",
+  "smoke_only": false,
+  "word_keys": {
+    "bytes": 466071,
+    "sha256": "c7ae6d79a5dfef168a25bd49b59c8f9aa22737af43f411c26489eb6d4042dba6"
+  }
+}
