@@ -18,16 +18,16 @@ import tempfile
 import unicodedata
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference import (BASELINE, ROOT, connect, installed, main_error, no_restore,
+from reference import (BASELINE, ROOT, LIB_ROOT, connect, installed, main_error, no_restore,
                        require, require_baseline, sha256)
 from generate_annotation_vectors import (BASELINE_SHA256, SOURCE, SOURCE_SHA256,
                                          header, persist, string, unique)
 from generate_annotation_context_vectors import available, blocked, fallback
 from capture_api_vectors import build_fixture, fixture_paths, integer_argument
 
-HELPER_TARGET = ROOT / "src/annotation_frequency_vectors.rs"
-PUBLIC_TARGET = ROOT / "tests/annotation_frequency_vectors.rs"
-WIRE_TARGET = ROOT / "src/data/annotation_frequency_vectors.rs"
+HELPER_TARGET = LIB_ROOT / "src/annotation_frequency_vectors.rs"
+PUBLIC_TARGET = LIB_ROOT / "tests/annotation_frequency_vectors.rs"
+WIRE_TARGET = LIB_ROOT / "src/data/annotation_frequency_vectors.rs"
 I64_MAX = (1 << 63) - 1
 I64_MIN = -(1 << 63)
 

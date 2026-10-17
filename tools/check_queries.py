@@ -22,7 +22,7 @@ import sys
 import tempfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference import (ROOT, file_record, fingerprints, json_text, main_error,
+from reference import (ROOT, workspace_inputs, evidence_output, file_record, fingerprints, json_text, main_error,
                        require, require_baseline)
 
 
@@ -37,11 +37,12 @@ def run(arguments, directory, environment):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     mode = parser.add_mutually_exclusive_group()
-    mode.add_argument("--categories", action="store_true", help="Verify P2.4 and write category-verification.json")
-    mode.add_argument("--annotation", action="store_true", help="Verify P3.1 and write annotation-verification.json")
-    mode.add_argument("--annotation-context", action="store_true", help="Verify P3.2 and write annotation-context-verification.json")
-    mode.add_argument("--annotation-frequency", action="store_true", help="Verify P3.3 and write annotation-frequency-verification.json")
+    mode.add_argument("--categories", action="store_true", help="Verify all category regressions")
+    mode.add_argument("--annotation", action="store_true", help="Verify direct annotation regressions")
+    mode.add_argument("--annotation-context", action="store_true", help="Verify contextual annotation regressions")
+    mode.add_argument("--annotation-frequency", action="store_true", help="Verify frequency annotation regressions")
     mode.add_argument("--full-correctness", action="store_true", help="Verify P4.1 error fixtures and all regressions in isolated release binaries")
+    parser.add_argument("--output", type=Path, help="New evidence path; old reports cannot be replaced")
     args = parser.parse_args()
     frequency = args.annotation_frequency or args.full_correctness
     context = args.annotation_context or frequency
@@ -57,6 +58,8 @@ def main():
         test_names.append("annotation_context_vectors")
     if frequency:
         test_names.append("annotation_frequency_vectors")
+    report = "correctness-regression" if args.full_correctness else "annotation-frequency" if frequency else "annotation-context" if args.annotation_context else "annotation" if args.annotation else "category" if args.categories else "query"
+    report_path = evidence_output(args.output or ROOT / f"docs/{report}-verification-0.2.0.json")
     before = require_baseline()["fingerprints"]
     local = ROOT / ".local"
     local.mkdir(exist_ok=True)
@@ -65,10 +68,7 @@ def main():
     checkout, runtime = directory / "checkout", directory / "runtime"
     checkout.mkdir()
     runtime.mkdir()
-    names = ["Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "SOURCES.md",
-             "data/lexicon.bin", "data/frequency.bin", "third_party/unicode/LICENSE.txt"]
-    names += [f"tests/{name}.rs" for name in test_names]
-    names += [path.relative_to(ROOT).as_posix() for path in sorted((ROOT / "src").rglob("*.rs"))]
+    names = workspace_inputs(test_names)
     if args.full_correctness:
         names += ["tools/check_queries.py", "tools/generate_error_vectors.py"]
     identities = {}
@@ -81,7 +81,7 @@ def main():
     environment = os.environ.copy()
     environment["CARGO_HOME"] = str(local / "cargo-home")
     environment["CARGO_TARGET_DIR"] = str(local / "query-target")
-    arguments = ["cargo", "test", "--offline", "--locked", "--release", "--all-features",
+    arguments = ["cargo", "test", "--offline", "--locked", "--release", "--all-features", "-p", "lingose",
                  "--lib", "--tests", "--no-run", "--message-format=json"]
     built = run(arguments, checkout, environment)
     artifacts = [json.loads(line) for line in built.stdout.splitlines() if line.startswith("{")]
@@ -160,8 +160,7 @@ def main():
             "cached_lexicon_frequency_data_version_combinations": 4,
             "fully_skipped_english_main_error_variants": 2,
         }
-    report = "correctness-regression-verification.json" if args.full_correctness else "annotation-frequency-verification.json" if frequency else "annotation-context-verification.json" if args.annotation_context else "annotation-verification.json" if args.annotation else "category-verification.json" if args.categories else "query-verification.json"
-    (ROOT / "docs" / report).write_text(json_text(evidence), encoding="utf-8", newline="\n")
+    report_path.write_text(json_text(evidence), encoding="utf-8", newline="\n")
     print(f"{phase} isolated offline release checks passed; reference and copied inputs unchanged")
 
 

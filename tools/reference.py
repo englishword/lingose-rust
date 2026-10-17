@@ -14,6 +14,7 @@ import sys
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
+LIB_ROOT = ROOT / "crates/lingose"
 BASELINE = ROOT / "docs/reference-baseline.json"
 MODULES = ("__init__.py", "query.py", "annotation.py", "_resources.py",
            "_packed.py", "types.py", "ranking.py")
@@ -41,6 +42,62 @@ def sha256(path: Path) -> str:
 def file_record(path: Path) -> dict:
     require(path.is_file(), f"Missing reference file: {path}")
     return {"bytes": path.stat().st_size, "sha256": sha256(path)}
+
+
+def artifact_path(name: str, directory: Path = ROOT) -> Path:
+    """Map legacy artifact keys without changing frozen manifests/provenance.
+
+    Alternate output directories retain the original artifact-relative layout.
+    Repository documentation and the P0 JSON fixture remain repository-owned.
+    """
+    relative = Path(name)
+    require(bool(relative.parts) and not relative.drive and not relative.is_absolute()
+            and ".." not in relative.parts, "Unsafe artifact key")
+    library = relative.parts[0] in ("src", "data", "third_party") or (
+        relative.parts[0] == "tests" and relative.suffix == ".rs")
+    return (LIB_ROOT if directory == ROOT and library else directory) / relative
+
+
+def workspace_inputs(test_names=(), probe=None) -> list[str]:
+    """Minimal byte-preserving workspace snapshot; never rewrite its lockfile."""
+    names = ["Cargo.toml", "Cargo.lock", "crates/lingose-cli/Cargo.toml"]
+    names += [path.relative_to(ROOT).as_posix()
+              for path in sorted((ROOT / "crates/lingose-cli/src").rglob("*.rs"))]
+    names += [(LIB_ROOT / name).relative_to(ROOT).as_posix() for name in (
+        "Cargo.toml", "README.md", "LICENSE", "SOURCES.md", "data/lexicon.bin",
+        "data/frequency.bin", "third_party/unicode/LICENSE.txt")]
+    names += [path.relative_to(ROOT).as_posix() for path in sorted((LIB_ROOT / "src").rglob("*.rs"))]
+    names += [(LIB_ROOT / f"tests/{name}.rs").relative_to(ROOT).as_posix() for name in test_names]
+    if probe:
+        names += [f"{probe}/{name}" for name in ("Cargo.toml", "Cargo.lock", "src/main.rs")]
+    return names
+
+
+def evidence_output(path: Path) -> Path:
+    """New evidence must stay in the checkout and must not replace old results."""
+    path = path.resolve()
+    require(path.is_relative_to(ROOT.resolve()), "Evidence output must remain in project")
+    require(not path.exists(), "Use a new evidence path; prior results are immutable")
+    return path
+
+
+def check_historical_generator(name: str, generated: bytes, recorded: bytes) -> None:
+    """Compare regenerated metadata while independently authenticating its old generator.
+
+    33e72c9 is the completed 0.1.0 checkout, before workspace/path adaptations.
+    Only generator identity may differ; tables and all other provenance stay exact.
+    """
+    current, historical = json.loads(generated), json.loads(recorded)
+    identity = historical["generator"]
+    require(identity["path"] == current["generator"]["path"], f"Historical generator path drift: {name}")
+    source = subprocess.run(["git", "show", f"33e72c9:{identity['path']}"], cwd=ROOT,
+                            capture_output=True, check=True).stdout
+    require({"bytes": len(source), "sha256": hashlib.sha256(source).hexdigest()} ==
+            {key: identity[key] for key in ("bytes", "sha256")},
+            f"Historical generator identity drift: {name}")
+    current.pop("generator")
+    historical.pop("generator")
+    require(current == historical, f"Historical provenance drift: {name}")
 
 
 def no_journals(path: Path) -> None:

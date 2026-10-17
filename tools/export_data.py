@@ -17,7 +17,7 @@ import struct
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference import (BASELINE, ROOT, canonical, connect, file_record, fingerprints,
+from reference import (BASELINE, ROOT, LIB_ROOT, canonical, connect, file_record, fingerprints,
                        installed, json_text, main_error, no_restore, require,
                        require_baseline, sha256)
 
@@ -364,10 +364,10 @@ def main():
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--write", action="store_true")
     mode.add_argument("--check", action="store_true")
-    parser.add_argument("--output", type=Path, default=ROOT, help="Artifact root; alternate roots must be under .local")
+    parser.add_argument("--output", type=Path, default=LIB_ROOT, help="Artifact root; alternate roots must be under .local")
     args = parser.parse_args()
     directory = args.output.resolve()
-    require(directory == ROOT or directory.is_relative_to(ROOT / ".local"), "Export root must be this project or its .local")
+    require(directory == LIB_ROOT or directory.is_relative_to(ROOT / ".local"), "Export root must be the library crate or project .local")
     artifacts = guarded_artifacts()
     # Validate independently before writing, including all structural invariants.
     from verify_data import decode

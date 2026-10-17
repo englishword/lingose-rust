@@ -30,10 +30,11 @@
   - 将三个开发探针显式隔离并更新库 path 依赖，保留独立锁文件/profile；CLI 依赖库同时声明本地 path 与版本约束。
   - 验收：metadata 仅显示两个正式成员；库最小构建及现有 Rust 测试通过，CLI 脚手架可构建；数据、固定向量期望值、Unicode 表和许可证内容身份不变。必要的 README/声明路径调整单独记录，不静默改写受保护来源原文。
   - 结果与边界：[迁移记录](../docs/workspace-migration.md)及[独立证据](../docs/workspace-migration-verification.json)。38 文件原字节迁移，两个包均 0.2.0；现有 102 Rust / 5 文档测试、fmt、Clippy、文档、Rust 1.85 编译、探针隔离和仓库外离线示例通过。两包保持 publish=false，CLI 是退出 1 的脚手架，工具适配与接口更名留后续阶段。
-- [ ] CLI1.2 适配开发工具和版本相关路径假设。
+- [x] CLI1.2 适配开发工具和版本相关路径假设。
   - 依赖：CLI1.1。区分仓库根与库 crate 根，适配导出/验证器、向量生成器、loader/query/differential/performance 工具、打包工具和其测试；消除旧根 `[package]`、`src/data/tests`、0.1.0 归档前缀假设。
   - 历史收据、0.1.0 专用消费者/注册表工具保留身份；新版新增独立消费入口及证据，旧布局复验从历史提交隔离检出。
   - 验收：相关 Python 回归、受保护产物只读 check、当前库验证通过；差分/性能探针独立 locked 构建，layout 探针按原互斥 feature 单独验证，不使用 all-features。新结果不覆盖旧报告。
+  - 结果与边界：[工具迁移说明](../docs/workspace-tools.md)及[独立证据](../docs/workspace-tools-verification.json)。90 Python、102 Rust、5 文档测试通过；基线/全部生成器只读检查、50,335 条完整数据核验、隔离库回归、881 项差分 smoke、workspace 检查及独立探针构建通过。101 受保护文件摘要不变；新版包入口仅做清单检查，完整新版差分/性能与真实归档留 CLI4。
 
 ## CLI2：库接口更名
 

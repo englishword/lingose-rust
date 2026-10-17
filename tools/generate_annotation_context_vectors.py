@@ -19,15 +19,15 @@ import tempfile
 import unicodedata
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference import (BASELINE, ROOT, installed, main_error, no_restore,
+from reference import (BASELINE, ROOT, LIB_ROOT, installed, main_error, no_restore,
                        require, require_baseline, sha256)
 from generate_annotation_vectors import (BASELINE_SHA256, SOURCE, SOURCE_SHA256,
                                          header, persist, string, unique)
 from capture_api_vectors import build_fixture, fixture_paths
 
-HELPER_TARGET = ROOT / "src/annotation_context_vectors.rs"
-PUBLIC_TARGET = ROOT / "tests/annotation_context_vectors.rs"
-WIRE_TARGET = ROOT / "src/data/annotation_context_vectors.rs"
+HELPER_TARGET = LIB_ROOT / "src/annotation_context_vectors.rs"
+PUBLIC_TARGET = LIB_ROOT / "tests/annotation_context_vectors.rs"
+WIRE_TARGET = LIB_ROOT / "src/data/annotation_context_vectors.rs"
 
 
 def zero_annotation_rows(fixture: dict, source: str) -> list[dict]:

@@ -17,15 +17,15 @@ import sys
 import unicodedata
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference import (BASELINE, ROOT, canonical, installed, main_error,
+from reference import (BASELINE, ROOT, LIB_ROOT, canonical, installed, main_error,
                        no_restore, require, require_baseline, sha256)
 
 SOURCE = ROOT / "tests/fixtures/python-api-v1.json"
 SOURCE_SHA256 = "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1"
 BASELINE_SHA256 = "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
 P0_IDS = ("snapshot-0217", "snapshot-0220", "snapshot-0235", "snapshot-0241", "snapshot-0250")
-HELPER_TARGET = ROOT / "src/annotation_vectors.rs"
-PUBLIC_TARGET = ROOT / "tests/annotation_vectors.rs"
+HELPER_TARGET = LIB_ROOT / "src/annotation_vectors.rs"
+PUBLIC_TARGET = LIB_ROOT / "tests/annotation_vectors.rs"
 
 
 def string(value: str) -> str:

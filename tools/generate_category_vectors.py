@@ -14,11 +14,11 @@ import subprocess
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference import ROOT, main_error, require, sha256
+from reference import ROOT, LIB_ROOT, main_error, require, sha256
 
 SOURCE = ROOT / "tests/fixtures/python-api-v1.json"
 SOURCE_SHA256 = "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1"
-TARGET = ROOT / "tests/category_vectors.rs"
+TARGET = LIB_ROOT / "tests/category_vectors.rs"
 
 
 def string(value: str) -> str:

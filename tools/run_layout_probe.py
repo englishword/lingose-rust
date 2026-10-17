@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from reference import ROOT, fingerprints, json_text, main_error, no_restore, require, require_baseline
 
 CANDIDATES = ("static", "static-hash", "gzip", "hash")
-DATA = ROOT/".local/layout"
+DATA = ROOT/".local/layout-020"
 
 
 class Counters(ctypes.Structure):
@@ -163,7 +163,7 @@ def main():
     require(args.repeats >= 5 and args.python_repeats >= 1, "Insufficient measurement repetitions")
     destination = args.output.resolve()
     require(destination.is_relative_to(ROOT), "Evidence output must remain in project")
-    require(not destination.exists(), "Use a new output path to preserve prior measurements")
+    require(not destination.exists() and not destination.with_suffix(".raw.json").exists(), "Use a new output path to preserve prior measurements")
     manifest = json.loads((DATA/"manifest.json").read_text(encoding="utf-8"))
     for name,identity in manifest["artifacts"].items():
         value = (DATA/name).read_bytes()
@@ -229,7 +229,7 @@ def main():
             for path in [ROOT/"tools/prepare_layout_probe.py",ROOT/"tools/run_layout_probe.py",ROOT/"tools/layout-probe/Cargo.toml",ROOT/"tools/layout-probe/Cargo.lock",*sorted((ROOT/"tools/layout-probe/src").glob("*.rs"))]}}
     destination.parent.mkdir(parents=True,exist_ok=True)
     destination.write_text(json_text(report),encoding="utf-8",newline="\n")
-    (DATA/"raw-measurements.json").write_text(json_text(records),encoding="utf-8",newline="\n")
+    (destination.with_suffix(".raw.json")).write_text(json_text(records),encoding="utf-8",newline="\n")
     print(f"Saved {destination}",flush=True)
 
 

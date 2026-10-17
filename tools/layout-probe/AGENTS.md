@@ -3,7 +3,7 @@
 This subtree is a separate, unpublished Cargo workspace, excluded from the
 production crate. Prepare the guarded full-data inputs with
 `python -I -B -X utf8 tools/prepare_layout_probe.py --write` from the project root
-before compiling; its include_bytes inputs live under the ignored `.local/layout`.
+before compiling; its include_bytes inputs live under the ignored `.local/layout-020`.
 
 Enable exactly one of `static`, `static-hash`, `gzip`, or `hash`. Do not run
 `--all-features`: candidates are intentionally mutually exclusive. Use

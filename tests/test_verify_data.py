@@ -14,7 +14,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
-from reference import ReferenceError
+from reference import ReferenceError, LIB_ROOT
 from verify_data import NULL, ROOT, _identity, check_metadata, decode, read_json
 
 VERSIONS = ("11" * 32, "22" * 32)
@@ -228,8 +228,8 @@ class MetadataSemanticGuards(unittest.TestCase):
         for name in ("data/SOURCES.json", "data/UPSTREAM-SOURCES.md", "src/data_meta.rs"):
             target = self.directory / name
             target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(ROOT / name, target)
-        self.manifest = read_json(ROOT / "data/manifest.json")
+            shutil.copyfile(LIB_ROOT / name, target)
+        self.manifest = read_json(LIB_ROOT / "data/manifest.json")
         self.baseline = read_json(ROOT / "docs/reference-baseline.json")
 
     def check(self):

@@ -21,7 +21,7 @@ import tempfile
 import time
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference import ROOT, file_record, json_text, main_error, require
+from reference import ROOT, workspace_inputs, evidence_output, file_record, json_text, main_error, require
 
 PROBE = "data::cache_tests::cold_process_loader_probe"
 
@@ -47,9 +47,7 @@ def measure(repeats):
     checkout, runtime = directory / "checkout", directory / "runtime"
     checkout.mkdir()
     runtime.mkdir()
-    names = ["Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "SOURCES.md"]
-    names += [path.relative_to(ROOT).as_posix() for path in sorted((ROOT / "src").rglob("*.rs"))]
-    names += ["data/lexicon.bin", "data/frequency.bin"]
+    names = workspace_inputs()
     identities = {}
     for name in names:
         original, copied = ROOT / name, checkout / name
@@ -60,7 +58,7 @@ def measure(repeats):
     environment = os.environ.copy()
     environment["CARGO_HOME"] = str(local / "cargo-home")
     environment["CARGO_TARGET_DIR"] = str(local / "loader-target")
-    command = ["cargo", "test", "--offline", "--locked", "--release", "--lib",
+    command = ["cargo", "test", "--offline", "--locked", "--release", "-p", "lingose", "--lib",
                "--no-run", "--message-format=json"]
     built = run(command, checkout, environment)
     artifacts = [json.loads(line) for line in built.stdout.splitlines() if line.startswith("{")]
@@ -92,7 +90,7 @@ def measure(repeats):
                               checkout, environment).stdout)
     dependencies = [{"name": item["name"], "version": item["version"], "license": item["license"],
                      "declared_rust_version": item["rust_version"]}
-                    for item in metadata["packages"] if item["name"] != "lingose"]
+                    for item in metadata["packages"] if item["name"] not in ("lingose", "lingose-cli")]
     metrics = ("lexicon_load_and_index_ms", "frequency_load_ms", "warm_cached_exact_lookup_ns", "cold_process_wall_ms")
     return {
         "stage": "P2.2", "verified_on": datetime.now().astimezone().date().isoformat(),
@@ -118,13 +116,15 @@ def measure(repeats):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--write", action="store_true", help="Write docs/loader-verification.json")
+    parser.add_argument("--write", action="store_true", help="Write a new loader evidence file")
+    parser.add_argument("--output", type=Path, default=ROOT / "docs/loader-verification-0.2.0.json")
     parser.add_argument("--repeats", type=int, default=7)
     args = parser.parse_args()
     require(args.repeats >= 1, "At least one fresh process is required")
+    destination = evidence_output(args.output) if args.write else None
     report = measure(args.repeats)
     if args.write:
-        (ROOT / "docs/loader-verification.json").write_text(json_text(report), encoding="utf-8", newline="\n")
+        destination.write_text(json_text(report), encoding="utf-8", newline="\n")
     print(json_text({key: report[key] for key in ("stage", "statistics", "method")}))
 
 

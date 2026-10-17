@@ -18,7 +18,7 @@ import sys
 import unicodedata as ucd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from generate_query_case import ROOT, identity, inputs, persist, require
+from generate_query_case import ROOT, artifact_path, identity, inputs, persist, require
 from generate_query_vectors import string
 
 
@@ -112,7 +112,8 @@ def main():
     require(output == ROOT or output.is_relative_to(ROOT / ".local"), "Output must remain in workspace")
     artifacts = generate()
     persist(output, artifacts, args.write)
-    print(json.dumps({"files": {name: identity(data) for name, data in artifacts.items()}, "inputs_unchanged": True}))
+    print(json.dumps({"files": {name: identity(artifact_path(name, output).read_bytes()) for name in artifacts},
+                      "historical_metadata_preserved": output == ROOT, "inputs_unchanged": True}))
 
 
 if __name__ == "__main__":

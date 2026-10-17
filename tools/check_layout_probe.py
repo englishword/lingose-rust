@@ -60,7 +60,7 @@ def logical_bytes(images):
 
 
 def main():
-    directory = ROOT/".local/layout"
+    directory = ROOT/".local/layout-020"
     manifest = json.loads((directory/"manifest.json").read_text(encoding="utf-8"))
     images = []
     for name in ("image.bin","frequency.bin"):

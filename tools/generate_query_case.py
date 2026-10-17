@@ -17,7 +17,8 @@ import sys
 import unicodedata
 
 
-ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from reference import ROOT, artifact_path, check_historical_generator
 BASELINE = ROOT / "docs/reference-baseline.json"
 BASELINE_SHA256 = "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
 LICENSE_SHA256 = "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
@@ -175,11 +176,14 @@ def generate() -> dict[str, bytes]:
 def persist(directory: Path, artifacts: dict[str, bytes], write: bool) -> None:
     pending = []
     for name, value in artifacts.items():
-        path = directory / name
+        path = artifact_path(name, directory)
         require(path.resolve().is_relative_to(directory), "Artifact escapes output directory")
         if path.exists():
-            require(path.read_bytes() == value,
-                    f"Artifact drift: {path}; existing bytes preserved")
+            if directory == ROOT and name in ("docs/query-case.json", "docs/annotation-unicode.json"):
+                check_historical_generator(name, value, path.read_bytes())
+            else:
+                require(path.read_bytes() == value,
+                        f"Artifact drift: {path}; existing bytes preserved")
         else:
             require(write, f"Missing artifact: {path}; initial creation requires --write")
             pending.append((path, value))
@@ -203,7 +207,9 @@ def main() -> None:
     persist(directory, artifacts, args.write)
     print(json.dumps({"mode": "write" if args.write else "check", "files": len(artifacts),
                       "input_fingerprints_unchanged": True,
-                      "artifacts": {path: identity(value) for path, value in artifacts.items()}},
+                      "historical_metadata_preserved": directory == ROOT,
+                      "artifacts": {name: identity(artifact_path(name, directory).read_bytes())
+                                    for name in artifacts}},
                      sort_keys=True))
 
 

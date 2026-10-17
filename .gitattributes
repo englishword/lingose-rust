@@ -70,3 +70,9 @@
 /docs/reference-baseline.json -text
 /tests/fixtures/python-api-v1.json -text
 /LICENSE -text
+/tools/package_consumer_020.rs text eol=lf
+/tools/check_workspace_package.py text eol=lf
+/tests/test_workspace_package.py text eol=lf
+/tests/test_workspace_tools.py text eol=lf
+/docs/workspace-tools.md text eol=lf
+/docs/workspace-tools-verification.json text eol=lf

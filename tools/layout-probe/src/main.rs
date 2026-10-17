@@ -29,15 +29,15 @@ use std::path::Path;
 use std::time::{Duration, Instant};
 
 #[cfg(any(feature = "static", feature = "static-hash"))]
-const LEXICON_PAYLOAD: &[u8] = include_bytes!("../../../.local/layout/image.bin");
+const LEXICON_PAYLOAD: &[u8] = include_bytes!("../../../.local/layout-020/image.bin");
 #[cfg(any(feature = "gzip", feature = "hash"))]
-const LEXICON_PAYLOAD: &[u8] = include_bytes!("../../../.local/layout/image.bin.gz");
+const LEXICON_PAYLOAD: &[u8] = include_bytes!("../../../.local/layout-020/image.bin.gz");
 #[cfg(any(feature = "static", feature = "static-hash"))]
-const FREQUENCY_PAYLOAD: &[u8] = include_bytes!("../../../.local/layout/frequency.bin");
+const FREQUENCY_PAYLOAD: &[u8] = include_bytes!("../../../.local/layout-020/frequency.bin");
 #[cfg(any(feature = "gzip", feature = "hash"))]
-const FREQUENCY_PAYLOAD: &[u8] = include_bytes!("../../../.local/layout/frequency.bin.gz");
-const LEXICON_SHA256: &str = include_str!("../../../.local/layout/image.sha256");
-const FREQUENCY_SHA256: &str = include_str!("../../../.local/layout/frequency.sha256");
+const FREQUENCY_PAYLOAD: &[u8] = include_bytes!("../../../.local/layout-020/frequency.bin.gz");
+const LEXICON_SHA256: &str = include_str!("../../../.local/layout-020/image.sha256");
+const FREQUENCY_SHA256: &str = include_str!("../../../.local/layout-020/frequency.sha256");
 
 #[derive(Serialize)]
 struct Measurement {

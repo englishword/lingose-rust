@@ -14,9 +14,10 @@ import re
 import struct
 import sys
 import tarfile
+import tomllib
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference import (ROOT, canonical, connect, fingerprints, installed, json_text,
+from reference import (ROOT, LIB_ROOT, canonical, connect, fingerprints, installed, json_text,
                        main_error, no_restore, require, require_baseline)
 
 NULL = 0xffffffff
@@ -172,14 +173,15 @@ def corpus(entries, count):
 
 def archive_estimate(resources):
     stream = io.BytesIO()
+    version = tomllib.loads((LIB_ROOT / "Cargo.toml").read_text(encoding="utf-8"))["package"]["version"]
     with tarfile.open(fileobj=stream,mode="w",format=tarfile.USTAR_FORMAT) as archive:
-        files = {str(path.relative_to(ROOT)).replace("\\","/"):path.read_bytes()
-                 for pattern in ("src/*.rs","examples/*.rs") for path in ROOT.glob(pattern)}
+        files = {str(path.relative_to(LIB_ROOT)).replace("\\","/"):path.read_bytes()
+                 for folder in ("src", "examples") for path in (LIB_ROOT/folder).rglob("*.rs")}
         for name in ("Cargo.toml","Cargo.lock","README.md","LICENSE","SOURCES.md"):
-            files[name] = (ROOT/name).read_bytes()
+            files[name] = ((ROOT if name == "Cargo.lock" else LIB_ROOT)/name).read_bytes()
         files.update({"data/"+name:value for name,value in resources.items()})
         for name,value in sorted(files.items()):
-            item = tarfile.TarInfo("lingose-0.1.0/"+name)
+            item = tarfile.TarInfo(f"lingose-{version}/"+name)
             item.size, item.mtime, item.mode = len(value),0,0o644
             archive.addfile(item,io.BytesIO(value))
     return gzip.compress(stream.getvalue(),compresslevel=6,mtime=0)
@@ -201,7 +203,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--write",action="store_true")
     parser.add_argument("--check",action="store_true")
-    parser.add_argument("--output",type=Path,default=ROOT/".local/layout")
+    parser.add_argument("--output",type=Path,default=ROOT/".local/layout-020")
     args = parser.parse_args()
     require(args.write != args.check, "Choose exactly one of --write or --check")
     directory = args.output.resolve()

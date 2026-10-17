@@ -1,0 +1,1346 @@
+{
+  "base_commit": "40848a4",
+  "checks": [
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "label": "python-tests",
+      "started_utc": "2026-10-17T11:26:06.786190+00:00",
+      "stderr": {
+        "bytes": 12820,
+        "path": ".local/cli12-tools-verification/python-tests.stderr.log",
+        "sha256": "0071f3247d5d3744c447a6a7e114c9b2583fa233916306ad0669d6d906ecafcf"
+      },
+      "stdout": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/python-tests.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/audit_reference.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "audit_reference",
+      "started_utc": "2026-10-17T11:26:09.077765+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/audit_reference.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 751,
+        "path": ".local/cli12-tools-verification/audit_reference.stdout.log",
+        "sha256": "88d1908ba8d003cea5f17df532f3e37afb9578e7836b7a8c6d294e308c4162bc"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/capture_api_vectors.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "capture_api_vectors",
+      "started_utc": "2026-10-17T11:30:01.092783+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/capture_api_vectors.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 245,
+        "path": ".local/cli12-tools-verification/capture_api_vectors.stdout.log",
+        "sha256": "da676be98b5206ee45d3847b2de267688918e4073918c8c1c30e09e72a2d3e9a"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/export_data.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "export_data",
+      "started_utc": "2026-10-17T11:30:16.487609+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/export_data.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 691,
+        "path": ".local/cli12-tools-verification/export_data.stdout.log",
+        "sha256": "cad83eed420f355ceacb2797e4ad574d1878a91bec2b8d0647f29bb19ceb8b10"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_query_case.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "generate_query_case",
+      "started_utc": "2026-10-17T11:31:26.593018+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/generate_query_case.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 496,
+        "path": ".local/cli12-tools-verification/generate_query_case.stdout.log",
+        "sha256": "eaad1ff847fb8a7282017f72da8bf3abe5cd8c10f8f13f53d07c92ac34110bfc"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_annotation_unicode.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "generate_annotation_unicode",
+      "started_utc": "2026-10-17T11:31:27.672139+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/generate_annotation_unicode.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 337,
+        "path": ".local/cli12-tools-verification/generate_annotation_unicode.stdout.log",
+        "sha256": "cc85d60f7e7189d241ae86a0806be6042de814917bc643255324f50e370c3df0"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_query_vectors.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "generate_query_vectors",
+      "started_utc": "2026-10-17T11:31:29.134541+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/generate_query_vectors.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 27,
+        "path": ".local/cli12-tools-verification/generate_query_vectors.stdout.log",
+        "sha256": "835a5632adb96b2cb98ee306439476e264f0ba57d019b197008d8deee998e982"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_category_vectors.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "generate_category_vectors",
+      "started_utc": "2026-10-17T11:31:29.531024+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/generate_category_vectors.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 240,
+        "path": ".local/cli12-tools-verification/generate_category_vectors.stdout.log",
+        "sha256": "62c788273ce8d2630cea4c264b3a7cc1a60b4aa071ef5615f41285f5fefcc142"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_annotation_vectors.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "generate_annotation_vectors",
+      "started_utc": "2026-10-17T11:31:29.892719+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/generate_annotation_vectors.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 292,
+        "path": ".local/cli12-tools-verification/generate_annotation_vectors.stdout.log",
+        "sha256": "66310a2f4f5480e67a739ad8b5565940a41116be02e8e8154bffdc00ba577a76"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_annotation_context_vectors.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "generate_annotation_context_vectors",
+      "started_utc": "2026-10-17T11:31:32.273704+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/generate_annotation_context_vectors.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 509,
+        "path": ".local/cli12-tools-verification/generate_annotation_context_vectors.stdout.log",
+        "sha256": "e981c6a50273e0ab362675804dfc64062252a50b79a8654adfd42e8d824741cf"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_annotation_frequency_vectors.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "generate_annotation_frequency_vectors",
+      "started_utc": "2026-10-17T11:31:35.880339+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/generate_annotation_frequency_vectors.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 749,
+        "path": ".local/cli12-tools-verification/generate_annotation_frequency_vectors.stdout.log",
+        "sha256": "eadefbb7a8a8a813e753efd8f1d413471015e9ce3f7b6acf59255743457963bc"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/generate_error_vectors.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "generate_error_vectors",
+      "started_utc": "2026-10-17T11:31:40.661847+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/generate_error_vectors.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 214,
+        "path": ".local/cli12-tools-verification/generate_error_vectors.stdout.log",
+        "sha256": "17ef2d527c2fe98b2c973930456f05ead35d81fe34a262a0c83d5ec0ac1fde63"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/verify_data.py"
+      ],
+      "exit_code": 0,
+      "label": "verify_data",
+      "started_utc": "2026-10-17T11:31:43.484282+00:00",
+      "stderr": {
+        "bytes": 250,
+        "path": ".local/cli12-tools-verification/verify_data.stderr.log",
+        "sha256": "bc5b5bcd94f60f43e1bae9e162f62ecca528ae94d045b9152fe42cb1e5dc95f2"
+      },
+      "stdout": {
+        "bytes": 671,
+        "path": ".local/cli12-tools-verification/verify_data.stdout.log",
+        "sha256": "d9352fb4964374c9f0103da5e376be1f4e94f5f4fbb4f7ec133cfa89a0b459dd"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "fmt",
+      "started_utc": "2026-10-17T11:29:12.477160+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/fmt.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/fmt.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--offline",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "label": "clippy",
+      "started_utc": "2026-10-17T11:29:12.924380+00:00",
+      "stderr": {
+        "bytes": 482,
+        "path": ".local/cli12-tools-verification/clippy.stderr.log",
+        "sha256": "e1bc1ef94b446f34bc4c23d45884cadd05919e4c050d3ac6571a9d15c31e964a"
+      },
+      "stdout": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/clippy.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "label": "tests",
+      "started_utc": "2026-10-17T11:29:16.921345+00:00",
+      "stderr": {
+        "bytes": 1193,
+        "path": ".local/cli12-tools-verification/tests.stderr.log",
+        "sha256": "be88b0baf50dd59b7f180873b9ad9f13b3067f1b700f5c4032d639a6f6ae01ad"
+      },
+      "stdout": {
+        "bytes": 11163,
+        "path": ".local/cli12-tools-verification/tests.stdout.log",
+        "sha256": "75b22b4686316384235227d6253dcf3f603a31652d68ee8cfa2baf4357b2355a"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "doc",
+        "--workspace",
+        "--no-deps",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "label": "docs",
+      "started_utc": "2026-10-17T11:29:45.730735+00:00",
+      "stderr": {
+        "bytes": 245,
+        "path": ".local/cli12-tools-verification/docs.stderr.log",
+        "sha256": "8763704c2bb7ae7e2f22ae813ac1f89cb501daf3f6e1ce988b7a1517c839fa94"
+      },
+      "stdout": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-verification/docs.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "label": "python-tests",
+      "started_utc": "2026-10-17T11:30:46.611829+00:00",
+      "stderr": {
+        "bytes": 14717,
+        "path": ".local/cli12-tools-final/python-tests.stderr.log",
+        "sha256": "d13737cde04800529ac69e4f3658d070e1dd1ba39d8f8fb48b68933e70f396ca"
+      },
+      "stdout": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-final/python-tests.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/check_workspace_package.py",
+        "--list"
+      ],
+      "exit_code": 0,
+      "label": "package-list",
+      "started_utc": "2026-10-17T11:30:50.535665+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-final/package-list.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 1645,
+        "path": ".local/cli12-tools-final/package-list.stdout.log",
+        "sha256": "3dc7b7c5f8ca253f939b8984c544f9a30ef9069d1732f803da9f691058fa3c44"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/prepare_layout_probe.py",
+        "--write"
+      ],
+      "exit_code": 0,
+      "label": "layout-prepare",
+      "started_utc": "2026-10-17T11:30:50.816815+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-final/layout-prepare.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 2822,
+        "path": ".local/cli12-tools-final/layout-prepare.stdout.log",
+        "sha256": "c1981757c0938d314ad3ab3726b622bdab19bca8c91906b941cc850bf8384d34"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/prepare_layout_probe.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "label": "layout-check",
+      "started_utc": "2026-10-17T11:31:52.271509+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-final/layout-check.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 2822,
+        "path": ".local/cli12-tools-final/layout-check.stdout.log",
+        "sha256": "c1981757c0938d314ad3ab3726b622bdab19bca8c91906b941cc850bf8384d34"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/check_layout_probe.py"
+      ],
+      "exit_code": 0,
+      "label": "layout-decode",
+      "started_utc": "2026-10-17T11:33:07.718117+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-final/layout-decode.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 298,
+        "path": ".local/cli12-tools-final/layout-decode.stdout.log",
+        "sha256": "2fc46a976fbb43cac962dd92728f8977ecfa0bf109949bc350cae5c6b8480ab0"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/check_loader.py",
+        "--write",
+        "--repeats",
+        "1",
+        "--output",
+        "E:\\git\\claude\\words\\lingose-rust\\.local\\cli12-tools-final\\loader.json"
+      ],
+      "exit_code": 0,
+      "label": "loader",
+      "started_utc": "2026-10-17T11:30:45.974718+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-final/loader.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 907,
+        "path": ".local/cli12-tools-final/loader.stdout.log",
+        "sha256": "8c614778d44f6d7d416e672ea9dc170032a8e6d2ead58ca4188c254ad21f933d"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/check_queries.py",
+        "--full-correctness",
+        "--output",
+        "E:\\git\\claude\\words\\lingose-rust\\.local\\cli12-tools-final\\queries.json"
+      ],
+      "exit_code": 0,
+      "label": "queries",
+      "started_utc": "2026-10-17T11:31:06.850236+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-final/queries.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 84,
+        "path": ".local/cli12-tools-final/queries.stdout.log",
+        "sha256": "3d96eca33428ccc949a3dcb0968a5eced98da6a83ce780500956a877cbcf49f5"
+      }
+    },
+    {
+      "argv": [
+        "D:\\Python\\Python312\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/check_full_differential.py",
+        "--smoke",
+        "--output",
+        "E:\\git\\claude\\words\\lingose-rust\\.local\\cli12-tools-final\\differential-smoke.json"
+      ],
+      "exit_code": 0,
+      "label": "differential-smoke",
+      "started_utc": "2026-10-17T11:32:13.224713+00:00",
+      "stderr": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-final/differential-smoke.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 102,
+        "path": ".local/cli12-tools-final/differential-smoke.stdout.log",
+        "sha256": "9fbbca868a40884aea159f186c975d6f25fd7980941db63991aec170cfef5fd4"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "build",
+        "--manifest-path",
+        "tools/layout-probe/Cargo.toml",
+        "--no-default-features",
+        "--features",
+        "static",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "label": "layout-static",
+      "started_utc": "2026-10-17T11:33:37.076737+00:00",
+      "stderr": {
+        "bytes": 167,
+        "path": ".local/cli12-tools-final/layout-static.stderr.log",
+        "sha256": "08a101db5d1e7fe7e539df7f7b917f8caffcc9ff620072b7e285eaf84d52d00e"
+      },
+      "stdout": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-final/layout-static.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "build",
+        "--manifest-path",
+        "tools/layout-probe/Cargo.toml",
+        "--no-default-features",
+        "--features",
+        "static-hash",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "label": "layout-static-hash",
+      "started_utc": "2026-10-17T11:33:38.165754+00:00",
+      "stderr": {
+        "bytes": 167,
+        "path": ".local/cli12-tools-final/layout-static-hash.stderr.log",
+        "sha256": "fdcd23ffe0aacccc29a503b7dfd27d33b2e9406568eb2220910563586d933014"
+      },
+      "stdout": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-final/layout-static-hash.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "build",
+        "--manifest-path",
+        "tools/layout-probe/Cargo.toml",
+        "--no-default-features",
+        "--features",
+        "gzip",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "label": "layout-gzip",
+      "started_utc": "2026-10-17T11:33:39.299820+00:00",
+      "stderr": {
+        "bytes": 167,
+        "path": ".local/cli12-tools-final/layout-gzip.stderr.log",
+        "sha256": "43d9b35646f9f276abafc22f1df6fa4b4d287784a4d5a08531306d284e8eb0e3"
+      },
+      "stdout": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-final/layout-gzip.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "build",
+        "--manifest-path",
+        "tools/layout-probe/Cargo.toml",
+        "--no-default-features",
+        "--features",
+        "hash",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "label": "layout-hash",
+      "started_utc": "2026-10-17T11:33:40.304389+00:00",
+      "stderr": {
+        "bytes": 167,
+        "path": ".local/cli12-tools-final/layout-hash.stderr.log",
+        "sha256": "8fa4fc3c658bbbe610c0ce2332d5ee6827efc277ba807871028aa168bb8bde5d"
+      },
+      "stdout": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-final/layout-hash.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "build",
+        "--manifest-path",
+        "tools/differential-probe/Cargo.toml",
+        "--release",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "label": "differential",
+      "started_utc": "2026-10-17T11:33:41.288241+00:00",
+      "stderr": {
+        "bytes": 62,
+        "path": ".local/cli12-tools-final/differential.stderr.log",
+        "sha256": "222a02ed477d249a21359df8cae975864a62d848f4739cadc5b00b6190a963c6"
+      },
+      "stdout": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-final/differential.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "cargo",
+        "build",
+        "--manifest-path",
+        "tools/performance-probe/Cargo.toml",
+        "--release",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "label": "performance",
+      "started_utc": "2026-10-17T11:33:41.427000+00:00",
+      "stderr": {
+        "bytes": 62,
+        "path": ".local/cli12-tools-final/performance.stderr.log",
+        "sha256": "222a02ed477d249a21359df8cae975864a62d848f4739cadc5b00b6190a963c6"
+      },
+      "stdout": {
+        "bytes": 0,
+        "path": ".local/cli12-tools-final/performance.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "environment": {
+    "platform": "Windows x86_64 MSVC",
+    "python": "3.12.4 / Unicode 15.0.0",
+    "rust": "1.93.1"
+  },
+  "format_version": 1,
+  "notes": [
+    "Original loader/query/differential/layout/performance/package/publication reports and 0.1.0 tools/consumer remain byte-identical.",
+    "Unicode tables/licenses are byte-checked; historical generator records independently authenticated against 33e72c9. Current report output hashes describe actual preserved files.",
+    "New library consumer is a separate byte-identical copy; API rename and its current calls are deferred to CLI2.1.",
+    "Initial development checks exposed report-path variable reuse; final receipts under cli12-tools-final confirm corrected real report files.",
+    "Initial generated layout-020 directory retained as .local/cli12-layout-initial; final layout preparation/check include recursive crate source inventory. Historical .local/layout is untouched.",
+    "Final probe builds use the four mutually exclusive layout features separately (debug builds, not measurements), and differential/performance use locked offline release builds.",
+    "Loader uses one repeat only as a tool smoke check, not timing acceptance. Performance preflight also accepted the actual final 7-binary regression report; full correctness/performance execution remains CLI4.1.",
+    "Independent read-only audit reviewed package/history boundaries and final report/prerequisite fixes; no blocking findings remained.",
+    "Package audit regression uses synthetic archives; actual new library package check is list-only with publish=false retained. New archive/registry acceptance remains unperformed."
+  ],
+  "phase": "CLI1.2",
+  "protected_file_count": 101,
+  "protected_files": {
+    "Cargo.lock": {
+      "bytes": 2473,
+      "sha256": "7579b56b7530de02c8327f8df2d0c963934b0a9f2160635bd597f9b78fc4750e"
+    },
+    "Cargo.toml": {
+      "bytes": 240,
+      "sha256": "2c7d78c0cb89af8501739a315db12692f4141b8c70815a6fcdbad0dab7cb253b"
+    },
+    "LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "SOURCES.md": {
+      "bytes": 1445,
+      "sha256": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5"
+    },
+    "crates/lingose-cli/Cargo.toml": {
+      "bytes": 677,
+      "sha256": "258cfd1d8ba283ef690fc8c8b2df7da0cc5356fddbef6c66513ebc3c22de1afd"
+    },
+    "crates/lingose-cli/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "crates/lingose-cli/README.md": {
+      "bytes": 953,
+      "sha256": "a93e253f7023649649efd8e9be65ed06575952bf3499edc21c68cc72a4911c69"
+    },
+    "crates/lingose-cli/SOURCES.md": {
+      "bytes": 1445,
+      "sha256": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5"
+    },
+    "crates/lingose-cli/src/main.rs": {
+      "bytes": 281,
+      "sha256": "4016162699edd609ed1d2f665e0ee3428563331b0e51e05034eb122a94b748dd"
+    },
+    "crates/lingose/Cargo.toml": {
+      "bytes": 945,
+      "sha256": "4e1e4c9532ef7e5b1f57da9173f133c54b0cf039e30e5b8d2a5fcd3cc7193101"
+    },
+    "crates/lingose/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "crates/lingose/README.md": {
+      "bytes": 9670,
+      "sha256": "b73eeac631e81bb2ec783170ea0d4ca26a8e8701a54fbb4df67267d4b0335e9c"
+    },
+    "crates/lingose/SOURCES.md": {
+      "bytes": 1445,
+      "sha256": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5"
+    },
+    "crates/lingose/data/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "crates/lingose/data/SOURCES.json": {
+      "bytes": 4997,
+      "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+    },
+    "crates/lingose/data/UPSTREAM-SOURCES.md": {
+      "bytes": 1457,
+      "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+    },
+    "crates/lingose/data/frequency.bin": {
+      "bytes": 200272,
+      "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+    },
+    "crates/lingose/data/lexicon.bin": {
+      "bytes": 10259743,
+      "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+    },
+    "crates/lingose/data/manifest.json": {
+      "bytes": 3900,
+      "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+    },
+    "crates/lingose/docs/distribution-provenance.json": {
+      "bytes": 5569,
+      "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+    },
+    "crates/lingose/docs/rust-api.md": {
+      "bytes": 8643,
+      "sha256": "88a96a7c4afa5216dd22ddf89047125cafbe7c7c26a6ef407c4bc8aa3fccc4d1"
+    },
+    "crates/lingose/examples/annotate.rs": {
+      "bytes": 423,
+      "sha256": "c604152bbe8995e5c439c0122fa9674d9c38d87f53890929a34cdb15798bd6cd"
+    },
+    "crates/lingose/examples/query.rs": {
+      "bytes": 871,
+      "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+    },
+    "crates/lingose/src/annotation.rs": {
+      "bytes": 19775,
+      "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+    },
+    "crates/lingose/src/annotation_context_vectors.rs": {
+      "bytes": 321810,
+      "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+    },
+    "crates/lingose/src/annotation_frequency_vectors.rs": {
+      "bytes": 24615,
+      "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+    },
+    "crates/lingose/src/annotation_unicode.rs": {
+      "bytes": 3734,
+      "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+    },
+    "crates/lingose/src/annotation_unicode_tables.rs": {
+      "bytes": 40416,
+      "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+    },
+    "crates/lingose/src/annotation_vectors.rs": {
+      "bytes": 65657,
+      "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+    },
+    "crates/lingose/src/category.rs": {
+      "bytes": 1653,
+      "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+    },
+    "crates/lingose/src/data/annotation_context_vectors.rs": {
+      "bytes": 37586,
+      "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+    },
+    "crates/lingose/src/data/annotation_frequency_vectors.rs": {
+      "bytes": 87772,
+      "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+    },
+    "crates/lingose/src/data/annotation_tests.rs": {
+      "bytes": 3391,
+      "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+    },
+    "crates/lingose/src/data/cache_tests.rs": {
+      "bytes": 22365,
+      "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+    },
+    "crates/lingose/src/data/category_tests.rs": {
+      "bytes": 4243,
+      "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+    },
+    "crates/lingose/src/data/image.rs": {
+      "bytes": 15144,
+      "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+    },
+    "crates/lingose/src/data/mod.rs": {
+      "bytes": 6395,
+      "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+    },
+    "crates/lingose/src/data/p41_joint_error_tests.rs": {
+      "bytes": 4967,
+      "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+    },
+    "crates/lingose/src/data/p41_query_fixture_tests.rs": {
+      "bytes": 62352,
+      "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+    },
+    "crates/lingose/src/data/tests.rs": {
+      "bytes": 24506,
+      "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+    },
+    "crates/lingose/src/data_meta.rs": {
+      "bytes": 1531,
+      "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+    },
+    "crates/lingose/src/error.rs": {
+      "bytes": 2127,
+      "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+    },
+    "crates/lingose/src/lib.rs": {
+      "bytes": 5169,
+      "sha256": "60568d3c77278def9cd8d3e3c56ccf71007f6e6194ea70dcce3b15830003eeef"
+    },
+    "crates/lingose/src/query.rs": {
+      "bytes": 1207,
+      "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+    },
+    "crates/lingose/src/query_case.rs": {
+      "bytes": 5074,
+      "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+    },
+    "crates/lingose/src/query_case_tables.rs": {
+      "bytes": 52751,
+      "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+    },
+    "crates/lingose/src/validation.rs": {
+      "bytes": 1624,
+      "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+    },
+    "crates/lingose/tests/annotation_context_vectors.rs": {
+      "bytes": 19512,
+      "sha256": "e5978ca90cbeb487516b23b00f5cb2c2440059ca6137f4f464ab7aa9be588624"
+    },
+    "crates/lingose/tests/annotation_frequency_vectors.rs": {
+      "bytes": 95039,
+      "sha256": "f6481cca6221052d0daa343d0b933e59503273221665599c291ed8df92047cce"
+    },
+    "crates/lingose/tests/annotation_vectors.rs": {
+      "bytes": 3919,
+      "sha256": "cdf1eed04d635b55e12ddb82ac7bf1c273299acd11dfb81b1632ac1c78f5a9e4"
+    },
+    "crates/lingose/tests/api_contract.rs": {
+      "bytes": 12203,
+      "sha256": "3a8b4c00aeff18ebc0f4fc65f5b9c93a04847e09e7e52f7e5a02c9c092e921a8"
+    },
+    "crates/lingose/tests/category_vectors.rs": {
+      "bytes": 23168,
+      "sha256": "2a9847a84ea05858410e0be8be3020771b0e2027a13426b077fa61fc9b5e1072"
+    },
+    "crates/lingose/tests/query_vectors.rs": {
+      "bytes": 11219,
+      "sha256": "440c7634cddb9494a37b0c0e89e1723ac53d9e2e92be125ca32057cbc187cbce"
+    },
+    "crates/lingose/third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    },
+    "docs/annotation-context-verification.json": {
+      "bytes": 23061,
+      "sha256": "61b9647f906e29e4ab8a3da895ca0bece42eb0f05627e0c7413504bd6b6be763"
+    },
+    "docs/annotation-frequency-verification.json": {
+      "bytes": 26209,
+      "sha256": "1dd1f88263ecf046069739543426920aec76275df0f128c01ed7c64f42bbf071"
+    },
+    "docs/annotation-unicode.json": {
+      "bytes": 3135,
+      "sha256": "521a545a791b054acb135197034305434dce11e67ffe8547952340fcc3254fb1"
+    },
+    "docs/annotation-verification.json": {
+      "bytes": 19296,
+      "sha256": "f7dc9cdcef58b74bab900eb4a91d53c1283befe80011fe56b697273479acaaa8"
+    },
+    "docs/annotation.md": {
+      "bytes": 13033,
+      "sha256": "74fb14c208832c83e59cc00627f239a73506779f2108b85c7c17e4549f4c06ff"
+    },
+    "docs/api.md": {
+      "bytes": 12669,
+      "sha256": "ae6e87cd60fb66f8291d82abce20b3bf77e0d17c9e53b6d2e0aefa6929d9372e"
+    },
+    "docs/categories.md": {
+      "bytes": 5238,
+      "sha256": "c1b62ebfcb34bbd7b0e508abf41f4c7443f8a7a133a5ca3144fcc59ca983c3c0"
+    },
+    "docs/category-verification.json": {
+      "bytes": 13470,
+      "sha256": "f589f774e7ba3edfc8d8995756dd515a5556589c4a10f9cfe41809f53686ed58"
+    },
+    "docs/correctness-regression-verification.json": {
+      "bytes": 27574,
+      "sha256": "aa323f5a9bff1e4cdf3fa0372914dfa6d21227ade121daa8942863fee2d65412"
+    },
+    "docs/data-export.md": {
+      "bytes": 6387,
+      "sha256": "cac2faad31d09cea22112ed3a91e9d725fb741b5634b54980f72a0ff448129a7"
+    },
+    "docs/data-layout.md": {
+      "bytes": 9594,
+      "sha256": "3a7438852f6094ee5ca82205330fd09de3489c80a0a092ea3c97dcf6f4ef8daa"
+    },
+    "docs/data-loader.md": {
+      "bytes": 6006,
+      "sha256": "1aba33adf458a8abd1c5dcba299a2da748a208282615d43d0b029ba80858a43b"
+    },
+    "docs/data-verification.json": {
+      "bytes": 3327,
+      "sha256": "712b5b8be598b5cd9bebae98ffd5350aadf709cd47f660f34f571944568a9c14"
+    },
+    "docs/distribution-provenance.json": {
+      "bytes": 5569,
+      "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+    },
+    "docs/distribution-review.md": {
+      "bytes": 5122,
+      "sha256": "1506200d59a5d1068dcbfc2adb337f324ef634223c68abe417d3cbb045a303bc"
+    },
+    "docs/engineering-verification.json": {
+      "bytes": 41258,
+      "sha256": "44216e41cd716ab39d339256bc78c9a03ae05d2fc29d34f5e9bec97c698d339a"
+    },
+    "docs/engineering.md": {
+      "bytes": 5180,
+      "sha256": "80ca241214cf62eae6dfeb2fd01fba7a6b0c774124cf88d9e44c07af957f5301"
+    },
+    "docs/full-differential-verification.json": {
+      "bytes": 25610,
+      "sha256": "72ea9e2fafea9501e8977d9e7e31a7ccb16bddad752a0e57ce6355ed4c23e528"
+    },
+    "docs/full-differential.md": {
+      "bytes": 6975,
+      "sha256": "0150d45ead564e35991bafd7016c3068630a165e82aae23a8a267670a066f160"
+    },
+    "docs/layout-probe-results.json": {
+      "bytes": 93875,
+      "sha256": "981736620f03435decd4613f89233bd68169c8c0e404a30af262591d3eed8c2a"
+    },
+    "docs/loader-verification.json": {
+      "bytes": 19072,
+      "sha256": "64e2ca459bafe707971bc67b6f3e1c39e5d1e60d28d15d79a32bd4e853d09eb4"
+    },
+    "docs/p5-documentation-verification.json": {
+      "bytes": 14032,
+      "sha256": "ecd50b647ae4b3bffc5cee609921d5b5da7d1dff4f8b41890bc491ce88313a98"
+    },
+    "docs/package-verification.json": {
+      "bytes": 57475,
+      "sha256": "96fe4ca4cd87f87ae31fecc151ccbe0ed523e630f64c3b9b7015367eb255dfbc"
+    },
+    "docs/packaging.md": {
+      "bytes": 4827,
+      "sha256": "03101264d0206161b6ca2cead9c8090c6a40df9a4bcc1ed9bf58a9fb676a44ab"
+    },
+    "docs/performance-budget.json": {
+      "bytes": 1967,
+      "sha256": "3f54b4d54240eb8039cb461829c76d2ccd2cda7fe6cb4060b013d5d882cd4e82"
+    },
+    "docs/performance-budget.md": {
+      "bytes": 9464,
+      "sha256": "a890bd490d7dc02264afcb4a1692f3cdfa0f2a927cceca298a79c7867a39300a"
+    },
+    "docs/performance-verification.json": {
+      "bytes": 88511,
+      "sha256": "daf22261dadd266d935f9066a21aefcb27f296ee7aa9ecfe32cd87bc01b3eb36"
+    },
+    "docs/performance.md": {
+      "bytes": 9045,
+      "sha256": "c3dd77a902f0934fa4fe86582a6385bd2c8531da1ff175b7beb674aa95d3e154"
+    },
+    "docs/publication-preflight.json": {
+      "bytes": 24671,
+      "sha256": "f3273631263d60c55fdc0d22e82f42ec49b59271edd53654004abcd1ce6bed47"
+    },
+    "docs/publication-preflight.md": {
+      "bytes": 4676,
+      "sha256": "e65678a09ef514a2b46c8ee8ffabd44c9c1dc067d7aba371dd2e36e8e703f76a"
+    },
+    "docs/publication.json": {
+      "bytes": 9573,
+      "sha256": "9557a72362d2c060053405e247215b1e2fa9b6e5d2ff2f7f2d44466019ad9f76"
+    },
+    "docs/publication.md": {
+      "bytes": 4016,
+      "sha256": "42b8707906f62a769bb44e3f4f8b6534684d783bc8a03a064491f6539ff2b3f5"
+    },
+    "docs/query-case.json": {
+      "bytes": 3387,
+      "sha256": "4ea010b0509185e14b311263911f3fe3ba17f9204d6eb4b7b3119ab34871fabc"
+    },
+    "docs/query-verification.json": {
+      "bytes": 11767,
+      "sha256": "dbe8894eea010602289254c8f7819f0841edbc74c2e93df46cdaacf9d00b337b"
+    },
+    "docs/reference-baseline.json": {
+      "bytes": 54162,
+      "sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
+    },
+    "docs/reference-baseline.md": {
+      "bytes": 3576,
+      "sha256": "e54ddf801c37185ee5b95f5503c726ab2c52d5044493101a4cbf87e01a4ee295"
+    },
+    "docs/registry-consumer-verification.json": {
+      "bytes": 36628,
+      "sha256": "8ce02801c3a9c2a3dd07dae3b66c79a296413df9e095095f21854b82fa64e764"
+    },
+    "docs/registry-consumer.md": {
+      "bytes": 5389,
+      "sha256": "355486a47b7ab9f01b69cd11c05a0df05ec80ecef2c349d771bf79fd764bb964"
+    },
+    "docs/rust-api.md": {
+      "bytes": 8473,
+      "sha256": "9a70866da0046b0005579323118268953a84c1e85a80952c8b70b561034b0832"
+    },
+    "docs/simple-queries.md": {
+      "bytes": 5447,
+      "sha256": "4a84765687363917cb11c5866593eaebb4e7c6d675d78bf8e3497a03bb371ef4"
+    },
+    "tests/fixtures/python-api-v1.json": {
+      "bytes": 118971,
+      "sha256": "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1"
+    },
+    "tests/test_package.py": {
+      "bytes": 3770,
+      "sha256": "35e17c917be9b326f70a3893d79b648b3c1b3fb4fd2fc00dc43940ed25214f55"
+    },
+    "third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    },
+    "tools/check_package.py": {
+      "bytes": 14893,
+      "sha256": "af8db2075005f8656070845f3066b952ad68fe2dd24e4704b5fdc95d2ebf84da"
+    },
+    "tools/check_registry_consumer.py": {
+      "bytes": 18125,
+      "sha256": "d54e37d9bc7c7dd5932c1e23554e02c3a12df29e0c46f60d69f946c16743514f"
+    },
+    "tools/package_consumer.rs": {
+      "bytes": 7829,
+      "sha256": "1f8c62db06cfc3b7b390dd5c711cdb5daab320de63d5549eb7ce8fcdd94f5f9d"
+    },
+    "tools/prepare_package_sources.py": {
+      "bytes": 4296,
+      "sha256": "f35dbb22fb08765149f29570879ce72830aa4b9c6bbbe028d19d0c9c5cc7bbea"
+    }
+  },
+  "protected_identity_sources": [
+    ".local/cli11-workspace-b97b1a285c66/before.json",
+    "docs/workspace-migration-verification.json"
+  ],
+  "receipts": {
+    "differential-smoke.json": {
+      "bytes": 22947,
+      "path": ".local/cli12-tools-final/differential-smoke.json",
+      "sha256": "f9b3f6be03bacc1b5fbebe7638aaabf83d76cb459d68225874f10ed9ba64098f"
+    },
+    "loader.json": {
+      "bytes": 9530,
+      "path": ".local/cli12-tools-final/loader.json",
+      "sha256": "f874989521994e141a7f8bbc7ae55cc351fa86a7c64b3d1d87032fa742d994f8"
+    },
+    "queries.json": {
+      "bytes": 28583,
+      "path": ".local/cli12-tools-final/queries.json",
+      "sha256": "1e02eafa885efcbe9b46831c9000ec50728dbac32a33e303d255811b7a346ed8"
+    }
+  },
+  "scope": "Workspace development-tool adaptation; no API rename, full 0.2.0 differential/performance acceptance, archive generation/consumption, dry-run, registry, remote, or other-platform acceptance.",
+  "test_summary": {
+    "differential_smoke_results": 881,
+    "existing_ignored_manual_probe": 1,
+    "library_package_list_files": 42,
+    "library_test_binaries": 7,
+    "python_regressions": 90,
+    "rust_doc_tests": 5,
+    "rust_tests": 102
+  },
+  "tooling_and_document_inputs": {
+    ".gitattributes": {
+      "bytes": 3270,
+      "sha256": "519c4a5e7ab9ff3f880f921f3d0d4e2b891365d4d24f790f5d2cc820aef05f08"
+    },
+    "docs/workspace-tools.md": {
+      "bytes": 5744,
+      "sha256": "5c66d9837826b929eb4a3ff0d8f6e6c0486cd36796433257d304316adefd7cc9"
+    },
+    "tasks/handoff.md": {
+      "bytes": 4162,
+      "sha256": "3ed87ce3c8c42cf5f5d786a008892314846d8b0499bb7166b1851f0140fc3a5a"
+    },
+    "tasks/todo_CLI.md": {
+      "bytes": 12937,
+      "sha256": "daa80500a0d493efe55f10ab5577e0ff3978082ce03e524481dfa8549be6d027"
+    },
+    "tests/test_verify_data.py": {
+      "bytes": 14415,
+      "sha256": "d06ff203781380988dc38921ae06362f4a3078e80e47e7bd1cbdc08b121305f3"
+    },
+    "tests/test_workspace_package.py": {
+      "bytes": 9581,
+      "sha256": "43980be3b6af573c02792d26972b2cdb6cb32a5a0be129615719d668c702970d"
+    },
+    "tests/test_workspace_tools.py": {
+      "bytes": 5626,
+      "sha256": "11fc2c31b0d81de140b5b3b89cb2c497c6cff55c156f5ea0a801b9dac0ee4b8d"
+    },
+    "tools/check_full_differential.py": {
+      "bytes": 19301,
+      "sha256": "f2364b9c3f6e67c9cde9044fa3994caa9d842a66ae2aa1e172cd5fb1396c3147"
+    },
+    "tools/check_layout_probe.py": {
+      "bytes": 6003,
+      "sha256": "ee1b75410b4e1a157bd1b43293b2b0710fe71e057cc8a78222146461d3bdca4a"
+    },
+    "tools/check_loader.py": {
+      "bytes": 7249,
+      "sha256": "4511aeeb421e37854e3c1d2803861a0c6e4e2237ceea82601d2f00c4515affd3"
+    },
+    "tools/check_performance.py": {
+      "bytes": 23644,
+      "sha256": "e1a3a54894129be7d498b71e46ba2583a5b0cb0a7193863b1ca44d926652bf05"
+    },
+    "tools/check_queries.py": {
+      "bytes": 11238,
+      "sha256": "4949b91aa7cd4c48ca1375b8ce30e01701a137b7072cef3436618135ec0c4b54"
+    },
+    "tools/check_workspace_package.py": {
+      "bytes": 12171,
+      "sha256": "ee5b2548b4edc0e905c762e75e8605d73055ec5b5a3862503825702aaf0cd5a0"
+    },
+    "tools/export_data.py": {
+      "bytes": 22666,
+      "sha256": "903943454a312901edf14dd5a7819c26c4f032705c632a1b477b853bd0aa6b4a"
+    },
+    "tools/generate_annotation_context_vectors.py": {
+      "bytes": 23095,
+      "sha256": "c0b4c06017df21512b96a352e9cb5efdce80c8c74f2003cb76e4bcd130f67fc4"
+    },
+    "tools/generate_annotation_frequency_vectors.py": {
+      "bytes": 25601,
+      "sha256": "5ba9b3dc4253d993597719fcc49f1ea04fdef3e7234d5e8d28572c4bd20a2d21"
+    },
+    "tools/generate_annotation_unicode.py": {
+      "bytes": 6533,
+      "sha256": "7840ddbb651ade073a1bb6a5218273adaef9d3f70b98da9587938e59f026819e"
+    },
+    "tools/generate_annotation_vectors.py": {
+      "bytes": 15482,
+      "sha256": "507aa0ccbe609b6d3fa2cfce63aeef201c685c370524166765b442c4413f3e0a"
+    },
+    "tools/generate_category_vectors.py": {
+      "bytes": 10164,
+      "sha256": "ce6bfc354a076c89b938d75aa7b5a80883fe39e69da2c0eff5ede6badccf58dc"
+    },
+    "tools/generate_error_vectors.py": {
+      "bytes": 12800,
+      "sha256": "5a88501e8cdc5ab63ddc47c1928a4f8103f9a58ff01f500e935dcf416d7f3365"
+    },
+    "tools/generate_query_case.py": {
+      "bytes": 11622,
+      "sha256": "d8b8774525e9c699ecb5ab226358f13ee9ade1744322717d35db8580b2c37c67"
+    },
+    "tools/generate_query_vectors.py": {
+      "bytes": 3313,
+      "sha256": "0974993b6abaa11f0d8d3254771629cdd6b86f3664018495cc058b0ec3c156cc"
+    },
+    "tools/layout-probe/AGENTS.md": {
+      "bytes": 1037,
+      "sha256": "a90e0bad9b681713c3f4c4b757ae344ff512fd258062b0e7027eb2b66cd53db8"
+    },
+    "tools/layout-probe/src/main.rs": {
+      "bytes": 13183,
+      "sha256": "22f6991b377485007ca75ece156e4916e906c55db0103db2c0bc453d775a61f9"
+    },
+    "tools/package_consumer_020.rs": {
+      "bytes": 7829,
+      "sha256": "1f8c62db06cfc3b7b390dd5c711cdb5daab320de63d5549eb7ce8fcdd94f5f9d"
+    },
+    "tools/prepare_layout_probe.py": {
+      "bytes": 15163,
+      "sha256": "aa7cc7dde791431c2f59537828708245cc655689239e3ddee2be92e07a54c70c"
+    },
+    "tools/reference.py": {
+      "bytes": 10351,
+      "sha256": "c583d04fdbd17ad3b1b00f4a8f7efb55f421a48f2cfebf221ed22317ed908ba0"
+    },
+    "tools/run_layout_probe.py": {
+      "bytes": 13416,
+      "sha256": "437554e3a52cb4ba7f14f65cf350de979ba571c31f894141ce84875897bd376d"
+    },
+    "tools/verify_data.py": {
+      "bytes": 24236,
+      "sha256": "e37e896a5eacb462d6255f8ecf4a51d4848eecbd9709f02758eb64c2fdc80876"
+    }
+  },
+  "verified_at_utc": "2026-10-17T11:37:52.975802+00:00"
+}

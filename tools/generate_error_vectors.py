@@ -20,13 +20,13 @@ import tempfile
 import unicodedata
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference import (BASELINE, ROOT, canonical, connect, installed, main_error,
+from reference import (BASELINE, ROOT, LIB_ROOT, canonical, connect, installed, main_error,
                        require, require_baseline, sha256)
 from generate_annotation_vectors import (BASELINE_SHA256, SOURCE, SOURCE_SHA256,
                                          header, persist, string)
 from capture_api_vectors import build_fixture, evaluate, fixture_paths
 
-TARGET = ROOT / "src/data/p41_query_fixture_tests.rs"
+TARGET = LIB_ROOT / "src/data/p41_query_fixture_tests.rs"
 WORD_APIS = ("IPA", "IPS", "ISM", "IPSM", "root_lemma", "meaning")
 
 

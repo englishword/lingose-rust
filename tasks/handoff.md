@@ -3,32 +3,31 @@
 ## 当前任务与状态
 
 - 当前计划：[todo_CLI.md](todo_CLI.md)，需求：[TASK_CLI.md](../TASK_CLI.md)，约束：[AGENTS.md](../AGENTS.md)。
-- 从 `main` / `5ae873d` 恢复，**CLI1.1 已完成并通过验收**。下一项为 **CLI1.2：适配开发工具和版本相关路径假设**；本轮不继续该项。
-- 根现为 virtual workspace，正式成员为 `crates/lingose`、`crates/lingose-cli`，版本均 0.2.0，共用根 Cargo.lock。三个开发探针保持独立 workspace/锁文件/profile。
-- 库源码、数据、examples 和六个 Rust 集成测试文件已迁入库目录；Python 测试及 P0 fixture 留在仓库根。两个包保持 `publish = false`。
-- CLI 二进制名 `lingose`，目前仅为明确报告未实现并退出 1 的脚手架。业务命令尚未实现；标注仍使用旧 `annotate_ips_with_skip_top`，更名按计划留 CLI2.1。
+- 从 `main` / `40848a4` 恢复，**CLI1.2 已完成并通过验收**。下一项为 **CLI2.1：更名阈值标注入口并更新当前调用**；本轮到此交接。
+- 正式 workspace 仍为 `crates/lingose` 与 `crates/lingose-cli`，均 0.2.0，共用根锁文件。两个包保持 `publish=false`；三个开发探针独立。
+- 库仍公开 `annotate_ips_with_skip_top`；CLI 仍是明确报告未实现、退出 1 的脚手架。业务命令、接口更名与发布均未执行。
 
-## 本轮文件与决策
+## 当前文件和决定
 
-- 根 Cargo.toml、两包 manifest、CLI main/README、两个探针 manifest/锁文件、.gitattributes；根 README/API 导航按新路径调整，库内保留必要文档和声明副本。
-- [迁移记录](../docs/workspace-migration.md)及[完整证据](../docs/workspace-migration-verification.json)记录路径映射、摘要、命令和边界；原始快照/日志保留于 `.local/cli11-workspace-b97b1a285c66/`。
-- 38 个迁移文件逐字节一致，4 个库内来源/许可副本和两个 CLI 声明副本原样保留。88 个不在变更范围内的原文件摘要不变；历史收据、固定消费者、P0 fixture、词库和 Unicode 表未改。
-- 根及两个探针的注册表依赖均不变；探针锁文件只更新本地库版本。原来源摘要中的旧锁文件身份仍为历史证据，分发声明更新留 CLI4.2。
-- CLI 与库同名导致首次 cargo doc 输出路径碰撞；已为 CLI bin 设置 `doc = false`，在全新文档 target 重跑通过，保留原警告日志。
-- 两包发布保护分别在 CLI4.3（库）和 CLI6.3（CLI）按验收条件解除。真实发布仍需库先进入注册表，再处理 CLI；本轮无归档生成、dry-run、上传或远端操作。
+- [工具迁移说明](../docs/workspace-tools.md)与[完整证据](../docs/workspace-tools-verification.json)记录路径映射、命令、摘要和边界；最终原始日志/库回归报告在 `.local/cli12-tools-final/`，基线/生成器及 workspace 日志在 `.local/cli12-tools-verification/`。
+- `tools/reference.py` 的 `ROOT` 为仓库根，`LIB_ROOT` 为库根；`artifact_path` 保留冻结记录中的原相对键，`workspace_inputs` 保留原 workspace 和探针锁文件复制布局。
+- exporter/verifier/向量生成器、loader/query/differential/performance 及 layout 路径已适配。当前验证器默认新版证据路径，已有报告不可覆盖；性能前置需核验当前完整差分、成功回归和输入摘要。
+- Unicode 表/许可逐字节检查，旧报告不改；旧生成器身份通过 `33e72c9` 原始 Git blob 核验。layout 当前开发产物为 `.local/layout-020`；旧 `.local/layout` 不变。
+- 新 `tools/check_workspace_package.py` 默认仅做当前库清单检查，可审计显式给出的已有归档。新 `tools/package_consumer_020.rs` 为旧消费者的原字节副本，CLI2.1 只更新新版副本。
+- 历史 `check_package.py`、`prepare_package_sources.py`、`check_registry_consumer.py`、`package_consumer.rs` 和 0.1.0 收据保持原身份。旧布局复验在 `33e72c9` 隔离检出执行；新版分发声明、真实归档和注册表验收仍按 CLI4/CLI6 顺序。
 
 ## 验证状态
 
-- Windows x86_64 MSVC / Rust 1.93.1：库离线 check、workspace fmt/Clippy（-D warnings）/测试/文档构建、CLI 构建通过。102 项 Rust 测试和 5 项文档测试通过，1 项既有手动加载器探针仍忽略。
-- Rust 1.85.0：workspace/all-targets/all-features 离线 locked 编译通过，未重跑该版本完整测试套件。
-- metadata 确认只有两个正式成员，三个探针各自独立；差分/性能探针 offline locked check 通过。layout 探针本轮只核对 workspace 归属，未构建或测性能。
-- `cargo package --list` 列出库 42 项、CLI 8 项，必要资源/许可齐全；这不是实际 .crate、独立归档消费或发布验收。
-- 库源码复制到仓库外临时目录并离线构建两个示例；只复制两个 exe 到独立运行目录、Cargo/Rustup home 为空，查询/标注运行通过。显式复用已准备依赖及移除无关 CLI 条目的锁文件副本；不等同注册表消费或系统级断网审计。
-- 独立只读复核通过；46 个当前文档本地链接、任务状态、Git 差异空白与证据输入身份核对通过。完整检查信息见迁移记录。
+- Windows x86_64 MSVC / Rust 1.93.1 / 固定 Python 3.12.4：90 Python 回归、102 Rust 测试、5 文档测试通过；1 项既有手动 loader 探针仍忽略。
+- 固定基线、P0 JSON、全部生成器只读 check 和独立 verifier 通过；50,335 条全字段/标注状态、全部有序分类及频率数据与安装基线一致。
+- 隔离 release loader（1 次，仅工具 smoke）、7 个库测试二进制及 differential smoke（881 项，零差异）通过；新版回归报告落盘并通过性能工具前置身份检查。
+- workspace fmt / Clippy -D warnings / tests / doc 通过。差分及性能探针 release/offline/locked 构建通过；layout 四种互斥 feature 各自 offline/locked 构建通过，未测 layout 性能。
+- 101 个受保护文件与 CLI1.1/迁移前已存摘要逐字节一致。新库 package --list 为 42 项；新归档审计器的合成归档回归通过，未生成真实 .crate 或执行 dry-run。
+- 只读独立复核通过。完整新版差分/性能/MSRV 复核留 CLI4.1；没有其他平台、注册表安装、上传或远端操作。原首启超预算历史继续保留。
 
 ## 下一项的精确恢复动作
 
-1. 核对 Git、本记录与 CLI1.2；读取 `tools/reference.py` 的 ROOT、导出/验证器的输出根及当前 Python 测试保护，建立仓库根/库 crate 根的明确映射。
-2. 按 CLI1.2 适配生成器、loader/query/differential/performance、打包工具和受影响测试；当前这些工具仍可能引用旧 src/data/tests 路径，不能假定 Python 工具套件已通过。
-3. 固定数据、向量期望、Unicode、历史发布证据不改；0.1.0 专用工具和消费者留原身份，旧布局复验使用历史提交隔离检出。
-4. 保留用户已确认的输入自动识别、显式 --input/--text、移除旧函数名、两包 0.2.0 选择。原 0.1.0 P0–P6 已完成，不重复发布；GitHub remote/Actions 尚未配置，按 CLI5 处理。
+1. 核对 Git、本记录与 CLI2.1，读取 `crates/lingose/src/lib.rs` 的入口和文档，并用 `rg` 定位当前源码、示例、Rust 测试、受控生成器、探针和新版消费者里的旧函数名。
+2. 将当前公共入口更名为 `annotate_ips_skip(&str, i64) -> Result<String>`，移除旧名，不留别名；默认 `annotate_ips(text)` 保留。更新当前文档/调用，记录破坏性变更。
+3. 固定 Python/P0 期望数据、Unicode、0.1.0 历史消费者/报告不改。当前生成器的调用名与固定期望值分别核验；使用新版消费者，不改 `tools/package_consumer.rs`。
+4. 验证新签名、旧名不可用、负数/0/1000/5062/超上限、NUL、资源加载顺序及原输出；用新证据路径，完成 CLI2.1 后更新交接并聚焦提交，不提前实现 CLI3 或发布。

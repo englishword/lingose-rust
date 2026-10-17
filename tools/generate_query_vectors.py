@@ -12,7 +12,7 @@ from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference import ROOT, freeze, main_error, require, sha256
+from reference import ROOT, LIB_ROOT, freeze, main_error, require, sha256
 
 SOURCE = ROOT / "tests/fixtures/python-api-v1.json"
 SOURCE_SHA256 = "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1"
@@ -66,7 +66,7 @@ def main():
     import subprocess
     formatted = subprocess.run(["rustfmt", "--edition", "2024", "--emit", "stdout"],
                                input=content, text=True, encoding="utf-8", capture_output=True, check=True)
-    target = ROOT / "tests/query_vectors.rs"
+    target = LIB_ROOT / "tests/query_vectors.rs"
     print(f"{freeze(target, formatted.stdout.replace(chr(13) + chr(10), chr(10)), args.write)}: {count} P0 queries")
 
 

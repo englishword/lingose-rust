@@ -27,7 +27,8 @@ import unicodedata
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference import (BASELINE, ROOT, canonical, connect, file_record, fingerprints,
+from reference import (BASELINE, ROOT, workspace_inputs, evidence_output,
+                       canonical, connect, file_record, fingerprints,
                        installed, json_text, main_error, no_restore, require,
                        require_baseline, sha256)
 from generate_annotation_vectors import BASELINE_SHA256, SOURCE, SOURCE_SHA256
@@ -307,7 +308,9 @@ def run(arguments, directory, environment):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--smoke", action="store_true", help="Small bridge validation; never writes formal evidence")
+    parser.add_argument("--output", type=Path, help="New report path; never overwrites history")
     args = parser.parse_args()
+    report_path = evidence_output(args.output or ROOT / "docs/full-differential-verification-0.2.0.json") if not args.smoke or args.output else None
     require(sha256(BASELINE) == BASELINE_SHA256 and sha256(SOURCE) == SOURCE_SHA256, "Fixed P0 identity drift")
     baseline = require_baseline()
     environment_info = baseline["environment"]
@@ -321,14 +324,11 @@ def main():
     with no_restore():
         labels = lingose.labels()
     require(len(words) == 50335 and len(labels) == 24, "Fixed full-data counts drift")
-    names = ["Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "SOURCES.md",
-             "data/lexicon.bin", "data/frequency.bin", "data/manifest.json", "third_party/unicode/LICENSE.txt",
+    names = workspace_inputs(probe="tools/differential-probe") + [
+             "crates/lingose/data/manifest.json",
              "docs/reference-baseline.json", "tests/fixtures/python-api-v1.json", "docs/performance-budget.json",
              "docs/layout-probe-results.json", "tools/check_full_differential.py", "tools/reference.py",
-             "tools/generate_annotation_vectors.py", "tools/generate_error_vectors.py",
-             "tools/differential-probe/Cargo.toml", "tools/differential-probe/Cargo.lock",
-             "tools/differential-probe/src/main.rs"]
-    names += [path.relative_to(ROOT).as_posix() for path in sorted((ROOT / "src").rglob("*.rs"))]
+             "tools/generate_annotation_vectors.py", "tools/generate_error_vectors.py"]
     inputs = {name: file_record(ROOT / name) for name in names}
     local = ROOT / ".local"
     directory = Path(tempfile.mkdtemp(prefix="p41-smoke-" if args.smoke else "p41-differential-", dir=local))
@@ -378,8 +378,8 @@ def main():
         "executable": file_record(runtime / executable),
         "artifacts": {path.name: file_record(path) for path in sorted(capture_dir.iterdir())},
     }
-    destination = directory / "smoke-evidence.json" if args.smoke else ROOT / "docs/full-differential-verification.json"
-    destination.write_text(json_text(report), encoding="utf-8", newline="\n")
+    report_path = report_path or directory / "smoke-evidence.json"
+    report_path.write_text(json_text(report), encoding="utf-8", newline="\n")
     print(f"P4.1 {'smoke' if args.smoke else 'full'} differential passed: {coverage['total']:,} results, zero differences", flush=True)
 
 

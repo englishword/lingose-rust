@@ -18,7 +18,7 @@ import sys
 import time
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference import (BASELINE, ROOT, ReferenceError, canonical, connect, fingerprints,
+from reference import (BASELINE, ROOT, LIB_ROOT, ReferenceError, canonical, connect, fingerprints,
                        installed, json_text, main_error, no_restore, require,
                        require_baseline, sha256)
 
@@ -416,7 +416,7 @@ def check_metadata(directory, manifest, baseline):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=ROOT, help="Artifact root containing data/ and src/")
+    parser.add_argument("--output", type=Path, default=LIB_ROOT, help="Artifact root containing data/ and src/")
     arguments = parser.parse_args()
     print(json_text(verify(arguments.output)))
 

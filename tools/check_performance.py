@@ -21,12 +21,12 @@ import threading
 import time
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reference import (ROOT, connect, file_record, fingerprints, installed, json_text,
+from reference import (ROOT, LIB_ROOT, workspace_inputs, connect, file_record, fingerprints, installed, json_text,
                        main_error, no_restore, require, require_baseline)
 from run_layout_probe import machine, memory, summarize
 
 BUDGET = ROOT / "docs/performance-budget.json"
-CORRECTNESS = ROOT / "docs/full-differential-verification.json"
+CORRECTNESS = ROOT / "docs/full-differential-verification-0.2.0.json"
 PROBE = "tools/performance-probe"
 MIXED = ("apple", "Apple", "APPLE", "May", "may", "US", "us", "iPhone", "IPHONE",
          "unknownwordzz", "UNKNOWNWORDZZ", "café", "CAFÉ", "Straße", "STRASSE", "İ",
@@ -229,9 +229,25 @@ def investigate_startup(executable, directory, environment, logs):
             "measurement_boundary": "Compare identical executable bytes at four new paths, control/query first execution then same-file reuse. process_creation_ms measures parent time until Python Popen returns; it does not trace an individual Windows call or identify an OS component."}
 
 
-def prepare(directory):
+def validated_regressions(path):
+    regression = json.loads(path.read_bytes())
+    expected = {"lingose", "api_contract", "query_vectors", "category_vectors",
+                "annotation_vectors", "annotation_context_vectors", "annotation_frequency_vectors"}
+    require(regression.get("phase") == "P4.1" and set(regression.get("outputs", {})) == expected,
+            "Complete current regression prerequisite missing")
+    require(all("test result: ok." in output for output in regression["outputs"].values()),
+            "Regression prerequisite contains unsuccessful tests")
+    required_inputs = {f"crates/lingose/tests/{name}.rs" for name in expected - {"lingose"}}
+    require(required_inputs <= set(regression.get("inputs", {})), "Regression test identities missing")
+    for name, identity in regression["inputs"].items():
+        require(file_record(ROOT / name) == identity, f"Regression prerequisite identity drift: {name}")
+    return regression
+
+
+def prepare(directory, correctness_path=CORRECTNESS, regression_path=ROOT / "docs/correctness-regression-verification-0.2.0.json"):
     baseline = require_baseline()
-    correctness = json.loads(CORRECTNESS.read_bytes())
+    validated_regressions(regression_path)
+    correctness = json.loads(correctness_path.read_bytes())
     require(not correctness["smoke_only"] and correctness["differences"] == 0
             and correctness["full_exact_keys"] == 50335, "Complete P4.1 prerequisite missing")
     # Every recorded correctness input must still match, not just the exported data.
@@ -242,9 +258,7 @@ def prepare(directory):
     checkout, runtime, logs = (directory / name for name in ("checkout", "runtime", "logs"))
     for path in (checkout, runtime, logs):
         path.mkdir()
-    names = ["Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "SOURCES.md", "data/lexicon.bin", "data/frequency.bin",
-             f"{PROBE}/Cargo.toml", f"{PROBE}/Cargo.lock", f"{PROBE}/src/main.rs"]
-    names += [path.relative_to(ROOT).as_posix() for path in sorted((ROOT / "src").rglob("*.rs"))]
+    names = workspace_inputs(probe=PROBE)
     identities = {}
     for name in names:
         original, copied = ROOT / name, checkout / name
@@ -254,8 +268,9 @@ def prepare(directory):
         require(file_record(copied) == identities[name], f"Build copy differs: {name}")
     identities.update({name: file_record(ROOT / name) for name in (
         "tools/check_performance.py", "tests/test_performance.py", "tools/run_layout_probe.py", "tools/reference.py",
-        "docs/performance-budget.json", "docs/full-differential-verification.json",
-        "docs/correctness-regression-verification.json")})
+        "docs/performance-budget.json")})
+    for path in (correctness_path, regression_path):
+        identities[path.relative_to(ROOT).as_posix()] = file_record(path)
     corpus_inputs = {}
     for words in (10000, 100000):
         name = f"corpus-{words}.txt"
@@ -284,11 +299,13 @@ def prepare(directory):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--smoke", action="store_true", help="One sample; cannot pass acceptance")
+    parser.add_argument("--correctness", type=Path, default=CORRECTNESS)
+    parser.add_argument("--regressions", type=Path, default=ROOT / "docs/correctness-regression-verification-0.2.0.json")
     args = parser.parse_args()
     require(os.name == "nt", "This runner records Windows process memory; no other-platform claim")
     local = ROOT / ".local"
     directory = Path(tempfile.mkdtemp(prefix="p42-smoke-" if args.smoke else "p42-performance-", dir=local)).resolve()
-    baseline, budget, identities, corpus_inputs, labels = prepare(directory)
+    baseline, budget, identities, corpus_inputs, labels = prepare(directory, args.correctness.resolve(), args.regressions.resolve())
     checkout, runtime, logs = (directory / name for name in ("checkout", "runtime", "logs"))
     environment = os.environ.copy()
     environment["CARGO_HOME"] = str(local / "cargo-home")
@@ -303,7 +320,7 @@ def main():
               "corpus_and_query_inputs": corpus_inputs, "labels": labels,
               "build_arguments": command, "release_profile": {"lto": "thin", "codegen_units": 1, "strip": True},
               "directory": directory.relative_to(ROOT).as_posix(), "executable": file_record(executable),
-              "raw_runtime_resources_bytes": sum((ROOT / f"data/{name}.bin").stat().st_size for name in ("lexicon", "frequency")),
+              "raw_runtime_resources_bytes": sum((LIB_ROOT / f"data/{name}.bin").stat().st_size for name in ("lexicon", "frequency")),
               "samples": {mode: [] for mode in ("cold", "control", "frequency", "warm", "concurrent", "long-word")},
               "memory_samples": {group: [] for group in ("loaded", "annotation_0", "annotation_1000", "annotation_5062")},
               "scope": "Real public APIs, full annotation equality and Windows runtime budgets; excludes packaged .crate, MSRV, other platforms and publication.",
