@@ -106,8 +106,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             14 => lingose::kind_list_with_label(&option).map(Value::Strings),
             15 => lingose::labels().map(Value::Strings),
             16 => lingose::annotate_ips(&word).map(Value::Text),
-            17 => lingose::annotate_ips_with_skip_top(&word, i64::from_le_bytes(threshold))
-                .map(Value::Text),
+            17 => lingose::annotate_ips_skip(&word, i64::from_le_bytes(threshold)).map(Value::Text),
             _ => return Err("unknown differential opcode".into()),
         };
         write_value(&mut output, result)?;

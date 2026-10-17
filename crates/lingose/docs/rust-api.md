@@ -1,9 +1,16 @@
 # Rust 接口契约（0.2.0 开发中）
 
 本文件说明 `lingose` **0.2.0** workspace 迁移后的当前接口，沿用 0.1.0 行为；
-标注入口更名尚未实施，当前仍使用 `annotate_ips_with_skip_top`。覆盖已安装 Python Lingose 0.2.0
+显式阈值入口现为 `annotate_ips_skip`。覆盖已安装 Python Lingose 0.2.0
 的十种公共行为及四组大小写名称；小写别名同时对应 Python 0.2.1 README。
 全部接口均已实现，基础用法见 [README](../README.md)。不提供公开的 `lookup` 或 `rank`。
+
+## 从 0.1.0 迁移
+
+`annotate_ips_with_skip_top(text, skip_top)` 已更名为
+`annotate_ips_skip(text, skip_top)`，旧名称移除且不保留别名。
+签名仍为 `(&str, i64) -> Result<String>`，校验、阈值上限、资源加载顺序和输出不变；
+`annotate_ips(text)` 继续等价于新入口的零阈值调用。
 
 ## 同步函数与默认参数
 
@@ -27,7 +34,7 @@
 | `kind_list_with_label(label: &str) -> Result<Vec<String>>` | 显式分类 |
 | `labels() -> Result<Vec<String>>` | `labels()` |
 | `annotate_ips(text: &str) -> Result<String>` | `annotate_ips(text, skip_top=0)` |
-| `annotate_ips_with_skip_top(text: &str, skip_top: i64) -> Result<String>` | 显式频率阈值 |
+| `annotate_ips_skip(text: &str, skip_top: i64) -> Result<String>` | 显式频率阈值 |
 
 另外以 `pub use` 导出 `IPA`、`IPS`、`ISM`、`IPSM`，直接指向各小写函数，
 不要求开启 feature。共 18 个公共函数入口；`Error` 和 `Result<T>` 从 crate 根部导出。

@@ -87,7 +87,7 @@ fn pinned_python_direct_annotation_outputs_match_public_default_and_zero_thresho
             "{identifier}"
         );
         assert_eq!(
-            lingose::annotate_ips_with_skip_top(text, 0).unwrap(),
+            lingose::annotate_ips_skip(text, 0).unwrap(),
             expected,
             "{identifier}/zero"
         );

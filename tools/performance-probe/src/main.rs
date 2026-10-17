@@ -126,7 +126,7 @@ fn annotation(directory: &Path, words: usize, skip: i64, memory: bool) -> Result
     // No expected output buffer is loaded in the measured memory process.
     let text = fs::read_to_string(directory.join(format!("corpus-{words}.txt")))?;
     let started = Instant::now();
-    let output = lingose::annotate_ips_with_skip_top(black_box(&text), skip)?;
+    let output = lingose::annotate_ips_skip(black_box(&text), skip)?;
     let elapsed = started.elapsed();
     metric(&format!("annotation_{words}_{skip}_ms"), elapsed, 1);
     if memory {
@@ -145,7 +145,7 @@ fn annotation(directory: &Path, words: usize, skip: i64, memory: bool) -> Result
 
 fn warm(directory: &Path) -> Result<()> {
     // Each measured sample is a new process; initialize both resources before hot calls.
-    black_box(lingose::annotate_ips_with_skip_top("the apple", 1)?);
+    black_box(lingose::annotate_ips_skip("the apple", 1)?);
     queries(directory)?;
     for words in [10_000, 100_000] {
         for skip in [0, 1_000, 5_062] {
@@ -172,8 +172,7 @@ fn concurrent(directory: &Path) -> Result<()> {
                 scope.spawn(move || {
                     barrier.wait();
                     let output =
-                        lingose::annotate_ips_with_skip_top(text, [0, 1_000, 5_062][index % 3])
-                            .unwrap();
+                        lingose::annotate_ips_skip(text, [0, 1_000, 5_062][index % 3]).unwrap();
                     assert_eq!(output, expected[index % 3]);
                     assert!(!lingose::ipa("apple").unwrap().is_empty());
                     assert_eq!(lingose::labels().unwrap().len(), 24);
@@ -203,13 +202,13 @@ fn main() -> Result<()> {
         "frequency" => {
             black_box(lingose::labels()?);
             let started = Instant::now();
-            let result = lingose::annotate_ips_with_skip_top("the", 1)?;
+            let result = lingose::annotate_ips_skip("the", 1)?;
             metric("frequency_initialization_ms", started.elapsed(), 1);
             black_box(result);
         }
         "loaded-memory" => {
             hold("before-load")?;
-            black_box(lingose::annotate_ips_with_skip_top("the apple", 1)?);
+            black_box(lingose::annotate_ips_skip("the apple", 1)?);
             hold("both-resources-loaded")?;
         }
         "warm" => warm(Path::new(

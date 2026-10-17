@@ -1290,7 +1290,7 @@ fn pinned_python_snapshot_and_real_frequency_outputs_match() {
     ];
     for &(identifier, text, threshold, expected) in cases {
         assert_eq!(
-            lingose::annotate_ips_with_skip_top(text, threshold).unwrap(),
+            lingose::annotate_ips_skip(text, threshold).unwrap(),
             expected,
             "{identifier}"
         );
@@ -1312,7 +1312,7 @@ fn pinned_python_value_errors_map_to_invalid_arguments() {
     ];
     for &(identifier, text, threshold, parameter) in cases {
         assert!(
-            matches!(lingose::annotate_ips_with_skip_top(text, threshold),
+            matches!(lingose::annotate_ips_skip(text, threshold),
             Err(lingose::Error::InvalidArgument { parameter: found, .. }) if found == parameter),
             "{identifier}"
         );

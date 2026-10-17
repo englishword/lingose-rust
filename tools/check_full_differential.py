@@ -36,7 +36,7 @@ from generate_annotation_vectors import BASELINE_SHA256, SOURCE, SOURCE_SHA256
 MAGIC = b"LNGDIFF1"
 APIS = ("ipa", "IPA", "ips", "IPS", "ism", "ISM", "ipsm", "IPSM", "root_lemma",
         "meaning", "meaning_with_lang", "kind", "kind_with_label", "kind_list",
-        "kind_list_with_label", "labels", "annotate_ips", "annotate_ips_with_skip_top")
+        "kind_list_with_label", "labels", "annotate_ips", "annotate_ips_skip")
 ALIASES = {"ipa": "IPA", "ips": "IPS", "ism": "ISM", "ipsm": "IPSM"}
 ENGLISH = re.compile(r"[A-Za-z]+(?:[-'’][A-Za-z]+)*\Z")
 

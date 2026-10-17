@@ -1,4 +1,4 @@
-//! Independent packaged-crate consumer: only lingose public APIs and std.
+//! Lingose 0.2.0 consumer source: only public APIs and std.
 //!
 //! Expected literals were sampled from tests/query_vectors.rs,
 //! tests/category_vectors.rs, tests/annotation_context_vectors.rs and
@@ -123,7 +123,7 @@ fn main() -> Result<()> {
         (5063, "Abandon the book."),
         (i64::MAX, "Abandon the book."),
     ] {
-        assert_eq!(lingose::annotate_ips_with_skip_top("Abandon the book.", threshold)?, expected);
+        assert_eq!(lingose::annotate_ips_skip("Abandon the book.", threshold)?, expected);
     }
     // snapshot-0217: annotation casing fallback differs from simple queries.
     assert_eq!(
@@ -148,7 +148,7 @@ fn main() -> Result<()> {
     assert_invalid(lingose::kind_with_label("apple", "cet4"), "label");
     assert_invalid(lingose::kind_list_with_label("COLLINS"), "label");
     assert_invalid(lingose::annotate_ips("apple\0"), "text");
-    assert_invalid(lingose::annotate_ips_with_skip_top("apple\0", -1), "skip_top");
+    assert_invalid(lingose::annotate_ips_skip("apple\0", -1), "skip_top");
 
     // Compile and exercise public handling for both resource error variants.
     // These synthetic errors demonstrate the consumer's match compatibility;
@@ -168,6 +168,6 @@ fn main() -> Result<()> {
     assert!(!data_error.to_string().is_empty());
     assert!(!version_error.to_string().is_empty());
 
-    println!("P5.3 packaged consumer passed: 18 public functions, pinned values, complete CET4 membership, Unicode, thresholds, argument errors, public resource error handling.");
+    println!("Lingose 0.2.0 API consumer passed: 18 public functions, pinned values, complete CET4 membership, Unicode, thresholds, argument errors, public resource error handling.");
     Ok(())
 }

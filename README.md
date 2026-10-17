@@ -6,8 +6,12 @@ this workspace is being prepared for **0.2.0**.
 
 The workspace contains the [offline library](crates/lingose/README.md) and the
 [CLI scaffold](crates/lingose-cli/README.md), both version 0.2.0. The CLI commands
-and the planned shorter annotation function name are not implemented yet.
+are not implemented yet. The library now provides `annotate_ips_skip`.
 Both packages have publication disabled during development.
+
+**Breaking change in 0.2.0:** `annotate_ips_skip(text, skip_top)` replaces
+`annotate_ips_with_skip_top`; the old name has been removed without an alias.
+`annotate_ips(text)` still uses a zero threshold.
 
 The [workspace migration record](docs/workspace-migration.md) describes the
 verified structure and the remaining development work.
@@ -61,7 +65,7 @@ functions, with the same signatures and behavior. All functions return
 | `kind` / `kind_with_label` | `bool` category membership | `CET4`; explicit exact label |
 | `kind_list` / `kind_list_with_label` | `Vec<String>` containing the complete ordered category list | `CET4`; explicit exact label |
 | `labels` | `Vec<String>` of registered boolean category labels | Configuration order |
-| `annotate_ips` / `annotate_ips_with_skip_top` | `String` containing the complete annotated text | `0`; explicit inclusive frequency threshold |
+| `annotate_ips` / `annotate_ips_skip` | `String` containing the complete annotated text | `0`; explicit inclusive frequency threshold |
 
 `root_lemma` returns saved data rather than running a new lemmatizer. Missing,
 conflicting, unreviewed and invalid pronunciation candidates are excluded;
@@ -86,7 +90,7 @@ labels return an error even for unknown words; registered empty lists succeed.
 fn main() -> lingose::Result<()> {
     let text = "Abandon the book. The apple and the hour.";
     println!("{}", lingose::annotate_ips(text)?); // skip_top = 0
-    println!("{}", lingose::annotate_ips_with_skip_top(text, 1000)?);
+    println!("{}", lingose::annotate_ips_skip(text, 1000)?);
     Ok(())
 }
 ```
@@ -165,7 +169,7 @@ lingose::ipa(123);
 ```
 
 ```rust,compile_fail
-lingose::annotate_ips_with_skip_top("apple", true);
+lingose::annotate_ips_skip("apple", true);
 ```
 
 The full signatures, Python correspondence and validation order are recorded in

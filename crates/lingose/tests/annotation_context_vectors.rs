@@ -347,7 +347,7 @@ fn pinned_python_complete_zero_threshold_annotation_outputs_match() {
             "{identifier}"
         );
         assert_eq!(
-            lingose::annotate_ips_with_skip_top(text, 0).unwrap(),
+            lingose::annotate_ips_skip(text, 0).unwrap(),
             expected,
             "{identifier}/zero"
         );

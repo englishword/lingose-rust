@@ -232,7 +232,7 @@ def render_public(baseline: dict, cases: list) -> str:
         lines.append(f"        ({string(identifier)}, {string(text)}, {string(value)}),")
     lines += ["    ];", "    for &(identifier, text, expected) in cases {",
               '        assert_eq!(lingose::annotate_ips(text).unwrap(), expected, "{identifier}");',
-              '        assert_eq!(lingose::annotate_ips_with_skip_top(text, 0).unwrap(), expected, "{identifier}/zero");',
+              '        assert_eq!(lingose::annotate_ips_skip(text, 0).unwrap(), expected, "{identifier}/zero");',
               "    }", "}", ""]
     return "\n".join(lines)
 

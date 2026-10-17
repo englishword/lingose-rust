@@ -76,3 +76,5 @@
 /tests/test_workspace_tools.py text eol=lf
 /docs/workspace-tools.md text eol=lf
 /docs/workspace-tools-verification.json text eol=lf
+/docs/annotation-api-rename.md text eol=lf
+/docs/annotation-api-rename-verification.json text eol=lf

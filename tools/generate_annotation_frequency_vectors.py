@@ -271,7 +271,7 @@ def render_public(baseline: dict, cases: list, errors: list, excluded: list) -> 
     for identifier, text, threshold, value in cases:
         lines.append(f"        ({string(identifier)}, {string(text)}, {threshold}, {string(value)}),")
     lines += ["    ];", "    for &(identifier, text, threshold, expected) in cases {",
-              '        assert_eq!(lingose::annotate_ips_with_skip_top(text, threshold).unwrap(), expected, "{identifier}");',
+              '        assert_eq!(lingose::annotate_ips_skip(text, threshold).unwrap(), expected, "{identifier}");',
               "        if threshold == 0 {",
               '            assert_eq!(lingose::annotate_ips(text).unwrap(), expected, "{identifier}/default");',
               "        }", "    }", "}", "", "#[test]",
@@ -280,7 +280,7 @@ def render_public(baseline: dict, cases: list, errors: list, excluded: list) -> 
     for identifier, text, threshold, parameter in errors:
         lines.append(f"        ({string(identifier)}, {string(text)}, {threshold}, {string(parameter)}),")
     lines += ["    ];", "    for &(identifier, text, threshold, parameter) in cases {",
-              "        assert!(matches!(lingose::annotate_ips_with_skip_top(text, threshold),",
+              "        assert!(matches!(lingose::annotate_ips_skip(text, threshold),",
               "            Err(lingose::Error::InvalidArgument { parameter: found, .. }) if found == parameter),",
               '            "{identifier}");', "    }", "}", ""]
     return "\n".join(lines)

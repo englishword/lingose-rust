@@ -27,8 +27,7 @@ fn public_signatures_own_results_and_support_all_annotation_thresholds() {
     let word_lists: [fn() -> Result<Vec<String>>; 2] = [lingose::kind_list, lingose::labels];
     let kind_list: fn(&str) -> Result<Vec<String>> = lingose::kind_list_with_label;
     let annotate: fn(&str) -> Result<String> = lingose::annotate_ips;
-    let annotate_with_skip_top: fn(&str, i64) -> Result<String> =
-        lingose::annotate_ips_with_skip_top;
+    let annotate_skip: fn(&str, i64) -> Result<String> = lingose::annotate_ips_skip;
 
     for word in ["apple", "zzzzunknownword"] {
         for query in lists {
@@ -48,12 +47,12 @@ fn public_signatures_own_results_and_support_all_annotation_thresholds() {
     assert!(kind_list("CET4").is_ok());
     for text in ["", "中文 123 e\u{0301}", "Abandon the book."] {
         assert!(annotate(text).is_ok());
-        assert!(annotate_with_skip_top(text, 0).is_ok());
+        assert!(annotate_skip(text, 0).is_ok());
         for threshold in [1000, 5062, 5063, i64::MAX] {
             if text == "Abandon the book." {
-                assert!(annotate_with_skip_top(text, threshold).is_ok());
+                assert!(annotate_skip(text, threshold).is_ok());
             } else {
-                assert_eq!(annotate_with_skip_top(text, threshold).unwrap(), text);
+                assert_eq!(annotate_skip(text, threshold).unwrap(), text);
             }
         }
     }
@@ -66,7 +65,7 @@ fn frequency_annotations_are_owned_clamped_and_safe_for_concurrent_callers() {
     let thresholds = [0, 1000, 5062, 5063, i64::MAX];
     let expected: Vec<_> = thresholds
         .iter()
-        .map(|&threshold| lingose::annotate_ips_with_skip_top(&input, threshold).unwrap())
+        .map(|&threshold| lingose::annotate_ips_skip(&input, threshold).unwrap())
         .collect();
     assert_eq!(expected[2], expected[3]);
     assert_eq!(expected[2], expected[4]);
@@ -79,7 +78,7 @@ fn frequency_annotations_are_owned_clamped_and_safe_for_concurrent_callers() {
                 thresholds
                     .iter()
                     .map(|&threshold| {
-                        lingose::annotate_ips_with_skip_top(
+                        lingose::annotate_ips_skip(
                             "the Abandon abandoned ma’am o’clock Messrs. one hundred unknownwordzz",
                             threshold,
                         )
@@ -219,7 +218,7 @@ fn annotation_checks_threshold_before_text_nul() {
     for threshold in [-1, i64::MIN] {
         for text in ["", "apple", "apple\0"] {
             assert!(matches!(
-                lingose::annotate_ips_with_skip_top(text, threshold),
+                lingose::annotate_ips_skip(text, threshold),
                 Err(Error::InvalidArgument {
                     parameter: "skip_top",
                     ..
@@ -235,7 +234,7 @@ fn annotation_checks_threshold_before_text_nul() {
         })
     ));
     assert!(matches!(
-        lingose::annotate_ips_with_skip_top("apple\0", i64::MAX),
+        lingose::annotate_ips_skip("apple\0", i64::MAX),
         Err(Error::InvalidArgument {
             parameter: "text",
             ..
@@ -260,7 +259,7 @@ fn default_functions_and_case_aliases_share_their_entry_points() {
     assert_eq!(lingose::kind_list(), lingose::kind_list_with_label("CET4"));
     assert_eq!(
         lingose::annotate_ips("apple"),
-        lingose::annotate_ips_with_skip_top("apple", 0)
+        lingose::annotate_ips_skip("apple", 0)
     );
 }
 

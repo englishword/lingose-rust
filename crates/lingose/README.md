@@ -2,9 +2,17 @@
 
 `lingose` is a Rust library for the [IPSM Approach](https://lingose.com/) to
 English pronunciation, spelling and meaning. Version **0.2.0** is in development
-after the 0.1.0 release. This checkout still exposes
-`annotate_ips_with_skip_top`; the planned shorter name is not available yet.
+after the 0.1.0 release. The explicit annotation entry point is now
+`annotate_ips_skip(text, skip_top)`.
 Publication remains disabled during development.
+
+**Breaking change in 0.2.0:** `annotate_ips_with_skip_top` has been removed
+without an alias. Use `annotate_ips_skip`; `annotate_ips(text)` still uses
+a zero threshold. Old source must be updated:
+
+```rust,compile_fail
+let _: fn(&str, i64) -> lingose::Result<String> = lingose::annotate_ips_with_skip_top;
+```
 
 All word queries, category lists and plain-text IPS annotation are implemented.
 The checkout embeds **50,335 word entries**, **24 categories** and a frequency
@@ -55,7 +63,7 @@ functions, with the same signatures and behavior. All functions return
 | `kind` / `kind_with_label` | `bool` category membership | `CET4`; explicit exact label |
 | `kind_list` / `kind_list_with_label` | `Vec<String>` containing the complete ordered category list | `CET4`; explicit exact label |
 | `labels` | `Vec<String>` of registered boolean category labels | Configuration order |
-| `annotate_ips` / `annotate_ips_with_skip_top` | `String` containing the complete annotated text | `0`; explicit inclusive frequency threshold |
+| `annotate_ips` / `annotate_ips_skip` | `String` containing the complete annotated text | `0`; explicit inclusive frequency threshold |
 
 `root_lemma` returns saved data rather than running a new lemmatizer. Missing,
 conflicting, unreviewed and invalid pronunciation candidates are excluded;
@@ -80,7 +88,7 @@ labels return an error even for unknown words; registered empty lists succeed.
 fn main() -> lingose::Result<()> {
     let text = "Abandon the book. The apple and the hour.";
     println!("{}", lingose::annotate_ips(text)?); // skip_top = 0
-    println!("{}", lingose::annotate_ips_with_skip_top(text, 1000)?);
+    println!("{}", lingose::annotate_ips_skip(text, 1000)?);
     Ok(())
 }
 ```
@@ -159,7 +167,7 @@ lingose::ipa(123);
 ```
 
 ```rust,compile_fail
-lingose::annotate_ips_with_skip_top("apple", true);
+lingose::annotate_ips_skip("apple", true);
 ```
 
 The full signatures, Python correspondence and validation order are recorded in

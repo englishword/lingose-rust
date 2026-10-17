@@ -122,11 +122,11 @@ pub fn labels() -> Result<Vec<String>> {
 
 /// Annotates plain text using IPS, with `skip_top = 0`.
 ///
-/// Equivalent to [`annotate_ips_with_skip_top`] with zero threshold.
+/// Equivalent to [`annotate_ips_skip`] with zero threshold.
 /// Includes `the` context, contractions, compound and word-form fallback.
 /// Preserves whitespace, punctuation and non-English spans.
 pub fn annotate_ips(text: &str) -> Result<String> {
-    annotate_ips_with_skip_top(text, 0)
+    annotate_ips_skip(text, 0)
 }
 
 /// Annotates plain text, leaving words up to an inclusive frequency threshold.
@@ -135,6 +135,6 @@ pub fn annotate_ips(text: &str) -> Result<String> {
 /// returns the input without loading resources. Uses the original inclusive
 /// frequency NUMBER, capped at 5062, including stored inflections and phrases.
 /// Zero never loads frequency data; positive values check frequency then lexicon.
-pub fn annotate_ips_with_skip_top(text: &str, skip_top: i64) -> Result<String> {
+pub fn annotate_ips_skip(text: &str, skip_top: i64) -> Result<String> {
     annotation::annotate(text, skip_top)
 }
