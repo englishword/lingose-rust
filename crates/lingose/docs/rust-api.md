@@ -5,12 +5,27 @@
 的十种公共行为及四组大小写名称；小写别名同时对应 Python 0.2.1 README。
 全部接口均已实现，基础用法见 [README](../README.md)。不提供公开的 `lookup` 或 `rank`。
 
+<a id="from-010"></a>
+
 ## 从 0.1.0 迁移
 
 `annotate_ips_with_skip_top(text, skip_top)` 已更名为
 `annotate_ips_skip(text, skip_top)`，旧名称移除且不保留别名。
 签名仍为 `(&str, i64) -> Result<String>`，校验、阈值上限、资源加载顺序和输出不变；
 `annotate_ips(text)` 继续等价于新入口的零阈值调用。
+
+```rust
+fn main() -> lingose::Result<()> {
+    let annotate: fn(&str, i64) -> lingose::Result<String> = lingose::annotate_ips_skip;
+    assert_eq!(annotate("Abandon the book.", 5062)?, "Abandon the book.");
+    assert_eq!(lingose::IPA("apple")?, lingose::ipa("apple")?);
+    Ok(())
+}
+```
+
+库依赖配置见 [README](../README.md#add-the-library)。0.2.0 尚未发布；文档中的
+注册表安装示例是发布后用法，当前使用本地 path 依赖。CLI 是独立的 `lingose-cli`
+包，二进制名为 `lingose`；CLI 的六字段 word 输出不缩减下表的库能力。
 
 ## 同步函数与默认参数
 
@@ -125,11 +140,17 @@ Python 的动态类型错误不计为 Rust 运行时接口。
 资源版本和计数见 [data/manifest.json](../data/manifest.json)，来源声明见
 [SOURCES.md](../SOURCES.md)。
 
-Edition 2024，MSRV 为 1.85；P5.2 曾在 Rust/Cargo 1.85.0 和 1.93.1 上对 0.1.0
-输入完成工程检查，仅覆盖 Windows x86_64 MSVC。迁移后的验证另行记录，不把旧证据
-作为 0.2.0 或其他平台已通过的声明。
-P4.1/P4.2 的全量正确性与固定预热
-性能记录属于文档收口前的输入身份，不能充当当前归档验收；原始证据保持不变。
-P5.1 移除了开发期过渡错误变体，当前公共错误仅上表三类。
-归档与独立离线消费只验证本地使用；dry-run 与真实上传、注册表消费分别记录。
-真实上传及注册表消费属于 P6，不能以本地验证替代。
+Edition 2024，MSRV 为 1.85。CLI4.1 已在 Windows x86_64 MSVC 的 Rust/Cargo
+1.85.0 和 1.93.1 对 0.2.0 workspace 验证：各 131 项 Rust 测试、6 项文档测试，
+以及 Clippy/doc；全量公共差分 1,862,690 个完整结果零差异。原固定预热后的运行时间、
+资源和内存预算通过，新路径首启 675.43 ms 仍超 300 ms，单列保留；CLI 进程/I/O
+另测，不混入库预算。详见
+[新版验收说明](https://github.com/englishword/lingose-rust/blob/main/docs/cli-workspace-acceptance.md)。
+旧版契约和收据保留原文，不能用作新版归档或其他平台验收。
+
+本轮用户文档的示例编译/运行另行留证；尚无 0.2.0 真实归档或注册表消费，
+两包仍为 `publish=false`。CLI4.3 才进入本地真实库归档、隔离 CLI 候选及库 dry-run；
+CLI5 的多平台 CI、CLI6 的 CLI 注册表 dry-run/上传/注册表验收按各阶段记录。
+官网为 [lingose.com](https://lingose.com/)，仓库为
+[englishword/lingose-rust](https://github.com/englishword/lingose-rust)；链接配置本身
+不代表 Git remote、远端权限或发布已验证。

@@ -4,11 +4,40 @@
 English pronunciation, spelling and meaning. Version **0.2.0** is in development
 after the 0.1.0 release. The explicit annotation entry point is now
 `annotate_ips_skip(text, skip_top)`.
-Publication remains disabled during development.
+Version 0.2.0 has not been published; publication remains disabled during development.
+
+## Add the library
+
+Rust/Cargo **1.85 or newer** is required (edition 2024). After 0.2.0 is published,
+add this dependency to your application's `Cargo.toml`:
+
+```toml
+[dependencies]
+lingose = "0.2.0"
+```
+
+For the current checkout, use a path dependency on its `crates/lingose` directory.
+To use the command line instead, install the separate `lingose-cli` package after
+publication with `cargo install lingose-cli`; its executable is named `lingose`.
+The [CLI guide](https://github.com/englishword/lingose-rust/blob/main/crates/lingose-cli/README.md)
+describes local builds, word queries and text/file/stdin annotation.
+
+## Migrate from 0.1.0
 
 **Breaking change in 0.2.0:** `annotate_ips_with_skip_top` has been removed
 without an alias. Use `annotate_ips_skip`; `annotate_ips(text)` still uses
-a zero threshold. Old source must be updated:
+a zero threshold. Replace the old call with:
+
+```rust
+fn main() -> lingose::Result<()> {
+    let annotate: fn(&str, i64) -> lingose::Result<String> = lingose::annotate_ips_skip;
+    assert_eq!(annotate("Abandon the book.", 5062)?, "Abandon the book.");
+    Ok(())
+}
+```
+
+The signature, returned ownership, validation, data and annotation behavior are
+unchanged. Old source must be updated; the removed name fails to compile:
 
 ```rust,compile_fail
 let _: fn(&str, i64) -> lingose::Result<String> = lingose::annotate_ips_with_skip_top;
@@ -93,8 +122,9 @@ fn main() -> lingose::Result<()> {
 }
 ```
 
-Rust expresses Python's default arguments through the default entry points and
-explicit `*_with_lang`, `*_with_label` and `*_with_skip_top` functions. `skip_top`
+Rust expresses Python's default arguments through the default entry points,
+`meaning_with_lang`, `kind_with_label`, `kind_list_with_label` and
+`annotate_ips_skip`. `skip_top`
 is an `i64`; negative values are rejected, and values above 5062 use 5062.
 Frequency filtering keeps stored words and inflections with original
 `NUMBER <= skip_top` unchanged, including equality and original numbering gaps.
@@ -179,27 +209,33 @@ Edition **2024**, minimum Rust version **1.85**. The checked-in dependency
 resolution has been tested with Rust/Cargo **1.85.0** and **1.93.1** on
 `x86_64-pc-windows-msvc`. The resource loader
 uses `sha2` 0.10.9 for integrity checks. The crate has no build script, database
-driver or download step.
+driver or lexicon download step. Runtime requires no Python, Node, SQLite
+installation, configuration or adjacent source checkout. Cargo may need the
+network to acquire software dependencies before an offline build.
 
 ```sh
-cargo check --offline --locked --all-targets --all-features
-cargo test --offline --locked --all-features
+cargo check --offline --locked -p lingose --all-targets --all-features
+cargo test --offline --locked -p lingose --all-features
 ```
 
 Complete compilable examples are [query.rs](examples/query.rs) and
 [annotate.rs](examples/annotate.rs). Run them with
-`cargo run --offline --locked --example query` and
-`cargo run --offline --locked --example annotate`.
+`cargo run --offline --locked -p lingose --example query` and
+`cargo run --offline --locked -p lingose --example annotate`.
 
-The pre-documentation baseline passed a full Python differential comparison of
-1,862,690 public results and release performance checks under fixed warmup
-conditions. These are historical Windows results, rather than measurements of
-the final package. A newly copied executable's first run exceeded the startup
-budget; the measurements do not guarantee that latency. Other-platform and
-registry acceptance remain pending.
+CLI4.1 verified the 0.2.0 workspace with both toolchains above, including all
+131 workspace Rust tests, six doctests and a full Python differential comparison
+of 1,862,690 public results with zero differences. Release performance met the
+fixed warmed-process budgets. A new executable path's first run still exceeded
+the 300 ms startup budget; these measurements do not guarantee first-run latency.
+This is Windows source-workspace evidence, separate from real 0.2.0 archives,
+registry installation or other-platform execution. See the
+[acceptance record](https://github.com/englishword/lingose-rust/blob/main/docs/cli-workspace-acceptance.md).
 
 ## License and credits
 
 Project license: [CC BY 4.0](./LICENSE). Original Lingose data and notation by
 **ZHAN Xianjue**, [lingose.com](https://lingose.com/). The original license,
-author attribution and [source notices](SOURCES.md) are preserved.
+author attribution and [source notices](SOURCES.md) are preserved. The source
+notices distinguish software dependency licenses, Unicode-derived tables and
+upstream data credits, including the recorded Frequency List license gap.

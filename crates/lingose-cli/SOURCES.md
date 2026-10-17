@@ -26,9 +26,41 @@ Third-party works retain their own licenses.
 
 ## CLI software dependencies
 
-In addition to the `lingose` library, the CLI uses
-[Clap](https://github.com/clap-rs/clap) for argument parsing and
-[serde_json](https://github.com/serde-rs/json) for JSON. Both use the
-`MIT OR Apache-2.0` license; their licenses remain separate from Lingose's
-CC BY 4.0 license. Exact direct and transitive versions are in the workspace
-`Cargo.lock`. The complete distribution license review is part of CLI4.2.
+The CLI calls `lingose` **0.2.0**, which owns all bundled data, Unicode tables,
+queries and annotation. Retain the
+[library's data and software notices](https://github.com/englishword/lingose-rust/blob/main/crates/lingose/SOURCES.md),
+including the Frequency List credit to **Fabien Snauwaert** and the recorded lack
+of a separate Frequency List license text. The project CC BY 4.0 declaration
+does not resolve that provenance gap or relicense third-party material.
+Unicode-derived tables retain
+[Unicode License V3](https://github.com/englishword/lingose-rust/blob/main/crates/lingose/third_party/unicode/LICENSE.txt)
+and **Copyright © 1991-2026 Unicode, Inc.**
+
+In addition to the library's `sha2` dependency closure, the CLI uses
+[Clap](https://github.com/clap-rs/clap) for arguments and
+[serde_json](https://github.com/serde-rs/json) for JSON. The current workspace
+`Cargo.lock` and local dependency manifests were checked with the enabled
+features (`std`, `help`, `usage`, `error-context` for Clap; default serde_json):
+
+| Additional dependency | Locked version | Manifest license |
+| --- | --- | --- |
+| `clap` (direct), `clap_builder` | 4.6.7 | MIT OR Apache-2.0 |
+| `clap_lex` | 1.1.1 | MIT OR Apache-2.0 |
+| `anstyle` | 1.0.14 | MIT OR Apache-2.0 |
+| `serde_json` (direct) | 1.0.154 | MIT OR Apache-2.0 |
+| `serde_core` | 1.0.229 | MIT OR Apache-2.0 |
+| `itoa` | 1.0.18 | MIT OR Apache-2.0 |
+| `memchr` | 2.8.3 | Unlicense OR MIT |
+| `zmij` | 1.0.23 | MIT |
+
+These nine extra crates plus the library closure total 18 external crates on the
+three planned x86_64 targets and 19 on aarch64 Linux/macOS (conditional `libc`).
+Other lockfile entries can belong to disabled features/target conditions; the
+lockfile is not a list of everything compiled into the binary. Offline target
+dependency resolution is separate from target build and execution acceptance.
+
+Dependency licenses remain separate from Lingose's CC BY 4.0. Cargo handles
+dependency source/license files during source installation; standalone release
+assets must include applicable notices and license texts in their own stage.
+No new CLI dependencies have been added to the preserved historical loader or
+distribution provenance records.

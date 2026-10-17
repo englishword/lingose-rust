@@ -92,3 +92,5 @@
 /docs/cli-process-verification-0.2.0.json text eol=lf
 /docs/cli-workspace-acceptance.md text eol=lf
 /docs/cli-workspace-acceptance-verification.json text eol=lf
+/docs/cli-user-documentation.md text eol=lf
+/docs/cli-user-documentation-verification.json text eol=lf
