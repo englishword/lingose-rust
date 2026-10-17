@@ -1,0 +1,688 @@
+{
+  "phase": "CLI3.2",
+  "base_commit": "fbb447fcc8be121788d6e87a510c7e1a8f28bcb1",
+  "host": "Windows-11-10.0.26200-SP0",
+  "checks": [
+    {
+      "label": "rustc",
+      "argv": [
+        "rustc",
+        "--version",
+        "--verbose"
+      ],
+      "exit_code": 0,
+      "logs": {
+        "stdout": {
+          "path": ".local/cli32-input/rustc.stdout.log",
+          "bytes": 194,
+          "sha256": "f133056ecf1576257a2bcb9da126bfb7e84725ccc144caee31dc2f70b42f6f20"
+        },
+        "stderr": {
+          "path": ".local/cli32-input/rustc.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "cargo",
+      "argv": [
+        "cargo",
+        "--version"
+      ],
+      "exit_code": 0,
+      "logs": {
+        "stdout": {
+          "path": ".local/cli32-input/cargo.stdout.log",
+          "bytes": 36,
+          "sha256": "57d704d9ad73ec7cc1b1a79aed6703333615865be6e3dc1ce269ea4ca7068227"
+        },
+        "stderr": {
+          "path": ".local/cli32-input/cargo.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "cli-tests",
+      "argv": [
+        "cargo",
+        "test",
+        "-p",
+        "lingose-cli",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "logs": {
+        "stdout": {
+          "path": ".local/cli32-input/cli-tests.stdout.log",
+          "bytes": 1652,
+          "sha256": "0ffd872b51ef60d1495d90e7b6bacdba9fc8eba780aeb7cfb9e9863583980e8e"
+        },
+        "stderr": {
+          "path": ".local/cli32-input/cli-tests.stderr.log",
+          "bytes": 436,
+          "sha256": "066b8f742b8016cbbe88e3dc1af92fb5dbf293dadf3942036f3537d68d81831c"
+        }
+      }
+    },
+    {
+      "label": "fmt",
+      "argv": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "logs": {
+        "stdout": {
+          "path": ".local/cli32-input/fmt.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli32-input/fmt.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "clippy",
+      "argv": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--offline",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "logs": {
+        "stdout": {
+          "path": ".local/cli32-input/clippy.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli32-input/clippy.stderr.log",
+          "bytes": 743,
+          "sha256": "404bada2ae4c89a9a6b82b01fe77c947b94aa0f3d18f3d577b7b2727f22909cb"
+        }
+      }
+    },
+    {
+      "label": "workspace-tests",
+      "argv": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "logs": {
+        "stdout": {
+          "path": ".local/cli32-input/workspace-tests.stdout.log",
+          "bytes": 12772,
+          "sha256": "e1099185b25889a0895d9bb46362fd6af11dfdbd5e50c258525a394677c01e08"
+        },
+        "stderr": {
+          "path": ".local/cli32-input/workspace-tests.stderr.log",
+          "bytes": 1239,
+          "sha256": "6787ea5a0148e70e74a391c1f3362d49ef80fc9bd8bfdb03509eb19d13d8f5b3"
+        }
+      }
+    },
+    {
+      "label": "doc-tests",
+      "argv": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--doc",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "logs": {
+        "stdout": {
+          "path": ".local/cli32-input/doc-tests.stdout.log",
+          "bytes": 676,
+          "sha256": "aa51005ce2ba93e8f5e0da8e5f1ebcc0230b56530a317de787dfcb93cded28e9"
+        },
+        "stderr": {
+          "path": ".local/cli32-input/doc-tests.stderr.log",
+          "bytes": 94,
+          "sha256": "38c554b18838ece8cc5cb62f7ea1b50f09b00b7a36c5ea5f58d6159a34d917cb"
+        }
+      }
+    },
+    {
+      "label": "doc",
+      "argv": [
+        "cargo",
+        "doc",
+        "--workspace",
+        "--no-deps",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "logs": {
+        "stdout": {
+          "path": ".local/cli32-input/doc.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli32-input/doc.stderr.log",
+          "bytes": 239,
+          "sha256": "6f08ef5fc2bfdaf827219984120183a9671a6c52e42e83d4fd63504e297813fb"
+        }
+      }
+    },
+    {
+      "label": "msrv-rustc",
+      "argv": [
+        "rustup",
+        "run",
+        "1.85.0",
+        "rustc",
+        "--version",
+        "--verbose"
+      ],
+      "exit_code": 0,
+      "logs": {
+        "stdout": {
+          "path": ".local/cli32-input/msrv-rustc.stdout.log",
+          "bytes": 194,
+          "sha256": "32773cf1f17324f81b3423be1da95ce0a5c4e9f253e71481a8aa68e604748997"
+        },
+        "stderr": {
+          "path": ".local/cli32-input/msrv-rustc.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    {
+      "label": "msrv-cli-tests",
+      "argv": [
+        "rustup",
+        "run",
+        "1.85.0",
+        "cargo",
+        "test",
+        "-p",
+        "lingose-cli",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "logs": {
+        "stdout": {
+          "path": ".local/cli32-input/msrv-cli-tests.stdout.log",
+          "bytes": 1653,
+          "sha256": "11867ad714309898477967216a417f8ec91dec462a8441ee9ce053789433c508"
+        },
+        "stderr": {
+          "path": ".local/cli32-input/msrv-cli-tests.stderr.log",
+          "bytes": 1070,
+          "sha256": "de33f20b4786fa0101584c0590caf77241e054320f6c3b0a99a6c0da157084b2"
+        }
+      }
+    },
+    {
+      "label": "python-workspace-tools",
+      "argv": [
+        "python",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_workspace*.py"
+      ],
+      "exit_code": 0,
+      "logs": {
+        "stdout": {
+          "path": ".local/cli32-input/python-workspace-tools.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli32-input/python-workspace-tools.stderr.log",
+          "bytes": 119,
+          "sha256": "0032c712f4ec7ae4621354778343403c92b9bedcf1cba1510612c0578c663a0a"
+        }
+      }
+    }
+  ],
+  "completed_utc": "2026-10-17T12:18:59.682116+00:00",
+  "toolchains": {
+    "stable": "1.93.1-x86_64-pc-windows-msvc",
+    "msrv": "1.85.0-x86_64-pc-windows-msvc"
+  },
+  "test_counts": {
+    "cli_unit": 4,
+    "word_process": 8,
+    "annotate_process_windows": 8,
+    "cli_total": 20,
+    "workspace_rust_passed": 122,
+    "workspace_existing_ignored": 1,
+    "doc_passed": 6,
+    "msrv_cli_passed": 20,
+    "python_workspace_tools_passed": 15
+  },
+  "unchanged_dependencies": {
+    "workspace_lock_sha256": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e",
+    "cli_manifest_sha256": "e50128430cf34e3da846eb17a97e5924ea39ddff7a9dbf14f34874f14abb788f",
+    "library_manifest_sha256": "4e1e4c9532ef7e5b1f57da9173f133c54b0cf039e30e5b8d2a5fcd3cc7193101"
+  },
+  "p0_comparison": {
+    "snapshot_cases": 52,
+    "excluded_unrepresentable_cases": [
+      {
+        "id": "snapshot-0260",
+        "reason": "Python arbitrary-precision threshold cannot be represented by the existing Rust i64 API/CLI; overflow rejection is covered by process tests."
+      }
+    ],
+    "mismatches": 0,
+    "thresholds": [
+      0,
+      1,
+      29,
+      30,
+      31,
+      1000,
+      5061,
+      5062,
+      5063
+    ],
+    "fixture": "tests/fixtures/python-api-v1.json",
+    "fixture_sha256": "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1",
+    "output_index_sha256": "208e7e965ff7a2e589921c1cfd370cc1822cf8b9c741f196558536b9f6a523b3",
+    "binary_sha256": "0682026f9d5f4e9de7d772732eee01b903f81db91bbf004e1732367fe2dd18a7",
+    "runtime_directory": ".local/cli32-input/p0-empty-runtime",
+    "runtime_directory_remains_empty": true,
+    "boundary": "All successful annotate_ips frozen P0 snapshot cases whose threshold fits the existing Rust i64 signature through stdin; no new Python oracle run, packaged or registry consumer."
+  },
+  "shell_checks": {
+    "versions": {
+      "powershell": "5.1.26100.9444",
+      "bash": "GNU bash, version 5.2.37(1)-release (x86_64-pc-msys)"
+    },
+    "checks": [
+      {
+        "label": "powershell-string",
+        "argv": [
+          "powershell.exe",
+          "-NoProfile",
+          "-NonInteractive",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "E:\\git\\claude\\words\\lingose-rust\\.local\\cli32-input\\powershell-string.ps1"
+        ],
+        "exit_code": 0,
+        "comparison": "decoded lines; PowerShell may re-emit native output with CRLF",
+        "logs": {
+          "stdout": {
+            "path": ".local/cli32-input/powershell-string.stdout.log",
+            "sha256": "d96e043d8a7bfdb1be49153efb0a924bcb82296e34d7eff0b8fe5e5246c2e90d",
+            "bytes": 21
+          },
+          "stderr": {
+            "path": ".local/cli32-input/powershell-string.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        "captured_stdin": {
+          "bytes": 16,
+          "sha256": "6600cce3a93121e79f93ad2175251d6d4c9b2a1241fbc1a8a45058e94e16ecd2",
+          "utf8_bom": true
+        }
+      },
+      {
+        "label": "powershell-get-content",
+        "argv": [
+          "powershell.exe",
+          "-NoProfile",
+          "-NonInteractive",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "E:\\git\\claude\\words\\lingose-rust\\.local\\cli32-input\\powershell-get-content.ps1"
+        ],
+        "exit_code": 0,
+        "comparison": "decoded lines; PowerShell may re-emit native output with CRLF",
+        "logs": {
+          "stdout": {
+            "path": ".local/cli32-input/powershell-get-content.stdout.log",
+            "sha256": "8f28f2b2489011d952bc1481f99224e7152d27cc34ee3799b754926624e3fab4",
+            "bytes": 18
+          },
+          "stderr": {
+            "path": ".local/cli32-input/powershell-get-content.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        "captured_stdin": {
+          "bytes": 15,
+          "sha256": "f1d8cf11124339f91ddaa190531f04e92abec2f495a8ad91cf10526b86f91689",
+          "utf8_bom": true
+        }
+      },
+      {
+        "label": "powershell-unicode",
+        "argv": [
+          "powershell.exe",
+          "-NoProfile",
+          "-NonInteractive",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "E:\\git\\claude\\words\\lingose-rust\\.local\\cli32-input\\powershell-unicode.ps1"
+        ],
+        "exit_code": 0,
+        "comparison": "decoded lines; PowerShell may re-emit native output with CRLF",
+        "logs": {
+          "stdout": {
+            "path": ".local/cli32-input/powershell-unicode.stdout.log",
+            "sha256": "11261f6f293ab4c114f25106001cc1c36194942295a28e0625ac963a79ccbdce",
+            "bytes": 20
+          },
+          "stderr": {
+            "path": ".local/cli32-input/powershell-unicode.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        "captured_stdin": {
+          "bytes": 17,
+          "sha256": "848d9dd0930e109bdd11552b08c27f0798e83790e20f5ef81745b3d0c24768c5",
+          "utf8_bom": true
+        }
+      },
+      {
+        "label": "bash-cat",
+        "argv": [
+          "D:\\Git\\bin\\bash.exe",
+          "--noprofile",
+          "--norc",
+          "-c",
+          "set -o pipefail\nPATH=/usr/bin:/bin:$PATH\ncat article.txt | E:/git/claude/words/lingose-rust/.local/cli32-target/debug/lingose.exe annotate"
+        ],
+        "exit_code": 0,
+        "comparison": "exact bytes",
+        "logs": {
+          "stdout": {
+            "path": ".local/cli32-input/bash-cat.stdout.log",
+            "sha256": "b38d3ac9c6573e279b4ad6e72edb81f6efd4a4cc09a771a2f2c4ad0ad50fcd0d",
+            "bytes": 12
+          },
+          "stderr": {
+            "path": ".local/cli32-input/bash-cat.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        }
+      },
+      {
+        "label": "bash-printf",
+        "argv": [
+          "D:\\Git\\bin\\bash.exe",
+          "--noprofile",
+          "--norc",
+          "-c",
+          "set -o pipefail\nPATH=/usr/bin:/bin:$PATH\nprintf 'the\\napple' | E:/git/claude/words/lingose-rust/.local/cli32-target/debug/lingose.exe annotate"
+        ],
+        "exit_code": 0,
+        "comparison": "exact bytes",
+        "logs": {
+          "stdout": {
+            "path": ".local/cli32-input/bash-printf.stdout.log",
+            "sha256": "b38d3ac9c6573e279b4ad6e72edb81f6efd4a4cc09a771a2f2c4ad0ad50fcd0d",
+            "bytes": 12
+          },
+          "stderr": {
+            "path": ".local/cli32-input/bash-printf.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        }
+      },
+      {
+        "label": "bash-unicode",
+        "argv": [
+          "D:\\Git\\bin\\bash.exe",
+          "--noprofile",
+          "--norc",
+          "-c",
+          "set -o pipefail\nPATH=/usr/bin:/bin:$PATH\nprintf '%s' '中文 hello' | E:/git/claude/words/lingose-rust/.local/cli32-target/debug/lingose.exe annotate"
+        ],
+        "exit_code": 0,
+        "comparison": "exact bytes",
+        "logs": {
+          "stdout": {
+            "path": ".local/cli32-input/bash-unicode.stdout.log",
+            "sha256": "d546f019b84f5f8c7340650480142b4f1d3dba0516495c76bf681badc19773ce",
+            "bytes": 15
+          },
+          "stderr": {
+            "path": ".local/cli32-input/bash-unicode.stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        }
+      }
+    ],
+    "boundary": "Windows-native CLI with Windows PowerShell and Git for Windows Bash; no Linux/macOS target execution. Shell output compared with the same binary direct-text path; integration tests independently compare that path with the library."
+  },
+  "source_files": {
+    ".gitattributes": "22c64d642aec870481835052b54b778947c0dec2557b70156d884495ee0fccf0",
+    "README.md": "0bfb60839a4a785850bb8907079b5d3550de21e530221c0270e710f4cf7073b3",
+    "crates/lingose-cli/README.md": "aa1f9061f24c8fdb96920faf2faaf0acaff2ccf8da9753a2cac9ba0f666b41a3",
+    "crates/lingose-cli/src/main.rs": "07c10062fb765b6da1538acc1f1e0a82be5b455bc32be0100f96c332d467ef86",
+    "crates/lingose-cli/tests/annotate.rs": "958fac53dddbfea3965d5f59634249966a9c0dc5bf2e9d5c9cb5c65b2b69c8d0",
+    "crates/lingose-cli/tests/word.rs": "e206bba4398dcfe185823e4eec780aa23e8bcd6180405d562ac7b940edf7d0bc"
+  },
+  "protection": {
+    "before_tracked_files": 162,
+    "out_of_scope_original_files": 156,
+    "changed_outside_scope": [],
+    "before_index": ".local/cli32-input/before-sha256.json",
+    "before_index_sha256": "343ff44a130e0400f1c3070bd67945d0fe578e4b689870601522a671fbdcd01e",
+    "unchanged_files": {
+      ".gitignore": "447c660594550004d09817ab16435cd7efe15f4cb1767384ea4b1830e3b2c27e",
+      "AGENTS.md": "fd2bec28f9c5ed2f6e4d3f9917d9a3716a3487cecec137ede632c837cce0158d",
+      "Cargo.lock": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e",
+      "Cargo.toml": "2c7d78c0cb89af8501739a315db12692f4141b8c70815a6fcdbad0dab7cb253b",
+      "LICENSE": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+      "SOURCES.md": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5",
+      "TASK.md": "a3cdccdb623e59124e3dd404938538601d1497c85f983b0df8e1e266f0695cdc",
+      "TASK_CLI.md": "2f88982186954e22cadde46abf375f0ffc98424ccffe388a5ffb81f31814c7df",
+      "crates/lingose-cli/Cargo.toml": "e50128430cf34e3da846eb17a97e5924ea39ddff7a9dbf14f34874f14abb788f",
+      "crates/lingose-cli/LICENSE": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+      "crates/lingose-cli/SOURCES.md": "38687989709fe2b7a9ae15f83b885669eb39554da340c9741a1715f6be3e8bfe",
+      "crates/lingose-cli/tests/word.rs": "e206bba4398dcfe185823e4eec780aa23e8bcd6180405d562ac7b940edf7d0bc",
+      "crates/lingose/Cargo.toml": "4e1e4c9532ef7e5b1f57da9173f133c54b0cf039e30e5b8d2a5fcd3cc7193101",
+      "crates/lingose/LICENSE": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+      "crates/lingose/README.md": "e59be46ebbf4111c1144d23d04774bc21baf3db4d0ae7c7a336eb31e401b20b0",
+      "crates/lingose/SOURCES.md": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5",
+      "crates/lingose/data/LICENSE": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+      "crates/lingose/data/SOURCES.json": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f",
+      "crates/lingose/data/UPSTREAM-SOURCES.md": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228",
+      "crates/lingose/data/frequency.bin": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264",
+      "crates/lingose/data/lexicon.bin": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6",
+      "crates/lingose/data/manifest.json": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03",
+      "crates/lingose/docs/distribution-provenance.json": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f",
+      "crates/lingose/docs/rust-api.md": "e0c7a6ef41a4a1f5a80c990775310b9b383cd22581077f2cf05bd12961dee6ce",
+      "crates/lingose/examples/annotate.rs": "59e6d564a33328edbcc7dbe6e3145bdd75ebef0e6f0c99a5d6f9233ef4441c5a",
+      "crates/lingose/examples/query.rs": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98",
+      "crates/lingose/src/annotation.rs": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247",
+      "crates/lingose/src/annotation_context_vectors.rs": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302",
+      "crates/lingose/src/annotation_frequency_vectors.rs": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6",
+      "crates/lingose/src/annotation_unicode.rs": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94",
+      "crates/lingose/src/annotation_unicode_tables.rs": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b",
+      "crates/lingose/src/annotation_vectors.rs": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12",
+      "crates/lingose/src/category.rs": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f",
+      "crates/lingose/src/data/annotation_context_vectors.rs": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df",
+      "crates/lingose/src/data/annotation_frequency_vectors.rs": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16",
+      "crates/lingose/src/data/annotation_tests.rs": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf",
+      "crates/lingose/src/data/cache_tests.rs": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8",
+      "crates/lingose/src/data/category_tests.rs": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918",
+      "crates/lingose/src/data/image.rs": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b",
+      "crates/lingose/src/data/mod.rs": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c",
+      "crates/lingose/src/data/p41_joint_error_tests.rs": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08",
+      "crates/lingose/src/data/p41_query_fixture_tests.rs": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6",
+      "crates/lingose/src/data/tests.rs": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a",
+      "crates/lingose/src/data_meta.rs": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0",
+      "crates/lingose/src/error.rs": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f",
+      "crates/lingose/src/lib.rs": "661ea94997dcdb0d7a994a900acb1dbc6c3e0b897804d495beb3c90389d5ca12",
+      "crates/lingose/src/query.rs": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd",
+      "crates/lingose/src/query_case.rs": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7",
+      "crates/lingose/src/query_case_tables.rs": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e",
+      "crates/lingose/src/validation.rs": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e",
+      "crates/lingose/tests/annotation_context_vectors.rs": "b35ab093c36a2e52657fcf363a8cf106eb40989f8c59f0a38f7b1d2f3c82fa5b",
+      "crates/lingose/tests/annotation_frequency_vectors.rs": "5e7ece15934e19c81157ac7eaa668e6be61342ce7b94705e50d0a8c5925c572e",
+      "crates/lingose/tests/annotation_vectors.rs": "36a1a975500fbe2a264dd8cae0c7535f08f782a9849e7d54f8bc85ccfcbae462",
+      "crates/lingose/tests/api_contract.rs": "45626a7c12aeb1d42659854c1310f260fbcaeea8ac63d4a6a08ddbef4eaf7cdb",
+      "crates/lingose/tests/category_vectors.rs": "2a9847a84ea05858410e0be8be3020771b0e2027a13426b077fa61fc9b5e1072",
+      "crates/lingose/tests/query_vectors.rs": "440c7634cddb9494a37b0c0e89e1723ac53d9e2e92be125ca32057cbc187cbce",
+      "crates/lingose/third_party/unicode/LICENSE.txt": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+      "docs/annotation-api-rename-verification.json": "dcd6d1d38215b71cff1f1868105f0f3a87c5c18a17ec01d0228f8b715a772cad",
+      "docs/annotation-api-rename.md": "bcc44d577b9aa7252dd09f79f97e5d66fd3a7deafda1922dcdc584d60033c2b6",
+      "docs/annotation-context-verification.json": "61b9647f906e29e4ab8a3da895ca0bece42eb0f05627e0c7413504bd6b6be763",
+      "docs/annotation-frequency-verification.json": "1dd1f88263ecf046069739543426920aec76275df0f128c01ed7c64f42bbf071",
+      "docs/annotation-unicode.json": "521a545a791b054acb135197034305434dce11e67ffe8547952340fcc3254fb1",
+      "docs/annotation-verification.json": "f7dc9cdcef58b74bab900eb4a91d53c1283befe80011fe56b697273479acaaa8",
+      "docs/annotation.md": "74fb14c208832c83e59cc00627f239a73506779f2108b85c7c17e4549f4c06ff",
+      "docs/api.md": "ae6e87cd60fb66f8291d82abce20b3bf77e0d17c9e53b6d2e0aefa6929d9372e",
+      "docs/categories.md": "c1b62ebfcb34bbd7b0e508abf41f4c7443f8a7a133a5ca3144fcc59ca983c3c0",
+      "docs/category-verification.json": "f589f774e7ba3edfc8d8995756dd515a5556589c4a10f9cfe41809f53686ed58",
+      "docs/cli-word-verification.json": "46848e876876d31553ce8cd8c4f11ed86715a23ffc2dd9c43a589eec45f0bff9",
+      "docs/cli-word.md": "eb350d7880752d0d95309ca5f72e7eb27158a3eec547ed518932c3c75d35d714",
+      "docs/correctness-regression-verification.json": "aa323f5a9bff1e4cdf3fa0372914dfa6d21227ade121daa8942863fee2d65412",
+      "docs/data-export.md": "cac2faad31d09cea22112ed3a91e9d725fb741b5634b54980f72a0ff448129a7",
+      "docs/data-layout.md": "3a7438852f6094ee5ca82205330fd09de3489c80a0a092ea3c97dcf6f4ef8daa",
+      "docs/data-loader.md": "1aba33adf458a8abd1c5dcba299a2da748a208282615d43d0b029ba80858a43b",
+      "docs/data-verification.json": "712b5b8be598b5cd9bebae98ffd5350aadf709cd47f660f34f571944568a9c14",
+      "docs/distribution-provenance.json": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f",
+      "docs/distribution-review.md": "1506200d59a5d1068dcbfc2adb337f324ef634223c68abe417d3cbb045a303bc",
+      "docs/engineering-verification.json": "44216e41cd716ab39d339256bc78c9a03ae05d2fc29d34f5e9bec97c698d339a",
+      "docs/engineering.md": "80ca241214cf62eae6dfeb2fd01fba7a6b0c774124cf88d9e44c07af957f5301",
+      "docs/full-differential-verification.json": "72ea9e2fafea9501e8977d9e7e31a7ccb16bddad752a0e57ce6355ed4c23e528",
+      "docs/full-differential.md": "0150d45ead564e35991bafd7016c3068630a165e82aae23a8a267670a066f160",
+      "docs/layout-probe-results.json": "981736620f03435decd4613f89233bd68169c8c0e404a30af262591d3eed8c2a",
+      "docs/loader-verification.json": "64e2ca459bafe707971bc67b6f3e1c39e5d1e60d28d15d79a32bd4e853d09eb4",
+      "docs/p5-documentation-verification.json": "ecd50b647ae4b3bffc5cee609921d5b5da7d1dff4f8b41890bc491ce88313a98",
+      "docs/package-verification.json": "96fe4ca4cd87f87ae31fecc151ccbe0ed523e630f64c3b9b7015367eb255dfbc",
+      "docs/packaging.md": "03101264d0206161b6ca2cead9c8090c6a40df9a4bcc1ed9bf58a9fb676a44ab",
+      "docs/performance-budget.json": "3f54b4d54240eb8039cb461829c76d2ccd2cda7fe6cb4060b013d5d882cd4e82",
+      "docs/performance-budget.md": "a890bd490d7dc02264afcb4a1692f3cdfa0f2a927cceca298a79c7867a39300a",
+      "docs/performance-verification.json": "daf22261dadd266d935f9066a21aefcb27f296ee7aa9ecfe32cd87bc01b3eb36",
+      "docs/performance.md": "c3dd77a902f0934fa4fe86582a6385bd2c8531da1ff175b7beb674aa95d3e154",
+      "docs/publication-preflight.json": "f3273631263d60c55fdc0d22e82f42ec49b59271edd53654004abcd1ce6bed47",
+      "docs/publication-preflight.md": "e65678a09ef514a2b46c8ee8ffabd44c9c1dc067d7aba371dd2e36e8e703f76a",
+      "docs/publication.json": "9557a72362d2c060053405e247215b1e2fa9b6e5d2ff2f7f2d44466019ad9f76",
+      "docs/publication.md": "42b8707906f62a769bb44e3f4f8b6534684d783bc8a03a064491f6539ff2b3f5",
+      "docs/query-case.json": "4ea010b0509185e14b311263911f3fe3ba17f9204d6eb4b7b3119ab34871fabc",
+      "docs/query-verification.json": "dbe8894eea010602289254c8f7819f0841edbc74c2e93df46cdaacf9d00b337b",
+      "docs/reference-baseline.json": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01",
+      "docs/reference-baseline.md": "e54ddf801c37185ee5b95f5503c726ab2c52d5044493101a4cbf87e01a4ee295",
+      "docs/registry-consumer-verification.json": "8ce02801c3a9c2a3dd07dae3b66c79a296413df9e095095f21854b82fa64e764",
+      "docs/registry-consumer.md": "355486a47b7ab9f01b69cd11c05a0df05ec80ecef2c349d771bf79fd764bb964",
+      "docs/rust-api.md": "9a70866da0046b0005579323118268953a84c1e85a80952c8b70b561034b0832",
+      "docs/simple-queries.md": "4a84765687363917cb11c5866593eaebb4e7c6d675d78bf8e3497a03bb371ef4",
+      "docs/workspace-migration-verification.json": "dc7c2c9bb1dcb2dd54e454a65f9906fbcbc77a667937cd5783d197f5effafa9a",
+      "docs/workspace-migration.md": "0a0d45e30baec86bed1388a4c20f45dd29c4244d80432985410a9b3fa364366a",
+      "docs/workspace-tools-verification.json": "f53339c7704b48213904d745a162a07502b29e9a752838a643dd2ca7d7713763",
+      "docs/workspace-tools.md": "5c66d9837826b929eb4a3ff0d8f6e6c0486cd36796433257d304316adefd7cc9",
+      "tasks/todo.md": "c3ae5bc0cc445eb5de1a860d54edf983b00476e16aa15f375f746c7e62f0bd57",
+      "tests/fixtures/python-api-v1.json": "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1",
+      "tests/test_api_vectors.py": "dcd0f5715de13d12e7d4316a1adffcee42bf73088b8668ce684144fcb63138ae",
+      "tests/test_export_data.py": "f93cf58bf5590e040c2e26fed3e0a721b025e49635d62b966d83f7c2a9cbff31",
+      "tests/test_full_differential.py": "c2a6f63462a9fa405cca263438724f73a0483fa2cfb38e51bddf64e31efd40cc",
+      "tests/test_layout_probe.py": "6812ffae2a695894774ade3abdfe798c8823cc3ea215ba17c86e51d4759e3ddc",
+      "tests/test_package.py": "35e17c917be9b326f70a3893d79b648b3c1b3fb4fd2fc00dc43940ed25214f55",
+      "tests/test_performance.py": "fcb91e9d7e571120f3bce4a13ba850207f9e8e54c9e12c7655edd30e2032da37",
+      "tests/test_reference.py": "8ed53d4331e97846c73a164e8276187570730cd6f70425be60e67e97df807a2a",
+      "tests/test_verify_data.py": "d06ff203781380988dc38921ae06362f4a3078e80e47e7bd1cbdc08b121305f3",
+      "tests/test_workspace_package.py": "43980be3b6af573c02792d26972b2cdb6cb32a5a0be129615719d668c702970d",
+      "tests/test_workspace_tools.py": "11fc2c31b0d81de140b5b3b89cb2c497c6cff55c156f5ea0a801b9dac0ee4b8d",
+      "third_party/unicode/LICENSE.txt": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+      "tools/audit_reference.py": "a433c4e88a15022bda5f2d2c51b1fa715796ff0c223b5b87cc5523f9a75a637b",
+      "tools/capture_api_vectors.py": "f4100af2081ee52df16358c03ee8022d0146aa2a4d7c93e05c240df629f3543a",
+      "tools/check_full_differential.py": "9fb8955758335b0348b1e87bfffc01e7deaa7c49a457ee2b90b69fbc52a654be",
+      "tools/check_layout_probe.py": "ee1b75410b4e1a157bd1b43293b2b0710fe71e057cc8a78222146461d3bdca4a",
+      "tools/check_loader.py": "4511aeeb421e37854e3c1d2803861a0c6e4e2237ceea82601d2f00c4515affd3",
+      "tools/check_package.py": "af8db2075005f8656070845f3066b952ad68fe2dd24e4704b5fdc95d2ebf84da",
+      "tools/check_performance.py": "e1a3a54894129be7d498b71e46ba2583a5b0cb0a7193863b1ca44d926652bf05",
+      "tools/check_queries.py": "4949b91aa7cd4c48ca1375b8ce30e01701a137b7072cef3436618135ec0c4b54",
+      "tools/check_registry_consumer.py": "d54e37d9bc7c7dd5932c1e23554e02c3a12df29e0c46f60d69f946c16743514f",
+      "tools/check_workspace_package.py": "ee5b2548b4edc0e905c762e75e8605d73055ec5b5a3862503825702aaf0cd5a0",
+      "tools/differential-probe/Cargo.lock": "2d1deee6bf72249ff2ee8cc24966a097113ddba161d23d72c8c6d07b42e029c5",
+      "tools/differential-probe/Cargo.toml": "9e8e1d8b69d342dab59705d9b557c16b0b37d280eaaff5e23952af93d7a5a6d7",
+      "tools/differential-probe/src/main.rs": "d0a878f81836f811d6a09d452d71482d0e13a69bc58a2ad248584bbfc62add05",
+      "tools/export_data.py": "903943454a312901edf14dd5a7819c26c4f032705c632a1b477b853bd0aa6b4a",
+      "tools/generate_annotation_context_vectors.py": "b3500e3ed55fa39ad65ee43c3c87126cb4ab3169c2674773c4beee2821621ab8",
+      "tools/generate_annotation_frequency_vectors.py": "ed8e89ff2034b2cc039e12a59cbcc0b4cc3b4a9cc3167e3101d8861e6e1a558b",
+      "tools/generate_annotation_unicode.py": "7840ddbb651ade073a1bb6a5218273adaef9d3f70b98da9587938e59f026819e",
+      "tools/generate_annotation_vectors.py": "05abef72af7368c46379e5806c6a8a3931e924b9b8e4e674f472182a3932a478",
+      "tools/generate_category_vectors.py": "ce6bfc354a076c89b938d75aa7b5a80883fe39e69da2c0eff5ede6badccf58dc",
+      "tools/generate_error_vectors.py": "5a88501e8cdc5ab63ddc47c1928a4f8103f9a58ff01f500e935dcf416d7f3365",
+      "tools/generate_query_case.py": "d8b8774525e9c699ecb5ab226358f13ee9ade1744322717d35db8580b2c37c67",
+      "tools/generate_query_vectors.py": "0974993b6abaa11f0d8d3254771629cdd6b86f3664018495cc058b0ec3c156cc",
+      "tools/layout-probe/AGENTS.md": "a90e0bad9b681713c3f4c4b757ae344ff512fd258062b0e7027eb2b66cd53db8",
+      "tools/layout-probe/Cargo.lock": "c2a237512aca2e56d08be9b992f8b553c559ba6db6fc74960cc869b737d5ff99",
+      "tools/layout-probe/Cargo.toml": "9a97dc8bd4ecf3863c26a190767d5bed06914ff9baf11ca114522bd668597015",
+      "tools/layout-probe/FORMAT.md": "e34829a26e2c514d9ae41a8735dc08060b58d613af4b8e76654244234382919c",
+      "tools/layout-probe/src/image.rs": "07d4fe88f114e1cc25e6acabf7a9334a209e78eefea4bad1e79975eee2bb15d3",
+      "tools/layout-probe/src/main.rs": "22f6991b377485007ca75ece156e4916e906c55db0103db2c0bc453d775a61f9",
+      "tools/package_consumer.rs": "1f8c62db06cfc3b7b390dd5c711cdb5daab320de63d5549eb7ce8fcdd94f5f9d",
+      "tools/package_consumer_020.rs": "2c659500a1ff6161603e50f334243a6ddb18527f8e57b95add7bb367aee43d3b",
+      "tools/performance-probe/Cargo.lock": "0aa959160d8193bda061bc7452caccf9d01bdc631d1d7337c4a124d604e62abc",
+      "tools/performance-probe/Cargo.toml": "9e341b9cc550bf6f9af59473e62eb935aaf126811ce74eb500b69b74c4b2b0c9",
+      "tools/performance-probe/src/main.rs": "549faa1e536b86685ff6fbd7045af91fae56504ad7bdef5a5029da99f615426f",
+      "tools/prepare_layout_probe.py": "aa7cc7dde791431c2f59537828708245cc655689239e3ddee2be92e07a54c70c",
+      "tools/prepare_package_sources.py": "f35dbb22fb08765149f29570879ce72830aa4b9c6bbbe028d19d0c9c5cc7bbea",
+      "tools/reference.py": "c583d04fdbd17ad3b1b00f4a8f7efb55f421a48f2cfebf221ed22317ed908ba0",
+      "tools/run_layout_probe.py": "437554e3a52cb4ba7f14f65cf350de979ba571c31f894141ce84875897bd376d",
+      "tools/verify_data.py": "e37e896a5eacb462d6255f8ecf4a51d4848eecbd9709f02758eb64c2fdc80876"
+    }
+  },
+  "independent_review": {
+    "agent": "cli31_review",
+    "mode": "read-only",
+    "result": "No blocking findings in auto input classification, mutually exclusive inputs, whole UTF-8 reading, threshold delegation, exact output, error mapping or word regression."
+  },
+  "synthetic_fixture": "Read returns hello then PermissionDenied; run returns I/O failure 1 with no partial annotation output. No real stdin permission was changed.",
+  "boundaries": [
+    "CLI3.2 only; annotate JSON and output files remain CLI3.3.",
+    "Windows x86_64 MSVC native builds only. Git Bash pipelines use the Windows binary, not a Linux target.",
+    "Unix-native non-UTF8 paths and symlink fixtures are present under cfg(unix) but were not executed here.",
+    "No new Python oracle run, full new differential/performance or complete MSRV workspace run.",
+    "No library algorithms, data, frozen expectations, Unicode, dependency locks, historical receipts or adjacent references changed.",
+    "Both packages remain publish=false; no package/dry-run/upload/registry or remote release operations."
+  ]
+}

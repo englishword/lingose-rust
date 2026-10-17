@@ -6,7 +6,8 @@ this workspace is being prepared for **0.2.0**.
 
 The workspace contains the [offline library](crates/lingose/README.md) and the
 [CLI](crates/lingose-cli/README.md), both version 0.2.0. The CLI provides
-`word WORD [--json]` and help/version; CLI annotation is still pending.
+`word WORD [--json]`, `annotate` with text/file/stdin input, and help/version.
+Annotation JSON and output files are still pending.
 The library now provides `annotate_ips_skip`.
 Both packages have publication disabled during development.
 

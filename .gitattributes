@@ -81,3 +81,5 @@
 /docs/annotation-api-rename-verification.json text eol=lf
 /docs/cli-word.md text eol=lf
 /docs/cli-word-verification.json text eol=lf
+/docs/cli-annotation-input.md text eol=lf
+/docs/cli-annotation-input-verification.json text eol=lf

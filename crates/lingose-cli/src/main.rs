@@ -1,10 +1,13 @@
-//! Command-line entry point for offline Lingose queries.
+//! Command-line entry point for offline Lingose queries and IPS annotation.
 
+use std::ffi::OsString;
 use std::fmt::Display;
-use std::io::{self, Write};
+use std::fs;
+use std::io::{self, Read, Write};
+use std::path::{Path, PathBuf};
 use std::process::ExitCode;
 
-use clap::{Arg, ArgAction, Command};
+use clap::{Arg, ArgAction, ArgGroup, ArgMatches, Command, value_parser};
 use serde_json::{Value, json};
 
 const WORD_FIELDS: [&str; 6] = ["word", "ipa", "ips", "ism", "ipsm", "root_lemma"];
@@ -12,7 +15,7 @@ const WORD_FIELDS: [&str; 6] = ["word", "ipa", "ips", "ism", "ipsm", "root_lemma
 fn command() -> Command {
     Command::new("lingose")
         .version(env!("CARGO_PKG_VERSION"))
-        .about("Offline Lingose word queries")
+        .about("Offline Lingose word queries and IPS annotation")
         .subcommand_required(true)
         .arg_required_else_help(true)
         .propagate_version(true)
@@ -27,6 +30,127 @@ fn command() -> Command {
                         .action(ArgAction::SetTrue),
                 ),
         )
+        .subcommand(
+            Command::new("annotate")
+                .about("Annotate UTF-8 text with IPS; read stdin when no input is given")
+                .arg(
+                    Arg::new("source")
+                        .value_name("TEXT_OR_PATH")
+                        .help("Read an existing regular file, otherwise annotate this text")
+                        .value_parser(value_parser!(OsString)),
+                )
+                .arg(
+                    Arg::new("input")
+                        .long("input")
+                        .value_name("PATH")
+                        .help("Read a UTF-8 text file")
+                        .value_parser(value_parser!(PathBuf)),
+                )
+                .arg(
+                    Arg::new("text")
+                        .long("text")
+                        .value_name("TEXT")
+                        .help("Always interpret the value as text"),
+                )
+                .group(ArgGroup::new("input-source").args(["source", "input", "text"]))
+                .arg(
+                    Arg::new("skip-top")
+                        .long("skip-top")
+                        .value_name("N")
+                        .help("Leave words up to this inclusive frequency number unchanged")
+                        .default_value("0")
+                        .allow_negative_numbers(true)
+                        .value_parser(value_parser!(i64)),
+                ),
+        )
+}
+
+#[derive(Debug)]
+enum CliError {
+    Library(lingose::Error),
+    Io(io::Error),
+    NonUnicodeText,
+}
+
+impl Display for CliError {
+    fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Self::Library(error) => error.fmt(formatter),
+            Self::Io(error) => error.fmt(formatter),
+            Self::NonUnicodeText => formatter.write_str("text argument is not valid Unicode"),
+        }
+    }
+}
+
+impl From<lingose::Error> for CliError {
+    fn from(error: lingose::Error) -> Self {
+        Self::Library(error)
+    }
+}
+
+impl From<io::Error> for CliError {
+    fn from(error: io::Error) -> Self {
+        Self::Io(error)
+    }
+}
+
+impl CliError {
+    fn exit_code(&self) -> u8 {
+        match self {
+            Self::Library(error) => library_exit_code(error),
+            Self::Io(_) => 1,
+            Self::NonUnicodeText => 2,
+        }
+    }
+}
+
+fn read_text_file(path: &Path) -> io::Result<String> {
+    if !fs::metadata(path)?.is_file() {
+        return Err(io::Error::new(
+            io::ErrorKind::InvalidInput,
+            format!("input path is not a regular file: {}", path.display()),
+        ));
+    }
+    fs::read_to_string(path)
+}
+
+fn is_text_path_error(error: &io::Error) -> bool {
+    if matches!(
+        error.kind(),
+        io::ErrorKind::NotFound | io::ErrorKind::NotADirectory | io::ErrorKind::InvalidInput
+    ) {
+        return true;
+    }
+    // Rust 1.85 predates ErrorKind::InvalidFilename. These narrow OS codes
+    // describe invalid/overlong path names, rather than access or read errors.
+    let code = error.raw_os_error();
+    (cfg!(windows) && matches!(code, Some(123 | 161 | 206)))
+        || (cfg!(target_os = "linux") && code == Some(36))
+        || (cfg!(target_os = "macos") && code == Some(63))
+}
+
+fn read_annotation_input(args: &ArgMatches, stdin: &mut impl Read) -> Result<String, CliError> {
+    if let Some(text) = args.get_one::<String>("text") {
+        return Ok(text.clone());
+    }
+    if let Some(path) = args.get_one::<PathBuf>("input") {
+        return Ok(read_text_file(path)?);
+    }
+    if let Some(source) = args.get_one::<OsString>("source") {
+        // Detect an existing entity first, including dangling symlinks. Once
+        // found, target/regular-file/read failures must never become text.
+        return match fs::symlink_metadata(source) {
+            Ok(_) => Ok(read_text_file(Path::new(source))?),
+            Err(error) if is_text_path_error(&error) => source
+                .clone()
+                .into_string()
+                .map_err(|_| CliError::NonUnicodeText),
+            Err(error) => Err(error.into()),
+        };
+    }
+    let mut text = String::new();
+    stdin.read_to_string(&mut text)?;
+    Ok(text)
 }
 
 fn query_word(word: &str) -> lingose::Result<Value> {
@@ -64,6 +188,28 @@ fn report_error(error: &impl Display, code: u8) -> ExitCode {
     ExitCode::from(code)
 }
 
+fn run(
+    matches: &ArgMatches,
+    stdin: &mut impl Read,
+    stdout: &mut impl Write,
+) -> Result<(), CliError> {
+    match matches.subcommand().expect("clap requires a subcommand") {
+        ("word", args) => {
+            let word = args.get_one::<String>("word").expect("clap requires WORD");
+            write_word(stdout, &query_word(word)?, args.get_flag("json"))?;
+        }
+        ("annotate", args) => {
+            let text = read_annotation_input(args, stdin)?;
+            let skip_top = *args.get_one::<i64>("skip-top").expect("clap defaults N");
+            let annotated = lingose::annotate_ips_skip(&text, skip_top)?;
+            stdout.write_all(annotated.as_bytes())?;
+            stdout.flush()?;
+        }
+        _ => unreachable!("clap accepts only word and annotate"),
+    }
+    Ok(())
+}
+
 fn main() -> ExitCode {
     let matches = match command().try_get_matches() {
         Ok(matches) => matches,
@@ -75,21 +221,36 @@ fn main() -> ExitCode {
             };
         }
     };
-    let (_, args) = matches.subcommand().expect("clap requires a subcommand");
-    let word = args.get_one::<String>("word").expect("clap requires WORD");
-    let result = match query_word(word) {
-        Ok(result) => result,
-        Err(error) => return report_error(&error, library_exit_code(&error)),
-    };
-    match write_word(&mut io::stdout().lock(), &result, args.get_flag("json")) {
+    match run(&matches, &mut io::stdin().lock(), &mut io::stdout().lock()) {
         Ok(()) => ExitCode::SUCCESS,
-        Err(error) => report_error(&error, 1),
+        Err(error) => report_error(&error, error.exit_code()),
     }
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn stdin_read_failure_does_not_emit_partial_annotation() {
+        struct FailingReader;
+        impl Read for FailingReader {
+            fn read(&mut self, _: &mut [u8]) -> io::Result<usize> {
+                Err(io::ErrorKind::PermissionDenied.into())
+            }
+        }
+        let matches = command()
+            .try_get_matches_from(["lingose", "annotate"])
+            .unwrap();
+        let mut output = Vec::new();
+        let mut input = b"hello".as_slice().chain(FailingReader);
+        let error = run(&matches, &mut input, &mut output).unwrap_err();
+        assert!(
+            matches!(&error, CliError::Io(error) if error.kind() == io::ErrorKind::PermissionDenied)
+        );
+        assert_eq!(error.exit_code(), 1);
+        assert!(output.is_empty());
+    }
 
     #[test]
     fn resource_errors_are_execution_failures() {

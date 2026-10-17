@@ -5,11 +5,11 @@
 Its executable is named `lingose` and depends on the offline `lingose` library.
 Learn about IPSM at [lingose.com](https://lingose.com/).
 
-Word queries and standard help/version commands are implemented in this checkout.
-Annotation and text/file/stdin input are still pending. Publication remains disabled;
-these commands describe the local 0.2.0 development version.
+Word queries, text/file/stdin annotation and standard help/version commands are
+implemented in this checkout. Annotation JSON and output files are still pending.
+Publication remains disabled; these commands describe the local 0.2.0 development version.
 
-The library owns all lexicon data and algorithms. Word queries run offline with
+The library owns all lexicon data and algorithms. Queries and annotation run offline with
 the bundled data, without Python, Node or an external lexicon directory.
 
 From the workspace root, build after preparing Cargo dependencies:
@@ -44,6 +44,47 @@ to query a literal word starting with a hyphen.
 Command parsing uses Clap's builder API with only `std`, `help`, `usage` and
 `error-context` enabled; JSON uses serde_json's default `std` feature. Both are
 locked in the workspace and verified with Rust 1.85.
+
+## Annotate text
+
+```sh
+lingose annotate "This is an English word."
+lingose annotate --skip-top 1000 "This is an English word."
+lingose annotate input.txt
+lingose annotate --input input.txt
+lingose annotate --text "input.txt"
+```
+
+The optional positional input is read as a file when it names an existing regular
+file; otherwise it is text. Directories, non-regular files, broken symlinks and
+file access/read errors fail. Text that cannot form a path, such as a long sentence
+or characters forbidden in Windows file names, is still accepted as text.
+`--input` always requires a regular file; `--text` always uses the exact text.
+These three input forms are mutually exclusive. With no input argument, the CLI
+reads stdin until EOF:
+
+```powershell
+"hello world" | lingose annotate
+Get-Content article.txt | lingose annotate
+```
+
+```sh
+cat article.txt | lingose annotate
+printf 'the\napple' | lingose annotate
+```
+
+Files and stdin must contain valid UTF-8. The CLI reads the complete input and
+calls `lingose::annotate_ips_skip` once, preserving cross-line context, whitespace,
+Unicode, BOM and LF/CRLF. It writes the library result to stdout without adding a
+newline. Shell pipelines may add a BOM or change encoding/line endings before the
+CLI receives bytes; `--input` reads the file bytes directly. On Windows PowerShell 5.1,
+set `$OutputEncoding` to UTF-8 when piping non-ASCII text.
+
+`--skip-top` defaults to 0. Numeric values use the library's validation and cap:
+negative values fail, and values above 5062 use 5062. Argument and library parameter
+errors exit 2; input encoding, file/stdin I/O and output failures exit 1. Input
+and parameter errors produce no annotation result. For text starting with a hyphen, use
+`lingose annotate -- --hello` or `lingose annotate --text=--hello`.
 
 Original Lingose data and notation by **ZHAN Xianjue**.
 License: [CC BY 4.0](LICENSE). [Source notices](SOURCES.md).
