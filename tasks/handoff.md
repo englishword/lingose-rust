@@ -1,57 +1,37 @@
 # Lingose Rust 交接记录
 
-## 最终状态
+## 当前任务与状态
 
-- **P6.3 已完成，P0–P6 既定任务全部完成。当前没有待执行的既定阶段。**
-- 本轮从 `621818a` 恢复；用户要求继续 P6.3，已完成正式注册表独立消费、离线验收和
-  文档链接检查。按项目流程提交本阶段工具与证据；未再上传。
-- **lingose 0.1.0 已发布，不得重复上传同一版本。**
-- [正式版本](https://crates.io/crates/lingose/0.1.0)，发布时间
-  2026-10-16 13:14:35 UTC，发布者/所有者 `Prefee`，未撤回。
-- 用户手改 README/SOURCES（`5db9824`）及全部生产数据/代码/依赖保持不变。
-  许可和账号权限确认依据、原始来源及历史证据保持原记录，不扩大为独立授权审计。
+- 当前计划：[todo_CLI.md](todo_CLI.md)，需求为 [TASK_CLI.md](../TASK_CLI.md)，约束为 [AGENTS.md](../AGENTS.md)。
+- 本轮从 `main` / `33e72c9` 恢复，实施用户确认的文档计划；**CLI0.1 已完成，文档核验及独立复核通过**。下一项为 **CLI1.1：建立双 crate workspace 并迁移自足库包**。
+- 当前生产工程仍是根目录 `lingose 0.1.0`；workspace、接口更名、CLI、CI 和 0.2.0 发布均未实施。本轮只更新规范、清单和恢复状态，需求原文内容不改。
+- 原 [0.1.0 计划](todo.md)的 P0–P6 已完成，保留历史；不得重新上传 `lingose 0.1.0`。
 
-## 发布与验收身份
+## 已确认决策
 
-- 正式压缩包：**4,048,633 字节，41 文件，13 个有效包内文档链接**。
-- SHA-256：`fb1a40407222053fa2acf6b92be99e59648d8e2a7ceac3c7f20182bbb393c6a8`。
-  P6.1 候选、实际上传包、P6.2 远端下载/索引及 P6.3 新 Cargo cache 下载全部一致。
-- [P6.3 验收说明](../docs/registry-consumer.md)与
-  [完整证据](../docs/registry-consumer-verification.json)是本次最终消费记录。
-- [发布说明](../docs/publication.md)、[发布收据](../docs/publication.json)保留真实上传证据；
-  P6.1 及 P4/P5 历史记录未重写。
-- `tools/check_registry_consumer.py`：可重复的只读验收工具，每次新建工程/cache/target/收据；
-  不发布、不读取凭据、不复制旧 registry cache 或根 Cargo.lock。
-- 固定消费者 `tools/package_consumer.rs` 身份仍为
-  `1f8c62db06cfc3b7b390dd5c711cdb5daab320de63d5549eb7ce8fcdd94f5f9d`。
+- workspace 正式成员为 `crates/lingose` 与 `crates/lingose-cli`，两包均 `0.2.0`，CLI 二进制名 `lingose`，Release 标签 `v0.2.0`；沿用 edition 2024 / MSRV 1.85。
+- 新入口 `annotate_ips_skip(&str, i64) -> Result<String>`，移除旧 `annotate_ips_with_skip_top`，不保留别名；默认入口和其余库能力继续保留。
+- 位置参数是现有普通文件时读文件，否则按文本；`--input`/`--text` 可显式指定，与位置参数互斥；无显式输入读 stdin。
+- CLI 只提供 word/annotate；查询六字段、标注 JSON 的 text/annotate、原始文本保留和 stdout/stderr 契约详见根规范。winget/scoop 延期。
 
-## P6.3 实际验证
+## 迁移注意事项
 
-- 独立工程：
-  `C:/Users/Threadman/AppData/Local/Temp/lingose-p63-385ffe1b2c49/consumer`。
-  依赖 `lingose = "=0.1.0"`，无 path/patch/source replacement；初始 Cargo home 为空。
-- Cargo metadata/锁文件证明正式 crates.io 来源，11 个 registry 包的全部源码局限
-  新 cache；checksum/真实下载/解包逐文件身份通过，根锁文件及相邻项目未借用。
-- Windows x86_64 MSVC / Rust 1.93.1 正常 locked release 构建通过；另用各自全新 target
-  完成 1.93.1/1.85.0 的 offline locked release 构建。三次独立 exe 运行的 18 个入口
-  内容断言通过、输出相同；运行目录只有 exe，运行环境 Cargo home 为空。
-- 固定字面量 smoke 涵盖公共查询、分类、标注、Unicode、阈值及错误；不等于全量
-  差分/完整列表规范摘要，资源错误变体为合成兼容性检查，不是损坏包注入。
-- docs.rs 正式 API/crate/builds、14 函数页和四大写别名、官网/GitHub 均 HTTP 200，
-  目标内容/链接通过。未声称浏览器渲染或全部 GitHub 动态模块验收。
-- 成功原始收据：`.local/p63-registry-385ffe1b2c49/report.json`，
-  同目录工具快照/日志/21 个 HTTP 响应均保留并独立复核。
-- 首轮 `.local/p63-registry-6fb1b94e8d16/report.json` 保留 Github IncompleteRead：
-  构建/消费当时已通过。加入有限传输重试后，另建新工程完整通过。
-  成功轮 Cargo fetch 仍有两条 Schannel 自动重试警告，最终退出 0，未宣称零警告。
-- 生产输入与历史收据前后身份不变。未重测全量差分/性能或其他平台；
-  P4.2 新路径首启超预算的事实继续保留。离线标志不扩展为系统级断网/文件访问审计。
+- 库内 `include_str!`/`include_bytes!`、Cargo include、`.gitattributes` 和包内文档链接须随迁移核对；数据、固定向量期望值、Unicode 表与许可身份受保护。
+- Python 工具大量使用仓库根下的 src/data/tests 及根 package/version 假设。CLI1.2 区分仓库根和库 crate 根，不只移动 Rust 文件。
+- differential/performance 探针需隔离并调整库依赖；layout 探针已有独立 workspace 和互斥 features，按子目录规范验证。
+- `tools/package_consumer.rs`、`tools/check_registry_consumer.py` 和 0.1.0 发布收据保留旧版身份；新版另设消费者/报告。旧布局复验使用历史提交隔离检出。
+- 库先发布，注册表 lingose 0.2.0 可解析后才执行 CLI 真实打包/dry-run/发布；此前的 CLI 隔离 path 构建只能记为本地候选验收。
+- 当前 `git remote -v` 无输出；用户已指定仓库地址，不代表 remote、GitHub 权限或 Actions 已配置。本轮没有远端操作。
 
-## 后续恢复动作
+## 保留的 0.1.0 发布依据
 
-1. 当前无未完成的既定任务；按用户新指示再立项，不重跑发布或重建历史证据。
-2. 如需重复消费验证，执行 `python tools/check_registry_consumer.py`；
-   依赖已安装的 Rust 1.93.1 默认工具链和 `.local/p52-rustup-home` 内的 1.85.0。
-   Cargo 联网在沙箱可能遇 Schannel 凭据错误，可在正常用户环境执行同一只读工具，
-   不关闭 TLS 校验。每次收据独立，不覆盖旧记录。
-3. 新平台、性能问题或新版本应单列范围；保留当前正式版本与用户手改文档的来源身份。
+- 完成提交 `33e72c9`；[正式消费说明](../docs/registry-consumer.md)、[消费证据](../docs/registry-consumer-verification.json)、[发布说明](../docs/publication.md)及[发布收据](../docs/publication.json)保留详细历史。
+- 历史正式包 4,048,633 字节 / 41 文件，SHA-256 `fb1a40407222053fa2acf6b92be99e59648d8e2a7ceac3c7f20182bbb393c6a8`；旧版消费者和收据继续记录原身份。
+- 已有验证限于记录中的环境；P4.2 新路径首启超预算、许可资料缺口及用户确认的处置依据继续保留，不改写为新版或全部平台已验证。
+
+## 本轮验证与下一步
+
+- 三个更新/生成文档 UTF-8 无 BOM，18 个本地链接有效；18 项任务编号唯一、依赖顺序正确，仅勾选已完成的 CLI0.1。需求覆盖与独立复核通过，已补齐 CLI5 的远端/Actions 前置条件及 CLI 归档规范化 manifest 表述。
+- 新写文档的空白检查通过；TASK_CLI.md 第 211 行原有行尾空格作为原文保留。原需求、旧计划、Cargo.toml/lock、src/lib.rs 的前后 SHA-256 一致，Git 差异范围限任务文档。
+- 本轮没有代码变更，未运行 Cargo 测试或构建。聚焦提交范围为 AGENTS.md、TASK_CLI.md、本清单和交接记录；需求内容保持原样，旧计划、生产文件和历史证据不改。
+- 下一会话先核对 Git、当前计划和本记录，执行 **CLI1.1**：记录迁移输入身份，读取当前根 manifest/include 路径及三个探针配置，再建立双 crate workspace；按该小任务的验收完成后交接，不自动进入后续发布。
