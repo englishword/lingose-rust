@@ -5,8 +5,14 @@
 /Cargo.lock text eol=lf
 /README.md text eol=lf
 /SOURCES.md text eol=lf
-/src/*.rs text eol=lf
-/src/data/*.rs text eol=lf
+/crates/*/Cargo.toml text eol=lf
+/crates/*/README.md text eol=lf
+/crates/*/SOURCES.md text eol=lf
+/crates/*/src/*.rs text eol=lf
+/crates/lingose/src/data/*.rs text eol=lf
+/crates/lingose/tests/*.rs text eol=lf
+/crates/lingose/docs/rust-api.md text eol=lf
+/crates/lingose/docs/distribution-provenance.json text eol=lf
 /tools/check_loader.py text eol=lf
 /tools/check_queries.py text eol=lf
 /tools/generate_query_case.py text eol=lf
@@ -26,7 +32,6 @@
 /tools/differential-probe/Cargo.toml text eol=lf
 /tools/differential-probe/Cargo.lock text eol=lf
 /tools/differential-probe/src/*.rs text eol=lf
-/tests/*.rs text eol=lf
 /docs/query-case.json text eol=lf
 /docs/query-verification.json text eol=lf
 /docs/category-verification.json text eol=lf
@@ -55,11 +60,13 @@
 /docs/data-loader.md text eol=lf
 /docs/performance-budget.md text eol=lf
 /third_party/unicode/LICENSE.txt -text
-/data/*.bin binary
-/data/*.json -text
-/data/UPSTREAM-SOURCES.md -text
-/data/LICENSE -text
-/src/data_meta.rs -text
+/crates/lingose/data/*.bin binary
+/crates/lingose/data/*.json -text
+/crates/lingose/data/UPSTREAM-SOURCES.md -text
+/crates/lingose/data/LICENSE -text
+/crates/lingose/src/data_meta.rs -text
+/crates/lingose/third_party/unicode/LICENSE.txt -text
+/crates/*/LICENSE -text
 /docs/reference-baseline.json -text
 /tests/fixtures/python-api-v1.json -text
 /LICENSE -text

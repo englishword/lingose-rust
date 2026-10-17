@@ -4,8 +4,11 @@ version = "0.0.0"
 edition = "2024"
 publish = false
 
+[workspace]
+resolver = "3"
+
 [dependencies]
-lingose = { path = "../.." }
+lingose = { path = "../../crates/lingose" }
 
 [profile.release]
 lto = "thin"

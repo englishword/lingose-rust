@@ -24,11 +24,12 @@
 
 ## CLI1：workspace 与开发工具迁移
 
-- [ ] CLI1.1 建立双 crate workspace 并迁移自足库包。
+- [x] CLI1.1 建立双 crate workspace 并迁移自足库包。
   - 依赖：CLI0.1。根改为 virtual workspace，成员为 `crates/lingose`、`crates/lingose-cli`，共用根锁文件；两包版本 0.2.0，CLI 二进制名为 lingose，脚手架不冒充已实现业务。
   - 将库源码、examples、Rust 集成测试、必要数据和包内文档/许可证迁入自足包；开发期 Python 测试与审计资料保留仓库级位置。先记录身份再移动，适配 include、README 链接、Cargo include 和 `.gitattributes`。
   - 将三个开发探针显式隔离并更新库 path 依赖，保留独立锁文件/profile；CLI 依赖库同时声明本地 path 与版本约束。
   - 验收：metadata 仅显示两个正式成员；库最小构建及现有 Rust 测试通过，CLI 脚手架可构建；数据、固定向量期望值、Unicode 表和许可证内容身份不变。必要的 README/声明路径调整单独记录，不静默改写受保护来源原文。
+  - 结果与边界：[迁移记录](../docs/workspace-migration.md)及[独立证据](../docs/workspace-migration-verification.json)。38 文件原字节迁移，两个包均 0.2.0；现有 102 Rust / 5 文档测试、fmt、Clippy、文档、Rust 1.85 编译、探针隔离和仓库外离线示例通过。两包保持 publish=false，CLI 是退出 1 的脚手架，工具适配与接口更名留后续阶段。
 - [ ] CLI1.2 适配开发工具和版本相关路径假设。
   - 依赖：CLI1.1。区分仓库根与库 crate 根，适配导出/验证器、向量生成器、loader/query/differential/performance 工具、打包工具和其测试；消除旧根 `[package]`、`src/data/tests`、0.1.0 归档前缀假设。
   - 历史收据、0.1.0 专用消费者/注册表工具保留身份；新版新增独立消费入口及证据，旧布局复验从历史提交隔离检出。
@@ -62,7 +63,7 @@
   - 依赖：CLI4.1。更新库/CLI README、API 契约和迁移说明，覆盖安装、全部库能力、六字段查询、文本/文件/stdin、JSON、help、错误、离线行为与官网/具体仓库链接。
   - 验收：库示例可编译，CLI 示例实际运行；两包分别核对依赖与许可，不把新增 CLI 依赖写回旧 loader/分发证据，保留作者和第三方声明。
 - [ ] CLI4.3 验证库真实归档和隔离 CLI 候选。
-  - 依赖：CLI4.2。检查库真实 `.crate` 清单、压缩体积、包内链接、保护数据和独立解包消费；执行库 dry-run。
+  - 依赖：CLI4.2。检查库真实 `.crate` 清单、压缩体积、包内链接、保护数据和独立解包消费；候选验证合格后解除库 publish=false 保护并执行库 dry-run。
   - 用已解包库和最小 CLI 候选在隔离工程验证离线构建/安装，依赖准备后不能借用 checkout/相邻数据；CLI 二进制在无词库目录运行。
   - 验收：库满足原体积预算及当时注册表规则；全部库入口和两个 CLI 子命令通过。此处 CLI 属于本地候选，待库注册表可用后在 CLI6.3 完成 CLI 真实打包及注册表 dry-run，不提前标为完成。
 
@@ -90,7 +91,7 @@
   - 依赖：CLI6.1。上传已核定库包，核对版本、索引、归档 SHA-256、docs.rs 和元数据链接，等待真实 CLI 注册表依赖可解析。
   - 验收：真实上传与注册表下载身份一致，单独记录上传/索引状态；失败或部分成功先核查远端，不能重复盲传。
 - [ ] CLI6.3 完成 CLI 真实归档、预检并发布。
-  - 依赖：CLI6.2。使用注册表的 lingose 0.2.0 完成 `cargo package -p lingose-cli`、清单/压缩体积/许可核对、隔离消费及 `cargo publish -p lingose-cli --dry-run`，再上传。
+  - 依赖：CLI6.2。使用注册表的 lingose 0.2.0 完成 `cargo package -p lingose-cli`、清单/压缩体积/许可核对与隔离消费；验证合格后解除 CLI publish=false 保护，完成 `cargo publish -p lingose-cli --dry-run`，再上传。
   - 验收：归档中规范化 CLI manifest 不含开发 path/patch（源码保留 path + version）；真实归档和 dry-run 均有独立记录，上传后核对版本/索引/下载身份。前置库发布不等于 CLI 已发布。
 - [ ] CLI6.4 发布 GitHub Release 资产。
   - 依赖：CLI6.3。以与候选对应的 v0.2.0 标签运行 GitHub Actions，向指定仓库 Release 发布五个资产、校验和及版本说明。

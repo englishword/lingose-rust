@@ -1,0 +1,27 @@
+[package]
+name = "lingose-cli"
+version = "0.2.0"
+edition = "2024"
+rust-version = "1.85"
+authors = ["ZHAN Xianjue"]
+description = "Command-line interface for offline Lingose word queries and IPS annotation"
+license = "CC-BY-4.0"
+readme = "README.md"
+homepage = "https://lingose.com/"
+repository = "https://github.com/englishword/lingose-rust"
+keywords = ["english", "pronunciation", "ipsm", "cli"]
+build = false
+publish = false
+include = ["/src/**", "/README.md", "/LICENSE", "/SOURCES.md"]
+
+[[bin]]
+name = "lingose"
+path = "src/main.rs"
+doc = false
+
+[dependencies]
+lingose = { version = "0.2.0", path = "../lingose" }
+
+[lints.rust]
+unsafe_code = "forbid"
+missing_docs = "deny"

@@ -1,0 +1,171 @@
+{
+  "dependency_notices": {
+    "cargo_lock": {
+      "bytes": 2390,
+      "sha256": "3ba42486751b118af6f60b3d2d58466ba36040d581de2f32c2ca893239a88df2"
+    },
+    "dependencies": [
+      {
+        "declared_rust_version": null,
+        "license": "MIT OR Apache-2.0",
+        "name": "block-buffer",
+        "version": "0.10.4"
+      },
+      {
+        "declared_rust_version": "1.32",
+        "license": "MIT OR Apache-2.0",
+        "name": "cfg-if",
+        "version": "1.0.5"
+      },
+      {
+        "declared_rust_version": null,
+        "license": "MIT OR Apache-2.0",
+        "name": "cpufeatures",
+        "version": "0.2.17"
+      },
+      {
+        "declared_rust_version": null,
+        "license": "MIT OR Apache-2.0",
+        "name": "crypto-common",
+        "version": "0.1.7"
+      },
+      {
+        "declared_rust_version": null,
+        "license": "MIT OR Apache-2.0",
+        "name": "digest",
+        "version": "0.10.7"
+      },
+      {
+        "declared_rust_version": null,
+        "license": "MIT",
+        "name": "generic-array",
+        "version": "0.14.7"
+      },
+      {
+        "declared_rust_version": "1.65",
+        "license": "MIT OR Apache-2.0",
+        "name": "libc",
+        "version": "0.2.190"
+      },
+      {
+        "declared_rust_version": null,
+        "license": "MIT OR Apache-2.0",
+        "name": "sha2",
+        "version": "0.10.9"
+      },
+      {
+        "declared_rust_version": "1.41.0",
+        "license": "MIT OR Apache-2.0",
+        "name": "typenum",
+        "version": "1.20.1"
+      },
+      {
+        "declared_rust_version": null,
+        "license": "MIT/Apache-2.0",
+        "name": "version_check",
+        "version": "0.9.5"
+      }
+    ],
+    "historical_source_record": {
+      "bytes": 19072,
+      "name": "docs/loader-verification.json",
+      "sha256": "64e2ca459bafe707971bc67b6f3e1c39e5d1e60d28d15d79a32bd4e853d09eb4"
+    },
+    "scope": "Historical declared licenses and Rust versions; locked name/version pairs checked against this distribution, not future resolutions"
+  },
+  "format_version": 1,
+  "scope": "Portable attribution excerpt of fixed development records; omitted host paths are not build or runtime requirements. Original records remain unchanged in the development checkout.",
+  "unicode_license": {
+    "bytes": 1995,
+    "file": "third_party/unicode/LICENSE.txt",
+    "name": "Unicode License V3",
+    "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+    "url": "https://www.unicode.org/license.txt"
+  },
+  "unicode_tables": [
+    {
+      "artifact": "src/query_case_tables.rs",
+      "baseline_identity": {
+        "bytes": 54162,
+        "sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
+      },
+      "counts": {
+        "nonidentity_lowercase_mappings": 1433,
+        "scalars": 1112064,
+        "uppercase_ranges": 651,
+        "uppercase_scalars": 1951
+      },
+      "generator": {
+        "bytes": 11187,
+        "path": "tools/generate_query_case.py",
+        "sha256": "23716d0616d641108dff27ccd128f96b6a03b4c0a484972fa50c60f5408166f3"
+      },
+      "historical_source_record": {
+        "bytes": 3387,
+        "name": "docs/query-case.json",
+        "sha256": "4ea010b0509185e14b311263911f3fe3ba17f9204d6eb4b7b3119ab34871fabc"
+      },
+      "identity": {
+        "bytes": 52751,
+        "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+      },
+      "installed_module_identities": {
+        "installed_query": {
+          "bytes": 15574,
+          "sha256": "df4fc1c12c769b17918c056cb19570a79536991590926601b57dbb682e0c86b4"
+        }
+      },
+      "python": {
+        "implementation": "cpython",
+        "unicode_version": "15.0.0",
+        "version": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]"
+      },
+      "scalar_sha256": "82f0038842bd8f142215338cc3b3e04ee7269dbe93dfc6446c3dd926a4068837",
+      "unicode_version": "15.0.0"
+    },
+    {
+      "artifact": "src/annotation_unicode_tables.rs",
+      "baseline_identity": {
+        "bytes": 54162,
+        "sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
+      },
+      "counts": {
+        "accepted_base_scalars": 243,
+        "accepted_mark_scalars": 9,
+        "property_ranges": 1106,
+        "scalars": 1112064
+      },
+      "generator": {
+        "bytes": 6425,
+        "path": "tools/generate_annotation_unicode.py",
+        "sha256": "934a137b4ece5c07811a03f7ee66ad10f52261da8e7ee9e3d80ae93fb381be9f"
+      },
+      "historical_source_record": {
+        "bytes": 3135,
+        "name": "docs/annotation-unicode.json",
+        "sha256": "521a545a791b054acb135197034305434dce11e67ffe8547952340fcc3254fb1"
+      },
+      "identity": {
+        "bytes": 40416,
+        "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+      },
+      "installed_module_identities": {
+        "installed_annotation": {
+          "bytes": 14266,
+          "sha256": "76355b9a0d71882f8407640740865529744e8eb9c6400081a0f764188bd4cbfc"
+        },
+        "installed_query": {
+          "bytes": 15574,
+          "sha256": "df4fc1c12c769b17918c056cb19570a79536991590926601b57dbb682e0c86b4"
+        }
+      },
+      "python": {
+        "implementation": "cpython",
+        "unicode_version": "15.0.0",
+        "version": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]"
+      },
+      "scalar_sha256": "a9163d15442bfb25bcdda2f63ad2af30a0bcfe9ca1026c9add06a4093b8f5e78",
+      "unicode_version": "15.0.0"
+    }
+  ]
+}

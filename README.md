@@ -1,8 +1,16 @@
-# Lingose for Rust
+# Lingose Rust workspace
 
 `lingose` is a Rust library for the [IPSM Approach](https://lingose.com/) to
-English pronunciation, spelling and meaning. Version **0.1.0** is being prepared
-for its first release.
+English pronunciation, spelling and meaning. Version **0.1.0** has been released;
+this workspace is being prepared for **0.2.0**.
+
+The workspace contains the [offline library](crates/lingose/README.md) and the
+[CLI scaffold](crates/lingose-cli/README.md), both version 0.2.0. The CLI commands
+and the planned shorter annotation function name are not implemented yet.
+Both packages have publication disabled during development.
+
+The [workspace migration record](docs/workspace-migration.md) describes the
+verified structure and the remaining development work.
 
 All word queries, category lists and plain-text IPS annotation are implemented.
 The checkout embeds **50,335 word entries**, **24 categories** and a frequency
@@ -14,7 +22,7 @@ across calls and threads.
 
 IPA is phonetic transcription; IPS marks pronunciation on the spelling; ISM
 divides a word into morphemes; IPSM combines IPS with ISM. Learn more at
-[lingose.com](https://lingose.com/). GitHub: [englishword](https://github.com/englishword).
+[lingose.com](https://lingose.com/). GitHub: [englishword/lingose-rust](https://github.com/englishword/lingose-rust).
 
 ## Query a word
 
@@ -161,7 +169,7 @@ lingose::annotate_ips_with_skip_top("apple", true);
 ```
 
 The full signatures, Python correspondence and validation order are recorded in
-[the Rust interface contract](docs/rust-api.md).
+[the current Rust interface contract](crates/lingose/docs/rust-api.md).
 
 ## Development and validation
 
@@ -176,10 +184,10 @@ cargo check --offline --locked --all-targets --all-features
 cargo test --offline --locked --all-features
 ```
 
-Complete compilable examples are [query.rs](examples/query.rs) and
-[annotate.rs](examples/annotate.rs). Run them with
-`cargo run --offline --locked --example query` and
-`cargo run --offline --locked --example annotate`.
+Complete compilable examples are [query.rs](crates/lingose/examples/query.rs) and
+[annotate.rs](crates/lingose/examples/annotate.rs). Run them with
+`cargo run --offline --locked -p lingose --example query` and
+`cargo run --offline --locked -p lingose --example annotate`.
 
 The pre-documentation baseline passed a full Python differential comparison of
 1,862,690 public results and release performance checks under fixed warmup

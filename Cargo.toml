@@ -1,39 +1,9 @@
-[package]
-name = "lingose"
-version = "0.1.0"
-edition = "2024"
-rust-version = "1.85"
-authors = ["ZHAN Xianjue"]
-description = "Offline English lexicon for the IPSM Approach to pronunciation, spelling and meaning"
-license = "CC-BY-4.0"
-readme = "README.md"
-homepage = "https://lingose.com/"
-repository = "https://github.com/englishword"
-keywords = ["english", "lexicon", "pronunciation", "ipsm"]
-build = false
-include = [
-    "/src/**",
-    "/examples/**",
-    "/README.md",
-    "/LICENSE",
-    "/SOURCES.md",
-    "/data/lexicon.bin",
-    "/data/frequency.bin",
-    "/data/manifest.json",
-    "/data/SOURCES.json",
-    "/data/UPSTREAM-SOURCES.md",
-    "/data/LICENSE",
-    "/third_party/unicode/LICENSE.txt",
-    "/docs/rust-api.md",
-    "/docs/distribution-provenance.json",
+[workspace]
+members = ["crates/lingose", "crates/lingose-cli"]
+default-members = ["crates/lingose", "crates/lingose-cli"]
+exclude = [
+    "tools/layout-probe",
+    "tools/differential-probe",
+    "tools/performance-probe",
 ]
-
-[dependencies]
-sha2 = "0.10.9"
-
-[lints.rust]
-unsafe_code = "forbid"
-missing_docs = "deny"
-
-[lints.rustdoc]
-broken_intra_doc_links = "deny"
+resolver = "3"

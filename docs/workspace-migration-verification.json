@@ -1,0 +1,1576 @@
+{
+  "base_commit": "5ae873d94bb522af1e900f104d95d9479e468869",
+  "baseline": {
+    "bytes": 23440,
+    "initial_working_tree_clean": true,
+    "sha256": "e34f4548df7579683c65a39e18cdd546099391d067292a52a312cf67da4e0752",
+    "snapshot": ".local/cli11-workspace-b97b1a285c66/before.json",
+    "tracked_files": 137
+  },
+  "checks": [
+    {
+      "command": [
+        "cargo",
+        "check",
+        "--offline",
+        "-p",
+        "lingose",
+        "--lib"
+      ],
+      "elapsed_seconds": 3.488,
+      "exit_code": 0,
+      "log": {
+        "bytes": 430,
+        "file": "check-library.log",
+        "sha256": "ae7d6cd3cf377284d76b21b376240cd388d8db240adf8a2d3f86d04322ce1a56"
+      },
+      "name": "check-library"
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "elapsed_seconds": 29.852,
+      "exit_code": 0,
+      "log": {
+        "bytes": 12737,
+        "file": "test-workspace.log",
+        "sha256": "64e82fec8002af72611591d157d44b92cba100a318cf92386d455f42dc4124bf"
+      },
+      "name": "test-workspace"
+    },
+    {
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "elapsed_seconds": 1.165,
+      "exit_code": 0,
+      "log": {
+        "bytes": 0,
+        "file": "fmt-workspace.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "name": "fmt-workspace"
+    },
+    {
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--offline",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "elapsed_seconds": 2.867,
+      "exit_code": 0,
+      "log": {
+        "bytes": 236,
+        "file": "clippy-workspace.log",
+        "sha256": "907b49933784131d9cf2938c02c6ea9b35261f8234a450833aa6dde4cd84c4a7"
+      },
+      "name": "clippy-workspace"
+    },
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--offline",
+        "--locked",
+        "-p",
+        "lingose-cli"
+      ],
+      "elapsed_seconds": 0.385,
+      "exit_code": 0,
+      "log": {
+        "bytes": 158,
+        "file": "build-cli.log",
+        "sha256": "9bc991805fba373bb70e38a9fb10b7abedb98c9be7b6d9d4d6c86daa4f3c3907"
+      },
+      "name": "build-cli"
+    },
+    {
+      "command": [
+        "cargo",
+        "doc",
+        "--workspace",
+        "--no-deps",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "elapsed_seconds": 0.855,
+      "exit_code": 0,
+      "log": {
+        "bytes": 905,
+        "file": "doc-workspace.log",
+        "sha256": "eac9fc7e0dea207a74c824bb4f20dc3bf0c621dd6879a1e701fa123db07ff164"
+      },
+      "name": "doc-workspace"
+    },
+    {
+      "command": [
+        "rustup",
+        "run",
+        "1.85.0-x86_64-pc-windows-msvc",
+        "cargo",
+        "check",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "elapsed_seconds": 8.797,
+      "exit_code": 0,
+      "log": {
+        "bytes": 516,
+        "file": "msrv-check.log",
+        "sha256": "927f2c880452ab773e9f02856e6302bae3a6273717c64ccc7d81c45a0e891cfb"
+      },
+      "name": "msrv-check"
+    },
+    {
+      "command": [
+        "cargo",
+        "check",
+        "--manifest-path",
+        "tools/differential-probe/Cargo.toml",
+        "--offline"
+      ],
+      "elapsed_seconds": 0.543,
+      "exit_code": 0,
+      "log": {
+        "bytes": 409,
+        "file": "check-differential-probe.log",
+        "sha256": "524695b265e1871e2454499873b44034989272bf21c68f72c35f4f09583e665c"
+      },
+      "name": "check-differential-probe"
+    },
+    {
+      "command": [
+        "cargo",
+        "check",
+        "--manifest-path",
+        "tools/performance-probe/Cargo.toml",
+        "--offline"
+      ],
+      "elapsed_seconds": 0.254,
+      "exit_code": 0,
+      "log": {
+        "bytes": 329,
+        "file": "check-performance-probe.log",
+        "sha256": "a89b0e3d236ceeb9e583e343bc8e6af35d0ba1640e61de06c38ce31827976494"
+      },
+      "name": "check-performance-probe"
+    },
+    {
+      "command": [
+        "cargo",
+        "doc",
+        "--workspace",
+        "--no-deps",
+        "--all-features",
+        "--offline",
+        "--locked",
+        "--target-dir",
+        ".local/cli11-workspace-b97b1a285c66/doc-fixed-target"
+      ],
+      "elapsed_seconds": 2.234,
+      "exit_code": 0,
+      "log": {
+        "bytes": 552,
+        "file": "doc-workspace-fixed.log",
+        "sha256": "0a58e24618df79f0c9689e0ff9fc511cb2a82824d6cc0edb7eab89b084ffe3dd"
+      },
+      "name": "doc-workspace-fixed"
+    },
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--manifest-path",
+        "C:/Users/Threadman/AppData/Local/Temp/lingose-cli11-jogwd41n/lingose/Cargo.toml",
+        "--examples",
+        "--offline",
+        "--locked",
+        "--target-dir",
+        ".local/cli11-workspace-b97b1a285c66/isolated-target"
+      ],
+      "elapsed_seconds": 5.844,
+      "exit_code": 0,
+      "log": {
+        "bytes": 451,
+        "file": "isolated-build-examples.log",
+        "sha256": "dc208a5e56e96037aa2fded42c054383f60957a27f0c49cc919056788f8846e8"
+      },
+      "name": "isolated-build-examples"
+    },
+    {
+      "command": [
+        "cargo",
+        "check",
+        "--manifest-path",
+        "tools/differential-probe/Cargo.toml",
+        "--offline",
+        "--locked"
+      ],
+      "elapsed_seconds": 0.088,
+      "exit_code": 0,
+      "log": {
+        "bytes": 72,
+        "file": "check-differential-probe-locked.log",
+        "sha256": "a13905646e2aed93ec6ea9ed6ac91490a4e01f91af0215c3965279a910612149"
+      },
+      "name": "check-differential-probe-locked"
+    },
+    {
+      "command": [
+        "cargo",
+        "check",
+        "--manifest-path",
+        "tools/performance-probe/Cargo.toml",
+        "--offline",
+        "--locked"
+      ],
+      "elapsed_seconds": 0.106,
+      "exit_code": 0,
+      "log": {
+        "bytes": 72,
+        "file": "check-performance-probe-locked.log",
+        "sha256": "a13905646e2aed93ec6ea9ed6ac91490a4e01f91af0215c3965279a910612149"
+      },
+      "name": "check-performance-probe-locked"
+    }
+  ],
+  "environment": {
+    "cargo": "cargo 1.93.1 (083ac5135 2025-12-15)",
+    "machine": "AMD64",
+    "msrv_checked": "1.85.0-x86_64-pc-windows-msvc",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)"
+  },
+  "format_version": 1,
+  "input_files": {
+    ".gitattributes": {
+      "bytes": 3004,
+      "sha256": "b7b20e8f2a01e6ccbed9fea92a7c65404cf41f60b18812e10df6111a5ac744ef"
+    },
+    "Cargo.lock": {
+      "bytes": 2473,
+      "sha256": "7579b56b7530de02c8327f8df2d0c963934b0a9f2160635bd597f9b78fc4750e"
+    },
+    "Cargo.toml": {
+      "bytes": 240,
+      "sha256": "2c7d78c0cb89af8501739a315db12692f4141b8c70815a6fcdbad0dab7cb253b"
+    },
+    "README.md": {
+      "bytes": 10050,
+      "sha256": "14f6c53fa41cd6243d0680cdf688a40dbc9faf2b14223b268378f21c7afcfb1f"
+    },
+    "crates/lingose-cli/Cargo.toml": {
+      "bytes": 677,
+      "sha256": "258cfd1d8ba283ef690fc8c8b2df7da0cc5356fddbef6c66513ebc3c22de1afd"
+    },
+    "crates/lingose-cli/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "crates/lingose-cli/README.md": {
+      "bytes": 953,
+      "sha256": "a93e253f7023649649efd8e9be65ed06575952bf3499edc21c68cc72a4911c69"
+    },
+    "crates/lingose-cli/SOURCES.md": {
+      "bytes": 1445,
+      "sha256": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5"
+    },
+    "crates/lingose-cli/src/main.rs": {
+      "bytes": 281,
+      "sha256": "4016162699edd609ed1d2f665e0ee3428563331b0e51e05034eb122a94b748dd"
+    },
+    "crates/lingose/Cargo.toml": {
+      "bytes": 945,
+      "sha256": "4e1e4c9532ef7e5b1f57da9173f133c54b0cf039e30e5b8d2a5fcd3cc7193101"
+    },
+    "crates/lingose/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "crates/lingose/README.md": {
+      "bytes": 9670,
+      "sha256": "b73eeac631e81bb2ec783170ea0d4ca26a8e8701a54fbb4df67267d4b0335e9c"
+    },
+    "crates/lingose/SOURCES.md": {
+      "bytes": 1445,
+      "sha256": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5"
+    },
+    "crates/lingose/data/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "crates/lingose/data/SOURCES.json": {
+      "bytes": 4997,
+      "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+    },
+    "crates/lingose/data/UPSTREAM-SOURCES.md": {
+      "bytes": 1457,
+      "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+    },
+    "crates/lingose/data/frequency.bin": {
+      "bytes": 200272,
+      "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+    },
+    "crates/lingose/data/lexicon.bin": {
+      "bytes": 10259743,
+      "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+    },
+    "crates/lingose/data/manifest.json": {
+      "bytes": 3900,
+      "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+    },
+    "crates/lingose/docs/distribution-provenance.json": {
+      "bytes": 5569,
+      "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+    },
+    "crates/lingose/docs/rust-api.md": {
+      "bytes": 8643,
+      "sha256": "88a96a7c4afa5216dd22ddf89047125cafbe7c7c26a6ef407c4bc8aa3fccc4d1"
+    },
+    "crates/lingose/examples/annotate.rs": {
+      "bytes": 423,
+      "sha256": "c604152bbe8995e5c439c0122fa9674d9c38d87f53890929a34cdb15798bd6cd"
+    },
+    "crates/lingose/examples/query.rs": {
+      "bytes": 871,
+      "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+    },
+    "crates/lingose/src/annotation.rs": {
+      "bytes": 19775,
+      "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+    },
+    "crates/lingose/src/annotation_context_vectors.rs": {
+      "bytes": 321810,
+      "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+    },
+    "crates/lingose/src/annotation_frequency_vectors.rs": {
+      "bytes": 24615,
+      "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+    },
+    "crates/lingose/src/annotation_unicode.rs": {
+      "bytes": 3734,
+      "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+    },
+    "crates/lingose/src/annotation_unicode_tables.rs": {
+      "bytes": 40416,
+      "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+    },
+    "crates/lingose/src/annotation_vectors.rs": {
+      "bytes": 65657,
+      "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+    },
+    "crates/lingose/src/category.rs": {
+      "bytes": 1653,
+      "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+    },
+    "crates/lingose/src/data/annotation_context_vectors.rs": {
+      "bytes": 37586,
+      "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+    },
+    "crates/lingose/src/data/annotation_frequency_vectors.rs": {
+      "bytes": 87772,
+      "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+    },
+    "crates/lingose/src/data/annotation_tests.rs": {
+      "bytes": 3391,
+      "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+    },
+    "crates/lingose/src/data/cache_tests.rs": {
+      "bytes": 22365,
+      "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+    },
+    "crates/lingose/src/data/category_tests.rs": {
+      "bytes": 4243,
+      "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+    },
+    "crates/lingose/src/data/image.rs": {
+      "bytes": 15144,
+      "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+    },
+    "crates/lingose/src/data/mod.rs": {
+      "bytes": 6395,
+      "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+    },
+    "crates/lingose/src/data/p41_joint_error_tests.rs": {
+      "bytes": 4967,
+      "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+    },
+    "crates/lingose/src/data/p41_query_fixture_tests.rs": {
+      "bytes": 62352,
+      "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+    },
+    "crates/lingose/src/data/tests.rs": {
+      "bytes": 24506,
+      "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+    },
+    "crates/lingose/src/data_meta.rs": {
+      "bytes": 1531,
+      "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+    },
+    "crates/lingose/src/error.rs": {
+      "bytes": 2127,
+      "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+    },
+    "crates/lingose/src/lib.rs": {
+      "bytes": 5169,
+      "sha256": "60568d3c77278def9cd8d3e3c56ccf71007f6e6194ea70dcce3b15830003eeef"
+    },
+    "crates/lingose/src/query.rs": {
+      "bytes": 1207,
+      "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+    },
+    "crates/lingose/src/query_case.rs": {
+      "bytes": 5074,
+      "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+    },
+    "crates/lingose/src/query_case_tables.rs": {
+      "bytes": 52751,
+      "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+    },
+    "crates/lingose/src/validation.rs": {
+      "bytes": 1624,
+      "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+    },
+    "crates/lingose/tests/annotation_context_vectors.rs": {
+      "bytes": 19512,
+      "sha256": "e5978ca90cbeb487516b23b00f5cb2c2440059ca6137f4f464ab7aa9be588624"
+    },
+    "crates/lingose/tests/annotation_frequency_vectors.rs": {
+      "bytes": 95039,
+      "sha256": "f6481cca6221052d0daa343d0b933e59503273221665599c291ed8df92047cce"
+    },
+    "crates/lingose/tests/annotation_vectors.rs": {
+      "bytes": 3919,
+      "sha256": "cdf1eed04d635b55e12ddb82ac7bf1c273299acd11dfb81b1632ac1c78f5a9e4"
+    },
+    "crates/lingose/tests/api_contract.rs": {
+      "bytes": 12203,
+      "sha256": "3a8b4c00aeff18ebc0f4fc65f5b9c93a04847e09e7e52f7e5a02c9c092e921a8"
+    },
+    "crates/lingose/tests/category_vectors.rs": {
+      "bytes": 23168,
+      "sha256": "2a9847a84ea05858410e0be8be3020771b0e2027a13426b077fa61fc9b5e1072"
+    },
+    "crates/lingose/tests/query_vectors.rs": {
+      "bytes": 11219,
+      "sha256": "440c7634cddb9494a37b0c0e89e1723ac53d9e2e92be125ca32057cbc187cbce"
+    },
+    "crates/lingose/third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    },
+    "docs/rust-api.md": {
+      "bytes": 8473,
+      "sha256": "9a70866da0046b0005579323118268953a84c1e85a80952c8b70b561034b0832"
+    },
+    "tools/differential-probe/Cargo.lock": {
+      "bytes": 2488,
+      "sha256": "2d1deee6bf72249ff2ee8cc24966a097113ddba161d23d72c8c6d07b42e029c5"
+    },
+    "tools/differential-probe/Cargo.toml": {
+      "bytes": 185,
+      "sha256": "9e8e1d8b69d342dab59705d9b557c16b0b37d280eaaff5e23952af93d7a5a6d7"
+    },
+    "tools/performance-probe/Cargo.lock": {
+      "bytes": 2487,
+      "sha256": "0aa959160d8193bda061bc7452caccf9d01bdc631d1d7337c4a124d604e62abc"
+    },
+    "tools/performance-probe/Cargo.toml": {
+      "bytes": 247,
+      "sha256": "9e341b9cc550bf6f9af59473e62eb935aaf126811ce74eb500b69b74c4b2b0c9"
+    }
+  },
+  "isolated_runtime": {
+    "directory": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli11-jogwd41n\\runtime",
+    "empty_cargo_and_rustup_home": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli11-jogwd41n\\empty-home",
+    "files": [
+      "query.exe",
+      "annotate.exe"
+    ],
+    "results": {
+      "annotate": {
+        "exe_bytes": 10980864,
+        "exe_sha256": "1de953f9f4ad254419bd7be20f06a5e4eca7c17b91a78501fcb49b84730a0596",
+        "exit_code": 0,
+        "stderr_bytes": 0,
+        "stdout_bytes": 209,
+        "stdout_sha256": "ed22bb8408ee22b2fbc5a10d9b368764fdcb32c5d93c334cc027767535c65923"
+      },
+      "query": {
+        "exe_bytes": 10919936,
+        "exe_sha256": "51101c8ffd6fd6bfbf4283129c22f942282f57e54078cfdd7674cb1fd42ad908",
+        "exit_code": 0,
+        "stderr_bytes": 0,
+        "stdout_bytes": 526,
+        "stdout_sha256": "955b60be5e5e8fc4f47f8fdd4e7bc06f60caaf82345dcf8ff9eb4577bdab91a7"
+      }
+    }
+  },
+  "isolated_source": {
+    "cli_scaffold": {
+      "exit_code": 1,
+      "stderr": "lingose-cli 0.2.0: command-line interface is not implemented yet.\n",
+      "stdout_bytes": 0
+    },
+    "lockfile": {
+      "bytes": 2390,
+      "sha256": "b87dafe8d4af80005dbad1fbe3021ac961f6a7978f487a766abbac87bff3e1ad"
+    },
+    "parent": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli11-jogwd41n",
+    "scope": "Standalone source-directory copy, not a packaged crate or registry consumer; workspace lock copied with only the unrelated CLI package entry removed.",
+    "source": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli11-jogwd41n\\lingose"
+  },
+  "migration": {
+    "adapted_document_copies": [
+      {
+        "after": {
+          "bytes": 9670,
+          "sha256": "b73eeac631e81bb2ec783170ea0d4ca26a8e8701a54fbb4df67267d4b0335e9c"
+        },
+        "before": {
+          "bytes": 9488,
+          "sha256": "ff695b01b200f134e429c015b6de9c46974491f0bb1a82ed0bacaa8505229e5f"
+        },
+        "from": "README.md",
+        "to": "crates/lingose/README.md"
+      },
+      {
+        "after": {
+          "bytes": 8643,
+          "sha256": "88a96a7c4afa5216dd22ddf89047125cafbe7c7c26a6ef407c4bc8aa3fccc4d1"
+        },
+        "before": {
+          "bytes": 8458,
+          "sha256": "86f418aa7ee57db786635ef26ba03d9f9d6cb04a29d19886674469a143358fcb"
+        },
+        "from": "docs/rust-api.md",
+        "to": "crates/lingose/docs/rust-api.md"
+      }
+    ],
+    "byte_identical_cli_copies": [
+      {
+        "bytes": 17023,
+        "from": "LICENSE",
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+        "to": "crates/lingose-cli/LICENSE"
+      },
+      {
+        "bytes": 1445,
+        "from": "SOURCES.md",
+        "sha256": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5",
+        "to": "crates/lingose-cli/SOURCES.md"
+      }
+    ],
+    "byte_identical_library_copies": [
+      {
+        "bytes": 17023,
+        "from": "LICENSE",
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+        "to": "crates/lingose/LICENSE"
+      },
+      {
+        "bytes": 1445,
+        "from": "SOURCES.md",
+        "sha256": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5",
+        "to": "crates/lingose/SOURCES.md"
+      },
+      {
+        "bytes": 5569,
+        "from": "docs/distribution-provenance.json",
+        "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f",
+        "to": "crates/lingose/docs/distribution-provenance.json"
+      },
+      {
+        "bytes": 1995,
+        "from": "third_party/unicode/LICENSE.txt",
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+        "to": "crates/lingose/third_party/unicode/LICENSE.txt"
+      }
+    ],
+    "byte_identical_moves": [
+      {
+        "bytes": 17023,
+        "from": "data/LICENSE",
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+        "to": "crates/lingose/data/LICENSE"
+      },
+      {
+        "bytes": 4997,
+        "from": "data/SOURCES.json",
+        "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f",
+        "to": "crates/lingose/data/SOURCES.json"
+      },
+      {
+        "bytes": 1457,
+        "from": "data/UPSTREAM-SOURCES.md",
+        "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228",
+        "to": "crates/lingose/data/UPSTREAM-SOURCES.md"
+      },
+      {
+        "bytes": 200272,
+        "from": "data/frequency.bin",
+        "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264",
+        "to": "crates/lingose/data/frequency.bin"
+      },
+      {
+        "bytes": 10259743,
+        "from": "data/lexicon.bin",
+        "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6",
+        "to": "crates/lingose/data/lexicon.bin"
+      },
+      {
+        "bytes": 3900,
+        "from": "data/manifest.json",
+        "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03",
+        "to": "crates/lingose/data/manifest.json"
+      },
+      {
+        "bytes": 423,
+        "from": "examples/annotate.rs",
+        "sha256": "c604152bbe8995e5c439c0122fa9674d9c38d87f53890929a34cdb15798bd6cd",
+        "to": "crates/lingose/examples/annotate.rs"
+      },
+      {
+        "bytes": 871,
+        "from": "examples/query.rs",
+        "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98",
+        "to": "crates/lingose/examples/query.rs"
+      },
+      {
+        "bytes": 19775,
+        "from": "src/annotation.rs",
+        "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247",
+        "to": "crates/lingose/src/annotation.rs"
+      },
+      {
+        "bytes": 321810,
+        "from": "src/annotation_context_vectors.rs",
+        "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302",
+        "to": "crates/lingose/src/annotation_context_vectors.rs"
+      },
+      {
+        "bytes": 24615,
+        "from": "src/annotation_frequency_vectors.rs",
+        "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6",
+        "to": "crates/lingose/src/annotation_frequency_vectors.rs"
+      },
+      {
+        "bytes": 3734,
+        "from": "src/annotation_unicode.rs",
+        "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94",
+        "to": "crates/lingose/src/annotation_unicode.rs"
+      },
+      {
+        "bytes": 40416,
+        "from": "src/annotation_unicode_tables.rs",
+        "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b",
+        "to": "crates/lingose/src/annotation_unicode_tables.rs"
+      },
+      {
+        "bytes": 65657,
+        "from": "src/annotation_vectors.rs",
+        "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12",
+        "to": "crates/lingose/src/annotation_vectors.rs"
+      },
+      {
+        "bytes": 1653,
+        "from": "src/category.rs",
+        "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f",
+        "to": "crates/lingose/src/category.rs"
+      },
+      {
+        "bytes": 37586,
+        "from": "src/data/annotation_context_vectors.rs",
+        "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df",
+        "to": "crates/lingose/src/data/annotation_context_vectors.rs"
+      },
+      {
+        "bytes": 87772,
+        "from": "src/data/annotation_frequency_vectors.rs",
+        "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16",
+        "to": "crates/lingose/src/data/annotation_frequency_vectors.rs"
+      },
+      {
+        "bytes": 3391,
+        "from": "src/data/annotation_tests.rs",
+        "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf",
+        "to": "crates/lingose/src/data/annotation_tests.rs"
+      },
+      {
+        "bytes": 22365,
+        "from": "src/data/cache_tests.rs",
+        "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8",
+        "to": "crates/lingose/src/data/cache_tests.rs"
+      },
+      {
+        "bytes": 4243,
+        "from": "src/data/category_tests.rs",
+        "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918",
+        "to": "crates/lingose/src/data/category_tests.rs"
+      },
+      {
+        "bytes": 15144,
+        "from": "src/data/image.rs",
+        "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b",
+        "to": "crates/lingose/src/data/image.rs"
+      },
+      {
+        "bytes": 6395,
+        "from": "src/data/mod.rs",
+        "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c",
+        "to": "crates/lingose/src/data/mod.rs"
+      },
+      {
+        "bytes": 4967,
+        "from": "src/data/p41_joint_error_tests.rs",
+        "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08",
+        "to": "crates/lingose/src/data/p41_joint_error_tests.rs"
+      },
+      {
+        "bytes": 62352,
+        "from": "src/data/p41_query_fixture_tests.rs",
+        "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6",
+        "to": "crates/lingose/src/data/p41_query_fixture_tests.rs"
+      },
+      {
+        "bytes": 24506,
+        "from": "src/data/tests.rs",
+        "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a",
+        "to": "crates/lingose/src/data/tests.rs"
+      },
+      {
+        "bytes": 1531,
+        "from": "src/data_meta.rs",
+        "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0",
+        "to": "crates/lingose/src/data_meta.rs"
+      },
+      {
+        "bytes": 2127,
+        "from": "src/error.rs",
+        "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f",
+        "to": "crates/lingose/src/error.rs"
+      },
+      {
+        "bytes": 5169,
+        "from": "src/lib.rs",
+        "sha256": "60568d3c77278def9cd8d3e3c56ccf71007f6e6194ea70dcce3b15830003eeef",
+        "to": "crates/lingose/src/lib.rs"
+      },
+      {
+        "bytes": 1207,
+        "from": "src/query.rs",
+        "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd",
+        "to": "crates/lingose/src/query.rs"
+      },
+      {
+        "bytes": 5074,
+        "from": "src/query_case.rs",
+        "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7",
+        "to": "crates/lingose/src/query_case.rs"
+      },
+      {
+        "bytes": 52751,
+        "from": "src/query_case_tables.rs",
+        "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e",
+        "to": "crates/lingose/src/query_case_tables.rs"
+      },
+      {
+        "bytes": 1624,
+        "from": "src/validation.rs",
+        "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e",
+        "to": "crates/lingose/src/validation.rs"
+      },
+      {
+        "bytes": 19512,
+        "from": "tests/annotation_context_vectors.rs",
+        "sha256": "e5978ca90cbeb487516b23b00f5cb2c2440059ca6137f4f464ab7aa9be588624",
+        "to": "crates/lingose/tests/annotation_context_vectors.rs"
+      },
+      {
+        "bytes": 95039,
+        "from": "tests/annotation_frequency_vectors.rs",
+        "sha256": "f6481cca6221052d0daa343d0b933e59503273221665599c291ed8df92047cce",
+        "to": "crates/lingose/tests/annotation_frequency_vectors.rs"
+      },
+      {
+        "bytes": 3919,
+        "from": "tests/annotation_vectors.rs",
+        "sha256": "cdf1eed04d635b55e12ddb82ac7bf1c273299acd11dfb81b1632ac1c78f5a9e4",
+        "to": "crates/lingose/tests/annotation_vectors.rs"
+      },
+      {
+        "bytes": 12203,
+        "from": "tests/api_contract.rs",
+        "sha256": "3a8b4c00aeff18ebc0f4fc65f5b9c93a04847e09e7e52f7e5a02c9c092e921a8",
+        "to": "crates/lingose/tests/api_contract.rs"
+      },
+      {
+        "bytes": 23168,
+        "from": "tests/category_vectors.rs",
+        "sha256": "2a9847a84ea05858410e0be8be3020771b0e2027a13426b077fa61fc9b5e1072",
+        "to": "crates/lingose/tests/category_vectors.rs"
+      },
+      {
+        "bytes": 11219,
+        "from": "tests/query_vectors.rs",
+        "sha256": "440c7634cddb9494a37b0c0e89e1723ac53d9e2e92be125ca32057cbc187cbce",
+        "to": "crates/lingose/tests/query_vectors.rs"
+      }
+    ],
+    "unchanged_original_files": {
+      ".gitignore": {
+        "bytes": 108,
+        "sha256": "447c660594550004d09817ab16435cd7efe15f4cb1767384ea4b1830e3b2c27e"
+      },
+      "AGENTS.md": {
+        "bytes": 15651,
+        "sha256": "fd2bec28f9c5ed2f6e4d3f9917d9a3716a3487cecec137ede632c837cce0158d"
+      },
+      "LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "SOURCES.md": {
+        "bytes": 1445,
+        "sha256": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5"
+      },
+      "TASK.md": {
+        "bytes": 1136,
+        "sha256": "a3cdccdb623e59124e3dd404938538601d1497c85f983b0df8e1e266f0695cdc"
+      },
+      "TASK_CLI.md": {
+        "bytes": 2960,
+        "sha256": "2f88982186954e22cadde46abf375f0ffc98424ccffe388a5ffb81f31814c7df"
+      },
+      "docs/annotation-context-verification.json": {
+        "bytes": 23061,
+        "sha256": "61b9647f906e29e4ab8a3da895ca0bece42eb0f05627e0c7413504bd6b6be763"
+      },
+      "docs/annotation-frequency-verification.json": {
+        "bytes": 26209,
+        "sha256": "1dd1f88263ecf046069739543426920aec76275df0f128c01ed7c64f42bbf071"
+      },
+      "docs/annotation-unicode.json": {
+        "bytes": 3135,
+        "sha256": "521a545a791b054acb135197034305434dce11e67ffe8547952340fcc3254fb1"
+      },
+      "docs/annotation-verification.json": {
+        "bytes": 19296,
+        "sha256": "f7dc9cdcef58b74bab900eb4a91d53c1283befe80011fe56b697273479acaaa8"
+      },
+      "docs/annotation.md": {
+        "bytes": 13033,
+        "sha256": "74fb14c208832c83e59cc00627f239a73506779f2108b85c7c17e4549f4c06ff"
+      },
+      "docs/api.md": {
+        "bytes": 12669,
+        "sha256": "ae6e87cd60fb66f8291d82abce20b3bf77e0d17c9e53b6d2e0aefa6929d9372e"
+      },
+      "docs/categories.md": {
+        "bytes": 5238,
+        "sha256": "c1b62ebfcb34bbd7b0e508abf41f4c7443f8a7a133a5ca3144fcc59ca983c3c0"
+      },
+      "docs/category-verification.json": {
+        "bytes": 13470,
+        "sha256": "f589f774e7ba3edfc8d8995756dd515a5556589c4a10f9cfe41809f53686ed58"
+      },
+      "docs/correctness-regression-verification.json": {
+        "bytes": 27574,
+        "sha256": "aa323f5a9bff1e4cdf3fa0372914dfa6d21227ade121daa8942863fee2d65412"
+      },
+      "docs/data-export.md": {
+        "bytes": 6387,
+        "sha256": "cac2faad31d09cea22112ed3a91e9d725fb741b5634b54980f72a0ff448129a7"
+      },
+      "docs/data-layout.md": {
+        "bytes": 9594,
+        "sha256": "3a7438852f6094ee5ca82205330fd09de3489c80a0a092ea3c97dcf6f4ef8daa"
+      },
+      "docs/data-loader.md": {
+        "bytes": 6006,
+        "sha256": "1aba33adf458a8abd1c5dcba299a2da748a208282615d43d0b029ba80858a43b"
+      },
+      "docs/data-verification.json": {
+        "bytes": 3327,
+        "sha256": "712b5b8be598b5cd9bebae98ffd5350aadf709cd47f660f34f571944568a9c14"
+      },
+      "docs/distribution-provenance.json": {
+        "bytes": 5569,
+        "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+      },
+      "docs/distribution-review.md": {
+        "bytes": 5122,
+        "sha256": "1506200d59a5d1068dcbfc2adb337f324ef634223c68abe417d3cbb045a303bc"
+      },
+      "docs/engineering-verification.json": {
+        "bytes": 41258,
+        "sha256": "44216e41cd716ab39d339256bc78c9a03ae05d2fc29d34f5e9bec97c698d339a"
+      },
+      "docs/engineering.md": {
+        "bytes": 5180,
+        "sha256": "80ca241214cf62eae6dfeb2fd01fba7a6b0c774124cf88d9e44c07af957f5301"
+      },
+      "docs/full-differential-verification.json": {
+        "bytes": 25610,
+        "sha256": "72ea9e2fafea9501e8977d9e7e31a7ccb16bddad752a0e57ce6355ed4c23e528"
+      },
+      "docs/full-differential.md": {
+        "bytes": 6975,
+        "sha256": "0150d45ead564e35991bafd7016c3068630a165e82aae23a8a267670a066f160"
+      },
+      "docs/layout-probe-results.json": {
+        "bytes": 93875,
+        "sha256": "981736620f03435decd4613f89233bd68169c8c0e404a30af262591d3eed8c2a"
+      },
+      "docs/loader-verification.json": {
+        "bytes": 19072,
+        "sha256": "64e2ca459bafe707971bc67b6f3e1c39e5d1e60d28d15d79a32bd4e853d09eb4"
+      },
+      "docs/p5-documentation-verification.json": {
+        "bytes": 14032,
+        "sha256": "ecd50b647ae4b3bffc5cee609921d5b5da7d1dff4f8b41890bc491ce88313a98"
+      },
+      "docs/package-verification.json": {
+        "bytes": 57475,
+        "sha256": "96fe4ca4cd87f87ae31fecc151ccbe0ed523e630f64c3b9b7015367eb255dfbc"
+      },
+      "docs/packaging.md": {
+        "bytes": 4827,
+        "sha256": "03101264d0206161b6ca2cead9c8090c6a40df9a4bcc1ed9bf58a9fb676a44ab"
+      },
+      "docs/performance-budget.json": {
+        "bytes": 1967,
+        "sha256": "3f54b4d54240eb8039cb461829c76d2ccd2cda7fe6cb4060b013d5d882cd4e82"
+      },
+      "docs/performance-budget.md": {
+        "bytes": 9464,
+        "sha256": "a890bd490d7dc02264afcb4a1692f3cdfa0f2a927cceca298a79c7867a39300a"
+      },
+      "docs/performance-verification.json": {
+        "bytes": 88511,
+        "sha256": "daf22261dadd266d935f9066a21aefcb27f296ee7aa9ecfe32cd87bc01b3eb36"
+      },
+      "docs/performance.md": {
+        "bytes": 9045,
+        "sha256": "c3dd77a902f0934fa4fe86582a6385bd2c8531da1ff175b7beb674aa95d3e154"
+      },
+      "docs/publication-preflight.json": {
+        "bytes": 24671,
+        "sha256": "f3273631263d60c55fdc0d22e82f42ec49b59271edd53654004abcd1ce6bed47"
+      },
+      "docs/publication-preflight.md": {
+        "bytes": 4676,
+        "sha256": "e65678a09ef514a2b46c8ee8ffabd44c9c1dc067d7aba371dd2e36e8e703f76a"
+      },
+      "docs/publication.json": {
+        "bytes": 9573,
+        "sha256": "9557a72362d2c060053405e247215b1e2fa9b6e5d2ff2f7f2d44466019ad9f76"
+      },
+      "docs/publication.md": {
+        "bytes": 4016,
+        "sha256": "42b8707906f62a769bb44e3f4f8b6534684d783bc8a03a064491f6539ff2b3f5"
+      },
+      "docs/query-case.json": {
+        "bytes": 3387,
+        "sha256": "4ea010b0509185e14b311263911f3fe3ba17f9204d6eb4b7b3119ab34871fabc"
+      },
+      "docs/query-verification.json": {
+        "bytes": 11767,
+        "sha256": "dbe8894eea010602289254c8f7819f0841edbc74c2e93df46cdaacf9d00b337b"
+      },
+      "docs/reference-baseline.json": {
+        "bytes": 54162,
+        "sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
+      },
+      "docs/reference-baseline.md": {
+        "bytes": 3576,
+        "sha256": "e54ddf801c37185ee5b95f5503c726ab2c52d5044493101a4cbf87e01a4ee295"
+      },
+      "docs/registry-consumer-verification.json": {
+        "bytes": 36628,
+        "sha256": "8ce02801c3a9c2a3dd07dae3b66c79a296413df9e095095f21854b82fa64e764"
+      },
+      "docs/registry-consumer.md": {
+        "bytes": 5389,
+        "sha256": "355486a47b7ab9f01b69cd11c05a0df05ec80ecef2c349d771bf79fd764bb964"
+      },
+      "docs/simple-queries.md": {
+        "bytes": 5447,
+        "sha256": "4a84765687363917cb11c5866593eaebb4e7c6d675d78bf8e3497a03bb371ef4"
+      },
+      "tasks/todo.md": {
+        "bytes": 25878,
+        "sha256": "c3ae5bc0cc445eb5de1a860d54edf983b00476e16aa15f375f746c7e62f0bd57"
+      },
+      "tests/fixtures/python-api-v1.json": {
+        "bytes": 118971,
+        "sha256": "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1"
+      },
+      "tests/test_api_vectors.py": {
+        "bytes": 4304,
+        "sha256": "dcd0f5715de13d12e7d4316a1adffcee42bf73088b8668ce684144fcb63138ae"
+      },
+      "tests/test_export_data.py": {
+        "bytes": 13055,
+        "sha256": "f93cf58bf5590e040c2e26fed3e0a721b025e49635d62b966d83f7c2a9cbff31"
+      },
+      "tests/test_full_differential.py": {
+        "bytes": 3000,
+        "sha256": "c2a6f63462a9fa405cca263438724f73a0483fa2cfb38e51bddf64e31efd40cc"
+      },
+      "tests/test_layout_probe.py": {
+        "bytes": 1798,
+        "sha256": "6812ffae2a695894774ade3abdfe798c8823cc3ea215ba17c86e51d4759e3ddc"
+      },
+      "tests/test_package.py": {
+        "bytes": 3770,
+        "sha256": "35e17c917be9b326f70a3893d79b648b3c1b3fb4fd2fc00dc43940ed25214f55"
+      },
+      "tests/test_performance.py": {
+        "bytes": 11135,
+        "sha256": "fcb91e9d7e571120f3bce4a13ba850207f9e8e54c9e12c7655edd30e2032da37"
+      },
+      "tests/test_reference.py": {
+        "bytes": 3835,
+        "sha256": "8ed53d4331e97846c73a164e8276187570730cd6f70425be60e67e97df807a2a"
+      },
+      "tests/test_verify_data.py": {
+        "bytes": 14397,
+        "sha256": "d5f46997fd089b91e713f2f1d347278dbfde8d95c514676acd9d6f62b19f0634"
+      },
+      "third_party/unicode/LICENSE.txt": {
+        "bytes": 1995,
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+      },
+      "tools/audit_reference.py": {
+        "bytes": 11186,
+        "sha256": "a433c4e88a15022bda5f2d2c51b1fa715796ff0c223b5b87cc5523f9a75a637b"
+      },
+      "tools/capture_api_vectors.py": {
+        "bytes": 17882,
+        "sha256": "f4100af2081ee52df16358c03ee8022d0146aa2a4d7c93e05c240df629f3543a"
+      },
+      "tools/check_full_differential.py": {
+        "bytes": 19367,
+        "sha256": "00eab447194c17bb72ba87428b126af378285f93173d0ebc21afd74a94c6d67d"
+      },
+      "tools/check_layout_probe.py": {
+        "bytes": 5999,
+        "sha256": "c05f28f228c7b189e54f1f6de0bc61a6b789efb605a9eff2493a390fb96ab8dc"
+      },
+      "tools/check_loader.py": {
+        "bytes": 7238,
+        "sha256": "97f67512c3dbcedb4d9fd632eac2754da205fb08f7f7b0a02b48c3bee5850e28"
+      },
+      "tools/check_package.py": {
+        "bytes": 14893,
+        "sha256": "af8db2075005f8656070845f3066b952ad68fe2dd24e4704b5fdc95d2ebf84da"
+      },
+      "tools/check_performance.py": {
+        "bytes": 22470,
+        "sha256": "02c78c900c2b380ead4e1c6b4857426f9cf3180e28deaf83d300b27323aa5ae1"
+      },
+      "tools/check_queries.py": {
+        "bytes": 11457,
+        "sha256": "125fa70c2694346206e886ec2e036ccfd1f6d76d6e9531b950b564ebf8668fa5"
+      },
+      "tools/check_registry_consumer.py": {
+        "bytes": 18125,
+        "sha256": "d54e37d9bc7c7dd5932c1e23554e02c3a12df29e0c46f60d69f946c16743514f"
+      },
+      "tools/differential-probe/src/main.rs": {
+        "bytes": 4516,
+        "sha256": "e44dc7015be426d302706699f8e00039b0c8bf1b7c0d5f371274c371ce6dd057"
+      },
+      "tools/export_data.py": {
+        "bytes": 22639,
+        "sha256": "88f2dad44b6dc7e544241ed834874a65892f07a60a6b23eeb282838675b0c814"
+      },
+      "tools/generate_annotation_context_vectors.py": {
+        "bytes": 23073,
+        "sha256": "17dd3c7e0d224cb095812ac5814a99f51b937acc836ad52766ce2a62ef5ae514"
+      },
+      "tools/generate_annotation_frequency_vectors.py": {
+        "bytes": 25579,
+        "sha256": "e9eecf164c55d3a36783eadbaffd862af67f0d26bc43c56429a07a64b1ea5723"
+      },
+      "tools/generate_annotation_unicode.py": {
+        "bytes": 6425,
+        "sha256": "934a137b4ece5c07811a03f7ee66ad10f52261da8e7ee9e3d80ae93fb381be9f"
+      },
+      "tools/generate_annotation_vectors.py": {
+        "bytes": 15464,
+        "sha256": "90a47ddbd00d921857d980cfa23497bdd47463a1451ae4b97cabbc101da7de49"
+      },
+      "tools/generate_category_vectors.py": {
+        "bytes": 10150,
+        "sha256": "fcd5854b5044fec2dcc97a594d9fd88114d364cc0c558a49a31bd278cb41531b"
+      },
+      "tools/generate_error_vectors.py": {
+        "bytes": 12786,
+        "sha256": "223c53c0555adb74f021ca692b8b5b476a000fc0ffbd020a4127314e3574ebe4"
+      },
+      "tools/generate_query_case.py": {
+        "bytes": 11187,
+        "sha256": "23716d0616d641108dff27ccd128f96b6a03b4c0a484972fa50c60f5408166f3"
+      },
+      "tools/generate_query_vectors.py": {
+        "bytes": 3299,
+        "sha256": "e702438b8d90889455df3af10364068743cadf49f759b3fffa773eb1b93626a5"
+      },
+      "tools/layout-probe/AGENTS.md": {
+        "bytes": 1033,
+        "sha256": "67600f789d5b392869153228434cd3e9736ad6af2f9c38e7fa8142dd0d6490f9"
+      },
+      "tools/layout-probe/Cargo.lock": {
+        "bytes": 6000,
+        "sha256": "c2a237512aca2e56d08be9b992f8b553c559ba6db6fc74960cc869b737d5ff99"
+      },
+      "tools/layout-probe/Cargo.toml": {
+        "bytes": 492,
+        "sha256": "9a97dc8bd4ecf3863c26a190767d5bed06914ff9baf11ca114522bd668597015"
+      },
+      "tools/layout-probe/FORMAT.md": {
+        "bytes": 3574,
+        "sha256": "e34829a26e2c514d9ae41a8735dc08060b58d613af4b8e76654244234382919c"
+      },
+      "tools/layout-probe/src/image.rs": {
+        "bytes": 13321,
+        "sha256": "07d4fe88f114e1cc25e6acabf7a9334a209e78eefea4bad1e79975eee2bb15d3"
+      },
+      "tools/layout-probe/src/main.rs": {
+        "bytes": 13159,
+        "sha256": "d7f251839dbd9bd80d2c6424471aec68b0e484deec557d75f63a999769a68fa8"
+      },
+      "tools/package_consumer.rs": {
+        "bytes": 7829,
+        "sha256": "1f8c62db06cfc3b7b390dd5c711cdb5daab320de63d5549eb7ce8fcdd94f5f9d"
+      },
+      "tools/performance-probe/src/main.rs": {
+        "bytes": 8754,
+        "sha256": "0949cfbea2785ecb82771a8c152e5f0ac721767c677051ad05461df07ca9c97d"
+      },
+      "tools/prepare_layout_probe.py": {
+        "bytes": 14977,
+        "sha256": "0ddb8f305e91ebae2f99b14b8efe4206b279654b5f9e88a7187fa14e4978cc25"
+      },
+      "tools/prepare_package_sources.py": {
+        "bytes": 4296,
+        "sha256": "f35dbb22fb08765149f29570879ce72830aa4b9c6bbbe028d19d0c9c5cc7bbea"
+      },
+      "tools/reference.py": {
+        "bytes": 7301,
+        "sha256": "e4d1bc740da1c1346f012a8227577ba8c43bd7a310a262f4bb5837b8f790ea84"
+      },
+      "tools/run_layout_probe.py": {
+        "bytes": 13350,
+        "sha256": "41f5b69a6cfbc80778a44415c2a50fa398ae9a8885a8428d161f85cdd8352bfd"
+      },
+      "tools/verify_data.py": {
+        "bytes": 24222,
+        "sha256": "ff1f9766f8de03a31c2f7d7abc3787b7637338731b22540a874ccbf7d6805524"
+      }
+    }
+  },
+  "notes": [
+    "Initial workspace cargo doc produced a same-name bin/lib filename collision warning; CLI bin doc=false and a fresh doc target fixed it. Initial and corrected logs are retained.",
+    "The first metadata query from the external temporary directory printed a sandbox canonicalization warning for C:/Users/Threadman; metadata identified the standalone library correctly. The isolated offline build and runtime checks passed.",
+    "Standalone source verification reused prepared registry dependencies and a copy of the workspace lock with only the unrelated CLI entry removed. It is not a packaged-crate or crates.io consumer test.",
+    "The layout probe was checked for independent workspace ownership only, not built or benchmarked. Differential/performance probes passed offline locked checks; Python tooling is intentionally pending CLI1.2.",
+    "Historical root distribution provenance and its package copy remain byte-identical excerpts of 0.1.0 records; their old lock digest does not attest this workspace lock. New distribution review is CLI4.2.",
+    "Both packages retain publish=false until their planned release-preparation stages. No actual release operation was performed."
+  ],
+  "package_lists": {
+    "packages": {
+      "lingose": {
+        "files": [
+          ".cargo_vcs_info.json",
+          "Cargo.lock",
+          "Cargo.toml",
+          "Cargo.toml.orig",
+          "LICENSE",
+          "README.md",
+          "SOURCES.md",
+          "data/LICENSE",
+          "data/SOURCES.json",
+          "data/UPSTREAM-SOURCES.md",
+          "data/frequency.bin",
+          "data/lexicon.bin",
+          "data/manifest.json",
+          "docs/distribution-provenance.json",
+          "docs/rust-api.md",
+          "examples/annotate.rs",
+          "examples/query.rs",
+          "src/annotation.rs",
+          "src/annotation_context_vectors.rs",
+          "src/annotation_frequency_vectors.rs",
+          "src/annotation_unicode.rs",
+          "src/annotation_unicode_tables.rs",
+          "src/annotation_vectors.rs",
+          "src/category.rs",
+          "src/data/annotation_context_vectors.rs",
+          "src/data/annotation_frequency_vectors.rs",
+          "src/data/annotation_tests.rs",
+          "src/data/cache_tests.rs",
+          "src/data/category_tests.rs",
+          "src/data/image.rs",
+          "src/data/mod.rs",
+          "src/data/p41_joint_error_tests.rs",
+          "src/data/p41_query_fixture_tests.rs",
+          "src/data/tests.rs",
+          "src/data_meta.rs",
+          "src/error.rs",
+          "src/lib.rs",
+          "src/query.rs",
+          "src/query_case.rs",
+          "src/query_case_tables.rs",
+          "src/validation.rs",
+          "third_party/unicode/LICENSE.txt"
+        ],
+        "stderr": ""
+      },
+      "lingose-cli": {
+        "files": [
+          ".cargo_vcs_info.json",
+          "Cargo.lock",
+          "Cargo.toml",
+          "Cargo.toml.orig",
+          "LICENSE",
+          "README.md",
+          "SOURCES.md",
+          "src/main.rs"
+        ],
+        "stderr": ""
+      }
+    },
+    "scope": "cargo package --list --allow-dirty only; no real archive, dry-run, upload or registry installation performed."
+  },
+  "phase": "CLI1.1",
+  "raw_evidence": {
+    "check_runner": {
+      "bytes": 1562,
+      "sha256": "ab082489810b099b6a29698054f0e549a42b9545b152f7cb07fde0ef8f96f097"
+    },
+    "directory": ".local/cli11-workspace-b97b1a285c66",
+    "files": {
+      "annotate-runtime.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "annotate-runtime.stdout": {
+        "bytes": 209,
+        "sha256": "ed22bb8408ee22b2fbc5a10d9b368764fdcb32c5d93c334cc027767535c65923"
+      },
+      "before.json": {
+        "bytes": 23440,
+        "sha256": "e34f4548df7579683c65a39e18cdd546099391d067292a52a312cf67da4e0752"
+      },
+      "build-cli.log": {
+        "bytes": 158,
+        "sha256": "9bc991805fba373bb70e38a9fb10b7abedb98c9be7b6d9d4d6c86daa4f3c3907"
+      },
+      "check-differential-probe-locked.log": {
+        "bytes": 72,
+        "sha256": "a13905646e2aed93ec6ea9ed6ac91490a4e01f91af0215c3965279a910612149"
+      },
+      "check-differential-probe.log": {
+        "bytes": 409,
+        "sha256": "524695b265e1871e2454499873b44034989272bf21c68f72c35f4f09583e665c"
+      },
+      "check-library.log": {
+        "bytes": 430,
+        "sha256": "ae7d6cd3cf377284d76b21b376240cd388d8db240adf8a2d3f86d04322ce1a56"
+      },
+      "check-performance-probe-locked.log": {
+        "bytes": 72,
+        "sha256": "a13905646e2aed93ec6ea9ed6ac91490a4e01f91af0215c3965279a910612149"
+      },
+      "check-performance-probe.log": {
+        "bytes": 329,
+        "sha256": "a89b0e3d236ceeb9e583e343bc8e6af35d0ba1640e61de06c38ce31827976494"
+      },
+      "checks.json": {
+        "bytes": 5517,
+        "sha256": "e1ea984ad3d30ac2f83d3fc3ea42802abe15fcc74463c67dedce825ba79c124e"
+      },
+      "cli-scaffold.stderr": {
+        "bytes": 66,
+        "sha256": "86309cbe9f8f1e1bd8c7a59c1513b4ef8ff44704977f64a8d02f5c7429764cbd"
+      },
+      "cli-scaffold.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "clippy-workspace.log": {
+        "bytes": 236,
+        "sha256": "907b49933784131d9cf2938c02c6ea9b35261f8234a450833aa6dde4cd84c4a7"
+      },
+      "doc-workspace-fixed.log": {
+        "bytes": 552,
+        "sha256": "0a58e24618df79f0c9689e0ff9fc511cb2a82824d6cc0edb7eab89b084ffe3dd"
+      },
+      "doc-workspace.log": {
+        "bytes": 905,
+        "sha256": "eac9fc7e0dea207a74c824bb4f20dc3bf0c621dd6879a1e701fa123db07ff164"
+      },
+      "fmt-workspace.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "initial-validation.json": {
+        "bytes": 570,
+        "sha256": "4f7bd16d37de90f572c7b5cf0e85759792df151be12b2c1cb2f26c81a4438f33"
+      },
+      "isolated-build-examples.log": {
+        "bytes": 451,
+        "sha256": "dc208a5e56e96037aa2fded42c054383f60957a27f0c49cc919056788f8846e8"
+      },
+      "isolation.json": {
+        "bytes": 613,
+        "sha256": "6217497ebb536378bb330cbcad467fa35e28a3ac73d0f0d14e4af0ddcf58ad1f"
+      },
+      "metadata-and-package-lists.json": {
+        "bytes": 2528,
+        "sha256": "ab7704930579d7edf2161b81919d55782b1ecad5f8287fd2f23ae819505d47f5"
+      },
+      "metadata-differential.json": {
+        "bytes": 1616,
+        "sha256": "0be8a299261bbc452173e3999242b7528392bcc8eeea3268f7477056f9884991"
+      },
+      "metadata-differential.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "metadata-isolated.json": {
+        "bytes": 3738,
+        "sha256": "b1c70343af22af8464428d22137a05c2d63a8aedf8eae12e3da33c48e16bbe69"
+      },
+      "metadata-layout.json": {
+        "bytes": 2279,
+        "sha256": "bf0f55374ea82a5a4aa2d70314a547cf4874864846488c3cb87fe414a05ec417"
+      },
+      "metadata-layout.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "metadata-performance.json": {
+        "bytes": 1603,
+        "sha256": "d77a6362fe903c62f28cd43a373bc8601116635754e65694daeec0f95d6fd362"
+      },
+      "metadata-performance.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "metadata-root-final.json": {
+        "bytes": 4620,
+        "sha256": "7c49d0d9582aa2c5c52b6e7e3150f4a7b774c6619829a73b19aed0aa9ddfe21f"
+      },
+      "metadata-root.json": {
+        "bytes": 4619,
+        "sha256": "d964c7ffddb369487cb09145a0684fb30468eb155046e57ca765d969d0599769"
+      },
+      "msrv-check.log": {
+        "bytes": 516,
+        "sha256": "927f2c880452ab773e9f02856e6302bae3a6273717c64ccc7d81c45a0e891cfb"
+      },
+      "package-list-lingose-cli.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "package-list-lingose-cli.txt": {
+        "bytes": 100,
+        "sha256": "e5d7aeae55c5375d4e8db515e9a3fb0853be2f6bcb79512d1b737a3722013852"
+      },
+      "package-list-lingose.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "package-list-lingose.txt": {
+        "bytes": 907,
+        "sha256": "6563018378d26f08917da5ba158730f1953eb5b1b748fd9db42160aae0174689"
+      },
+      "query-runtime.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "query-runtime.stdout": {
+        "bytes": 526,
+        "sha256": "955b60be5e5e8fc4f47f8fdd4e7bc06f60caaf82345dcf8ff9eb4577bdab91a7"
+      },
+      "run_checks.py": {
+        "bytes": 1562,
+        "sha256": "ab082489810b099b6a29698054f0e549a42b9545b152f7cb07fde0ef8f96f097"
+      },
+      "runtime.json": {
+        "bytes": 894,
+        "sha256": "edb5da5135eb36df2d50c78b67becbdc68d7ceef191c83519a76faf2c9b868ef"
+      },
+      "test-workspace.log": {
+        "bytes": 12737,
+        "sha256": "64e82fec8002af72611591d157d44b92cba100a318cf92386d455f42dc4124bf"
+      }
+    }
+  },
+  "scope": "Workspace/source-layout migration only; CLI business commands, API rename, Python-tool path migration, full differential/performance and release checks remain future work.",
+  "test_summary": {
+    "doctests_passed": 5,
+    "ignored_existing_manual_loader_probe": 1,
+    "rust_passed": 102
+  },
+  "workspace": {
+    "cli_binary": {
+      "name": "lingose",
+      "rustdoc_enabled": false
+    },
+    "default_members": [
+      "path+file:///E:/git/claude/words/lingose-rust/crates/lingose#0.2.0",
+      "path+file:///E:/git/claude/words/lingose-rust/crates/lingose-cli#0.2.0"
+    ],
+    "independent_probes": {
+      "differential": {
+        "workspace_members": [
+          "path+file:///E:/git/claude/words/lingose-rust/tools/differential-probe#lingose-differential-probe@0.0.0"
+        ],
+        "workspace_root": "E:\\git\\claude\\words\\lingose-rust\\tools\\differential-probe"
+      },
+      "layout": {
+        "workspace_members": [
+          "path+file:///E:/git/claude/words/lingose-rust/tools/layout-probe#lingose-layout-probe@0.0.0"
+        ],
+        "workspace_root": "E:\\git\\claude\\words\\lingose-rust\\tools\\layout-probe"
+      },
+      "performance": {
+        "workspace_members": [
+          "path+file:///E:/git/claude/words/lingose-rust/tools/performance-probe#lingose-performance-probe@0.0.0"
+        ],
+        "workspace_root": "E:\\git\\claude\\words\\lingose-rust\\tools\\performance-probe"
+      }
+    },
+    "members": [
+      {
+        "manifest": "crates/lingose/Cargo.toml",
+        "name": "lingose",
+        "publish_enabled": false,
+        "rust_version": "1.85",
+        "version": "0.2.0"
+      },
+      {
+        "manifest": "crates/lingose-cli/Cargo.toml",
+        "name": "lingose-cli",
+        "publish_enabled": false,
+        "rust_version": "1.85",
+        "version": "0.2.0"
+      }
+    ],
+    "probe_lock_changes": {
+      "tools/differential-probe/Cargo.lock": "Only local lingose version 0.1.0 -> 0.2.0; registry entries unchanged.",
+      "tools/performance-probe/Cargo.lock": "Only local lingose version 0.1.0 -> 0.2.0; registry entries unchanged."
+    },
+    "registry_dependencies_unchanged": [
+      {
+        "checksum": "3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71",
+        "dependencies": [
+          "generic-array"
+        ],
+        "name": "block-buffer",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.10.4"
+      },
+      {
+        "checksum": "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600",
+        "name": "cfg-if",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.0.5"
+      },
+      {
+        "checksum": "59ed5838eebb26a2bb2e58f6d5b5316989ae9d08bab10e0e6d103e656d1b0280",
+        "dependencies": [
+          "libc"
+        ],
+        "name": "cpufeatures",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.2.17"
+      },
+      {
+        "checksum": "78c8292055d1c1df0cce5d180393dc8cce0abec0a7102adb6c7b1eef6016d60a",
+        "dependencies": [
+          "generic-array",
+          "typenum"
+        ],
+        "name": "crypto-common",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.1.7"
+      },
+      {
+        "checksum": "9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292",
+        "dependencies": [
+          "block-buffer",
+          "crypto-common"
+        ],
+        "name": "digest",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.10.7"
+      },
+      {
+        "checksum": "85649ca51fd72272d7821adaf274ad91c288277713d9c18820d8499a7ff69e9a",
+        "dependencies": [
+          "typenum",
+          "version_check"
+        ],
+        "name": "generic-array",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.14.7"
+      },
+      {
+        "checksum": "ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78",
+        "name": "libc",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.2.190"
+      },
+      {
+        "checksum": "a7507d819769d01a365ab707794a4084392c824f54a7a6a7862f8c3d0892b283",
+        "dependencies": [
+          "cfg-if",
+          "cpufeatures",
+          "digest"
+        ],
+        "name": "sha2",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.10.9"
+      },
+      {
+        "checksum": "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20",
+        "name": "typenum",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "1.20.1"
+      },
+      {
+        "checksum": "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a",
+        "name": "version_check",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "version": "0.9.5"
+      }
+    ]
+  }
+}

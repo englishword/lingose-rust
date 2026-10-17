@@ -114,7 +114,7 @@ Python 的动态类型错误不计为 Rust 运行时接口。
 正式构建使用随包二进制资源，无 build script 或下载步骤；安装 Cargo 依赖后可离线
 构建和运行。首次访问验证资源格式、版本及摘要，成功索引和初始化错误分别缓存，
 支持并发调用。生产运行无需 Python、Node、SQLite、额外配置或相邻 checkout。
-资源版本和计数见 [data/manifest.json](../data/manifest.json)，来源声明见
+资源版本和计数见 [data/manifest.json](../crates/lingose/data/manifest.json)，来源声明见
 [SOURCES.md](../SOURCES.md)。
 
 Edition 2024，MSRV 为 1.85；P5.2 已在 Rust/Cargo 1.85.0 和 1.93.1 上用当前锁定
