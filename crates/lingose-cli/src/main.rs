@@ -61,6 +61,19 @@ fn command() -> Command {
                         .default_value("0")
                         .allow_negative_numbers(true)
                         .value_parser(value_parser!(i64)),
+                )
+                .arg(
+                    Arg::new("json")
+                        .long("json")
+                        .help("Output JSON with the original text and annotation")
+                        .action(ArgAction::SetTrue),
+                )
+                .arg(
+                    Arg::new("output")
+                        .short('o')
+                        .value_name("PATH")
+                        .help("Write the selected output format to a file")
+                        .value_parser(value_parser!(PathBuf)),
                 ),
         )
 }
@@ -176,6 +189,21 @@ fn write_word(output: &mut impl Write, result: &Value, json: bool) -> io::Result
     output.flush()
 }
 
+fn write_annotation(
+    output: &mut impl Write,
+    text: &str,
+    annotated: &str,
+    json: bool,
+) -> io::Result<()> {
+    if json {
+        let result = json!({ "text": text, "annotate": annotated });
+        writeln!(output, "{result:#}")?;
+    } else {
+        output.write_all(annotated.as_bytes())?;
+    }
+    output.flush()
+}
+
 fn library_exit_code(error: &lingose::Error) -> u8 {
     match error {
         lingose::Error::InvalidArgument { .. } => 2,
@@ -202,8 +230,14 @@ fn run(
             let text = read_annotation_input(args, stdin)?;
             let skip_top = *args.get_one::<i64>("skip-top").expect("clap defaults N");
             let annotated = lingose::annotate_ips_skip(&text, skip_top)?;
-            stdout.write_all(annotated.as_bytes())?;
-            stdout.flush()?;
+            let json = args.get_flag("json");
+            if let Some(path) = args.get_one::<PathBuf>("output") {
+                // Open only after the complete input and library call succeed,
+                // including when input and output name the same file.
+                write_annotation(&mut fs::File::create(path)?, &text, &annotated, json)?;
+            } else {
+                write_annotation(stdout, &text, &annotated, json)?;
+            }
         }
         _ => unreachable!("clap accepts only word and annotate"),
     }
@@ -271,20 +305,36 @@ mod tests {
 
     #[test]
     fn output_errors_are_propagated_for_both_formats() {
-        struct FailingWriter;
+        struct FailingWriter {
+            on_flush: bool,
+        }
         impl Write for FailingWriter {
-            fn write(&mut self, _: &[u8]) -> io::Result<usize> {
-                Err(io::ErrorKind::BrokenPipe.into())
+            fn write(&mut self, bytes: &[u8]) -> io::Result<usize> {
+                if self.on_flush {
+                    Ok(bytes.len())
+                } else {
+                    Err(io::ErrorKind::BrokenPipe.into())
+                }
             }
 
             fn flush(&mut self) -> io::Result<()> {
-                Ok(())
+                Err(io::ErrorKind::BrokenPipe.into())
             }
         }
         let result = query_word("hello").unwrap();
         for json in [false, true] {
-            let error = write_word(&mut FailingWriter, &result, json).unwrap_err();
-            assert_eq!(error.kind(), io::ErrorKind::BrokenPipe);
+            for on_flush in [false, true] {
+                let error = write_word(&mut FailingWriter { on_flush }, &result, json).unwrap_err();
+                assert_eq!(error.kind(), io::ErrorKind::BrokenPipe);
+                let error = write_annotation(
+                    &mut FailingWriter { on_flush },
+                    "hello",
+                    "he\u{30a}ll\u{14d}",
+                    json,
+                )
+                .unwrap_err();
+                assert_eq!(error.kind(), io::ErrorKind::BrokenPipe);
+            }
         }
     }
 

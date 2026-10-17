@@ -54,9 +54,10 @@
   - 依赖：CLI3.1。完成位置参数自动识别、互斥的显式输入、默认 stdin、UTF-8 读取和 `--skip-top`，一次完整文本交给库处理。
   - 验收：任务中的直接文本、现存文件、PowerShell/POSIX 管道示例可用；同名文本通过 --text 强制解释，显式缺失文件/目录/读取失败报错；空输入、Unicode、LF/CRLF、多行与标点输出逐字对应库，不能按行标注破坏上下文。
   - 结果与边界：[标注输入说明](../docs/cli-annotation-input.md)及[独立证据](../docs/cli-annotation-input-verification.json)。三种显式输入互斥，默认 stdin，完整 UTF-8 文本一次委托库；20 项 CLI 测试在 Rust 1.93.1/1.85.0 通过，workspace 122 项 Rust / 6 项文档测试、fmt、Clippy、doc 和 15 项工具 Python 回归通过。52 项可用 i64 表示的 P0 标注零差异，超大整数样例单列；6 个 PowerShell/Git Bash 管道示例通过，156 个范围外原文件不变。Unix 专用项未在本机运行，`-o`/标注 JSON 留 CLI3.3。
-- [ ] CLI3.3 完成输出文件、JSON 与 shell 错误契约。
+- [x] CLI3.3 完成输出文件、JSON 与 shell 错误契约。
   - 依赖：CLI3.2。默认纯结果写 stdout；`-o` 写入所选纯文本/JSON 格式且不重复 stdout；JSON 键严格采用 text/annotate。
   - 验收：纯文本不追加换行，JSON 可被标准解析器读取；错误仅写 stderr，参数/用法错误 2、执行错误 1、成功/合法未知词/help/version 0。覆盖无效编码、I/O 失败、冲突输入，参数/输入/标注失败时不截断既有输出文件；不增加交互界面或 shell 插件。
+  - 结果与边界：[标注输出说明](../docs/cli-annotation-output.md)及[新证据](../docs/cli-annotation-output-verification.json)。接续未提交草稿并修复测试类型推断/关闭管道竞态；两字段字符串 JSON、所选格式文件输出及同路径输入输出已完成。Windows Rust 1.93.1 的 workspace 131 项 Rust / 6 项文档测试、fmt、Clippy、doc 通过；Rust 1.85.0 的 29 项 CLI 测试及 CLI Clippy 通过。4 项 PowerShell/Git Bash JSON 解析/文件输出检查通过，158 个范围外原文件不变。前置失败不创建/截断输出，实际写入失败不保证回滚；Unix 专用项未运行，完整新版差分/性能及 workspace MSRV 留 CLI4.1，两包继续禁止发布。
 
 ## CLI4：正确性、工程与本地打包
 

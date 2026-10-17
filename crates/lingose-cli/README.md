@@ -5,8 +5,8 @@
 Its executable is named `lingose` and depends on the offline `lingose` library.
 Learn about IPSM at [lingose.com](https://lingose.com/).
 
-Word queries, text/file/stdin annotation and standard help/version commands are
-implemented in this checkout. Annotation JSON and output files are still pending.
+Word queries, text/file/stdin annotation, JSON/file output and standard help/version
+commands are implemented in this checkout.
 Publication remains disabled; these commands describe the local 0.2.0 development version.
 
 The library owns all lexicon data and algorithms. Queries and annotation run offline with
@@ -53,6 +53,9 @@ lingose annotate --skip-top 1000 "This is an English word."
 lingose annotate input.txt
 lingose annotate --input input.txt
 lingose annotate --text "input.txt"
+lingose annotate input.txt -o output.txt
+lingose annotate "hello world" --json
+lingose annotate --input input.txt --json -o output.json
 ```
 
 The optional positional input is read as a file when it names an existing regular
@@ -85,6 +88,26 @@ negative values fail, and values above 5062 use 5062. Argument and library param
 errors exit 2; input encoding, file/stdin I/O and output failures exit 1. Input
 and parameter errors produce no annotation result. For text starting with a hyphen, use
 `lingose annotate -- --hello` or `lingose annotate --text=--hello`.
+
+## Annotation output
+
+Plain annotation output contains exactly the library result, without an added
+newline. `--json` returns one UTF-8 JSON object containing only two string fields:
+`text` is the original input and `annotate` is its complete annotation. Quotes,
+control characters and line endings are JSON-escaped; decoding restores the
+original strings. JSON is pretty-printed with a final newline.
+
+By default the selected format goes to stdout. `-o PATH` writes it to a file and
+leaves stdout empty on success; existing files are overwritten and parent
+directories must already exist. The CLI parses arguments, reads all input and
+finishes annotation before opening the output file, so failures in those steps
+preserve an existing destination and do not create a new one. Input and output
+may name the same file. Once writing starts, an I/O failure can leave a partial
+file; output replacement is not atomic.
+
+File/stdout write or flush errors exit 1 and report to stderr. The same error
+codes apply with `--json` and `-o`; neither format adds progress messages to the
+result. Help/version exit 0 without reading input or creating an output file.
 
 Original Lingose data and notation by **ZHAN Xianjue**.
 License: [CC BY 4.0](LICENSE). [Source notices](SOURCES.md).

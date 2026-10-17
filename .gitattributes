@@ -83,3 +83,5 @@
 /docs/cli-word-verification.json text eol=lf
 /docs/cli-annotation-input.md text eol=lf
 /docs/cli-annotation-input-verification.json text eol=lf
+/docs/cli-annotation-output.md text eol=lf
+/docs/cli-annotation-output-verification.json text eol=lf

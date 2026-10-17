@@ -7,6 +7,8 @@ use std::path::PathBuf;
 use std::process::{Command, Output, Stdio};
 use std::sync::atomic::{AtomicU64, Ordering};
 
+use serde_json::{Value, json};
+
 struct TestDirectory(PathBuf);
 
 impl TestDirectory {
@@ -252,23 +254,356 @@ fn annotation_help_and_version_do_not_read_stdin() {
 
 #[test]
 fn closed_annotation_stdout_exits_one_without_a_panic() {
-    let mut child = Command::new(env!("CARGO_BIN_EXE_lingose"))
-        .args(["annotate"])
-        .stdin(Stdio::piped())
-        .stdout(Stdio::piped())
-        .stderr(Stdio::piped())
-        .spawn()
-        .unwrap();
-    let mut stdin = child.stdin.take().unwrap();
-    stdin.write_all(&vec![b'x'; 8192]).unwrap();
-    drop(stdin);
-    drop(child.stdout.take());
-    let output = child.wait_with_output().unwrap();
-    assert_eq!(output.status.code(), Some(1), "{output:?}");
-    assert!(output.stdout.is_empty());
-    let error = String::from_utf8(output.stderr).unwrap();
-    assert!(error.starts_with("error:"), "{error}");
-    assert!(!error.contains("panicked"), "{error}");
+    for json in [false, true] {
+        let mut command = Command::new(env!("CARGO_BIN_EXE_lingose"));
+        command.arg("annotate");
+        if json {
+            command.arg("--json");
+        }
+        let mut child = command
+            .stdin(Stdio::piped())
+            .stdout(Stdio::piped())
+            .stderr(Stdio::piped())
+            .spawn()
+            .unwrap();
+        // The child waits for stdin EOF, so close its output pipe first.
+        drop(child.stdout.take());
+        let mut stdin = child.stdin.take().unwrap();
+        stdin.write_all(&vec![b'x'; 8192]).unwrap();
+        drop(stdin);
+        let output = child.wait_with_output().unwrap();
+        assert_eq!(output.status.code(), Some(1), "{output:?}");
+        assert!(output.stdout.is_empty());
+        let error = String::from_utf8(output.stderr).unwrap();
+        assert!(error.starts_with("error:"), "{error}");
+        assert!(!error.contains("panicked"), "{error}");
+    }
+}
+
+#[test]
+fn annotation_json_has_only_original_text_and_complete_annotation_strings() {
+    let directory = TestDirectory::new();
+    let path = OsStr::new("原文.txt");
+    for text in [
+        "",
+        "中文 🦀 e\u{301} unknownwordzz\r\nthe\napple\r",
+        "\u{feff}the\r\napple\n",
+        "\"hello\" \\ world\t\u{1}",
+    ] {
+        fs::write(directory.0.join(path), text.as_bytes()).unwrap();
+        for args in [
+            vec!["annotate".as_ref(), text.as_ref()],
+            vec!["annotate".as_ref(), "--text".as_ref(), text.as_ref()],
+            vec!["annotate".as_ref(), path],
+            vec!["annotate".as_ref(), "--input".as_ref(), path],
+            vec!["annotate".as_ref()],
+        ] {
+            let mut args = args;
+            args.push("--json".as_ref());
+            let output = run(&args, text.as_bytes(), &directory);
+            assert_eq!(output.status.code(), Some(0), "{args:?}: {output:?}");
+            assert!(output.stderr.is_empty());
+            let result: Value = serde_json::from_slice(&output.stdout).unwrap();
+            assert_eq!(result.as_object().unwrap().len(), 2);
+            assert!(result["text"].is_string() && result["annotate"].is_string());
+            assert_eq!(
+                result,
+                json!({"text": text, "annotate": lingose::annotate_ips(text).unwrap()})
+            );
+        }
+    }
+}
+
+#[test]
+fn new_and_existing_output_files_match_stdout_in_both_formats() {
+    let directory = TestDirectory::new();
+    let text = "\u{feff}中文 \"the\"\r\napple\\world\n";
+    for json in [false, true] {
+        let mut args = vec![
+            "annotate".as_ref(),
+            "--text".as_ref(),
+            text.as_ref(),
+            "--skip-top".as_ref(),
+            "1000".as_ref(),
+        ];
+        if json {
+            args.push("--json".as_ref());
+        }
+        let reference = run(&args, b"", &directory);
+        assert_eq!(reference.status.code(), Some(0));
+        assert!(reference.stderr.is_empty());
+        if json {
+            let result: Value = serde_json::from_slice(&reference.stdout).unwrap();
+            assert_eq!(
+                result,
+                json!({"text": text, "annotate": lingose::annotate_ips_skip(text, 1000).unwrap()})
+            );
+        } else {
+            assert_eq!(
+                reference.stdout,
+                lingose::annotate_ips_skip(text, 1000).unwrap().as_bytes()
+            );
+        }
+        for existing in [false, true] {
+            let path = directory.0.join(format!("输出 {json}-{existing}.txt"));
+            if existing {
+                fs::write(&path, vec![b'x'; 8192]).unwrap();
+            }
+            let mut file_args = args.clone();
+            file_args.extend(["-o".as_ref(), path.as_os_str()]);
+            success(&file_args, b"", &directory, "");
+            assert_eq!(fs::read(&path).unwrap(), reference.stdout);
+        }
+        let path = directory.0.join(format!("empty-{json}.txt"));
+        let mut args = vec![
+            "annotate".as_ref(),
+            "--text".as_ref(),
+            "".as_ref(),
+            "-o".as_ref(),
+            path.as_os_str(),
+        ];
+        if json {
+            args.push("--json".as_ref());
+        }
+        success(&args, b"", &directory, "");
+        let bytes = fs::read(&path).unwrap();
+        if json {
+            assert_eq!(
+                serde_json::from_slice::<Value>(&bytes).unwrap(),
+                json!({"text":"", "annotate":""})
+            );
+        } else {
+            assert!(bytes.is_empty());
+        }
+    }
+}
+
+#[test]
+fn in_place_output_reads_the_original_file_before_overwriting() {
+    let directory = TestDirectory::new();
+    let text = "the\r\napple\n中文 \"world\"\n";
+    for explicit in [false, true] {
+        for json in [false, true] {
+            let path = directory.0.join("in-place.txt");
+            fs::write(&path, text).unwrap();
+            let mut args = vec!["annotate".as_ref()];
+            if explicit {
+                args.push("--input".as_ref());
+            }
+            args.extend([
+                OsStr::new("in-place.txt"),
+                OsStr::new("-o"),
+                OsStr::new("./in-place.txt"),
+            ]);
+            if json {
+                args.push("--json".as_ref());
+            }
+            success(&args, b"", &directory, "");
+            let bytes = fs::read(&path).unwrap();
+            if json {
+                assert_eq!(
+                    serde_json::from_slice::<Value>(&bytes).unwrap(),
+                    json!({"text":text,"annotate":lingose::annotate_ips(text).unwrap()})
+                );
+            } else {
+                assert_eq!(bytes, lingose::annotate_ips(text).unwrap().as_bytes());
+            }
+        }
+    }
+}
+
+#[test]
+fn precondition_failures_preserve_existing_output_and_do_not_create_new_output() {
+    let directory = TestDirectory::new();
+    fs::create_dir(directory.0.join("folder")).unwrap();
+    fs::write(directory.0.join("invalid.txt"), [0xff, 0xfe]).unwrap();
+    fs::write(directory.0.join("nul.txt"), b"hello\0world").unwrap();
+    let sentinel = b"\x00\xfforiginal output\r\n";
+    let cases: &[(&[&str], &[u8], i32)] = &[
+        (&["annotate", "--input", "missing.txt"], b"", 1),
+        (&["annotate", "folder"], b"", 1),
+        (&["annotate", "--input", "invalid.txt"], b"", 1),
+        (&["annotate"], &[0xff, 0xfe], 1),
+        (&["annotate", "nul.txt"], b"", 2),
+        (&["annotate"], b"hello\0world", 2),
+        (&["annotate", "--text", "hello", "--skip-top", "-1"], b"", 2),
+        (&["annotate", "--text", "hello", "world"], b"", 2),
+        (&["annotate", "--skip-top", "abc"], b"", 2),
+        (&["annotate", "--skip-top", "9223372036854775808"], b"", 2),
+    ];
+    for (index, (args, input, code)) in cases.iter().enumerate() {
+        for json in [false, true] {
+            for existing in [false, true] {
+                let path = directory.0.join(format!("out-{index}-{json}-{existing}"));
+                if existing {
+                    fs::write(&path, sentinel).unwrap();
+                }
+                let mut args: Vec<_> = args.iter().map(OsStr::new).collect();
+                args.extend(["-o".as_ref(), path.as_os_str()]);
+                if json {
+                    args.push("--json".as_ref());
+                }
+                failure(&args, input, &directory, *code);
+                if existing {
+                    assert_eq!(fs::read(&path).unwrap(), sentinel);
+                } else {
+                    assert!(!path.exists());
+                }
+            }
+        }
+    }
+}
+
+#[test]
+fn invalid_in_place_input_is_never_truncated() {
+    let directory = TestDirectory::new();
+    for (input, code) in [(&[0xff, 0xfe][..], 1), (&b"hello\0world"[..], 2)] {
+        for explicit in [false, true] {
+            for json in [false, true] {
+                let path = directory.0.join("in-place.txt");
+                fs::write(&path, input).unwrap();
+                let mut args = vec!["annotate".as_ref()];
+                if explicit {
+                    args.push("--input".as_ref());
+                }
+                args.extend([
+                    OsStr::new("in-place.txt"),
+                    OsStr::new("-o"),
+                    OsStr::new("in-place.txt"),
+                ]);
+                if json {
+                    args.push("--json".as_ref());
+                }
+                failure(&args, b"", &directory, code);
+                assert_eq!(fs::read(&path).unwrap(), input);
+            }
+        }
+    }
+}
+
+#[test]
+fn output_path_errors_exit_one_without_stdout() {
+    let directory = TestDirectory::new();
+    fs::create_dir(directory.0.join("folder")).unwrap();
+    fs::write(directory.0.join("parent-file"), "keep").unwrap();
+    for path in ["folder", "missing/out.txt", "parent-file/out.txt"] {
+        for json in [false, true] {
+            let mut args = vec![
+                "annotate".as_ref(),
+                "--text".as_ref(),
+                "hello".as_ref(),
+                "-o".as_ref(),
+                path.as_ref(),
+            ];
+            if json {
+                args.push("--json".as_ref());
+            }
+            failure(&args, b"", &directory, 1);
+        }
+    }
+    assert!(!directory.0.join("missing").exists());
+    assert_eq!(fs::read(directory.0.join("parent-file")).unwrap(), b"keep");
+}
+
+#[test]
+fn file_output_succeeds_even_when_stdout_is_closed() {
+    let directory = TestDirectory::new();
+    let text = "the\napple";
+    for json in [false, true] {
+        let path = directory.0.join(format!("closed-stdout-{json}.txt"));
+        let mut command = Command::new(env!("CARGO_BIN_EXE_lingose"));
+        command.args(["annotate", "-o"]).arg(&path);
+        if json {
+            command.arg("--json");
+        }
+        let mut child = command
+            .stdin(Stdio::piped())
+            .stdout(Stdio::piped())
+            .stderr(Stdio::piped())
+            .spawn()
+            .unwrap();
+        drop(child.stdout.take());
+        let mut stdin = child.stdin.take().unwrap();
+        stdin.write_all(text.as_bytes()).unwrap();
+        drop(stdin);
+        let output = child.wait_with_output().unwrap();
+        assert_eq!(output.status.code(), Some(0), "{output:?}");
+        assert!(output.stdout.is_empty() && output.stderr.is_empty());
+        let bytes = fs::read(&path).unwrap();
+        if json {
+            assert_eq!(
+                serde_json::from_slice::<Value>(&bytes).unwrap(),
+                json!({"text":text,"annotate":lingose::annotate_ips(text).unwrap()})
+            );
+        } else {
+            assert_eq!(bytes, lingose::annotate_ips(text).unwrap().as_bytes());
+        }
+    }
+}
+
+#[test]
+fn help_version_and_usage_errors_leave_output_untouched() {
+    let directory = TestDirectory::new();
+    let path = directory.0.join("out.txt");
+    fs::write(&path, "keep").unwrap();
+    for flag in ["--help", "--version"] {
+        let output = run(
+            &[
+                "annotate".as_ref(),
+                "-o".as_ref(),
+                path.as_os_str(),
+                "--json".as_ref(),
+                flag.as_ref(),
+            ],
+            &[0xff],
+            &directory,
+        );
+        assert_eq!(output.status.code(), Some(0), "{output:?}");
+        assert!(output.stderr.is_empty() && !output.stdout.is_empty());
+        assert_eq!(fs::read(&path).unwrap(), b"keep");
+    }
+    for extra in ["-o", "--json", "--unknown"] {
+        let mut args = vec![
+            "annotate".as_ref(),
+            "--text".as_ref(),
+            "hello".as_ref(),
+            "-o".as_ref(),
+            path.as_os_str(),
+            "--json".as_ref(),
+        ];
+        args.push(extra.as_ref());
+        failure(&args, b"", &directory, 2);
+        assert_eq!(fs::read(&path).unwrap(), b"keep");
+    }
+}
+
+#[cfg(windows)]
+#[test]
+fn locked_output_files_fail_without_stdout_or_truncation() {
+    use std::os::windows::fs::OpenOptionsExt;
+    let directory = TestDirectory::new();
+    let path = directory.0.join("locked-output.txt");
+    fs::write(&path, "keep").unwrap();
+    for json in [false, true] {
+        let locked = fs::OpenOptions::new()
+            .read(true)
+            .share_mode(0)
+            .open(&path)
+            .unwrap();
+        let mut args = vec![
+            "annotate".as_ref(),
+            "--text".as_ref(),
+            "hello".as_ref(),
+            "-o".as_ref(),
+            path.as_os_str(),
+        ];
+        if json {
+            args.push("--json".as_ref());
+        }
+        failure(&args, b"", &directory, 1);
+        drop(locked);
+        assert_eq!(fs::read(&path).unwrap(), b"keep");
+    }
 }
 
 #[cfg(windows)]
