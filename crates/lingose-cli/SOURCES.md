@@ -23,3 +23,12 @@ Verified local tool versions: **Phonemizer 3.3.0**, **eSpeak NG 1.52.0**.
 - **ECDICT:** Copyright (c) 2025 Linwei. [MIT license](https://github.com/skywind3000/ECDICT/blob/master/LICENSE).
 
 Third-party works retain their own licenses.
+
+## CLI software dependencies
+
+In addition to the `lingose` library, the CLI uses
+[Clap](https://github.com/clap-rs/clap) for argument parsing and
+[serde_json](https://github.com/serde-rs/json) for JSON. Both use the
+`MIT OR Apache-2.0` license; their licenses remain separate from Lingose's
+CC BY 4.0 license. Exact direct and transitive versions are in the workspace
+`Cargo.lock`. The complete distribution license review is part of CLI4.2.

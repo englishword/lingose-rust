@@ -46,9 +46,10 @@
 
 ## CLI3：简洁命令行
 
-- [ ] CLI3.1 建立命令入口并实现单词查询。
+- [x] CLI3.1 建立命令入口并实现单词查询。
   - 依赖：CLI2.1。选用并锁定符合 MSRV 的最小参数/JSON 依赖，建立 help/version 与 `word WORD [--json]`；所有字段直接调用库。
   - 验收：普通输出仅含六个指定字段；JSON 的数组/null/Unicode、未知词与参数错误正确，多个发音不按索引配对；help/version 可独立运行。
+  - 结果与边界：[命令查询说明](../docs/cli-word.md)及[独立证据](../docs/cli-word-verification.json)。锁定最小功能的 Clap/serde_json，11 项 CLI 测试在 Rust 1.93.1 和 1.85.0 通过；workspace 113 项 Rust / 6 项文档测试、fmt、Clippy、doc 及 15 项工具 Python 回归通过。16 词/80 个 P0 字段零差异；真实不等长数组和明确标注的合成多发音分别验证，150 个范围外原文件不变。CLI 标注输入留 CLI3.2，未打包或发布。
 - [ ] CLI3.2 实现文本、文件、stdin 标注输入。
   - 依赖：CLI3.1。完成位置参数自动识别、互斥的显式输入、默认 stdin、UTF-8 读取和 `--skip-top`，一次完整文本交给库处理。
   - 验收：任务中的直接文本、现存文件、PowerShell/POSIX 管道示例可用；同名文本通过 --text 强制解释，显式缺失文件/目录/读取失败报错；空输入、Unicode、LF/CRLF、多行与标点输出逐字对应库，不能按行标注破坏上下文。

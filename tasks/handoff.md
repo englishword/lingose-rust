@@ -3,31 +3,33 @@
 ## 当前任务与状态
 
 - 当前计划：[todo_CLI.md](todo_CLI.md)，需求：[TASK_CLI.md](../TASK_CLI.md)，约束：[AGENTS.md](../AGENTS.md)。
-- 从 `main` / `24a87fb` 恢复，**CLI2.1 已完成并通过验收**。下一项为 **CLI3.1：建立命令入口并实现单词查询**；本轮到此交接。
-- 库现公开 `annotate_ips_skip(&str, i64) -> Result<String>`，旧 `annotate_ips_with_skip_top` 已移除，没有别名；`annotate_ips(text)` 继续使用零阈值。
-- 正式 workspace 仍为 `crates/lingose` 与 `crates/lingose-cli`，均 0.2.0，共用根锁文件；两包均 `publish=false`。CLI 仍是明确报告未实现并退出 1 的脚手架，未增加业务命令或依赖。
+- 本轮从干净的 `main` / `ee435dc` 恢复，**CLI3.1 已完成并通过验收**；具体提交见 Git 历史。下一项为 **CLI3.2：实现文本、文件、stdin 标注输入**；本轮到此交接。
+- CLI 已实现 `word WORD [--json]`、标准 help/version，二进制名为 `lingose`。尚未提供 CLI `annotate`。
+- 正式 workspace 为 `crates/lingose` 与 `crates/lingose-cli`，均 0.2.0，共用根锁文件；两包仍 `publish=false`。库的 `annotate_ips_skip(&str, i64)` 与全部查询能力保持不变。
 
 ## 当前文件和决定
 
-- [更名说明](../docs/annotation-api-rename.md)及[完整证据](../docs/annotation-api-rename-verification.json)记录破坏性变更、命令、源码身份与边界；本轮原始日志、原文件副本及临时消费者在 `.local/cli21-api-rename/`。
-- 当前源码、示例、API 测试、三组公共标注向量及其生成器、差分/性能探针、`tools/package_consumer_020.rs` 均改用新名称；Python oracle 仍调用其原 `annotate_ips(skip_top=...)`，差分协议 opcode 不变。
-- 业务实现只改 `src/lib.rs` 的公开入口、默认委托与文档链接；原算法、校验、数据及资源加载逻辑不改。
-- 根/库 README 和库内 0.2.0 API 契约说明旧名称移除；根 README 指向库内当前契约。根 `docs/rust-api.md` 明确属于 0.1.0，连同既有阶段报告、旧消费者和发布/注册表工具保留原身份。
-- 新版消费者的说明/成功消息改为 0.2.0 API 消费；本轮用当前源码本地依赖运行，不冒充真实归档或注册表消费。
+- [命令查询说明](../docs/cli-word.md)与[完整证据](../docs/cli-word-verification.json)记录行为、验证命令、源码/依赖身份和边界；本轮原始日志、P0 对照、开始前文件摘要及辅助脚本在 `.local/cli31-word/`。
+- `crates/lingose-cli/src/main.rs` 使用 Clap builder，仅启用 `std/help/usage/error-context`；JSON 使用 serde_json 的默认 std。根 `Cargo.lock` 锁定 Clap 4.6.7、serde_json 1.0.154 及传递依赖，未使用 derive 或复制业务算法。
+- 查询直接调用库的五个字段 API，再加原样的 `word`；普通输出为六行标签和 JSON 编码值，JSON 为六键对象。三组发音独立，ISM/root lemma 保留 null，不输出辅助字段。
+- 查询全部成功后才写 stdout；参数/库参数错误退出 2，资源/I/O 错误退出 1，成功/合法未知词/help/version 退出 0。写入和 flush 错误被传播，stderr 仅放诊断。
+- `crates/lingose-cli/tests/word.rs` 为进程测试；`main.rs` 内有资源错误分类、输出失败和合成多发音测试。CLI README、SOURCES、根 README 已更新为当前能力；完整分发文档/许可核对仍属 CLI4.2。
+- 本轮未改库源码、算法、数据、固定期望、Unicode 表、历史材料或相邻参考仓库。
 
 ## 验证状态
 
-- Windows x86_64 MSVC / Rust 1.93.1 / 固定 Python 3.12.4：90 Python 回归、102 Rust 测试、6 文档测试通过；1 项既有手动 loader 探针仍忽略。
-- 新函数指针签名和当前源码消费者 18 个公共入口通过；同一消费工程引用旧函数名明确报 E0425。README 的旧名称 compile_fail 及新名称非法类型 compile_fail 均通过。
-- 三个受影响生成器只读 check、隔离 release 的 7 个测试二进制及差分 smoke（881 项，零差异）通过。smoke 请求/Python/Rust 输出字节摘要与 CLI1.2 相同，71 项使用显式阈值入口。
-- 现有回归覆盖负阈值、0/1000/5062/超上限、NUL、校验顺序、无英语词不加载、零阈值不加载频率、正阈值先频率后词库、完全屏蔽仍校验主词库、错误缓存及并发。
-- 9 个 Rust 文件与原文独立比较，只允许名称、局部变量、rustfmt 排版及新版消费者说明/成功消息变化；固定期望/阈值/错误断言未变。4 个 Python 工具仅名称替换，138 个范围外原文件逐字节不变。
-- workspace fmt / Clippy -D warnings / tests / doc、两个独立探针 release/offline/locked 构建和库 package --list（42 项）通过。只读独立复核通过。
-- 完整新版差分/性能/MSRV 复核仍留 CLI4.1；没有实际 .crate、dry-run、上传、远端或其他平台操作。原首启超预算历史保留。
+- Windows x86_64 MSVC / Rust 1.93.1：新增 11 项 CLI 测试通过；workspace 113 项 Rust 测试、6 项文档测试通过，1 项既有手动 loader 探针仍忽略。fmt、Clippy `-D warnings`、doc 及 15 项 workspace 工具 Python 回归通过。
+- 使用 `.local/p52-rustup-home` 中已有 Rust 1.85.0 工具链和独立 `.local/cli31-msrv-target`，实际编译并通过同样 11 项 CLI 测试。依赖准备后的 Cargo 检查均使用 offline/locked。
+- 进程对照覆盖六字段/类型、大小写、Unicode、组合符、引号/反斜线、内部换行、未知词、字段不可用、参数错误、help/version、前导连字符和关闭 stdout（退出 1，无 panic）。
+- 真实 `Marxism` 的 IPA/IPS 非空而 IPSM 为空；固定库目前每组最多一条采用发音，因此多发音用明确标注的 2/1/3 长度合成输出 fixture 验证，没有声称来自真实词库。
+- 当前源码构建的二进制在空目录启动，16 词/80 个成功字符串查询字段与固定 P0 snapshot 零差异，help/version 正常，目录仍为空；没有重新运行 Python oracle 或宣称独立归档消费。
+- 独立只读复核通过；150 个范围外原文件摘要不变，涵盖整个库 crate、保护数据/向量、Unicode 表、许可证、历史报告及探针。
+- 未执行完整新版差分/性能/MSRV workspace 复核（仍留 CLI4.1）、真实 `.crate`、dry-run、上传、远端或其他平台操作。原首启超预算历史保留。
 
 ## 下一项的精确恢复动作
 
-1. 核对 Git、本记录与 CLI3.1，读取 `crates/lingose-cli/Cargo.toml`、`src/main.rs` 和 CLI 接口约束，保持只提供 word/annotate/help/version 的范围。
-2. 选择并锁定符合 Rust 1.85 的最小参数/JSON 依赖，先落实标准 help/version 和 `word WORD [--json]`；数据和算法通过库调用，不复制词库或查询实现。
-3. 输出严格只含 word、ipa、ips、ism、ipsm、root_lemma；发音为独立数组，ism/root_lemma 为字符串或 null，合法未知词成功，参数错误退出 2，执行错误退出 1，结果/诊断分流。
-4. 验证普通/JSON 输出类型、Unicode、多个发音、未知词、参数错误与 help/version 独立运行；完成 CLI3.1 后更新交接并聚焦提交。文本/文件/stdin 标注留 CLI3.2，不能提前进入打包或发布。
+1. 核对 Git、本记录与 CLI3.2，读取当前 `src/main.rs`、CLI 测试及库 `annotate_ips_skip` 契约，沿用已锁定的依赖和错误分类。
+2. 新增 `annotate` 子命令，接受可选位置参数、互斥的 `--input PATH` / `--text TEXT`，默认读取 stdin；位置参数仅在现存普通文件时作为文件，目录、权限或读取错误不能回退为文本。
+3. 按 UTF-8 读取完整输入，一次调用 `lingose::annotate_ips_skip`，`--skip-top` 默认 0，阈值校验及上限处理交给库。保留大小写、空白、LF/CRLF、标点和跨行上下文，不额外追加换行。
+4. 验证文字/同名路径/显式输入/stdin、空输入、Unicode、跨行上下文、阈值、无效编码和 I/O 失败，并与库完整结果对照；保证当前 word/help/version 回归通过。`-o`、标注 JSON 及完整 shell 错误验收留 CLI3.3。
+5. 完成 CLI3.2 后更新计划/交接并聚焦提交，不提前进入 CLI4 打包或 CLI6 发布。

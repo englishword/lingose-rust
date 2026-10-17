@@ -5,8 +5,9 @@ English pronunciation, spelling and meaning. Version **0.1.0** has been released
 this workspace is being prepared for **0.2.0**.
 
 The workspace contains the [offline library](crates/lingose/README.md) and the
-[CLI scaffold](crates/lingose-cli/README.md), both version 0.2.0. The CLI commands
-are not implemented yet. The library now provides `annotate_ips_skip`.
+[CLI](crates/lingose-cli/README.md), both version 0.2.0. The CLI provides
+`word WORD [--json]` and help/version; CLI annotation is still pending.
+The library now provides `annotate_ips_skip`.
 Both packages have publication disabled during development.
 
 **Breaking change in 0.2.0:** `annotate_ips_skip(text, skip_top)` replaces

@@ -11,6 +11,7 @@
 /crates/*/src/*.rs text eol=lf
 /crates/lingose/src/data/*.rs text eol=lf
 /crates/lingose/tests/*.rs text eol=lf
+/crates/lingose-cli/tests/*.rs text eol=lf
 /crates/lingose/docs/rust-api.md text eol=lf
 /crates/lingose/docs/distribution-provenance.json text eol=lf
 /tools/check_loader.py text eol=lf
@@ -78,3 +79,5 @@
 /docs/workspace-tools-verification.json text eol=lf
 /docs/annotation-api-rename.md text eol=lf
 /docs/annotation-api-rename-verification.json text eol=lf
+/docs/cli-word.md text eol=lf
+/docs/cli-word-verification.json text eol=lf
