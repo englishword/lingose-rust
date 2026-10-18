@@ -27,6 +27,8 @@ jobs:
           python tools/check_package_channels.py preflight --output .local/channels/preflight
           if ($LASTEXITCODE) { throw 'Public asset/schema preflight failed' }
       - name: Prepare WinGet on disposable runner
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           Install-Module Microsoft.WinGet.Client -Scope CurrentUser -Force -Repository PSGallery
           Repair-WinGetPackageManager -AllUsers -Force
