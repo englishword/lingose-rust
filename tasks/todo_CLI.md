@@ -81,6 +81,7 @@
   - 依赖：CLI4.3。先核对/配置用户指定仓库的 Git remote、Actions 访问及运行条件，准备非发布触发验证；若外部权限阻塞，记录具体恢复动作，不把本地 YAML 检查记为 CI 通过。
   - 配置 Windows x86_64 MSVC、Linux x86_64/aarch64 GNU、macOS x86_64/aarch64；核对当时可用 runner/工具链，以 locked release 构建 CLI，开发探针不进入发布构建。
   - 验收：工作流区分只构建与发布资产，标签规则为 v0.2.0；可在正式 Release 前验证产物。每个目标留构建日志及运行方式，原生/仿真 smoke 验证 word、annotate、stdin、JSON，不能把仅交叉编译描述为运行通过。
+  - 当前状态：[工作流与恢复说明](../docs/cli-release-ci.md)、[验证记录](../docs/cli-release-ci-verification.json)及五目标候选工作流/验证器已提交；actionlint、Python 语法、fmt、Windows release 的 29 项 CLI 测试和 12 项独立 smoke 通过。指定空私有仓库的 origin/admin/push/Actions 条件已核验，但 GitHub 拒绝推送工作流：现有 OAuth scopes 缺少 `workflow`。用户终端与代理均确认缺该项；代理已启动 GitHub 设备授权，等待用户网页确认。远端仍无分支/运行，本项保持未完成；实际授权恢复后核对远端并推送 main，收集五目标原生运行/CI artifact 证据，再继续 CLI5.2。
 - [ ] CLI5.2 验证安装包与下载后运行。
   - 依赖：CLI5.1。生成以下资产，包含 lingose/lingose.exe、使用说明及所需许可/来源声明，并生成 SHA-256 清单。
     - `lingose-v0.2.0-windows-x86_64.zip`

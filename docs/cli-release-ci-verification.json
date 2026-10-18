@@ -1,7 +1,7 @@
 {
   "phase": "CLI5.1",
-  "status": "awaiting_remote_ci",
-  "verified_at": "2026-10-18T04:13:42.798808+00:00",
+  "status": "local_ready_remote_blocked_missing_workflow_scope",
+  "verified_at": "2026-10-18T04:24:24.204391+00:00",
   "base_revision": "1ca5d259b706084275a930b08d12cd1456fdcd14",
   "repository": {
     "name": "englishword/lingose-rust",
@@ -13,7 +13,13 @@
     "allowed_actions": "all",
     "initial_branches": [],
     "initial_tags": [],
-    "remote": "https://github.com/englishword/lingose-rust.git"
+    "remote": "https://github.com/englishword/lingose-rust.git",
+    "oauth_scopes": [
+      "admin:public_key",
+      "gist",
+      "read:org",
+      "repo"
+    ]
   },
   "workflow": {
     "file": ".github/workflows/cli-release.yml",
@@ -271,9 +277,63 @@
     "initial_failure": {
       "path": ".local/cli51-windows-local/report.json",
       "reason": "Versioned rustup alias absent; sandbox denied rustup tmp write. Retried using installed stable alias verified as Rust1.93.1."
+    },
+    "cargo_fmt_passed": true,
+    "wrong_target_guard": {
+      "report_path": ".local/cli51-wrong-target/report.json",
+      "requested_target": "aarch64-unknown-linux-gnu",
+      "status": "rejected_before_build_as_expected"
+    },
+    "timeout_guards": {
+      "count": 2,
+      "status": "passed",
+      "report_path": ".local/cli51-timeout-guards.json",
+      "command_logs": ".local/cli51-command-timeout",
+      "report_sha256": "224e43ee847ccd7eca53a6e0c4d9830ab3197650b976c30e206e7d99f5123c0f"
     }
   },
-  "remote_ci": null,
+  "remote_ci": {
+    "status": "not_run",
+    "branches": [],
+    "runs": [],
+    "attempts": [
+      {
+        "attempt": 1,
+        "operation": "git push --set-upstream origin main",
+        "result": "HTTPS RPC failed; remote branches and runs independently confirmed empty"
+      },
+      {
+        "attempt": 2,
+        "operation": "same push, command-scoped http.version=HTTP/1.1 and http.postBuffer=52428800",
+        "result": "remote rejected OAuth App workflow write without workflow scope"
+      },
+      {
+        "attempt": 3,
+        "operation": "push after user confirmed authorization",
+        "result": "HTTPS connection reset; subsequent branches and runs empty"
+      }
+    ],
+    "blocker": "Current OAuth login lacks workflow scope despite repository admin/push permissions",
+    "recovery": "User runs gh auth refresh -h github.com -s workflow and completes interactive authorization; recheck remote state, push main, collect five native build/test/smoke/artifact results",
+    "ci_artifacts_uploaded": false,
+    "release_published": false,
+    "authorization_followup": {
+      "user_confirmed": true,
+      "effective_oauth_scopes": [
+        "admin:public_key",
+        "gist",
+        "read:org",
+        "repo"
+      ],
+      "credential_source": "keyring",
+      "environment_token_override": false,
+      "independent_no_cache_request_confirmed_missing_scope": true,
+      "next_action": "Complete active GitHub device authorization, verify effective workflow scope, recheck remote and push current main",
+      "user_terminal_scopes_match": true,
+      "device_authorization_started": true,
+      "device_authorization_status": "awaiting_browser_confirmation"
+    }
+  },
   "boundaries": [
     "No crates.io upload, version tag or GitHub Release",
     "CLI5.2 archive/license/download acceptance remains separate",
@@ -288,5 +348,6 @@
     "https://github.com/actions/setup-python/releases/tag/v7.0.0",
     "https://github.com/actions/upload-artifact/releases/tag/v7.0.2",
     "https://github.com/rhysd/actionlint/releases/tag/v1.7.12"
-  ]
+  ],
+  "implementation_commit": "399e59e"
 }
