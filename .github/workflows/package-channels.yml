@@ -65,6 +65,8 @@ jobs:
           git clone --depth 1 https://github.com/ScoopInstaller/Scoop $scoop
           if ($LASTEXITCODE) { throw 'Scoop clone failed' }
           git -C $scoop rev-parse HEAD
+          New-Item -ItemType Directory "$env:SCOOP/shims" -Force | Out-Null
+          $env:PATH = "$env:SCOOP/shims;$scoop/bin;$env:PATH"
           $manifest = (Resolve-Path bucket/lingose.json).Path
           & "$scoop/bin/scoop.ps1" bucket add lingose "$pwd"
           if ($LASTEXITCODE) { throw 'Scoop custom bucket failed' }
