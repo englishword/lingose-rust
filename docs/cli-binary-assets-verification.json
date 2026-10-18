@@ -1,8 +1,1756 @@
 {
   "phase": "CLI5.2",
-  "status": "local_ready_awaiting_ci",
-  "verified_at": "2026-10-18T05:40:41.717695+00:00",
+  "status": "passed",
+  "verified_at": "2026-10-18T05:51:39.331976+00:00",
   "base_revision": "d042a4c7920d9907739843d463bc528e90386aaa",
+  "verified_revision": "d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+  "remote_ci": {
+    "run_id": 39101457134,
+    "url": "https://github.com/englishword/lingose-rust/actions/runs/39101457134",
+    "status": "completed",
+    "conclusion": "success",
+    "job_count": 11,
+    "build_package_jobs": 5,
+    "native_download_jobs": 5,
+    "aggregate_jobs": 1,
+    "cli_test_executions": 147,
+    "archive_guard_executions": 35,
+    "build_smoke_executions": 60,
+    "downloaded_native_smoke_executions": 80,
+    "artifact_count": 17,
+    "artifacts_verified": [
+      {
+        "digest": "sha256:7a69be158009b95af6231daa8dd96cf6fcef1e4f6e7ec9d35e5f0d84ca7cf1f4",
+        "expired": false,
+        "id": 12127190351,
+        "name": "cli51-x86_64-apple-darwin-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 5048479
+      },
+      {
+        "digest": "sha256:482e10826d34f6f188598ca3507c63562ceaa1cde0216ebcdc0ce0a607f1f784",
+        "expired": false,
+        "id": 12127155110,
+        "name": "cli52-download-x86_64-unknown-linux-gnu-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 2000
+      },
+      {
+        "digest": "sha256:40697866b22f96ab944fb34e1e119d01fc66c2496a7d6f0168ff3d46f9240c74",
+        "expired": false,
+        "id": 12126995851,
+        "name": "cli51-aarch64-apple-darwin-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 5114451
+      },
+      {
+        "digest": "sha256:2427c75f1846cf11fc6de16486f3617e07ab2fd48140a294da8e681346478356",
+        "expired": false,
+        "id": 12126990969,
+        "name": "cli52-download-x86_64-apple-darwin-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 1898
+      },
+      {
+        "digest": "sha256:9b5503714339a1307825c4e5bc6458efff4a0634e834fe05c7cf8f9f901c6b26",
+        "expired": false,
+        "id": 12126946094,
+        "name": "cli52-package-x86_64-unknown-linux-gnu-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 4418338
+      },
+      {
+        "digest": "sha256:f905d6be9d8460ee5c1ab448bdf26315ae620b24b37bd5f7f36ba7571eb9a5f9",
+        "expired": false,
+        "id": 12126881346,
+        "name": "cli52-download-aarch64-unknown-linux-gnu-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 1983
+      },
+      {
+        "digest": "sha256:9a62813ef93a86b57e6373c984afc805bb7df9e51a8ce4bc876d4086b64f3e91",
+        "expired": false,
+        "id": 12126816575,
+        "name": "cli52-package-aarch64-apple-darwin-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 4453374
+      },
+      {
+        "digest": "sha256:a30d00ab7cd39641a3f65a5615ce27c7f727ff4751bce80f6e501a8162cbb544",
+        "expired": false,
+        "id": 12126717414,
+        "name": "cli52-download-aarch64-apple-darwin-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 1904
+      },
+      {
+        "digest": "sha256:aa8b079bad7e4281fb02f8307d432fe9673e24e394d74af495e154e95350212d",
+        "expired": false,
+        "id": 12126478647,
+        "name": "cli52-download-x86_64-pc-windows-msvc-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 1984
+      },
+      {
+        "digest": "sha256:da752b1a09ef84e330c5d41228f32f67c2a67dfb93cbbc9a25e9435d19d7c9c7",
+        "expired": false,
+        "id": 12126473612,
+        "name": "cli52-package-aarch64-unknown-linux-gnu-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 4402151
+      },
+      {
+        "digest": "sha256:a84468247729ca010a0b0ffcac2b32349c33d91a7da907140a1c18f704181d59",
+        "expired": false,
+        "id": 12126373960,
+        "name": "cli51-aarch64-unknown-linux-gnu-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 5073089
+      },
+      {
+        "digest": "sha256:bfe8cf1c1980ba5506028866af947fd065fc9b427b5588936f596e7184578f81",
+        "expired": false,
+        "id": 12126339292,
+        "name": "cli52-assets-report-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 1384
+      },
+      {
+        "digest": "sha256:3373a04fc0b95ceb10265360eff92d947fae4978c22d624f0706239e06e07418",
+        "expired": false,
+        "id": 12126244591,
+        "name": "cli51-x86_64-pc-windows-msvc-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 4911595
+      },
+      {
+        "digest": "sha256:974f3c28d1d14758b300feb25359a7fa256208a5cdb6fe51444423e410da5bc0",
+        "expired": false,
+        "id": 12126229759,
+        "name": "cli52-package-x86_64-apple-darwin-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 4391532
+      },
+      {
+        "digest": "sha256:189485c4df3487b347a21b4f5565d3a45e0147feac2810ecbf341535ecf212f1",
+        "expired": false,
+        "id": 12126229754,
+        "name": "cli52-package-x86_64-pc-windows-msvc-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 4286129
+      },
+      {
+        "digest": "sha256:bc18596723939b1c81ab4bd02dd0ab48607a4a3c931bc222088a7e06c4e30d15",
+        "expired": false,
+        "id": 12126209975,
+        "name": "cli52-assets-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 21929422
+      },
+      {
+        "digest": "sha256:8725e28ec8f68fbf7601df440e652a17679ce58a5f345e79865c6b557dda37bb",
+        "expired": false,
+        "id": 12126184845,
+        "name": "cli51-x86_64-unknown-linux-gnu-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3",
+        "size_in_bytes": 5077791
+      }
+    ],
+    "all_server_zip_digests_verified": true,
+    "all_archive_payloads_checksums_modes_headers_notices_verified": true,
+    "all_build_57_and_packaging_53_inputs_byte_identical": true,
+    "raw_evidence_directory": ".local/cli52-ci-final",
+    "verification_receipt": {
+      "bytes": 19676,
+      "sha256": "86d3389f2a4b677661e4e1b8723b40b45615883915e1237c955bcc7d9d08a9a0"
+    },
+    "api_responses": {
+      "run.json": {
+        "bytes": 13863,
+        "sha256": "30de6960da21fcdea57067a6d80897524ba26196080be3887d03014c61fcdcfa"
+      },
+      "jobs.json": {
+        "bytes": 42915,
+        "sha256": "617acb5adb000f5eb2ed3f6b127c8828f7632b898a6590b0d27f8942384ef96a"
+      },
+      "artifacts.json": {
+        "bytes": 15558,
+        "sha256": "165d938de5a909eb11586a0435a048a6297087397c6a6477856580f4526ae65d"
+      }
+    },
+    "jobs": [
+      {
+        "id": 117598401763,
+        "name": "aarch64-apple-darwin (native)",
+        "conclusion": "success",
+        "html_url": "https://github.com/englishword/lingose-rust/actions/runs/39101457134/job/117598401763"
+      },
+      {
+        "id": 117598401807,
+        "name": "x86_64-pc-windows-msvc (native)",
+        "conclusion": "success",
+        "html_url": "https://github.com/englishword/lingose-rust/actions/runs/39101457134/job/117598401807"
+      },
+      {
+        "id": 117598401836,
+        "name": "aarch64-unknown-linux-gnu (native)",
+        "conclusion": "success",
+        "html_url": "https://github.com/englishword/lingose-rust/actions/runs/39101457134/job/117598401836"
+      },
+      {
+        "id": 117598401864,
+        "name": "x86_64-apple-darwin (native)",
+        "conclusion": "success",
+        "html_url": "https://github.com/englishword/lingose-rust/actions/runs/39101457134/job/117598401864"
+      },
+      {
+        "id": 117598401870,
+        "name": "x86_64-unknown-linux-gnu (native)",
+        "conclusion": "success",
+        "html_url": "https://github.com/englishword/lingose-rust/actions/runs/39101457134/job/117598401870"
+      },
+      {
+        "id": 117598642925,
+        "name": "Download x86_64-pc-windows-msvc (native)",
+        "conclusion": "success",
+        "html_url": "https://github.com/englishword/lingose-rust/actions/runs/39101457134/job/117598642925"
+      },
+      {
+        "id": 117598642930,
+        "name": "Download x86_64-apple-darwin (native)",
+        "conclusion": "success",
+        "html_url": "https://github.com/englishword/lingose-rust/actions/runs/39101457134/job/117598642930"
+      },
+      {
+        "id": 117598642991,
+        "name": "Download aarch64-unknown-linux-gnu (native)",
+        "conclusion": "success",
+        "html_url": "https://github.com/englishword/lingose-rust/actions/runs/39101457134/job/117598642991"
+      },
+      {
+        "id": 117598643001,
+        "name": "Download x86_64-unknown-linux-gnu (native)",
+        "conclusion": "success",
+        "html_url": "https://github.com/englishword/lingose-rust/actions/runs/39101457134/job/117598643001"
+      },
+      {
+        "id": 117598643015,
+        "name": "Download aarch64-apple-darwin (native)",
+        "conclusion": "success",
+        "html_url": "https://github.com/englishword/lingose-rust/actions/runs/39101457134/job/117598643015"
+      },
+      {
+        "id": 117598717085,
+        "name": "Aggregate five verified archive candidates",
+        "conclusion": "success",
+        "html_url": "https://github.com/englishword/lingose-rust/actions/runs/39101457134/job/117598717085"
+      }
+    ]
+  },
+  "assets": {
+    "directory": ".local/cli52-dist-d16c537",
+    "files": {
+      "lingose-v0.2.0-linux-aarch64.tar.gz": {
+        "bytes": 4433320,
+        "sha256": "a3b61e591a4e4e6a0a79d370d64d25a419673d6f1768919056192ca2c0f47530"
+      },
+      "lingose-v0.2.0-linux-x86_64.tar.gz": {
+        "bytes": 4449182,
+        "sha256": "9743358ac7cdf10ef1419b3e9ef333e94defb13782eb23942eb1601fedb377d3"
+      },
+      "lingose-v0.2.0-macos-aarch64.tar.gz": {
+        "bytes": 4482620,
+        "sha256": "085c2218d8086cd41e9ad1cc5b5c13ddc1326ce1fef6519cd1a6e8d333600008"
+      },
+      "lingose-v0.2.0-macos-x86_64.tar.gz": {
+        "bytes": 4421134,
+        "sha256": "c3f1eb2f68acca1eea625b28241714c34b09b33466237a16540ec3e3acf5a19e"
+      },
+      "lingose-v0.2.0-windows-x86_64.zip": {
+        "bytes": 4357977,
+        "sha256": "f0dc8665085b82ca4f9c9d1a051731bd9b7a462c38a7bbe1e7cb24d99fe2320b"
+      },
+      "SHA256SUMS": {
+        "bytes": 506,
+        "sha256": "e867a6232fe4f33087d1a19c625bd2645fe9cbe67254414da6eabf7356da5838"
+      }
+    },
+    "targets": [
+      {
+        "archive": {
+          "bytes": 4357977,
+          "file": "lingose-v0.2.0-windows-x86_64.zip",
+          "path": ".local/cli52-ci-final/cli52-assets-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/lingose-v0.2.0-windows-x86_64.zip",
+          "sha256": "f0dc8665085b82ca4f9c9d1a051731bd9b7a462c38a7bbe1e7cb24d99fe2320b"
+        },
+        "binary": {
+          "architecture": "x86_64",
+          "bytes": 11286016,
+          "file": "lingose.exe",
+          "format": "PE",
+          "imported_libraries": [
+            "api-ms-win-core-synch-l1-2-0.dll",
+            "bcryptprimitives.dll",
+            "KERNEL32.dll",
+            "ntdll.dll",
+            "VCRUNTIME140.dll",
+            "api-ms-win-crt-runtime-l1-1-0.dll",
+            "api-ms-win-crt-math-l1-1-0.dll",
+            "api-ms-win-crt-stdio-l1-1-0.dll",
+            "api-ms-win-crt-locale-l1-1-0.dll",
+            "api-ms-win-crt-heap-l1-1-0.dll"
+          ],
+          "interpreter": null,
+          "sha256": "250e2ce484e986e7a347211020c3dff59f6857837fc59a0aee8ecd4e088fde79"
+        },
+        "build_inputs_identical": true,
+        "build_smoke": 12,
+        "cli_tests": 29,
+        "dependencies": 18,
+        "download_machine": "AMD64",
+        "download_platform": "Windows-2022Server-10.0.20348-SP0",
+        "download_runner": {
+          "ImageOS": "win22",
+          "ImageVersion": "20261012.333.1",
+          "RUNNER_ARCH": "X64",
+          "RUNNER_OS": "Windows"
+        },
+        "downloaded_smoke": 16,
+        "extraction": {
+          "archive_modes_verified": true,
+          "extracted_posix_modes_verified": false,
+          "method": "Extract verified payload, preserve modes, copy that executable to a separate binary-only runtime and run byte-exact smoke",
+          "outside_checkout": true,
+          "source_or_dictionary_files_supplied": false
+        },
+        "members": 46,
+        "packaging_inputs_identical": true,
+        "reports": {
+          "build": {
+            "bytes": 18057,
+            "path": ".local/cli52-ci-final/cli51-x86_64-pc-windows-msvc-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/report.json",
+            "sha256": "1211d10711b18986e7cd4af51322af76e2d4ae2acf2af1036a9ea31f60273e8e"
+          },
+          "download": {
+            "bytes": 8284,
+            "path": ".local/cli52-ci-final/cli52-download-x86_64-pc-windows-msvc-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/x86_64-pc-windows-msvc.json",
+            "sha256": "9af9582da29bf8470a87eff5cb77e4a4b0a06fee134987051bc55bef817b0e60"
+          },
+          "package": {
+            "bytes": 17456,
+            "path": ".local/cli52-ci-final/cli52-package-x86_64-pc-windows-msvc-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/x86_64-pc-windows-msvc.package.json",
+            "sha256": "3abbf33bd6267362cb4d2805fc85717122ebae2dfcb3b4460b52d9f6b132b713"
+          }
+        },
+        "source_free_checkout_verified": true,
+        "target": "x86_64-pc-windows-msvc"
+      },
+      {
+        "archive": {
+          "bytes": 4449182,
+          "file": "lingose-v0.2.0-linux-x86_64.tar.gz",
+          "path": ".local/cli52-ci-final/cli52-assets-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/lingose-v0.2.0-linux-x86_64.tar.gz",
+          "sha256": "9743358ac7cdf10ef1419b3e9ef333e94defb13782eb23942eb1601fedb377d3"
+        },
+        "binary": {
+          "architecture": "x86_64",
+          "bytes": 11761272,
+          "file": "lingose",
+          "format": "ELF",
+          "imported_libraries": [
+            "libgcc_s.so.1",
+            "libc.so.6",
+            "ld-linux-x86-64.so.2"
+          ],
+          "interpreter": "/lib64/ld-linux-x86-64.so.2",
+          "required_symbol_versions": {
+            "ld-linux-x86-64.so.2": [
+              "GLIBC_2.3"
+            ],
+            "libc.so.6": [
+              "GLIBC_2.2.5",
+              "GLIBC_2.3",
+              "GLIBC_2.3.4",
+              "GLIBC_2.14",
+              "GLIBC_2.16",
+              "GLIBC_2.18",
+              "GLIBC_2.25",
+              "GLIBC_2.28",
+              "GLIBC_2.30",
+              "GLIBC_2.32",
+              "GLIBC_2.33",
+              "GLIBC_2.34"
+            ],
+            "libgcc_s.so.1": [
+              "GCC_3.0",
+              "GCC_3.3",
+              "GCC_4.2.0"
+            ]
+          },
+          "sha256": "0a5120ca3a24683091ea9b1d13b757e782fb3c740e1fdf3c6cbb04de64a65436"
+        },
+        "build_inputs_identical": true,
+        "build_smoke": 12,
+        "cli_tests": 30,
+        "dependencies": 18,
+        "download_machine": "x86_64",
+        "download_platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "download_runner": {
+          "ImageOS": "ubuntu24",
+          "ImageVersion": "20261012.334.1",
+          "RUNNER_ARCH": "X64",
+          "RUNNER_OS": "Linux"
+        },
+        "downloaded_smoke": 16,
+        "extraction": {
+          "archive_modes_verified": true,
+          "extracted_posix_modes_verified": true,
+          "method": "Extract verified payload, preserve modes, copy that executable to a separate binary-only runtime and run byte-exact smoke",
+          "outside_checkout": true,
+          "source_or_dictionary_files_supplied": false
+        },
+        "members": 46,
+        "packaging_inputs_identical": true,
+        "reports": {
+          "build": {
+            "bytes": 18041,
+            "path": ".local/cli52-ci-final/cli51-x86_64-unknown-linux-gnu-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/report.json",
+            "sha256": "e5317db2aaca108fb8afd2f332ccd4e9bd4a1b69e1201a193f88153d8fee1ce9"
+          },
+          "download": {
+            "bytes": 8504,
+            "path": ".local/cli52-ci-final/cli52-download-x86_64-unknown-linux-gnu-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/x86_64-unknown-linux-gnu.json",
+            "sha256": "fb1ca74325bf778bcb772ef3655521824b801431a666e1243c0f8a549e651ef0"
+          },
+          "package": {
+            "bytes": 17695,
+            "path": ".local/cli52-ci-final/cli52-package-x86_64-unknown-linux-gnu-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/x86_64-unknown-linux-gnu.package.json",
+            "sha256": "91ff2db09fe267fe81f43aa132c3042322f7ebde0ba7cc37bea6328c0f7130f4"
+          }
+        },
+        "source_free_checkout_verified": true,
+        "target": "x86_64-unknown-linux-gnu"
+      },
+      {
+        "archive": {
+          "bytes": 4433320,
+          "file": "lingose-v0.2.0-linux-aarch64.tar.gz",
+          "path": ".local/cli52-ci-final/cli52-assets-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/lingose-v0.2.0-linux-aarch64.tar.gz",
+          "sha256": "a3b61e591a4e4e6a0a79d370d64d25a419673d6f1768919056192ca2c0f47530"
+        },
+        "binary": {
+          "architecture": "aarch64",
+          "bytes": 11795048,
+          "file": "lingose",
+          "format": "ELF",
+          "imported_libraries": [
+            "libgcc_s.so.1",
+            "libc.so.6"
+          ],
+          "interpreter": "/lib/ld-linux-aarch64.so.1",
+          "required_symbol_versions": {
+            "libc.so.6": [
+              "GLIBC_2.28",
+              "GLIBC_2.30",
+              "GLIBC_2.25",
+              "GLIBC_2.18",
+              "GLIBC_2.33",
+              "GLIBC_2.32",
+              "GLIBC_2.34",
+              "GLIBC_2.17"
+            ],
+            "libgcc_s.so.1": [
+              "GCC_4.2.0",
+              "GCC_3.3",
+              "GCC_3.0"
+            ]
+          },
+          "sha256": "6f2b9eb0d930e3940ebc00e84e195cb86ef061640c291cb9e645b0ba99bb1a68"
+        },
+        "build_inputs_identical": true,
+        "build_smoke": 12,
+        "cli_tests": 30,
+        "dependencies": 19,
+        "download_machine": "aarch64",
+        "download_platform": "Linux-6.17.0-1022-azure-aarch64-with-glibc2.39",
+        "download_runner": {
+          "ImageOS": "ubuntu24-arm64",
+          "ImageVersion": "20261012.149.1",
+          "RUNNER_ARCH": "ARM64",
+          "RUNNER_OS": "Linux"
+        },
+        "downloaded_smoke": 16,
+        "extraction": {
+          "archive_modes_verified": true,
+          "extracted_posix_modes_verified": true,
+          "method": "Extract verified payload, preserve modes, copy that executable to a separate binary-only runtime and run byte-exact smoke",
+          "outside_checkout": true,
+          "source_or_dictionary_files_supplied": false
+        },
+        "members": 48,
+        "packaging_inputs_identical": true,
+        "reports": {
+          "build": {
+            "bytes": 18054,
+            "path": ".local/cli52-ci-final/cli51-aarch64-unknown-linux-gnu-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/report.json",
+            "sha256": "cb591286c684450f03ba4f0bb77b4a2fcbd17d49a3ebcef3a9807c6c18db57e5"
+          },
+          "download": {
+            "bytes": 8336,
+            "path": ".local/cli52-ci-final/cli52-download-aarch64-unknown-linux-gnu-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/aarch64-unknown-linux-gnu.json",
+            "sha256": "2d6eae0dcdd725492054e5894a62ffe756d4b1860d8b2d96c5eb02940aabff1f"
+          },
+          "package": {
+            "bytes": 17880,
+            "path": ".local/cli52-ci-final/cli52-package-aarch64-unknown-linux-gnu-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/aarch64-unknown-linux-gnu.package.json",
+            "sha256": "a5ab8fc658246ac367266676d88823ab173449deba8da6bbc7279400f4d7f560"
+          }
+        },
+        "source_free_checkout_verified": true,
+        "target": "aarch64-unknown-linux-gnu"
+      },
+      {
+        "archive": {
+          "bytes": 4421134,
+          "file": "lingose-v0.2.0-macos-x86_64.tar.gz",
+          "path": ".local/cli52-ci-final/cli52-assets-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/lingose-v0.2.0-macos-x86_64.tar.gz",
+          "sha256": "c3f1eb2f68acca1eea625b28241714c34b09b33466237a16540ec3e3acf5a19e"
+        },
+        "binary": {
+          "architecture": "x86_64",
+          "bytes": 11574720,
+          "file": "lingose",
+          "format": "Mach-O",
+          "imported_libraries": [
+            "/usr/lib/libSystem.B.dylib"
+          ],
+          "interpreter": "/usr/lib/dyld",
+          "minimum_os": "10.12.0",
+          "sdk": "15.5.0",
+          "sha256": "5e51dd5d60a84365d41de88210efded5ed81f13fd3fa24652429d4ba620577d1"
+        },
+        "build_inputs_identical": true,
+        "build_smoke": 12,
+        "cli_tests": 29,
+        "dependencies": 18,
+        "download_machine": "x86_64",
+        "download_platform": "macOS-15.7.9-x86_64-i386-64bit",
+        "download_runner": {
+          "ImageOS": "macos15",
+          "ImageVersion": "20260824.0482.1",
+          "RUNNER_ARCH": "X64",
+          "RUNNER_OS": "macOS"
+        },
+        "downloaded_smoke": 16,
+        "extraction": {
+          "archive_modes_verified": true,
+          "extracted_posix_modes_verified": true,
+          "method": "Extract verified payload, preserve modes, copy that executable to a separate binary-only runtime and run byte-exact smoke",
+          "outside_checkout": true,
+          "source_or_dictionary_files_supplied": false
+        },
+        "members": 46,
+        "packaging_inputs_identical": true,
+        "reports": {
+          "build": {
+            "bytes": 18011,
+            "path": ".local/cli52-ci-final/cli51-x86_64-apple-darwin-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/report.json",
+            "sha256": "dd835972d189ffe1c41cbf890a925bc0789619e829e97b736e416e101aa302fb"
+          },
+          "download": {
+            "bytes": 8000,
+            "path": ".local/cli52-ci-final/cli52-download-x86_64-apple-darwin-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/x86_64-apple-darwin.json",
+            "sha256": "ddcb53e6a630d1ffb676c73e366c18a684a0c6cef8498851517c2a178749002f"
+          },
+          "package": {
+            "bytes": 17206,
+            "path": ".local/cli52-ci-final/cli52-package-x86_64-apple-darwin-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/x86_64-apple-darwin.package.json",
+            "sha256": "f8e4fd6d114fc96d83394f0b2b6cac9047d8fd816deaa6f963f60b7107eaf474"
+          }
+        },
+        "source_free_checkout_verified": true,
+        "target": "x86_64-apple-darwin"
+      },
+      {
+        "archive": {
+          "bytes": 4482620,
+          "file": "lingose-v0.2.0-macos-aarch64.tar.gz",
+          "path": ".local/cli52-ci-final/cli52-assets-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/lingose-v0.2.0-macos-aarch64.tar.gz",
+          "sha256": "085c2218d8086cd41e9ad1cc5b5c13ddc1326ce1fef6519cd1a6e8d333600008"
+        },
+        "binary": {
+          "architecture": "aarch64",
+          "bytes": 11623808,
+          "file": "lingose",
+          "format": "Mach-O",
+          "imported_libraries": [
+            "/usr/lib/libSystem.B.dylib"
+          ],
+          "interpreter": "/usr/lib/dyld",
+          "minimum_os": "11.0.0",
+          "sdk": "15.5.0",
+          "sha256": "2d87ee8c88a6f6b3f3bcddb9ed07fff5c03bee1112c001988eb569195d72e368"
+        },
+        "build_inputs_identical": true,
+        "build_smoke": 12,
+        "cli_tests": 29,
+        "dependencies": 19,
+        "download_machine": "arm64",
+        "download_platform": "macOS-15.7.9-arm64-arm-64bit",
+        "download_runner": {
+          "ImageOS": "macos15",
+          "ImageVersion": "20260907.0337.1",
+          "RUNNER_ARCH": "ARM64",
+          "RUNNER_OS": "macOS"
+        },
+        "downloaded_smoke": 16,
+        "extraction": {
+          "archive_modes_verified": true,
+          "extracted_posix_modes_verified": true,
+          "method": "Extract verified payload, preserve modes, copy that executable to a separate binary-only runtime and run byte-exact smoke",
+          "outside_checkout": true,
+          "source_or_dictionary_files_supplied": false
+        },
+        "members": 48,
+        "packaging_inputs_identical": true,
+        "reports": {
+          "build": {
+            "bytes": 18013,
+            "path": ".local/cli52-ci-final/cli51-aarch64-apple-darwin-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/report.json",
+            "sha256": "9b5bc467fe1c03237d838e34bc6a6303418d17a19a502a60d673ecf8914e972a"
+          },
+          "download": {
+            "bytes": 8001,
+            "path": ".local/cli52-ci-final/cli52-download-aarch64-apple-darwin-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/aarch64-apple-darwin.json",
+            "sha256": "ee49e45463842aee16ce13cfdb1e073427451fb10a4830341ab6a53636980fc2"
+          },
+          "package": {
+            "bytes": 17571,
+            "path": ".local/cli52-ci-final/cli52-package-aarch64-apple-darwin-d16c53773c0fb7e6f21dd2d1544ddcdc549734f3/aarch64-apple-darwin.package.json",
+            "sha256": "678174fa4b684c9dfb2787040774236ddc0f827c265342cdadf9d6d30b66d092"
+          }
+        },
+        "source_free_checkout_verified": true,
+        "target": "aarch64-apple-darwin"
+      }
+    ],
+    "single_root_per_archive": true,
+    "repeated_encoding_byte_identical_per_target": true,
+    "posix_modes": {
+      "binary": "0755",
+      "other_files": "0644"
+    },
+    "windows_mode_scope": "Archive mode metadata and actual execution verified; POSIX extracted-mode semantics not asserted"
+  },
+  "inputs": {
+    "native_build": {
+      ".gitattributes": {
+        "bytes": 4873,
+        "sha256": "b9d62fb516cc90621313b45769524d9a2cd8001da71ae272ad393d2526963636"
+      },
+      ".github/workflows/cli-release.yml": {
+        "bytes": 6702,
+        "sha256": "f94e9bc806eafacd1e5bb3ee47b2bece751bb8febdb1fd751b1768c36c62bdc2"
+      },
+      "Cargo.lock": {
+        "bytes": 5797,
+        "sha256": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e"
+      },
+      "Cargo.toml": {
+        "bytes": 240,
+        "sha256": "2c7d78c0cb89af8501739a315db12692f4141b8c70815a6fcdbad0dab7cb253b"
+      },
+      "crates/lingose-cli/Cargo.toml": {
+        "bytes": 809,
+        "sha256": "e50128430cf34e3da846eb17a97e5924ea39ddff7a9dbf14f34874f14abb788f"
+      },
+      "crates/lingose-cli/LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "crates/lingose-cli/README.md": {
+        "bytes": 9169,
+        "sha256": "aa816f465cd026dfd6e08c0d4fcd9e325c6f030f6d6ff7d2642a8ec8abf1e67e"
+      },
+      "crates/lingose-cli/SOURCES.md": {
+        "bytes": 3685,
+        "sha256": "e3a051a235428b0a89c4be52e6c60f85326d33d508673f7db4397419dc4bd6b3"
+      },
+      "crates/lingose-cli/src/main.rs": {
+        "bytes": 12647,
+        "sha256": "201a048f02a7627110ccdd5b0c2ab70845551aca8f35281d2f1f70585f17d624"
+      },
+      "crates/lingose-cli/tests/annotate.rs": {
+        "bytes": 23816,
+        "sha256": "9f33d0b0fb89ff0477f424202a488b8d55e5e40e08ba1a7ddc79cd931ed5f660"
+      },
+      "crates/lingose-cli/tests/word.rs": {
+        "bytes": 5951,
+        "sha256": "e206bba4398dcfe185823e4eec780aa23e8bcd6180405d562ac7b940edf7d0bc"
+      },
+      "crates/lingose/Cargo.toml": {
+        "bytes": 929,
+        "sha256": "75b6cb3a1b6d9dc4a15b1ef099f0747dc3cebc7a3b12a5c34cf6f58a8dd815e3"
+      },
+      "crates/lingose/LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "crates/lingose/README.md": {
+        "bytes": 11639,
+        "sha256": "f67254247c30dbf3674773f2611c145721c733146ffc1ce6ac946b2b6e82c9e2"
+      },
+      "crates/lingose/SOURCES.md": {
+        "bytes": 3890,
+        "sha256": "74170a3c0d378675de47ced2a5cb8d261880522a9f1c4deaaa711ae31391d522"
+      },
+      "crates/lingose/data/LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "crates/lingose/data/SOURCES.json": {
+        "bytes": 4997,
+        "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+      },
+      "crates/lingose/data/UPSTREAM-SOURCES.md": {
+        "bytes": 1457,
+        "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+      },
+      "crates/lingose/data/frequency.bin": {
+        "bytes": 200272,
+        "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+      },
+      "crates/lingose/data/lexicon.bin": {
+        "bytes": 10259743,
+        "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+      },
+      "crates/lingose/data/manifest.json": {
+        "bytes": 3900,
+        "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+      },
+      "crates/lingose/docs/distribution-provenance.json": {
+        "bytes": 5569,
+        "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+      },
+      "crates/lingose/docs/rust-api.md": {
+        "bytes": 10014,
+        "sha256": "384d9f33476913a64a0cadb3d348e80e2dadda97361dbad41ec6491453d35575"
+      },
+      "crates/lingose/examples/annotate.rs": {
+        "bytes": 414,
+        "sha256": "59e6d564a33328edbcc7dbe6e3145bdd75ebef0e6f0c99a5d6f9233ef4441c5a"
+      },
+      "crates/lingose/examples/query.rs": {
+        "bytes": 871,
+        "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+      },
+      "crates/lingose/src/annotation.rs": {
+        "bytes": 19775,
+        "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+      },
+      "crates/lingose/src/annotation_context_vectors.rs": {
+        "bytes": 321810,
+        "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+      },
+      "crates/lingose/src/annotation_frequency_vectors.rs": {
+        "bytes": 24615,
+        "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+      },
+      "crates/lingose/src/annotation_unicode.rs": {
+        "bytes": 3734,
+        "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+      },
+      "crates/lingose/src/annotation_unicode_tables.rs": {
+        "bytes": 40416,
+        "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+      },
+      "crates/lingose/src/annotation_vectors.rs": {
+        "bytes": 65657,
+        "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+      },
+      "crates/lingose/src/category.rs": {
+        "bytes": 1653,
+        "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+      },
+      "crates/lingose/src/data/annotation_context_vectors.rs": {
+        "bytes": 37586,
+        "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+      },
+      "crates/lingose/src/data/annotation_frequency_vectors.rs": {
+        "bytes": 87772,
+        "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+      },
+      "crates/lingose/src/data/annotation_tests.rs": {
+        "bytes": 3391,
+        "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+      },
+      "crates/lingose/src/data/cache_tests.rs": {
+        "bytes": 22365,
+        "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+      },
+      "crates/lingose/src/data/category_tests.rs": {
+        "bytes": 4243,
+        "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+      },
+      "crates/lingose/src/data/image.rs": {
+        "bytes": 15144,
+        "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+      },
+      "crates/lingose/src/data/mod.rs": {
+        "bytes": 6395,
+        "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+      },
+      "crates/lingose/src/data/p41_joint_error_tests.rs": {
+        "bytes": 4967,
+        "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+      },
+      "crates/lingose/src/data/p41_query_fixture_tests.rs": {
+        "bytes": 62352,
+        "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+      },
+      "crates/lingose/src/data/tests.rs": {
+        "bytes": 24506,
+        "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+      },
+      "crates/lingose/src/data_meta.rs": {
+        "bytes": 1531,
+        "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+      },
+      "crates/lingose/src/error.rs": {
+        "bytes": 2127,
+        "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+      },
+      "crates/lingose/src/lib.rs": {
+        "bytes": 5142,
+        "sha256": "661ea94997dcdb0d7a994a900acb1dbc6c3e0b897804d495beb3c90389d5ca12"
+      },
+      "crates/lingose/src/query.rs": {
+        "bytes": 1207,
+        "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+      },
+      "crates/lingose/src/query_case.rs": {
+        "bytes": 5074,
+        "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+      },
+      "crates/lingose/src/query_case_tables.rs": {
+        "bytes": 52751,
+        "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+      },
+      "crates/lingose/src/validation.rs": {
+        "bytes": 1624,
+        "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+      },
+      "crates/lingose/tests/annotation_context_vectors.rs": {
+        "bytes": 19503,
+        "sha256": "b35ab093c36a2e52657fcf363a8cf106eb40989f8c59f0a38f7b1d2f3c82fa5b"
+      },
+      "crates/lingose/tests/annotation_frequency_vectors.rs": {
+        "bytes": 95021,
+        "sha256": "5e7ece15934e19c81157ac7eaa668e6be61342ce7b94705e50d0a8c5925c572e"
+      },
+      "crates/lingose/tests/annotation_vectors.rs": {
+        "bytes": 3910,
+        "sha256": "36a1a975500fbe2a264dd8cae0c7535f08f782a9849e7d54f8bc85ccfcbae462"
+      },
+      "crates/lingose/tests/api_contract.rs": {
+        "bytes": 12105,
+        "sha256": "45626a7c12aeb1d42659854c1310f260fbcaeea8ac63d4a6a08ddbef4eaf7cdb"
+      },
+      "crates/lingose/tests/category_vectors.rs": {
+        "bytes": 23168,
+        "sha256": "2a9847a84ea05858410e0be8be3020771b0e2027a13426b077fa61fc9b5e1072"
+      },
+      "crates/lingose/tests/query_vectors.rs": {
+        "bytes": 11219,
+        "sha256": "440c7634cddb9494a37b0c0e89e1723ac53d9e2e92be125ca32057cbc187cbce"
+      },
+      "crates/lingose/third_party/unicode/LICENSE.txt": {
+        "bytes": 1995,
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+      },
+      "tools/check_cli_release.py": {
+        "bytes": 11503,
+        "sha256": "e741ea9b29d2c63fb1869a37ba51e437be172f907cc2f7ad7b801942553ac9c8"
+      }
+    },
+    "packaging": {
+      ".gitattributes": {
+        "bytes": 4873,
+        "sha256": "b9d62fb516cc90621313b45769524d9a2cd8001da71ae272ad393d2526963636"
+      },
+      ".github/workflows/cli-release.yml": {
+        "bytes": 6702,
+        "sha256": "f94e9bc806eafacd1e5bb3ee47b2bece751bb8febdb1fd751b1768c36c62bdc2"
+      },
+      "Cargo.lock": {
+        "bytes": 5797,
+        "sha256": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e"
+      },
+      "release/notices/LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "release/notices/licenses/crates/anstyle-1.0.14/LICENSE-APACHE": {
+        "bytes": 11358,
+        "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+      },
+      "release/notices/licenses/crates/anstyle-1.0.14/LICENSE-MIT": {
+        "bytes": 1062,
+        "sha256": "6efb0476a1cc085077ed49357026d8c173bf33017278ef440f222fb9cbcb66e6"
+      },
+      "release/notices/licenses/crates/block-buffer-0.10.4/LICENSE-APACHE": {
+        "bytes": 10849,
+        "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+      },
+      "release/notices/licenses/crates/block-buffer-0.10.4/LICENSE-MIT": {
+        "bytes": 1082,
+        "sha256": "d5c22aa3118d240e877ad41c5d9fa232f9c77d757d4aac0c2f943afc0a95e0ef"
+      },
+      "release/notices/licenses/crates/cfg-if-1.0.5/LICENSE-APACHE": {
+        "bytes": 10847,
+        "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+      },
+      "release/notices/licenses/crates/cfg-if-1.0.5/LICENSE-MIT": {
+        "bytes": 1057,
+        "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397"
+      },
+      "release/notices/licenses/crates/clap-4.6.7/LICENSE-APACHE": {
+        "bytes": 11349,
+        "sha256": "249fdb6694467dd615b259f7ddde07be3f8ae5a72cecebb0e24f6629af4215fe"
+      },
+      "release/notices/licenses/crates/clap-4.6.7/LICENSE-MIT": {
+        "bytes": 1062,
+        "sha256": "6efb0476a1cc085077ed49357026d8c173bf33017278ef440f222fb9cbcb66e6"
+      },
+      "release/notices/licenses/crates/clap_builder-4.6.7/LICENSE-APACHE": {
+        "bytes": 11349,
+        "sha256": "249fdb6694467dd615b259f7ddde07be3f8ae5a72cecebb0e24f6629af4215fe"
+      },
+      "release/notices/licenses/crates/clap_builder-4.6.7/LICENSE-MIT": {
+        "bytes": 1062,
+        "sha256": "6efb0476a1cc085077ed49357026d8c173bf33017278ef440f222fb9cbcb66e6"
+      },
+      "release/notices/licenses/crates/clap_lex-1.1.1/LICENSE-APACHE": {
+        "bytes": 11349,
+        "sha256": "249fdb6694467dd615b259f7ddde07be3f8ae5a72cecebb0e24f6629af4215fe"
+      },
+      "release/notices/licenses/crates/clap_lex-1.1.1/LICENSE-MIT": {
+        "bytes": 1062,
+        "sha256": "6efb0476a1cc085077ed49357026d8c173bf33017278ef440f222fb9cbcb66e6"
+      },
+      "release/notices/licenses/crates/cpufeatures-0.2.17/LICENSE-APACHE": {
+        "bytes": 10849,
+        "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+      },
+      "release/notices/licenses/crates/cpufeatures-0.2.17/LICENSE-MIT": {
+        "bytes": 1082,
+        "sha256": "ae9baa7beea910273c2f384c2a6b721fb7bd02bda3436074a1072e4ee689f985"
+      },
+      "release/notices/licenses/crates/crypto-common-0.1.7/LICENSE-APACHE": {
+        "bytes": 10849,
+        "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+      },
+      "release/notices/licenses/crates/crypto-common-0.1.7/LICENSE-MIT": {
+        "bytes": 1065,
+        "sha256": "3521672491a3479422d5fe1aca6645dd2984090f85da6e5205abfb18fb7a6897"
+      },
+      "release/notices/licenses/crates/digest-0.10.7/LICENSE-APACHE": {
+        "bytes": 10849,
+        "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+      },
+      "release/notices/licenses/crates/digest-0.10.7/LICENSE-MIT": {
+        "bytes": 1057,
+        "sha256": "9e0dfd2dd4173a530e238cb6adb37aa78c34c6bc7444e0e10c1ab5d8881f63ba"
+      },
+      "release/notices/licenses/crates/generic-array-0.14.7/LICENSE": {
+        "bytes": 1107,
+        "sha256": "c09aae9d3c77b531f56351a9947bc7446511d6b025b3255312d3e3442a9a7583"
+      },
+      "release/notices/licenses/crates/itoa-1.0.18/LICENSE-APACHE": {
+        "bytes": 9723,
+        "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+      },
+      "release/notices/licenses/crates/itoa-1.0.18/LICENSE-MIT": {
+        "bytes": 1023,
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+      },
+      "release/notices/licenses/crates/libc-0.2.190/LICENSE-APACHE": {
+        "bytes": 9723,
+        "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+      },
+      "release/notices/licenses/crates/libc-0.2.190/LICENSE-MIT": {
+        "bytes": 1066,
+        "sha256": "123a331b5dbf04c30097fa43b8f858bc85df671fe776de498d01f3d6b7c1f69e"
+      },
+      "release/notices/licenses/crates/memchr-2.8.3/COPYING": {
+        "bytes": 126,
+        "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f"
+      },
+      "release/notices/licenses/crates/memchr-2.8.3/LICENSE-MIT": {
+        "bytes": 1081,
+        "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f"
+      },
+      "release/notices/licenses/crates/serde_core-1.0.229/LICENSE-APACHE": {
+        "bytes": 9723,
+        "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+      },
+      "release/notices/licenses/crates/serde_core-1.0.229/LICENSE-MIT": {
+        "bytes": 1023,
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+      },
+      "release/notices/licenses/crates/serde_json-1.0.154/LICENSE-APACHE": {
+        "bytes": 9723,
+        "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+      },
+      "release/notices/licenses/crates/serde_json-1.0.154/LICENSE-MIT": {
+        "bytes": 1023,
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+      },
+      "release/notices/licenses/crates/sha2-0.10.9/LICENSE-APACHE": {
+        "bytes": 10849,
+        "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+      },
+      "release/notices/licenses/crates/sha2-0.10.9/LICENSE-MIT": {
+        "bytes": 1138,
+        "sha256": "b4eb00df6e2a4d22518fcaa6a2b4646f249b3a3c9814509b22bd2091f1392ff1"
+      },
+      "release/notices/licenses/crates/typenum-1.20.1/LICENSE": {
+        "bytes": 17,
+        "sha256": "db11fec9946737df39ca3898d9cd8c10ec6f6c3a884a6802b0ad0b81b4e8f23a"
+      },
+      "release/notices/licenses/crates/typenum-1.20.1/LICENSE-APACHE": {
+        "bytes": 10835,
+        "sha256": "516b24e051bf5630880ebbd55c40a25ce9552ebaf8970a53e8976eb70e522406"
+      },
+      "release/notices/licenses/crates/typenum-1.20.1/LICENSE-MIT": {
+        "bytes": 1083,
+        "sha256": "a825bd853ab71619a4923d7b4311221427848070ff44d990da39b0b274c1683f"
+      },
+      "release/notices/licenses/crates/version_check-0.9.5/LICENSE-APACHE": {
+        "bytes": 10847,
+        "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+      },
+      "release/notices/licenses/crates/version_check-0.9.5/LICENSE-MIT": {
+        "bytes": 1085,
+        "sha256": "b7e650f3fce5c53249d1cdc608b54df156a97edd636cf9d23498d0cfe7aec63e"
+      },
+      "release/notices/licenses/crates/zmij-1.0.23/LICENSE-MIT": {
+        "bytes": 1023,
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+      },
+      "release/notices/licenses/ECDICT/LICENSE": {
+        "bytes": 1063,
+        "sha256": "f8552dd246f61a4e064569eae6194a01c6b3d63b03bf27c6ca863593c549ed0f"
+      },
+      "release/notices/licenses/rust-1.93.1/COPYRIGHT-library.html": {
+        "bytes": 425661,
+        "sha256": "d93d65853736bde4e8649691233a98848ba709673873aeb39487bc1ca6ee292a"
+      },
+      "release/notices/licenses/unicode/LICENSE.txt": {
+        "bytes": 1995,
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+      },
+      "release/notices/sources/LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "release/notices/sources/SOURCES.json": {
+        "bytes": 4997,
+        "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+      },
+      "release/notices/sources/UPSTREAM-SOURCES.md": {
+        "bytes": 1457,
+        "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+      },
+      "release/notices.json": {
+        "bytes": 38473,
+        "sha256": "4135eadfda4808a04829f6f4f89aab893a99a814978a64f758fe286d200d66cd"
+      },
+      "release/README.md": {
+        "bytes": 3233,
+        "sha256": "50e454cab22ebca70b6b0e610953102ef79a777136e7e73fb461b97e805c19ac"
+      },
+      "release/SOURCES.md": {
+        "bytes": 2895,
+        "sha256": "a64081354a1d73aeb2be942c16e6cf0a9a14105295bfe3291240dd56280215c2"
+      },
+      "tools/binary_format.py": {
+        "bytes": 12627,
+        "sha256": "aaf35f06c51c5cab52b677cd38ae5ae1dae76d8041229502e9e0c4b6d993510e"
+      },
+      "tools/check_cli_release.py": {
+        "bytes": 11503,
+        "sha256": "e741ea9b29d2c63fb1869a37ba51e437be172f907cc2f7ad7b801942553ac9c8"
+      },
+      "tools/package_cli_binary.py": {
+        "bytes": 18245,
+        "sha256": "6c46d3d1f4a9b21668a8dece5fb192591dbfc1761adb63fb80828692bce751c6"
+      }
+    }
+  },
+  "notice_catalog": {
+    "file": "release/notices.json",
+    "sha256": "4135eadfda4808a04829f6f4f89aab893a99a814978a64f758fe286d200d66cd",
+    "text_files": 44,
+    "crates": 19,
+    "counts_by_target": {
+      "x86_64-pc-windows-msvc": 18,
+      "x86_64-unknown-linux-gnu": 18,
+      "aarch64-unknown-linux-gnu": 19,
+      "x86_64-apple-darwin": 18,
+      "aarch64-apple-darwin": 19
+    },
+    "files": {
+      "LICENSE": {
+        "snapshot": "release/notices/LICENSE",
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+        "origin": {
+          "repository_path": "crates/lingose-cli/LICENSE"
+        }
+      },
+      "licenses/ECDICT/LICENSE": {
+        "snapshot": "release/notices/licenses/ECDICT/LICENSE",
+        "bytes": 1063,
+        "sha256": "f8552dd246f61a4e064569eae6194a01c6b3d63b03bf27c6ca863593c549ed0f",
+        "origin": {
+          "url": "https://raw.githubusercontent.com/skywind3000/ECDICT/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/LICENSE",
+          "commit": "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b",
+          "scope": "Supplemental MIT text for retained upstream ECDICT attribution; not proof of original dataset snapshot revision"
+        }
+      },
+      "licenses/crates/anstyle-1.0.14/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/anstyle-1.0.14/LICENSE-APACHE",
+        "bytes": 11358,
+        "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08",
+        "origin": {
+          "crate": "anstyle",
+          "version": "1.0.14",
+          "registry_archive_sha256": "940b3a0ca603d1eade50a4846a2afffd5ef57a9feac2c0e2ec2e14f9ead76000",
+          "archive_path": "anstyle-1.0.14/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/anstyle-1.0.14/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/anstyle-1.0.14/LICENSE-MIT",
+        "bytes": 1062,
+        "sha256": "6efb0476a1cc085077ed49357026d8c173bf33017278ef440f222fb9cbcb66e6",
+        "origin": {
+          "crate": "anstyle",
+          "version": "1.0.14",
+          "registry_archive_sha256": "940b3a0ca603d1eade50a4846a2afffd5ef57a9feac2c0e2ec2e14f9ead76000",
+          "archive_path": "anstyle-1.0.14/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/block-buffer-0.10.4/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/block-buffer-0.10.4/LICENSE-APACHE",
+        "bytes": 10849,
+        "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5",
+        "origin": {
+          "crate": "block-buffer",
+          "version": "0.10.4",
+          "registry_archive_sha256": "3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71",
+          "archive_path": "block-buffer-0.10.4/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/block-buffer-0.10.4/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/block-buffer-0.10.4/LICENSE-MIT",
+        "bytes": 1082,
+        "sha256": "d5c22aa3118d240e877ad41c5d9fa232f9c77d757d4aac0c2f943afc0a95e0ef",
+        "origin": {
+          "crate": "block-buffer",
+          "version": "0.10.4",
+          "registry_archive_sha256": "3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71",
+          "archive_path": "block-buffer-0.10.4/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/cfg-if-1.0.5/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/cfg-if-1.0.5/LICENSE-APACHE",
+        "bytes": 10847,
+        "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+        "origin": {
+          "crate": "cfg-if",
+          "version": "1.0.5",
+          "registry_archive_sha256": "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600",
+          "archive_path": "cfg-if-1.0.5/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/cfg-if-1.0.5/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/cfg-if-1.0.5/LICENSE-MIT",
+        "bytes": 1057,
+        "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
+        "origin": {
+          "crate": "cfg-if",
+          "version": "1.0.5",
+          "registry_archive_sha256": "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600",
+          "archive_path": "cfg-if-1.0.5/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/clap-4.6.7/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/clap-4.6.7/LICENSE-APACHE",
+        "bytes": 11349,
+        "sha256": "249fdb6694467dd615b259f7ddde07be3f8ae5a72cecebb0e24f6629af4215fe",
+        "origin": {
+          "crate": "clap",
+          "version": "4.6.7",
+          "registry_archive_sha256": "aa8876b300ab35ba921adea3dfd70157a46249b33f95c9084ae5709785478946",
+          "archive_path": "clap-4.6.7/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/clap-4.6.7/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/clap-4.6.7/LICENSE-MIT",
+        "bytes": 1062,
+        "sha256": "6efb0476a1cc085077ed49357026d8c173bf33017278ef440f222fb9cbcb66e6",
+        "origin": {
+          "crate": "clap",
+          "version": "4.6.7",
+          "registry_archive_sha256": "aa8876b300ab35ba921adea3dfd70157a46249b33f95c9084ae5709785478946",
+          "archive_path": "clap-4.6.7/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/clap_builder-4.6.7/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/clap_builder-4.6.7/LICENSE-APACHE",
+        "bytes": 11349,
+        "sha256": "249fdb6694467dd615b259f7ddde07be3f8ae5a72cecebb0e24f6629af4215fe",
+        "origin": {
+          "crate": "clap_builder",
+          "version": "4.6.7",
+          "registry_archive_sha256": "ec0797fb7aeb1406c84efac526901f7ec3ead2124f946b494e72879d4b54704d",
+          "archive_path": "clap_builder-4.6.7/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/clap_builder-4.6.7/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/clap_builder-4.6.7/LICENSE-MIT",
+        "bytes": 1062,
+        "sha256": "6efb0476a1cc085077ed49357026d8c173bf33017278ef440f222fb9cbcb66e6",
+        "origin": {
+          "crate": "clap_builder",
+          "version": "4.6.7",
+          "registry_archive_sha256": "ec0797fb7aeb1406c84efac526901f7ec3ead2124f946b494e72879d4b54704d",
+          "archive_path": "clap_builder-4.6.7/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/clap_lex-1.1.1/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/clap_lex-1.1.1/LICENSE-APACHE",
+        "bytes": 11349,
+        "sha256": "249fdb6694467dd615b259f7ddde07be3f8ae5a72cecebb0e24f6629af4215fe",
+        "origin": {
+          "crate": "clap_lex",
+          "version": "1.1.1",
+          "registry_archive_sha256": "1c133bc6a41be0d194c306b5506d15e6feeea7b1d6604bd3f8310dfb2ca96486",
+          "archive_path": "clap_lex-1.1.1/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/clap_lex-1.1.1/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/clap_lex-1.1.1/LICENSE-MIT",
+        "bytes": 1062,
+        "sha256": "6efb0476a1cc085077ed49357026d8c173bf33017278ef440f222fb9cbcb66e6",
+        "origin": {
+          "crate": "clap_lex",
+          "version": "1.1.1",
+          "registry_archive_sha256": "1c133bc6a41be0d194c306b5506d15e6feeea7b1d6604bd3f8310dfb2ca96486",
+          "archive_path": "clap_lex-1.1.1/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/cpufeatures-0.2.17/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/cpufeatures-0.2.17/LICENSE-APACHE",
+        "bytes": 10849,
+        "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5",
+        "origin": {
+          "crate": "cpufeatures",
+          "version": "0.2.17",
+          "registry_archive_sha256": "59ed5838eebb26a2bb2e58f6d5b5316989ae9d08bab10e0e6d103e656d1b0280",
+          "archive_path": "cpufeatures-0.2.17/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/cpufeatures-0.2.17/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/cpufeatures-0.2.17/LICENSE-MIT",
+        "bytes": 1082,
+        "sha256": "ae9baa7beea910273c2f384c2a6b721fb7bd02bda3436074a1072e4ee689f985",
+        "origin": {
+          "crate": "cpufeatures",
+          "version": "0.2.17",
+          "registry_archive_sha256": "59ed5838eebb26a2bb2e58f6d5b5316989ae9d08bab10e0e6d103e656d1b0280",
+          "archive_path": "cpufeatures-0.2.17/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/crypto-common-0.1.7/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/crypto-common-0.1.7/LICENSE-APACHE",
+        "bytes": 10849,
+        "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5",
+        "origin": {
+          "crate": "crypto-common",
+          "version": "0.1.7",
+          "registry_archive_sha256": "78c8292055d1c1df0cce5d180393dc8cce0abec0a7102adb6c7b1eef6016d60a",
+          "archive_path": "crypto-common-0.1.7/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/crypto-common-0.1.7/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/crypto-common-0.1.7/LICENSE-MIT",
+        "bytes": 1065,
+        "sha256": "3521672491a3479422d5fe1aca6645dd2984090f85da6e5205abfb18fb7a6897",
+        "origin": {
+          "crate": "crypto-common",
+          "version": "0.1.7",
+          "registry_archive_sha256": "78c8292055d1c1df0cce5d180393dc8cce0abec0a7102adb6c7b1eef6016d60a",
+          "archive_path": "crypto-common-0.1.7/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/digest-0.10.7/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/digest-0.10.7/LICENSE-APACHE",
+        "bytes": 10849,
+        "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5",
+        "origin": {
+          "crate": "digest",
+          "version": "0.10.7",
+          "registry_archive_sha256": "9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292",
+          "archive_path": "digest-0.10.7/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/digest-0.10.7/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/digest-0.10.7/LICENSE-MIT",
+        "bytes": 1057,
+        "sha256": "9e0dfd2dd4173a530e238cb6adb37aa78c34c6bc7444e0e10c1ab5d8881f63ba",
+        "origin": {
+          "crate": "digest",
+          "version": "0.10.7",
+          "registry_archive_sha256": "9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292",
+          "archive_path": "digest-0.10.7/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/generic-array-0.14.7/LICENSE": {
+        "snapshot": "release/notices/licenses/crates/generic-array-0.14.7/LICENSE",
+        "bytes": 1107,
+        "sha256": "c09aae9d3c77b531f56351a9947bc7446511d6b025b3255312d3e3442a9a7583",
+        "origin": {
+          "crate": "generic-array",
+          "version": "0.14.7",
+          "registry_archive_sha256": "85649ca51fd72272d7821adaf274ad91c288277713d9c18820d8499a7ff69e9a",
+          "archive_path": "generic-array-0.14.7/LICENSE"
+        }
+      },
+      "licenses/crates/itoa-1.0.18/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/itoa-1.0.18/LICENSE-APACHE",
+        "bytes": 9723,
+        "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+        "origin": {
+          "crate": "itoa",
+          "version": "1.0.18",
+          "registry_archive_sha256": "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682",
+          "archive_path": "itoa-1.0.18/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/itoa-1.0.18/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/itoa-1.0.18/LICENSE-MIT",
+        "bytes": 1023,
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+        "origin": {
+          "crate": "itoa",
+          "version": "1.0.18",
+          "registry_archive_sha256": "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682",
+          "archive_path": "itoa-1.0.18/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/libc-0.2.190/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/libc-0.2.190/LICENSE-APACHE",
+        "bytes": 9723,
+        "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+        "origin": {
+          "crate": "libc",
+          "version": "0.2.190",
+          "registry_archive_sha256": "ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78",
+          "archive_path": "libc-0.2.190/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/libc-0.2.190/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/libc-0.2.190/LICENSE-MIT",
+        "bytes": 1066,
+        "sha256": "123a331b5dbf04c30097fa43b8f858bc85df671fe776de498d01f3d6b7c1f69e",
+        "origin": {
+          "crate": "libc",
+          "version": "0.2.190",
+          "registry_archive_sha256": "ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78",
+          "archive_path": "libc-0.2.190/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/memchr-2.8.3/COPYING": {
+        "snapshot": "release/notices/licenses/crates/memchr-2.8.3/COPYING",
+        "bytes": 126,
+        "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f",
+        "origin": {
+          "crate": "memchr",
+          "version": "2.8.3",
+          "registry_archive_sha256": "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98",
+          "archive_path": "memchr-2.8.3/COPYING"
+        }
+      },
+      "licenses/crates/memchr-2.8.3/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/memchr-2.8.3/LICENSE-MIT",
+        "bytes": 1081,
+        "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
+        "origin": {
+          "crate": "memchr",
+          "version": "2.8.3",
+          "registry_archive_sha256": "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98",
+          "archive_path": "memchr-2.8.3/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/serde_core-1.0.229/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/serde_core-1.0.229/LICENSE-APACHE",
+        "bytes": 9723,
+        "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+        "origin": {
+          "crate": "serde_core",
+          "version": "1.0.229",
+          "registry_archive_sha256": "67dca2c9c51e58a4791a4b1ed58308b39c64224d349a935ab5039aa360942a48",
+          "archive_path": "serde_core-1.0.229/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/serde_core-1.0.229/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/serde_core-1.0.229/LICENSE-MIT",
+        "bytes": 1023,
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+        "origin": {
+          "crate": "serde_core",
+          "version": "1.0.229",
+          "registry_archive_sha256": "67dca2c9c51e58a4791a4b1ed58308b39c64224d349a935ab5039aa360942a48",
+          "archive_path": "serde_core-1.0.229/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/serde_json-1.0.154/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/serde_json-1.0.154/LICENSE-APACHE",
+        "bytes": 9723,
+        "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+        "origin": {
+          "crate": "serde_json",
+          "version": "1.0.154",
+          "registry_archive_sha256": "e7e9cc8b1b85264074fbcc02a88680c4096b1e47df8f739dceb03bf482f04bd6",
+          "archive_path": "serde_json-1.0.154/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/serde_json-1.0.154/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/serde_json-1.0.154/LICENSE-MIT",
+        "bytes": 1023,
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+        "origin": {
+          "crate": "serde_json",
+          "version": "1.0.154",
+          "registry_archive_sha256": "e7e9cc8b1b85264074fbcc02a88680c4096b1e47df8f739dceb03bf482f04bd6",
+          "archive_path": "serde_json-1.0.154/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/sha2-0.10.9/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/sha2-0.10.9/LICENSE-APACHE",
+        "bytes": 10849,
+        "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5",
+        "origin": {
+          "crate": "sha2",
+          "version": "0.10.9",
+          "registry_archive_sha256": "a7507d819769d01a365ab707794a4084392c824f54a7a6a7862f8c3d0892b283",
+          "archive_path": "sha2-0.10.9/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/sha2-0.10.9/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/sha2-0.10.9/LICENSE-MIT",
+        "bytes": 1138,
+        "sha256": "b4eb00df6e2a4d22518fcaa6a2b4646f249b3a3c9814509b22bd2091f1392ff1",
+        "origin": {
+          "crate": "sha2",
+          "version": "0.10.9",
+          "registry_archive_sha256": "a7507d819769d01a365ab707794a4084392c824f54a7a6a7862f8c3d0892b283",
+          "archive_path": "sha2-0.10.9/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/typenum-1.20.1/LICENSE": {
+        "snapshot": "release/notices/licenses/crates/typenum-1.20.1/LICENSE",
+        "bytes": 17,
+        "sha256": "db11fec9946737df39ca3898d9cd8c10ec6f6c3a884a6802b0ad0b81b4e8f23a",
+        "origin": {
+          "crate": "typenum",
+          "version": "1.20.1",
+          "registry_archive_sha256": "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20",
+          "archive_path": "typenum-1.20.1/LICENSE"
+        }
+      },
+      "licenses/crates/typenum-1.20.1/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/typenum-1.20.1/LICENSE-APACHE",
+        "bytes": 10835,
+        "sha256": "516b24e051bf5630880ebbd55c40a25ce9552ebaf8970a53e8976eb70e522406",
+        "origin": {
+          "crate": "typenum",
+          "version": "1.20.1",
+          "registry_archive_sha256": "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20",
+          "archive_path": "typenum-1.20.1/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/typenum-1.20.1/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/typenum-1.20.1/LICENSE-MIT",
+        "bytes": 1083,
+        "sha256": "a825bd853ab71619a4923d7b4311221427848070ff44d990da39b0b274c1683f",
+        "origin": {
+          "crate": "typenum",
+          "version": "1.20.1",
+          "registry_archive_sha256": "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20",
+          "archive_path": "typenum-1.20.1/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/version_check-0.9.5/LICENSE-APACHE": {
+        "snapshot": "release/notices/licenses/crates/version_check-0.9.5/LICENSE-APACHE",
+        "bytes": 10847,
+        "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+        "origin": {
+          "crate": "version_check",
+          "version": "0.9.5",
+          "registry_archive_sha256": "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a",
+          "archive_path": "version_check-0.9.5/LICENSE-APACHE"
+        }
+      },
+      "licenses/crates/version_check-0.9.5/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/version_check-0.9.5/LICENSE-MIT",
+        "bytes": 1085,
+        "sha256": "b7e650f3fce5c53249d1cdc608b54df156a97edd636cf9d23498d0cfe7aec63e",
+        "origin": {
+          "crate": "version_check",
+          "version": "0.9.5",
+          "registry_archive_sha256": "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a",
+          "archive_path": "version_check-0.9.5/LICENSE-MIT"
+        }
+      },
+      "licenses/crates/zmij-1.0.23/LICENSE-MIT": {
+        "snapshot": "release/notices/licenses/crates/zmij-1.0.23/LICENSE-MIT",
+        "bytes": 1023,
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+        "origin": {
+          "crate": "zmij",
+          "version": "1.0.23",
+          "registry_archive_sha256": "29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b",
+          "archive_path": "zmij-1.0.23/LICENSE-MIT"
+        }
+      },
+      "licenses/rust-1.93.1/COPYRIGHT-library.html": {
+        "snapshot": "release/notices/licenses/rust-1.93.1/COPYRIGHT-library.html",
+        "bytes": 425661,
+        "sha256": "d93d65853736bde4e8649691233a98848ba709673873aeb39487bc1ca6ee292a",
+        "origin": {
+          "rust_version": "1.93.1",
+          "distribution": "rust-docs-1.93.1-x86_64-pc-windows-msvc",
+          "scope": "Official Rust distribution standard-library copyright/license aggregate; includes platform-conditional components",
+          "reference": "https://github.com/rust-lang/rust/blob/1.93.1/COPYRIGHT"
+        }
+      },
+      "licenses/unicode/LICENSE.txt": {
+        "snapshot": "release/notices/licenses/unicode/LICENSE.txt",
+        "bytes": 1995,
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+        "origin": {
+          "repository_path": "crates/lingose/third_party/unicode/LICENSE.txt"
+        }
+      },
+      "sources/LICENSE": {
+        "snapshot": "release/notices/sources/LICENSE",
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+        "origin": {
+          "repository_path": "crates/lingose/data/LICENSE"
+        }
+      },
+      "sources/SOURCES.json": {
+        "snapshot": "release/notices/sources/SOURCES.json",
+        "bytes": 4997,
+        "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f",
+        "origin": {
+          "repository_path": "crates/lingose/data/SOURCES.json"
+        }
+      },
+      "sources/UPSTREAM-SOURCES.md": {
+        "snapshot": "release/notices/sources/UPSTREAM-SOURCES.md",
+        "bytes": 1457,
+        "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228",
+        "origin": {
+          "repository_path": "crates/lingose/data/UPSTREAM-SOURCES.md"
+        }
+      }
+    },
+    "dependency_packages": {
+      "anstyle-1.0.14": {
+        "name": "anstyle",
+        "version": "1.0.14",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "940b3a0ca603d1eade50a4846a2afffd5ef57a9feac2c0e2ec2e14f9ead76000",
+        "license_files": [
+          "licenses/crates/anstyle-1.0.14/LICENSE-APACHE",
+          "licenses/crates/anstyle-1.0.14/LICENSE-MIT"
+        ]
+      },
+      "block-buffer-0.10.4": {
+        "name": "block-buffer",
+        "version": "0.10.4",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71",
+        "license_files": [
+          "licenses/crates/block-buffer-0.10.4/LICENSE-APACHE",
+          "licenses/crates/block-buffer-0.10.4/LICENSE-MIT"
+        ]
+      },
+      "cfg-if-1.0.5": {
+        "name": "cfg-if",
+        "version": "1.0.5",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600",
+        "license_files": [
+          "licenses/crates/cfg-if-1.0.5/LICENSE-APACHE",
+          "licenses/crates/cfg-if-1.0.5/LICENSE-MIT"
+        ]
+      },
+      "clap-4.6.7": {
+        "name": "clap",
+        "version": "4.6.7",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "aa8876b300ab35ba921adea3dfd70157a46249b33f95c9084ae5709785478946",
+        "license_files": [
+          "licenses/crates/clap-4.6.7/LICENSE-APACHE",
+          "licenses/crates/clap-4.6.7/LICENSE-MIT"
+        ]
+      },
+      "clap_builder-4.6.7": {
+        "name": "clap_builder",
+        "version": "4.6.7",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "ec0797fb7aeb1406c84efac526901f7ec3ead2124f946b494e72879d4b54704d",
+        "license_files": [
+          "licenses/crates/clap_builder-4.6.7/LICENSE-APACHE",
+          "licenses/crates/clap_builder-4.6.7/LICENSE-MIT"
+        ]
+      },
+      "clap_lex-1.1.1": {
+        "name": "clap_lex",
+        "version": "1.1.1",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "1c133bc6a41be0d194c306b5506d15e6feeea7b1d6604bd3f8310dfb2ca96486",
+        "license_files": [
+          "licenses/crates/clap_lex-1.1.1/LICENSE-APACHE",
+          "licenses/crates/clap_lex-1.1.1/LICENSE-MIT"
+        ]
+      },
+      "cpufeatures-0.2.17": {
+        "name": "cpufeatures",
+        "version": "0.2.17",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "59ed5838eebb26a2bb2e58f6d5b5316989ae9d08bab10e0e6d103e656d1b0280",
+        "license_files": [
+          "licenses/crates/cpufeatures-0.2.17/LICENSE-APACHE",
+          "licenses/crates/cpufeatures-0.2.17/LICENSE-MIT"
+        ]
+      },
+      "crypto-common-0.1.7": {
+        "name": "crypto-common",
+        "version": "0.1.7",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "78c8292055d1c1df0cce5d180393dc8cce0abec0a7102adb6c7b1eef6016d60a",
+        "license_files": [
+          "licenses/crates/crypto-common-0.1.7/LICENSE-APACHE",
+          "licenses/crates/crypto-common-0.1.7/LICENSE-MIT"
+        ]
+      },
+      "digest-0.10.7": {
+        "name": "digest",
+        "version": "0.10.7",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292",
+        "license_files": [
+          "licenses/crates/digest-0.10.7/LICENSE-APACHE",
+          "licenses/crates/digest-0.10.7/LICENSE-MIT"
+        ]
+      },
+      "generic-array-0.14.7": {
+        "name": "generic-array",
+        "version": "0.14.7",
+        "license": "MIT",
+        "registry_archive_sha256": "85649ca51fd72272d7821adaf274ad91c288277713d9c18820d8499a7ff69e9a",
+        "license_files": [
+          "licenses/crates/generic-array-0.14.7/LICENSE"
+        ]
+      },
+      "itoa-1.0.18": {
+        "name": "itoa",
+        "version": "1.0.18",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682",
+        "license_files": [
+          "licenses/crates/itoa-1.0.18/LICENSE-APACHE",
+          "licenses/crates/itoa-1.0.18/LICENSE-MIT"
+        ]
+      },
+      "libc-0.2.190": {
+        "name": "libc",
+        "version": "0.2.190",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78",
+        "license_files": [
+          "licenses/crates/libc-0.2.190/LICENSE-APACHE",
+          "licenses/crates/libc-0.2.190/LICENSE-MIT"
+        ]
+      },
+      "memchr-2.8.3": {
+        "name": "memchr",
+        "version": "2.8.3",
+        "license": "Unlicense OR MIT",
+        "registry_archive_sha256": "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98",
+        "license_files": [
+          "licenses/crates/memchr-2.8.3/COPYING",
+          "licenses/crates/memchr-2.8.3/LICENSE-MIT"
+        ]
+      },
+      "serde_core-1.0.229": {
+        "name": "serde_core",
+        "version": "1.0.229",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "67dca2c9c51e58a4791a4b1ed58308b39c64224d349a935ab5039aa360942a48",
+        "license_files": [
+          "licenses/crates/serde_core-1.0.229/LICENSE-APACHE",
+          "licenses/crates/serde_core-1.0.229/LICENSE-MIT"
+        ]
+      },
+      "serde_json-1.0.154": {
+        "name": "serde_json",
+        "version": "1.0.154",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "e7e9cc8b1b85264074fbcc02a88680c4096b1e47df8f739dceb03bf482f04bd6",
+        "license_files": [
+          "licenses/crates/serde_json-1.0.154/LICENSE-APACHE",
+          "licenses/crates/serde_json-1.0.154/LICENSE-MIT"
+        ]
+      },
+      "sha2-0.10.9": {
+        "name": "sha2",
+        "version": "0.10.9",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "a7507d819769d01a365ab707794a4084392c824f54a7a6a7862f8c3d0892b283",
+        "license_files": [
+          "licenses/crates/sha2-0.10.9/LICENSE-APACHE",
+          "licenses/crates/sha2-0.10.9/LICENSE-MIT"
+        ]
+      },
+      "typenum-1.20.1": {
+        "name": "typenum",
+        "version": "1.20.1",
+        "license": "MIT OR Apache-2.0",
+        "registry_archive_sha256": "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20",
+        "license_files": [
+          "licenses/crates/typenum-1.20.1/LICENSE",
+          "licenses/crates/typenum-1.20.1/LICENSE-APACHE",
+          "licenses/crates/typenum-1.20.1/LICENSE-MIT"
+        ]
+      },
+      "version_check-0.9.5": {
+        "name": "version_check",
+        "version": "0.9.5",
+        "license": "MIT/Apache-2.0",
+        "registry_archive_sha256": "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a",
+        "license_files": [
+          "licenses/crates/version_check-0.9.5/LICENSE-APACHE",
+          "licenses/crates/version_check-0.9.5/LICENSE-MIT"
+        ]
+      },
+      "zmij-1.0.23": {
+        "name": "zmij",
+        "version": "1.0.23",
+        "license": "MIT",
+        "registry_archive_sha256": "29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b",
+        "license_files": [
+          "licenses/crates/zmij-1.0.23/LICENSE-MIT"
+        ]
+      }
+    },
+    "unresolved_provenance": [
+      "Pinned Frequency List source supplies no independent license text",
+      "Some category lists lack per-label source/license records"
+    ],
+    "license_texts_supplied_is_not_redistribution_permission_clearance": true,
+    "original_whitespace_retained": true
+  },
   "local": {
     "python_tests": 99,
     "archive_guard_tests": 7,
@@ -16,26 +1764,64 @@
     "source_free_download_report": ".local/cli52-local-sourcefree/report.json",
     "cli_tests": 29,
     "build_smoke": 12,
-    "extracted_smoke": 16
+    "extracted_smoke": 16,
+    "build_report_record": {
+      "bytes": 17979,
+      "sha256": "4ad113a1313235567ce876e1a895298fb182c524863b6f88e6a54846ce7e2d4b"
+    },
+    "package_report_record": {
+      "bytes": 17456,
+      "sha256": "bbf072bad8140bbbc40fa26360f6e7c8277aa2463927234b5c7b5fa205b1b238"
+    },
+    "source_free_report_record": {
+      "bytes": 8255,
+      "sha256": "0c8b7ef1ec2ed67b9756b638ece32a67897fa434d2f03996a8933d25f1eaa89a"
+    },
+    "actual_ci_downloaded_windows": {
+      "path": ".local/cli52-local-downloaded/report.json",
+      "sha256": "266bfb963806eea79a3e07fa77a02edc7838dbe8187a540f082151c708612f88",
+      "smoke": 16,
+      "source_free_checkout": true
+    },
+    "actual_ci_downloaded_windows_report_record": {
+      "bytes": 8255,
+      "sha256": "266bfb963806eea79a3e07fa77a02edc7838dbe8187a540f082151c708612f88"
+    },
+    "native_smoke_environment": "Copied downloaded archive and verifier/notices into isolated temporary project outside checkout; no crates or Cargo/dictionary cache supplied"
   },
-  "notice_catalog": {
-    "file": "release/notices.json",
-    "sha256": "4135eadfda4808a04829f6f4f89aab893a99a814978a64f758fe286d200d66cd",
-    "text_files": 44,
-    "crates": 19,
-    "counts_by_target": {
-      "x86_64-pc-windows-msvc": 18,
-      "x86_64-unknown-linux-gnu": 18,
-      "aarch64-unknown-linux-gnu": 19,
-      "x86_64-apple-darwin": 18,
-      "aarch64-apple-darwin": 19
-    }
+  "protected_state": {
+    "core_library_tree_unchanged_from_base": true,
+    "cli_rust_source_and_tests_unchanged_from_base": true,
+    "cargo_manifests_lock_fixed_vectors_unicode_licenses_unchanged": true,
+    "adjacent_repositories_modified": false,
+    "historical_receipts_modified": false,
+    "readme_changes": [
+      "README.md",
+      "crates/lingose-cli/README.md"
+    ],
+    "rust_workspace_msrv_differential_performance_repeated": false,
+    "previous_evidence": "CLI5.1 workspace/MSRV and CLI4 full differential/performance retain their separate scope"
   },
-  "remote_ci": null,
+  "history": {
+    "initial_git_whitespace_check": "Original upstream CRLF/blank lines/HTML whitespace flagged; snapshots preserved byte-for-byte and only release/notices/** has -text -whitespace attributes. Owned code/docs still checked.",
+    "transient_service_download_failures": "Some raw artifact API requests failed transiently and succeeded on bounded retries; all17 digests and all5targets verified; none skipped",
+    "initial_local_archive_candidate": "Before committing, local package report revision was baseHEAD with working-tree inputs; final candidate identity is the actual committed CI revision above"
+  },
   "boundaries": [
     "No tag,GitHub Release or crates.io upload",
     "Windows VCRUNTIME140 prerequisite documented; no CRT linkage change",
     "Frequency List/category licensing gaps remain open for CLI6.1",
-    "Private CI artifact download is not published Release download acceptance"
+    "Private CI artifact download is not published Release download acceptance",
+    "CI artifacts retain14days/private authentication; clean ready-assets folder is local, not a public download",
+    "No Developer ID notarization or browser quarantine/Gatekeeper acceptance",
+    "Metadata OS/symbol minima are not older-OS runtime evidence",
+    "Final documentation-only commit skips redundantCI; verified artifact revision recorded separately"
+  ],
+  "sources": [
+    "https://github.com/englishword/lingose-rust/actions/runs/39101457134",
+    "https://github.com/rust-lang/rust/blob/1.93.1/COPYRIGHT",
+    "https://github.com/skywind3000/ECDICT/blob/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/LICENSE",
+    "https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist",
+    "https://github.com/actions/download-artifact/tree/9000827ccba6bdab643e8b6fd33ac0654aef8333"
   ]
 }

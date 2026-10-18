@@ -82,7 +82,7 @@
   - 配置 Windows x86_64 MSVC、Linux x86_64/aarch64 GNU、macOS x86_64/aarch64；核对当时可用 runner/工具链，以 locked release 构建 CLI，开发探针不进入发布构建。
   - 验收：工作流区分只构建与发布资产，标签规则为 v0.2.0；可在正式 Release 前验证产物。每个目标留构建日志及运行方式，原生/仿真 smoke 验证 word、annotate、stdin、JSON，不能把仅交叉编译描述为运行通过。
   - 结果与边界：[矩阵说明](../docs/cli-release-ci.md)、[完整收据](../docs/cli-release-ci-verification.json)及[实际成功运行](https://github.com/englishword/lingose-rust/actions/runs/39097471918)。指定 private 仓库 origin/admin/push/Actions 已核验，用户完成 workflow scope 授权并成功推送；构建提交为 `4e00367`。五目标 locked release 构建、共 147 项 CLI 测试（Windows/macOS 各 29、Linux 各 30）、60 项原生 smoke 及五份 CI artifact 上传通过；独立下载核对服务端 zip digest、全部报告/日志/binary 摘要及 57 项完全相同的输入。修复 CI 暴露的 NUL 设备名 fixture、macOS 非 UTF-8 路径测试/错误分类和 Windows example CRLF，保留首次失败与第二次输入差异证据。Windows workspace 131 项 Rust / 7 项文档测试、fmt/Clippy/doc、MSRV 1.85 的 29 项 CLI 测试通过。没有创建 tag/Release 或上传 crates.io；正式带许可安装包及下载后运行留 CLI5.2，运行环境支持声明限于实际 runner。
-- [ ] CLI5.2 验证安装包与下载后运行。
+- [x] CLI5.2 验证安装包与下载后运行。
   - 依赖：CLI5.1。生成以下资产，包含 lingose/lingose.exe、使用说明及所需许可/来源声明，并生成 SHA-256 清单。
     - `lingose-v0.2.0-windows-x86_64.zip`
     - `lingose-v0.2.0-linux-x86_64.tar.gz`
@@ -90,7 +90,7 @@
     - `lingose-v0.2.0-macos-x86_64.tar.gz`
     - `lingose-v0.2.0-macos-aarch64.tar.gz`
   - 验收：名称、目标架构、解包目录、可执行权限和校验和正确；脱离源码的解包运行有各目标证据。未运行目标单列，不扩大支持声明，不把 CI artifact 当作已发布 Release。
-  - 当前状态：[打包/下载流程](../docs/cli-binary-assets.md)、固定 notice 全文及 Python 打包器已准备；本地 Windows ZIP、架构/许可/校验和、独立无源码/cache 工程的 16 项 smoke、99 项 Python 回归及 actionlint 通过。五平台真实工作流尚待提交/推送后核验，本项保持未完成；不进入 CLI6。
+  - 结果与边界：[安装包说明](../docs/cli-binary-assets.md)、[完整收据](../docs/cli-binary-assets-verification.json)及[实际运行](https://github.com/englishword/lingose-rust/actions/runs/39101457134)。`d16c537` 上的五 build/package、五独立 downloaded-native 和汇总共 11 job 全通过；147 次 CLI 测试、35 次 archive guard、60 次构建 smoke、80 次实际下载后 smoke 通过。17 份 service zip 摘要、五安装包/SHA256SUMS、闭合载荷、架构/权限/许可及 57 构建/53 打包输入独立核验一致；本机下载 Windows 包另有 16 项无源码 smoke。就绪六文件在 `.local/cli52-dist-d16c537/`，原始证据在 `.local/cli52-ci-final/`；每包 46/48 文件，压缩约 4.36–4.48 MB。固定 44 项许可/来源原文，保留 Windows VCRUNTIME140 前提、Frequency List/分类许可缺口及 private/14 天 CI 访问边界。本地 99 项 Python、fmt/actionlint/语法/空白检查通过；无 Rust/数据/锁文件变化，未创建 tag/Release 或上传 crates.io。下一项为 CLI6.1。
 
 ## CLI6：crates.io 与 GitHub 正式发布
 

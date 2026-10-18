@@ -1,7 +1,10 @@
 # CLI5.2：五平台二进制安装包与下载验收
 
 本阶段生成带许可、说明和 SHA-256 的二进制候选，并通过独立原生 job 下载、解包、运行。
-目前本地 Windows 打包和独立验证已通过，实际五平台工作流尚待提交后核验；此时不算 CLI5.2 完成。
+**CLI5.2 已完成。** [实际运行 39101457134](https://github.com/englishword/lingose-rust/actions/runs/39101457134)
+在提交 `d16c53773c0fb7e6f21dd2d1544ddcdc549734f3` 上的 11 个 job 全部成功：
+五目标构建/打包、五目标独立下载后原生运行、最终汇总。17 份原始 CI artifact 已独立下载并核对服务端 digest，
+五个 archive 和总校验和再作逐字节交叉验证。
 结果见[机器可读收据](cli-binary-assets-verification.json)。
 
 ## 产物及内容
@@ -14,6 +17,19 @@
 - `lingose-v0.2.0-macos-x86_64.tar.gz`
 - `lingose-v0.2.0-macos-aarch64.tar.gz`
 - `SHA256SUMS`：按文件名排序的五行 SHA-256 清单。
+
+最终就绪目录为 `.local/cli52-dist-d16c537/`，严格只有以上六文件；原始 service zip 和全部证据另存
+`.local/cli52-ci-final/`，总核验收据为其中的 `verified.json`。
+
+| Archive | 压缩字节数 | SHA-256 |
+| --- | ---: | --- |
+| windows-x86_64.zip | 4,357,977 | `f0dc8665085b82ca4f9c9d1a051731bd9b7a462c38a7bbe1e7cb24d99fe2320b` |
+| linux-x86_64.tar.gz | 4,449,182 | `9743358ac7cdf10ef1419b3e9ef333e94defb13782eb23942eb1601fedb377d3` |
+| linux-aarch64.tar.gz | 4,433,320 | `a3b61e591a4e4e6a0a79d370d64d25a419673d6f1768919056192ca2c0f47530` |
+| macos-x86_64.tar.gz | 4,421,134 | `c3f1eb2f68acca1eea625b28241714c34b09b33466237a16540ec3e3acf5a19e` |
+| macos-aarch64.tar.gz | 4,482,620 | `085c2218d8086cd41e9ad1cc5b5c13ddc1326ce1fef6519cd1a6e8d333600008` |
+
+表中省略所有文件名共有的 `lingose-v0.2.0-` 前缀。
 
 每包只有一个与文件名主体相同的顶层目录，包含 `lingose[.exe]`、README、LICENSE、SOURCES、
 `manifest.json` 及所需来源/许可全文。Windows/x86 Linux/macOS 共 46 文件，两个 aarch64 包共 48 文件；
@@ -65,13 +81,22 @@
 [test_cli_binary_package.py](../tests/test_cli_binary_package.py)。实际执行仍使用 OS 系统库；没有声称禁网、
 干净 Windows 无运行库也能运行，或浏览器下载后的 macOS Gatekeeper 已通过。
 
-## 当前验证及复跑
+## 验证及复跑
 
 本地已通过 99 项 Python 测试、actionlint 1.7.12、Python 语法、fmt 和空白检查。
 Windows release 构建的 29 项 CLI 测试和 12 项构建 smoke 通过；ZIP 重复编码一致，
 另把验证器/notice/ZIP 复制到 checkout 外、无 crates/cache 的工程，16 项解包后 smoke 全部通过。
 记录位于 `.local/cli52-build-final-local/`、`.local/cli52-package-final-local/`、
-`.local/cli52-local-sourcefree/`。本轮未改 Rust 源码、核心数据、固定向量或 Cargo manifests/lock，
+`.local/cli52-local-sourcefree/`。五平台 CI 共通过 147 次 CLI 测试执行、35 次 archive guard、
+60 次构建 smoke 和 **80 次实际下载后原生 smoke**；下载 runner 都确认无 crates/.local。
+17 份原始 service zip、五份 build/package/download 报告、日志/binary 摘要、57 项构建输入及
+53 项打包输入已独立比对一致。Windows/macOS 每目标 29 项 CLI 测试，Linux 各 30；
+每个实际下载目标均完成 16 项 smoke。另将 CI 下载的 Windows ZIP 放入本机 checkout 外独立工程，
+再次通过 16 项 smoke，记录 `.local/cli52-local-downloaded/report.json`。
+
+初次 Git 空白检查指出上游许可原有 CRLF/空白，已用仅作用于原文快照的属性保留；没有改写原文。
+部分原始 artifact API 下载出现瞬时请求失败，重试后全部通过服务端摘要；未跳过任何失败目标。
+本轮未改 Rust 源码、核心数据、固定向量或 Cargo manifests/lock，
 未重跑 CLI4 的全量差分、性能或注册表验收。
 
 可手动触发非发布验证，下载最终候选：
@@ -85,3 +110,5 @@ gh run download RUN_ID --repo englishword/lingose-rust --name cli52-assets-COMMI
 当前仓库仍为 private，CI artifacts 保留 14 天并需要认证访问；本地证据应另行保留。
 CLI5.2 不创建 tag、GitHub Release 或 crates.io 上传。正式 Release 上传、公开可访问性、
 注册表安装和正式 Release 下载仍属于 CLI6，不能以本轮 CI 下载替代。
+最后 docs/plan/handoff 提交不改变构建或打包输入，使用 `[skip ci]` 避免重复矩阵；
+本页记录的 `d16c537` 是候选构建身份。后续输入/提交变化时重新核定 archive 身份，不沿用本页 SHA。
