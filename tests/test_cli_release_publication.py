@@ -67,7 +67,7 @@ class PublicationTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, "asset set"):
                 publish.uploaded_assets({"assets": [asset, asset]}, {"asset": expected}, Path(temporary))
 
-    def scenario(self, *, visibility="public", tag_sha=SHA, existing=False, upload_failure=False):
+    def scenario(self, *, visibility="private", tag_sha=SHA, existing=False, upload_failure=False):
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary)
             notes = directory / "notes.md"
@@ -105,8 +105,8 @@ class PublicationTests(unittest.TestCase):
                     self.assertNotIn("--clobber", command.call_args.args[0])
             return calls, report, saved, error
 
-    def test_private_repository_wrong_tag_or_existing_release_never_mutates(self):
-        for change, message in (({"visibility": "private"}, "Public distribution"),
+    def test_wrong_visibility_tag_or_existing_release_never_mutates(self):
+        for change, message in (({"visibility": "public"}, "visibility differs"),
                                 ({"tag_sha": "b" * 40}, "tag commit"),
                                 ({"existing": True}, "already exists")):
             with self.subTest(change=change):

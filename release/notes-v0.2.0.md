@@ -3,6 +3,9 @@
 Offline English word queries and IPS text annotation for the
 [IPSM Approach](https://lingose.com/), by ZHAN Xianjue.
 
+This Release is published in a private repository. Viewing the Release and
+downloading its assets require authentication and repository access.
+
 - New `lingose-cli` package, executable `lingose`: `word WORD [--json]` and
   `annotate` with text, UTF-8 files, stdin, `--skip-top`, JSON and output files.
 - The library and CLI include the dictionary. Runtime needs no Python, Node,

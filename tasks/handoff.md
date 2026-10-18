@@ -2,17 +2,17 @@
 
 ## 当前恢复点
 
-- 活动计划：[todo_CLI.md](todo_CLI.md)。**CLI6.4 进行中，不能勾选完成。** CLI6.3 已完成；本轮仅推进 CLI6.4。
+- 活动计划：[todo_CLI.md](todo_CLI.md)。**CLI6.4 进行中，不能勾选完成。** 用户已明确“目前以 private 发布 Release”；本轮继续完成正式发布，保持仓库 private，不再等待公开源码/历史授权。
 - 从干净的 `main / ecbc7ce` 恢复；已准备 `.github/workflows/cli-release.yml`、`tools/publish_cli_release.py`、发布保护测试、`release/README.md`、`release/notes-v0.2.0.md`。当前提交以 Git 历史为准。
-- [具体说明](../docs/cli-github-release.md)。仅指定仓库 v0.2.0 tag push 能发布，仅发布 job 有 contents:write；远端 public 与 tag SHA 检查先于任何 Release 写入。上传草稿后核对六个实际下载文件才正式发布；已有 Release 或中断须先检查远端，不覆盖、不自动重试。
+- [具体说明](../docs/cli-github-release.md)。仅指定仓库 v0.2.0 tag push 能发布，仅发布 job 有 contents:write；远端 **private** 与 tag SHA 检查先于任何 Release 写入。上传草稿后核对六个实际下载文件才正式发布；已有 Release 或中断须先检查远端，不覆盖、不自动重试。
 - 准备提交 `1b7e62a7a03419586a09eb8b8cddf8396b91d518` 已推至 origin/main；非发布 run `39113070606` 五构建/五独立下载/汇总 11 job 全成功，发布 job 跳过。147 次 CLI 测试、35 次归档/35 次发布保护测试、60 次构建/80 次下载原生 smoke 通过。全部 17 份 service ZIP 摘要、实际日志/二进制、57 build/54 packaging 输入及五包内许可/说明/架构/权限身份通过。
 - 本地 7 发布测试、7 归档测试、actionlint 1.7.12、Python 编译、fmt/空白检查与独立只读审查通过。[新收据](../docs/cli-github-release-verification.json)，原始证据 `.local/cli64-ci-39113070606/`，核验脚本 `.local/cli64-preparation/collect.py`。旧 CLI5.2 run/摘要不代表本轮身份。
 
 ## 精确下一步
 
-1. 五包与 SHA256SUMS 已可审查：`.local/cli64-ci-39113070606/cli52-assets-1b7e62a7a03419586a09eb8b8cddf8396b91d518/`。各包摘要见新收据/说明，未上传正式 Release。
-2. 仓库 `https://github.com/englishword/lingose-rust.git` 实时仍 private；账号 Prefee 有 admin/push/maintain，v0.2.0 tag/Release 均 404。**等待用户确认是否公开该仓库及全部源码/历史，或另行指定公开分发方式。** 不得擅自改可见性或以 private Release 冒充公开下载。
-3. 可见性条件解决后先刷新远端，以候选提交 **1b7e62a** 建立 v0.2.0 tag（不是后续说明提交的 HEAD），运行正式 tag Actions。重新核对最终构建身份、与本轮候选差异、五包/SHA256SUMS、版本说明、实际上传与远端下载；失败先检查远端再恢复。
+1. 本轮从干净 `main / 8a2dc48` 恢复，已实时确认 origin/main 同提交、仓库 private/admin、tag/Release 均 404。更新发布器精确允许 private，拒绝其他可见性，并更新测试/workflow/说明。本地 7+7 测试/actionlint/fmt/语法/空白通过；提交该实现后 **v0.2.0 指向新提交，不再使用 1b7e62a**。
+2. 推送正式 tag 触发五目标 Actions，记录准确 commit/run，候选/全部原生运行/草稿上传/远端下载核验均通过后才标记完成。旧非发布候选保留为历史，不覆盖旧收据。
+3. 用户已授权 private Release；仅认证且有仓库权限的下载作为本项验收。仓库可见性不改，无匿名公开下载声明。失败或中断先检查远端实际状态，保留所有尝试记录，不重复创建/覆盖已有 Release。
 4. 完成后更新计划/说明/收据/交接并聚焦提交，交接 CLI6.5；本轮不执行新 cache 注册表名称安装验收。
 
 ## 已发布版本：禁止重复上传

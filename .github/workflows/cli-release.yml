@@ -195,7 +195,7 @@ jobs:
           name: cli52-assets-${{ github.sha }}
           path: release-candidate
           digest-mismatch: error
-      - name: Verify tag and public visibility, upload draft, download and publish
+      - name: Verify tag and authorized private visibility, upload draft, download and publish
         env:
           GH_TOKEN: ${{ github.token }}
         run: python tools/publish_cli_release.py --assets release-candidate --revision ${{ github.sha }} --notes release/notes-v0.2.0.md --output release-download --report release-evidence/publication.json

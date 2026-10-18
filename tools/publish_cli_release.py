@@ -18,6 +18,7 @@ import package_cli_binary as package
 
 REPOSITORY = "englishword/lingose-rust"
 TAG = "v0.2.0"
+EXPECTED_VISIBILITY = "private"  # User explicitly authorized private Release publication.
 require = package.require
 
 
@@ -78,8 +79,8 @@ def publish(args, report, save):
     notes = args.notes.read_text(encoding="utf-8")
     require("Lingose 0.2.0" in notes, "Versioned release notes required")
     repository = api(f"repos/{REPOSITORY}")
-    require(repository["full_name"] == REPOSITORY and repository["visibility"] == "public",
-            "Public distribution requires explicitly authorized public repository visibility")
+    require(repository["full_name"] == REPOSITORY and repository["visibility"] == EXPECTED_VISIBILITY,
+            "Repository visibility differs from the authorized private Release scope")
     ref = api(f"repos/{REPOSITORY}/git/ref/tags/{TAG}")["object"]
     if ref["type"] == "tag":
         ref = api(f"repos/{REPOSITORY}/git/tags/{ref['sha']}")["object"]
