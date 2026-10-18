@@ -1,8 +1,14 @@
 {
   "phase": "CLI5.1",
-  "status": "local_ready_remote_blocked_missing_workflow_scope",
-  "verified_at": "2026-10-18T04:24:24.204391+00:00",
+  "status": "passed",
+  "verified_at": "2026-10-18T04:37:23.762065+00:00",
   "base_revision": "1ca5d259b706084275a930b08d12cd1456fdcd14",
+  "verified_revision": "4e00367a02ce7c8a317b209ac8de4dcc0620aa16",
+  "implementation_commits": [
+    "399e59ec1704543e368d368ae91b8bf1d9406ac8",
+    "8b9579a524abebe3176c133795edff8da8915caf",
+    "4e00367a02ce7c8a317b209ac8de4dcc0620aa16"
+  ],
   "repository": {
     "name": "englishword/lingose-rust",
     "visibility": "private",
@@ -14,12 +20,15 @@
     "initial_branches": [],
     "initial_tags": [],
     "remote": "https://github.com/englishword/lingose-rust.git",
-    "oauth_scopes": [
+    "effective_oauth_scopes": [
       "admin:public_key",
       "gist",
       "read:org",
-      "repo"
-    ]
+      "repo",
+      "workflow"
+    ],
+    "workflow_scope_verified_after_user_device_authorization": true,
+    "visibility_and_actions_settings_changed": false
   },
   "workflow": {
     "file": ".github/workflows/cli-release.yml",
@@ -33,22 +42,24 @@
     "ci_artifact_retention_days": 14
   },
   "local": {
-    "actionlint_version": "1.7.12",
-    "actionlint_archive_sha256": "6e7241b51e6817ea6a047693d8e6fed13b31819c9a0dd6c5a726e1592d22f6e9",
-    "actionlint_passed": true,
-    "python_compile_passed": true,
-    "diff_check_passed": true,
-    "report_path": ".local/cli51-windows-final/report.json",
-    "report_sha256": "c292e2c94a5ba9fa29fb94f9ca313d093b997a42341272b42b109f33b5a3b939",
     "status": "passed",
-    "cli_tests": 29,
+    "report_path": ".local/cli51-windows-identity/report.json",
+    "report": {
+      "bytes": 17979,
+      "sha256": "205fc4ca5757b23048cfe290a8c5b38e20e601e8e1415d3d29cf9c4d83512acf"
+    },
+    "release_cli_tests": 29,
     "smoke_cases": 12,
     "binary": {
       "file": "candidate/lingose.exe",
       "bytes": 11287552,
-      "sha256": "e8dd7e1044dff01400282a9110b2a45824d7af387b0ccac5890aed72d2db87c2"
+      "sha256": "aea81a7c3dd682d84478ffc3dac6164acca6d659123624bb85596dc76f9408bf"
     },
-    "build_inputs": {
+    "inputs": {
+      ".gitattributes": {
+        "bytes": 4487,
+        "sha256": "075f47b0c03f8e023db9e03b64890c98af1a46e6083786f14f86d9d47599a691"
+      },
       ".github/workflows/cli-release.yml": {
         "bytes": 2007,
         "sha256": "a13e05da094a02eb7c26b55adb971fe918869685838e9aeb36098b2bfae34554"
@@ -78,12 +89,12 @@
         "sha256": "e3a051a235428b0a89c4be52e6c60f85326d33d508673f7db4397419dc4bd6b3"
       },
       "crates/lingose-cli/src/main.rs": {
-        "bytes": 12480,
-        "sha256": "b4a793a06b79443b9a185acd9fc35a22d50f31fde8c1922b0615786f4037d953"
+        "bytes": 12647,
+        "sha256": "201a048f02a7627110ccdd5b0c2ab70845551aca8f35281d2f1f70585f17d624"
       },
       "crates/lingose-cli/tests/annotate.rs": {
-        "bytes": 23174,
-        "sha256": "c4aea542d4ca130aa08fe53925f631567f561d934e066f81766098130356c742"
+        "bytes": 23816,
+        "sha256": "9f33d0b0fb89ff0477f424202a488b8d55e5e40e08ba1a7ddc79cd931ed5f660"
       },
       "crates/lingose-cli/tests/word.rs": {
         "bytes": 5951,
@@ -270,15 +281,103 @@
         "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
       },
       "tools/check_cli_release.py": {
-        "bytes": 10378,
-        "sha256": "51b166b9d5d20117159b3ffca26154e0bb012ecb7afdb3533bb6c0ab09ae74f0"
+        "bytes": 10396,
+        "sha256": "c1760a84a65fd76e37efb4891a25407830f1a0bd6933fb8cf8676f767549168e"
       }
     },
-    "initial_failure": {
-      "path": ".local/cli51-windows-local/report.json",
-      "reason": "Versioned rustup alias absent; sandbox denied rustup tmp write. Retried using installed stable alias verified as Rust1.93.1."
+    "workspace": {
+      "commands": [
+        {
+          "argv": [
+            "cargo",
+            "fmt",
+            "--all",
+            "--",
+            "--check"
+          ],
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "cargo",
+            "clippy",
+            "--workspace",
+            "--all-targets",
+            "--all-features",
+            "--locked",
+            "--",
+            "-D",
+            "warnings"
+          ],
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "cargo",
+            "test",
+            "--workspace",
+            "--all-features",
+            "--locked"
+          ],
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "cargo",
+            "test",
+            "--workspace",
+            "--doc",
+            "--all-features",
+            "--locked"
+          ],
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "cargo",
+            "doc",
+            "--workspace",
+            "--no-deps",
+            "--all-features",
+            "--locked"
+          ],
+          "exit_code": 0
+        }
+      ],
+      "log_directory": ".local/cli51-checks",
+      "rust_tests_passed": 131,
+      "rust_tests_ignored": 1,
+      "doc_tests_passed": 7,
+      "report": {
+        "bytes": 841,
+        "sha256": "c01f4ffedaf787e2c39675950cfcfa3cb88f0158e589e039e729fec69f40ce6a"
+      }
     },
-    "cargo_fmt_passed": true,
+    "msrv": {
+      "version": "1.85.0",
+      "host": "x86_64-pc-windows-msvc",
+      "command": [
+        "rustup",
+        "run",
+        "1.85.0-x86_64-pc-windows-msvc",
+        "cargo",
+        "test",
+        "-p",
+        "lingose-cli",
+        "--all-features",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "cli_tests_passed": 29,
+      "evidence": "Successful command and full test output captured in session tool results"
+    },
+    "actionlint": {
+      "version": "1.7.12",
+      "archive_sha256": "6e7241b51e6817ea6a047693d8e6fed13b31819c9a0dd6c5a726e1592d22f6e9",
+      "exit_code": 0
+    },
+    "python_compile_passed": true,
+    "diff_check_passed": true,
     "wrong_target_guard": {
       "report_path": ".local/cli51-wrong-target/report.json",
       "requested_target": "aarch64-unknown-linux-gnu",
@@ -293,52 +392,1069 @@
     }
   },
   "remote_ci": {
-    "status": "not_run",
-    "branches": [],
-    "runs": [],
-    "attempts": [
-      {
-        "attempt": 1,
-        "operation": "git push --set-upstream origin main",
-        "result": "HTTPS RPC failed; remote branches and runs independently confirmed empty"
+    "run_id": 39097471918,
+    "url": "https://github.com/englishword/lingose-rust/actions/runs/39097471918",
+    "status": "completed",
+    "conclusion": "success",
+    "revision": "4e00367a02ce7c8a317b209ac8de4dcc0620aa16",
+    "execution": "native on all five targets",
+    "cli_tests_total": 147,
+    "smoke_total": 60,
+    "all_57_input_files_identical_across_targets_and_local": true,
+    "ci_artifacts_uploaded": 5,
+    "ci_artifacts_downloaded_and_digest_verified": 5,
+    "directory": ".local/cli51-ci-identity",
+    "download_verification": {
+      "bytes": 29188,
+      "sha256": "16a6d7a51c39c0798c1d40b7a892db6e1477eb703febd0535fc9e03a6b9c73f0"
+    },
+    "api_responses": {
+      "run.json": {
+        "bytes": 13871,
+        "sha256": "22609fdb1a35c014dc46fe6fc37f1e134412db4fcf0c43b92b551e62afcd829e"
       },
-      {
-        "attempt": 2,
-        "operation": "same push, command-scoped http.version=HTTP/1.1 and http.postBuffer=52428800",
-        "result": "remote rejected OAuth App workflow write without workflow scope"
+      "jobs.json": {
+        "bytes": 17396,
+        "sha256": "dbea4eeff632233226494987a78b599ebef196a1a576ed6dc9acb3611b2d4730"
       },
-      {
-        "attempt": 3,
-        "operation": "push after user confirmed authorization",
-        "result": "HTTPS connection reset; subsequent branches and runs empty"
+      "artifacts.json": {
+        "bytes": 4594,
+        "sha256": "d368b2145fffd6c4316bd5bb04112e0caaa6d33c2ecc9c535a00eb97ef8ba636"
       }
-    ],
-    "blocker": "Current OAuth login lacks workflow scope despite repository admin/push permissions",
-    "recovery": "User runs gh auth refresh -h github.com -s workflow and completes interactive authorization; recheck remote state, push main, collect five native build/test/smoke/artifact results",
-    "ci_artifacts_uploaded": false,
-    "release_published": false,
-    "authorization_followup": {
-      "user_confirmed": true,
-      "effective_oauth_scopes": [
+    },
+    "targets": [
+      {
+        "target": "aarch64-apple-darwin",
+        "status": "passed",
+        "platform": "macOS-15.7.9-arm64-arm-64bit",
+        "machine": "arm64",
+        "runner": {
+          "RUNNER_OS": "macOS",
+          "RUNNER_ARCH": "ARM64",
+          "ImageOS": "macos15",
+          "ImageVersion": "20260907.0337.1",
+          "GITHUB_SHA": "4e00367a02ce7c8a317b209ac8de4dcc0620aa16",
+          "GITHUB_RUN_ID": "39097471918",
+          "GITHUB_RUN_ATTEMPT": "1"
+        },
+        "runtime": {
+          "mode": "native",
+          "isolated_cwd": true,
+          "copied_files": [
+            "lingose"
+          ],
+          "environment_keys": [
+            "HOME",
+            "PATH",
+            "TEMP",
+            "TMP",
+            "TMPDIR"
+          ],
+          "network_disabled": false,
+          "note": "Only the binary is copied; OS runtime libraries remain available. No network sandbox is asserted."
+        },
+        "cli_tests": 29,
+        "smoke_cases": 12,
+        "binary": {
+          "file": "candidate/lingose",
+          "bytes": 11623808,
+          "sha256": "2d87ee8c88a6f6b3f3bcddb9ed07fff5c03bee1112c001988eb569195d72e368"
+        },
+        "artifact": {
+          "id": 12124709200,
+          "name": "cli51-aarch64-apple-darwin-4e00367a02ce7c8a317b209ac8de4dcc0620aa16",
+          "size_in_bytes": 5114451,
+          "digest": "sha256:fbdfb4dcd021721686e8a3baca146531b0570dcce43254ffadca12b6fa9ed7d2",
+          "expired": false
+        },
+        "report": {
+          "path": ".local/cli51-ci-identity/cli51-aarch64-apple-darwin-4e00367a02ce7c8a317b209ac8de4dcc0620aa16/report.json",
+          "bytes": 18013,
+          "sha256": "a249404030586844d6ee7ca783e88609c42c2033d8bf1e0c683ac1dbe8566352"
+        },
+        "logs": [
+          {
+            "label": "revision",
+            "argv": [
+              "git",
+              "rev-parse",
+              "HEAD"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "revision.stdout.txt",
+              "bytes": 41,
+              "sha256": "ab4339842d30ab5cc3a8a2b78817ce7304f82acb1a1e07ad13c7001495a8ad0d"
+            },
+            "stderr": {
+              "file": "revision.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "rustc",
+            "argv": [
+              "rustc",
+              "-vV"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "rustc.stdout.txt",
+              "bytes": 192,
+              "sha256": "a09c3fc26c9b56a9da361644dc642164492d8ac440d6330c74c7c989bd0d2099"
+            },
+            "stderr": {
+              "file": "rustc.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "cargo",
+            "argv": [
+              "cargo",
+              "-V"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "cargo.stdout.txt",
+              "bytes": 36,
+              "sha256": "57d704d9ad73ec7cc1b1a79aed6703333615865be6e3dc1ce269ea4ca7068227"
+            },
+            "stderr": {
+              "file": "cargo.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "build",
+            "argv": [
+              "cargo",
+              "build",
+              "-p",
+              "lingose-cli",
+              "--release",
+              "--locked",
+              "--all-features",
+              "--target",
+              "aarch64-apple-darwin"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "build.stdout.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "stderr": {
+              "file": "build.stderr.txt",
+              "bytes": 1439,
+              "sha256": "70396dcb9f784e507353d8f340270ac515bc73b6f59658b2a0f355f384a52518"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "tests",
+            "argv": [
+              "cargo",
+              "test",
+              "-p",
+              "lingose-cli",
+              "--release",
+              "--locked",
+              "--all-features",
+              "--target",
+              "aarch64-apple-darwin"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "tests.stdout.txt",
+              "bytes": 2258,
+              "sha256": "84cc597e18dc2758eefb08925e17567d1ab83580947f93a520d645858b469f03"
+            },
+            "stderr": {
+              "file": "tests.stderr.txt",
+              "bytes": 455,
+              "sha256": "594521e022afc64e2f7a4bc479bb857b0d3b5178bb8a0a7c334770645c9d8c9c"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "metadata",
+            "argv": [
+              "cargo",
+              "metadata",
+              "--no-deps",
+              "--format-version",
+              "1",
+              "--locked"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "metadata.stdout.txt",
+              "bytes": 5647,
+              "sha256": "6839ae9c4546a8a296f4762ba0c005eae58a6f6d0ef48165099da366889707c3"
+            },
+            "stderr": {
+              "file": "metadata.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          }
+        ],
+        "inputs_match": true,
+        "download_digest_verified": true
+      },
+      {
+        "target": "aarch64-unknown-linux-gnu",
+        "status": "passed",
+        "platform": "Linux-6.17.0-1022-azure-aarch64-with-glibc2.39",
+        "machine": "aarch64",
+        "runner": {
+          "RUNNER_OS": "Linux",
+          "RUNNER_ARCH": "ARM64",
+          "ImageOS": "ubuntu24-arm64",
+          "ImageVersion": "20261012.149.1",
+          "GITHUB_SHA": "4e00367a02ce7c8a317b209ac8de4dcc0620aa16",
+          "GITHUB_RUN_ID": "39097471918",
+          "GITHUB_RUN_ATTEMPT": "1"
+        },
+        "runtime": {
+          "mode": "native",
+          "isolated_cwd": true,
+          "copied_files": [
+            "lingose"
+          ],
+          "environment_keys": [
+            "HOME",
+            "PATH",
+            "TEMP",
+            "TMP",
+            "TMPDIR"
+          ],
+          "network_disabled": false,
+          "note": "Only the binary is copied; OS runtime libraries remain available. No network sandbox is asserted."
+        },
+        "cli_tests": 30,
+        "smoke_cases": 12,
+        "binary": {
+          "file": "candidate/lingose",
+          "bytes": 11795048,
+          "sha256": "6f2b9eb0d930e3940ebc00e84e195cb86ef061640c291cb9e645b0ba99bb1a68"
+        },
+        "artifact": {
+          "id": 12125196449,
+          "name": "cli51-aarch64-unknown-linux-gnu-4e00367a02ce7c8a317b209ac8de4dcc0620aa16",
+          "size_in_bytes": 5073089,
+          "digest": "sha256:4d8028dffaaf5751bfe34413351af94cb5f6e848d26f6074c6fdf799ecba684f",
+          "expired": false
+        },
+        "report": {
+          "path": ".local/cli51-ci-identity/cli51-aarch64-unknown-linux-gnu-4e00367a02ce7c8a317b209ac8de4dcc0620aa16/report.json",
+          "bytes": 18054,
+          "sha256": "e5b1849f96f7d4f258f212d8bb4bba80daa61c17762f142d696500d58f846e3d"
+        },
+        "logs": [
+          {
+            "label": "revision",
+            "argv": [
+              "git",
+              "rev-parse",
+              "HEAD"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "revision.stdout.txt",
+              "bytes": 41,
+              "sha256": "ab4339842d30ab5cc3a8a2b78817ce7304f82acb1a1e07ad13c7001495a8ad0d"
+            },
+            "stderr": {
+              "file": "revision.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "rustc",
+            "argv": [
+              "rustc",
+              "-vV"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "rustc.stdout.txt",
+              "bytes": 197,
+              "sha256": "a20a14f978c7adba215e1dc7337e438197b29baa71ba4b2ddfa0ee8a83e84bd0"
+            },
+            "stderr": {
+              "file": "rustc.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "cargo",
+            "argv": [
+              "cargo",
+              "-V"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "cargo.stdout.txt",
+              "bytes": 36,
+              "sha256": "57d704d9ad73ec7cc1b1a79aed6703333615865be6e3dc1ce269ea4ca7068227"
+            },
+            "stderr": {
+              "file": "cargo.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "build",
+            "argv": [
+              "cargo",
+              "build",
+              "-p",
+              "lingose-cli",
+              "--release",
+              "--locked",
+              "--all-features",
+              "--target",
+              "aarch64-unknown-linux-gnu"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "build.stdout.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "stderr": {
+              "file": "build.stderr.txt",
+              "bytes": 1438,
+              "sha256": "4a3e2e0167ea0ea26130d6d33799b6b09b6625a0df6a9dac935ea714f170abe7"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "tests",
+            "argv": [
+              "cargo",
+              "test",
+              "-p",
+              "lingose-cli",
+              "--release",
+              "--locked",
+              "--all-features",
+              "--target",
+              "aarch64-unknown-linux-gnu"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "tests.stdout.txt",
+              "bytes": 2317,
+              "sha256": "9248b5150511394ed1cc5d7dfda8f22e1c344c6902bb53d12dccac9bb7edb34a"
+            },
+            "stderr": {
+              "file": "tests.stderr.txt",
+              "bytes": 469,
+              "sha256": "15486ff9d64b11936014e4d1c81c4cad07752a30d0de07d19c33bf3eb3c1e183"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "metadata",
+            "argv": [
+              "cargo",
+              "metadata",
+              "--no-deps",
+              "--format-version",
+              "1",
+              "--locked"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "metadata.stdout.txt",
+              "bytes": 5623,
+              "sha256": "9ca39577d5922ac7a8b8c91b1ed243469e651f5e171c43e980f90d5c17bdb726"
+            },
+            "stderr": {
+              "file": "metadata.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          }
+        ],
+        "inputs_match": true,
+        "download_digest_verified": true
+      },
+      {
+        "target": "x86_64-apple-darwin",
+        "status": "passed",
+        "platform": "macOS-15.7.9-x86_64-i386-64bit",
+        "machine": "x86_64",
+        "runner": {
+          "RUNNER_OS": "macOS",
+          "RUNNER_ARCH": "X64",
+          "ImageOS": "macos15",
+          "ImageVersion": "20260824.0482.1",
+          "GITHUB_SHA": "4e00367a02ce7c8a317b209ac8de4dcc0620aa16",
+          "GITHUB_RUN_ID": "39097471918",
+          "GITHUB_RUN_ATTEMPT": "1"
+        },
+        "runtime": {
+          "mode": "native",
+          "isolated_cwd": true,
+          "copied_files": [
+            "lingose"
+          ],
+          "environment_keys": [
+            "HOME",
+            "PATH",
+            "TEMP",
+            "TMP",
+            "TMPDIR"
+          ],
+          "network_disabled": false,
+          "note": "Only the binary is copied; OS runtime libraries remain available. No network sandbox is asserted."
+        },
+        "cli_tests": 29,
+        "smoke_cases": 12,
+        "binary": {
+          "file": "candidate/lingose",
+          "bytes": 11574720,
+          "sha256": "5e51dd5d60a84365d41de88210efded5ed81f13fd3fa24652429d4ba620577d1"
+        },
+        "artifact": {
+          "id": 12125416679,
+          "name": "cli51-x86_64-apple-darwin-4e00367a02ce7c8a317b209ac8de4dcc0620aa16",
+          "size_in_bytes": 5048479,
+          "digest": "sha256:03de558cfd701bcc46b8533395403f1dbd06ef8a29794ab58c18f781507e0041",
+          "expired": false
+        },
+        "report": {
+          "path": ".local/cli51-ci-identity/cli51-x86_64-apple-darwin-4e00367a02ce7c8a317b209ac8de4dcc0620aa16/report.json",
+          "bytes": 18011,
+          "sha256": "7d78447f22b218218f7dddcb48cfc07cdc1bd334495f64ef9f00b6522b73fc44"
+        },
+        "logs": [
+          {
+            "label": "revision",
+            "argv": [
+              "git",
+              "rev-parse",
+              "HEAD"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "revision.stdout.txt",
+              "bytes": 41,
+              "sha256": "ab4339842d30ab5cc3a8a2b78817ce7304f82acb1a1e07ad13c7001495a8ad0d"
+            },
+            "stderr": {
+              "file": "revision.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "rustc",
+            "argv": [
+              "rustc",
+              "-vV"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "rustc.stdout.txt",
+              "bytes": 191,
+              "sha256": "2f6bce7dd922a4b544f8eb259ce46af2c6da69397f420e634b9834bd064bfb0e"
+            },
+            "stderr": {
+              "file": "rustc.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "cargo",
+            "argv": [
+              "cargo",
+              "-V"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "cargo.stdout.txt",
+              "bytes": 36,
+              "sha256": "57d704d9ad73ec7cc1b1a79aed6703333615865be6e3dc1ce269ea4ca7068227"
+            },
+            "stderr": {
+              "file": "cargo.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "build",
+            "argv": [
+              "cargo",
+              "build",
+              "-p",
+              "lingose-cli",
+              "--release",
+              "--locked",
+              "--all-features",
+              "--target",
+              "x86_64-apple-darwin"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "build.stdout.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "stderr": {
+              "file": "build.stderr.txt",
+              "bytes": 1386,
+              "sha256": "3b8ccff018617b94e91180e3c6eec2ef9d4f128b34f201609b64fb2b61857b9a"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "tests",
+            "argv": [
+              "cargo",
+              "test",
+              "-p",
+              "lingose-cli",
+              "--release",
+              "--locked",
+              "--all-features",
+              "--target",
+              "x86_64-apple-darwin"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "tests.stdout.txt",
+              "bytes": 2258,
+              "sha256": "2baf63d7c9ca8130f528d6bcb0363d2edbfc84b9f356e6a8585e4b8f69882e69"
+            },
+            "stderr": {
+              "file": "tests.stderr.txt",
+              "bytes": 452,
+              "sha256": "9c58e26cea55620fd4e8e1eb89de6edf387f2a6e7e6aec3930e6fd3ec291ceb8"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "metadata",
+            "argv": [
+              "cargo",
+              "metadata",
+              "--no-deps",
+              "--format-version",
+              "1",
+              "--locked"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "metadata.stdout.txt",
+              "bytes": 5647,
+              "sha256": "6839ae9c4546a8a296f4762ba0c005eae58a6f6d0ef48165099da366889707c3"
+            },
+            "stderr": {
+              "file": "metadata.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          }
+        ],
+        "inputs_match": true,
+        "download_digest_verified": true
+      },
+      {
+        "target": "x86_64-pc-windows-msvc",
+        "status": "passed",
+        "platform": "Windows-2022Server-10.0.20348-SP0",
+        "machine": "AMD64",
+        "runner": {
+          "RUNNER_OS": "Windows",
+          "RUNNER_ARCH": "X64",
+          "ImageOS": "win22",
+          "ImageVersion": "20261012.333.1",
+          "GITHUB_SHA": "4e00367a02ce7c8a317b209ac8de4dcc0620aa16",
+          "GITHUB_RUN_ID": "39097471918",
+          "GITHUB_RUN_ATTEMPT": "1"
+        },
+        "runtime": {
+          "mode": "native",
+          "isolated_cwd": true,
+          "copied_files": [
+            "lingose.exe"
+          ],
+          "environment_keys": [
+            "HOME",
+            "PATH",
+            "SystemRoot",
+            "TEMP",
+            "TMP",
+            "TMPDIR"
+          ],
+          "network_disabled": false,
+          "note": "Only the binary is copied; OS runtime libraries remain available. No network sandbox is asserted."
+        },
+        "cli_tests": 29,
+        "smoke_cases": 12,
+        "binary": {
+          "file": "candidate/lingose.exe",
+          "bytes": 11286016,
+          "sha256": "8de15c3270da41d301c7bcaf40f379f46fa036f86ef1d087843319d401d829d9"
+        },
+        "artifact": {
+          "id": 12124754085,
+          "name": "cli51-x86_64-pc-windows-msvc-4e00367a02ce7c8a317b209ac8de4dcc0620aa16",
+          "size_in_bytes": 4911598,
+          "digest": "sha256:2f4f7b9b75acd16a8ea04c8ece2097914c6f33782192693cac0ec9ddd52815e9",
+          "expired": false
+        },
+        "report": {
+          "path": ".local/cli51-ci-identity/cli51-x86_64-pc-windows-msvc-4e00367a02ce7c8a317b209ac8de4dcc0620aa16/report.json",
+          "bytes": 18057,
+          "sha256": "b83c08ca1b35d69cc583991da1ffdc721482d3f01c71a2ae8709f9a740560e1d"
+        },
+        "logs": [
+          {
+            "label": "revision",
+            "argv": [
+              "git",
+              "rev-parse",
+              "HEAD"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "revision.stdout.txt",
+              "bytes": 41,
+              "sha256": "ab4339842d30ab5cc3a8a2b78817ce7304f82acb1a1e07ad13c7001495a8ad0d"
+            },
+            "stderr": {
+              "file": "revision.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "rustc",
+            "argv": [
+              "rustc",
+              "-vV"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "rustc.stdout.txt",
+              "bytes": 194,
+              "sha256": "f133056ecf1576257a2bcb9da126bfb7e84725ccc144caee31dc2f70b42f6f20"
+            },
+            "stderr": {
+              "file": "rustc.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "cargo",
+            "argv": [
+              "cargo",
+              "-V"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "cargo.stdout.txt",
+              "bytes": 36,
+              "sha256": "57d704d9ad73ec7cc1b1a79aed6703333615865be6e3dc1ce269ea4ca7068227"
+            },
+            "stderr": {
+              "file": "cargo.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "build",
+            "argv": [
+              "cargo",
+              "build",
+              "-p",
+              "lingose-cli",
+              "--release",
+              "--locked",
+              "--all-features",
+              "--target",
+              "x86_64-pc-windows-msvc"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "build.stdout.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "stderr": {
+              "file": "build.stderr.txt",
+              "bytes": 1358,
+              "sha256": "f3282f13a08cfad45d54fe85bd03716f600a9949d468e69336df696abfcda51b"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "tests",
+            "argv": [
+              "cargo",
+              "test",
+              "-p",
+              "lingose-cli",
+              "--release",
+              "--locked",
+              "--all-features",
+              "--target",
+              "x86_64-pc-windows-msvc"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "tests.stdout.txt",
+              "bytes": 2267,
+              "sha256": "1a0392cad0b378972925a7481ed94f454674cacb12f03ca84641f7a9b30a508a"
+            },
+            "stderr": {
+              "file": "tests.stderr.txt",
+              "bytes": 459,
+              "sha256": "d10c5f73268ab9e734606a3ba48a653df96842253107a0f16e1c69dc8b4389dc"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "metadata",
+            "argv": [
+              "cargo",
+              "metadata",
+              "--no-deps",
+              "--format-version",
+              "1",
+              "--locked"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "metadata.stdout.txt",
+              "bytes": 5429,
+              "sha256": "73fc41a4cc28d63bf4ce547c4631c866ec1e52aba471bd754b752e3269e26488"
+            },
+            "stderr": {
+              "file": "metadata.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          }
+        ],
+        "inputs_match": true,
+        "download_digest_verified": true
+      },
+      {
+        "target": "x86_64-unknown-linux-gnu",
+        "status": "passed",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "machine": "x86_64",
+        "runner": {
+          "RUNNER_OS": "Linux",
+          "RUNNER_ARCH": "X64",
+          "ImageOS": "ubuntu24",
+          "ImageVersion": "20261012.334.1",
+          "GITHUB_SHA": "4e00367a02ce7c8a317b209ac8de4dcc0620aa16",
+          "GITHUB_RUN_ID": "39097471918",
+          "GITHUB_RUN_ATTEMPT": "1"
+        },
+        "runtime": {
+          "mode": "native",
+          "isolated_cwd": true,
+          "copied_files": [
+            "lingose"
+          ],
+          "environment_keys": [
+            "HOME",
+            "PATH",
+            "TEMP",
+            "TMP",
+            "TMPDIR"
+          ],
+          "network_disabled": false,
+          "note": "Only the binary is copied; OS runtime libraries remain available. No network sandbox is asserted."
+        },
+        "cli_tests": 30,
+        "smoke_cases": 12,
+        "binary": {
+          "file": "candidate/lingose",
+          "bytes": 11761272,
+          "sha256": "0a5120ca3a24683091ea9b1d13b757e782fb3c740e1fdf3c6cbb04de64a65436"
+        },
+        "artifact": {
+          "id": 12124739275,
+          "name": "cli51-x86_64-unknown-linux-gnu-4e00367a02ce7c8a317b209ac8de4dcc0620aa16",
+          "size_in_bytes": 5077790,
+          "digest": "sha256:0b9a51e59586ff09b43287a40ef1663c5273ed18adc15de4d4fc396a3a91ef54",
+          "expired": false
+        },
+        "report": {
+          "path": ".local/cli51-ci-identity/cli51-x86_64-unknown-linux-gnu-4e00367a02ce7c8a317b209ac8de4dcc0620aa16/report.json",
+          "bytes": 18041,
+          "sha256": "7993e3d69084b7c3aba557188c8dc9b6867ca896452b6e8c65327e0a44c1dcd2"
+        },
+        "logs": [
+          {
+            "label": "revision",
+            "argv": [
+              "git",
+              "rev-parse",
+              "HEAD"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "revision.stdout.txt",
+              "bytes": 41,
+              "sha256": "ab4339842d30ab5cc3a8a2b78817ce7304f82acb1a1e07ad13c7001495a8ad0d"
+            },
+            "stderr": {
+              "file": "revision.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "rustc",
+            "argv": [
+              "rustc",
+              "-vV"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "rustc.stdout.txt",
+              "bytes": 196,
+              "sha256": "b1008d5f7681db91d446d2bb0a07af00372bb6cb4d4599e95212e3a8edce4e11"
+            },
+            "stderr": {
+              "file": "rustc.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "cargo",
+            "argv": [
+              "cargo",
+              "-V"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "cargo.stdout.txt",
+              "bytes": 36,
+              "sha256": "57d704d9ad73ec7cc1b1a79aed6703333615865be6e3dc1ce269ea4ca7068227"
+            },
+            "stderr": {
+              "file": "cargo.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "build",
+            "argv": [
+              "cargo",
+              "build",
+              "-p",
+              "lingose-cli",
+              "--release",
+              "--locked",
+              "--all-features",
+              "--target",
+              "x86_64-unknown-linux-gnu"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "build.stdout.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "stderr": {
+              "file": "build.stderr.txt",
+              "bytes": 1384,
+              "sha256": "ef8dbbbc78b730874f8137c88532469aabd7ff89d19d330b07363a883223eaa9"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "tests",
+            "argv": [
+              "cargo",
+              "test",
+              "-p",
+              "lingose-cli",
+              "--release",
+              "--locked",
+              "--all-features",
+              "--target",
+              "x86_64-unknown-linux-gnu"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "tests.stdout.txt",
+              "bytes": 2317,
+              "sha256": "d956befaf317921315c2cdbb600442e35b57f9cc943a4e2d1ab1986e02a730b0"
+            },
+            "stderr": {
+              "file": "tests.stderr.txt",
+              "bytes": 466,
+              "sha256": "4c25177dd5cf6c4dd9ce4af665f688b7da9060f2ee5354f4ff88656a6e4a8dc2"
+            },
+            "timed_out": false
+          },
+          {
+            "label": "metadata",
+            "argv": [
+              "cargo",
+              "metadata",
+              "--no-deps",
+              "--format-version",
+              "1",
+              "--locked"
+            ],
+            "exit_code": 0,
+            "stdout": {
+              "file": "metadata.stdout.txt",
+              "bytes": 5623,
+              "sha256": "9ca39577d5922ac7a8b8c91b1ed243469e651f5e171c43e980f90d5c17bdb726"
+            },
+            "stderr": {
+              "file": "metadata.stderr.txt",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "timed_out": false
+          }
+        ],
+        "inputs_match": true,
+        "download_digest_verified": true
+      }
+    ]
+  },
+  "source_changes": [
+    {
+      "file": "crates/lingose-cli/src/main.rs",
+      "change": "Classify macOS EILSEQ92 at initial automatic-path probe so invalid Unicode text exits2; explicit --input remains I/O1"
+    },
+    {
+      "file": "crates/lingose-cli/tests/annotate.rs",
+      "change": "Rename NUL-content fixture from reserved Windows nul.txt; split Linux non-UTF8 existing paths and portable Unix Unicode symlink/missing non-Unicode argument cases"
+    },
+    {
+      "file": ".gitattributes",
+      "change": "Force existing library examples to LF across checkouts; workflow and verifier files also fixed LF"
+    }
+  ],
+  "protected_state": {
+    "library_sources_data_fixed_vectors_manifests_lock_unchanged_from_base": true,
+    "adjacent_repositories_modified": false,
+    "historical_release_receipts_modified": false,
+    "new_full_differential_or_performance_run": false
+  },
+  "history": {
+    "authentication_and_transport": {
+      "initial_attempts": [
+        {
+          "attempt": 1,
+          "operation": "git push --set-upstream origin main",
+          "result": "HTTPS RPC failed; remote branches and runs independently confirmed empty"
+        },
+        {
+          "attempt": 2,
+          "operation": "same push, command-scoped http.version=HTTP/1.1 and http.postBuffer=52428800",
+          "result": "remote rejected OAuth App workflow write without workflow scope"
+        },
+        {
+          "attempt": 3,
+          "operation": "push after user confirmed authorization",
+          "result": "HTTPS connection reset; subsequent branches and runs empty"
+        }
+      ],
+      "initial_effective_scopes": [
         "admin:public_key",
         "gist",
         "read:org",
         "repo"
       ],
-      "credential_source": "keyring",
-      "environment_token_override": false,
-      "independent_no_cache_request_confirmed_missing_scope": true,
-      "next_action": "Complete active GitHub device authorization, verify effective workflow scope, recheck remote and push current main",
-      "user_terminal_scopes_match": true,
-      "device_authorization_started": true,
-      "device_authorization_status": "awaiting_browser_confirmation"
-    }
+      "user_first_confirmation_did_not_add_workflow_scope": true,
+      "device_authorization_completed": true,
+      "scope_blocker_resolved": true,
+      "after_authorization_push_client_reported_connection_reset_but_remote_ref_and_run_confirmed_success": true,
+      "fix_commit_push_reported_duplicate_ref_but_remote_exact_commit_and_run_confirmed": true,
+      "final_input_identity_commit_push_successful": true,
+      "credentials_saved_in_repository": false
+    },
+    "initial_local_rustup_failure": {
+      "path": ".local/cli51-windows-local/report.json",
+      "reason": "Versioned rustup alias absent; sandbox denied rustup tmp write. Retried using installed stable alias verified as Rust1.93.1."
+    },
+    "first_ci": {
+      "run_id": 39097009450,
+      "url": "https://github.com/englishword/lingose-rust/actions/runs/39097009450",
+      "revision": "d321c46fe095a74516967ac0293225f2d071236a",
+      "conclusion": "failure",
+      "linux_targets": "success",
+      "windows_failure": "NUL-content fixture name nul.txt resolves as Windows reserved device; expected usage2 but I/O1",
+      "macos_failure": "Fixture creation rejected non-UTF8 filename before CLI invocation, errno92",
+      "retained_directories": [
+        ".local/cli51-first-windows",
+        ".local/cli51-first-macos-arm64",
+        ".local/cli51-ci-first"
+      ]
+    },
+    "second_ci": {
+      "run_id": 39097222034,
+      "url": "https://github.com/englishword/lingose-rust/actions/runs/39097222034",
+      "revision": "8b9579a524abebe3176c133795edff8da8915caf",
+      "conclusion": "success",
+      "all_five_build_test_smoke_upload_jobs_passed": true,
+      "independent_input_comparison": "Windows checkout converted two library examples to CRLF; not accepted as byte-identical input",
+      "differing_files": [
+        "crates/lingose/examples/annotate.rs",
+        "crates/lingose/examples/query.rs"
+      ],
+      "directory": ".local/cli51-ci-final"
+    },
+    "artifact_download_failure": "Initial gh run download returned unexpected EOF. Retained partial directory; final raw zip API downloads verified against GitHub-provided digest before extraction."
   },
   "boundaries": [
     "No crates.io upload, version tag or GitHub Release",
-    "CLI5.2 archive/license/download acceptance remains separate",
+    "CI artifacts are raw verification candidates with 14day retention, not CLI5.2 licensed release archives",
+    "All native runtime claims are limited to recorded runner OS/toolchain; no emulation or other OS version acceptance asserted",
     "Binary-only temporary runtime with minimal environment; network was not disabled",
-    "MSRV and full workspace regression evidence remain CLI4.1; this phase runs release CLI tests on each platform"
+    "Standalone archive/license/checksum/download acceptance remains CLI5.2",
+    "CLI4.1 startup675.43ms over300ms historical fact and third-party Frequency List license gap remain unchanged",
+    "Final documentation-only commit uses skip-ci; verified build input revision is recorded separately"
   ],
   "sources": [
     "https://docs.github.com/en/actions/reference/runners/github-hosted-runners",
@@ -347,7 +1463,7 @@
     "https://github.com/actions/checkout/releases/tag/v7.0.1",
     "https://github.com/actions/setup-python/releases/tag/v7.0.0",
     "https://github.com/actions/upload-artifact/releases/tag/v7.0.2",
-    "https://github.com/rhysd/actionlint/releases/tag/v1.7.12"
-  ],
-  "implementation_commit": "399e59e"
+    "https://github.com/rhysd/actionlint/releases/tag/v1.7.12",
+    "https://docs.github.com/en/actions/how-tos/manage-workflow-runs/skip-workflow-runs"
+  ]
 }
