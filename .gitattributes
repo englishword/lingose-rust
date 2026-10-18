@@ -11,6 +11,7 @@
 /crates/*/src/*.rs text eol=lf
 /crates/lingose/src/data/*.rs text eol=lf
 /crates/lingose/tests/*.rs text eol=lf
+/crates/lingose/examples/*.rs text eol=lf
 /crates/lingose-cli/tests/*.rs text eol=lf
 /crates/lingose/docs/rust-api.md text eol=lf
 /crates/lingose/docs/distribution-provenance.json text eol=lf

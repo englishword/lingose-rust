@@ -42,7 +42,7 @@ def inputs():
     names = subprocess.check_output(
         ["git", "ls-files", "-z", "Cargo.toml", "Cargo.lock", "crates"], cwd=ROOT
     ).decode("utf-8").split("\0")
-    names += ["tools/check_cli_release.py", ".github/workflows/cli-release.yml"]
+    names += [".gitattributes", "tools/check_cli_release.py", ".github/workflows/cli-release.yml"]
     return {name: identity(ROOT / name) for name in sorted(set(names)) if name}
 
 
