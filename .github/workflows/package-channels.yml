@@ -68,8 +68,10 @@ jobs:
           New-Item -ItemType Directory "$env:SCOOP/shims" -Force | Out-Null
           $env:PATH = "$env:SCOOP/shims;$scoop/bin;$env:PATH"
           $manifest = (Resolve-Path bucket/lingose.json).Path
-          & "$scoop/bin/scoop.ps1" bucket add lingose "$pwd"
+          & "$scoop/bin/scoop.ps1" bucket add lingose https://github.com/englishword/lingose-rust
           if ($LASTEXITCODE) { throw 'Scoop custom bucket failed' }
+          $bucketCommit = git -C "$env:SCOOP/buckets/lingose" rev-parse HEAD
+          if ($bucketCommit -ne $env:GITHUB_SHA) { throw 'Scoop public bucket revision differs' }
           & "$scoop/bin/scoop.ps1" install lingose/lingose
           if ($LASTEXITCODE) { throw 'Scoop install failed' }
           $command = "$env:SCOOP/shims/lingose.exe"
@@ -153,7 +155,8 @@ jobs:
       - name: Install, test, reinstall and uninstall custom tap formula
         run: |
           brew --version
-          brew tap --custom-remote englishword/lingose "$GITHUB_WORKSPACE"
+          brew tap --custom-remote englishword/lingose https://github.com/englishword/lingose-rust
+          test "$(git -C "$(brew --repository englishword/lingose)" rev-parse HEAD)" = "$GITHUB_SHA"
           if brew help trust >/dev/null 2>&1; then
             brew trust --formula englishword/lingose/lingose
           fi
