@@ -1,0 +1,525 @@
+{
+  "artifacts": [
+    {
+      "digest": "sha256:e8101e6b556540d99792847d8ede332c879d6e08916108dce2f8c0e60e1d52df",
+      "id": 12131905085,
+      "name": "cli52-download-aarch64-unknown-linux-gnu-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 1986
+    },
+    {
+      "digest": "sha256:6ca47b24d8a9094f7b67800888c04877fdf55a823a45ed54f5dc84a717f1707e",
+      "id": 12131885037,
+      "name": "cli51-aarch64-unknown-linux-gnu-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 5073078
+    },
+    {
+      "digest": "sha256:5053df4f8e9c9e96a6afea2b84918c2fa914ab10a973a8d233623201f17ce776",
+      "id": 12131835263,
+      "name": "cli51-x86_64-pc-windows-msvc-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 4911589
+    },
+    {
+      "digest": "sha256:a562b8daffb8c5c63fdbf7ae6e74303eb5fd36f441ae97292be0efa3da426223",
+      "id": 12131815298,
+      "name": "cli52-package-x86_64-apple-darwin-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 4391586
+    },
+    {
+      "digest": "sha256:36c176f015a94c302f2b4721ed1c4818e771e36e178a83c4d34a007b756056cc",
+      "id": 12131760274,
+      "name": "cli52-package-aarch64-unknown-linux-gnu-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 4402246
+    },
+    {
+      "digest": "sha256:60c2450c9cdcc82d470b4b96dfc84872934db21b01e0658b9ec7f2358313c1d2",
+      "id": 12131605926,
+      "name": "cli52-download-x86_64-apple-darwin-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 1899
+    },
+    {
+      "digest": "sha256:13280921dacc51e6be84170f678a6c66a365113965db29ecdc1393fd39944acd",
+      "id": 12131565483,
+      "name": "cli52-assets-report-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 1380
+    },
+    {
+      "digest": "sha256:aa2e4aa4a4f148c83656f218e1e1c601c8c45990067bcd574616fb70408f8802",
+      "id": 12131441322,
+      "name": "cli51-x86_64-unknown-linux-gnu-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 5077782
+    },
+    {
+      "digest": "sha256:765c45d12a25c0ab95f2aeb264ac7d721744f2b2cf4d3f289cb84fbd2c7afea7",
+      "id": 12131297158,
+      "name": "cli52-download-aarch64-apple-darwin-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 1906
+    },
+    {
+      "digest": "sha256:0cdd1ac447a72c6944926eeea562de3b945e58b6575c8481f3b5c452030769cc",
+      "id": 12131111771,
+      "name": "cli52-download-x86_64-pc-windows-msvc-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 1986
+    },
+    {
+      "digest": "sha256:8c250132804c8c3fefc25296bb9c69b0d67971d78702cd0e07f65e49d6ffa4f0",
+      "id": 12131051910,
+      "name": "cli52-package-aarch64-apple-darwin-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 4453731
+    },
+    {
+      "digest": "sha256:dbc470940e63721ae4236e01c36d479ce68e814f338af07f3ddd05acdd45ad44",
+      "id": 12131012185,
+      "name": "cli52-assets-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 21930782
+    },
+    {
+      "digest": "sha256:332037090fe3953e074634db97561ca31e5d115c7dd33ed3e5511c4ab96a26b1",
+      "id": 12130864288,
+      "name": "cli52-package-x86_64-unknown-linux-gnu-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 4419414
+    },
+    {
+      "digest": "sha256:ccb7d09ebe121694d056f9c6b57e84ff3839fba29adfa28ec11b9a3d2fea210f",
+      "id": 12130859534,
+      "name": "cli52-download-x86_64-unknown-linux-gnu-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 2002
+    },
+    {
+      "digest": "sha256:bd80f7c1cf76659d4ac817249fc75356a95af68975e6ba59976b091b780e2eb9",
+      "id": 12130824546,
+      "name": "cli52-package-x86_64-pc-windows-msvc-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 4286162
+    },
+    {
+      "digest": "sha256:fdb8cffd87163b05906d0c6127835b0f7d6e1168167fc3642f287b8468f5a105",
+      "id": 12130794671,
+      "name": "cli51-x86_64-apple-darwin-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 5048462
+    },
+    {
+      "digest": "sha256:cf75a6c06074d61c3f1acda0dee35c928b81a6099c340357326c324f1398110c",
+      "id": 12130284729,
+      "name": "cli51-aarch64-apple-darwin-1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+      "size_in_bytes": 5114439
+    }
+  ],
+  "collector": {
+    "path": ".local/cli64-preparation/collect.py",
+    "sha256": "0f1265c6440c8fb2a6768db090d973a3e9bbdce611b66017912868aedeb93750"
+  },
+  "distribution": {
+    "SHA256SUMS": {
+      "bytes": 506,
+      "sha256": "19589384fb39e57fae058394371529c54898d29e8e012abc0d404a3242141a42"
+    },
+    "lingose-v0.2.0-linux-aarch64.tar.gz": {
+      "bytes": 4433407,
+      "sha256": "fe1d3788414845f1d06a461b93d3b424777f0d01920394bda9fad2d359b8a25e"
+    },
+    "lingose-v0.2.0-linux-x86_64.tar.gz": {
+      "bytes": 4449337,
+      "sha256": "7a2efc36a3774b4a3fcebaff8c9557386e14b0d3818ca675c093f8fa5e9a9e33"
+    },
+    "lingose-v0.2.0-macos-aarch64.tar.gz": {
+      "bytes": 4482610,
+      "sha256": "e8dfd8c0a70c59afb7fb924364e00d6ac3fb57b09b2d22fc980ceba26c9bd1ef"
+    },
+    "lingose-v0.2.0-macos-x86_64.tar.gz": {
+      "bytes": 4421219,
+      "sha256": "b7ebee89b53d7e79720f657be8377cdc342a0dc5437fbb005150e6c4097ed8d2"
+    },
+    "lingose-v0.2.0-windows-x86_64.zip": {
+      "bytes": 4358023,
+      "sha256": "2f05412741738a447885ae91b4689dfd5e6561cc07cba6f764ebe01bce7bfbb6"
+    }
+  },
+  "evidence_root": ".local/cli64-ci-39113070606/",
+  "incomplete_download_preserved": "cli52-package-aarch64-unknown-linux-gnu-1b7e62a7a03419586a09eb8b8cddf8396b91d518.zip.incomplete-1",
+  "independent_candidate_recheck": {
+    "archive_guard_executions": 35,
+    "build_smoke": 60,
+    "cli_tests": 147,
+    "downloaded_native_smoke": 80,
+    "method": "Separate offline verification code; raw service ZIP digests and all extracted members; actual archive/build binary/report linkage; current inputs and guard-step API evidence",
+    "publication_guard_executions": 35,
+    "service_zips": 17,
+    "status": "passed"
+  },
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 117633112511,
+      "name": "x86_64-apple-darwin (native)"
+    },
+    {
+      "conclusion": "success",
+      "id": 117633112571,
+      "name": "x86_64-unknown-linux-gnu (native)"
+    },
+    {
+      "conclusion": "success",
+      "id": 117633112676,
+      "name": "aarch64-apple-darwin (native)"
+    },
+    {
+      "conclusion": "success",
+      "id": 117633112687,
+      "name": "x86_64-pc-windows-msvc (native)"
+    },
+    {
+      "conclusion": "success",
+      "id": 117633112786,
+      "name": "aarch64-unknown-linux-gnu (native)"
+    },
+    {
+      "conclusion": "success",
+      "id": 117633389056,
+      "name": "Download aarch64-apple-darwin (native)"
+    },
+    {
+      "conclusion": "success",
+      "id": 117633389066,
+      "name": "Download x86_64-apple-darwin (native)"
+    },
+    {
+      "conclusion": "success",
+      "id": 117633389091,
+      "name": "Download aarch64-unknown-linux-gnu (native)"
+    },
+    {
+      "conclusion": "success",
+      "id": 117633389118,
+      "name": "Download x86_64-pc-windows-msvc (native)"
+    },
+    {
+      "conclusion": "success",
+      "id": 117633389139,
+      "name": "Download x86_64-unknown-linux-gnu (native)"
+    },
+    {
+      "conclusion": "success",
+      "id": 117633482876,
+      "name": "Aggregate five verified archive candidates"
+    },
+    {
+      "conclusion": "skipped",
+      "id": 117633537923,
+      "name": "Publish verified v0.2.0 Release"
+    }
+  ],
+  "local_checks": {
+    "actionlint": "1.7.12",
+    "archive_tests": 7,
+    "fmt": true,
+    "independent_review": "passed",
+    "publication_tests": 7,
+    "python_compile": true
+  },
+  "phase": "CLI6.4",
+  "release_created": false,
+  "remote": {
+    "full_name": "englishword/lingose-rust",
+    "permissions": {
+      "admin": true,
+      "maintain": true,
+      "pull": true,
+      "push": true,
+      "triage": true
+    },
+    "release_http_status": 404,
+    "tag_http_status": 404,
+    "visibility": "private"
+  },
+  "revision": "1b7e62a7a03419586a09eb8b8cddf8396b91d518",
+  "run": {
+    "conclusion": "success",
+    "event": "push",
+    "id": 39113070606,
+    "url": "https://github.com/englishword/lingose-rust/actions/runs/39113070606"
+  },
+  "scope": {
+    "old_crates_reuploaded": false,
+    "registry_install_acceptance_executed": false,
+    "release_created": false,
+    "tag_run_completed": false,
+    "visibility_changed": false
+  },
+  "status": "candidate-verified-publication-pending-visibility",
+  "tag_created": false,
+  "targets": [
+    {
+      "archive": {
+        "bytes": 4358023,
+        "file": "lingose-v0.2.0-windows-x86_64.zip",
+        "sha256": "2f05412741738a447885ae91b4689dfd5e6561cc07cba6f764ebe01bce7bfbb6"
+      },
+      "archive_guard_tests": 7,
+      "binary": {
+        "architecture": "x86_64",
+        "bytes": 11286016,
+        "file": "lingose.exe",
+        "format": "PE",
+        "imported_libraries": [
+          "api-ms-win-core-synch-l1-2-0.dll",
+          "bcryptprimitives.dll",
+          "KERNEL32.dll",
+          "ntdll.dll",
+          "VCRUNTIME140.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-locale-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll"
+        ],
+        "interpreter": null,
+        "sha256": "9b8b9888496afbf1787cf40f934431aeedb6f0b8e27e84472da103e1865d3486"
+      },
+      "build_inputs": 57,
+      "build_smoke": 12,
+      "cli_tests": 29,
+      "downloaded_native_smoke": 16,
+      "members": 46,
+      "packaging_inputs": 54,
+      "platform": "Windows-2022Server-10.0.20348-SP0",
+      "publication_guard_tests": 7,
+      "reports": {
+        "build": {
+          "bytes": 18057,
+          "sha256": "fcfede669ce14ddeea783090591312c20c368eb067cb3c9ebe9b82f4a2728054"
+        },
+        "download": {
+          "bytes": 8284,
+          "sha256": "f60a6a1a2d2f9f30517bdba99998c3212c1766149e57fcf97eb7101d9d90f50a"
+        },
+        "package": {
+          "bytes": 17600,
+          "sha256": "5b225f2fbed47cb048405961f7345af6020d773b6585f55a43619e92aad584a2"
+        }
+      },
+      "target": "x86_64-pc-windows-msvc"
+    },
+    {
+      "archive": {
+        "bytes": 4449337,
+        "file": "lingose-v0.2.0-linux-x86_64.tar.gz",
+        "sha256": "7a2efc36a3774b4a3fcebaff8c9557386e14b0d3818ca675c093f8fa5e9a9e33"
+      },
+      "archive_guard_tests": 7,
+      "binary": {
+        "architecture": "x86_64",
+        "bytes": 11761272,
+        "file": "lingose",
+        "format": "ELF",
+        "imported_libraries": [
+          "libgcc_s.so.1",
+          "libc.so.6",
+          "ld-linux-x86-64.so.2"
+        ],
+        "interpreter": "/lib64/ld-linux-x86-64.so.2",
+        "required_symbol_versions": {
+          "ld-linux-x86-64.so.2": [
+            "GLIBC_2.3"
+          ],
+          "libc.so.6": [
+            "GLIBC_2.2.5",
+            "GLIBC_2.3",
+            "GLIBC_2.3.4",
+            "GLIBC_2.14",
+            "GLIBC_2.16",
+            "GLIBC_2.18",
+            "GLIBC_2.25",
+            "GLIBC_2.28",
+            "GLIBC_2.30",
+            "GLIBC_2.32",
+            "GLIBC_2.33",
+            "GLIBC_2.34"
+          ],
+          "libgcc_s.so.1": [
+            "GCC_3.0",
+            "GCC_3.3",
+            "GCC_4.2.0"
+          ]
+        },
+        "sha256": "0a5120ca3a24683091ea9b1d13b757e782fb3c740e1fdf3c6cbb04de64a65436"
+      },
+      "build_inputs": 57,
+      "build_smoke": 12,
+      "cli_tests": 30,
+      "downloaded_native_smoke": 16,
+      "members": 46,
+      "packaging_inputs": 54,
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "publication_guard_tests": 7,
+      "reports": {
+        "build": {
+          "bytes": 18041,
+          "sha256": "d9d79bb9e6ab32106b5de425de675e2c35bdd1c037b337dfb10a7b998255b37f"
+        },
+        "download": {
+          "bytes": 8504,
+          "sha256": "b0749a4cbb6d10f5b7bf5f32a56aabec8a4a50fcc0032818c7366693c3194659"
+        },
+        "package": {
+          "bytes": 17839,
+          "sha256": "a0551d7d6a89f043f9c1f32553773103c42dd42d94dffd77002ff7454b965e08"
+        }
+      },
+      "target": "x86_64-unknown-linux-gnu"
+    },
+    {
+      "archive": {
+        "bytes": 4433407,
+        "file": "lingose-v0.2.0-linux-aarch64.tar.gz",
+        "sha256": "fe1d3788414845f1d06a461b93d3b424777f0d01920394bda9fad2d359b8a25e"
+      },
+      "archive_guard_tests": 7,
+      "binary": {
+        "architecture": "aarch64",
+        "bytes": 11795048,
+        "file": "lingose",
+        "format": "ELF",
+        "imported_libraries": [
+          "libgcc_s.so.1",
+          "libc.so.6"
+        ],
+        "interpreter": "/lib/ld-linux-aarch64.so.1",
+        "required_symbol_versions": {
+          "libc.so.6": [
+            "GLIBC_2.28",
+            "GLIBC_2.30",
+            "GLIBC_2.25",
+            "GLIBC_2.18",
+            "GLIBC_2.33",
+            "GLIBC_2.32",
+            "GLIBC_2.34",
+            "GLIBC_2.17"
+          ],
+          "libgcc_s.so.1": [
+            "GCC_4.2.0",
+            "GCC_3.3",
+            "GCC_3.0"
+          ]
+        },
+        "sha256": "6f2b9eb0d930e3940ebc00e84e195cb86ef061640c291cb9e645b0ba99bb1a68"
+      },
+      "build_inputs": 57,
+      "build_smoke": 12,
+      "cli_tests": 30,
+      "downloaded_native_smoke": 16,
+      "members": 48,
+      "packaging_inputs": 54,
+      "platform": "Linux-6.17.0-1022-azure-aarch64-with-glibc2.39",
+      "publication_guard_tests": 7,
+      "reports": {
+        "build": {
+          "bytes": 18054,
+          "sha256": "aa31ff374380df13fa7ff058d929eb71e771588f102467c6fd559c70d4bf3469"
+        },
+        "download": {
+          "bytes": 8336,
+          "sha256": "f6ce15fab50f97f8f39dea57173efe3695b717d21901aa900ccb27549202c45c"
+        },
+        "package": {
+          "bytes": 18024,
+          "sha256": "9e0acd8a9ed79b52dc26f7eb17135fd72d3088a9675931efcc686916b8372494"
+        }
+      },
+      "target": "aarch64-unknown-linux-gnu"
+    },
+    {
+      "archive": {
+        "bytes": 4421219,
+        "file": "lingose-v0.2.0-macos-x86_64.tar.gz",
+        "sha256": "b7ebee89b53d7e79720f657be8377cdc342a0dc5437fbb005150e6c4097ed8d2"
+      },
+      "archive_guard_tests": 7,
+      "binary": {
+        "architecture": "x86_64",
+        "bytes": 11574720,
+        "file": "lingose",
+        "format": "Mach-O",
+        "imported_libraries": [
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "interpreter": "/usr/lib/dyld",
+        "minimum_os": "10.12.0",
+        "sdk": "15.5.0",
+        "sha256": "5e51dd5d60a84365d41de88210efded5ed81f13fd3fa24652429d4ba620577d1"
+      },
+      "build_inputs": 57,
+      "build_smoke": 12,
+      "cli_tests": 29,
+      "downloaded_native_smoke": 16,
+      "members": 46,
+      "packaging_inputs": 54,
+      "platform": "macOS-15.7.9-x86_64-i386-64bit",
+      "publication_guard_tests": 7,
+      "reports": {
+        "build": {
+          "bytes": 18011,
+          "sha256": "fe86538b4860f88a577c61681f689072cc32728e8d70b44e96fbe9fe10c0a68b"
+        },
+        "download": {
+          "bytes": 8000,
+          "sha256": "9faed65d9a2547f7c46c246004eac511bb6e0b7a517c2e3ef6d7920f384a505f"
+        },
+        "package": {
+          "bytes": 17350,
+          "sha256": "ee2a47d823810526481e8b9db790eae289ca6e96d18d545110b2d59abf67b9e3"
+        }
+      },
+      "target": "x86_64-apple-darwin"
+    },
+    {
+      "archive": {
+        "bytes": 4482610,
+        "file": "lingose-v0.2.0-macos-aarch64.tar.gz",
+        "sha256": "e8dfd8c0a70c59afb7fb924364e00d6ac3fb57b09b2d22fc980ceba26c9bd1ef"
+      },
+      "archive_guard_tests": 7,
+      "binary": {
+        "architecture": "aarch64",
+        "bytes": 11623808,
+        "file": "lingose",
+        "format": "Mach-O",
+        "imported_libraries": [
+          "/usr/lib/libSystem.B.dylib"
+        ],
+        "interpreter": "/usr/lib/dyld",
+        "minimum_os": "11.0.0",
+        "sdk": "15.5.0",
+        "sha256": "2d87ee8c88a6f6b3f3bcddb9ed07fff5c03bee1112c001988eb569195d72e368"
+      },
+      "build_inputs": 57,
+      "build_smoke": 12,
+      "cli_tests": 29,
+      "downloaded_native_smoke": 16,
+      "members": 48,
+      "packaging_inputs": 54,
+      "platform": "macOS-15.7.9-arm64-arm-64bit",
+      "publication_guard_tests": 7,
+      "reports": {
+        "build": {
+          "bytes": 18013,
+          "sha256": "42ec22b915004f9db7f250f764db8e40420b9326866e9dfd966a43922777f31b"
+        },
+        "download": {
+          "bytes": 8001,
+          "sha256": "d86145942d23a2d1295f1050800ae70ae691a4175b9d4287bdaaff5a718a424b"
+        },
+        "package": {
+          "bytes": 17715,
+          "sha256": "8849387b5fa995ff6ff676228761e3d730d6e97b0a015d7c5b8a5d2025adbc2a"
+        }
+      },
+      "target": "aarch64-apple-darwin"
+    }
+  ],
+  "transport_notes": [
+    "Default Git credential helper could not supply credentials noninteractively; command-scoped gh credential helper pushed main successfully without changing global config.",
+    "One artifact download returned unexpected EOF; incomplete ZIP and stderr retained, redownload matched service SHA-256.",
+    "Local receipt repository API path had a trailing slash; corrected before final successful receipt. No remote mutations from collector."
+  ],
+  "verified_at": "2026-10-18T08:55:32.517608+00:00",
+  "visibility_changed": false
+}

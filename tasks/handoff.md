@@ -5,13 +5,14 @@
 - 活动计划：[todo_CLI.md](todo_CLI.md)。**CLI6.4 进行中，不能勾选完成。** CLI6.3 已完成；本轮仅推进 CLI6.4。
 - 从干净的 `main / ecbc7ce` 恢复；已准备 `.github/workflows/cli-release.yml`、`tools/publish_cli_release.py`、发布保护测试、`release/README.md`、`release/notes-v0.2.0.md`。当前提交以 Git 历史为准。
 - [具体说明](../docs/cli-github-release.md)。仅指定仓库 v0.2.0 tag push 能发布，仅发布 job 有 contents:write；远端 public 与 tag SHA 检查先于任何 Release 写入。上传草稿后核对六个实际下载文件才正式发布；已有 Release 或中断须先检查远端，不覆盖、不自动重试。
-- 本地 7 发布测试、7 归档测试、actionlint 1.7.12、Python 编译、fmt/空白检查与独立只读审查通过。正式五目标新候选尚待运行；旧 CLI5.2 run/摘要不代表本轮身份。
+- 准备提交 `1b7e62a7a03419586a09eb8b8cddf8396b91d518` 已推至 origin/main；非发布 run `39113070606` 五构建/五独立下载/汇总 11 job 全成功，发布 job 跳过。147 次 CLI 测试、35 次归档/35 次发布保护测试、60 次构建/80 次下载原生 smoke 通过。全部 17 份 service ZIP 摘要、实际日志/二进制、57 build/54 packaging 输入及五包内许可/说明/架构/权限身份通过。
+- 本地 7 发布测试、7 归档测试、actionlint 1.7.12、Python 编译、fmt/空白检查与独立只读审查通过。[新收据](../docs/cli-github-release-verification.json)，原始证据 `.local/cli64-ci-39113070606/`，核验脚本 `.local/cli64-preparation/collect.py`。旧 CLI5.2 run/摘要不代表本轮身份。
 
 ## 精确下一步
 
-1. 提交已验证准备，推送 main 触发非发布五目标 CI；记录新的 commit/run、全部原生构建/打包/独立下载结果并下载核对候选与证据。
-2. 仓库 `https://github.com/englishword/lingose-rust.git` 实时仍 private；账号 Prefee 有 admin/push/maintain，v0.2.0 tag/Release 均 404。**没有公开全部源码/历史的授权。** 完成可审查候选后向用户确认公开该仓库或另行指定公开分发处；不得擅自改可见性或以 private Release 冒充公开下载。
-3. 可见性条件解决后，以候选提交建立 v0.2.0 tag，运行正式 tag Actions。重新核对最终构建身份、五包/SHA256SUMS、版本说明、实际上传与远端下载；失败先检查远端再恢复。
+1. 五包与 SHA256SUMS 已可审查：`.local/cli64-ci-39113070606/cli52-assets-1b7e62a7a03419586a09eb8b8cddf8396b91d518/`。各包摘要见新收据/说明，未上传正式 Release。
+2. 仓库 `https://github.com/englishword/lingose-rust.git` 实时仍 private；账号 Prefee 有 admin/push/maintain，v0.2.0 tag/Release 均 404。**等待用户确认是否公开该仓库及全部源码/历史，或另行指定公开分发方式。** 不得擅自改可见性或以 private Release 冒充公开下载。
+3. 可见性条件解决后先刷新远端，以候选提交 **1b7e62a** 建立 v0.2.0 tag（不是后续说明提交的 HEAD），运行正式 tag Actions。重新核对最终构建身份、与本轮候选差异、五包/SHA256SUMS、版本说明、实际上传与远端下载；失败先检查远端再恢复。
 4. 完成后更新计划/说明/收据/交接并聚焦提交，交接 CLI6.5；本轮不执行新 cache 注册表名称安装验收。
 
 ## 已发布版本：禁止重复上传
@@ -26,3 +27,4 @@
 - 不改 Rust/数据/根锁或相邻参考仓库，不执行 CLI6.5。许可与数据用户确认沿用已有记录；Frequency List 与分类资料缺口继续披露。
 - Windows VCRUNTIME140/UCRT、Linux/macOS 系统动态库前提，macOS 公证/Gatekeeper/旧 OS 未验及 CLI4.1 首启超预算事实保留。
 - 凭据只由 gh 使用，不写入日志/收据。普通沙箱无法读取 gh 配置；获准的外部只读检查成功。没有绕过审批。
+- 默认 Git 凭据助手未能无交互推送，改用单次 gh helper 成功，无全局配置变化。一份 artifact unexpected EOF 保留截断/错误后重取且摘要通过；收据器 API 尾斜杠已纠正。全部为准备/只读采集，没有 Release 上传尝试。

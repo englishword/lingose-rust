@@ -109,7 +109,7 @@
 - [ ] CLI6.4 发布 GitHub Release 资产。
   - 依赖：CLI6.3。以与候选对应的 v0.2.0 标签运行 GitHub Actions，向指定仓库 Release 发布五个资产、校验和及版本说明。
   - 验收：五个实际下载资产与候选/构建记录对应，许可及安装说明齐全；远端 Release 可访问，有实际上传证据，不用本地文件存在替代。
-  - 进行中：[Release 准备记录](../docs/cli-github-release.md)。已准备仅正式 tag 生效的最小权限发布 job、草稿上传/全字节下载验证器及版本说明；本地检查和独立审查通过，下一步生成新五平台候选。远端仍 private，公开源码/历史授权待确认，未创建标签/Release。
+  - 进行中：[Release 准备记录](../docs/cli-github-release.md)及[新候选收据](../docs/cli-github-release-verification.json)。`1b7e62a` 的非发布 run `39113070606` 五构建/五下载/汇总 11 job 全成功，发布 job 跳过；147 次 CLI 测试、60/80 次构建/下载原生 smoke 与全部 17 份 service ZIP/五包身份独立核对通过。仅正式 tag 生效的最小权限发布器和版本说明已准备；本地检查与独立审查通过。远端仍 private，公开源码/历史授权待确认，未创建标签/Release；候选可审查，不能勾选正式发布完成。
 - [ ] CLI6.5 完成注册表安装与 Release 下载验收。
   - 依赖：CLI6.4。全新消费工程引用 `lingose = "=0.2.0"`，新 cache 执行 `cargo install lingose-cli --version 0.2.0 --locked`；依赖获取后分别离线复跑，再验 Release 下载二进制。
   - 验收：来源是正式注册表，无 checkout path/patch；完整库 API smoke、新函数及 CLI 查询/标注/JSON/文件/stdin 通过，运行无需外部词库。记录各平台实际结果、版本/归档身份、未验项，更新最终交接。
