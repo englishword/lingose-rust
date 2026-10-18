@@ -111,9 +111,10 @@
   - 验收：五个实际下载资产与候选/构建记录对应，许可及安装说明齐全；远端 Release 可访问，有实际上传证据，不用本地文件存在替代。
   - 用户后续选择：**目前以 private 发布 Release**。保持指定仓库 private，以认证且有权限的访问验收；不要求或声明匿名公开下载。发布条件/说明调整后建立新候选提交，正式 tag 重新构建并保存独立发布收据。
   - 结果与边界：[Release 正式记录](../docs/cli-github-release.md)及[独立正式收据](../docs/cli-github-release-publication-verification.json)。private Release `416347193` 于2026-10-18 09:16:55 UTC正式发布；v0.2.0解引用cf11a60，未改可见性/标签。run39114174841的十一项候选job全成功，147次CLI测试、35/35次归档/发布保护、60/80次构建/下载原生smoke通过。第一次创建草稿失败，核实远端为空后先同步默认分支workflow，再只重跑发布job；attempt2成功，原失败/19份service artifacts均保留。五包及SHA256SUMS的服务端digest、实际认证下载、全部载荷/二进制/许可/说明与最终CI候选一致；不冒充匿名公开访问或CLI6.5运行验收。旧候选收据不覆盖、已发布crate不重传；下一项CLI6.5。
-- [ ] CLI6.5 完成注册表安装与 Release 下载验收。
+- [x] CLI6.5 完成注册表安装与 Release 下载验收。
   - 依赖：CLI6.4。全新消费工程引用 `lingose = "=0.2.0"`，新 cache 执行 `cargo install lingose-cli --version 0.2.0 --locked`；依赖获取后分别离线复跑，再验 Release 下载二进制。
   - 验收：来源是正式注册表，无 checkout path/patch；完整库 API smoke、新函数及 CLI 查询/标注/JSON/文件/stdin 通过，运行无需外部词库。记录各平台实际结果、版本/归档身份、未验项，更新最终交接。
+  - 结果与边界：[最终验收说明](../docs/cli-final-acceptance.md)及[独立收据](../docs/cli-final-acceptance-verification.json)。Windows x86_64/Rust 1.93.1，仓库外两个全新 Cargo cache 分别完成精确库依赖消费与正式名称 CLI 安装，在线/全新 target 离线 locked 构建安装通过；两包归档 SHA、全部解包字节、metadata/锁文件/安装来源通过。移开构建工程/cache/target/安装根后，两份18入口库消费者及三份CLI各25项、共75项运行通过，包含最终Windows Release；91条命令预期退出码、182日志摘要独立通过。刷新private Release/标签/六资产后复用并重验正式认证下载，身份未变；其余平台仅列既有tag原生候选CI及最终字节对应，不外推本机运行。首次离线metadata缺libc的失败原样保留，修正依赖准备和根包检查后使用全新cache重验；248个原有tracked文件在验收时未变，无源码/数据/锁/旧收据变化，未重传/移tag/改可见性。CLI6完成，CLI7仅待用户后续安排。
 
 ## CLI7：延期候选
 

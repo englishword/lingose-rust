@@ -119,7 +119,9 @@ x86_64, Linux x86_64/aarch64 and macOS Intel/Apple Silicon; see the
 download/extraction verification are tracked in [binary assets](docs/cli-binary-assets.md).
 The private Release assets have been uploaded and authenticated downloads checked
 byte for byte against the tagged CI candidates; see the [publication record](docs/cli-github-release.md).
-Fresh registry installation and final downloaded-binary runtime acceptance remain separate steps.
+Fresh crates.io library consumption and CLI installation passed online and offline on Windows x86_64,
+along with 25 scenarios for the final Release executable. Other platforms retain their separate
+native CI evidence; see the [final acceptance record](docs/cli-final-acceptance.md).
 
 ## License and credits
 

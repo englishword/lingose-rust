@@ -1,0 +1,563 @@
+{
+  "phase": "CLI6.5",
+  "status": "registry_and_release_accepted",
+  "acceptance": {
+    "passed": true,
+    "failures": []
+  },
+  "base_revision": "6db5dfa2f397d8a4e2df0fb7928a6a35597f105c",
+  "started_at_utc": "2026-10-18T10:47:37.588849+00:00",
+  "finished_at_utc": "2026-10-18T10:48:51.389531+00:00",
+  "host": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)\nbinary: rustc\ncommit-hash: 01f6ddf7588f42ae2d7eb0a2f21d44e8e96674cf\ncommit-date: 2026-02-11\nhost: x86_64-pc-windows-msvc\nrelease: 1.93.1\nLLVM version: 21.1.8",
+    "cargo": "cargo 1.93.1 (083ac5135 2025-12-15)"
+  },
+  "raw_report": {
+    "file": ".local/cli65-dc283d2151ac/report.json",
+    "bytes": 150198,
+    "sha256": "b081f48818f9ab7572e96a98f0b800bfa3f17f0b0a4f0951640955bf2e89dc9a"
+  },
+  "failed_attempt": {
+    "raw_report": {
+      "file": ".local/cli65-e756e643aa13/report.json",
+      "bytes": 62646,
+      "sha256": "248549bb0deb0095f3009885ff278341fac48b757753209a5767d3985795d23f"
+    },
+    "status": "failed",
+    "error": "Command failed: cli-metadata; inspect retained logs",
+    "reason": "Host-only cargo install did not fetch libc for full offline metadata; explicit online cargo fetch added. Failure retained; second attempt used two new empty caches."
+  },
+  "verification_inputs": {
+    "tools/check_registry_consumer_020.py": {
+      "bytes": 20209,
+      "sha256": "d07d32a52619f65d295a784eb6d07b7082fb8ba268b561a3d4b584858cb2470b"
+    },
+    "tools/package_consumer_020.rs": {
+      "bytes": 7801,
+      "sha256": "2c659500a1ff6161603e50f334243a6ddb18527f8e57b95add7bb367aee43d3b"
+    },
+    "tools/check_cli_package.py": {
+      "bytes": 26158,
+      "sha256": "f20a12937dc401a7f97b7b46a7fd383abc521d3eb6276a4b03f9d859c6437d15"
+    },
+    "docs/cli-github-release-publication-verification.json": {
+      "bytes": 30961,
+      "sha256": "140fcf9a0188a8875766fc28abd6f73b3c6d443bd03cc6688c7dfe10e7fcebc8"
+    }
+  },
+  "registry": {
+    "lingose": {
+      "version": {
+        "num": "0.2.0",
+        "checksum": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5",
+        "crate_size": 4053096,
+        "yanked": false,
+        "published_by": {
+          "id": 379268,
+          "login": "Prefee",
+          "name": "Oceanus.E.Data",
+          "avatar": "https://avatars.githubusercontent.com/u/24503861?v=4",
+          "url": "https://github.com/Prefee",
+          "github_username_matches": true,
+          "created_at": "2016-12-11T07:53:49Z"
+        }
+      },
+      "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\library-cargo-home": {
+        "archive": {
+          "file": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\library-cargo-home\\registry\\cache\\index.crates.io-1949cf8c6b5b557f\\lingose-0.2.0.crate",
+          "bytes": 4053096,
+          "sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5"
+        },
+        "members": 41,
+        "source": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\library-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\lingose-0.2.0",
+        "all_unpacked_bytes_match_archive": true
+      },
+      "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home": {
+        "archive": {
+          "file": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\cache\\index.crates.io-1949cf8c6b5b557f\\lingose-0.2.0.crate",
+          "bytes": 4053096,
+          "sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5"
+        },
+        "members": 41,
+        "source": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\lingose-0.2.0",
+        "all_unpacked_bytes_match_archive": true
+      }
+    },
+    "lingose-cli": {
+      "version": {
+        "num": "0.2.0",
+        "checksum": "3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490",
+        "crate_size": 16498,
+        "yanked": false,
+        "published_by": {
+          "id": 379268,
+          "login": "Prefee",
+          "name": "Oceanus.E.Data",
+          "avatar": "https://avatars.githubusercontent.com/u/24503861?v=4",
+          "url": "https://github.com/Prefee",
+          "github_username_matches": true,
+          "created_at": "2016-12-11T07:53:49Z"
+        }
+      },
+      "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home": {
+        "archive": {
+          "file": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\cache\\index.crates.io-1949cf8c6b5b557f\\lingose-cli-0.2.0.crate",
+          "bytes": 16498,
+          "sha256": "3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490"
+        },
+        "members": 7,
+        "source": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\lingose-cli-0.2.0",
+        "all_unpacked_bytes_match_archive": true
+      }
+    }
+  },
+  "library_consumer": {
+    "manifest": {
+      "bytes": 169,
+      "sha256": "21d6c94c3555ae2689524561a1c3c990b83a72913b3d2f858d238bc021dee052"
+    },
+    "resolution": {
+      "packages": [
+        {
+          "name": "block-buffer",
+          "version": "0.10.4",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\library-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\block-buffer-0.10.4\\Cargo.toml"
+        },
+        {
+          "name": "cfg-if",
+          "version": "1.0.5",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\library-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\cfg-if-1.0.5\\Cargo.toml"
+        },
+        {
+          "name": "cpufeatures",
+          "version": "0.2.17",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\library-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\cpufeatures-0.2.17\\Cargo.toml"
+        },
+        {
+          "name": "crypto-common",
+          "version": "0.1.7",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\library-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\crypto-common-0.1.7\\Cargo.toml"
+        },
+        {
+          "name": "digest",
+          "version": "0.10.7",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\library-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\digest-0.10.7\\Cargo.toml"
+        },
+        {
+          "name": "generic-array",
+          "version": "0.14.7",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\library-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\generic-array-0.14.7\\Cargo.toml"
+        },
+        {
+          "name": "libc",
+          "version": "0.2.191",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\library-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\libc-0.2.191\\Cargo.toml"
+        },
+        {
+          "name": "lingose",
+          "version": "0.2.0",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\library-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\lingose-0.2.0\\Cargo.toml"
+        },
+        {
+          "name": "lingose-registry-consumer-020",
+          "version": "0.0.0",
+          "source": null,
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\consumer\\Cargo.toml"
+        },
+        {
+          "name": "sha2",
+          "version": "0.10.9",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\library-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\sha2-0.10.9\\Cargo.toml"
+        },
+        {
+          "name": "typenum",
+          "version": "1.20.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\library-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\typenum-1.20.1\\Cargo.toml"
+        },
+        {
+          "name": "version_check",
+          "version": "0.9.5",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\library-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\version_check-0.9.5\\Cargo.toml"
+        }
+      ],
+      "all_transitive_sources_confined": true,
+      "path_dependencies_absent": true,
+      "lock": {
+        "bytes": 2634,
+        "sha256": "4d3d84ea4f94e8a36ea4a8fbde8066b99407843ad7873c27181655eb11cbe9f2"
+      }
+    },
+    "public_functions": 18,
+    "runtime_scope": "Pinned literals, full CET4 membership, Unicode, thresholds, errors; no new full differential",
+    "online_and_offline_runs": 2,
+    "outputs_identical": true,
+    "exact_dependency": "lingose = \"=0.2.0\"",
+    "fresh_online_target": true,
+    "fresh_offline_target": true
+  },
+  "cli_install": {
+    "resolution": {
+      "packages": [
+        {
+          "name": "anstyle",
+          "version": "1.0.14",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\anstyle-1.0.14\\Cargo.toml"
+        },
+        {
+          "name": "block-buffer",
+          "version": "0.10.4",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\block-buffer-0.10.4\\Cargo.toml"
+        },
+        {
+          "name": "cfg-if",
+          "version": "1.0.5",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\cfg-if-1.0.5\\Cargo.toml"
+        },
+        {
+          "name": "clap",
+          "version": "4.6.7",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\clap-4.6.7\\Cargo.toml"
+        },
+        {
+          "name": "clap_builder",
+          "version": "4.6.7",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\clap_builder-4.6.7\\Cargo.toml"
+        },
+        {
+          "name": "clap_lex",
+          "version": "1.1.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\clap_lex-1.1.1\\Cargo.toml"
+        },
+        {
+          "name": "cpufeatures",
+          "version": "0.2.17",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\cpufeatures-0.2.17\\Cargo.toml"
+        },
+        {
+          "name": "crypto-common",
+          "version": "0.1.7",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\crypto-common-0.1.7\\Cargo.toml"
+        },
+        {
+          "name": "digest",
+          "version": "0.10.7",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\digest-0.10.7\\Cargo.toml"
+        },
+        {
+          "name": "generic-array",
+          "version": "0.14.7",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\generic-array-0.14.7\\Cargo.toml"
+        },
+        {
+          "name": "itoa",
+          "version": "1.0.18",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\itoa-1.0.18\\Cargo.toml"
+        },
+        {
+          "name": "libc",
+          "version": "0.2.190",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\libc-0.2.190\\Cargo.toml"
+        },
+        {
+          "name": "lingose",
+          "version": "0.2.0",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\lingose-0.2.0\\Cargo.toml"
+        },
+        {
+          "name": "lingose-cli",
+          "version": "0.2.0",
+          "source": null,
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\lingose-cli-0.2.0\\Cargo.toml"
+        },
+        {
+          "name": "memchr",
+          "version": "2.8.3",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\memchr-2.8.3\\Cargo.toml"
+        },
+        {
+          "name": "proc-macro2",
+          "version": "1.0.107",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\proc-macro2-1.0.107\\Cargo.toml"
+        },
+        {
+          "name": "quote",
+          "version": "1.0.47",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\quote-1.0.47\\Cargo.toml"
+        },
+        {
+          "name": "serde",
+          "version": "1.0.229",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde-1.0.229\\Cargo.toml"
+        },
+        {
+          "name": "serde_core",
+          "version": "1.0.229",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_core-1.0.229\\Cargo.toml"
+        },
+        {
+          "name": "serde_derive",
+          "version": "1.0.229",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_derive-1.0.229\\Cargo.toml"
+        },
+        {
+          "name": "serde_json",
+          "version": "1.0.154",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_json-1.0.154\\Cargo.toml"
+        },
+        {
+          "name": "sha2",
+          "version": "0.10.9",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\sha2-0.10.9\\Cargo.toml"
+        },
+        {
+          "name": "syn",
+          "version": "3.0.9",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\syn-3.0.9\\Cargo.toml"
+        },
+        {
+          "name": "typenum",
+          "version": "1.20.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\typenum-1.20.1\\Cargo.toml"
+        },
+        {
+          "name": "unicode-ident",
+          "version": "1.0.27",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\unicode-ident-1.0.27\\Cargo.toml"
+        },
+        {
+          "name": "version_check",
+          "version": "0.9.5",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\version_check-0.9.5\\Cargo.toml"
+        },
+        {
+          "name": "zmij",
+          "version": "1.0.23",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "manifest_path": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli65-hmifibek\\cli-cargo-home\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\zmij-1.0.23\\Cargo.toml"
+        }
+      ],
+      "all_transitive_sources_confined": true,
+      "path_dependencies_absent": true,
+      "lock": {
+        "bytes": 5940,
+        "sha256": "97af0196dfb2f8268e81052f2decec4697e0aeedff19d3d49e59cb4b17ad83e0"
+      }
+    },
+    "online_and_offline_registry_names_verified": true,
+    "cases_per_binary": 25,
+    "fresh_offline_target": true,
+    "command": "cargo install lingose-cli --version 0.2.0 --locked",
+    "offline_command": "cargo install lingose-cli --version 0.2.0 --locked --offline",
+    "fresh_independent_cargo_home": true,
+    "path_or_patch_override": false,
+    "root_lockfile_copied": false
+  },
+  "release": {
+    "id": 416347193,
+    "url": "https://github.com/englishword/lingose-rust/releases/tag/v0.2.0",
+    "private": true,
+    "tag": {
+      "commit": "cf11a604c8f998a1b4ac67737b3e826cadd40530",
+      "object_sha": "9507ff12eac425612a7f9125ecdd65ffb7cb4095"
+    },
+    "assets": [
+      {
+        "id": 653043338,
+        "name": "lingose-v0.2.0-linux-aarch64.tar.gz",
+        "size": 4433406,
+        "digest": "sha256:572d85200121a0aac718e01fe7f6614adc4739caf6a012d7d1e2441d66715ca2"
+      },
+      {
+        "id": 653043331,
+        "name": "lingose-v0.2.0-linux-x86_64.tar.gz",
+        "size": 4449340,
+        "digest": "sha256:5adfe2aa6a3d9ff3ec3a091ace8e821d98e014193297118b4ecb99926481d287"
+      },
+      {
+        "id": 653043336,
+        "name": "lingose-v0.2.0-macos-aarch64.tar.gz",
+        "size": 4482603,
+        "digest": "sha256:28c1067255acc4bc3be023e976adf708b6885a1d0e53d144aae8d0bcf6d04755"
+      },
+      {
+        "id": 653043335,
+        "name": "lingose-v0.2.0-macos-x86_64.tar.gz",
+        "size": 4421219,
+        "digest": "sha256:56e039f17e50a32a21d35dece6da20ce429dec8b4936565556e49a510191b4dd"
+      },
+      {
+        "id": 653043359,
+        "name": "lingose-v0.2.0-windows-x86_64.zip",
+        "size": 4358023,
+        "digest": "sha256:bf3d61609208c721d7e84b6ed44c91256385080c04ca6c7823f35e256a57b474"
+      },
+      {
+        "id": 653043332,
+        "name": "SHA256SUMS",
+        "size": 506,
+        "digest": "sha256:97c8dae2ccfb1bbbdf242c40199cfda1fa50ed75519af0b3951b6c1b675e2ac2"
+      }
+    ],
+    "checked_at_utc": "2026-10-18T10:47:42.875321+00:00",
+    "download_policy": "Refreshed authenticated remote identities; reused and rehashed six authenticated final Release downloads",
+    "other_platforms": [
+      {
+        "target": "x86_64-pc-windows-msvc",
+        "platform": "Windows-2022Server-10.0.20348-SP0",
+        "build_smoke": 12,
+        "downloaded_native_smoke": 16
+      },
+      {
+        "target": "x86_64-unknown-linux-gnu",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "build_smoke": 12,
+        "downloaded_native_smoke": 16
+      },
+      {
+        "target": "aarch64-unknown-linux-gnu",
+        "platform": "Linux-6.17.0-1022-azure-aarch64-with-glibc2.39",
+        "build_smoke": 12,
+        "downloaded_native_smoke": 16
+      },
+      {
+        "target": "x86_64-apple-darwin",
+        "platform": "macOS-15.7.9-x86_64-i386-64bit",
+        "build_smoke": 12,
+        "downloaded_native_smoke": 16
+      },
+      {
+        "target": "aarch64-apple-darwin",
+        "platform": "macOS-15.7.9-arm64-arm-64bit",
+        "build_smoke": 12,
+        "downloaded_native_smoke": 16
+      }
+    ],
+    "other_platform_scope": "Earlier CI candidate archives, byte-identical to final Release; not final Release runtime on these hosts"
+  },
+  "runtime": {
+    "binaries": {
+      "library-online": {
+        "bytes": 10790912,
+        "sha256": "ce26d59c94c22810424a0f835bc48e86417fadb6fc8ad4fefa699e3c928fd028"
+      },
+      "cli-online": {
+        "bytes": 11289088,
+        "sha256": "a9c25de9b5f8c2dd4a439500515a4da289023f08c20ddd631ac0ab387be3e35e"
+      },
+      "library-offline": {
+        "bytes": 10790912,
+        "sha256": "68c52d8f13576e35dc42ccbe1b71b7ad57f24c42ad59a8c339633de7d37d645f"
+      },
+      "cli-offline": {
+        "bytes": 11289088,
+        "sha256": "bf182c3e5399c4b7ac1d5182df152fcec87afac684d35951bec7aec17d616fa4"
+      },
+      "release": {
+        "bytes": 11286016,
+        "sha256": "4dc4476901165818992836459c76ee88f89a97508865e0fb4d60809ca739b3d6"
+      }
+    },
+    "cargo_home_remained_empty": true,
+    "library_runs_passed": 2,
+    "cli_scenarios_passed": 75,
+    "release_scenarios_passed": 25,
+    "external_lexicon_or_language_runtime_provided": false,
+    "network_disabled": false
+  },
+  "isolation": {
+    "outside_checkout": true,
+    "independent_empty_cargo_homes": 2,
+    "build_paths_hidden_before_runtime": 9,
+    "runtime_path": "Windows System32 only",
+    "runtime_cargo_home_empty": true,
+    "credentials_or_config_copied": false,
+    "fresh_registry_builds_not_used_as_reproducible_binary_identity_claim": true
+  },
+  "checks": {
+    "commands": 91,
+    "all_expected_exit_statuses_passed": true,
+    "all_182_log_identities_verified": true,
+    "cli_smoke_per_binary": 25,
+    "cli_binaries": 3,
+    "library_api_entries_per_consumer": 18,
+    "library_consumer_runs": 2,
+    "preexisting_tracked_files_unchanged_at_acceptance": 248,
+    "python_compile": true,
+    "existing_cli_package_guard_tests_passed": 2,
+    "independent_review": {
+      "status": "passed",
+      "commands": 91,
+      "log_streams": 182,
+      "http_bodies": 4,
+      "library_graph_packages": 12,
+      "cli_graph_packages": 27,
+      "runtime_binaries": 5,
+      "hidden_build_paths": 9,
+      "actual_registry_source_inventories": 3,
+      "registry_install_records": 2,
+      "protected_tracked_files_at_review": 248,
+      "limits": "Six output-file payloads were asserted during smoke and then cleaned; independent retained-log review confirms stdout but cannot re-read those payload files."
+    },
+    "independent_failure_review": {
+      "commands": 12,
+      "log_streams": 24,
+      "failure_exit_code": 101,
+      "failure_stage": "cli-metadata",
+      "reason": "libc v0.2.190 not cached under --offline"
+    }
+  },
+  "limits": [
+    "Only Windows x86_64 final registry/Release runtime performed in CLI6.5.",
+    "Five-platform tagged CI candidate archive native runs remain separate evidence; their bytes match final Release downloads.",
+    "Runtime had no supplied lexicon, source cache, Python or Node; no OS network-disconnection sandbox asserted.",
+    "Current Rust 1.93.1 only in this final registry run; Rust 1.85 evidence remains in earlier phase records.",
+    "No new full differential or performance rerun; prior first-path startup over-budget evidence retained.",
+    "Private Release requires authenticated repository access; no anonymous download claim.",
+    "OS dynamic libraries, macOS notarization/Gatekeeper/older OS and third-party data licensing limits retained."
+  ],
+  "remote_mutations": {
+    "registry_publications": 0,
+    "release_uploads": 0,
+    "tag_moves": 0,
+    "visibility_changes": 0
+  },
+  "next_action": "CLI6 complete. CLI7 winget/scoop deferred until explicitly requested."
+}
