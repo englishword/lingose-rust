@@ -58,15 +58,21 @@ jobs:
           if ($LASTEXITCODE) { throw 'WinGet local registration missing' }
           & $env:WINGET_EXE uninstall --name Lingose --exact --scope user --silent --disable-interactivity
           if ($LASTEXITCODE -or (Test-Path $command)) { throw 'WinGet uninstall failed' }
-      - name: Scoop install, run, reinstall and uninstall
+      - name: Prepare Scoop on disposable runner
         run: |
           $env:SCOOP = "$env:RUNNER_TEMP/lingose-scoop"
+          "SCOOP=$env:SCOOP" >> $env:GITHUB_ENV
+          $installer = "$env:RUNNER_TEMP/Install-Scoop.ps1"
+          Invoke-WebRequest https://get.scoop.sh -OutFile $installer
+          Get-FileHash $installer -Algorithm SHA256
+          & $installer -ScoopDir $env:SCOOP -ScoopGlobalDir "$env:RUNNER_TEMP/lingose-scoop-global" -RunAsAdmin
+          if ($LASTEXITCODE) { throw 'Official Scoop bootstrap failed' }
+      - name: Scoop install, run, reinstall and uninstall
+        run: |
           $scoop = "$env:SCOOP/apps/scoop/current"
-          git clone --depth 1 https://github.com/ScoopInstaller/Scoop $scoop
-          if ($LASTEXITCODE) { throw 'Scoop clone failed' }
-          git -C $scoop rev-parse HEAD
-          New-Item -ItemType Directory "$env:SCOOP/shims" -Force | Out-Null
           $env:PATH = "$env:SCOOP/shims;$scoop/bin;$env:PATH"
+          & "$scoop/bin/scoop.ps1" --version
+          if ($LASTEXITCODE) { throw 'Scoop unavailable' }
           $manifest = (Resolve-Path bucket/lingose.json).Path
           & "$scoop/bin/scoop.ps1" bucket add lingose https://github.com/englishword/lingose-rust
           if ($LASTEXITCODE) { throw 'Scoop custom bucket failed' }
