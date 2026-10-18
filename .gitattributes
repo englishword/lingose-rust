@@ -111,3 +111,5 @@
 /docs/cli-workspace-acceptance-verification.json text eol=lf
 /docs/cli-user-documentation.md text eol=lf
 /docs/cli-user-documentation-verification.json text eol=lf
+/docs/cli-cli-publication.md text eol=lf
+/docs/cli-cli-publication-verification.json text eol=lf

@@ -102,9 +102,10 @@
   - 依赖：CLI6.1。上传已核定库包，核对版本、索引、归档 SHA-256、docs.rs 和元数据链接，等待真实 CLI 注册表依赖可解析。
   - 验收：真实上传与注册表下载身份一致，单独记录上传/索引状态；失败或部分成功先核查远端，不能重复盲传。
   - 结果与边界：[库正式发布](../docs/cli-library-publication.md)及[新收据](../docs/cli-library-publication-verification.json)。注册表于 2026-10-18 07:43:13.810692 UTC 接受 0.2.0，publisher/owner Prefee、未 yank；4,053,096 字节/41 文件，候选、实际上传、API/index/匿名下载 SHA 均为 91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5。Cargo 上传后 Schannel 连接中断退出 101，立即核对远端确认已接受，未重试（正式上传仅 1 次）；错误日志原样保留。docs.rs 0.2.0/新函数及 build 4898279 成功；checkout 外空 cache 的真实 CLI 注册表依赖在线/离线 metadata 通过，未冒充构建/安装/运行或 CLI 发布。0.1.0 和保护数据不变；本轮止于 CLI6.2，下一项 CLI6.3。
-- [ ] CLI6.3 完成 CLI 真实归档、预检并发布。
+- [x] CLI6.3 完成 CLI 真实归档、预检并发布。
   - 依赖：CLI6.2。使用注册表的 lingose 0.2.0 完成 `cargo package -p lingose-cli`、清单/压缩体积/许可核对与隔离消费；验证合格后解除 CLI publish=false 保护，完成 `cargo publish -p lingose-cli --dry-run`，再上传。
   - 验收：归档中规范化 CLI manifest 不含开发 path/patch（源码保留 path + version）；真实归档和 dry-run 均有独立记录，上传后核对版本/索引/下载身份。前置库发布不等于 CLI 已发布。
+  - 结果与边界：[CLI 正式发布](../docs/cli-cli-publication.md)及[完整收据](../docs/cli-cli-publication-verification.json)。受保护候选通过后移除 CLI publish=false 并重验；最终包 7 文件/16,498 字节，SHA 3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490。根锁仅映射库注册表来源及正式 SHA，其余身份/依赖边不变；当前/1.85 两工具链各 25 项隔离离线安装后运行及18项Windows启用依赖许可通过，两次联网dry-run同字节。首次正式上传被403权限拒绝（Cargo101），核查API/index404后等待用户更新凭据；用户确认cargo login后以独立标记进行第二次尝试，Cargo0，注册表2026-10-18 08:36:22.922509 UTC接受，publisher/owner Prefee、未yank。API/index/匿名下载与候选全字节一致，README/元数据通过；两次上传仅一次接受，原拒绝记录保留、无盲重试。29项CLI测试/fmt通过，库/数据/根锁未变；本轮止于CLI6.3，下一项CLI6.4。
 - [ ] CLI6.4 发布 GitHub Release 资产。
   - 依赖：CLI6.3。以与候选对应的 v0.2.0 标签运行 GitHub Actions，向指定仓库 Release 发布五个资产、校验和及版本说明。
   - 验收：五个实际下载资产与候选/构建记录对应，许可及安装说明齐全；远端 Release 可访问，有实际上传证据，不用本地文件存在替代。

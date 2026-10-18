@@ -1,0 +1,4016 @@
+{
+  "phase": "CLI6.3",
+  "status": "published_and_registry_archive_verified",
+  "updated_at_utc": "2026-10-18T08:37:04.659110+00:00",
+  "base_revision": "91cd10a",
+  "authorization": {
+    "instruction": "根据 handoff.md 继续CLI6.3; 继续中断的任务",
+    "scope": "CLI archive, preflight and publication only; no GitHub Release or visibility change",
+    "repeated_publication_confirmation_requested": false,
+    "credential_update_requested_after_real_rejection": true,
+    "credential_update_confirmed_by_user": "已创建令牌并完成 cargo login",
+    "credential_file_update_after_first_rejection_observed": true
+  },
+  "guarded_candidate": {
+    "status": "passed",
+    "raw_report": {
+      "file": ".local/cli63-91cd10a/guarded-verified/report.json",
+      "bytes": 65713,
+      "sha256": "4a1a59c34cf1f89255ac66e2c7054b9eeb13b9cd1732c64fc2e4524174ae7ea9"
+    },
+    "archive": {
+      "file": ".local/cli63-91cd10a/guarded-verified/lingose-cli-0.2.0.crate",
+      "bytes": 16506,
+      "sha256": "0400ccbbe12d25579e3713a9ef1f28b4d4639c72f0e345b9c19fa634413b9c9e",
+      "file_count": 7,
+      "files": {
+        "Cargo.lock": {
+          "bytes": 5940,
+          "sha256": "97af0196dfb2f8268e81052f2decec4697e0aeedff19d3d49e59cb4b17ad83e0"
+        },
+        "Cargo.toml": {
+          "bytes": 1430,
+          "sha256": "cac882b55ee88d238b438c1eee8c84de5357ec0a218272c005418a890f274c51"
+        },
+        "Cargo.toml.orig": {
+          "bytes": 809,
+          "sha256": "e50128430cf34e3da846eb17a97e5924ea39ddff7a9dbf14f34874f14abb788f"
+        },
+        "LICENSE": {
+          "bytes": 17023,
+          "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+        },
+        "README.md": {
+          "bytes": 9017,
+          "sha256": "2f3f7dafed7b3958b4966ae83809922831a7b2af47e4c05ca3e5e1eb7cf77683"
+        },
+        "SOURCES.md": {
+          "bytes": 3685,
+          "sha256": "e3a051a235428b0a89c4be52e6c60f85326d33d508673f7db4397419dc4bd6b3"
+        },
+        "src/main.rs": {
+          "bytes": 12647,
+          "sha256": "201a048f02a7627110ccdd5b0c2ab70845551aca8f35281d2f1f70585f17d624"
+        }
+      },
+      "local_links": [
+        {
+          "source": "README.md",
+          "href": "LICENSE",
+          "target": "LICENSE"
+        },
+        {
+          "source": "README.md",
+          "href": "SOURCES.md",
+          "target": "SOURCES.md"
+        },
+        {
+          "source": "SOURCES.md",
+          "href": "LICENSE",
+          "target": "LICENSE"
+        }
+      ],
+      "normalized_manifest": {
+        "package": {
+          "edition": "2024",
+          "rust-version": "1.85",
+          "name": "lingose-cli",
+          "version": "0.2.0",
+          "authors": [
+            "ZHAN Xianjue"
+          ],
+          "build": false,
+          "include": [
+            "/src/**",
+            "/README.md",
+            "/LICENSE",
+            "/SOURCES.md"
+          ],
+          "publish": false,
+          "autolib": false,
+          "autobins": false,
+          "autoexamples": false,
+          "autotests": false,
+          "autobenches": false,
+          "description": "Command-line interface for offline Lingose word queries and IPS annotation",
+          "homepage": "https://lingose.com/",
+          "readme": "README.md",
+          "keywords": [
+            "english",
+            "pronunciation",
+            "ipsm",
+            "cli"
+          ],
+          "license": "CC-BY-4.0",
+          "repository": "https://github.com/englishword/lingose-rust"
+        },
+        "bin": [
+          {
+            "name": "lingose",
+            "path": "src/main.rs",
+            "doc": false
+          }
+        ],
+        "dependencies": {
+          "clap": {
+            "version": "4.6.7",
+            "features": [
+              "std",
+              "help",
+              "usage",
+              "error-context"
+            ],
+            "default-features": false
+          },
+          "lingose": {
+            "version": "0.2.0"
+          },
+          "serde_json": {
+            "version": "1.0.154"
+          }
+        },
+        "lints": {
+          "rust": {
+            "missing_docs": "deny",
+            "unsafe_code": "forbid"
+          }
+        }
+      },
+      "lock_mapping": "Only lingose 0.2.0 local source -> crates.io source and published checksum; every other locked identity and all edges preserved"
+    },
+    "source_inputs": {
+      "Cargo.toml": {
+        "bytes": 809,
+        "sha256": "e50128430cf34e3da846eb17a97e5924ea39ddff7a9dbf14f34874f14abb788f"
+      },
+      "LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "README.md": {
+        "bytes": 9017,
+        "sha256": "2f3f7dafed7b3958b4966ae83809922831a7b2af47e4c05ca3e5e1eb7cf77683"
+      },
+      "SOURCES.md": {
+        "bytes": 3685,
+        "sha256": "e3a051a235428b0a89c4be52e6c60f85326d33d508673f7db4397419dc4bd6b3"
+      },
+      "src/main.rs": {
+        "bytes": 12647,
+        "sha256": "201a048f02a7627110ccdd5b0c2ab70845551aca8f35281d2f1f70585f17d624"
+      }
+    },
+    "workspace_inputs": {
+      "Cargo.toml": {
+        "bytes": 240,
+        "sha256": "2c7d78c0cb89af8501739a315db12692f4141b8c70815a6fcdbad0dab7cb253b"
+      },
+      "Cargo.lock": {
+        "bytes": 5797,
+        "sha256": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e"
+      }
+    },
+    "started_at_utc": "2026-10-18T08:03:14.234920+00:00",
+    "finished_at_utc": "2026-10-18T08:04:08.938362+00:00",
+    "toolchains": {
+      "current": "1.93.1-x86_64-pc-windows-msvc",
+      "minimum": "1.85.0-x86_64-pc-windows-msvc"
+    },
+    "isolated_fresh_cache": true,
+    "credentials_copied": false,
+    "library_source": {
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "bytes": 4053096,
+      "sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5"
+    },
+    "offline_locked_install": true,
+    "cli_smoke_cases_per_toolchain": 25,
+    "runtime_source_and_cache_hidden": true,
+    "runtime_path": "System32 only",
+    "registry_install_claimed": false,
+    "commands": [
+      {
+        "label": "package-list",
+        "argv": [
+          "cargo",
+          "package",
+          "-p",
+          "lingose-cli",
+          "--list",
+          "--locked"
+        ],
+        "cwd": "<byte-checked snapshot>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.156,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/package-list.stdout.log",
+          "bytes": 79,
+          "sha256": "5a817c80aadc22dba307bbdf49877c31d42c5e275497263c0286602cad916a1f"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/package-list.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "package",
+        "argv": [
+          "cargo",
+          "package",
+          "-p",
+          "lingose-cli",
+          "--locked"
+        ],
+        "cwd": "<byte-checked snapshot>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 7.328,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/package.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/package.stderr.log",
+          "bytes": 1121,
+          "sha256": "6e786813b7d3100dd3a20ea31512cb4a2550466f63b911d83b6731358f4a9d25"
+        }
+      },
+      {
+        "label": "fetch",
+        "argv": [
+          "cargo",
+          "fetch",
+          "--locked"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 11.078,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/fetch.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/fetch.stderr.log",
+          "bytes": 1454,
+          "sha256": "b4653cf94a92a5f13ae9f8c0c098a25728c0e53cb186fcf93f4b5ace522a2d8d"
+        }
+      },
+      {
+        "label": "metadata",
+        "argv": [
+          "cargo",
+          "metadata",
+          "--format-version",
+          "1",
+          "--offline",
+          "--locked"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.172,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/metadata.stdout.log",
+          "bytes": 129481,
+          "sha256": "aaa5fa42623ddb464fd614cef22dc1bafca9428d089b97a645b17888b4dee9a1"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/metadata.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-rustc",
+        "argv": [
+          "rustc",
+          "-Vv"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.11,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-rustc.stdout.log",
+          "bytes": 194,
+          "sha256": "f133056ecf1576257a2bcb9da126bfb7e84725ccc144caee31dc2f70b42f6f20"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-rustc.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-install",
+        "argv": [
+          "cargo",
+          "install",
+          "--path",
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\package",
+          "--root",
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\current-install",
+          "--locked",
+          "--offline"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 12.5,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-install.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-install.stderr.log",
+          "bytes": 1285,
+          "sha256": "b2b2c4b59ee577219c20fed6c9684b5de24307b0e92705cec7db86f9e894ae5a"
+        }
+      },
+      {
+        "label": "minimum-rustc",
+        "argv": [
+          "rustup",
+          "run",
+          "1.85.0-x86_64-pc-windows-msvc",
+          "rustc",
+          "-Vv"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.312,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-rustc.stdout.log",
+          "bytes": 194,
+          "sha256": "32773cf1f17324f81b3423be1da95ce0a5c4e9f253e71481a8aa68e604748997"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-rustc.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-install",
+        "argv": [
+          "rustup",
+          "run",
+          "1.85.0-x86_64-pc-windows-msvc",
+          "cargo",
+          "install",
+          "--path",
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\package",
+          "--root",
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\minimum-install",
+          "--locked",
+          "--offline"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 13.797,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-install.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-install.stderr.log",
+          "bytes": 1285,
+          "sha256": "a6b23bd95970f80de95eed7919965ef59c0f57880e77d6454e58ccc4f918edef"
+        }
+      },
+      {
+        "label": "current-smoke-word-json",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "word",
+          "apple",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.953,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-word-json.stdout.log",
+          "bytes": 150,
+          "sha256": "d876a1e8e7166cadcaead135558c09a9de07b017af3d8d562535d1ab061c5af7"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-word-json.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-unknown",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "word",
+          "unknownwordzz",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.063,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-unknown.stdout.log",
+          "bytes": 107,
+          "sha256": "6704d352ca5dc5816c50b8c683551f220ce4c45f12856bd988f984dde2df1328"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-unknown.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-word-plain",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "word",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-word-plain.stdout.log",
+          "bytes": 93,
+          "sha256": "f32d7d70f1295292938adbc3ab74c2693f98600dbc56a30e286c1803f94356d6"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-word-plain.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-help",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "--help"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-help.stdout.log",
+          "bytes": 374,
+          "sha256": "34e92130c3e5620250018b08cb339b7a84a3b7ec2520fc391047adfc5d2ccf67"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-help.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-version",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "--version"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.031,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-version.stdout.log",
+          "bytes": 14,
+          "sha256": "0257d2870e2e70c1f7d4ba25c6f7bd12c56f306b720b9125d541a649c1c255dc"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-version.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-threshold-0",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "0"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.046,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-threshold-0.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-threshold-0.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-threshold-1000",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "1000"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-threshold-1000.stdout.log",
+          "bytes": 20,
+          "sha256": "b1a105c6f57e1a28766f6e405f43811ea9b9bd256f22033c15af187287e6c51f"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-threshold-1000.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-threshold-5062",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "5062"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-threshold-5062.stdout.log",
+          "bytes": 17,
+          "sha256": "bca41c49e79f1b5a24fc48d50ff982e5128284b69864ae715a37eb9cb3188e85"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-threshold-5062.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-threshold-5063",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "5063"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-threshold-5063.stdout.log",
+          "bytes": 17,
+          "sha256": "bca41c49e79f1b5a24fc48d50ff982e5128284b69864ae715a37eb9cb3188e85"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-threshold-5063.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-stdin",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-stdin.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-stdin.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-empty",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-empty.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-empty.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-unicode",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-unicode.stdout.log",
+          "bytes": 50,
+          "sha256": "c0c9a25c23f059c6d9a5523c232c13cdbc27f3ee9cac6b358c2ad7b3dd239ac1"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-unicode.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-annotation-json",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "Abandon the book.",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.063,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-annotation-json.stdout.log",
+          "bytes": 76,
+          "sha256": "741a7b419c60cef904259377970707462b6e296ffcab2dfc3c235aadb39e56b8"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-annotation-json.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-auto-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-auto-file.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-auto-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-explicit-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "--input",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.031,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-explicit-file.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-explicit-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-forced-text",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "--text",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-forced-text.stdout.log",
+          "bytes": 5,
+          "sha256": "3a7bd3e2360a3d29eea436fcfb7e44c735d117c42d1c1835420b6b9942dd4f1b"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-forced-text.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-output-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "--input",
+          "apple",
+          "-o",
+          "output.txt"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-output-file.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-output-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-json-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "--input",
+          "apple",
+          "-o",
+          "output.txt",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-json-file.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-json-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-missing-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "--input",
+          "missing.txt",
+          "-o",
+          "output.txt"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.031,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-missing-file.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-missing-file.stderr.log",
+          "bytes": 54,
+          "sha256": "58af60e8143ada10b04822f01ae25f55f245fdfc527c71c79fadb5d621e2639d"
+        }
+      },
+      {
+        "label": "current-smoke-invalid-file-utf8",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "--input",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-invalid-file-utf8.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-invalid-file-utf8.stderr.log",
+          "bytes": 42,
+          "sha256": "75acbd01926d6dfde4921a6fa84c1395cf6c40c0269f00e6f1fb479f864c6a4d"
+        }
+      },
+      {
+        "label": "current-smoke-invalid-stdin-utf8",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.032,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-invalid-stdin-utf8.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-invalid-stdin-utf8.stderr.log",
+          "bytes": 42,
+          "sha256": "75acbd01926d6dfde4921a6fa84c1395cf6c40c0269f00e6f1fb479f864c6a4d"
+        }
+      },
+      {
+        "label": "current-smoke-directory",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "."
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-directory.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-directory.stderr.log",
+          "bytes": 43,
+          "sha256": "5f48bd9dfbbc0c483c077c34541f144f80d9ab037b445eee85d6e786c05b7075"
+        }
+      },
+      {
+        "label": "current-smoke-negative-threshold",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top=-1"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "elapsed_seconds": 0.031,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-negative-threshold.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-negative-threshold.stderr.log",
+          "bytes": 45,
+          "sha256": "f8b4b1e301b01afcd99079bfa793f9ccf642136e32bb4411d26577c543244651"
+        }
+      },
+      {
+        "label": "current-smoke-conflicting-inputs",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "annotate",
+          "Abandon the book.",
+          "--text",
+          "Abandon the book."
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "elapsed_seconds": 0.015,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-conflicting-inputs.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-conflicting-inputs.stderr.log",
+          "bytes": 162,
+          "sha256": "ccc8c4e906afe938f0012dc97d56f5469b0b00437ea19bd28f7f65296e877f48"
+        }
+      },
+      {
+        "label": "current-smoke-missing-word",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\current-lingose.exe",
+          "word"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-missing-word.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/current-smoke-missing-word.stderr.log",
+          "bytes": 145,
+          "sha256": "90c3c36ebe391afc0526f1892546ce4dc0ca97841f2187406df9c46a7dd557e2"
+        }
+      },
+      {
+        "label": "minimum-smoke-word-json",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "word",
+          "apple",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.875,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-word-json.stdout.log",
+          "bytes": 150,
+          "sha256": "d876a1e8e7166cadcaead135558c09a9de07b017af3d8d562535d1ab061c5af7"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-word-json.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-unknown",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "word",
+          "unknownwordzz",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-unknown.stdout.log",
+          "bytes": 107,
+          "sha256": "6704d352ca5dc5816c50b8c683551f220ce4c45f12856bd988f984dde2df1328"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-unknown.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-word-plain",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "word",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.031,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-word-plain.stdout.log",
+          "bytes": 93,
+          "sha256": "f32d7d70f1295292938adbc3ab74c2693f98600dbc56a30e286c1803f94356d6"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-word-plain.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-help",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "--help"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.0,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-help.stdout.log",
+          "bytes": 374,
+          "sha256": "783744badbb4b5b2782b8450b58dcc0c797419b400eb8ddd49681f093a835b46"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-help.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-version",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "--version"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-version.stdout.log",
+          "bytes": 14,
+          "sha256": "0257d2870e2e70c1f7d4ba25c6f7bd12c56f306b720b9125d541a649c1c255dc"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-version.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-threshold-0",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "0"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-threshold-0.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-threshold-0.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-threshold-1000",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "1000"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-threshold-1000.stdout.log",
+          "bytes": 20,
+          "sha256": "b1a105c6f57e1a28766f6e405f43811ea9b9bd256f22033c15af187287e6c51f"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-threshold-1000.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-threshold-5062",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "5062"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.046,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-threshold-5062.stdout.log",
+          "bytes": 17,
+          "sha256": "bca41c49e79f1b5a24fc48d50ff982e5128284b69864ae715a37eb9cb3188e85"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-threshold-5062.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-threshold-5063",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "5063"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-threshold-5063.stdout.log",
+          "bytes": 17,
+          "sha256": "bca41c49e79f1b5a24fc48d50ff982e5128284b69864ae715a37eb9cb3188e85"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-threshold-5063.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-stdin",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.062,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-stdin.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-stdin.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-empty",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.0,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-empty.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-empty.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-unicode",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.015,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-unicode.stdout.log",
+          "bytes": 50,
+          "sha256": "c0c9a25c23f059c6d9a5523c232c13cdbc27f3ee9cac6b358c2ad7b3dd239ac1"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-unicode.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-annotation-json",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "Abandon the book.",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-annotation-json.stdout.log",
+          "bytes": 76,
+          "sha256": "741a7b419c60cef904259377970707462b6e296ffcab2dfc3c235aadb39e56b8"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-annotation-json.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-auto-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-auto-file.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-auto-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-explicit-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--input",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-explicit-file.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-explicit-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-forced-text",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--text",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-forced-text.stdout.log",
+          "bytes": 5,
+          "sha256": "3a7bd3e2360a3d29eea436fcfb7e44c735d117c42d1c1835420b6b9942dd4f1b"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-forced-text.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-output-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--input",
+          "apple",
+          "-o",
+          "output.txt"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-output-file.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-output-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-json-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--input",
+          "apple",
+          "-o",
+          "output.txt",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.063,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-json-file.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-json-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-missing-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--input",
+          "missing.txt",
+          "-o",
+          "output.txt"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.031,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-missing-file.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-missing-file.stderr.log",
+          "bytes": 54,
+          "sha256": "58af60e8143ada10b04822f01ae25f55f245fdfc527c71c79fadb5d621e2639d"
+        }
+      },
+      {
+        "label": "minimum-smoke-invalid-file-utf8",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--input",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.015,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-invalid-file-utf8.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-invalid-file-utf8.stderr.log",
+          "bytes": 42,
+          "sha256": "75acbd01926d6dfde4921a6fa84c1395cf6c40c0269f00e6f1fb479f864c6a4d"
+        }
+      },
+      {
+        "label": "minimum-smoke-invalid-stdin-utf8",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.015,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-invalid-stdin-utf8.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-invalid-stdin-utf8.stderr.log",
+          "bytes": 42,
+          "sha256": "75acbd01926d6dfde4921a6fa84c1395cf6c40c0269f00e6f1fb479f864c6a4d"
+        }
+      },
+      {
+        "label": "minimum-smoke-directory",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "."
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.031,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-directory.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-directory.stderr.log",
+          "bytes": 43,
+          "sha256": "5f48bd9dfbbc0c483c077c34541f144f80d9ab037b445eee85d6e786c05b7075"
+        }
+      },
+      {
+        "label": "minimum-smoke-negative-threshold",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top=-1"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "elapsed_seconds": 0.032,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-negative-threshold.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-negative-threshold.stderr.log",
+          "bytes": 45,
+          "sha256": "f8b4b1e301b01afcd99079bfa793f9ccf642136e32bb4411d26577c543244651"
+        }
+      },
+      {
+        "label": "minimum-smoke-conflicting-inputs",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "Abandon the book.",
+          "--text",
+          "Abandon the book."
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "elapsed_seconds": 0.031,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-conflicting-inputs.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-conflicting-inputs.stderr.log",
+          "bytes": 162,
+          "sha256": "38671e6d8962a540a90cce9a28c20a73e124ffcc47e6338c1e7cfa051e81e41a"
+        }
+      },
+      {
+        "label": "minimum-smoke-missing-word",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-guarded-98xxclhk\\runtime\\minimum-lingose.exe",
+          "word"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "elapsed_seconds": 0.032,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-missing-word.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/guarded-verified/minimum-smoke-missing-word.stderr.log",
+          "bytes": 145,
+          "sha256": "14a23c4e5dff8043bb2fcad15caf3820dbd7eb30c4f5b42a83e57bce47403d59"
+        }
+      }
+    ]
+  },
+  "final_candidate": {
+    "status": "passed",
+    "raw_report": {
+      "file": ".local/cli63-91cd10a/final/report.json",
+      "bytes": 66135,
+      "sha256": "2c2969dc88cc66ab0a8af788cb6afd45e80eec55fc22afbe2d9a62c5496247e4"
+    },
+    "archive": {
+      "file": ".local/cli63-91cd10a/final/lingose-cli-0.2.0.crate",
+      "bytes": 16498,
+      "sha256": "3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490",
+      "file_count": 7,
+      "files": {
+        "Cargo.lock": {
+          "bytes": 5940,
+          "sha256": "97af0196dfb2f8268e81052f2decec4697e0aeedff19d3d49e59cb4b17ad83e0"
+        },
+        "Cargo.toml": {
+          "bytes": 1414,
+          "sha256": "a9bb38b7d0c6a134e92569b993bc8a8f20df8e8198a5f8fa538e1b968a79317a"
+        },
+        "Cargo.toml.orig": {
+          "bytes": 793,
+          "sha256": "a9fdb00b1d0d238a1902bd9fb5aa1679b23206e81fa723266ac93e65b2f4e448"
+        },
+        "LICENSE": {
+          "bytes": 17023,
+          "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+        },
+        "README.md": {
+          "bytes": 9017,
+          "sha256": "2f3f7dafed7b3958b4966ae83809922831a7b2af47e4c05ca3e5e1eb7cf77683"
+        },
+        "SOURCES.md": {
+          "bytes": 3685,
+          "sha256": "e3a051a235428b0a89c4be52e6c60f85326d33d508673f7db4397419dc4bd6b3"
+        },
+        "src/main.rs": {
+          "bytes": 12647,
+          "sha256": "201a048f02a7627110ccdd5b0c2ab70845551aca8f35281d2f1f70585f17d624"
+        }
+      },
+      "local_links": [
+        {
+          "source": "README.md",
+          "href": "LICENSE",
+          "target": "LICENSE"
+        },
+        {
+          "source": "README.md",
+          "href": "SOURCES.md",
+          "target": "SOURCES.md"
+        },
+        {
+          "source": "SOURCES.md",
+          "href": "LICENSE",
+          "target": "LICENSE"
+        }
+      ],
+      "normalized_manifest": {
+        "package": {
+          "edition": "2024",
+          "rust-version": "1.85",
+          "name": "lingose-cli",
+          "version": "0.2.0",
+          "authors": [
+            "ZHAN Xianjue"
+          ],
+          "build": false,
+          "include": [
+            "/src/**",
+            "/README.md",
+            "/LICENSE",
+            "/SOURCES.md"
+          ],
+          "autolib": false,
+          "autobins": false,
+          "autoexamples": false,
+          "autotests": false,
+          "autobenches": false,
+          "description": "Command-line interface for offline Lingose word queries and IPS annotation",
+          "homepage": "https://lingose.com/",
+          "readme": "README.md",
+          "keywords": [
+            "english",
+            "pronunciation",
+            "ipsm",
+            "cli"
+          ],
+          "license": "CC-BY-4.0",
+          "repository": "https://github.com/englishword/lingose-rust"
+        },
+        "bin": [
+          {
+            "name": "lingose",
+            "path": "src/main.rs",
+            "doc": false
+          }
+        ],
+        "dependencies": {
+          "clap": {
+            "version": "4.6.7",
+            "features": [
+              "std",
+              "help",
+              "usage",
+              "error-context"
+            ],
+            "default-features": false
+          },
+          "lingose": {
+            "version": "0.2.0"
+          },
+          "serde_json": {
+            "version": "1.0.154"
+          }
+        },
+        "lints": {
+          "rust": {
+            "missing_docs": "deny",
+            "unsafe_code": "forbid"
+          }
+        }
+      },
+      "lock_mapping": "Only lingose 0.2.0 local source -> crates.io source and published checksum; every other locked identity and all edges preserved"
+    },
+    "source_inputs": {
+      "Cargo.toml": {
+        "bytes": 793,
+        "sha256": "a9fdb00b1d0d238a1902bd9fb5aa1679b23206e81fa723266ac93e65b2f4e448"
+      },
+      "LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "README.md": {
+        "bytes": 9017,
+        "sha256": "2f3f7dafed7b3958b4966ae83809922831a7b2af47e4c05ca3e5e1eb7cf77683"
+      },
+      "SOURCES.md": {
+        "bytes": 3685,
+        "sha256": "e3a051a235428b0a89c4be52e6c60f85326d33d508673f7db4397419dc4bd6b3"
+      },
+      "src/main.rs": {
+        "bytes": 12647,
+        "sha256": "201a048f02a7627110ccdd5b0c2ab70845551aca8f35281d2f1f70585f17d624"
+      }
+    },
+    "workspace_inputs": {
+      "Cargo.toml": {
+        "bytes": 240,
+        "sha256": "2c7d78c0cb89af8501739a315db12692f4141b8c70815a6fcdbad0dab7cb253b"
+      },
+      "Cargo.lock": {
+        "bytes": 5797,
+        "sha256": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e"
+      }
+    },
+    "started_at_utc": "2026-10-18T08:04:27.434470+00:00",
+    "finished_at_utc": "2026-10-18T08:05:21.689556+00:00",
+    "toolchains": {
+      "current": "1.93.1-x86_64-pc-windows-msvc",
+      "minimum": "1.85.0-x86_64-pc-windows-msvc"
+    },
+    "isolated_fresh_cache": true,
+    "credentials_copied": false,
+    "library_source": {
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "bytes": 4053096,
+      "sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5"
+    },
+    "offline_locked_install": true,
+    "cli_smoke_cases_per_toolchain": 25,
+    "runtime_source_and_cache_hidden": true,
+    "runtime_path": "System32 only",
+    "registry_install_claimed": false,
+    "commands": [
+      {
+        "label": "package-list",
+        "argv": [
+          "cargo",
+          "package",
+          "-p",
+          "lingose-cli",
+          "--list",
+          "--locked"
+        ],
+        "cwd": "<byte-checked snapshot>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.156,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/package-list.stdout.log",
+          "bytes": 79,
+          "sha256": "5a817c80aadc22dba307bbdf49877c31d42c5e275497263c0286602cad916a1f"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/package-list.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "package",
+        "argv": [
+          "cargo",
+          "package",
+          "-p",
+          "lingose-cli",
+          "--locked"
+        ],
+        "cwd": "<byte-checked snapshot>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 7.719,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/package.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/package.stderr.log",
+          "bytes": 1088,
+          "sha256": "3106b59345e06ad0da0fda1f6ec22d5d6794548f4861385b45c23190ca053e26"
+        }
+      },
+      {
+        "label": "fetch",
+        "argv": [
+          "cargo",
+          "fetch",
+          "--locked"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 11.672,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/fetch.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/fetch.stderr.log",
+          "bytes": 1148,
+          "sha256": "3ffa64acf0e331d55dd6eaa1dfe29cdd60d4d4ca0c1b475df1fa8a24dbce8d30"
+        }
+      },
+      {
+        "label": "metadata",
+        "argv": [
+          "cargo",
+          "metadata",
+          "--format-version",
+          "1",
+          "--offline",
+          "--locked",
+          "--filter-platform",
+          "x86_64-pc-windows-msvc"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.172,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/metadata.stdout.log",
+          "bytes": 87909,
+          "sha256": "5c7cc06e1de6b87ba2f110b948eeaed30266e842e2babb1dca43088bb0344e55"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/metadata.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-rustc",
+        "argv": [
+          "rustc",
+          "-Vv"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.094,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-rustc.stdout.log",
+          "bytes": 194,
+          "sha256": "f133056ecf1576257a2bcb9da126bfb7e84725ccc144caee31dc2f70b42f6f20"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-rustc.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-install",
+        "argv": [
+          "cargo",
+          "install",
+          "--path",
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\package",
+          "--root",
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\current-install",
+          "--locked",
+          "--offline"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 11.203,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-install.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-install.stderr.log",
+          "bytes": 1275,
+          "sha256": "cf845bf31b89f37bec078a81f50b936d4c61a496e1913dc562dcb36e9e8efee8"
+        }
+      },
+      {
+        "label": "minimum-rustc",
+        "argv": [
+          "rustup",
+          "run",
+          "1.85.0-x86_64-pc-windows-msvc",
+          "rustc",
+          "-Vv"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.063,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-rustc.stdout.log",
+          "bytes": 194,
+          "sha256": "32773cf1f17324f81b3423be1da95ce0a5c4e9f253e71481a8aa68e604748997"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-rustc.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-install",
+        "argv": [
+          "rustup",
+          "run",
+          "1.85.0-x86_64-pc-windows-msvc",
+          "cargo",
+          "install",
+          "--path",
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\package",
+          "--root",
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\minimum-install",
+          "--locked",
+          "--offline"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 13.688,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-install.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-install.stderr.log",
+          "bytes": 1275,
+          "sha256": "87b251c9c8add63a536c154f93d672d3d6bfe5bf269efb4d47bd2f887561cf33"
+        }
+      },
+      {
+        "label": "current-smoke-word-json",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "word",
+          "apple",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.828,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-word-json.stdout.log",
+          "bytes": 150,
+          "sha256": "d876a1e8e7166cadcaead135558c09a9de07b017af3d8d562535d1ab061c5af7"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-word-json.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-unknown",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "word",
+          "unknownwordzz",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.046,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-unknown.stdout.log",
+          "bytes": 107,
+          "sha256": "6704d352ca5dc5816c50b8c683551f220ce4c45f12856bd988f984dde2df1328"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-unknown.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-word-plain",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "word",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.063,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-word-plain.stdout.log",
+          "bytes": 93,
+          "sha256": "f32d7d70f1295292938adbc3ab74c2693f98600dbc56a30e286c1803f94356d6"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-word-plain.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-help",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "--help"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.015,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-help.stdout.log",
+          "bytes": 374,
+          "sha256": "34e92130c3e5620250018b08cb339b7a84a3b7ec2520fc391047adfc5d2ccf67"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-help.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-version",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "--version"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.031,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-version.stdout.log",
+          "bytes": 14,
+          "sha256": "0257d2870e2e70c1f7d4ba25c6f7bd12c56f306b720b9125d541a649c1c255dc"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-version.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-threshold-0",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "0"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-threshold-0.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-threshold-0.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-threshold-1000",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "1000"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.046,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-threshold-1000.stdout.log",
+          "bytes": 20,
+          "sha256": "b1a105c6f57e1a28766f6e405f43811ea9b9bd256f22033c15af187287e6c51f"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-threshold-1000.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-threshold-5062",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "5062"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.031,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-threshold-5062.stdout.log",
+          "bytes": 17,
+          "sha256": "bca41c49e79f1b5a24fc48d50ff982e5128284b69864ae715a37eb9cb3188e85"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-threshold-5062.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-threshold-5063",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "5063"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.031,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-threshold-5063.stdout.log",
+          "bytes": 17,
+          "sha256": "bca41c49e79f1b5a24fc48d50ff982e5128284b69864ae715a37eb9cb3188e85"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-threshold-5063.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-stdin",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-stdin.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-stdin.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-empty",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.015,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-empty.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-empty.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-unicode",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-unicode.stdout.log",
+          "bytes": 50,
+          "sha256": "c0c9a25c23f059c6d9a5523c232c13cdbc27f3ee9cac6b358c2ad7b3dd239ac1"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-unicode.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-annotation-json",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "Abandon the book.",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-annotation-json.stdout.log",
+          "bytes": 76,
+          "sha256": "741a7b419c60cef904259377970707462b6e296ffcab2dfc3c235aadb39e56b8"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-annotation-json.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-auto-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-auto-file.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-auto-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-explicit-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "--input",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-explicit-file.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-explicit-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-forced-text",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "--text",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.031,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-forced-text.stdout.log",
+          "bytes": 5,
+          "sha256": "3a7bd3e2360a3d29eea436fcfb7e44c735d117c42d1c1835420b6b9942dd4f1b"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-forced-text.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-output-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "--input",
+          "apple",
+          "-o",
+          "output.txt"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-output-file.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-output-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-json-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "--input",
+          "apple",
+          "-o",
+          "output.txt",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.046,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-json-file.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-json-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "current-smoke-missing-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "--input",
+          "missing.txt",
+          "-o",
+          "output.txt"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-missing-file.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-missing-file.stderr.log",
+          "bytes": 54,
+          "sha256": "58af60e8143ada10b04822f01ae25f55f245fdfc527c71c79fadb5d621e2639d"
+        }
+      },
+      {
+        "label": "current-smoke-invalid-file-utf8",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "--input",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-invalid-file-utf8.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-invalid-file-utf8.stderr.log",
+          "bytes": 42,
+          "sha256": "75acbd01926d6dfde4921a6fa84c1395cf6c40c0269f00e6f1fb479f864c6a4d"
+        }
+      },
+      {
+        "label": "current-smoke-invalid-stdin-utf8",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-invalid-stdin-utf8.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-invalid-stdin-utf8.stderr.log",
+          "bytes": 42,
+          "sha256": "75acbd01926d6dfde4921a6fa84c1395cf6c40c0269f00e6f1fb479f864c6a4d"
+        }
+      },
+      {
+        "label": "current-smoke-directory",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "."
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-directory.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-directory.stderr.log",
+          "bytes": 43,
+          "sha256": "5f48bd9dfbbc0c483c077c34541f144f80d9ab037b445eee85d6e786c05b7075"
+        }
+      },
+      {
+        "label": "current-smoke-negative-threshold",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top=-1"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "elapsed_seconds": 0.015,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-negative-threshold.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-negative-threshold.stderr.log",
+          "bytes": 45,
+          "sha256": "f8b4b1e301b01afcd99079bfa793f9ccf642136e32bb4411d26577c543244651"
+        }
+      },
+      {
+        "label": "current-smoke-conflicting-inputs",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "annotate",
+          "Abandon the book.",
+          "--text",
+          "Abandon the book."
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-conflicting-inputs.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-conflicting-inputs.stderr.log",
+          "bytes": 162,
+          "sha256": "ccc8c4e906afe938f0012dc97d56f5469b0b00437ea19bd28f7f65296e877f48"
+        }
+      },
+      {
+        "label": "current-smoke-missing-word",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\current-lingose.exe",
+          "word"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "elapsed_seconds": 0.0,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-missing-word.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/current-smoke-missing-word.stderr.log",
+          "bytes": 145,
+          "sha256": "90c3c36ebe391afc0526f1892546ce4dc0ca97841f2187406df9c46a7dd557e2"
+        }
+      },
+      {
+        "label": "minimum-smoke-word-json",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "word",
+          "apple",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.766,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-word-json.stdout.log",
+          "bytes": 150,
+          "sha256": "d876a1e8e7166cadcaead135558c09a9de07b017af3d8d562535d1ab061c5af7"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-word-json.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-unknown",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "word",
+          "unknownwordzz",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.046,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-unknown.stdout.log",
+          "bytes": 107,
+          "sha256": "6704d352ca5dc5816c50b8c683551f220ce4c45f12856bd988f984dde2df1328"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-unknown.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-word-plain",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "word",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.063,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-word-plain.stdout.log",
+          "bytes": 93,
+          "sha256": "f32d7d70f1295292938adbc3ab74c2693f98600dbc56a30e286c1803f94356d6"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-word-plain.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-help",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "--help"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-help.stdout.log",
+          "bytes": 374,
+          "sha256": "783744badbb4b5b2782b8450b58dcc0c797419b400eb8ddd49681f093a835b46"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-help.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-version",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "--version"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.031,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-version.stdout.log",
+          "bytes": 14,
+          "sha256": "0257d2870e2e70c1f7d4ba25c6f7bd12c56f306b720b9125d541a649c1c255dc"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-version.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-threshold-0",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "0"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-threshold-0.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-threshold-0.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-threshold-1000",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "1000"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.046,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-threshold-1000.stdout.log",
+          "bytes": 20,
+          "sha256": "b1a105c6f57e1a28766f6e405f43811ea9b9bd256f22033c15af187287e6c51f"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-threshold-1000.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-threshold-5062",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "5062"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.063,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-threshold-5062.stdout.log",
+          "bytes": 17,
+          "sha256": "bca41c49e79f1b5a24fc48d50ff982e5128284b69864ae715a37eb9cb3188e85"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-threshold-5062.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-threshold-5063",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top",
+          "5063"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-threshold-5063.stdout.log",
+          "bytes": 17,
+          "sha256": "bca41c49e79f1b5a24fc48d50ff982e5128284b69864ae715a37eb9cb3188e85"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-threshold-5063.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-stdin",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-stdin.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-stdin.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-empty",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-empty.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-empty.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-unicode",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-unicode.stdout.log",
+          "bytes": 50,
+          "sha256": "c0c9a25c23f059c6d9a5523c232c13cdbc27f3ee9cac6b358c2ad7b3dd239ac1"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-unicode.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-annotation-json",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "Abandon the book.",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-annotation-json.stdout.log",
+          "bytes": 76,
+          "sha256": "741a7b419c60cef904259377970707462b6e296ffcab2dfc3c235aadb39e56b8"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-annotation-json.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-auto-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-auto-file.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-auto-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-explicit-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--input",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.063,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-explicit-file.stdout.log",
+          "bytes": 24,
+          "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-explicit-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-forced-text",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--text",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-forced-text.stdout.log",
+          "bytes": 5,
+          "sha256": "3a7bd3e2360a3d29eea436fcfb7e44c735d117c42d1c1835420b6b9942dd4f1b"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-forced-text.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-output-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--input",
+          "apple",
+          "-o",
+          "output.txt"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-output-file.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-output-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-json-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--input",
+          "apple",
+          "-o",
+          "output.txt",
+          "--json"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "elapsed_seconds": 0.047,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-json-file.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-json-file.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "label": "minimum-smoke-missing-file",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--input",
+          "missing.txt",
+          "-o",
+          "output.txt"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-missing-file.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-missing-file.stderr.log",
+          "bytes": 54,
+          "sha256": "58af60e8143ada10b04822f01ae25f55f245fdfc527c71c79fadb5d621e2639d"
+        }
+      },
+      {
+        "label": "minimum-smoke-invalid-file-utf8",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--input",
+          "apple"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-invalid-file-utf8.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-invalid-file-utf8.stderr.log",
+          "bytes": 42,
+          "sha256": "75acbd01926d6dfde4921a6fa84c1395cf6c40c0269f00e6f1fb479f864c6a4d"
+        }
+      },
+      {
+        "label": "minimum-smoke-invalid-stdin-utf8",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.0,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-invalid-stdin-utf8.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-invalid-stdin-utf8.stderr.log",
+          "bytes": 42,
+          "sha256": "75acbd01926d6dfde4921a6fa84c1395cf6c40c0269f00e6f1fb479f864c6a4d"
+        }
+      },
+      {
+        "label": "minimum-smoke-directory",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "."
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "elapsed_seconds": 0.016,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-directory.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-directory.stderr.log",
+          "bytes": 43,
+          "sha256": "5f48bd9dfbbc0c483c077c34541f144f80d9ab037b445eee85d6e786c05b7075"
+        }
+      },
+      {
+        "label": "minimum-smoke-negative-threshold",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "--text",
+          "Abandon the book.",
+          "--skip-top=-1"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "elapsed_seconds": 0.015,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-negative-threshold.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-negative-threshold.stderr.log",
+          "bytes": 45,
+          "sha256": "f8b4b1e301b01afcd99079bfa793f9ccf642136e32bb4411d26577c543244651"
+        }
+      },
+      {
+        "label": "minimum-smoke-conflicting-inputs",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "annotate",
+          "Abandon the book.",
+          "--text",
+          "Abandon the book."
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "elapsed_seconds": 0.015,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-conflicting-inputs.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-conflicting-inputs.stderr.log",
+          "bytes": 162,
+          "sha256": "38671e6d8962a540a90cce9a28c20a73e124ffcc47e6338c1e7cfa051e81e41a"
+        }
+      },
+      {
+        "label": "minimum-smoke-missing-word",
+        "argv": [
+          "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli63-final-dmbx8jzy\\runtime\\minimum-lingose.exe",
+          "word"
+        ],
+        "cwd": "<isolated temporary consumer>",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "elapsed_seconds": 0.031,
+        "stdout": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-missing-word.stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": ".local/cli63-91cd10a/final/minimum-smoke-missing-word.stderr.log",
+          "bytes": 145,
+          "sha256": "14a23c4e5dff8043bb2fcad15caf3820dbd7eb30c4f5b42a83e57bce47403d59"
+        }
+      }
+    ]
+  },
+  "active_dependency_licenses": [
+    {
+      "name": "anstyle",
+      "version": "1.0.14",
+      "license": "MIT OR Apache-2.0"
+    },
+    {
+      "name": "block-buffer",
+      "version": "0.10.4",
+      "license": "MIT OR Apache-2.0"
+    },
+    {
+      "name": "cfg-if",
+      "version": "1.0.5",
+      "license": "MIT OR Apache-2.0"
+    },
+    {
+      "name": "clap",
+      "version": "4.6.7",
+      "license": "MIT OR Apache-2.0"
+    },
+    {
+      "name": "clap_builder",
+      "version": "4.6.7",
+      "license": "MIT OR Apache-2.0"
+    },
+    {
+      "name": "clap_lex",
+      "version": "1.1.1",
+      "license": "MIT OR Apache-2.0"
+    },
+    {
+      "name": "cpufeatures",
+      "version": "0.2.17",
+      "license": "MIT OR Apache-2.0"
+    },
+    {
+      "name": "crypto-common",
+      "version": "0.1.7",
+      "license": "MIT OR Apache-2.0"
+    },
+    {
+      "name": "digest",
+      "version": "0.10.7",
+      "license": "MIT OR Apache-2.0"
+    },
+    {
+      "name": "generic-array",
+      "version": "0.14.7",
+      "license": "MIT"
+    },
+    {
+      "name": "itoa",
+      "version": "1.0.18",
+      "license": "MIT OR Apache-2.0"
+    },
+    {
+      "name": "memchr",
+      "version": "2.8.3",
+      "license": "Unlicense OR MIT"
+    },
+    {
+      "name": "serde_core",
+      "version": "1.0.229",
+      "license": "MIT OR Apache-2.0"
+    },
+    {
+      "name": "serde_json",
+      "version": "1.0.154",
+      "license": "MIT OR Apache-2.0"
+    },
+    {
+      "name": "sha2",
+      "version": "0.10.9",
+      "license": "MIT OR Apache-2.0"
+    },
+    {
+      "name": "typenum",
+      "version": "1.20.1",
+      "license": "MIT OR Apache-2.0"
+    },
+    {
+      "name": "version_check",
+      "version": "0.9.5",
+      "license": "MIT/Apache-2.0"
+    },
+    {
+      "name": "zmij",
+      "version": "1.0.23",
+      "license": "MIT"
+    }
+  ],
+  "dependency_notices_match_cli42": true,
+  "installed_binaries": {
+    "current": {
+      "bytes": 11289088,
+      "sha256": "4b05849024ae4adcd46987a13cdab020301bd512c20397146dba33b4694311f8"
+    },
+    "minimum": {
+      "bytes": 11353600,
+      "sha256": "0d22e8d3261f6fb311e9d32e674d762e923fedeb76d93f23a61fc52807b844ce"
+    }
+  },
+  "execution_inputs": {
+    ".local/cli63-91cd10a/check_candidate.py": {
+      "bytes": 12203,
+      "sha256": "54de07232de41207b6cff97d8ddb238606a7bece52b932cdb57a90e0b8a363ac"
+    },
+    "tools/check_workspace_package.py": {
+      "bytes": 12171,
+      "sha256": "ee5b2548b4edc0e905c762e75e8605d73055ec5b5a3862503825702aaf0cd5a0"
+    },
+    "tools/check_cli_package.py": {
+      "bytes": 26158,
+      "sha256": "f20a12937dc401a7f97b7b46a7fd383abc521d3eb6276a4b03f9d859c6437d15"
+    }
+  },
+  "library_inputs_unchanged": {
+    "Cargo.toml": {
+      "bytes": 929,
+      "sha256": "75b6cb3a1b6d9dc4a15b1ef099f0747dc3cebc7a3b12a5c34cf6f58a8dd815e3"
+    },
+    "LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "README.md": {
+      "bytes": 11639,
+      "sha256": "f67254247c30dbf3674773f2611c145721c733146ffc1ce6ac946b2b6e82c9e2"
+    },
+    "SOURCES.md": {
+      "bytes": 3890,
+      "sha256": "74170a3c0d378675de47ced2a5cb8d261880522a9f1c4deaaa711ae31391d522"
+    },
+    "data/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "data/SOURCES.json": {
+      "bytes": 4997,
+      "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+    },
+    "data/UPSTREAM-SOURCES.md": {
+      "bytes": 1457,
+      "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+    },
+    "data/frequency.bin": {
+      "bytes": 200272,
+      "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+    },
+    "data/lexicon.bin": {
+      "bytes": 10259743,
+      "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+    },
+    "data/manifest.json": {
+      "bytes": 3900,
+      "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+    },
+    "docs/distribution-provenance.json": {
+      "bytes": 5569,
+      "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+    },
+    "docs/rust-api.md": {
+      "bytes": 10014,
+      "sha256": "384d9f33476913a64a0cadb3d348e80e2dadda97361dbad41ec6491453d35575"
+    },
+    "examples/annotate.rs": {
+      "bytes": 414,
+      "sha256": "59e6d564a33328edbcc7dbe6e3145bdd75ebef0e6f0c99a5d6f9233ef4441c5a"
+    },
+    "examples/query.rs": {
+      "bytes": 871,
+      "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+    },
+    "src/annotation.rs": {
+      "bytes": 19775,
+      "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+    },
+    "src/annotation_context_vectors.rs": {
+      "bytes": 321810,
+      "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+    },
+    "src/annotation_frequency_vectors.rs": {
+      "bytes": 24615,
+      "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+    },
+    "src/annotation_unicode.rs": {
+      "bytes": 3734,
+      "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+    },
+    "src/annotation_unicode_tables.rs": {
+      "bytes": 40416,
+      "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+    },
+    "src/annotation_vectors.rs": {
+      "bytes": 65657,
+      "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+    },
+    "src/category.rs": {
+      "bytes": 1653,
+      "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+    },
+    "src/data/annotation_context_vectors.rs": {
+      "bytes": 37586,
+      "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+    },
+    "src/data/annotation_frequency_vectors.rs": {
+      "bytes": 87772,
+      "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+    },
+    "src/data/annotation_tests.rs": {
+      "bytes": 3391,
+      "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+    },
+    "src/data/cache_tests.rs": {
+      "bytes": 22365,
+      "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+    },
+    "src/data/category_tests.rs": {
+      "bytes": 4243,
+      "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+    },
+    "src/data/image.rs": {
+      "bytes": 15144,
+      "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+    },
+    "src/data/mod.rs": {
+      "bytes": 6395,
+      "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+    },
+    "src/data/p41_joint_error_tests.rs": {
+      "bytes": 4967,
+      "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+    },
+    "src/data/p41_query_fixture_tests.rs": {
+      "bytes": 62352,
+      "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+    },
+    "src/data/tests.rs": {
+      "bytes": 24506,
+      "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+    },
+    "src/data_meta.rs": {
+      "bytes": 1531,
+      "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+    },
+    "src/error.rs": {
+      "bytes": 2127,
+      "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+    },
+    "src/lib.rs": {
+      "bytes": 5142,
+      "sha256": "661ea94997dcdb0d7a994a900acb1dbc6c3e0b897804d495beb3c90389d5ca12"
+    },
+    "src/query.rs": {
+      "bytes": 1207,
+      "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+    },
+    "src/query_case.rs": {
+      "bytes": 5074,
+      "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+    },
+    "src/query_case_tables.rs": {
+      "bytes": 52751,
+      "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+    },
+    "src/validation.rs": {
+      "bytes": 1624,
+      "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+    },
+    "third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    },
+    "Cargo.lock": {
+      "bytes": 5797,
+      "sha256": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e"
+    }
+  },
+  "dry_run": {
+    "phase": "CLI6.3",
+    "started_at_utc": "2026-10-18T08:29:03.419894+00:00",
+    "candidate_sha256": "3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490",
+    "observations": [
+      {
+        "url": "https://crates.io/api/v1/crates/lingose-cli/0.2.0",
+        "http_status": 404,
+        "checked_at_utc": "2026-10-18T08:29:04.309763+00:00",
+        "path": ".local/cli63-91cd10a/prepare-version.body",
+        "bytes": 60,
+        "sha256": "57046bc3cdcf47cf68fb979e84a15607b9ada7c3a926ede790eed17dbd3fd230"
+      },
+      {
+        "url": "https://index.crates.io/li/ng/lingose-cli",
+        "http_status": 404,
+        "checked_at_utc": "2026-10-18T08:29:04.653604+00:00",
+        "path": ".local/cli63-91cd10a/prepare-index.body",
+        "bytes": 288,
+        "sha256": "463deee44f6dee070f1ee1d09a023a93f7474908134df0b4d83d345bbe047023"
+      },
+      {
+        "url": "https://crates.io/api/v1/crates/lingose/0.2.0",
+        "http_status": 200,
+        "checked_at_utc": "2026-10-18T08:29:05.218991+00:00",
+        "path": ".local/cli63-91cd10a/prepare-library.body",
+        "bytes": 1606,
+        "sha256": "4f87bc9e96993165c99f27e09de8220218cf8393bff45c143a3850c8a9a24497"
+      }
+    ],
+    "command": {
+      "argv": [
+        "cargo",
+        "publish",
+        "-p",
+        "lingose-cli",
+        "--locked",
+        "--registry",
+        "crates-io",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "finished_at_utc": "2026-10-18T08:29:15.486052+00:00",
+      "stdout": {
+        "path": ".local/cli63-91cd10a/dry-run.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli63-91cd10a/dry-run.stderr.log",
+        "bytes": 1280,
+        "sha256": "306fc5d5f40b71aa573ab3c2aa51f25c5e97cda6fb68799cafa2e935048ce557"
+      },
+      "archive": {
+        "file": ".local/cli63-91cd10a/publish-target/package/tmp-crate/lingose-cli-0.2.0.crate",
+        "bytes": 16498,
+        "sha256": "3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490"
+      },
+      "archive_matches_candidate": true
+    }
+  },
+  "validation": {
+    "current_cli_tests": {
+      "passed": 29,
+      "source": "Session tool output: cargo test -p lingose-cli --locked --offline before guard removal; no CLI Rust changes"
+    },
+    "fmt_check_passed": true,
+    "final_candidate_smoke_passed": 50,
+    "guarded_candidate_smoke_passed": 50,
+    "full_workspace_regression_repeated": false,
+    "source_algorithm_data_or_root_lock_changed": false,
+    "final_receipt_schema_and_status_checked": true,
+    "local_markdown_links_checked": 53,
+    "git_diff_check_passed": true
+  },
+  "preparation_issues": [
+    {
+      "issue": "Sandbox Schannel SEC_E_NO_CREDENTIALS during package; no upload",
+      "log": {
+        "file": ".local/cli63-91cd10a/guarded/package.stderr.log",
+        "bytes": 1268,
+        "sha256": "bba112a016d161ede3a6f4b73dcf470c10e771f901f1250ac0204e4bb33af0ad"
+      },
+      "resolution": "Normal-user approved packaging and installs passed"
+    },
+    {
+      "issue": "Temporary verifier initially included integration test sources outside explicit package include; assertion corrected",
+      "preserved_report": {
+        "file": ".local/cli63-91cd10a/guarded-user/report.json",
+        "bytes": 9631,
+        "sha256": "ffd35d5ff2b0a7db4dd49535d2db85ed11a4222a5039c365dee15852c4985b74"
+      }
+    },
+    {
+      "issue": "Windows cargo --list uses backslash paths; normalized separators before comparison",
+      "preserved_report": {
+        "file": ".local/cli63-91cd10a/guarded-user2/report.json",
+        "bytes": 9381,
+        "sha256": "e5afc3a64b265ff535905c3f06f6742f235f94cd8ac819b41bc9467adb81655a"
+      }
+    },
+    {
+      "issue": "Isolated Python import path corrected before dry-run; no upload"
+    },
+    {
+      "issue": "Automatic approval service usage limit interrupted dry-run approval; action did not execute; review succeeded after user resumed; no bypass"
+    },
+    {
+      "issue": "First actual upload rejected by token permissions (403/Cargo101); user created a token and completed cargo login",
+      "resolution": "Separate guarded attempt-2 after remote absence recheck and new same-byte dry-run; Cargo0 and API/index/download verified. First attempt and logs retained."
+    }
+  ],
+  "rules": {
+    "publishing": "https://doc.rust-lang.org/cargo/reference/publishing.html",
+    "api_tokens": "https://blog.rust-lang.org/2023/06/23/improved-api-tokens-for-crates-io/",
+    "scope_reference": "https://rust-lang.github.io/rfcs/2947-crates-io-token-scopes.html",
+    "checked_on": "2026-10-18",
+    "crate_limit_conservative_bytes": 10000000
+  },
+  "next_action": "CLI6.4 only: reconcile private repository download visibility, configure tag-only GitHub Release upload path/permissions, build new candidate for final manifest/README and publish five assets plus SHA256SUMS. No crate re-upload. Registry name install acceptance stays CLI6.5.",
+  "boundaries": [
+    "CLI6.3 completed: lingose-cli 0.2.0 accepted; version API/index/anonymous downloaded archive/owner/publisher/README verified",
+    "No registry cargo install acceptance (CLI6.5)",
+    "Windows local candidate only; prior CI target evidence unchanged",
+    "No GitHub tag/Release/workflow or visibility change",
+    "Library 0.1.0 and 0.2.0 not re-uploaded; source package inputs unchanged",
+    "Frequency List and category provenance gaps remain; prior user licensing confirmation reused for unchanged bytes"
+  ],
+  "initial_rejected_attempt": {
+    "attempt_count": 1,
+    "cargo_exit_code": 101,
+    "http_status": 403,
+    "error": "this token does not have the required permissions to perform this action",
+    "attempt_marker": {
+      "file": ".local/cli63-91cd10a/attempt.json",
+      "bytes": 2332,
+      "sha256": "0e54f0e384527ee5838353358099105b76815a3dcca81ee384caf53b4df781d8"
+    },
+    "command": {
+      "argv": [
+        "cargo",
+        "publish",
+        "-p",
+        "lingose-cli",
+        "--locked",
+        "--registry",
+        "crates-io"
+      ],
+      "exit_code": 101,
+      "finished_at_utc": "2026-10-18T08:29:43.243856+00:00",
+      "stdout": {
+        "path": ".local/cli63-91cd10a/publish.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli63-91cd10a/publish.stderr.log",
+        "bytes": 900,
+        "sha256": "836ba70bed40a8d78e2a899ca1e5e371df4f22328c098a93a244cdaba9471c78"
+      },
+      "archive": {
+        "file": ".local/cli63-91cd10a/publish-target/package/tmp-crate/lingose-cli-0.2.0.crate",
+        "bytes": 16498,
+        "sha256": "3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490"
+      },
+      "archive_matches_candidate": true
+    },
+    "candidate_archive_matches": true,
+    "success_claimed": false,
+    "blind_retry_performed": false
+  },
+  "initial_post_attempt_remote_state": {
+    "phase": "CLI6.3",
+    "status": "not_published_token_permission_rejected",
+    "checked_at_utc": "2026-10-18T08:30:27.739222+00:00",
+    "observations": [
+      {
+        "url": "https://crates.io/api/v1/crates/lingose-cli/0.2.0",
+        "http_status": 404,
+        "checked_at_utc": "2026-10-18T08:30:26.777815+00:00",
+        "path": ".local/cli63-91cd10a/after-attempt-version.body",
+        "bytes": 60,
+        "sha256": "57046bc3cdcf47cf68fb979e84a15607b9ada7c3a926ede790eed17dbd3fd230"
+      },
+      {
+        "url": "https://index.crates.io/li/ng/lingose-cli",
+        "http_status": 404,
+        "checked_at_utc": "2026-10-18T08:30:27.144317+00:00",
+        "path": ".local/cli63-91cd10a/after-attempt-index.body",
+        "bytes": 308,
+        "sha256": "b32b7cea440a9de2535584c08becf88e40c8e42e8c441bc4b6323b71617a21c9"
+      },
+      {
+        "url": "https://crates.io/api/v1/crates/lingose/0.2.0",
+        "http_status": 200,
+        "checked_at_utc": "2026-10-18T08:30:27.736755+00:00",
+        "path": ".local/cli63-91cd10a/after-attempt-library.body",
+        "bytes": 1606,
+        "sha256": "4f87bc9e96993165c99f27e09de8220218cf8393bff45c143a3850c8a9a24497"
+      }
+    ],
+    "upload_attempts": 1,
+    "blind_retry_performed": false
+  },
+  "final_dry_run": {
+    "phase": "CLI6.3",
+    "started_at_utc": "2026-10-18T08:35:45.040108+00:00",
+    "candidate_sha256": "3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490",
+    "observations": [
+      {
+        "url": "https://crates.io/api/v1/crates/lingose-cli/0.2.0",
+        "http_status": 404,
+        "checked_at_utc": "2026-10-18T08:35:45.666458+00:00",
+        "path": ".local/cli63-91cd10a/prepare-2-version.body",
+        "bytes": 60,
+        "sha256": "57046bc3cdcf47cf68fb979e84a15607b9ada7c3a926ede790eed17dbd3fd230"
+      },
+      {
+        "url": "https://index.crates.io/li/ng/lingose-cli",
+        "http_status": 404,
+        "checked_at_utc": "2026-10-18T08:35:45.990729+00:00",
+        "path": ".local/cli63-91cd10a/prepare-2-index.body",
+        "bytes": 288,
+        "sha256": "e4bff15b5894c383d4467cbbc785fddd41360d39ea70bfb6a7275fb00d85c3ea"
+      },
+      {
+        "url": "https://crates.io/api/v1/crates/lingose/0.2.0",
+        "http_status": 200,
+        "checked_at_utc": "2026-10-18T08:35:46.388448+00:00",
+        "path": ".local/cli63-91cd10a/prepare-2-library.body",
+        "bytes": 1606,
+        "sha256": "4f87bc9e96993165c99f27e09de8220218cf8393bff45c143a3850c8a9a24497"
+      }
+    ],
+    "command": {
+      "argv": [
+        "cargo",
+        "publish",
+        "-p",
+        "lingose-cli",
+        "--locked",
+        "--registry",
+        "crates-io",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "finished_at_utc": "2026-10-18T08:35:54.795914+00:00",
+      "stdout": {
+        "path": ".local/cli63-91cd10a/dry-run-2.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli63-91cd10a/dry-run-2.stderr.log",
+        "bytes": 1281,
+        "sha256": "526a05ecee518c0ee8f5763ac8d2abd4faf0ec5e3c51f87810807b3130fe3ead"
+      },
+      "archive": {
+        "file": ".local/cli63-91cd10a/publish-target-2/package/tmp-crate/lingose-cli-0.2.0.crate",
+        "bytes": 16498,
+        "sha256": "3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490"
+      },
+      "archive_matches_candidate": true
+    }
+  },
+  "publication": {
+    "attempt_count": 2,
+    "accepted_attempts": 1,
+    "first_attempt_rejected_http": 403,
+    "first_attempt_preserved": {
+      "file": ".local/cli63-91cd10a/attempt.json",
+      "bytes": 2332,
+      "sha256": "0e54f0e384527ee5838353358099105b76815a3dcca81ee384caf53b4df781d8"
+    },
+    "second_attempt_marker": {
+      "file": ".local/cli63-91cd10a/attempt-2.json",
+      "bytes": 2346,
+      "sha256": "38e317619508d09d0b4ad5461c9c3565947909508097286a4890fa8d0740f68e"
+    },
+    "second_attempt_command": {
+      "argv": [
+        "cargo",
+        "publish",
+        "-p",
+        "lingose-cli",
+        "--locked",
+        "--registry",
+        "crates-io"
+      ],
+      "exit_code": 0,
+      "finished_at_utc": "2026-10-18T08:36:22.780324+00:00",
+      "stdout": {
+        "path": ".local/cli63-91cd10a/publish-2.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli63-91cd10a/publish-2.stderr.log",
+        "bytes": 943,
+        "sha256": "f1759e9b6e93c17e282de27115c4b9e67fdaecf68a5380d2ae7afbdcc7b7ae8d"
+      },
+      "archive": {
+        "file": ".local/cli63-91cd10a/publish-target-2/package/tmp-crate/lingose-cli-0.2.0.crate",
+        "bytes": 16498,
+        "sha256": "3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490"
+      },
+      "archive_matches_candidate": true
+    },
+    "second_attempt_cargo_exit_code": 0,
+    "credential_change_between_attempts": true,
+    "candidate_bytes_changed_between_attempts": false,
+    "blind_retry_performed": false,
+    "no_more_uploads_allowed_for_this_version": true
+  },
+  "registry": {
+    "phase": "CLI6.3",
+    "started_at_utc": "2026-10-18T08:36:27.262936+00:00",
+    "anonymous": true,
+    "observations": {
+      "version": {
+        "url": "https://crates.io/api/v1/crates/lingose-cli/0.2.0",
+        "http_status": 200,
+        "checked_at_utc": "2026-10-18T08:36:27.918712+00:00",
+        "path": ".local/cli63-91cd10a/verify-2-version.body",
+        "bytes": 1623,
+        "sha256": "edb4b569b49730d569aa1d517d053c3dd080b553c12c72bc53495867581b7f28"
+      },
+      "index": {
+        "url": "https://index.crates.io/li/ng/lingose-cli",
+        "http_status": 200,
+        "checked_at_utc": "2026-10-18T08:36:28.230457+00:00",
+        "path": ".local/cli63-91cd10a/verify-2-index.body",
+        "bytes": 602,
+        "sha256": "6f58a359b8b7adb6e5e59b56f4776116560de4c9c489ec861fb919bfb6eedd5b"
+      },
+      "owners": {
+        "url": "https://crates.io/api/v1/crates/lingose-cli/owners",
+        "http_status": 200,
+        "checked_at_utc": "2026-10-18T08:36:28.821611+00:00",
+        "path": ".local/cli63-91cd10a/verify-2-owners.body",
+        "bytes": 209,
+        "sha256": "6fdaeb116e4a5bcde556a9c4520a86935490cbf1f97e18227e0046c656b7edcd"
+      },
+      "download": {
+        "url": "https://crates.io/api/v1/crates/lingose-cli/0.2.0/download",
+        "http_status": 200,
+        "checked_at_utc": "2026-10-18T08:36:29.126173+00:00",
+        "path": ".local/cli63-91cd10a/verify-2-download.body",
+        "bytes": 77,
+        "sha256": "2e52cefbe00c5518d07a21c0617ddb07e47a4b18252b213e3c499ac638d9babe"
+      },
+      "archive": {
+        "url": "https://static.crates.io/crates/lingose-cli/lingose-cli-0.2.0.crate",
+        "http_status": 200,
+        "checked_at_utc": "2026-10-18T08:36:29.573897+00:00",
+        "path": ".local/cli63-91cd10a/verify-2-archive.body",
+        "bytes": 16498,
+        "sha256": "3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490"
+      },
+      "readme": {
+        "url": "https://crates.io/api/v1/crates/lingose-cli/0.2.0/readme",
+        "http_status": 200,
+        "checked_at_utc": "2026-10-18T08:36:29.912779+00:00",
+        "path": ".local/cli63-91cd10a/verify-2-readme.body",
+        "bytes": 77,
+        "sha256": "57d5c457c75fc8b77685022155efd4a6ba5045912f0d4032071edf378cd0c0c5"
+      },
+      "readme-html": {
+        "url": "https://static.crates.io/readmes/lingose-cli/lingose-cli-0.2.0.html",
+        "http_status": 200,
+        "checked_at_utc": "2026-10-18T08:36:30.342324+00:00",
+        "path": ".local/cli63-91cd10a/verify-2-readme-html.body",
+        "bytes": 12134,
+        "sha256": "b03a99cbbd90f38c4f1d5d0b9b6e6b1d11b0cfeb31a0d2fe44cbdc83e93e8aa1"
+      },
+      "library-0.1.0": {
+        "url": "https://crates.io/api/v1/crates/lingose/0.1.0",
+        "http_status": 200,
+        "checked_at_utc": "2026-10-18T08:36:30.947383+00:00",
+        "path": ".local/cli63-91cd10a/verify-2-library-0.1.0.body",
+        "bytes": 1594,
+        "sha256": "757202ac522d35f40974822274bfe16ad50f52750d714819b3d7b8bd4b875a29"
+      },
+      "library-0.2.0": {
+        "url": "https://crates.io/api/v1/crates/lingose/0.2.0",
+        "http_status": 200,
+        "checked_at_utc": "2026-10-18T08:36:31.328224+00:00",
+        "path": ".local/cli63-91cd10a/verify-2-library-0.2.0.body",
+        "bytes": 1606,
+        "sha256": "4f87bc9e96993165c99f27e09de8220218cf8393bff45c143a3850c8a9a24497"
+      }
+    },
+    "status": "passed",
+    "version": {
+      "crate": "lingose-cli",
+      "num": "0.2.0",
+      "checksum": "3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490",
+      "crate_size": 16498,
+      "created_at": "2026-10-18T08:36:22.922509Z",
+      "published_by": {
+        "id": 379268,
+        "login": "Prefee",
+        "name": "Oceanus.E.Data",
+        "avatar": "https://avatars.githubusercontent.com/u/24503861?v=4",
+        "url": "https://github.com/Prefee",
+        "github_username_matches": true,
+        "created_at": "2016-12-11T07:53:49Z"
+      },
+      "yanked": false,
+      "homepage": "https://lingose.com/",
+      "repository": "https://github.com/englishword/lingose-rust",
+      "license": "CC-BY-4.0",
+      "edition": "2024",
+      "rust_version": "1.85"
+    },
+    "index_entry": {
+      "name": "lingose-cli",
+      "vers": "0.2.0",
+      "deps": [
+        {
+          "name": "clap",
+          "req": "^4.6.7",
+          "features": [
+            "std",
+            "help",
+            "usage",
+            "error-context"
+          ],
+          "optional": false,
+          "default_features": false,
+          "target": null,
+          "kind": "normal"
+        },
+        {
+          "name": "lingose",
+          "req": "^0.2.0",
+          "features": [],
+          "optional": false,
+          "default_features": true,
+          "target": null,
+          "kind": "normal"
+        },
+        {
+          "name": "serde_json",
+          "req": "^1.0.154",
+          "features": [],
+          "optional": false,
+          "default_features": true,
+          "target": null,
+          "kind": "normal"
+        }
+      ],
+      "cksum": "3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490",
+      "features": {},
+      "yanked": false,
+      "rust_version": "1.85",
+      "pubtime": "2026-10-18T08:36:22Z"
+    },
+    "owners": [
+      "Prefee"
+    ],
+    "archive": {
+      "file": ".local/cli63-91cd10a/registry-lingose-cli-0.2.0.crate",
+      "bytes": 16498,
+      "sha256": "3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490",
+      "file_count": 7,
+      "files": {
+        "Cargo.lock": {
+          "bytes": 5940,
+          "sha256": "97af0196dfb2f8268e81052f2decec4697e0aeedff19d3d49e59cb4b17ad83e0"
+        },
+        "Cargo.toml": {
+          "bytes": 1414,
+          "sha256": "a9bb38b7d0c6a134e92569b993bc8a8f20df8e8198a5f8fa538e1b968a79317a"
+        },
+        "Cargo.toml.orig": {
+          "bytes": 793,
+          "sha256": "a9fdb00b1d0d238a1902bd9fb5aa1679b23206e81fa723266ac93e65b2f4e448"
+        },
+        "LICENSE": {
+          "bytes": 17023,
+          "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+        },
+        "README.md": {
+          "bytes": 9017,
+          "sha256": "2f3f7dafed7b3958b4966ae83809922831a7b2af47e4c05ca3e5e1eb7cf77683"
+        },
+        "SOURCES.md": {
+          "bytes": 3685,
+          "sha256": "e3a051a235428b0a89c4be52e6c60f85326d33d508673f7db4397419dc4bd6b3"
+        },
+        "src/main.rs": {
+          "bytes": 12647,
+          "sha256": "201a048f02a7627110ccdd5b0c2ab70845551aca8f35281d2f1f70585f17d624"
+        }
+      },
+      "local_links": [
+        {
+          "source": "README.md",
+          "href": "LICENSE",
+          "target": "LICENSE"
+        },
+        {
+          "source": "README.md",
+          "href": "SOURCES.md",
+          "target": "SOURCES.md"
+        },
+        {
+          "source": "SOURCES.md",
+          "href": "LICENSE",
+          "target": "LICENSE"
+        }
+      ],
+      "normalized_manifest": {
+        "package": {
+          "edition": "2024",
+          "rust-version": "1.85",
+          "name": "lingose-cli",
+          "version": "0.2.0",
+          "authors": [
+            "ZHAN Xianjue"
+          ],
+          "build": false,
+          "include": [
+            "/src/**",
+            "/README.md",
+            "/LICENSE",
+            "/SOURCES.md"
+          ],
+          "autolib": false,
+          "autobins": false,
+          "autoexamples": false,
+          "autotests": false,
+          "autobenches": false,
+          "description": "Command-line interface for offline Lingose word queries and IPS annotation",
+          "homepage": "https://lingose.com/",
+          "readme": "README.md",
+          "keywords": [
+            "english",
+            "pronunciation",
+            "ipsm",
+            "cli"
+          ],
+          "license": "CC-BY-4.0",
+          "repository": "https://github.com/englishword/lingose-rust"
+        },
+        "bin": [
+          {
+            "name": "lingose",
+            "path": "src/main.rs",
+            "doc": false
+          }
+        ],
+        "dependencies": {
+          "clap": {
+            "version": "4.6.7",
+            "features": [
+              "std",
+              "help",
+              "usage",
+              "error-context"
+            ],
+            "default-features": false
+          },
+          "lingose": {
+            "version": "0.2.0"
+          },
+          "serde_json": {
+            "version": "1.0.154"
+          }
+        },
+        "lints": {
+          "rust": {
+            "missing_docs": "deny",
+            "unsafe_code": "forbid"
+          }
+        }
+      },
+      "lock_mapping": "Only lingose 0.2.0 local source -> crates.io source and published checksum; every other locked identity and all edges preserved"
+    },
+    "finished_at_utc": "2026-10-18T08:36:31.330392+00:00",
+    "all_archive_bytes_match_candidate": true,
+    "library_versions_unchanged": true,
+    "registry_readme_verified": true
+  },
+  "post_publication_raw_reports": {
+    "prepared-2.json": {
+      "file": ".local/cli63-91cd10a/prepared-2.json",
+      "bytes": 2060,
+      "sha256": "05af4a1a0cdb6cc1fe4bebf156dc6d3f9c49f57491ece5300a33e3c681f0a324"
+    },
+    "attempt-2.json": {
+      "file": ".local/cli63-91cd10a/attempt-2.json",
+      "bytes": 2346,
+      "sha256": "38e317619508d09d0b4ad5461c9c3565947909508097286a4890fa8d0740f68e"
+    },
+    "remote-verification-2.json": {
+      "file": ".local/cli63-91cd10a/remote-verification-2.json",
+      "bytes": 8437,
+      "sha256": "4f7e50f7e68cdff5d7ee6e8090bcfa645f9549212f569f6a0d6f113fdaad7f6d"
+    }
+  },
+  "execution_scripts": {
+    "check_candidate.py": {
+      "file": ".local/cli63-91cd10a/check_candidate.py",
+      "bytes": 12203,
+      "sha256": "54de07232de41207b6cff97d8ddb238606a7bece52b932cdb57a90e0b8a363ac"
+    },
+    "publish_once.py": {
+      "file": ".local/cli63-91cd10a/publish_once.py",
+      "bytes": 8777,
+      "sha256": "8ca5d65dd01331a154d2df5bb225aab29b07182bda1bc671184bb91d3f916cf5"
+    },
+    "publish_retry_2.py": {
+      "file": ".local/cli63-91cd10a/publish_retry_2.py",
+      "bytes": 8801,
+      "sha256": "741807190bd156a264ae33aed2a2387ab1dcd9b07f4d8a32f860a338fb0e34d1"
+    },
+    "write_receipt.py": {
+      "file": ".local/cli63-91cd10a/write_receipt.py",
+      "bytes": 5978,
+      "sha256": "3473aa11f5ef6bc3a14f992f7388a8e7a78b2b54240fb9a219d3e970b3298a7e"
+    },
+    "finalize_receipt.py": {
+      "file": ".local/cli63-91cd10a/finalize_receipt.py",
+      "bytes": 3340,
+      "sha256": "1a0aa64a470e76317083ec3afb41bf245783c1ba6b5039c304c05f35d49949cc"
+    }
+  },
+  "documentation_changes": {
+    "root_readme_publication_status_updated": true,
+    "cli_readme_final_candidate_matches_registry": true,
+    "new_publication_docs_pinned_to_lf_in_gitattributes": true,
+    "published_library_readme_and_all_library_package_inputs_unchanged": true
+  },
+  "initial_rejected_attempt_independent_review": {
+    "referenced_artifacts_and_logs_checked": 136,
+    "final_tar_manifest_lock_and_active_license_closure_checked": true,
+    "anonymous_http_recheck": {
+      "cli_version": 404,
+      "cli_index": 404,
+      "library_version": 200
+    },
+    "credentials_read": false,
+    "external_temp_executables_independently_rehashed": false,
+    "external_temp_executable_limitation": "Read sandbox denied external temp paths; installed binary identities recorded by primary verifier; install/runtime logs checked",
+    "checked_scope": "Historical first rejected attempt; these 404 responses precede credential update and successful publication"
+  },
+  "independent_review": {
+    "checked_scope": "Final successful second attempt and published registry state",
+    "new_evidence_references_checked": 22,
+    "new_evidence_unique_paths": 21,
+    "all_receipt_references_checked": 303,
+    "all_receipt_unique_paths": 280,
+    "anonymous_endpoint_count": 7,
+    "anonymous_endpoint_statuses_all": 200,
+    "download_byte_equal_to_candidate": true,
+    "download_bytes": 16498,
+    "download_files": 7,
+    "publisher_owner": "Prefee",
+    "yanked": false,
+    "library_versions_unchanged": true,
+    "first_rejected_attempt_preserved": true,
+    "credentials_read": false,
+    "registry_install_performed": false
+  }
+}

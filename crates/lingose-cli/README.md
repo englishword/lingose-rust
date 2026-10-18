@@ -6,12 +6,9 @@ owns the lexicon and algorithms. Learn about the IPSM Approach at
 [lingose.com](https://lingose.com/). Source:
 [englishword/lingose-rust](https://github.com/englishword/lingose-rust).
 
-**0.2.0 has not been published.** Registry commands in this guide apply after the 0.2.0 release;
-current usage is through the source build below.
-
 ## Install or build
 
-After publication, install with Rust/Cargo **1.85 or newer**:
+Install version 0.2.0 with Rust/Cargo **1.85 or newer**:
 
 ```sh
 cargo install lingose-cli --version 0.2.0 --locked

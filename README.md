@@ -6,13 +6,12 @@ This workspace contains the [lingose library](crates/lingose/README.md) and
 [lingose-cli](crates/lingose-cli/README.md); the executable is named `lingose`.
 Source repository: [englishword/lingose-rust](https://github.com/englishword/lingose-rust).
 
-**0.2.0 is in development and has not been published.** The earlier library
-0.1.0 is released; both current packages keep publication disabled. Registry
-installation examples below apply once 0.2.0 is available.
+**The library `lingose 0.2.0` and `lingose-cli 0.2.0` are published on crates.io.**
+GitHub Release assets and fresh registry-install acceptance remain separate steps.
 
 ## Command line
 
-After publication, install with Rust/Cargo 1.85 or newer:
+Install with Rust/Cargo 1.85 or newer:
 
 ```sh
 cargo install lingose-cli --version 0.2.0 --locked
