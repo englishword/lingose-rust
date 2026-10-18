@@ -7,7 +7,10 @@ This workspace contains the [lingose library](crates/lingose/README.md) and
 Source repository: [englishword/lingose-rust](https://github.com/englishword/lingose-rust).
 
 **The library `lingose 0.2.0` and `lingose-cli 0.2.0` are published on crates.io.**
-GitHub Release assets and fresh registry-install acceptance remain separate steps.
+[GitHub Release v0.2.0](https://github.com/englishword/lingose-rust/releases/tag/v0.2.0)
+provides five platform archives and SHA256SUMS. The repository is currently private;
+viewing the Release and downloading assets require authentication and repository access.
+Fresh registry-install acceptance remains a separate step.
 
 ## Command line
 
@@ -114,7 +117,9 @@ Native CLI builds and query/annotation/stdin/JSON smoke have passed on Windows
 x86_64, Linux x86_64/aarch64 and macOS Intel/Apple Silicon; see the
 [CI verification](docs/cli-release-ci.md). Binary archive preparation and
 download/extraction verification are tracked in [binary assets](docs/cli-binary-assets.md).
-Registry installation and published GitHub Release downloads remain separate acceptance steps.
+The private Release assets have been uploaded and authenticated downloads checked
+byte for byte against the tagged CI candidates; see the [publication record](docs/cli-github-release.md).
+Fresh registry installation and final downloaded-binary runtime acceptance remain separate steps.
 
 ## License and credits
 

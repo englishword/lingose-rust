@@ -106,11 +106,11 @@
   - 依赖：CLI6.2。使用注册表的 lingose 0.2.0 完成 `cargo package -p lingose-cli`、清单/压缩体积/许可核对与隔离消费；验证合格后解除 CLI publish=false 保护，完成 `cargo publish -p lingose-cli --dry-run`，再上传。
   - 验收：归档中规范化 CLI manifest 不含开发 path/patch（源码保留 path + version）；真实归档和 dry-run 均有独立记录，上传后核对版本/索引/下载身份。前置库发布不等于 CLI 已发布。
   - 结果与边界：[CLI 正式发布](../docs/cli-cli-publication.md)及[完整收据](../docs/cli-cli-publication-verification.json)。受保护候选通过后移除 CLI publish=false 并重验；最终包 7 文件/16,498 字节，SHA 3f2e31e77ac7bdcedecb90871597d9821f60119f437be9a2cd7c523faa894490。根锁仅映射库注册表来源及正式 SHA，其余身份/依赖边不变；当前/1.85 两工具链各 25 项隔离离线安装后运行及18项Windows启用依赖许可通过，两次联网dry-run同字节。首次正式上传被403权限拒绝（Cargo101），核查API/index404后等待用户更新凭据；用户确认cargo login后以独立标记进行第二次尝试，Cargo0，注册表2026-10-18 08:36:22.922509 UTC接受，publisher/owner Prefee、未yank。API/index/匿名下载与候选全字节一致，README/元数据通过；两次上传仅一次接受，原拒绝记录保留、无盲重试。29项CLI测试/fmt通过，库/数据/根锁未变；本轮止于CLI6.3，下一项CLI6.4。
-- [ ] CLI6.4 发布 GitHub Release 资产。
+- [x] CLI6.4 发布 GitHub Release 资产。
   - 依赖：CLI6.3。以与候选对应的 v0.2.0 标签运行 GitHub Actions，向指定仓库 Release 发布五个资产、校验和及版本说明。
   - 验收：五个实际下载资产与候选/构建记录对应，许可及安装说明齐全；远端 Release 可访问，有实际上传证据，不用本地文件存在替代。
   - 用户后续选择：**目前以 private 发布 Release**。保持指定仓库 private，以认证且有权限的访问验收；不要求或声明匿名公开下载。发布条件/说明调整后建立新候选提交，正式 tag 重新构建并保存独立发布收据。
-  - 进行中：[Release 准备记录](../docs/cli-github-release.md)及[前次候选收据](../docs/cli-github-release-verification.json)。`1b7e62a` 的非发布 run `39113070606` 五构建/五下载/汇总 11 job 全成功，发布 job 跳过；147 次 CLI 测试、60/80 次构建/下载原生 smoke 与全部 17 份 service ZIP/五包身份独立核对通过。现已按用户选择调整为 private 发布；本地检查与独立审查通过，准备新候选/正式 tag 运行。前次候选不代表正式上传，尚不能勾选完成。
+  - 结果与边界：[Release 正式记录](../docs/cli-github-release.md)及[独立正式收据](../docs/cli-github-release-publication-verification.json)。private Release `416347193` 于2026-10-18 09:16:55 UTC正式发布；v0.2.0解引用cf11a60，未改可见性/标签。run39114174841的十一项候选job全成功，147次CLI测试、35/35次归档/发布保护、60/80次构建/下载原生smoke通过。第一次创建草稿失败，核实远端为空后先同步默认分支workflow，再只重跑发布job；attempt2成功，原失败/19份service artifacts均保留。五包及SHA256SUMS的服务端digest、实际认证下载、全部载荷/二进制/许可/说明与最终CI候选一致；不冒充匿名公开访问或CLI6.5运行验收。旧候选收据不覆盖、已发布crate不重传；下一项CLI6.5。
 - [ ] CLI6.5 完成注册表安装与 Release 下载验收。
   - 依赖：CLI6.4。全新消费工程引用 `lingose = "=0.2.0"`，新 cache 执行 `cargo install lingose-cli --version 0.2.0 --locked`；依赖获取后分别离线复跑，再验 Release 下载二进制。
   - 验收：来源是正式注册表，无 checkout path/patch；完整库 API smoke、新函数及 CLI 查询/标注/JSON/文件/stdin 通过，运行无需外部词库。记录各平台实际结果、版本/归档身份、未验项，更新最终交接。
