@@ -225,10 +225,10 @@ fn conflicting_inputs_bad_thresholds_and_library_invalid_text_exit_two() {
         let args: Vec<_> = args.iter().map(OsStr::new).collect();
         failure(&args, b"", &directory, 2);
     }
-    fs::write(directory.0.join("nul.txt"), b"hello\0world").unwrap();
+    fs::write(directory.0.join("contains-nul.txt"), b"hello\0world").unwrap();
     failure(&["annotate".as_ref()], b"hello\0world", &directory, 2);
     failure(
-        &["annotate".as_ref(), "nul.txt".as_ref()],
+        &["annotate".as_ref(), "contains-nul.txt".as_ref()],
         b"",
         &directory,
         2,
@@ -417,14 +417,14 @@ fn precondition_failures_preserve_existing_output_and_do_not_create_new_output()
     let directory = TestDirectory::new();
     fs::create_dir(directory.0.join("folder")).unwrap();
     fs::write(directory.0.join("invalid.txt"), [0xff, 0xfe]).unwrap();
-    fs::write(directory.0.join("nul.txt"), b"hello\0world").unwrap();
+    fs::write(directory.0.join("contains-nul.txt"), b"hello\0world").unwrap();
     let sentinel = b"\x00\xfforiginal output\r\n";
     let cases: &[(&[&str], &[u8], i32)] = &[
         (&["annotate", "--input", "missing.txt"], b"", 1),
         (&["annotate", "folder"], b"", 1),
         (&["annotate", "--input", "invalid.txt"], b"", 1),
         (&["annotate"], &[0xff, 0xfe], 1),
-        (&["annotate", "nul.txt"], b"", 2),
+        (&["annotate", "contains-nul.txt"], b"", 2),
         (&["annotate"], b"hello\0world", 2),
         (&["annotate", "--text", "hello", "--skip-top", "-1"], b"", 2),
         (&["annotate", "--text", "hello", "world"], b"", 2),
@@ -636,12 +636,11 @@ fn locked_files_are_execution_errors_in_both_file_modes() {
     );
 }
 
-#[cfg(unix)]
+#[cfg(target_os = "linux")]
 #[test]
-fn native_paths_and_symlink_errors_keep_their_identity() {
+fn non_unicode_existing_paths_keep_their_identity() {
     use std::ffi::OsString;
     use std::os::unix::ffi::OsStringExt;
-    use std::os::unix::fs::symlink;
     let directory = TestDirectory::new();
     let name = OsString::from_vec(b"native-\xff.txt".to_vec());
     fs::write(directory.0.join(&name), "hello").unwrap();
@@ -653,9 +652,33 @@ fn native_paths_and_symlink_errors_keep_their_identity() {
         &directory,
         &expected,
     );
+}
+
+#[cfg(unix)]
+#[test]
+fn non_unicode_missing_paths_distinguish_text_from_explicit_input() {
+    use std::ffi::OsString;
+    use std::os::unix::ffi::OsStringExt;
+    let directory = TestDirectory::new();
     let invalid_text = OsString::from_vec(b"missing-\xff".to_vec());
     failure(&["annotate".as_ref(), &invalid_text], b"", &directory, 2);
-    symlink(&name, directory.0.join("link.txt")).unwrap();
+    failure(
+        &["annotate".as_ref(), "--input".as_ref(), &invalid_text],
+        b"",
+        &directory,
+        1,
+    );
+}
+
+#[cfg(unix)]
+#[test]
+fn symlink_errors_keep_their_identity() {
+    use std::os::unix::fs::symlink;
+    let directory = TestDirectory::new();
+    let name = "native-文章.txt";
+    fs::write(directory.0.join(name), "hello").unwrap();
+    let expected = lingose::annotate_ips("hello").unwrap();
+    symlink(name, directory.0.join("link.txt")).unwrap();
     success(
         &["annotate".as_ref(), "link.txt".as_ref()],
         b"",

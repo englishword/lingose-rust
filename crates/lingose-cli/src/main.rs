@@ -139,7 +139,9 @@ fn is_text_path_error(error: &io::Error) -> bool {
     let code = error.raw_os_error();
     (cfg!(windows) && matches!(code, Some(123 | 161 | 206)))
         || (cfg!(target_os = "linux") && code == Some(36))
-        || (cfg!(target_os = "macos") && code == Some(63))
+        // macOS also rejects non-UTF-8 filenames with EILSEQ. The caller's
+        // Unicode conversion then reports invalid automatic text as usage 2.
+        || (cfg!(target_os = "macos") && matches!(code, Some(63 | 92)))
 }
 
 fn read_annotation_input(args: &ArgMatches, stdin: &mut impl Read) -> Result<String, CliError> {
