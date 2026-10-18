@@ -113,3 +113,10 @@
 /docs/cli-user-documentation-verification.json text eol=lf
 /docs/cli-cli-publication.md text eol=lf
 /docs/cli-cli-publication-verification.json text eol=lf
+/Formula/*.rb text eol=lf
+/bucket/*.json text eol=lf
+/packaging/** text eol=lf
+/tools/check_package_channels.py text eol=lf
+/docs/cli-package-channels*.md text eol=lf
+/docs/cli-package-channels*.json text eol=lf
+/tasks/todo_CLI.md text eol=lf

@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "description": "Offline English word queries and plain-text IPS annotation",
+    "homepage": "https://lingose.com/",
+    "license": {
+        "identifier": "CC-BY-4.0",
+        "url": "https://github.com/englishword/lingose-rust/blob/v0.2.0/LICENSE"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/englishword/lingose-rust/releases/download/v0.2.0/lingose-v0.2.0-windows-x86_64.zip",
+            "hash": "bf3d61609208c721d7e84b6ed44c91256385080c04ca6c7823f35e256a57b474",
+            "extract_dir": "lingose-v0.2.0-windows-x86_64"
+        }
+    },
+    "bin": "lingose.exe",
+    "suggest": {
+        "Microsoft Visual C++ v14 x64 Runtime": "extras/vcredist2022"
+    },
+    "notes": "Requires the Microsoft Visual C++ v14 x64 Runtime. Keep LICENSE, SOURCES.md, sources/ and licenses/ with redistributed copies. See the bundled README.md for runtime and provenance limits.",
+    "checkver": {
+        "github": "https://github.com/englishword/lingose-rust"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/englishword/lingose-rust/releases/download/v$version/lingose-v$version-windows-x86_64.zip",
+                "hash": {
+                    "url": "https://github.com/englishword/lingose-rust/releases/download/v$version/SHA256SUMS"
+                },
+                "extract_dir": "lingose-v$version-windows-x86_64"
+            }
+        }
+    }
+}

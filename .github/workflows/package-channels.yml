@@ -1,0 +1,151 @@
+name: Package channel acceptance
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    name: WinGet then Scoop then Chocolatey
+    runs-on: windows-2022
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Verify public release and schemas
+        run: |
+          python -m pip install PyYAML==6.0.3 jsonschema==4.26.0
+          python tools/check_package_channels.py preflight --output .local/channels/preflight
+          if ($LASTEXITCODE) { throw 'Public asset/schema preflight failed' }
+      - name: Prepare WinGet on disposable runner
+        run: |
+          Install-Module Microsoft.WinGet.Client -Scope CurrentUser -Force -Repository PSGallery
+          Repair-WinGetPackageManager -AllUsers -Force
+          $winget = Get-ChildItem 'C:/Program Files/WindowsApps/Microsoft.DesktopAppInstaller_*_x64__*/winget.exe' |
+            Sort-Object FullName -Descending | Select-Object -First 1 -ExpandProperty FullName
+          if (!$winget) { throw 'WinGet executable not found' }
+          "WINGET_EXE=$winget" >> $env:GITHUB_ENV
+          & $winget --version
+          if ($LASTEXITCODE) { throw 'WinGet unavailable' }
+          & $winget settings --enable LocalManifestFiles
+          if ($LASTEXITCODE) { throw 'Cannot enable local manifest acceptance' }
+      - name: WinGet validate, install, run and uninstall
+        run: |
+          $manifest = 'packaging/winget/manifests/l/Lingose/Lingose/0.2.0'
+          & $env:WINGET_EXE validate --manifest $manifest --disable-interactivity
+          if ($LASTEXITCODE) { throw 'WinGet validation failed' }
+          & $env:WINGET_EXE install --manifest $manifest --scope user --silent --accept-package-agreements --accept-source-agreements --disable-interactivity
+          if ($LASTEXITCODE) { throw 'WinGet installation failed' }
+          $command = "$env:LOCALAPPDATA/Microsoft/WinGet/Links/lingose.exe"
+          python tools/check_package_channels.py smoke --executable $command --output .local/channels/winget
+          if ($LASTEXITCODE) { throw 'WinGet installed command failed' }
+          $payload = Split-Path (Get-Item $command).Target
+          if (!(Test-Path "$payload/licenses") -or !(Test-Path "$payload/SOURCES.md")) { throw 'WinGet notices missing' }
+          & $env:WINGET_EXE uninstall --id Lingose.Lingose --exact --silent --disable-interactivity
+          if ($LASTEXITCODE -or (Test-Path $command)) { throw 'WinGet uninstall failed' }
+      - name: Scoop install, run, reinstall and uninstall
+        run: |
+          $env:SCOOP = "$env:RUNNER_TEMP/lingose-scoop"
+          $scoop = "$env:SCOOP/apps/scoop/current"
+          git clone --depth 1 https://github.com/ScoopInstaller/Scoop $scoop
+          if ($LASTEXITCODE) { throw 'Scoop clone failed' }
+          git -C $scoop rev-parse HEAD
+          $manifest = (Resolve-Path bucket/lingose.json).Path
+          & "$scoop/bin/scoop.ps1" install $manifest
+          if ($LASTEXITCODE) { throw 'Scoop install failed' }
+          $command = "$env:SCOOP/shims/lingose.exe"
+          python tools/check_package_channels.py smoke --executable $command --output .local/channels/scoop
+          if ($LASTEXITCODE) { throw 'Scoop shim failed' }
+          $payload = "$env:SCOOP/apps/lingose/current"
+          if (!(Test-Path "$payload/licenses") -or !(Test-Path "$payload/SOURCES.md")) { throw 'Scoop notices missing' }
+          & "$scoop/bin/scoop.ps1" uninstall lingose
+          if ($LASTEXITCODE -or (Test-Path $command)) { throw 'Scoop uninstall failed' }
+          & "$scoop/bin/scoop.ps1" install $manifest
+          if ($LASTEXITCODE) { throw 'Scoop reinstall failed' }
+          & $command --version
+          if ($LASTEXITCODE) { throw 'Scoop reinstalled shim failed' }
+          & "$scoop/bin/scoop.ps1" uninstall lingose
+          if ($LASTEXITCODE -or (Test-Path $command)) { throw 'Scoop final uninstall failed' }
+      - name: Chocolatey pack, install, run, reinstall and uninstall
+        run: |
+          choco --version
+          choco pack packaging/chocolatey/lingose.nuspec --output-directory .local/channels
+          if ($LASTEXITCODE) { throw 'Chocolatey pack failed' }
+          $source = "$pwd/.local/channels;https://community.chocolatey.org/api/v2/"
+          choco install lingose --version 0.2.0 --source $source -y --no-progress
+          if ($LASTEXITCODE) { throw 'Chocolatey install failed' }
+          $command = "$env:ChocolateyInstall/bin/lingose.exe"
+          python tools/check_package_channels.py smoke --executable $command --output .local/channels/chocolatey
+          if ($LASTEXITCODE) { throw 'Chocolatey shim failed' }
+          $payload = "$env:ChocolateyInstall/lib/lingose/tools/lingose-v0.2.0-windows-x86_64"
+          if (!(Test-Path "$payload/licenses") -or !(Test-Path "$payload/SOURCES.md")) { throw 'Chocolatey notices missing' }
+          choco upgrade lingose --version 0.2.0 --source $source --force -y --no-progress
+          if ($LASTEXITCODE) { throw 'Chocolatey same-version reinstall failed' }
+          & $command --version
+          if ($LASTEXITCODE) { throw 'Chocolatey reinstalled shim failed' }
+          choco uninstall lingose -y --no-progress
+          if ($LASTEXITCODE -or (Test-Path $command)) { throw 'Chocolatey uninstall failed' }
+      - name: Preserve Windows evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: cli7-windows-${{ github.sha }}
+          path: .local/channels/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+
+  homebrew:
+    name: Homebrew (${{ matrix.runner }})
+    needs: windows
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [macos-15-intel, macos-15]
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 20
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+      HOMEBREW_NO_ANALYTICS: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Install, test, reinstall and uninstall custom tap formula
+        run: |
+          brew --version
+          brew tap --custom-remote englishword/lingose "$GITHUB_WORKSPACE"
+          if brew help trust >/dev/null 2>&1; then
+            brew trust --formula englishword/lingose/lingose
+          fi
+          brew install --formula englishword/lingose/lingose
+          brew test englishword/lingose/lingose
+          python tools/check_package_channels.py smoke --executable "$(brew --prefix)/bin/lingose" --output .local/channels/homebrew
+          test -f "$(brew --prefix lingose)/share/lingose/SOURCES.md"
+          test -d "$(brew --prefix lingose)/share/lingose/licenses"
+          brew reinstall englishword/lingose/lingose
+          lingose --version
+          brew uninstall lingose
+          test ! -e "$(brew --prefix)/bin/lingose"
+          brew untap englishword/lingose
+      - name: Preserve Homebrew evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: cli7-${{ matrix.runner }}-${{ github.sha }}
+          path: .local/channels/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14

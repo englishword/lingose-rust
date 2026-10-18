@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>lingose</id>
+    <version>0.2.0</version>
+    <title>Lingose</title>
+    <authors>ZHAN Xianjue</authors>
+    <owners>ZHAN Xianjue</owners>
+    <projectUrl>https://lingose.com/</projectUrl>
+    <packageSourceUrl>https://github.com/englishword/lingose-rust/tree/main/packaging/chocolatey</packageSourceUrl>
+    <projectSourceUrl>https://github.com/englishword/lingose-rust</projectSourceUrl>
+    <docsUrl>https://github.com/englishword/lingose-rust/blob/main/crates/lingose-cli/README.md</docsUrl>
+    <bugTrackerUrl>https://github.com/englishword/lingose-rust/issues</bugTrackerUrl>
+    <licenseUrl>https://github.com/englishword/lingose-rust/blob/v0.2.0/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Offline English word queries and plain-text IPS annotation</summary>
+    <description>Lingose provides offline IPA, IPS, ISM, IPSM and saved root-lemma queries, plus plain-text IPS annotation. The executable is named lingose. The dictionary is bundled; no Python, Node or external lexicon is needed. Windows x64 only. Requires the Microsoft Visual C++ v14 x64 Runtime. This package downloads the complete official archive, preserving its licenses and source notices. The project's license is CC-BY-4.0; third-party materials retain their own terms. See the included SOURCES.md for provenance limitations.</description>
+    <releaseNotes>https://github.com/englishword/lingose-rust/releases/tag/v0.2.0</releaseNotes>
+    <tags>lingose english pronunciation ipsm cli portable</tags>
+    <dependencies>
+      <dependency id="vcredist140" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

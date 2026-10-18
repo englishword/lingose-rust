@@ -116,7 +116,12 @@
   - 验收：来源是正式注册表，无 checkout path/patch；完整库 API smoke、新函数及 CLI 查询/标注/JSON/文件/stdin 通过，运行无需外部词库。记录各平台实际结果、版本/归档身份、未验项，更新最终交接。
   - 结果与边界：[最终验收说明](../docs/cli-final-acceptance.md)及[独立收据](../docs/cli-final-acceptance-verification.json)。Windows x86_64/Rust 1.93.1，仓库外两个全新 Cargo cache 分别完成精确库依赖消费与正式名称 CLI 安装，在线/全新 target 离线 locked 构建安装通过；两包归档 SHA、全部解包字节、metadata/锁文件/安装来源通过。移开构建工程/cache/target/安装根后，两份18入口库消费者及三份CLI各25项、共75项运行通过，包含最终Windows Release；91条命令预期退出码、182日志摘要独立通过。刷新private Release/标签/六资产后复用并重验正式认证下载，身份未变；其余平台仅列既有tag原生候选CI及最终字节对应，不外推本机运行。首次离线metadata缺libc的失败原样保留，修正依赖准备和根包检查后使用全新cache重验；248个原有tracked文件在验收时未变，无源码/数据/锁/旧收据变化，未重传/移tag/改可见性。CLI6完成，CLI7仅待用户后续安排。
 
-## CLI7：延期候选
+## CLI7：包管理器渠道
 
-- [ ] CLI7.1 评估 winget / scoop 安装渠道（延期，不阻塞 0.2.0）。
-  - 依赖：CLI6.5；仅在用户后续安排该任务时执行。评估清单、签名/校验和、更新与维护成本，单列实现及验收，不因本轮规划自动提交包管理器仓库。
+用户于 2026-10-18 安排继续，并指定 winget → scoop → choco → homebrew 顺序；仓库现已 public。沿用 CLI6 的正式资产，不重新发布 crate、移动 tag 或覆盖历史收据。社区仓库提交/审核与本地清单、安装测试分别记录。
+
+- [ ] CLI7.1 WinGet：核对公开下载、名称与当前规范，准备三文件 portable ZIP 清单，验证 schema 和实际安装条件。
+- [ ] CLI7.2 Scoop：核对 Main/Extras 门槛，准备本仓库自有 bucket，验证架构、摘要、解压目录、shim 和更新规则。
+- [ ] CLI7.3 Chocolatey：准备下载型包、运行库依赖及源码链接，执行真实 pack 与安装/卸载验证；不把 nupkg 生成当作社区上架。
+- [ ] CLI7.4 Homebrew：核对 core 门槛，准备本仓库自有 tap，验证实际目标上的安装、功能与卸载；披露未验平台。
+- [ ] CLI7.5 汇总渠道状态与后续社区提交步骤，更新当前 README/交接；保留审核、签名、公证、来源许可与平台限制。
