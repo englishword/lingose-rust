@@ -57,8 +57,10 @@ unknown word), 2 invalid arguments/text parameters, 1 I/O/resource/runtime error
   quarantine/Gatekeeper acceptance on a user's Mac.
 
 Test results apply to the recorded native runner environments. Archive creation,
-CI artifact downloads and an eventual public GitHub Release are separate steps.
-These 0.2.0 candidates are not evidence of crates.io publication.
+CI artifact downloads and public GitHub Release downloads are separate steps.
+The library `lingose 0.2.0` and CLI `lingose-cli 0.2.0` are published on crates.io.
+Rust/Cargo 1.85 or newer can install the CLI with
+`cargo install lingose-cli --version 0.2.0 --locked`.
 
 ## Attribution and licenses
 

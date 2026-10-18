@@ -8,7 +8,7 @@ on:
   pull_request:
     branches: [main]
 
-# CLI5 builds and uploads CI artifacts only. Release publication belongs to CLI6.
+# Read-only candidates on branches/PRs; only the exact version tag may publish.
 permissions:
   contents: read
 
@@ -52,6 +52,8 @@ jobs:
         run: rustup toolchain install 1.93.1 --profile minimal --target '${{ matrix.target }}'
       - name: Check archive and notice guards
         run: python -m unittest discover -s tests -p test_cli_binary_package.py
+      - name: Check publication guards
+        run: python -m unittest discover -s tests -p test_cli_release_publication.py
       - name: Build, test and run isolated native smoke
         run: python tools/check_cli_release.py --target ${{ matrix.target }} --output ci-evidence/${{ matrix.target }}
       - name: Package self-contained candidate archive and notices
@@ -164,5 +166,44 @@ jobs:
         with:
           name: cli52-assets-report-${{ github.sha }}
           path: ci-evidence/cli52-assets.json
+          if-no-files-found: error
+          retention-days: 14
+
+  publish:
+    name: Publish verified v0.2.0 Release
+    if: github.event_name == 'push' && github.ref == 'refs/tags/v0.2.0' && github.repository == 'englishword/lingose-rust'
+    needs: assets
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - name: Check out publisher and notices only
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            tools
+            release
+      - name: Set up verification Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Download all six verified distribution files
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: cli52-assets-${{ github.sha }}
+          path: release-candidate
+          digest-mismatch: error
+      - name: Verify tag and public visibility, upload draft, download and publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/publish_cli_release.py --assets release-candidate --revision ${{ github.sha }} --notes release/notes-v0.2.0.md --output release-download --report release-evidence/publication.json
+      - name: Retain publication and uploaded-byte verification evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: cli64-publication-${{ github.sha }}
+          path: release-evidence/
           if-no-files-found: error
           retention-days: 14
