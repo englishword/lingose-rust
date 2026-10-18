@@ -14,7 +14,7 @@
 - `annotate` 支持 `--skip-top`（默认 0）、`-o`、`--json`。UTF-8 输入，纯文本结果保留原换行；输出和错误分流，执行错误不伪装成未知词。
 - 标注 JSON 只有 `text`、`annotate`；查询 JSON 只有 `word`、`ipa`、`ips`、`ism`、`ipsm`、`root_lemma`。三种发音为独立数组，可空字段保留 null，CLI 不带释义、词性和分类等辅助字段。
 - 核心算法和随包数据仅由库维护，CLI 调用库。首次运行无需下载词库，运行不依赖 Python、Node、Cargo cache 或相邻 checkout。
-- shell integration 先完成管道与退出码；网页、浏览器扩展和词库维护排除。winget/scoop 为 CLI7 延期候选。
+- shell integration 先完成管道与退出码；网页、浏览器扩展和词库维护排除。用户已安排 CLI7 的 winget/scoop/choco/homebrew 渠道工作，社区上架不阻塞既有 0.2.0 发布。
 
 ## CLI0：文档准备
 
@@ -120,8 +120,13 @@
 
 用户于 2026-10-18 安排继续，并指定 winget → scoop → choco → homebrew 顺序；仓库现已 public。沿用 CLI6 的正式资产，不重新发布 crate、移动 tag 或覆盖历史收据。社区仓库提交/审核与本地清单、安装测试分别记录。
 
-- [ ] CLI7.1 WinGet：核对公开下载、名称与当前规范，准备三文件 portable ZIP 清单，验证 schema 和实际安装条件。
-- [ ] CLI7.2 Scoop：核对 Main/Extras 门槛，准备本仓库自有 bucket，验证架构、摘要、解压目录、shim 和更新规则。
-- [ ] CLI7.3 Chocolatey：准备下载型包、运行库依赖及源码链接，执行真实 pack 与安装/卸载验证；不把 nupkg 生成当作社区上架。
-- [ ] CLI7.4 Homebrew：核对 core 门槛，准备本仓库自有 tap，验证实际目标上的安装、功能与卸载；披露未验平台。
-- [ ] CLI7.5 汇总渠道状态与后续社区提交步骤，更新当前 README/交接；保留审核、签名、公证、来源许可与平台限制。
+- [x] CLI7.1 WinGet：核对公开下载、名称与当前规范，准备三文件 portable ZIP 清单，验证 schema 和实际安装条件。
+  - 三文件 schema/客户端 validate、公开正式 ZIP 安装、8 项原生功能测试、通知保留及卸载通过；社区 PR/索引未提交。通过的 Windows job 属于 run `39126125352`。
+- [x] CLI7.2 Scoop：核对 Main/Extras 门槛，准备本仓库自有 bucket，验证架构、摘要、解压目录、shim 和更新规则。
+  - 公开自有 bucket 精确提交、安装/shim 8 项、通知保留、官方 checkver/autoupdate 当前版本 hash/URL/extract_dir、卸载/重装通过；缺运行库 guard 的本地正/负检查通过。未进入 Main/Extras。
+- [x] CLI7.3 Chocolatey：准备下载型包、运行库依赖及源码链接，执行真实 pack 与安装/卸载验证；不把 nupkg 生成当作社区上架。
+  - 本地及 CI 真实 pack、依赖解析/本地 feed 安装、shim 8 项、通知保留、同版本强制重装及卸载通过；下载型 nupkg 无内嵌 exe，尚未上传社区。
+- [x] CLI7.4 Homebrew：核对 core 门槛，准备本仓库自有 tap，验证实际目标上的安装、功能与卸载；披露未验平台。
+  - 公开自有 tap 在 macOS 15.7.9 Intel/Apple Silicon 原生安装、formula test、各 8 项命令检查、通知保留、重装/卸载通过；未提交 core，初版不提供 Linux Homebrew。
+- [x] CLI7.5 汇总渠道状态与后续社区提交步骤，更新当前 README/交接；保留审核、签名、公证、来源许可与平台限制。
+  - [渠道说明](../docs/cli-package-channels.md)、[验收收据](../docs/cli-package-channels-verification.json)。run `39126125352` 三 job 全通过，五实例/40 项；三个服务 artifact ZIP 实际下载 SHA/大小通过，六次先前失败及原始日志单列。247 个范围外原文件不变，旧 crate/Release/tag/收据未改；Scoop bucket/macOS tap 已公开可用，WinGet 社区 PR 与 Chocolatey 社区上传/审核尚未执行。CLI7 的渠道准备/原生验收完成，社区上架需后续安排。

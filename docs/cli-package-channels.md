@@ -5,6 +5,42 @@ Anonymous GitHub API and downloads now confirm the repository is public.
 All six v0.2.0 assets match the frozen CLI6 publication byte identities.
 No crate, tag or Release asset is replaced by this work.
 
+## Verified result
+
+[Native acceptance run 39126125352](https://github.com/englishword/lingose-rust/actions/runs/39126125352)
+passed all three jobs on commit `d237147e5e0bf5b0042e1d11a714bde712d06dc6`.
+The [receipt](cli-package-channels-verification.json) records the exact inputs,
+job steps, downloaded service artifact digests, reports and earlier attempts.
+
+| Channel | Accepted locally/on native runners | Public distribution status |
+| --- | --- | --- |
+| WinGet | Client validation, install, 8 command checks, notices, uninstall | Community PR/index pending |
+| Scoop | Public bucket revision, install/shim, 8 checks, notices, checkver/autoupdate, uninstall/reinstall | This repository's custom bucket is available; Main/Extras not submitted |
+| Chocolatey | Real pack, local-feed install with runtime dependency, 8 shim checks, notices, same-version reinstall, uninstall | Community upload/moderation pending |
+| Homebrew | Public tap revision, install, formula tests, 8 checks per architecture, notices, reinstall/uninstall | This repository's custom macOS tap is available; core not submitted |
+
+Windows Server 2022 x64 and macOS 15.7.9 Intel/Apple Silicon supplied five
+installed instances and 40 command checks. The three downloaded evidence ZIPs
+match the service SHA256 and byte sizes. Raw logs and reports are retained in
+`.local/cli7-final-39126125352/`; service artifacts have 14-day retention.
+Scoop's generated current-version URL/hash/extract directory match the source.
+
+Six earlier runs are retained separately. Failures exposed an unsupported
+portable Scope field, local WinGet registration matching, a shared-runner API
+limit and incomplete/manual Scoop bootstrap assumptions. The final run uses
+the official Scoop installer, public channel URLs and only an ephemeral
+read-only token for WinGet bootstrap; the asset preflight remains anonymous.
+No failed attempt is relabelled as successful.
+
+Local checks also passed: official schemas, eight direct Release executable
+checks, real Chocolatey pack/download-only payload inspection, present/missing
+runtime guard checks (the missing case mocks the filesystem result), 15 existing
+archive/publication guard tests, syntax/actionlint and whitespace checks.
+All 247 existing files outside the four current workflow/doc-state exceptions
+retain their CLI6 identity. Rust code, packaged data, Cargo.lock, Release
+materials and historical receipts were not changed, so the full Rust,
+differential, performance and MSRV suites were not repeated for CLI7.
+
 ## WinGet
 
 Candidate ID: `Lingose.Lingose`, Windows x64 portable ZIP. Three manifests are
@@ -28,9 +64,9 @@ updates. The VC++ runtime is suggested as `extras/vcredist2022`, rather than
 silently invoking its administrative installer. A pre-install guard fails with
 an actionable message if the x64 runtime DLL is absent. The bundled notices remain.
 
-Install Microsoft's Visual C++ v14 x64 Runtime first if it is absent (the
-`extras/vcredist2022` installer may require administrator rights). Then, once
-the manifest is pushed to the public default branch:
+Install [Microsoft's Visual C++ v14 x64 Runtime](https://aka.ms/vc14/vc_redist.x64.exe) first if it is absent (the
+`extras/vcredist2022` installer may require administrator rights). Then use
+this public bucket:
 
 ```powershell
 scoop bucket add lingose https://github.com/englishword/lingose-rust
@@ -71,7 +107,7 @@ project, data and dependency notices in `share/lingose`; its tests compare
 complete query JSON and stdin annotation. Linux Homebrew is not offered by
 this initial formula; existing direct Linux Release archives remain available.
 
-Once the formula is pushed to the public default branch:
+The formula is now on the public default branch:
 
 ```sh
 brew tap englishword/lingose https://github.com/englishword/lingose-rust
@@ -114,3 +150,9 @@ a new version directory/PR, Chocolatey a newly packed/uploaded version, and
 Homebrew a formula update. Never change bytes behind an existing release URL.
 Runtime requirements and the known Frequency List/category provenance gaps in
 the bundled `SOURCES.md` continue to apply to every channel.
+
+The final Windows Release executable reports `NotSigned` under
+`Get-AuthenticodeSignature`. Fixed SHA256 verifies the chosen archive bytes;
+it is not a publisher signature. No channel packaging adds Authenticode,
+Developer ID signing or notarization. Community security scanning and OS
+download/launch warnings remain separate from these command-line tests.

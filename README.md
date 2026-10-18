@@ -8,9 +8,9 @@ Source repository: [englishword/lingose-rust](https://github.com/englishword/lin
 
 **The library `lingose 0.2.0` and `lingose-cli 0.2.0` are published on crates.io.**
 [GitHub Release v0.2.0](https://github.com/englishword/lingose-rust/releases/tag/v0.2.0)
-provides five platform archives and SHA256SUMS. The repository is currently private;
-viewing the Release and downloading assets require authentication and repository access.
-Fresh registry-install acceptance remains a separate step.
+provides five platform archives and SHA256SUMS. The repository and Release assets
+are public; anonymous downloads have been checked against the original publication.
+Fresh registry-install acceptance passed separately on Windows x86_64.
 
 ## Command line
 
@@ -63,9 +63,32 @@ behavior, UTF-8 shell setup and errors. Pipelines can change input bytes;
 `--input`/`-o` avoid shell decoding and re-encoding. Plain annotation output
 preserves the input's line endings; JSON escapes them inside strings.
 
+## Package managers
+
+This repository also supplies a custom Scoop bucket (Windows x64) and a custom
+Homebrew tap (macOS Intel/Apple Silicon):
+
+```powershell
+# Requires the Microsoft Visual C++ v14 x64 Runtime.
+scoop bucket add lingose https://github.com/englishword/lingose-rust
+scoop install lingose/lingose
+```
+
+```sh
+brew tap englishword/lingose https://github.com/englishword/lingose-rust
+brew install englishword/lingose/lingose
+```
+
+WinGet manifests and a Chocolatey package source are also prepared. Community
+submission, review and indexing are separate steps; `winget install Lingose`
+and `choco install lingose` are not yet community installation instructions.
+See [channel instructions and acceptance](docs/cli-package-channels.md) for
+runtime requirements, explicit Homebrew trust where required, platform scope,
+maintenance and the current verification status.
+
 ## Rust library
 
-After 0.2.0 is published, add this to your application's `Cargo.toml`:
+Add this to your application's `Cargo.toml`:
 
 ```toml
 [dependencies]
@@ -117,8 +140,9 @@ Native CLI builds and query/annotation/stdin/JSON smoke have passed on Windows
 x86_64, Linux x86_64/aarch64 and macOS Intel/Apple Silicon; see the
 [CI verification](docs/cli-release-ci.md). Binary archive preparation and
 download/extraction verification are tracked in [binary assets](docs/cli-binary-assets.md).
-The private Release assets have been uploaded and authenticated downloads checked
+Release assets were originally published privately and authenticated downloads checked
 byte for byte against the tagged CI candidates; see the [publication record](docs/cli-github-release.md).
+The repository is now public; CLI7 also verifies anonymous asset downloads.
 Fresh crates.io library consumption and CLI installation passed online and offline on Windows x86_64,
 along with 25 scenarios for the final Release executable. Other platforms retain their separate
 native CI evidence; see the [final acceptance record](docs/cli-final-acceptance.md).

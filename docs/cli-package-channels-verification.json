@@ -1,0 +1,416 @@
+{
+  "phase": "CLI7",
+  "verified_at": "2026-10-18T12:13:54.870412+00:00",
+  "status": "package_materials_and_native_acceptance_passed",
+  "run": {
+    "id": 39126125352,
+    "url": "https://github.com/englishword/lingose-rust/actions/runs/39126125352",
+    "head_sha": "d237147e5e0bf5b0042e1d11a714bde712d06dc6",
+    "conclusion": "success"
+  },
+  "evidence_root": ".local\\cli7-final-39126125352",
+  "jobs": [
+    {
+      "name": "WinGet then Scoop then Chocolatey",
+      "id": 117671523693,
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify public release and schemas",
+          "conclusion": "success"
+        },
+        {
+          "name": "Prepare WinGet on disposable runner",
+          "conclusion": "success"
+        },
+        {
+          "name": "WinGet validate, install, run and uninstall",
+          "conclusion": "success"
+        },
+        {
+          "name": "Prepare Scoop on disposable runner",
+          "conclusion": "success"
+        },
+        {
+          "name": "Scoop install, run, reinstall and uninstall",
+          "conclusion": "success"
+        },
+        {
+          "name": "Chocolatey pack, install, run, reinstall and uninstall",
+          "conclusion": "success"
+        },
+        {
+          "name": "Preserve Windows evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "Homebrew (macos-15-intel)",
+      "id": 117671933707,
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install, test, reinstall and uninstall custom tap formula",
+          "conclusion": "success"
+        },
+        {
+          "name": "Preserve Homebrew evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "Homebrew (macos-15)",
+      "id": 117671933723,
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install, test, reinstall and uninstall custom tap formula",
+          "conclusion": "success"
+        },
+        {
+          "name": "Preserve Homebrew evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 12136500709,
+      "name": "cli7-macos-15-intel-d237147e5e0bf5b0042e1d11a714bde712d06dc6",
+      "bytes": 891,
+      "sha256": "a1e4915844e7fa627662854b7db3fb4ef5e4624742b50f0e615a687898cfcd0b"
+    },
+    {
+      "id": 12135978634,
+      "name": "cli7-windows-d237147e5e0bf5b0042e1d11a714bde712d06dc6",
+      "bytes": 22320,
+      "sha256": "c1dd133458934a264de5b9b0ec6144fd8d6ce6092a017ff72022737db207f043"
+    },
+    {
+      "id": 12135664967,
+      "name": "cli7-macos-15-d237147e5e0bf5b0042e1d11a714bde712d06dc6",
+      "bytes": 887,
+      "sha256": "8d84172d9e34121f13b99ecad27bff3820394fa85808927bfc83cfcf87aae4fc"
+    }
+  ],
+  "workflow_log": {
+    "bytes": 190737,
+    "sha256": "e90292bad8b8579b938158bba522d38bd463b3bd9eafd9357668a9823428ecd8"
+  },
+  "installed_smoke": [
+    {
+      "file": "cli7-macos-15-d237147e5e0bf5b0042e1d11a714bde712d06dc6\\homebrew\\report.json",
+      "platform": "macOS-15.7.9-arm64-arm-64bit",
+      "cases": 8,
+      "bytes": 2605,
+      "sha256": "0c1a1ffbfaca0bfd52287068809c0b490ac91ae5bf8af64c51427bda27e4df8d"
+    },
+    {
+      "file": "cli7-macos-15-intel-d237147e5e0bf5b0042e1d11a714bde712d06dc6\\homebrew\\report.json",
+      "platform": "macOS-15.7.9-x86_64-i386-64bit",
+      "cases": 8,
+      "bytes": 2604,
+      "sha256": "c37658d09ffde9efdd9bb0d76c24e0db0d73e2bbb90b0f536a596960f8f6e31b"
+    },
+    {
+      "file": "cli7-windows-d237147e5e0bf5b0042e1d11a714bde712d06dc6\\chocolatey\\report.json",
+      "platform": "Windows-2022Server-10.0.20348-SP0",
+      "cases": 8,
+      "bytes": 2638,
+      "sha256": "da2268fbd6618a399f74c1de966a8e0ad71c9df2f9deef15e6f34879a5b757c4"
+    },
+    {
+      "file": "cli7-windows-d237147e5e0bf5b0042e1d11a714bde712d06dc6\\scoop\\report.json",
+      "platform": "Windows-2022Server-10.0.20348-SP0",
+      "cases": 8,
+      "bytes": 2640,
+      "sha256": "d078a04bdf82d8d33d649f6c57b425f9762c6cf0e6e44a20afc4ea5d4c317354"
+    },
+    {
+      "file": "cli7-windows-d237147e5e0bf5b0042e1d11a714bde712d06dc6\\winget\\report.json",
+      "platform": "Windows-2022Server-10.0.20348-SP0",
+      "cases": 8,
+      "bytes": 2670,
+      "sha256": "482070b9f8dda6ea9d6b1edb7f9ed3e42bcdbd8d2e1e2d3a3e2cab7c149c1881"
+    }
+  ],
+  "smoke_cases": 40,
+  "inputs": {
+    ".github/workflows/package-channels.yml": {
+      "bytes": 10130,
+      "sha256": "db5c7be56a166a38c2e6edd006e9d970cb8571641b85507d931c86f80c9a8dc7"
+    },
+    "Formula/lingose.rb": {
+      "bytes": 1812,
+      "sha256": "ecef975720e30829a43f62854e03a5b5b3702046c2b3efb5e66fd0a4668f528a"
+    },
+    "bucket/lingose.json": {
+      "bytes": 1798,
+      "sha256": "554d6aa4fb01bdc50e76c7a7c8156531e2fe650db36485fb0ffdabce098ee08a"
+    },
+    "packaging/chocolatey/lingose.nuspec": {
+      "bytes": 1834,
+      "sha256": "23406134c68e46fbd4fd714919143a7a384cdf3c50e3f546d158116b7895ebba"
+    },
+    "packaging/chocolatey/tools/chocolateyInstall.ps1": {
+      "bytes": 776,
+      "sha256": "9dc131eb961a82eff656b968e6e7ce6f2dda4df5f6233d0a0099d3fb41eadb77"
+    },
+    "packaging/winget/manifests/l/Lingose/Lingose/0.2.0/Lingose.Lingose.installer.yaml": {
+      "bytes": 741,
+      "sha256": "05366bd4edfff40b50fff14844d950886746befe46643b49924f1be3f79db1e7"
+    },
+    "packaging/winget/manifests/l/Lingose/Lingose/0.2.0/Lingose.Lingose.locale.en-US.yaml": {
+      "bytes": 1112,
+      "sha256": "0754b2c44b43ab621cda8d4718dfee7141ba90695fcdb81db35e581044c0ca8a"
+    },
+    "packaging/winget/manifests/l/Lingose/Lingose/0.2.0/Lingose.Lingose.yaml": {
+      "bytes": 214,
+      "sha256": "54503a2505892bc9342e0e8e630508dd18a1c7af716e11480558abe4e2262bbc"
+    },
+    "tools/check_package_channels.py": {
+      "bytes": 8640,
+      "sha256": "12335b22c5908a5073ea27a8689a9398fe7afe5172f4c4aa6eaacbd8ec372528"
+    }
+  },
+  "previous_attempts": [
+    {
+      "id": 39125036719,
+      "conclusion": "failure",
+      "head_sha": "5dd57be0927a015f5971b6a3660481df760727a3",
+      "failed_steps": [
+        "WinGet validate, install, run and uninstall"
+      ],
+      "log": {
+        "bytes": 49246,
+        "sha256": "c4a76b426e4ff4f9732c6f15bd4c633383fff0c0581e8111ba22dd4bfc15cdf5"
+      }
+    },
+    {
+      "id": 39125249019,
+      "conclusion": "failure",
+      "head_sha": "05cf7c7be4dde3f0682801c5c46aaf6a85859ee2",
+      "failed_steps": [
+        "WinGet validate, install, run and uninstall"
+      ],
+      "log": {
+        "bytes": 52633,
+        "sha256": "cb772953cdf5e40cf049d21daa3da723f58874686d5c8e32a1faa6a0335ce9f5"
+      }
+    },
+    {
+      "id": 39125403954,
+      "conclusion": "failure",
+      "head_sha": "a898d69d4858f73788f4fd15099e840dfb4ec7e3",
+      "failed_steps": [
+        "Prepare WinGet on disposable runner"
+      ],
+      "log": {
+        "bytes": 44784,
+        "sha256": "1394e796c1e81a10c3cc3e32b4ebc16c9ce964191abeb3a43cb98475e7f2dcc9"
+      }
+    },
+    {
+      "id": 39125598001,
+      "conclusion": "failure",
+      "head_sha": "ee4b0197487925d8de07d7972355f53414add950",
+      "failed_steps": [
+        "Scoop install, run, reinstall and uninstall"
+      ],
+      "log": {
+        "bytes": 62760,
+        "sha256": "84f8e8da0c781311c7ff05eb80730e5d77b2d291ef74f4456b1f8319a89974c5"
+      }
+    },
+    {
+      "id": 39125778281,
+      "conclusion": "failure",
+      "head_sha": "420ce83c8716aeb98c7867ba6dbf0f72d82b7b12",
+      "failed_steps": [
+        "Scoop install, run, reinstall and uninstall"
+      ],
+      "log": {
+        "bytes": 63372,
+        "sha256": "037ad7b2fca705195213a7bf42479e8f68e918522015b52f5458f0413e647a0a"
+      }
+    },
+    {
+      "id": 39125945344,
+      "conclusion": "failure",
+      "head_sha": "156a307ca3b944b0e89789086c96be6f21f8be40",
+      "failed_steps": [
+        "Scoop install, run, reinstall and uninstall"
+      ],
+      "log": {
+        "bytes": 63541,
+        "sha256": "8272587f4c339c1602b8ba4aff00aa4ed5a730eaf3b32746d4aced6ee6352f57"
+      }
+    }
+  ],
+  "protection": {
+    "baseline": "c2d07f88e552e6b1ee882bb1b5eca74b917a4c36",
+    "baseline_files": 251,
+    "unchanged_except_current_documents": 247,
+    "allowed_existing_files": [
+      ".gitattributes",
+      "README.md",
+      "tasks/handoff.md",
+      "tasks/todo_CLI.md"
+    ],
+    "tag_object": "9507ff12eac425612a7f9125ecdd65ffb7cb4095",
+    "tag_commit": "cf11a604c8f998a1b4ac67737b3e826cadd40530"
+  },
+  "community_publication": {
+    "winget": "not_submitted",
+    "scoop_main_extras": "not_submitted",
+    "chocolatey": "not_uploaded",
+    "homebrew_core": "not_submitted"
+  },
+  "scope": {
+    "windows": "x86_64 Windows Server 2022 with existing system runtimes",
+    "homebrew": "native Intel and Apple Silicon macOS 15 runners; custom binary tap only",
+    "upgrade": "same-version reinstall, not cross-version upgrade",
+    "runtime_free_windows": "not tested; missing-DLL guard checked locally with mocked filesystem result",
+    "notarization_gatekeeper": "not tested",
+    "linux_homebrew": "not offered",
+    "source_and_license_gaps": "unchanged; see bundled SOURCES.md",
+    "new_rust_regression": "not repeated; Rust/data/lock unchanged"
+  },
+  "local_checks": {
+    "release_guard_tests": 15,
+    "schemas": "official WinGet 1.12.0 and Scoop",
+    "native_release_smoke_cases": 8,
+    "windows_authenticode": "NotSigned",
+    "choco_pack": "passed, download-only nupkg inspected",
+    "syntax": [
+      "PowerShell AST",
+      "Ruby -c",
+      "Python py_compile",
+      "actionlint",
+      "git diff --check"
+    ]
+  },
+  "name_availability": [
+    {
+      "channel": "winget",
+      "url": "https://api.github.com/repos/microsoft/winget-pkgs/contents/manifests/l/Lingose/Lingose",
+      "status": 404,
+      "chocolatey_empty_feed": null
+    },
+    {
+      "channel": "scoop-main",
+      "url": "https://raw.githubusercontent.com/ScoopInstaller/Main/master/bucket/lingose.json",
+      "status": 404,
+      "chocolatey_empty_feed": null
+    },
+    {
+      "channel": "scoop-extras",
+      "url": "https://raw.githubusercontent.com/ScoopInstaller/Extras/master/bucket/lingose.json",
+      "status": 404,
+      "chocolatey_empty_feed": null
+    },
+    {
+      "channel": "homebrew-core",
+      "url": "https://formulae.brew.sh/api/formula/lingose.json",
+      "status": 404,
+      "chocolatey_empty_feed": null
+    },
+    {
+      "channel": "chocolatey",
+      "url": "https://community.chocolatey.org/api/v2/Packages?$filter=Id%20eq%20'lingose'&$select=Id,Version",
+      "status": 200,
+      "chocolatey_empty_feed": true
+    }
+  ],
+  "public_source_checks": [
+    {
+      "file": "bucket/lingose.json",
+      "url": "https://raw.githubusercontent.com/englishword/lingose-rust/main/bucket/lingose.json",
+      "http_status": 200,
+      "bytes": 1798,
+      "sha256": "554d6aa4fb01bdc50e76c7a7c8156531e2fe650db36485fb0ffdabce098ee08a"
+    },
+    {
+      "file": "Formula/lingose.rb",
+      "url": "https://raw.githubusercontent.com/englishword/lingose-rust/main/Formula/lingose.rb",
+      "http_status": 200,
+      "bytes": 1812,
+      "sha256": "ecef975720e30829a43f62854e03a5b5b3702046c2b3efb5e66fd0a4668f528a"
+    }
+  ]
+}
