@@ -1,0 +1,3320 @@
+{
+  "phase": "CLI4.3",
+  "status": "library_dry_run_and_local_cli_passed",
+  "host": "Windows-11-10.0.26200-SP0",
+  "base_commit": "9fe34891836eb54ad349cd133e77a1700c42b4a9",
+  "library_publish_guard": false,
+  "cli_publish_guard": true,
+  "library_inputs": {
+    "Cargo.toml": {
+      "bytes": 929,
+      "sha256": "75b6cb3a1b6d9dc4a15b1ef099f0747dc3cebc7a3b12a5c34cf6f58a8dd815e3"
+    },
+    "LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "README.md": {
+      "bytes": 11639,
+      "sha256": "f67254247c30dbf3674773f2611c145721c733146ffc1ce6ac946b2b6e82c9e2"
+    },
+    "SOURCES.md": {
+      "bytes": 3890,
+      "sha256": "74170a3c0d378675de47ced2a5cb8d261880522a9f1c4deaaa711ae31391d522"
+    },
+    "data/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "data/SOURCES.json": {
+      "bytes": 4997,
+      "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+    },
+    "data/UPSTREAM-SOURCES.md": {
+      "bytes": 1457,
+      "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+    },
+    "data/frequency.bin": {
+      "bytes": 200272,
+      "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+    },
+    "data/lexicon.bin": {
+      "bytes": 10259743,
+      "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+    },
+    "data/manifest.json": {
+      "bytes": 3900,
+      "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+    },
+    "docs/distribution-provenance.json": {
+      "bytes": 5569,
+      "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+    },
+    "docs/rust-api.md": {
+      "bytes": 10014,
+      "sha256": "384d9f33476913a64a0cadb3d348e80e2dadda97361dbad41ec6491453d35575"
+    },
+    "examples/annotate.rs": {
+      "bytes": 414,
+      "sha256": "59e6d564a33328edbcc7dbe6e3145bdd75ebef0e6f0c99a5d6f9233ef4441c5a"
+    },
+    "examples/query.rs": {
+      "bytes": 871,
+      "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+    },
+    "src/annotation.rs": {
+      "bytes": 19775,
+      "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+    },
+    "src/annotation_context_vectors.rs": {
+      "bytes": 321810,
+      "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+    },
+    "src/annotation_frequency_vectors.rs": {
+      "bytes": 24615,
+      "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+    },
+    "src/annotation_unicode.rs": {
+      "bytes": 3734,
+      "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+    },
+    "src/annotation_unicode_tables.rs": {
+      "bytes": 40416,
+      "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+    },
+    "src/annotation_vectors.rs": {
+      "bytes": 65657,
+      "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+    },
+    "src/category.rs": {
+      "bytes": 1653,
+      "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+    },
+    "src/data/annotation_context_vectors.rs": {
+      "bytes": 37586,
+      "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+    },
+    "src/data/annotation_frequency_vectors.rs": {
+      "bytes": 87772,
+      "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+    },
+    "src/data/annotation_tests.rs": {
+      "bytes": 3391,
+      "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+    },
+    "src/data/cache_tests.rs": {
+      "bytes": 22365,
+      "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+    },
+    "src/data/category_tests.rs": {
+      "bytes": 4243,
+      "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+    },
+    "src/data/image.rs": {
+      "bytes": 15144,
+      "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+    },
+    "src/data/mod.rs": {
+      "bytes": 6395,
+      "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+    },
+    "src/data/p41_joint_error_tests.rs": {
+      "bytes": 4967,
+      "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+    },
+    "src/data/p41_query_fixture_tests.rs": {
+      "bytes": 62352,
+      "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+    },
+    "src/data/tests.rs": {
+      "bytes": 24506,
+      "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+    },
+    "src/data_meta.rs": {
+      "bytes": 1531,
+      "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+    },
+    "src/error.rs": {
+      "bytes": 2127,
+      "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+    },
+    "src/lib.rs": {
+      "bytes": 5142,
+      "sha256": "661ea94997dcdb0d7a994a900acb1dbc6c3e0b897804d495beb3c90389d5ca12"
+    },
+    "src/query.rs": {
+      "bytes": 1207,
+      "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+    },
+    "src/query_case.rs": {
+      "bytes": 5074,
+      "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+    },
+    "src/query_case_tables.rs": {
+      "bytes": 52751,
+      "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+    },
+    "src/validation.rs": {
+      "bytes": 1624,
+      "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+    },
+    "third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    },
+    "Cargo.lock": {
+      "bytes": 5797,
+      "sha256": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e"
+    }
+  },
+  "cli_inputs": {
+    "Cargo.toml": {
+      "bytes": 809,
+      "sha256": "e50128430cf34e3da846eb17a97e5924ea39ddff7a9dbf14f34874f14abb788f"
+    },
+    "LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "README.md": {
+      "bytes": 8778,
+      "sha256": "35d1dbc07a99a2dc5f6be152bbd49b2e700bcb91c7731b740b21438b09cec421"
+    },
+    "SOURCES.md": {
+      "bytes": 3685,
+      "sha256": "e3a051a235428b0a89c4be52e6c60f85326d33d508673f7db4397419dc4bd6b3"
+    },
+    "src/main.rs": {
+      "bytes": 12480,
+      "sha256": "b4a793a06b79443b9a185acd9fc35a22d50f31fde8c1922b0615786f4037d953"
+    }
+  },
+  "execution_inputs": {
+    "Cargo.toml": {
+      "bytes": 240,
+      "sha256": "2c7d78c0cb89af8501739a315db12692f4141b8c70815a6fcdbad0dab7cb253b"
+    },
+    "Cargo.lock": {
+      "bytes": 5797,
+      "sha256": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e"
+    },
+    "tools/check_cli_package.py": {
+      "bytes": 26158,
+      "sha256": "f20a12937dc401a7f97b7b46a7fd383abc521d3eb6276a4b03f9d859c6437d15"
+    },
+    "tools/check_workspace_package.py": {
+      "bytes": 12171,
+      "sha256": "ee5b2548b4edc0e905c762e75e8605d73055ec5b5a3862503825702aaf0cd5a0"
+    },
+    "tools/package_consumer_020.rs": {
+      "bytes": 7801,
+      "sha256": "2c659500a1ff6161603e50f334243a6ddb18527f8e57b95add7bb367aee43d3b"
+    },
+    "docs/performance-budget.json": {
+      "bytes": 1967,
+      "sha256": "3f54b4d54240eb8039cb461829c76d2ccd2cda7fe6cb4060b013d5d882cd4e82"
+    },
+    "tests/fixtures/python-api-v1.json": {
+      "bytes": 118971,
+      "sha256": "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1"
+    }
+  },
+  "commands": [
+    {
+      "label": "package-list",
+      "argv": [
+        "cargo",
+        "package",
+        "-p",
+        "lingose",
+        "--list",
+        "--offline",
+        "--locked"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli43-3h9dn32c\\source",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.204504,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/package-list.stdout.log",
+        "bytes": 886,
+        "sha256": "e724098a9f653fe3d6d7db6317fa277480b040fe4c284419e74248236cee47f5"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/package-list.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "library-package",
+      "argv": [
+        "cargo",
+        "package",
+        "-p",
+        "lingose",
+        "--offline",
+        "--locked",
+        "--all-features"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli43-3h9dn32c\\source",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 6.466771,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/library-package.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/library-package.stderr.log",
+        "bytes": 739,
+        "sha256": "97221a960012ea55dfcc1e1feb0f582dd5d63d5e5c5177119c5fa5b82f4ddf5f"
+      }
+    },
+    {
+      "label": "vendor-preparation",
+      "argv": [
+        "cargo",
+        "vendor",
+        "--offline",
+        "--locked",
+        "--versioned-dirs",
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\vendor"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli43-3h9dn32c\\source",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 2.166451,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/vendor-preparation.stdout.log",
+        "bytes": 162,
+        "sha256": "2c2981ae03338fc0fc4932bcb5eac8e9a7918c54d9653fcb969d3ad42521fb76"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/vendor-preparation.stderr.log",
+        "bytes": 5883,
+        "sha256": "231e54bc2adbe5d6157f6a22cf524d4f90b2b649106f66b2dc02d43db530b33c"
+      }
+    },
+    {
+      "label": "consumer-lock",
+      "argv": [
+        "cargo",
+        "generate-lockfile",
+        "--offline"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\consumer",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.214949,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/consumer-lock.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/consumer-lock.stderr.log",
+        "bytes": 67,
+        "sha256": "5f9cb90973a76190f776ac9fb2f954ed045f0bf00b6754ed0c9e0cd79836a340"
+      }
+    },
+    {
+      "label": "consumer-metadata",
+      "argv": [
+        "cargo",
+        "metadata",
+        "--offline",
+        "--locked",
+        "--format-version",
+        "1",
+        "--filter-platform",
+        "x86_64-pc-windows-msvc"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\consumer",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.250361,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/consumer-metadata.stdout.log",
+        "bytes": 27328,
+        "sha256": "311276325e82be26181b2f0f7b8d36145b7274f7cf3146194b2ab94a42a690da"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/consumer-metadata.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "cli-lock",
+      "argv": [
+        "cargo",
+        "generate-lockfile",
+        "--offline"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\cli",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.171379,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/cli-lock.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/cli-lock.stderr.log",
+        "bytes": 65,
+        "sha256": "05832e8f6966013e209abd21210f5a57ee8d1ca4923f847f7fcb406472d1c261"
+      }
+    },
+    {
+      "label": "cli-metadata",
+      "argv": [
+        "cargo",
+        "metadata",
+        "--offline",
+        "--locked",
+        "--format-version",
+        "1",
+        "--filter-platform",
+        "x86_64-pc-windows-msvc"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\cli",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.162708,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/cli-metadata.stdout.log",
+        "bytes": 80635,
+        "sha256": "5d09752521a0f2c0b5987ac89b67d36d5e195d7f01c0c83779449cc149b85d57"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/cli-metadata.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-rustc",
+      "argv": [
+        "rustc",
+        "-Vv"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\consumer",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.083878,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-rustc.stdout.log",
+        "bytes": 194,
+        "sha256": "f133056ecf1576257a2bcb9da126bfb7e84725ccc144caee31dc2f70b42f6f20"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-rustc.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-consumer-build",
+      "argv": [
+        "cargo",
+        "build",
+        "--release",
+        "--offline",
+        "--locked"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\consumer",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 4.935173,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-consumer-build.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-consumer-build.stderr.log",
+        "bytes": 577,
+        "sha256": "f0cb1d57218bbe2a142d377053c72cefc5de49441489353d3afaf8e042a849f4"
+      }
+    },
+    {
+      "label": "current-cli-install",
+      "argv": [
+        "cargo",
+        "install",
+        "--path",
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\cli",
+        "--root",
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\current-install",
+        "--offline",
+        "--locked"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\cli",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 7.60581,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-cli-install.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-cli-install.stderr.log",
+        "bytes": 924,
+        "sha256": "dcb5cf5e394cb258d26cc4c46efb8cdd33b45877f12b47546c9d634a547fed02"
+      }
+    },
+    {
+      "label": "minimum-rustc",
+      "argv": [
+        "rustup",
+        "run",
+        "1.85.0-x86_64-pc-windows-msvc",
+        "rustc",
+        "-Vv"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\consumer",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.072764,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-rustc.stdout.log",
+        "bytes": 194,
+        "sha256": "32773cf1f17324f81b3423be1da95ce0a5c4e9f253e71481a8aa68e604748997"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-rustc.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-consumer-build",
+      "argv": [
+        "rustup",
+        "run",
+        "1.85.0-x86_64-pc-windows-msvc",
+        "cargo",
+        "build",
+        "--release",
+        "--offline",
+        "--locked"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\consumer",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 4.532507,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-consumer-build.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-consumer-build.stderr.log",
+        "bytes": 577,
+        "sha256": "a374056bc6696c97c9a999a9a6e9d2208074f5b020b3bbe34f2cb7be13c49874"
+      }
+    },
+    {
+      "label": "minimum-cli-install",
+      "argv": [
+        "rustup",
+        "run",
+        "1.85.0-x86_64-pc-windows-msvc",
+        "cargo",
+        "install",
+        "--path",
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\cli",
+        "--root",
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\minimum-install",
+        "--offline",
+        "--locked"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\cli",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 9.8105,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-cli-install.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-cli-install.stderr.log",
+        "bytes": 924,
+        "sha256": "568278c601fd3fab7b8fbf2e94470db00419dc7ad58e098c9ff3660e190328ae"
+      }
+    },
+    {
+      "label": "packaged-library-tests",
+      "argv": [
+        "cargo",
+        "test",
+        "--offline",
+        "--locked",
+        "--all-features"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\unpacked\\lingose-0.2.0",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 22.036833,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/packaged-library-tests.stdout.log",
+        "bytes": 8867,
+        "sha256": "fc8a5fca74fb250f94be6aab5b5256229799a8c941c2e24a3aa527a97475d9a2"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/packaged-library-tests.stderr.log",
+        "bytes": 640,
+        "sha256": "9199caa9206819a5445ce07cb6f6a76f9d08fb8108a5e72a6a7a2fe9ec334cce"
+      }
+    },
+    {
+      "label": "packaged-library-doc",
+      "argv": [
+        "cargo",
+        "doc",
+        "--offline",
+        "--locked",
+        "--no-deps",
+        "--all-features"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\unpacked\\lingose-0.2.0",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 1.88678,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/packaged-library-doc.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/packaged-library-doc.stderr.log",
+        "bytes": 544,
+        "sha256": "fc308679f17a7e1e4ea4995f23c794fa1d73eeba22328f585a50d4aec69ea721"
+      }
+    },
+    {
+      "label": "current-consumer-runtime",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-consumer.exe"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.652911,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-consumer-runtime.stdout.log",
+        "bytes": 167,
+        "sha256": "cda21bc06c0f4acf2bca8cbe7cdcd13759d1ae4d7496a6dee8834fce79478a36"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-consumer-runtime.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-word-json",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "word",
+        "apple",
+        "--json"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.869936,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-word-json.stdout.log",
+        "bytes": 150,
+        "sha256": "d876a1e8e7166cadcaead135558c09a9de07b017af3d8d562535d1ab061c5af7"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-word-json.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-unknown",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "word",
+        "unknownwordzz",
+        "--json"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.046976,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-unknown.stdout.log",
+        "bytes": 107,
+        "sha256": "6704d352ca5dc5816c50b8c683551f220ce4c45f12856bd988f984dde2df1328"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-unknown.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-word-plain",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "word",
+        "apple"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.049933,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-word-plain.stdout.log",
+        "bytes": 93,
+        "sha256": "f32d7d70f1295292938adbc3ab74c2693f98600dbc56a30e286c1803f94356d6"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-word-plain.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-help",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "--help"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.020857,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-help.stdout.log",
+        "bytes": 370,
+        "sha256": "8e59281535d01cc9ab1d70804b6e43b4d732e4c0aa92a51f1709c1a9876ca43b"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-help.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-version",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "--version"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.021443,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-version.stdout.log",
+        "bytes": 14,
+        "sha256": "0257d2870e2e70c1f7d4ba25c6f7bd12c56f306b720b9125d541a649c1c255dc"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-version.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-threshold-0",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "--text",
+        "Abandon the book.",
+        "--skip-top",
+        "0"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.048428,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-threshold-0.stdout.log",
+        "bytes": 24,
+        "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-threshold-0.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-threshold-1000",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "--text",
+        "Abandon the book.",
+        "--skip-top",
+        "1000"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.049007,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-threshold-1000.stdout.log",
+        "bytes": 20,
+        "sha256": "b1a105c6f57e1a28766f6e405f43811ea9b9bd256f22033c15af187287e6c51f"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-threshold-1000.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-threshold-5062",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "--text",
+        "Abandon the book.",
+        "--skip-top",
+        "5062"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.05258,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-threshold-5062.stdout.log",
+        "bytes": 17,
+        "sha256": "bca41c49e79f1b5a24fc48d50ff982e5128284b69864ae715a37eb9cb3188e85"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-threshold-5062.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-threshold-5063",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "--text",
+        "Abandon the book.",
+        "--skip-top",
+        "5063"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.048559,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-threshold-5063.stdout.log",
+        "bytes": 17,
+        "sha256": "bca41c49e79f1b5a24fc48d50ff982e5128284b69864ae715a37eb9cb3188e85"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-threshold-5063.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-stdin",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.048678,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-stdin.stdout.log",
+        "bytes": 24,
+        "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-stdin.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-empty",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.013799,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-empty.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-empty.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-unicode",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.015228,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-unicode.stdout.log",
+        "bytes": 50,
+        "sha256": "c0c9a25c23f059c6d9a5523c232c13cdbc27f3ee9cac6b358c2ad7b3dd239ac1"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-unicode.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-annotation-json",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "Abandon the book.",
+        "--json"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.051264,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-annotation-json.stdout.log",
+        "bytes": 76,
+        "sha256": "741a7b419c60cef904259377970707462b6e296ffcab2dfc3c235aadb39e56b8"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-annotation-json.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-auto-file",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "apple"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.048943,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-auto-file.stdout.log",
+        "bytes": 24,
+        "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-auto-file.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-explicit-file",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "--input",
+        "apple"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.043001,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-explicit-file.stdout.log",
+        "bytes": 24,
+        "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-explicit-file.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-forced-text",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "--text",
+        "apple"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.069256,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-forced-text.stdout.log",
+        "bytes": 5,
+        "sha256": "3a7bd3e2360a3d29eea436fcfb7e44c735d117c42d1c1835420b6b9942dd4f1b"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-forced-text.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-output-file",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "--input",
+        "apple",
+        "-o",
+        "output.txt"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.048732,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-output-file.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-output-file.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-json-file",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "--input",
+        "apple",
+        "-o",
+        "output.txt",
+        "--json"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.044341,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-json-file.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-json-file.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "current-smoke-missing-file",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "--input",
+        "missing.txt",
+        "-o",
+        "output.txt"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 0.035962,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-missing-file.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-missing-file.stderr.log",
+        "bytes": 54,
+        "sha256": "58af60e8143ada10b04822f01ae25f55f245fdfc527c71c79fadb5d621e2639d"
+      }
+    },
+    {
+      "label": "current-smoke-invalid-file-utf8",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "--input",
+        "apple"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 0.013557,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-invalid-file-utf8.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-invalid-file-utf8.stderr.log",
+        "bytes": 42,
+        "sha256": "75acbd01926d6dfde4921a6fa84c1395cf6c40c0269f00e6f1fb479f864c6a4d"
+      }
+    },
+    {
+      "label": "current-smoke-invalid-stdin-utf8",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 0.013187,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-invalid-stdin-utf8.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-invalid-stdin-utf8.stderr.log",
+        "bytes": 42,
+        "sha256": "75acbd01926d6dfde4921a6fa84c1395cf6c40c0269f00e6f1fb479f864c6a4d"
+      }
+    },
+    {
+      "label": "current-smoke-directory",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "."
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 0.020228,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-directory.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-directory.stderr.log",
+        "bytes": 43,
+        "sha256": "5f48bd9dfbbc0c483c077c34541f144f80d9ab037b445eee85d6e786c05b7075"
+      }
+    },
+    {
+      "label": "current-smoke-negative-threshold",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "--text",
+        "Abandon the book.",
+        "--skip-top=-1"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "elapsed_seconds": 0.017748,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-negative-threshold.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-negative-threshold.stderr.log",
+        "bytes": 45,
+        "sha256": "f8b4b1e301b01afcd99079bfa793f9ccf642136e32bb4411d26577c543244651"
+      }
+    },
+    {
+      "label": "current-smoke-conflicting-inputs",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "annotate",
+        "Abandon the book.",
+        "--text",
+        "Abandon the book."
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "elapsed_seconds": 0.016934,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-conflicting-inputs.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-conflicting-inputs.stderr.log",
+        "bytes": 158,
+        "sha256": "e9e8955bf70feaf7e76fdd56dd2c9fba7c7151e1e2e131200d1ade03db93d221"
+      }
+    },
+    {
+      "label": "current-smoke-missing-word",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\current-cli.exe",
+        "word"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "elapsed_seconds": 0.014773,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-missing-word.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/current-smoke-missing-word.stderr.log",
+        "bytes": 141,
+        "sha256": "c8d5322006fc94c35324e1d38f246c17ad74e47fd9a8f935d8335dfcd29df588"
+      }
+    },
+    {
+      "label": "minimum-consumer-runtime",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-consumer.exe"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.65829,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-consumer-runtime.stdout.log",
+        "bytes": 167,
+        "sha256": "cda21bc06c0f4acf2bca8cbe7cdcd13759d1ae4d7496a6dee8834fce79478a36"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-consumer-runtime.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-word-json",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "word",
+        "apple",
+        "--json"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.808769,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-word-json.stdout.log",
+        "bytes": 150,
+        "sha256": "d876a1e8e7166cadcaead135558c09a9de07b017af3d8d562535d1ab061c5af7"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-word-json.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-unknown",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "word",
+        "unknownwordzz",
+        "--json"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.054467,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-unknown.stdout.log",
+        "bytes": 107,
+        "sha256": "6704d352ca5dc5816c50b8c683551f220ce4c45f12856bd988f984dde2df1328"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-unknown.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-word-plain",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "word",
+        "apple"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.041033,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-word-plain.stdout.log",
+        "bytes": 93,
+        "sha256": "f32d7d70f1295292938adbc3ab74c2693f98600dbc56a30e286c1803f94356d6"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-word-plain.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-help",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "--help"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.013797,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-help.stdout.log",
+        "bytes": 370,
+        "sha256": "eba7e5cd6ab8287ecc2a6beef54fb84eeaacb4098644bef105fddf46300bbce3"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-help.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-version",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "--version"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.017094,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-version.stdout.log",
+        "bytes": 14,
+        "sha256": "0257d2870e2e70c1f7d4ba25c6f7bd12c56f306b720b9125d541a649c1c255dc"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-version.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-threshold-0",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "--text",
+        "Abandon the book.",
+        "--skip-top",
+        "0"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.047237,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-threshold-0.stdout.log",
+        "bytes": 24,
+        "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-threshold-0.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-threshold-1000",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "--text",
+        "Abandon the book.",
+        "--skip-top",
+        "1000"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.050669,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-threshold-1000.stdout.log",
+        "bytes": 20,
+        "sha256": "b1a105c6f57e1a28766f6e405f43811ea9b9bd256f22033c15af187287e6c51f"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-threshold-1000.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-threshold-5062",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "--text",
+        "Abandon the book.",
+        "--skip-top",
+        "5062"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.046672,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-threshold-5062.stdout.log",
+        "bytes": 17,
+        "sha256": "bca41c49e79f1b5a24fc48d50ff982e5128284b69864ae715a37eb9cb3188e85"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-threshold-5062.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-threshold-5063",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "--text",
+        "Abandon the book.",
+        "--skip-top",
+        "5063"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.049347,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-threshold-5063.stdout.log",
+        "bytes": 17,
+        "sha256": "bca41c49e79f1b5a24fc48d50ff982e5128284b69864ae715a37eb9cb3188e85"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-threshold-5063.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-stdin",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.048115,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-stdin.stdout.log",
+        "bytes": 24,
+        "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-stdin.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-empty",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.009277,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-empty.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-empty.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-unicode",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.017193,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-unicode.stdout.log",
+        "bytes": 50,
+        "sha256": "c0c9a25c23f059c6d9a5523c232c13cdbc27f3ee9cac6b358c2ad7b3dd239ac1"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-unicode.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-annotation-json",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "Abandon the book.",
+        "--json"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.05224,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-annotation-json.stdout.log",
+        "bytes": 76,
+        "sha256": "741a7b419c60cef904259377970707462b6e296ffcab2dfc3c235aadb39e56b8"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-annotation-json.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-auto-file",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "apple"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.055569,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-auto-file.stdout.log",
+        "bytes": 24,
+        "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-auto-file.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-explicit-file",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "--input",
+        "apple"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.0402,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-explicit-file.stdout.log",
+        "bytes": 24,
+        "sha256": "60cb7b9a43bf92d917d9e52dfc5bcb6d6fc9979f2bbef697968d9c7255ec2347"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-explicit-file.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-forced-text",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "--text",
+        "apple"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.039424,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-forced-text.stdout.log",
+        "bytes": 5,
+        "sha256": "3a7bd3e2360a3d29eea436fcfb7e44c735d117c42d1c1835420b6b9942dd4f1b"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-forced-text.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-output-file",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "--input",
+        "apple",
+        "-o",
+        "output.txt"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.044793,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-output-file.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-output-file.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-json-file",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "--input",
+        "apple",
+        "-o",
+        "output.txt",
+        "--json"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 0.046749,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-json-file.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-json-file.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "minimum-smoke-missing-file",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "--input",
+        "missing.txt",
+        "-o",
+        "output.txt"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 0.016547,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-missing-file.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-missing-file.stderr.log",
+        "bytes": 54,
+        "sha256": "58af60e8143ada10b04822f01ae25f55f245fdfc527c71c79fadb5d621e2639d"
+      }
+    },
+    {
+      "label": "minimum-smoke-invalid-file-utf8",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "--input",
+        "apple"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 0.013592,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-invalid-file-utf8.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-invalid-file-utf8.stderr.log",
+        "bytes": 42,
+        "sha256": "75acbd01926d6dfde4921a6fa84c1395cf6c40c0269f00e6f1fb479f864c6a4d"
+      }
+    },
+    {
+      "label": "minimum-smoke-invalid-stdin-utf8",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 0.011986,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-invalid-stdin-utf8.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-invalid-stdin-utf8.stderr.log",
+        "bytes": 42,
+        "sha256": "75acbd01926d6dfde4921a6fa84c1395cf6c40c0269f00e6f1fb479f864c6a4d"
+      }
+    },
+    {
+      "label": "minimum-smoke-directory",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "."
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_seconds": 0.02067,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-directory.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-directory.stderr.log",
+        "bytes": 43,
+        "sha256": "5f48bd9dfbbc0c483c077c34541f144f80d9ab037b445eee85d6e786c05b7075"
+      }
+    },
+    {
+      "label": "minimum-smoke-negative-threshold",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "--text",
+        "Abandon the book.",
+        "--skip-top=-1"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "elapsed_seconds": 0.014526,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-negative-threshold.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-negative-threshold.stderr.log",
+        "bytes": 45,
+        "sha256": "f8b4b1e301b01afcd99079bfa793f9ccf642136e32bb4411d26577c543244651"
+      }
+    },
+    {
+      "label": "minimum-smoke-conflicting-inputs",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "annotate",
+        "Abandon the book.",
+        "--text",
+        "Abandon the book."
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "elapsed_seconds": 0.014991,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-conflicting-inputs.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-conflicting-inputs.stderr.log",
+        "bytes": 158,
+        "sha256": "91aaabdba0eb8c48d8bbf8b8205c447b1c3ae9fb4ea1ccf88b6c0889588cb555"
+      }
+    },
+    {
+      "label": "minimum-smoke-missing-word",
+      "argv": [
+        "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime\\minimum-cli.exe",
+        "word"
+      ],
+      "cwd": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel\\runtime",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "elapsed_seconds": 0.015636,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-missing-word.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/minimum-smoke-missing-word.stderr.log",
+        "bytes": 141,
+        "sha256": "3b9d1947423a1eea08a0db488a4923213b550ac93a0ef0e9b868aec447b81a70"
+      }
+    },
+    {
+      "label": "library-publish-dry-run",
+      "argv": [
+        "cargo",
+        "publish",
+        "-p",
+        "lingose",
+        "--dry-run",
+        "--locked",
+        "--all-features"
+      ],
+      "cwd": "E:\\git\\claude\\words\\lingose-rust\\.local\\cli43-3h9dn32c\\source",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_seconds": 2.998775,
+      "stdout": {
+        "path": ".local/cli43-3h9dn32c/logs/library-publish-dry-run.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-3h9dn32c/logs/library-publish-dry-run.stderr.log",
+        "bytes": 664,
+        "sha256": "ffa8c0d2efb7a08d0b7784b22526affbbb24fba728df20e43b95b59963e66b30"
+      }
+    }
+  ],
+  "isolation_directory": "C:\\Users\\Threadman\\AppData\\Local\\Temp\\lingose-cli43-_23rxzel",
+  "source_strategy": "Byte-checked workspace snapshot without .git; no VCS metadata fabricated",
+  "boundaries": [
+    "Windows x86_64 MSVC only",
+    "CLI is a local path candidate, no CLI .crate",
+    "no registry consumer/install",
+    "no upload or GitHub Release",
+    "Frequency List and external category provenance gaps remain"
+  ],
+  "tracked_inputs_before": {
+    ".gitattributes": {
+      "bytes": 4281,
+      "sha256": "0a14255fe3dea867baba58f00b3b9acbcdbec282fa2034a1aa9f4a20f660b843"
+    },
+    ".gitignore": {
+      "bytes": 108,
+      "sha256": "447c660594550004d09817ab16435cd7efe15f4cb1767384ea4b1830e3b2c27e"
+    },
+    "AGENTS.md": {
+      "bytes": 15651,
+      "sha256": "fd2bec28f9c5ed2f6e4d3f9917d9a3716a3487cecec137ede632c837cce0158d"
+    },
+    "Cargo.lock": {
+      "bytes": 5797,
+      "sha256": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e"
+    },
+    "Cargo.toml": {
+      "bytes": 240,
+      "sha256": "2c7d78c0cb89af8501739a315db12692f4141b8c70815a6fcdbad0dab7cb253b"
+    },
+    "LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "README.md": {
+      "bytes": 5220,
+      "sha256": "7fd350ddc8511cf522c63f6777a392b81fcf8b29ed0cefd4b341a56803d7e8f9"
+    },
+    "SOURCES.md": {
+      "bytes": 1445,
+      "sha256": "0a6f50b3f175d54b70b4ab0311493307f377703614a3c97ac8d91b17db7727b5"
+    },
+    "TASK.md": {
+      "bytes": 1136,
+      "sha256": "a3cdccdb623e59124e3dd404938538601d1497c85f983b0df8e1e266f0695cdc"
+    },
+    "TASK_CLI.md": {
+      "bytes": 2960,
+      "sha256": "2f88982186954e22cadde46abf375f0ffc98424ccffe388a5ffb81f31814c7df"
+    },
+    "crates/lingose-cli/Cargo.toml": {
+      "bytes": 809,
+      "sha256": "e50128430cf34e3da846eb17a97e5924ea39ddff7a9dbf14f34874f14abb788f"
+    },
+    "crates/lingose-cli/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "crates/lingose-cli/README.md": {
+      "bytes": 8778,
+      "sha256": "35d1dbc07a99a2dc5f6be152bbd49b2e700bcb91c7731b740b21438b09cec421"
+    },
+    "crates/lingose-cli/SOURCES.md": {
+      "bytes": 3685,
+      "sha256": "e3a051a235428b0a89c4be52e6c60f85326d33d508673f7db4397419dc4bd6b3"
+    },
+    "crates/lingose-cli/src/main.rs": {
+      "bytes": 12480,
+      "sha256": "b4a793a06b79443b9a185acd9fc35a22d50f31fde8c1922b0615786f4037d953"
+    },
+    "crates/lingose-cli/tests/annotate.rs": {
+      "bytes": 23174,
+      "sha256": "c4aea542d4ca130aa08fe53925f631567f561d934e066f81766098130356c742"
+    },
+    "crates/lingose-cli/tests/word.rs": {
+      "bytes": 5951,
+      "sha256": "e206bba4398dcfe185823e4eec780aa23e8bcd6180405d562ac7b940edf7d0bc"
+    },
+    "crates/lingose/Cargo.toml": {
+      "bytes": 929,
+      "sha256": "75b6cb3a1b6d9dc4a15b1ef099f0747dc3cebc7a3b12a5c34cf6f58a8dd815e3"
+    },
+    "crates/lingose/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "crates/lingose/README.md": {
+      "bytes": 11639,
+      "sha256": "f67254247c30dbf3674773f2611c145721c733146ffc1ce6ac946b2b6e82c9e2"
+    },
+    "crates/lingose/SOURCES.md": {
+      "bytes": 3890,
+      "sha256": "74170a3c0d378675de47ced2a5cb8d261880522a9f1c4deaaa711ae31391d522"
+    },
+    "crates/lingose/data/LICENSE": {
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    "crates/lingose/data/SOURCES.json": {
+      "bytes": 4997,
+      "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+    },
+    "crates/lingose/data/UPSTREAM-SOURCES.md": {
+      "bytes": 1457,
+      "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+    },
+    "crates/lingose/data/frequency.bin": {
+      "bytes": 200272,
+      "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+    },
+    "crates/lingose/data/lexicon.bin": {
+      "bytes": 10259743,
+      "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+    },
+    "crates/lingose/data/manifest.json": {
+      "bytes": 3900,
+      "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+    },
+    "crates/lingose/docs/distribution-provenance.json": {
+      "bytes": 5569,
+      "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+    },
+    "crates/lingose/docs/rust-api.md": {
+      "bytes": 10014,
+      "sha256": "384d9f33476913a64a0cadb3d348e80e2dadda97361dbad41ec6491453d35575"
+    },
+    "crates/lingose/examples/annotate.rs": {
+      "bytes": 414,
+      "sha256": "59e6d564a33328edbcc7dbe6e3145bdd75ebef0e6f0c99a5d6f9233ef4441c5a"
+    },
+    "crates/lingose/examples/query.rs": {
+      "bytes": 871,
+      "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+    },
+    "crates/lingose/src/annotation.rs": {
+      "bytes": 19775,
+      "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+    },
+    "crates/lingose/src/annotation_context_vectors.rs": {
+      "bytes": 321810,
+      "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+    },
+    "crates/lingose/src/annotation_frequency_vectors.rs": {
+      "bytes": 24615,
+      "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+    },
+    "crates/lingose/src/annotation_unicode.rs": {
+      "bytes": 3734,
+      "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+    },
+    "crates/lingose/src/annotation_unicode_tables.rs": {
+      "bytes": 40416,
+      "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+    },
+    "crates/lingose/src/annotation_vectors.rs": {
+      "bytes": 65657,
+      "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+    },
+    "crates/lingose/src/category.rs": {
+      "bytes": 1653,
+      "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+    },
+    "crates/lingose/src/data/annotation_context_vectors.rs": {
+      "bytes": 37586,
+      "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+    },
+    "crates/lingose/src/data/annotation_frequency_vectors.rs": {
+      "bytes": 87772,
+      "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+    },
+    "crates/lingose/src/data/annotation_tests.rs": {
+      "bytes": 3391,
+      "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+    },
+    "crates/lingose/src/data/cache_tests.rs": {
+      "bytes": 22365,
+      "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+    },
+    "crates/lingose/src/data/category_tests.rs": {
+      "bytes": 4243,
+      "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+    },
+    "crates/lingose/src/data/image.rs": {
+      "bytes": 15144,
+      "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+    },
+    "crates/lingose/src/data/mod.rs": {
+      "bytes": 6395,
+      "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+    },
+    "crates/lingose/src/data/p41_joint_error_tests.rs": {
+      "bytes": 4967,
+      "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+    },
+    "crates/lingose/src/data/p41_query_fixture_tests.rs": {
+      "bytes": 62352,
+      "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+    },
+    "crates/lingose/src/data/tests.rs": {
+      "bytes": 24506,
+      "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+    },
+    "crates/lingose/src/data_meta.rs": {
+      "bytes": 1531,
+      "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+    },
+    "crates/lingose/src/error.rs": {
+      "bytes": 2127,
+      "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+    },
+    "crates/lingose/src/lib.rs": {
+      "bytes": 5142,
+      "sha256": "661ea94997dcdb0d7a994a900acb1dbc6c3e0b897804d495beb3c90389d5ca12"
+    },
+    "crates/lingose/src/query.rs": {
+      "bytes": 1207,
+      "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+    },
+    "crates/lingose/src/query_case.rs": {
+      "bytes": 5074,
+      "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+    },
+    "crates/lingose/src/query_case_tables.rs": {
+      "bytes": 52751,
+      "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+    },
+    "crates/lingose/src/validation.rs": {
+      "bytes": 1624,
+      "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+    },
+    "crates/lingose/tests/annotation_context_vectors.rs": {
+      "bytes": 19503,
+      "sha256": "b35ab093c36a2e52657fcf363a8cf106eb40989f8c59f0a38f7b1d2f3c82fa5b"
+    },
+    "crates/lingose/tests/annotation_frequency_vectors.rs": {
+      "bytes": 95021,
+      "sha256": "5e7ece15934e19c81157ac7eaa668e6be61342ce7b94705e50d0a8c5925c572e"
+    },
+    "crates/lingose/tests/annotation_vectors.rs": {
+      "bytes": 3910,
+      "sha256": "36a1a975500fbe2a264dd8cae0c7535f08f782a9849e7d54f8bc85ccfcbae462"
+    },
+    "crates/lingose/tests/api_contract.rs": {
+      "bytes": 12105,
+      "sha256": "45626a7c12aeb1d42659854c1310f260fbcaeea8ac63d4a6a08ddbef4eaf7cdb"
+    },
+    "crates/lingose/tests/category_vectors.rs": {
+      "bytes": 23168,
+      "sha256": "2a9847a84ea05858410e0be8be3020771b0e2027a13426b077fa61fc9b5e1072"
+    },
+    "crates/lingose/tests/query_vectors.rs": {
+      "bytes": 11219,
+      "sha256": "440c7634cddb9494a37b0c0e89e1723ac53d9e2e92be125ca32057cbc187cbce"
+    },
+    "crates/lingose/third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    },
+    "docs/annotation-api-rename-verification.json": {
+      "bytes": 46171,
+      "sha256": "dcd6d1d38215b71cff1f1868105f0f3a87c5c18a17ec01d0228f8b715a772cad"
+    },
+    "docs/annotation-api-rename.md": {
+      "bytes": 3302,
+      "sha256": "bcc44d577b9aa7252dd09f79f97e5d66fd3a7deafda1922dcdc584d60033c2b6"
+    },
+    "docs/annotation-context-verification.json": {
+      "bytes": 23061,
+      "sha256": "61b9647f906e29e4ab8a3da895ca0bece42eb0f05627e0c7413504bd6b6be763"
+    },
+    "docs/annotation-frequency-verification.json": {
+      "bytes": 26209,
+      "sha256": "1dd1f88263ecf046069739543426920aec76275df0f128c01ed7c64f42bbf071"
+    },
+    "docs/annotation-unicode.json": {
+      "bytes": 3135,
+      "sha256": "521a545a791b054acb135197034305434dce11e67ffe8547952340fcc3254fb1"
+    },
+    "docs/annotation-verification.json": {
+      "bytes": 19296,
+      "sha256": "f7dc9cdcef58b74bab900eb4a91d53c1283befe80011fe56b697273479acaaa8"
+    },
+    "docs/annotation.md": {
+      "bytes": 13033,
+      "sha256": "74fb14c208832c83e59cc00627f239a73506779f2108b85c7c17e4549f4c06ff"
+    },
+    "docs/api.md": {
+      "bytes": 12669,
+      "sha256": "ae6e87cd60fb66f8291d82abce20b3bf77e0d17c9e53b6d2e0aefa6929d9372e"
+    },
+    "docs/categories.md": {
+      "bytes": 5238,
+      "sha256": "c1b62ebfcb34bbd7b0e508abf41f4c7443f8a7a133a5ca3144fcc59ca983c3c0"
+    },
+    "docs/category-verification.json": {
+      "bytes": 13470,
+      "sha256": "f589f774e7ba3edfc8d8995756dd515a5556589c4a10f9cfe41809f53686ed58"
+    },
+    "docs/cli-annotation-input-verification.json": {
+      "bytes": 34135,
+      "sha256": "0f97073101de1a3b970d558d3ca2d3fd3bb61cc6866780c9b532b76e426a91b3"
+    },
+    "docs/cli-annotation-input.md": {
+      "bytes": 5158,
+      "sha256": "f10ddfc0059e8b5aacd86acae24cfd87dbae12599de989373123f404d09132a9"
+    },
+    "docs/cli-annotation-output-verification.json": {
+      "bytes": 42657,
+      "sha256": "a5cd99116244355e16513aed97134efbdabe51bcb6684de5b9a12edf868e413c"
+    },
+    "docs/cli-annotation-output.md": {
+      "bytes": 3783,
+      "sha256": "3da0cf72cf3d2d1f34bed1b7e9cdc5288cd1101b144d7bc44a7578d74ce188d1"
+    },
+    "docs/cli-process-verification-0.2.0.json": {
+      "bytes": 260657,
+      "sha256": "adb30191a55b7e49645d4e5529904baebf216764912ae147d4719362d9a28b8c"
+    },
+    "docs/cli-user-documentation-verification.json": {
+      "bytes": 136237,
+      "sha256": "6ac3d54be086b94bd790087243c889ed55404fee2b0286a038ffac55b8db165f"
+    },
+    "docs/cli-user-documentation.md": {
+      "bytes": 4936,
+      "sha256": "d9c81b52d2a4098115cb8ccee4080c32de750af33d2aed515040e451621de015"
+    },
+    "docs/cli-word-verification.json": {
+      "bytes": 30132,
+      "sha256": "46848e876876d31553ce8cd8c4f11ed86715a23ffc2dd9c43a589eec45f0bff9"
+    },
+    "docs/cli-word.md": {
+      "bytes": 3798,
+      "sha256": "eb350d7880752d0d95309ca5f72e7eb27158a3eec547ed518932c3c75d35d714"
+    },
+    "docs/cli-workspace-acceptance-verification.json": {
+      "bytes": 135975,
+      "sha256": "20a9844f2355d0ed89169568cefb427c5ba4df7e528d1f55d355cf0dd49076da"
+    },
+    "docs/cli-workspace-acceptance.md": {
+      "bytes": 8241,
+      "sha256": "5b6e16487ddd644bffd43185ae8ab23611bca35f4958245c574262c7e2fe5b87"
+    },
+    "docs/correctness-regression-verification-0.2.0.json": {
+      "bytes": 28585,
+      "sha256": "07f6e46f3ac9b701adde200fb3a5a43e000bae3a9151dac8f301338bc8a14ad7"
+    },
+    "docs/correctness-regression-verification.json": {
+      "bytes": 27574,
+      "sha256": "aa323f5a9bff1e4cdf3fa0372914dfa6d21227ade121daa8942863fee2d65412"
+    },
+    "docs/data-export.md": {
+      "bytes": 6387,
+      "sha256": "cac2faad31d09cea22112ed3a91e9d725fb741b5634b54980f72a0ff448129a7"
+    },
+    "docs/data-layout.md": {
+      "bytes": 9594,
+      "sha256": "3a7438852f6094ee5ca82205330fd09de3489c80a0a092ea3c97dcf6f4ef8daa"
+    },
+    "docs/data-loader.md": {
+      "bytes": 6006,
+      "sha256": "1aba33adf458a8abd1c5dcba299a2da748a208282615d43d0b029ba80858a43b"
+    },
+    "docs/data-verification.json": {
+      "bytes": 3327,
+      "sha256": "712b5b8be598b5cd9bebae98ffd5350aadf709cd47f660f34f571944568a9c14"
+    },
+    "docs/distribution-provenance.json": {
+      "bytes": 5569,
+      "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+    },
+    "docs/distribution-review.md": {
+      "bytes": 5122,
+      "sha256": "1506200d59a5d1068dcbfc2adb337f324ef634223c68abe417d3cbb045a303bc"
+    },
+    "docs/engineering-verification.json": {
+      "bytes": 41258,
+      "sha256": "44216e41cd716ab39d339256bc78c9a03ae05d2fc29d34f5e9bec97c698d339a"
+    },
+    "docs/engineering.md": {
+      "bytes": 5180,
+      "sha256": "80ca241214cf62eae6dfeb2fd01fba7a6b0c774124cf88d9e44c07af957f5301"
+    },
+    "docs/full-differential-verification-0.2.0.json": {
+      "bytes": 26513,
+      "sha256": "d70b11b1938ed2a4ad289df5d1043f35fa48cb3fcd19a61998c2b48c0e269d12"
+    },
+    "docs/full-differential-verification.json": {
+      "bytes": 25610,
+      "sha256": "72ea9e2fafea9501e8977d9e7e31a7ccb16bddad752a0e57ce6355ed4c23e528"
+    },
+    "docs/full-differential.md": {
+      "bytes": 6975,
+      "sha256": "0150d45ead564e35991bafd7016c3068630a165e82aae23a8a267670a066f160"
+    },
+    "docs/layout-probe-results.json": {
+      "bytes": 93875,
+      "sha256": "981736620f03435decd4613f89233bd68169c8c0e404a30af262591d3eed8c2a"
+    },
+    "docs/loader-verification.json": {
+      "bytes": 19072,
+      "sha256": "64e2ca459bafe707971bc67b6f3e1c39e5d1e60d28d15d79a32bd4e853d09eb4"
+    },
+    "docs/p5-documentation-verification.json": {
+      "bytes": 14032,
+      "sha256": "ecd50b647ae4b3bffc5cee609921d5b5da7d1dff4f8b41890bc491ce88313a98"
+    },
+    "docs/package-verification.json": {
+      "bytes": 57475,
+      "sha256": "96fe4ca4cd87f87ae31fecc151ccbe0ed523e630f64c3b9b7015367eb255dfbc"
+    },
+    "docs/packaging.md": {
+      "bytes": 4827,
+      "sha256": "03101264d0206161b6ca2cead9c8090c6a40df9a4bcc1ed9bf58a9fb676a44ab"
+    },
+    "docs/performance-budget.json": {
+      "bytes": 1967,
+      "sha256": "3f54b4d54240eb8039cb461829c76d2ccd2cda7fe6cb4060b013d5d882cd4e82"
+    },
+    "docs/performance-budget.md": {
+      "bytes": 9464,
+      "sha256": "a890bd490d7dc02264afcb4a1692f3cdfa0f2a927cceca298a79c7867a39300a"
+    },
+    "docs/performance-verification-0.2.0.json": {
+      "bytes": 89636,
+      "sha256": "af88bf283d0217108c649fb733faa6b0ef3ec60ea7e89753e5e6f0a365a84e52"
+    },
+    "docs/performance-verification.json": {
+      "bytes": 88511,
+      "sha256": "daf22261dadd266d935f9066a21aefcb27f296ee7aa9ecfe32cd87bc01b3eb36"
+    },
+    "docs/performance.md": {
+      "bytes": 9045,
+      "sha256": "c3dd77a902f0934fa4fe86582a6385bd2c8531da1ff175b7beb674aa95d3e154"
+    },
+    "docs/publication-preflight.json": {
+      "bytes": 24671,
+      "sha256": "f3273631263d60c55fdc0d22e82f42ec49b59271edd53654004abcd1ce6bed47"
+    },
+    "docs/publication-preflight.md": {
+      "bytes": 4676,
+      "sha256": "e65678a09ef514a2b46c8ee8ffabd44c9c1dc067d7aba371dd2e36e8e703f76a"
+    },
+    "docs/publication.json": {
+      "bytes": 9573,
+      "sha256": "9557a72362d2c060053405e247215b1e2fa9b6e5d2ff2f7f2d44466019ad9f76"
+    },
+    "docs/publication.md": {
+      "bytes": 4016,
+      "sha256": "42b8707906f62a769bb44e3f4f8b6534684d783bc8a03a064491f6539ff2b3f5"
+    },
+    "docs/query-case.json": {
+      "bytes": 3387,
+      "sha256": "4ea010b0509185e14b311263911f3fe3ba17f9204d6eb4b7b3119ab34871fabc"
+    },
+    "docs/query-verification.json": {
+      "bytes": 11767,
+      "sha256": "dbe8894eea010602289254c8f7819f0841edbc74c2e93df46cdaacf9d00b337b"
+    },
+    "docs/reference-baseline.json": {
+      "bytes": 54162,
+      "sha256": "9891742574b4c3c5ef5e420cb17d380094601803cddfc73e55062b7fccd54f01"
+    },
+    "docs/reference-baseline.md": {
+      "bytes": 3576,
+      "sha256": "e54ddf801c37185ee5b95f5503c726ab2c52d5044493101a4cbf87e01a4ee295"
+    },
+    "docs/registry-consumer-verification.json": {
+      "bytes": 36628,
+      "sha256": "8ce02801c3a9c2a3dd07dae3b66c79a296413df9e095095f21854b82fa64e764"
+    },
+    "docs/registry-consumer.md": {
+      "bytes": 5389,
+      "sha256": "355486a47b7ab9f01b69cd11c05a0df05ec80ecef2c349d771bf79fd764bb964"
+    },
+    "docs/rust-api.md": {
+      "bytes": 8473,
+      "sha256": "9a70866da0046b0005579323118268953a84c1e85a80952c8b70b561034b0832"
+    },
+    "docs/simple-queries.md": {
+      "bytes": 5447,
+      "sha256": "4a84765687363917cb11c5866593eaebb4e7c6d675d78bf8e3497a03bb371ef4"
+    },
+    "docs/workspace-migration-verification.json": {
+      "bytes": 56250,
+      "sha256": "dc7c2c9bb1dcb2dd54e454a65f9906fbcbc77a667937cd5783d197f5effafa9a"
+    },
+    "docs/workspace-migration.md": {
+      "bytes": 4828,
+      "sha256": "0a0d45e30baec86bed1388a4c20f45dd29c4244d80432985410a9b3fa364366a"
+    },
+    "docs/workspace-tools-verification.json": {
+      "bytes": 45961,
+      "sha256": "f53339c7704b48213904d745a162a07502b29e9a752838a643dd2ca7d7713763"
+    },
+    "docs/workspace-tools.md": {
+      "bytes": 5744,
+      "sha256": "5c66d9837826b929eb4a3ff0d8f6e6c0486cd36796433257d304316adefd7cc9"
+    },
+    "tasks/handoff.md": {
+      "bytes": 2741,
+      "sha256": "3654d8029b5d4b8da024367362670836a2c755c76de282b2893049322beec640"
+    },
+    "tasks/todo.md": {
+      "bytes": 25878,
+      "sha256": "c3ae5bc0cc445eb5de1a860d54edf983b00476e16aa15f375f746c7e62f0bd57"
+    },
+    "tasks/todo_CLI.md": {
+      "bytes": 16717,
+      "sha256": "1dc79b65de03e859be9d3d642e84fe84943475280cfc4f8690fdb2d958532001"
+    },
+    "tests/fixtures/python-api-v1.json": {
+      "bytes": 118971,
+      "sha256": "6b0eebaef3c8f414e1c65a56dd82949a155981cd41d24fb69c9564f54af3f0b1"
+    },
+    "tests/test_api_vectors.py": {
+      "bytes": 4304,
+      "sha256": "dcd0f5715de13d12e7d4316a1adffcee42bf73088b8668ce684144fcb63138ae"
+    },
+    "tests/test_export_data.py": {
+      "bytes": 13055,
+      "sha256": "f93cf58bf5590e040c2e26fed3e0a721b025e49635d62b966d83f7c2a9cbff31"
+    },
+    "tests/test_full_differential.py": {
+      "bytes": 3000,
+      "sha256": "c2a6f63462a9fa405cca263438724f73a0483fa2cfb38e51bddf64e31efd40cc"
+    },
+    "tests/test_layout_probe.py": {
+      "bytes": 1798,
+      "sha256": "6812ffae2a695894774ade3abdfe798c8823cc3ea215ba17c86e51d4759e3ddc"
+    },
+    "tests/test_package.py": {
+      "bytes": 3770,
+      "sha256": "35e17c917be9b326f70a3893d79b648b3c1b3fb4fd2fc00dc43940ed25214f55"
+    },
+    "tests/test_performance.py": {
+      "bytes": 11135,
+      "sha256": "fcb91e9d7e571120f3bce4a13ba850207f9e8e54c9e12c7655edd30e2032da37"
+    },
+    "tests/test_reference.py": {
+      "bytes": 3835,
+      "sha256": "8ed53d4331e97846c73a164e8276187570730cd6f70425be60e67e97df807a2a"
+    },
+    "tests/test_verify_data.py": {
+      "bytes": 14415,
+      "sha256": "d06ff203781380988dc38921ae06362f4a3078e80e47e7bd1cbdc08b121305f3"
+    },
+    "tests/test_workspace_package.py": {
+      "bytes": 9581,
+      "sha256": "43980be3b6af573c02792d26972b2cdb6cb32a5a0be129615719d668c702970d"
+    },
+    "tests/test_workspace_tools.py": {
+      "bytes": 5626,
+      "sha256": "11fc2c31b0d81de140b5b3b89cb2c497c6cff55c156f5ea0a801b9dac0ee4b8d"
+    },
+    "third_party/unicode/LICENSE.txt": {
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    },
+    "tools/audit_reference.py": {
+      "bytes": 11186,
+      "sha256": "a433c4e88a15022bda5f2d2c51b1fa715796ff0c223b5b87cc5523f9a75a637b"
+    },
+    "tools/capture_api_vectors.py": {
+      "bytes": 17882,
+      "sha256": "f4100af2081ee52df16358c03ee8022d0146aa2a4d7c93e05c240df629f3543a"
+    },
+    "tools/check_cli_process.py": {
+      "bytes": 13984,
+      "sha256": "918abde334996336dc835d706944f5f443c47ef33a5e851629e50dae305eec07"
+    },
+    "tools/check_full_differential.py": {
+      "bytes": 19292,
+      "sha256": "9fb8955758335b0348b1e87bfffc01e7deaa7c49a457ee2b90b69fbc52a654be"
+    },
+    "tools/check_layout_probe.py": {
+      "bytes": 6003,
+      "sha256": "ee1b75410b4e1a157bd1b43293b2b0710fe71e057cc8a78222146461d3bdca4a"
+    },
+    "tools/check_loader.py": {
+      "bytes": 7249,
+      "sha256": "4511aeeb421e37854e3c1d2803861a0c6e4e2237ceea82601d2f00c4515affd3"
+    },
+    "tools/check_package.py": {
+      "bytes": 14893,
+      "sha256": "af8db2075005f8656070845f3066b952ad68fe2dd24e4704b5fdc95d2ebf84da"
+    },
+    "tools/check_performance.py": {
+      "bytes": 23644,
+      "sha256": "e1a3a54894129be7d498b71e46ba2583a5b0cb0a7193863b1ca44d926652bf05"
+    },
+    "tools/check_queries.py": {
+      "bytes": 11238,
+      "sha256": "4949b91aa7cd4c48ca1375b8ce30e01701a137b7072cef3436618135ec0c4b54"
+    },
+    "tools/check_registry_consumer.py": {
+      "bytes": 18125,
+      "sha256": "d54e37d9bc7c7dd5932c1e23554e02c3a12df29e0c46f60d69f946c16743514f"
+    },
+    "tools/check_workspace_package.py": {
+      "bytes": 12171,
+      "sha256": "ee5b2548b4edc0e905c762e75e8605d73055ec5b5a3862503825702aaf0cd5a0"
+    },
+    "tools/differential-probe/Cargo.lock": {
+      "bytes": 2488,
+      "sha256": "2d1deee6bf72249ff2ee8cc24966a097113ddba161d23d72c8c6d07b42e029c5"
+    },
+    "tools/differential-probe/Cargo.toml": {
+      "bytes": 185,
+      "sha256": "9e8e1d8b69d342dab59705d9b557c16b0b37d280eaaff5e23952af93d7a5a6d7"
+    },
+    "tools/differential-probe/src/main.rs": {
+      "bytes": 4490,
+      "sha256": "d0a878f81836f811d6a09d452d71482d0e13a69bc58a2ad248584bbfc62add05"
+    },
+    "tools/export_data.py": {
+      "bytes": 22666,
+      "sha256": "903943454a312901edf14dd5a7819c26c4f032705c632a1b477b853bd0aa6b4a"
+    },
+    "tools/generate_annotation_context_vectors.py": {
+      "bytes": 23086,
+      "sha256": "b3500e3ed55fa39ad65ee43c3c87126cb4ab3169c2674773c4beee2821621ab8"
+    },
+    "tools/generate_annotation_frequency_vectors.py": {
+      "bytes": 25583,
+      "sha256": "ed8e89ff2034b2cc039e12a59cbcc0b4cc3b4a9cc3167e3101d8861e6e1a558b"
+    },
+    "tools/generate_annotation_unicode.py": {
+      "bytes": 6533,
+      "sha256": "7840ddbb651ade073a1bb6a5218273adaef9d3f70b98da9587938e59f026819e"
+    },
+    "tools/generate_annotation_vectors.py": {
+      "bytes": 15473,
+      "sha256": "05abef72af7368c46379e5806c6a8a3931e924b9b8e4e674f472182a3932a478"
+    },
+    "tools/generate_category_vectors.py": {
+      "bytes": 10164,
+      "sha256": "ce6bfc354a076c89b938d75aa7b5a80883fe39e69da2c0eff5ede6badccf58dc"
+    },
+    "tools/generate_error_vectors.py": {
+      "bytes": 12800,
+      "sha256": "5a88501e8cdc5ab63ddc47c1928a4f8103f9a58ff01f500e935dcf416d7f3365"
+    },
+    "tools/generate_query_case.py": {
+      "bytes": 11622,
+      "sha256": "d8b8774525e9c699ecb5ab226358f13ee9ade1744322717d35db8580b2c37c67"
+    },
+    "tools/generate_query_vectors.py": {
+      "bytes": 3313,
+      "sha256": "0974993b6abaa11f0d8d3254771629cdd6b86f3664018495cc058b0ec3c156cc"
+    },
+    "tools/layout-probe/AGENTS.md": {
+      "bytes": 1037,
+      "sha256": "a90e0bad9b681713c3f4c4b757ae344ff512fd258062b0e7027eb2b66cd53db8"
+    },
+    "tools/layout-probe/Cargo.lock": {
+      "bytes": 6000,
+      "sha256": "c2a237512aca2e56d08be9b992f8b553c559ba6db6fc74960cc869b737d5ff99"
+    },
+    "tools/layout-probe/Cargo.toml": {
+      "bytes": 492,
+      "sha256": "9a97dc8bd4ecf3863c26a190767d5bed06914ff9baf11ca114522bd668597015"
+    },
+    "tools/layout-probe/FORMAT.md": {
+      "bytes": 3574,
+      "sha256": "e34829a26e2c514d9ae41a8735dc08060b58d613af4b8e76654244234382919c"
+    },
+    "tools/layout-probe/src/image.rs": {
+      "bytes": 13321,
+      "sha256": "07d4fe88f114e1cc25e6acabf7a9334a209e78eefea4bad1e79975eee2bb15d3"
+    },
+    "tools/layout-probe/src/main.rs": {
+      "bytes": 13183,
+      "sha256": "22f6991b377485007ca75ece156e4916e906c55db0103db2c0bc453d775a61f9"
+    },
+    "tools/package_consumer.rs": {
+      "bytes": 7829,
+      "sha256": "1f8c62db06cfc3b7b390dd5c711cdb5daab320de63d5549eb7ce8fcdd94f5f9d"
+    },
+    "tools/package_consumer_020.rs": {
+      "bytes": 7801,
+      "sha256": "2c659500a1ff6161603e50f334243a6ddb18527f8e57b95add7bb367aee43d3b"
+    },
+    "tools/performance-probe/Cargo.lock": {
+      "bytes": 2487,
+      "sha256": "0aa959160d8193bda061bc7452caccf9d01bdc631d1d7337c4a124d604e62abc"
+    },
+    "tools/performance-probe/Cargo.toml": {
+      "bytes": 247,
+      "sha256": "9e341b9cc550bf6f9af59473e62eb935aaf126811ce74eb500b69b74c4b2b0c9"
+    },
+    "tools/performance-probe/src/main.rs": {
+      "bytes": 8680,
+      "sha256": "549faa1e536b86685ff6fbd7045af91fae56504ad7bdef5a5029da99f615426f"
+    },
+    "tools/prepare_layout_probe.py": {
+      "bytes": 15163,
+      "sha256": "aa7cc7dde791431c2f59537828708245cc655689239e3ddee2be92e07a54c70c"
+    },
+    "tools/prepare_package_sources.py": {
+      "bytes": 4296,
+      "sha256": "f35dbb22fb08765149f29570879ce72830aa4b9c6bbbe028d19d0c9c5cc7bbea"
+    },
+    "tools/reference.py": {
+      "bytes": 10351,
+      "sha256": "c583d04fdbd17ad3b1b00f4a8f7efb55f421a48f2cfebf221ed22317ed908ba0"
+    },
+    "tools/run_layout_probe.py": {
+      "bytes": 13416,
+      "sha256": "437554e3a52cb4ba7f14f65cf350de979ba571c31f894141ce84875897bd376d"
+    },
+    "tools/verify_data.py": {
+      "bytes": 24236,
+      "sha256": "e37e896a5eacb462d6255f8ecf4a51d4848eecbd9709f02758eb64c2fdc80876"
+    }
+  },
+  "archive": {
+    "path": ".local/cli43-3h9dn32c/lingose-0.2.0.crate",
+    "bytes": 4053096,
+    "sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5",
+    "files": {
+      "Cargo.lock": {
+        "bytes": 2390,
+        "sha256": "b87dafe8d4af80005dbad1fbe3021ac961f6a7978f487a766abbac87bff3e1ad"
+      },
+      "Cargo.toml": {
+        "bytes": 1675,
+        "sha256": "9b7a493b794f1d3a8ddf31384f42e8d663ffb03ffacbb0d76154a83897544716"
+      },
+      "Cargo.toml.orig": {
+        "bytes": 929,
+        "sha256": "75b6cb3a1b6d9dc4a15b1ef099f0747dc3cebc7a3b12a5c34cf6f58a8dd815e3"
+      },
+      "LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "README.md": {
+        "bytes": 11639,
+        "sha256": "f67254247c30dbf3674773f2611c145721c733146ffc1ce6ac946b2b6e82c9e2"
+      },
+      "SOURCES.md": {
+        "bytes": 3890,
+        "sha256": "74170a3c0d378675de47ced2a5cb8d261880522a9f1c4deaaa711ae31391d522"
+      },
+      "data/LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "data/SOURCES.json": {
+        "bytes": 4997,
+        "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+      },
+      "data/UPSTREAM-SOURCES.md": {
+        "bytes": 1457,
+        "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+      },
+      "data/frequency.bin": {
+        "bytes": 200272,
+        "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+      },
+      "data/lexicon.bin": {
+        "bytes": 10259743,
+        "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+      },
+      "data/manifest.json": {
+        "bytes": 3900,
+        "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+      },
+      "docs/distribution-provenance.json": {
+        "bytes": 5569,
+        "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+      },
+      "docs/rust-api.md": {
+        "bytes": 10014,
+        "sha256": "384d9f33476913a64a0cadb3d348e80e2dadda97361dbad41ec6491453d35575"
+      },
+      "examples/annotate.rs": {
+        "bytes": 414,
+        "sha256": "59e6d564a33328edbcc7dbe6e3145bdd75ebef0e6f0c99a5d6f9233ef4441c5a"
+      },
+      "examples/query.rs": {
+        "bytes": 871,
+        "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+      },
+      "src/annotation.rs": {
+        "bytes": 19775,
+        "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+      },
+      "src/annotation_context_vectors.rs": {
+        "bytes": 321810,
+        "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+      },
+      "src/annotation_frequency_vectors.rs": {
+        "bytes": 24615,
+        "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+      },
+      "src/annotation_unicode.rs": {
+        "bytes": 3734,
+        "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+      },
+      "src/annotation_unicode_tables.rs": {
+        "bytes": 40416,
+        "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+      },
+      "src/annotation_vectors.rs": {
+        "bytes": 65657,
+        "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+      },
+      "src/category.rs": {
+        "bytes": 1653,
+        "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+      },
+      "src/data/annotation_context_vectors.rs": {
+        "bytes": 37586,
+        "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+      },
+      "src/data/annotation_frequency_vectors.rs": {
+        "bytes": 87772,
+        "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+      },
+      "src/data/annotation_tests.rs": {
+        "bytes": 3391,
+        "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+      },
+      "src/data/cache_tests.rs": {
+        "bytes": 22365,
+        "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+      },
+      "src/data/category_tests.rs": {
+        "bytes": 4243,
+        "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+      },
+      "src/data/image.rs": {
+        "bytes": 15144,
+        "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+      },
+      "src/data/mod.rs": {
+        "bytes": 6395,
+        "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+      },
+      "src/data/p41_joint_error_tests.rs": {
+        "bytes": 4967,
+        "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+      },
+      "src/data/p41_query_fixture_tests.rs": {
+        "bytes": 62352,
+        "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+      },
+      "src/data/tests.rs": {
+        "bytes": 24506,
+        "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+      },
+      "src/data_meta.rs": {
+        "bytes": 1531,
+        "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+      },
+      "src/error.rs": {
+        "bytes": 2127,
+        "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+      },
+      "src/lib.rs": {
+        "bytes": 5142,
+        "sha256": "661ea94997dcdb0d7a994a900acb1dbc6c3e0b897804d495beb3c90389d5ca12"
+      },
+      "src/query.rs": {
+        "bytes": 1207,
+        "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+      },
+      "src/query_case.rs": {
+        "bytes": 5074,
+        "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+      },
+      "src/query_case_tables.rs": {
+        "bytes": 52751,
+        "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+      },
+      "src/validation.rs": {
+        "bytes": 1624,
+        "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+      },
+      "third_party/unicode/LICENSE.txt": {
+        "bytes": 1995,
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+      }
+    },
+    "local_inline_markdown_file_links": [
+      {
+        "source": "README.md",
+        "href": "docs/rust-api.md",
+        "target": "docs/rust-api.md"
+      },
+      {
+        "source": "README.md",
+        "href": "examples/query.rs",
+        "target": "examples/query.rs"
+      },
+      {
+        "source": "README.md",
+        "href": "examples/annotate.rs",
+        "target": "examples/annotate.rs"
+      },
+      {
+        "source": "README.md",
+        "href": "./LICENSE",
+        "target": "LICENSE"
+      },
+      {
+        "source": "README.md",
+        "href": "SOURCES.md",
+        "target": "SOURCES.md"
+      },
+      {
+        "source": "SOURCES.md",
+        "href": "LICENSE",
+        "target": "LICENSE"
+      },
+      {
+        "source": "SOURCES.md",
+        "href": "data/SOURCES.json",
+        "target": "data/SOURCES.json"
+      },
+      {
+        "source": "SOURCES.md",
+        "href": "data/UPSTREAM-SOURCES.md",
+        "target": "data/UPSTREAM-SOURCES.md"
+      },
+      {
+        "source": "SOURCES.md",
+        "href": "data/LICENSE",
+        "target": "data/LICENSE"
+      },
+      {
+        "source": "SOURCES.md",
+        "href": "third_party/unicode/LICENSE.txt",
+        "target": "third_party/unicode/LICENSE.txt"
+      },
+      {
+        "source": "SOURCES.md",
+        "href": "docs/distribution-provenance.json",
+        "target": "docs/distribution-provenance.json"
+      },
+      {
+        "source": "data/UPSTREAM-SOURCES.md",
+        "href": "LICENSE",
+        "target": "data/LICENSE"
+      },
+      {
+        "source": "docs/rust-api.md",
+        "href": "../README.md",
+        "target": "README.md"
+      },
+      {
+        "source": "docs/rust-api.md",
+        "href": "../README.md#add-the-library",
+        "target": "README.md"
+      },
+      {
+        "source": "docs/rust-api.md",
+        "href": "distribution-provenance.json",
+        "target": "docs/distribution-provenance.json"
+      },
+      {
+        "source": "docs/rust-api.md",
+        "href": "../third_party/unicode/LICENSE.txt",
+        "target": "third_party/unicode/LICENSE.txt"
+      },
+      {
+        "source": "docs/rust-api.md",
+        "href": "distribution-provenance.json",
+        "target": "docs/distribution-provenance.json"
+      },
+      {
+        "source": "docs/rust-api.md",
+        "href": "../data/manifest.json",
+        "target": "data/manifest.json"
+      },
+      {
+        "source": "docs/rust-api.md",
+        "href": "../SOURCES.md",
+        "target": "SOURCES.md"
+      }
+    ],
+    "rust_includes": [
+      {
+        "source": "src/data/mod.rs",
+        "target": "data/lexicon.bin"
+      },
+      {
+        "source": "src/data/mod.rs",
+        "target": "data/frequency.bin"
+      },
+      {
+        "source": "src/lib.rs",
+        "target": "README.md"
+      }
+    ],
+    "portable_notices": {
+      "unicode_tables_checked": 2,
+      "historical_library_dependency_names_versions_checked": true,
+      "historical_lock_hash_is_not_the_new_workspace_lock": true
+    },
+    "fixed_budget_bytes": 5000000,
+    "raw_resources_bytes": 10460015
+  },
+  "registry_rule": {
+    "url": "https://doc.rust-lang.org/cargo/reference/publishing.html",
+    "checked_on": "2026-10-18",
+    "documented_limit": "10MB",
+    "conservative_bytes_check": 10000000,
+    "package_semantics_url": "https://doc.rust-lang.org/cargo/commands/cargo-package.html"
+  },
+  "isolated_dependency_graphs": {
+    "consumer": [
+      {
+        "name": "block-buffer",
+        "version": "0.10.4",
+        "manifest": "vendor/block-buffer-0.10.4/Cargo.toml"
+      },
+      {
+        "name": "cfg-if",
+        "version": "1.0.5",
+        "manifest": "vendor/cfg-if-1.0.5/Cargo.toml"
+      },
+      {
+        "name": "cpufeatures",
+        "version": "0.2.17",
+        "manifest": "vendor/cpufeatures-0.2.17/Cargo.toml"
+      },
+      {
+        "name": "crypto-common",
+        "version": "0.1.7",
+        "manifest": "vendor/crypto-common-0.1.7/Cargo.toml"
+      },
+      {
+        "name": "digest",
+        "version": "0.10.7",
+        "manifest": "vendor/digest-0.10.7/Cargo.toml"
+      },
+      {
+        "name": "generic-array",
+        "version": "0.14.7",
+        "manifest": "vendor/generic-array-0.14.7/Cargo.toml"
+      },
+      {
+        "name": "lingose",
+        "version": "0.2.0",
+        "manifest": "unpacked/lingose-0.2.0/Cargo.toml"
+      },
+      {
+        "name": "lingose-package-consumer-020",
+        "version": "0.0.0",
+        "manifest": "consumer/Cargo.toml"
+      },
+      {
+        "name": "sha2",
+        "version": "0.10.9",
+        "manifest": "vendor/sha2-0.10.9/Cargo.toml"
+      },
+      {
+        "name": "typenum",
+        "version": "1.20.1",
+        "manifest": "vendor/typenum-1.20.1/Cargo.toml"
+      },
+      {
+        "name": "version_check",
+        "version": "0.9.5",
+        "manifest": "vendor/version_check-0.9.5/Cargo.toml"
+      }
+    ],
+    "cli": [
+      {
+        "name": "anstyle",
+        "version": "1.0.14",
+        "manifest": "vendor/anstyle-1.0.14/Cargo.toml"
+      },
+      {
+        "name": "block-buffer",
+        "version": "0.10.4",
+        "manifest": "vendor/block-buffer-0.10.4/Cargo.toml"
+      },
+      {
+        "name": "cfg-if",
+        "version": "1.0.5",
+        "manifest": "vendor/cfg-if-1.0.5/Cargo.toml"
+      },
+      {
+        "name": "clap",
+        "version": "4.6.7",
+        "manifest": "vendor/clap-4.6.7/Cargo.toml"
+      },
+      {
+        "name": "clap_builder",
+        "version": "4.6.7",
+        "manifest": "vendor/clap_builder-4.6.7/Cargo.toml"
+      },
+      {
+        "name": "clap_lex",
+        "version": "1.1.1",
+        "manifest": "vendor/clap_lex-1.1.1/Cargo.toml"
+      },
+      {
+        "name": "cpufeatures",
+        "version": "0.2.17",
+        "manifest": "vendor/cpufeatures-0.2.17/Cargo.toml"
+      },
+      {
+        "name": "crypto-common",
+        "version": "0.1.7",
+        "manifest": "vendor/crypto-common-0.1.7/Cargo.toml"
+      },
+      {
+        "name": "digest",
+        "version": "0.10.7",
+        "manifest": "vendor/digest-0.10.7/Cargo.toml"
+      },
+      {
+        "name": "generic-array",
+        "version": "0.14.7",
+        "manifest": "vendor/generic-array-0.14.7/Cargo.toml"
+      },
+      {
+        "name": "itoa",
+        "version": "1.0.18",
+        "manifest": "vendor/itoa-1.0.18/Cargo.toml"
+      },
+      {
+        "name": "lingose",
+        "version": "0.2.0",
+        "manifest": "unpacked/lingose-0.2.0/Cargo.toml"
+      },
+      {
+        "name": "lingose-cli",
+        "version": "0.2.0",
+        "manifest": "cli/Cargo.toml"
+      },
+      {
+        "name": "memchr",
+        "version": "2.8.3",
+        "manifest": "vendor/memchr-2.8.3/Cargo.toml"
+      },
+      {
+        "name": "serde_core",
+        "version": "1.0.229",
+        "manifest": "vendor/serde_core-1.0.229/Cargo.toml"
+      },
+      {
+        "name": "serde_json",
+        "version": "1.0.154",
+        "manifest": "vendor/serde_json-1.0.154/Cargo.toml"
+      },
+      {
+        "name": "sha2",
+        "version": "0.10.9",
+        "manifest": "vendor/sha2-0.10.9/Cargo.toml"
+      },
+      {
+        "name": "typenum",
+        "version": "1.20.1",
+        "manifest": "vendor/typenum-1.20.1/Cargo.toml"
+      },
+      {
+        "name": "version_check",
+        "version": "0.9.5",
+        "manifest": "vendor/version_check-0.9.5/Cargo.toml"
+      },
+      {
+        "name": "zmij",
+        "version": "1.0.23",
+        "manifest": "vendor/zmij-1.0.23/Cargo.toml"
+      }
+    ]
+  },
+  "candidate_manifest": {
+    "sha256": "aefa19ea8db5ad10c2ce3289ea4bb776de8758583a2edea679e3a9a6dbef8d65",
+    "only_changes": [
+      "library path points to real unpacked archive",
+      "standalone empty workspace table"
+    ],
+    "source_files": {
+      "Cargo.toml": {
+        "bytes": 809,
+        "sha256": "e50128430cf34e3da846eb17a97e5924ea39ddff7a9dbf14f34874f14abb788f"
+      },
+      "LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "README.md": {
+        "bytes": 8778,
+        "sha256": "35d1dbc07a99a2dc5f6be152bbd49b2e700bcb91c7731b740b21438b09cec421"
+      },
+      "SOURCES.md": {
+        "bytes": 3685,
+        "sha256": "e3a051a235428b0a89c4be52e6c60f85326d33d508673f7db4397419dc4bd6b3"
+      },
+      "src/main.rs": {
+        "bytes": 12480,
+        "sha256": "b4a793a06b79443b9a185acd9fc35a22d50f31fde8c1922b0615786f4037d953"
+      }
+    },
+    "not_a_registry_package": true
+  },
+  "isolated_inputs_before": {
+    "vendor": {
+      "files": 1328,
+      "total_bytes": 13696143,
+      "inventory_sha256": "d5aa2ba4cc431503c02d233d6e188818325dd5bd450b0cdfad1fe25929ff3798"
+    },
+    "consumer": {
+      "files": 3,
+      "total_bytes": 10477,
+      "inventory_sha256": "8e8a589114ea4f3c85eced5de8caf09101280a027a621c73f2011b343dde980d"
+    },
+    "cli": {
+      "files": 6,
+      "total_bytes": 48631,
+      "inventory_sha256": "9c7e9cb4bac4e384ac786eca12fe0998c38425498b84b622d22f0952be1f15fc"
+    },
+    ".cargo": {
+      "files": 1,
+      "total_bytes": 189,
+      "inventory_sha256": "9218206086332a30f2bb369ad3cf13c641705260976877faf707be21fd2f01c7"
+    }
+  },
+  "isolation": {
+    "empty_cargo_home_registry_absent": true,
+    "all_sources_inside_isolation": true,
+    "runtime_sources_hidden": true,
+    "runtime_path_system32_only": true,
+    "runtime_files": {
+      "current-cli.exe": {
+        "bytes": 11287040,
+        "sha256": "b5c89faa74158d53434debecd7d3204e2a69b7c3596cd07aea6a03bfaae9de05"
+      },
+      "current-consumer.exe": {
+        "bytes": 10790912,
+        "sha256": "6d25d200c8cf0dc477a917230b3e811ab68ed4b670c46b11aa8037221fa63826"
+      },
+      "minimum-cli.exe": {
+        "bytes": 11351040,
+        "sha256": "e0c27c4cb228ff28d46e687eccda63b5b3989fa51e71ef3b0bd75d7b67d980ee"
+      },
+      "minimum-consumer.exe": {
+        "bytes": 10807808,
+        "sha256": "025e3835cad1766bb8ff7d4c058c0be126ac49b7c91411d1a47b641ed4a042bf"
+      }
+    },
+    "consumer_source": {
+      "bytes": 7801,
+      "sha256": "2c659500a1ff6161603e50f334243a6ddb18527f8e57b95add7bb367aee43d3b"
+    },
+    "public_functions": 18,
+    "cli_smoke_cases_per_toolchain": 25,
+    "unpacked_sources_unchanged": true
+  },
+  "dry_run_archive": {
+    "path": ".local/cli43-3h9dn32c/package-target/package/tmp-crate/lingose-0.2.0.crate",
+    "bytes": 4053096,
+    "sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5",
+    "identical": true
+  },
+  "explicit_and_isolated_inputs_unchanged": true,
+  "tracked_inputs_unchanged": true,
+  "normal_user_final_verification": {
+    "archive_validated": true,
+    "raw_receipt": {
+      "path": ".local/cli43-3h9dn32c/report.json",
+      "bytes": 112248,
+      "sha256": "bbcf8aa2ff741bd5d2eb378bf8eef1fe7189eecd67e08d76e858815d6806fcaf"
+    },
+    "tracked_and_explicit_inputs_rechecked": true,
+    "dry_run_explicitly_aborted_upload": true
+  },
+  "raw_final_receipt": {
+    "path": ".local/cli43-3h9dn32c/report.json",
+    "bytes": 112248,
+    "sha256": "bbcf8aa2ff741bd5d2eb378bf8eef1fe7189eecd67e08d76e858815d6806fcaf"
+  },
+  "shared_final_export": {
+    "path": ".local/cli43-final-export.json",
+    "bytes": 112614,
+    "sha256": "44c18c5b4557d499321a1b58fa14da933257c51b2e644ee546a049c210653d0e"
+  },
+  "guarded_candidate": {
+    "receipt": {
+      "path": ".local/cli43-myh4m6er/report.json",
+      "bytes": 111155,
+      "sha256": "1ef1dcdc3910a2087f97bbc4af19f9258e3278d8d1e5fa35513719f8abf225b4"
+    },
+    "status": "guarded_candidate_passed",
+    "archive": {
+      "path": ".local/cli43-myh4m6er/lingose-0.2.0.crate",
+      "bytes": 4053117,
+      "sha256": "33d6f0eb7ff7a00e1e1c580b8f8e996042fa18bd59062119061ae84e965479c7"
+    },
+    "library_publish_guard": true,
+    "cli_publish_guard": true,
+    "subsequent_source_changes": [
+      "crates/lingose-cli/README.md",
+      "crates/lingose/Cargo.toml",
+      "crates/lingose/README.md"
+    ],
+    "changed_archive_entries": [
+      "Cargo.toml",
+      "Cargo.toml.orig",
+      "README.md"
+    ]
+  },
+  "prior_failed_attempts": [
+    {
+      "receipt": {
+        "path": ".local/cli43-z842yixp/report.json",
+        "bytes": 68771,
+        "sha256": "38b1bd67ddbad84ec51b4404e524e8ee99706ba9dcc8fe2aba978166000609aa"
+      },
+      "error": "Threshold/plain bytes differ",
+      "resolution": "Harness annotation literal omitted final n; corrected to pinned P0 value and reran all checks"
+    },
+    {
+      "receipt": {
+        "path": ".local/cli43-di00el5r/report.json",
+        "bytes": 111952,
+        "sha256": "e92303cfecdd8b7c7e2a04561bf275aafeddc192174e6609ce76fb265b601a8b"
+      },
+      "error": "Unexpected exit: library-publish-dry-run",
+      "resolution": "Sandbox Schannel SEC_E_NO_CREDENTIALS at dry-run; preserved logs; rebuilt updated README candidate and reran under normal-user TLS"
+    }
+  ],
+  "workspace_checks": [
+    {
+      "label": "python",
+      "argv": [
+        "python",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": {
+        "path": ".local/cli43-checks/python.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-checks/python.stderr.log",
+        "bytes": 15045,
+        "sha256": "d527acdc04ecdfb6b9b80ba0bd5f793d5b431e2ea04508355ce81930cd7088a2"
+      }
+    },
+    {
+      "label": "fmt",
+      "argv": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": {
+        "path": ".local/cli43-checks/fmt.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-checks/fmt.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "label": "clippy",
+      "argv": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--offline",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "stdout": {
+        "path": ".local/cli43-checks/clippy.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-checks/clippy.stderr.log",
+        "bytes": 777,
+        "sha256": "574d5af7a64aed789cb34adb55f600fcc33227734666462df01e4254be37b399"
+      }
+    },
+    {
+      "label": "workspace-test",
+      "argv": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "stdout": {
+        "path": ".local/cli43-checks/workspace-test.stdout.log",
+        "bytes": 13446,
+        "sha256": "f2e6a4f918603808d40e5928e36e9bd22a2c4ac0d0b2ecf3a072869592761396"
+      },
+      "stderr": {
+        "path": ".local/cli43-checks/workspace-test.stderr.log",
+        "bytes": 2003,
+        "sha256": "e646bff565c70490d296d436371a4c0590f896d3e448bf84a6c287117befe84f"
+      }
+    },
+    {
+      "label": "workspace-doctest",
+      "argv": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--doc",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "stdout": {
+        "path": ".local/cli43-checks/workspace-doctest.stdout.log",
+        "bytes": 733,
+        "sha256": "e0b951733c6d95c6df015992c19ab758737abccd6b24d310e6617f5d35d7454b"
+      },
+      "stderr": {
+        "path": ".local/cli43-checks/workspace-doctest.stderr.log",
+        "bytes": 146,
+        "sha256": "aa923fc24fe4480375528d769b2e44ef9879887b3194c1ec6e73d65e96afb63b"
+      }
+    },
+    {
+      "label": "workspace-doc",
+      "argv": [
+        "cargo",
+        "doc",
+        "--workspace",
+        "--no-deps",
+        "--all-features",
+        "--offline",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "stdout": {
+        "path": ".local/cli43-checks/workspace-doc.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli43-checks/workspace-doc.stderr.log",
+        "bytes": 256,
+        "sha256": "8df7b14d3ade0c4460fa67c839a81a5419608141bee364aa0597f07a01e6fe21"
+      }
+    }
+  ],
+  "verification_counts": {
+    "python": 92,
+    "workspace_rust": 131,
+    "workspace_doctests": 7,
+    "packaged_library_unit": 80,
+    "packaged_library_doctests": 7,
+    "preexisting_manual_probe_ignored": 1,
+    "public_api_entries_per_toolchain": 18,
+    "cli_smoke_cases_per_toolchain": 25,
+    "toolchains": [
+      "1.93.1",
+      "1.85.0"
+    ],
+    "final_run_unchanged_tracked_files": 176
+  },
+  "notes": [
+    "The original handoff contained ASCII question marks in place of Chinese; resumption was reconciled against todo_CLI and Git history; handoff rewritten as UTF-8.",
+    "Workspace checks preceded the final two README release-status prose edits; exact final archive library doctests and docs passed afterwards; Rust code blocks were unchanged.",
+    "0.1.0 packaging/portable-notice generation/registry-consumer tools and receipts remain historical and unchanged.",
+    "Archive and dry-run are from a byte-checked workspace snapshot without .git; a later checkout package may add VCS metadata and requires a new archive identity.",
+    "Normal-user-created temp directories have user-only ACLs; raw final receipt was read and verified in that same authorized user environment."
+  ],
+  "independent_review": {
+    "scope": "read-only review of package tools and new orchestration by a separate agent",
+    "addressed_findings": [
+      "explicit source identities captured and rechecked",
+      "isolated manifests/locks/vendor/source tree identities rechecked",
+      "candidate TOML limited to isolated library path plus empty workspace",
+      "plain word and same-name --text outputs compared exactly"
+    ]
+  }
+}

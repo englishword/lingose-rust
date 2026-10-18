@@ -69,10 +69,11 @@
   - 依赖：CLI4.1。更新库/CLI README、API 契约和迁移说明，覆盖安装、全部库能力、六字段查询、文本/文件/stdin、JSON、help、错误、离线行为与官网/具体仓库链接。
   - 验收：库示例可编译，CLI 示例实际运行；两包分别核对依赖与许可，不把新增 CLI 依赖写回旧 loader/分发证据，保留作者和第三方声明。
   - 结果与边界：[用户文档说明](../docs/cli-user-documentation.md)及[新版收据](../docs/cli-user-documentation-verification.json)。根/两包 README、当前 API 契约及两包来源声明已更新；安装命令明确为发布后用法。Rust 1.93.1/1.85.0 各 7 项文档测试、额外 2 个 Rust 块、2 个库 example、18 条 CLI 示例及 5 个 shell 场景通过；标注逐字对照直接库调用。五目标依赖图离线核对，库 9/10、CLI 18/19 个外部依赖的版本/许可匹配；165 个范围外原文件不变。PowerShell 实际 stdin BOM 和宿主换行边界已留证；没有打包、dry-run、上传或多平台运行，两包仍 publish=false。下一项为 CLI4.3。
-- [ ] CLI4.3 验证库真实归档和隔离 CLI 候选。
+- [x] CLI4.3 验证库真实归档和隔离 CLI 候选。
   - 依赖：CLI4.2。检查库真实 `.crate` 清单、压缩体积、包内链接、保护数据和独立解包消费；候选验证合格后解除库 publish=false 保护并执行库 dry-run。
   - 用已解包库和最小 CLI 候选在隔离工程验证离线构建/安装，依赖准备后不能借用 checkout/相邻数据；CLI 二进制在无词库目录运行。
   - 验收：库满足原体积预算及当时注册表规则；全部库入口和两个 CLI 子命令通过。此处 CLI 属于本地候选，待库注册表可用后在 CLI6.3 完成 CLI 真实打包及注册表 dry-run，不提前标为完成。
+  - 结果与边界：[打包说明](../docs/cli-packaging.md)及[独立收据](../docs/cli-package-verification.json)。真实库归档 41 文件、4,053,096 字节，低于 5,000,000 字节预算；19 个包内链接、3 个 Rust include、全部载荷/库锁闭包/Unicode 与许可身份核对通过。Rust 1.93.1/1.85.0 分别从真实解包库离线构建 18 入口消费者并安装最小 CLI 候选，各通过 25 个 CLI 场景，源码/词库目录移开后仍可运行。最终库 dry-run 成功且临时归档摘要一致；沙箱 TLS 失败日志保留。92 项 Python、workspace 131 项 Rust / 7 项文档测试、fmt/Clippy/doc 及包内 80 项库 / 7 项文档测试通过。仅解除库发布保护，CLI 继续 publish=false；未上传、未做 CLI 注册表打包或多平台运行。下一项为 CLI5.1。
 
 ## CLI5：GitHub Actions 与五平台资产
 

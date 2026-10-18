@@ -6,8 +6,7 @@ owns the lexicon and algorithms. Learn about the IPSM Approach at
 [lingose.com](https://lingose.com/). Source:
 [englishword/lingose-rust](https://github.com/englishword/lingose-rust).
 
-**0.2.0 has not been published.** Both workspace packages keep publication
-disabled. Registry commands in this guide apply after the 0.2.0 release;
+**0.2.0 has not been published.** Registry commands in this guide apply after the 0.2.0 release;
 current usage is through the source build below.
 
 ## Install or build

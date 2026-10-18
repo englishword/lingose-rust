@@ -4,7 +4,8 @@
 English pronunciation, spelling and meaning. Version **0.2.0** is in development
 after the 0.1.0 release. The explicit annotation entry point is now
 `annotate_ips_skip(text, skip_top)`.
-Version 0.2.0 has not been published; publication remains disabled during development.
+Version 0.2.0 has not been published. The registry dependency below applies after
+the 0.2.0 release.
 
 ## Add the library
 
