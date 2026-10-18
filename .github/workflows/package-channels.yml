@@ -50,7 +50,11 @@ jobs:
           if ($LASTEXITCODE) { throw 'WinGet installed command failed' }
           $payload = Split-Path (Get-Item $command).Target
           if (!(Test-Path "$payload/licenses") -or !(Test-Path "$payload/SOURCES.md")) { throw 'WinGet notices missing' }
-          & $env:WINGET_EXE uninstall --id Lingose.Lingose --exact --silent --disable-interactivity
+          # This candidate is not indexed in the community source yet. Its
+          # local ARP entry is matched by name, not a community package ID.
+          & $env:WINGET_EXE list --name Lingose --exact --disable-interactivity
+          if ($LASTEXITCODE) { throw 'WinGet local registration missing' }
+          & $env:WINGET_EXE uninstall --name Lingose --exact --scope user --silent --disable-interactivity
           if ($LASTEXITCODE -or (Test-Path $command)) { throw 'WinGet uninstall failed' }
       - name: Scoop install, run, reinstall and uninstall
         run: |
@@ -113,7 +117,12 @@ jobs:
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: cli7-windows-${{ github.sha }}
-          path: .local/channels/
+          path: |
+            .local/channels/**/report.json
+            .local/channels/scoop/generated-manifest.json
+            .local/channels/preflight/*.json
+            .local/channels/preflight/SHA256SUMS
+            .local/channels/*.nupkg
           include-hidden-files: true
           if-no-files-found: error
           retention-days: 14
@@ -159,7 +168,7 @@ jobs:
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: cli7-${{ matrix.runner }}-${{ github.sha }}
-          path: .local/channels/
+          path: .local/channels/**/report.json
           include-hidden-files: true
           if-no-files-found: error
           retention-days: 14
