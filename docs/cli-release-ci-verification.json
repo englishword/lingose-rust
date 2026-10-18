@@ -1,0 +1,292 @@
+{
+  "phase": "CLI5.1",
+  "status": "awaiting_remote_ci",
+  "verified_at": "2026-10-18T04:13:42.798808+00:00",
+  "base_revision": "1ca5d259b706084275a930b08d12cd1456fdcd14",
+  "repository": {
+    "name": "englishword/lingose-rust",
+    "visibility": "private",
+    "actor": "Prefee",
+    "admin": true,
+    "push": true,
+    "actions_enabled": true,
+    "allowed_actions": "all",
+    "initial_branches": [],
+    "initial_tags": [],
+    "remote": "https://github.com/englishword/lingose-rust.git"
+  },
+  "workflow": {
+    "file": ".github/workflows/cli-release.yml",
+    "sha256": "a13e05da094a02eb7c26b55adb971fe918869685838e9aeb36098b2bfae34554",
+    "rust": "1.93.1",
+    "execution": "native on all five targets",
+    "permissions": {
+      "contents": "read"
+    },
+    "release_publication": false,
+    "ci_artifact_retention_days": 14
+  },
+  "local": {
+    "actionlint_version": "1.7.12",
+    "actionlint_archive_sha256": "6e7241b51e6817ea6a047693d8e6fed13b31819c9a0dd6c5a726e1592d22f6e9",
+    "actionlint_passed": true,
+    "python_compile_passed": true,
+    "diff_check_passed": true,
+    "report_path": ".local/cli51-windows-final/report.json",
+    "report_sha256": "c292e2c94a5ba9fa29fb94f9ca313d093b997a42341272b42b109f33b5a3b939",
+    "status": "passed",
+    "cli_tests": 29,
+    "smoke_cases": 12,
+    "binary": {
+      "file": "candidate/lingose.exe",
+      "bytes": 11287552,
+      "sha256": "e8dd7e1044dff01400282a9110b2a45824d7af387b0ccac5890aed72d2db87c2"
+    },
+    "build_inputs": {
+      ".github/workflows/cli-release.yml": {
+        "bytes": 2007,
+        "sha256": "a13e05da094a02eb7c26b55adb971fe918869685838e9aeb36098b2bfae34554"
+      },
+      "Cargo.lock": {
+        "bytes": 5797,
+        "sha256": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e"
+      },
+      "Cargo.toml": {
+        "bytes": 240,
+        "sha256": "2c7d78c0cb89af8501739a315db12692f4141b8c70815a6fcdbad0dab7cb253b"
+      },
+      "crates/lingose-cli/Cargo.toml": {
+        "bytes": 809,
+        "sha256": "e50128430cf34e3da846eb17a97e5924ea39ddff7a9dbf14f34874f14abb788f"
+      },
+      "crates/lingose-cli/LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "crates/lingose-cli/README.md": {
+        "bytes": 8778,
+        "sha256": "35d1dbc07a99a2dc5f6be152bbd49b2e700bcb91c7731b740b21438b09cec421"
+      },
+      "crates/lingose-cli/SOURCES.md": {
+        "bytes": 3685,
+        "sha256": "e3a051a235428b0a89c4be52e6c60f85326d33d508673f7db4397419dc4bd6b3"
+      },
+      "crates/lingose-cli/src/main.rs": {
+        "bytes": 12480,
+        "sha256": "b4a793a06b79443b9a185acd9fc35a22d50f31fde8c1922b0615786f4037d953"
+      },
+      "crates/lingose-cli/tests/annotate.rs": {
+        "bytes": 23174,
+        "sha256": "c4aea542d4ca130aa08fe53925f631567f561d934e066f81766098130356c742"
+      },
+      "crates/lingose-cli/tests/word.rs": {
+        "bytes": 5951,
+        "sha256": "e206bba4398dcfe185823e4eec780aa23e8bcd6180405d562ac7b940edf7d0bc"
+      },
+      "crates/lingose/Cargo.toml": {
+        "bytes": 929,
+        "sha256": "75b6cb3a1b6d9dc4a15b1ef099f0747dc3cebc7a3b12a5c34cf6f58a8dd815e3"
+      },
+      "crates/lingose/LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "crates/lingose/README.md": {
+        "bytes": 11639,
+        "sha256": "f67254247c30dbf3674773f2611c145721c733146ffc1ce6ac946b2b6e82c9e2"
+      },
+      "crates/lingose/SOURCES.md": {
+        "bytes": 3890,
+        "sha256": "74170a3c0d378675de47ced2a5cb8d261880522a9f1c4deaaa711ae31391d522"
+      },
+      "crates/lingose/data/LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "crates/lingose/data/SOURCES.json": {
+        "bytes": 4997,
+        "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+      },
+      "crates/lingose/data/UPSTREAM-SOURCES.md": {
+        "bytes": 1457,
+        "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+      },
+      "crates/lingose/data/frequency.bin": {
+        "bytes": 200272,
+        "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+      },
+      "crates/lingose/data/lexicon.bin": {
+        "bytes": 10259743,
+        "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+      },
+      "crates/lingose/data/manifest.json": {
+        "bytes": 3900,
+        "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+      },
+      "crates/lingose/docs/distribution-provenance.json": {
+        "bytes": 5569,
+        "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+      },
+      "crates/lingose/docs/rust-api.md": {
+        "bytes": 10014,
+        "sha256": "384d9f33476913a64a0cadb3d348e80e2dadda97361dbad41ec6491453d35575"
+      },
+      "crates/lingose/examples/annotate.rs": {
+        "bytes": 414,
+        "sha256": "59e6d564a33328edbcc7dbe6e3145bdd75ebef0e6f0c99a5d6f9233ef4441c5a"
+      },
+      "crates/lingose/examples/query.rs": {
+        "bytes": 871,
+        "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+      },
+      "crates/lingose/src/annotation.rs": {
+        "bytes": 19775,
+        "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+      },
+      "crates/lingose/src/annotation_context_vectors.rs": {
+        "bytes": 321810,
+        "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+      },
+      "crates/lingose/src/annotation_frequency_vectors.rs": {
+        "bytes": 24615,
+        "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+      },
+      "crates/lingose/src/annotation_unicode.rs": {
+        "bytes": 3734,
+        "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+      },
+      "crates/lingose/src/annotation_unicode_tables.rs": {
+        "bytes": 40416,
+        "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+      },
+      "crates/lingose/src/annotation_vectors.rs": {
+        "bytes": 65657,
+        "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+      },
+      "crates/lingose/src/category.rs": {
+        "bytes": 1653,
+        "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+      },
+      "crates/lingose/src/data/annotation_context_vectors.rs": {
+        "bytes": 37586,
+        "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+      },
+      "crates/lingose/src/data/annotation_frequency_vectors.rs": {
+        "bytes": 87772,
+        "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+      },
+      "crates/lingose/src/data/annotation_tests.rs": {
+        "bytes": 3391,
+        "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+      },
+      "crates/lingose/src/data/cache_tests.rs": {
+        "bytes": 22365,
+        "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+      },
+      "crates/lingose/src/data/category_tests.rs": {
+        "bytes": 4243,
+        "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+      },
+      "crates/lingose/src/data/image.rs": {
+        "bytes": 15144,
+        "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+      },
+      "crates/lingose/src/data/mod.rs": {
+        "bytes": 6395,
+        "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+      },
+      "crates/lingose/src/data/p41_joint_error_tests.rs": {
+        "bytes": 4967,
+        "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+      },
+      "crates/lingose/src/data/p41_query_fixture_tests.rs": {
+        "bytes": 62352,
+        "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+      },
+      "crates/lingose/src/data/tests.rs": {
+        "bytes": 24506,
+        "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+      },
+      "crates/lingose/src/data_meta.rs": {
+        "bytes": 1531,
+        "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+      },
+      "crates/lingose/src/error.rs": {
+        "bytes": 2127,
+        "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+      },
+      "crates/lingose/src/lib.rs": {
+        "bytes": 5142,
+        "sha256": "661ea94997dcdb0d7a994a900acb1dbc6c3e0b897804d495beb3c90389d5ca12"
+      },
+      "crates/lingose/src/query.rs": {
+        "bytes": 1207,
+        "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+      },
+      "crates/lingose/src/query_case.rs": {
+        "bytes": 5074,
+        "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+      },
+      "crates/lingose/src/query_case_tables.rs": {
+        "bytes": 52751,
+        "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+      },
+      "crates/lingose/src/validation.rs": {
+        "bytes": 1624,
+        "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+      },
+      "crates/lingose/tests/annotation_context_vectors.rs": {
+        "bytes": 19503,
+        "sha256": "b35ab093c36a2e52657fcf363a8cf106eb40989f8c59f0a38f7b1d2f3c82fa5b"
+      },
+      "crates/lingose/tests/annotation_frequency_vectors.rs": {
+        "bytes": 95021,
+        "sha256": "5e7ece15934e19c81157ac7eaa668e6be61342ce7b94705e50d0a8c5925c572e"
+      },
+      "crates/lingose/tests/annotation_vectors.rs": {
+        "bytes": 3910,
+        "sha256": "36a1a975500fbe2a264dd8cae0c7535f08f782a9849e7d54f8bc85ccfcbae462"
+      },
+      "crates/lingose/tests/api_contract.rs": {
+        "bytes": 12105,
+        "sha256": "45626a7c12aeb1d42659854c1310f260fbcaeea8ac63d4a6a08ddbef4eaf7cdb"
+      },
+      "crates/lingose/tests/category_vectors.rs": {
+        "bytes": 23168,
+        "sha256": "2a9847a84ea05858410e0be8be3020771b0e2027a13426b077fa61fc9b5e1072"
+      },
+      "crates/lingose/tests/query_vectors.rs": {
+        "bytes": 11219,
+        "sha256": "440c7634cddb9494a37b0c0e89e1723ac53d9e2e92be125ca32057cbc187cbce"
+      },
+      "crates/lingose/third_party/unicode/LICENSE.txt": {
+        "bytes": 1995,
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+      },
+      "tools/check_cli_release.py": {
+        "bytes": 10378,
+        "sha256": "51b166b9d5d20117159b3ffca26154e0bb012ecb7afdb3533bb6c0ab09ae74f0"
+      }
+    },
+    "initial_failure": {
+      "path": ".local/cli51-windows-local/report.json",
+      "reason": "Versioned rustup alias absent; sandbox denied rustup tmp write. Retried using installed stable alias verified as Rust1.93.1."
+    }
+  },
+  "remote_ci": null,
+  "boundaries": [
+    "No crates.io upload, version tag or GitHub Release",
+    "CLI5.2 archive/license/download acceptance remains separate",
+    "Binary-only temporary runtime with minimal environment; network was not disabled",
+    "MSRV and full workspace regression evidence remain CLI4.1; this phase runs release CLI tests on each platform"
+  ],
+  "sources": [
+    "https://docs.github.com/en/actions/reference/runners/github-hosted-runners",
+    "https://github.com/actions/runner-images",
+    "https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow",
+    "https://github.com/actions/checkout/releases/tag/v7.0.1",
+    "https://github.com/actions/setup-python/releases/tag/v7.0.0",
+    "https://github.com/actions/upload-artifact/releases/tag/v7.0.2",
+    "https://github.com/rhysd/actionlint/releases/tag/v1.7.12"
+  ]
+}

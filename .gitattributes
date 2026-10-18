@@ -75,6 +75,10 @@
 /tools/check_cli_package.py text eol=lf
 /tests/test_cli_package.py text eol=lf
 /tasks/handoff.md text eol=lf
+/.github/workflows/*.yml text eol=lf
+/tools/check_cli_release.py text eol=lf
+/docs/cli-release-ci.md text eol=lf
+/docs/cli-release-ci-verification.json text eol=lf
 /tools/check_workspace_package.py text eol=lf
 /tests/test_workspace_package.py text eol=lf
 /tests/test_workspace_tools.py text eol=lf
