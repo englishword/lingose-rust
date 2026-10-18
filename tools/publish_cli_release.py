@@ -29,7 +29,11 @@ def api(endpoint, *, method="GET", body=None, binary=False):
     if binary:
         command += ["-H", "Accept: application/octet-stream"]
     result = subprocess.run(command, input=None if body is None else package.json_bytes(body),
-                            capture_output=True, check=True, timeout=180)
+                            capture_output=True, timeout=180)
+    if result.returncode:
+        detail = result.stderr.decode("utf-8", errors="replace").strip()
+        response = result.stdout.decode("utf-8", errors="replace").strip()
+        raise RuntimeError(f"GitHub API {method} {endpoint} failed ({result.returncode}): {detail}; {response}")
     return result.stdout if binary else json.loads(result.stdout)
 
 

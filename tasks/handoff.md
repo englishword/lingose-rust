@@ -10,10 +10,11 @@
 
 ## 精确下一步
 
-1. 本轮从干净 `main / 8a2dc48` 恢复，已实时确认 origin/main 同提交、仓库 private/admin、tag/Release 均 404。更新发布器精确允许 private，拒绝其他可见性，并更新测试/workflow/说明。本地 7+7 测试/actionlint/fmt/语法/空白通过；提交该实现后 **v0.2.0 指向新提交，不再使用 1b7e62a**。
-2. 推送正式 tag 触发五目标 Actions，记录准确 commit/run，候选/全部原生运行/草稿上传/远端下载核验均通过后才标记完成。旧非发布候选保留为历史，不覆盖旧收据。
-3. 用户已授权 private Release；仅认证且有仓库权限的下载作为本项验收。仓库可见性不改，无匿名公开下载声明。失败或中断先检查远端实际状态，保留所有尝试记录，不重复创建/覆盖已有 Release。
-4. 完成后更新计划/说明/收据/交接并聚焦提交，交接 CLI6.5；本轮不执行新 cache 注册表名称安装验收。
+1. 实现提交 **cf11a604c8f998a1b4ac67737b3e826cadd40530** 已本地提交并推送注释 tag `v0.2.0`（tag object `9507ff12eac425612a7f9125ecdd65ffb7cb4095`）；正式运行 **39114174841** 正在进行。main 暂仅本地包含该提交，远端 main 仍为 8a2dc48；待最终说明提交以 skip ci 一并推送，避免重复 branch 构建。
+2. 正式 run **39114174841 attempt 1** 的十一项候选 job 全通过，发布 job 在创建草稿 POST 时失败；远端 releases 列表为空、Release tag API404，未上传资产。原始失败收据 `.local/cli64-publish-first/publication.json`，18 份 artifacts/实际候选核验在 `.local/cli64-ci-39114174841/`，采集器 `.local/cli64-preparation/collect_attempt1.py`。保留首次记录，不将该次运行写成成功。
+3. GitHub 当前规则：目标提交 workflow 相对默认分支变化时，Release 创建/更新额外要求 workflow 写权限，GITHUB_TOKEN不能获得。远端 main 尚为8a2dc48，tag 为cf11a60，确实存在该差异；这是最吻合的推断，原脚本丢弃了服务端错误正文，无法断言其精确HTTP码。已修正本地 API 错误诊断并新增测试（8+7通过）；以 skip ci 提交并推送 main，使 workflow 与tag相同，刷新远端无Release后 **只重跑失败发布job 117637028824**，标签不改、不重建候选。不执行本地伪造CI环境恢复。
+4. 用户已授权 private Release；仅认证且有仓库权限的下载作为本项验收。仓库可见性不改，无匿名公开下载声明。失败或中断先检查远端实际状态，保留所有尝试记录，不重复创建/覆盖已有 Release。
+5. 完成后核验实际上传与六个正式下载，更新计划/说明/新正式收据/交接并聚焦提交，交接 CLI6.5；本轮不执行新 cache 注册表名称安装验收。
 
 ## 已发布版本：禁止重复上传
 

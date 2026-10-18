@@ -16,6 +16,13 @@ ENV = {"GITHUB_REPOSITORY": publish.REPOSITORY, "GITHUB_EVENT_NAME": "push",
 
 
 class PublicationTests(unittest.TestCase):
+    def test_api_failure_preserves_service_reason(self):
+        import subprocess
+        result = subprocess.CompletedProcess([], 1, b'{"message":"denied"}', b'gh: denied (HTTP 403)')
+        with patch.object(publish.subprocess, "run", return_value=result):
+            with self.assertRaisesRegex(RuntimeError, "HTTP 403.*denied"):
+                publish.api("repos/example/repo/releases", method="POST", body={})
+
     def test_non_tag_wrong_repo_event_or_revision_cannot_call_api(self):
         for key, value in (("GITHUB_REPOSITORY", "fork/repo"), ("GITHUB_EVENT_NAME", "workflow_dispatch"),
                            ("GITHUB_REF", "refs/heads/main"), ("GITHUB_SHA", "b" * 40)):
