@@ -1,0 +1,715 @@
+{
+  "phase": "CLI6.2",
+  "status": "published_and_registry_verified_after_client_transport_error",
+  "verified_at_utc": "2026-10-18T07:51:09.681072+00:00",
+  "base_revision": "7578b107f2a32d9a3b9187297f7d0842ac7adc55",
+  "authorization": "User explicitly instructed 继续CLI6.2; later resume messages continue this same task, not a second publication.",
+  "preflight_record": {
+    "path": "docs/cli-publication-preflight-verification.json",
+    "bytes": 37439,
+    "sha256": "45cf35ad0f9a462d1368225c2f8e6a91a26bb435f22f352646630e5590f177a6"
+  },
+  "candidate": {
+    "name": "lingose",
+    "version": "0.2.0",
+    "path": ".local/cli61-3f27f7a/lingose-0.2.0.crate",
+    "bytes": 4053096,
+    "sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5",
+    "source_snapshot": ".local/cli61-3f27f7a/source",
+    "source_strategy": "Byte-checked workspace snapshot without .git; input hashes and base revision bind candidate; no fabricated VCS metadata.",
+    "vcs_metadata_absent": true,
+    "files": 41,
+    "local_links": 19,
+    "workspace_inputs": {
+      "Cargo.toml": {
+        "bytes": 240,
+        "sha256": "2c7d78c0cb89af8501739a315db12692f4141b8c70815a6fcdbad0dab7cb253b"
+      },
+      "Cargo.lock": {
+        "bytes": 5797,
+        "sha256": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e"
+      }
+    },
+    "library_inputs": {
+      "Cargo.toml": {
+        "bytes": 929,
+        "sha256": "75b6cb3a1b6d9dc4a15b1ef099f0747dc3cebc7a3b12a5c34cf6f58a8dd815e3"
+      },
+      "LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "README.md": {
+        "bytes": 11639,
+        "sha256": "f67254247c30dbf3674773f2611c145721c733146ffc1ce6ac946b2b6e82c9e2"
+      },
+      "SOURCES.md": {
+        "bytes": 3890,
+        "sha256": "74170a3c0d378675de47ced2a5cb8d261880522a9f1c4deaaa711ae31391d522"
+      },
+      "data/LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "data/SOURCES.json": {
+        "bytes": 4997,
+        "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f"
+      },
+      "data/UPSTREAM-SOURCES.md": {
+        "bytes": 1457,
+        "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228"
+      },
+      "data/frequency.bin": {
+        "bytes": 200272,
+        "sha256": "af2813952a826e082a7c683472d067d071a855c0aba47c28e90c1f4829384264"
+      },
+      "data/lexicon.bin": {
+        "bytes": 10259743,
+        "sha256": "0f00506a54d8360c3346df6347790811dfd145b98814aa1c12b98c69c0542bd6"
+      },
+      "data/manifest.json": {
+        "bytes": 3900,
+        "sha256": "e759b400690994db5538758b74b5a4b4970f162a1e959ccbbe393c8baf124e03"
+      },
+      "docs/distribution-provenance.json": {
+        "bytes": 5569,
+        "sha256": "430ccfe6f49f4dd2d5d8fa4749c31d49371be6c277841b18278de648d22aef6f"
+      },
+      "docs/rust-api.md": {
+        "bytes": 10014,
+        "sha256": "384d9f33476913a64a0cadb3d348e80e2dadda97361dbad41ec6491453d35575"
+      },
+      "examples/annotate.rs": {
+        "bytes": 414,
+        "sha256": "59e6d564a33328edbcc7dbe6e3145bdd75ebef0e6f0c99a5d6f9233ef4441c5a"
+      },
+      "examples/query.rs": {
+        "bytes": 871,
+        "sha256": "56bc274599ea0f67fb7ebbd8195e7aaae04136e385614ce29ec1e6ebf704cb98"
+      },
+      "src/annotation.rs": {
+        "bytes": 19775,
+        "sha256": "f73bfc0178dc0a0f51bdd0dd1f058f35ea70c9c49e57e43b65fa3b20e28f1247"
+      },
+      "src/annotation_context_vectors.rs": {
+        "bytes": 321810,
+        "sha256": "210deeec7a1b273fe7c29db147267beee7728227f2f4ede3e8a5f036b5d0a302"
+      },
+      "src/annotation_frequency_vectors.rs": {
+        "bytes": 24615,
+        "sha256": "0eda74e2096135d4c62cc57a869a67bb616008dc1599a4cfa1b339fa0f5cf6a6"
+      },
+      "src/annotation_unicode.rs": {
+        "bytes": 3734,
+        "sha256": "b034600f78e828ec83d0237006620acaaeddd3b3267043715b310ff1949c8d94"
+      },
+      "src/annotation_unicode_tables.rs": {
+        "bytes": 40416,
+        "sha256": "e4d8b1df32139b34044947b87ab1fb7ba375bd0e5e633ef259e8655be01e9d8b"
+      },
+      "src/annotation_vectors.rs": {
+        "bytes": 65657,
+        "sha256": "d95c6f190b7893645823412480499357f9dfc63a580809f81d472bfc99ed3b12"
+      },
+      "src/category.rs": {
+        "bytes": 1653,
+        "sha256": "feac165e9c3e123a1717b02440fc86ce2721259c884ee532b1ec0f94d40b190f"
+      },
+      "src/data/annotation_context_vectors.rs": {
+        "bytes": 37586,
+        "sha256": "06cf6fb3a458bf7f5173927ceb620f76e2cffff98f35bd057328cef14559f3df"
+      },
+      "src/data/annotation_frequency_vectors.rs": {
+        "bytes": 87772,
+        "sha256": "26106e8a6451221a46413b8c36a8a03f6b8b122942a37524e868848c27a21f16"
+      },
+      "src/data/annotation_tests.rs": {
+        "bytes": 3391,
+        "sha256": "8e93e245faeb836c09853a1e91a8a7c8a91b4c381e50525d6e50cc198bd138cf"
+      },
+      "src/data/cache_tests.rs": {
+        "bytes": 22365,
+        "sha256": "03a415be4e18e93787b45099d26c758756faf34415434185722946d57cfa8fe8"
+      },
+      "src/data/category_tests.rs": {
+        "bytes": 4243,
+        "sha256": "25c1b13cb2a75371978726a5fa3f0e4972edb2c4d395db6c88328cb909263918"
+      },
+      "src/data/image.rs": {
+        "bytes": 15144,
+        "sha256": "f62c4bc4a567c013c1fabc8fff434fa1a5cc1b7c7e609e707743d77a100d3b2b"
+      },
+      "src/data/mod.rs": {
+        "bytes": 6395,
+        "sha256": "c436af2d132689daacb099ae575ebfe71507aff49e796f50820f855772e2644c"
+      },
+      "src/data/p41_joint_error_tests.rs": {
+        "bytes": 4967,
+        "sha256": "7239871b1bde4a220a641d5916f2757c3f6351f6c886d2b5c8d11a5d50904b08"
+      },
+      "src/data/p41_query_fixture_tests.rs": {
+        "bytes": 62352,
+        "sha256": "f4dcb7d3cb8db1a82f46a52383b9c419273ca279131af29cbd0d71258e81cfe6"
+      },
+      "src/data/tests.rs": {
+        "bytes": 24506,
+        "sha256": "d283a5ffc0386bbff67f62bf5ece6e2498d2fa1b2d7939e8adced36f865b2a0a"
+      },
+      "src/data_meta.rs": {
+        "bytes": 1531,
+        "sha256": "b14162f2571687099c621e5bb960ee5c1c065af4dc069f11d95b86b2de88e8f0"
+      },
+      "src/error.rs": {
+        "bytes": 2127,
+        "sha256": "73a3a3a1c0252486dfbf1ee9011d73ceb23e60151bf00199cf1a4be47e9c630f"
+      },
+      "src/lib.rs": {
+        "bytes": 5142,
+        "sha256": "661ea94997dcdb0d7a994a900acb1dbc6c3e0b897804d495beb3c90389d5ca12"
+      },
+      "src/query.rs": {
+        "bytes": 1207,
+        "sha256": "c2a89233dd7816d3e847c908235d6344ab9fe5c260635206a49c8ca38b143bdd"
+      },
+      "src/query_case.rs": {
+        "bytes": 5074,
+        "sha256": "5a9743208f383053676062490ebc53da17f7ef33aea8428a46940fe409a4dce7"
+      },
+      "src/query_case_tables.rs": {
+        "bytes": 52751,
+        "sha256": "dfd2ddcd44b945da3231194f3db956129c478a54b75506d70514908f2be1d20e"
+      },
+      "src/validation.rs": {
+        "bytes": 1624,
+        "sha256": "7ee23ba28664488bc38f907ece3276d8a3832ec7311218097e09850f82ffeb5e"
+      },
+      "third_party/unicode/LICENSE.txt": {
+        "bytes": 1995,
+        "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+      },
+      "Cargo.lock": {
+        "bytes": 5797,
+        "sha256": "f0184c2796fa61a1a0f9c659884cf7ee1da18ff7d68863f8666141e18c73482e"
+      }
+    },
+    "cli_context_inputs": {
+      "Cargo.toml": {
+        "bytes": 809,
+        "sha256": "e50128430cf34e3da846eb17a97e5924ea39ddff7a9dbf14f34874f14abb788f"
+      },
+      "LICENSE": {
+        "bytes": 17023,
+        "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+      },
+      "README.md": {
+        "bytes": 9169,
+        "sha256": "aa816f465cd026dfd6e08c0d4fcd9e325c6f030f6d6ff7d2642a8ec8abf1e67e"
+      },
+      "SOURCES.md": {
+        "bytes": 3685,
+        "sha256": "e3a051a235428b0a89c4be52e6c60f85326d33d508673f7db4397419dc4bd6b3"
+      },
+      "src/main.rs": {
+        "bytes": 12647,
+        "sha256": "201a048f02a7627110ccdd5b0c2ab70845551aca8f35281d2f1f70585f17d624"
+      }
+    }
+  },
+  "normal_user_final_dry_run": {
+    "phase": "CLI6.2",
+    "mode": "pre-upload-normal-user-dry-run",
+    "started_at_utc": "2026-10-18T07:41:46.787454+00:00",
+    "observations": [
+      {
+        "url": "https://crates.io/api/v1/crates/lingose/0.2.0",
+        "final_url": "https://crates.io/api/v1/crates/lingose/0.2.0",
+        "checked_at_utc": "2026-10-18T07:41:47.470650+00:00",
+        "http_status": 404,
+        "path": ".local/cli62-7578b10/prepare-version.body",
+        "transport_attempts": 1,
+        "bytes": 73,
+        "sha256": "49435d76d9e29e51b021f676aa6fb3ed8e0a8652226df058bfe5bb5b261ac318"
+      },
+      {
+        "url": "https://index.crates.io/li/ng/lingose",
+        "final_url": "https://index.crates.io/li/ng/lingose",
+        "checked_at_utc": "2026-10-18T07:41:47.836649+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/prepare-index.body",
+        "transport_attempts": 1,
+        "bytes": 319,
+        "sha256": "9793414a74209f882984228d90fb3d0d491502d088df062d87bf74e00a39f859"
+      },
+      {
+        "url": "https://crates.io/api/v1/crates/lingose/owners",
+        "final_url": "https://crates.io/api/v1/crates/lingose/owners",
+        "checked_at_utc": "2026-10-18T07:41:48.430543+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/prepare-owners.body",
+        "transport_attempts": 1,
+        "bytes": 209,
+        "sha256": "6fdaeb116e4a5bcde556a9c4520a86935490cbf1f97e18227e0046c656b7edcd"
+      }
+    ],
+    "candidate_sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5",
+    "command": {
+      "argv": [
+        "cargo",
+        "publish",
+        "-p",
+        "lingose",
+        "--locked",
+        "--all-features",
+        "--registry",
+        "crates-io",
+        "--dry-run"
+      ],
+      "started_at_utc": "2026-10-18T07:41:48.430543+00:00",
+      "finished_at_utc": "2026-10-18T07:41:56.450700+00:00",
+      "exit_code": 0,
+      "stdout": {
+        "path": ".local/cli62-7578b10/dry-run.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli62-7578b10/dry-run.stderr.log",
+        "bytes": 932,
+        "sha256": "f264fa8e22f43bcab1f6595c279136700e0686e3474a18f5fce63d669db44177"
+      },
+      "archive": {
+        "path": ".local/cli62-7578b10/target/package/tmp-crate/lingose-0.2.0.crate",
+        "bytes": 4053096,
+        "sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5"
+      },
+      "archive_matches_candidate": true
+    },
+    "inputs_unchanged": true
+  },
+  "upload": {
+    "phase": "CLI6.2",
+    "authorization": "User: 继续CLI6.2; publish only lingose 0.2.0",
+    "base_revision": "7578b107f2a32d9a3b9187297f7d0842ac7adc55",
+    "preflight_record": {
+      "bytes": 37439,
+      "sha256": "45cf35ad0f9a462d1368225c2f8e6a91a26bb435f22f352646630e5590f177a6"
+    },
+    "candidate_sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5",
+    "source_snapshot": ".local/cli61-3f27f7a/source",
+    "observations": [
+      {
+        "url": "https://crates.io/api/v1/crates/lingose/0.2.0",
+        "final_url": "https://crates.io/api/v1/crates/lingose/0.2.0",
+        "checked_at_utc": "2026-10-18T07:43:05.969707+00:00",
+        "http_status": 404,
+        "path": ".local/cli62-7578b10/immediately-before-upload-version.body",
+        "transport_attempts": 1,
+        "bytes": 73,
+        "sha256": "49435d76d9e29e51b021f676aa6fb3ed8e0a8652226df058bfe5bb5b261ac318"
+      },
+      {
+        "url": "https://index.crates.io/li/ng/lingose",
+        "final_url": "https://index.crates.io/li/ng/lingose",
+        "checked_at_utc": "2026-10-18T07:43:06.300323+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/immediately-before-upload-index.body",
+        "transport_attempts": 1,
+        "bytes": 319,
+        "sha256": "9793414a74209f882984228d90fb3d0d491502d088df062d87bf74e00a39f859"
+      },
+      {
+        "url": "https://crates.io/api/v1/crates/lingose/owners",
+        "final_url": "https://crates.io/api/v1/crates/lingose/owners",
+        "checked_at_utc": "2026-10-18T07:43:06.888758+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/immediately-before-upload-owners.body",
+        "transport_attempts": 1,
+        "bytes": 209,
+        "sha256": "6fdaeb116e4a5bcde556a9c4520a86935490cbf1f97e18227e0046c656b7edcd"
+      }
+    ],
+    "started_at_utc": "2026-10-18T07:43:06.935476+00:00",
+    "status": "upload_outcome_requires_remote_inspection",
+    "upload_started": true,
+    "configured_credentials_read_only_in_memory": true,
+    "credentials_logged_or_copied": false,
+    "command": {
+      "argv": [
+        "cargo",
+        "publish",
+        "-p",
+        "lingose",
+        "--locked",
+        "--all-features",
+        "--registry",
+        "crates-io"
+      ],
+      "started_at_utc": "2026-10-18T07:43:06.936478+00:00",
+      "finished_at_utc": "2026-10-18T07:43:12.945901+00:00",
+      "exit_code": 101,
+      "stdout": {
+        "path": ".local/cli62-7578b10/publish.stdout.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": ".local/cli62-7578b10/publish.stderr.log",
+        "bytes": 804,
+        "sha256": "dc43afcc3e04d44cff8b6b7035ca1bad0873639ab4f80ee5c6ab79487c6950d0"
+      },
+      "archive": {
+        "path": ".local/cli62-7578b10/target/package/tmp-crate/lingose-0.2.0.crate",
+        "bytes": 4053096,
+        "sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5"
+      },
+      "archive_matches_candidate": true
+    },
+    "inputs_unchanged": true,
+    "error_type": "AssertionError",
+    "error": "Inspect receipt and remote state; do not blindly retry",
+    "interrupted_at_utc": "2026-10-18T07:43:13.610161+00:00"
+  },
+  "upload_reconciliation": {
+    "cargo_exit_code": 101,
+    "client_reported_error": "Failure when receiving data from peer; Schannel server closed abruptly (missing close_notify)",
+    "upload_command_attempts": 1,
+    "upload_retried": false,
+    "server_accepted_and_published": true,
+    "published_at_utc": "2026-10-18T07:43:13.810692Z",
+    "publisher": "Prefee",
+    "candidate_actual_upload_api_index_and_download_identical": true,
+    "raw_attempt_status_preserved": "upload_outcome_requires_remote_inspection",
+    "resolution": "After the client error, anonymous version/index lookup already found the accepted exact version. Download and independent checks confirmed it. Never retry or republish 0.2.0."
+  },
+  "registry_verification": {
+    "phase": "CLI6.2",
+    "started_at_utc": "2026-10-18T07:47:33.477336+00:00",
+    "status": "registry_download_verified_docs_ready",
+    "anonymous_requests": true,
+    "credentials_read": false,
+    "observations": {
+      "version": {
+        "url": "https://crates.io/api/v1/crates/lingose/0.2.0",
+        "final_url": "https://crates.io/api/v1/crates/lingose/0.2.0",
+        "checked_at_utc": "2026-10-18T07:44:37.480269+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/verify-version.body",
+        "transport_attempts": 1,
+        "bytes": 1606,
+        "sha256": "4f87bc9e96993165c99f27e09de8220218cf8393bff45c143a3850c8a9a24497"
+      },
+      "index": {
+        "url": "https://index.crates.io/li/ng/lingose",
+        "final_url": "https://index.crates.io/li/ng/lingose",
+        "checked_at_utc": "2026-10-18T07:44:37.853662+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/verify-index.body",
+        "transport_attempts": 1,
+        "bytes": 638,
+        "sha256": "9c3d805adf8733bf4271e7b7f2f72b481867f79d2943df9f5f9c22cc910c32aa"
+      },
+      "owners": {
+        "url": "https://crates.io/api/v1/crates/lingose/owners",
+        "final_url": "https://crates.io/api/v1/crates/lingose/owners",
+        "checked_at_utc": "2026-10-18T07:44:38.500481+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/verify-owners.body",
+        "transport_attempts": 1,
+        "bytes": 209,
+        "sha256": "6fdaeb116e4a5bcde556a9c4520a86935490cbf1f97e18227e0046c656b7edcd"
+      },
+      "download": {
+        "url": "https://crates.io/api/v1/crates/lingose/0.2.0/download",
+        "final_url": "https://crates.io/api/v1/crates/lingose/0.2.0/download",
+        "checked_at_utc": "2026-10-18T07:44:38.826963+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/verify-download.body",
+        "transport_attempts": 1,
+        "bytes": 69,
+        "sha256": "0ffdad9585979041c2e12f07f276e828ff63a31aa56731d78836d06c853e45a1"
+      },
+      "archive_download": {
+        "url": "https://static.crates.io/crates/lingose/lingose-0.2.0.crate",
+        "final_url": "https://static.crates.io/crates/lingose/lingose-0.2.0.crate",
+        "checked_at_utc": "2026-10-18T07:46:53.783733+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/verify-archive_download.body",
+        "transport_attempts": 1,
+        "bytes": 4053096,
+        "sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5"
+      },
+      "readme": {
+        "url": "https://crates.io/api/v1/crates/lingose/0.2.0/readme",
+        "final_url": "https://crates.io/api/v1/crates/lingose/0.2.0/readme",
+        "checked_at_utc": "2026-10-18T07:46:54.554550+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/verify-readme.body",
+        "transport_attempts": 1,
+        "bytes": 69,
+        "sha256": "773db98973672ed4e4d458c56acd5a4e4ef3d7fe00cda9f96db9b3333e765375"
+      },
+      "readme_html": {
+        "url": "https://static.crates.io/readmes/lingose/lingose-0.2.0.html",
+        "final_url": "https://static.crates.io/readmes/lingose/lingose-0.2.0.html",
+        "checked_at_utc": "2026-10-18T07:47:34.257006+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/verify-readme_html.body",
+        "transport_attempts": 1,
+        "bytes": 16032,
+        "sha256": "54f837b934182ad6114c8be925747f73259b64fad53c28ae9a2bb2b42f30c3ea"
+      }
+    },
+    "version": {
+      "id": 3530089,
+      "crate": "lingose",
+      "num": "0.2.0",
+      "created_at": "2026-10-18T07:43:13.810692Z",
+      "checksum": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5",
+      "crate_size": 4053096,
+      "yanked": false,
+      "published_by": {
+        "id": 379268,
+        "login": "Prefee",
+        "name": "Oceanus.E.Data",
+        "avatar": "https://avatars.githubusercontent.com/u/24503861?v=4",
+        "url": "https://github.com/Prefee",
+        "github_username_matches": true,
+        "created_at": "2016-12-11T07:53:49Z"
+      },
+      "homepage": "https://lingose.com/",
+      "repository": "https://github.com/englishword/lingose-rust",
+      "license": "CC-BY-4.0",
+      "edition": "2024",
+      "rust_version": "1.85"
+    },
+    "index_entry": {
+      "name": "lingose",
+      "vers": "0.2.0",
+      "deps": [
+        {
+          "name": "sha2",
+          "req": "^0.10.9",
+          "features": [],
+          "optional": false,
+          "default_features": true,
+          "target": null,
+          "kind": "normal"
+        }
+      ],
+      "cksum": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5",
+      "features": {},
+      "yanked": false,
+      "rust_version": "1.85",
+      "pubtime": "2026-10-18T07:43:13Z"
+    },
+    "old_0_1_0_unchanged": true,
+    "owners": [
+      "Prefee"
+    ],
+    "download_route_returns_json_url": true,
+    "archive": {
+      "bytes": 4053096,
+      "sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5",
+      "file_count": 41,
+      "local_links": 19,
+      "all_package_payloads_match_current_and_candidate": true,
+      "vcs_metadata_absent": true
+    },
+    "readme_route_returns_json_url": true,
+    "registry_readme_links_and_new_api_present": true,
+    "docs_rs": {
+      "crate": {
+        "url": "https://docs.rs/crate/lingose/0.2.0",
+        "final_url": "https://docs.rs/crate/lingose/0.2.0",
+        "checked_at_utc": "2026-10-18T07:47:34.791520+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/docs-crate.body",
+        "transport_attempts": 1,
+        "bytes": 77358,
+        "sha256": "fa58aaef4cf764dbdbdb492b12b06bc48ecb41bff2cadf96ccb80671460fa5bc",
+        "expected_content_present": true
+      },
+      "rustdoc": {
+        "url": "https://docs.rs/lingose/0.2.0/lingose/",
+        "final_url": "https://docs.rs/lingose/0.2.0/lingose/",
+        "checked_at_utc": "2026-10-18T07:47:35.219668+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/docs-rustdoc.body",
+        "transport_attempts": 1,
+        "bytes": 42087,
+        "sha256": "4fed805a56f94fecb0abf82ac127e85528e320776a9810e5df54f6ad2ea8c869",
+        "expected_content_present": true
+      },
+      "new_function": {
+        "url": "https://docs.rs/lingose/0.2.0/lingose/fn.annotate_ips_skip.html",
+        "final_url": "https://docs.rs/lingose/0.2.0/lingose/fn.annotate_ips_skip.html",
+        "checked_at_utc": "2026-10-18T07:47:35.702498+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/docs-new_function.body",
+        "transport_attempts": 1,
+        "bytes": 19312,
+        "sha256": "982ea7a3a2e3124333bf87937de28b144a48416a92e91bc71d299fa91ae0fe26",
+        "expected_content_present": true
+      },
+      "builds": {
+        "url": "https://docs.rs/crate/lingose/0.2.0/builds",
+        "final_url": "https://docs.rs/crate/lingose/0.2.0/builds",
+        "checked_at_utc": "2026-10-18T07:47:36.072158+00:00",
+        "http_status": 200,
+        "path": ".local/cli62-7578b10/docs-builds.body",
+        "transport_attempts": 1,
+        "bytes": 13014,
+        "sha256": "cb9595d773e2276ebeafd3bb90470ad02d2bdf99585d9ae859a5a5c86c4620d3",
+        "expected_content_present": true
+      }
+    },
+    "docs_rs_ready": true,
+    "source_inputs_unchanged": true,
+    "finished_at_utc": "2026-10-18T07:47:36.265786+00:00"
+  },
+  "docs_rs_build": {
+    "build_id": 4898279,
+    "build_url": "https://docs.rs/crate/lingose/0.2.0/builds/4898279",
+    "build_list_marks_all_builds_succeeded": true,
+    "rustc": "1.101.0-nightly (8006091eb 2026-10-17)",
+    "documentation_build_is_not_target_runtime_acceptance": true
+  },
+  "cli_registry_resolution": {
+    "phase": "CLI6.2",
+    "scope": "Registry CLI dependency resolution and fetch only; no CLI archive, build, install, upload or runtime acceptance",
+    "started_at_utc": "2026-10-18T07:44:38.699313+00:00",
+    "isolation_directory": "<external-cli-resolution>",
+    "cargo_home_initially_empty": true,
+    "credentials_read_or_copied": false,
+    "root_lockfile_or_cache_copied": false,
+    "manifest_changes": "Copied current CLI manifest; removed only local lingose path and added isolated workspace; CLI publish=false preserved",
+    "manifest": "[package]\nname = \"lingose-cli\"\nversion = \"0.2.0\"\nedition = \"2024\"\nrust-version = \"1.85\"\nauthors = [\"ZHAN Xianjue\"]\ndescription = \"Command-line interface for offline Lingose word queries and IPS annotation\"\nlicense = \"CC-BY-4.0\"\nreadme = \"README.md\"\nhomepage = \"https://lingose.com/\"\nrepository = \"https://github.com/englishword/lingose-rust\"\nkeywords = [\"english\", \"pronunciation\", \"ipsm\", \"cli\"]\nbuild = false\npublish = false\ninclude = [\"/src/**\", \"/README.md\", \"/LICENSE\", \"/SOURCES.md\"]\n\n[[bin]]\nname = \"lingose\"\npath = \"src/main.rs\"\ndoc = false\n\n[dependencies]\nclap = { version = \"4.6.7\", default-features = false, features = [\"std\", \"help\", \"usage\", \"error-context\"] }\nlingose = \"0.2.0\"\nserde_json = \"1.0.154\"\n\n[lints.rust]\nunsafe_code = \"forbid\"\nmissing_docs = \"deny\"\n\n[workspace]\nresolver = \"3\"\n",
+    "commands": [
+      {
+        "label": "online-metadata",
+        "argv": [
+          "cargo",
+          "metadata",
+          "--format-version",
+          "1"
+        ],
+        "exit_code": 0,
+        "stdout": {
+          "path": ".local/cli62-7578b10/online-metadata.stdout.log",
+          "bytes": 129643,
+          "sha256": "e6ef0bb47529b5b684ed0080ca07ceb5b229234fd99d416802e8a731cb2ca0ee"
+        },
+        "stderr": {
+          "path": ".local/cli62-7578b10/online-metadata.stderr.log",
+          "bytes": 953,
+          "sha256": "37a4a4ee1d78b5b16924cce0b1d7cf96c36a773a0228c7dd6793a80a783d8daf"
+        }
+      },
+      {
+        "label": "offline-metadata",
+        "argv": [
+          "cargo",
+          "metadata",
+          "--format-version",
+          "1",
+          "--offline",
+          "--locked"
+        ],
+        "exit_code": 0,
+        "stdout": {
+          "path": ".local/cli62-7578b10/offline-metadata.stdout.log",
+          "bytes": 129643,
+          "sha256": "e6ef0bb47529b5b684ed0080ca07ceb5b229234fd99d416802e8a731cb2ca0ee"
+        },
+        "stderr": {
+          "path": ".local/cli62-7578b10/offline-metadata.stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "status": "passed",
+    "finished_at_utc": "2026-10-18T07:44:50.630063+00:00",
+    "registry_library": {
+      "name": "lingose",
+      "version": "0.2.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5"
+    },
+    "cached_archive": {
+      "bytes": 4053096,
+      "sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5"
+    },
+    "source_inputs_unchanged": true,
+    "no_path_or_patch_for_library": true,
+    "offline_resolution_passed": true
+  },
+  "resolution_scope": "Source-copied CLI manifest kept publish=false; only local library path removed, isolated workspace added. New external Cargo home; online metadata fetched official registry packages; offline --locked metadata repeated. No CLI .crate, dry-run, build, install, runtime or upload.",
+  "resolution_lock_scope": "The generated probe Cargo.lock resolves then-current compatible patch releases; it is not the release lockfile. The repository Cargo.lock and pinned CLI6.3 release inputs were not changed.",
+  "evidence": {
+    "prepared.json": {
+      "path": ".local/cli62-7578b10/prepared.json",
+      "bytes": 2468,
+      "sha256": "7894a6b810051ce2be988c4ec72d44cc9400991d02231137ed12854ff081cbb4"
+    },
+    "attempt.json": {
+      "path": ".local/cli62-7578b10/attempt.json",
+      "bytes": 3116,
+      "sha256": "db4fc9c3b436976023348d54d9b00afbd000d91d48ac1813e913870deab3e40e"
+    },
+    "after-attempt-state.json": {
+      "path": ".local/cli62-7578b10/after-attempt-state.json",
+      "bytes": 4145,
+      "sha256": "22f1a9dc4e202a5af02ebb519bd488a0f172bc311da009b055d02b76adc637b6"
+    },
+    "remote-verification.json": {
+      "path": ".local/cli62-7578b10/remote-verification.json",
+      "bytes": 7052,
+      "sha256": "ab927989474c4c85ae34616f2373764b28c247d628cc6992cec7032ac592653c"
+    },
+    "cli-registry-resolution.json": {
+      "path": ".local/cli62-7578b10/cli-registry-resolution.json",
+      "bytes": 3248,
+      "sha256": "d4fc4b4998ba5875db4b6eb7557a09a0536788d89268f9b691f65ed4f19e60f6"
+    },
+    "publish_once.py": {
+      "path": ".local/cli62-7578b10/publish_once.py",
+      "bytes": 10034,
+      "sha256": "88501fd534e8b93b4e864f88b5f69b32c8b78a2fa61119f86719951d3282f69c"
+    },
+    "verify_registry.py": {
+      "path": ".local/cli62-7578b10/verify_registry.py",
+      "bytes": 5500,
+      "sha256": "9164ba159ba8be07591819b32cf327b8117cff9fc87383abdb2b0c347afb386b"
+    },
+    "resolve_cli.py": {
+      "path": ".local/cli62-7578b10/resolve_cli.py",
+      "bytes": 4511,
+      "sha256": "e7d53781f5f56ae1a280ec996c7ea3a73c5faf662ab57981f165f2c646826712"
+    }
+  },
+  "independent_review": {
+    "passed": true,
+    "checked_at_utc": "2026-10-18T07:48:40Z",
+    "credentials_read": false,
+    "remote_writes": false,
+    "scope": [
+      "Upload guard reviewed before execution",
+      "21 referenced evidence-file hashes verified",
+      "Independent anonymous API/index/static archive verified",
+      "docs.rs root and new function verified",
+      "CLI metadata registry source and limited resolution scope checked"
+    ],
+    "download_bytes": 4053096,
+    "download_sha256": "91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5"
+  },
+  "license_disposition": "CLI6.1 existing user confirmation and provenance gaps remain unchanged; this publication does not create new third-party license evidence.",
+  "unchanged_boundaries": [
+    "Published 0.1.0 preserved; no repeat upload",
+    "No production code/data/manifests/lockfile changes",
+    "CLI publish=false remains; lingose-cli not published",
+    "No GitHub tag/Release, workflow or visibility change",
+    "No CLI6.5 independent build/install/runtime acceptance claimed"
+  ],
+  "next_action": "CLI6.3: package lingose-cli 0.2.0 against the now-available registry library, audit real .crate and isolated consumption under the release lock, then remove its publish=false only after candidate validation, run registry dry-run and publish exactly once. Refresh current remote state and token permission at that phase. Do not republish lingose 0.2.0 or 0.1.0."
+}
