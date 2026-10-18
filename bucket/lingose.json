@@ -14,6 +14,10 @@
         }
     },
     "bin": "lingose.exe",
+    "pre_install": [
+        "$systemDir = if ([Environment]::Is64BitProcess) { 'System32' } else { 'Sysnative' }",
+        "if (!(Test-Path \"$env:WINDIR/$systemDir/vcruntime140.dll\")) { throw 'Install the Microsoft Visual C++ v14 x64 Runtime first (see extras/vcredist2022), then retry Lingose.' }"
+    ],
     "suggest": {
         "Microsoft Visual C++ v14 x64 Runtime": "extras/vcredist2022"
     },

@@ -60,21 +60,35 @@ jobs:
           if ($LASTEXITCODE) { throw 'Scoop clone failed' }
           git -C $scoop rev-parse HEAD
           $manifest = (Resolve-Path bucket/lingose.json).Path
-          & "$scoop/bin/scoop.ps1" install $manifest
+          & "$scoop/bin/scoop.ps1" bucket add lingose "$pwd"
+          if ($LASTEXITCODE) { throw 'Scoop custom bucket failed' }
+          & "$scoop/bin/scoop.ps1" install lingose/lingose
           if ($LASTEXITCODE) { throw 'Scoop install failed' }
           $command = "$env:SCOOP/shims/lingose.exe"
           python tools/check_package_channels.py smoke --executable $command --output .local/channels/scoop
           if ($LASTEXITCODE) { throw 'Scoop shim failed' }
           $payload = "$env:SCOOP/apps/lingose/current"
           if (!(Test-Path "$payload/licenses") -or !(Test-Path "$payload/SOURCES.md")) { throw 'Scoop notices missing' }
+          $update = "$env:RUNNER_TEMP/lingose-update-check"
+          New-Item -ItemType Directory $update | Out-Null
+          Copy-Item $manifest "$update/lingose.json"
+          & "$scoop/bin/checkver.ps1" -App lingose -Dir $update -Update -ForceUpdate -Version 0.2.0 -ThrowError
+          $generated = Get-Content "$update/lingose.json" -Raw | ConvertFrom-Json
+          $original = Get-Content $manifest -Raw | ConvertFrom-Json
+          foreach ($key in 'url', 'hash', 'extract_dir') {
+            if ($generated.architecture.'64bit'.$key -ne $original.architecture.'64bit'.$key) { throw "Scoop update $key differs" }
+          }
+          Copy-Item "$update/lingose.json" .local/channels/scoop/generated-manifest.json
           & "$scoop/bin/scoop.ps1" uninstall lingose
           if ($LASTEXITCODE -or (Test-Path $command)) { throw 'Scoop uninstall failed' }
-          & "$scoop/bin/scoop.ps1" install $manifest
+          & "$scoop/bin/scoop.ps1" install lingose/lingose
           if ($LASTEXITCODE) { throw 'Scoop reinstall failed' }
           & $command --version
           if ($LASTEXITCODE) { throw 'Scoop reinstalled shim failed' }
           & "$scoop/bin/scoop.ps1" uninstall lingose
           if ($LASTEXITCODE -or (Test-Path $command)) { throw 'Scoop final uninstall failed' }
+          & "$scoop/bin/scoop.ps1" bucket rm lingose
+          if ($LASTEXITCODE) { throw 'Scoop bucket removal failed' }
       - name: Chocolatey pack, install, run, reinstall and uninstall
         run: |
           choco --version

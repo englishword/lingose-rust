@@ -9,7 +9,7 @@ No crate, tag or Release asset is replaced by this work.
 
 Candidate ID: `Lingose.Lingose`, Windows x64 portable ZIP. Three manifests are
 under `packaging/winget/manifests/l/Lingose/Lingose/0.2.0/`. They specify the
-actual nested executable, a user-scope command alias and the Microsoft VC++
+actual nested executable, a command alias and the Microsoft VC++
 runtime dependency. Official 1.12.0 schemas pass locally.
 
 The ID directory currently returns 404 in `microsoft/winget-pkgs`; availability
@@ -25,9 +25,12 @@ The root `bucket/lingose.json` makes this existing public repository a custom
 bucket. It uses only the actual Windows x64 asset, its SHA256, the archive's
 root directory, an executable shim, GitHub version detection and SHA256SUMS
 updates. The VC++ runtime is suggested as `extras/vcredist2022`, rather than
-silently invoking its administrative installer. The bundled notices remain.
+silently invoking its administrative installer. A pre-install guard fails with
+an actionable message if the x64 runtime DLL is absent. The bundled notices remain.
 
-Once the manifest is pushed to the public default branch:
+Install Microsoft's Visual C++ v14 x64 Runtime first if it is absent (the
+`extras/vcredist2022` installer may require administrator rights). Then, once
+the manifest is pushed to the public default branch:
 
 ```powershell
 scoop bucket add lingose https://github.com/englishword/lingose-rust
@@ -100,7 +103,10 @@ Scoop, then Chocolatey on a disposable Windows runner, followed by Homebrew
 on native Intel and Apple Silicon macOS runners. It checks install/uninstall,
 preserved notices, and same-version reinstallation where applicable. Reinstall
 is not evidence of a future-version upgrade. It publishes evidence artifacts,
-never packages to a community registry. Actual results are recorded separately.
+never packages to a community registry. Scoop's checkver/autoupdate are exercised
+on a temporary manifest copy at the current version, including checksum extraction.
+Actual results are recorded separately. The Windows runner already provides
+system runtimes; this does not prove installation on a runtime-free machine.
 
 For each future release, review all URL/hash/version/directory fields; Scoop's
 update metadata helps generate a change but does not approve it. WinGet needs

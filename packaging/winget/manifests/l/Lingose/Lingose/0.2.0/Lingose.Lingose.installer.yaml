@@ -6,7 +6,6 @@ NestedInstallerType: portable
 NestedInstallerFiles:
 - RelativeFilePath: lingose-v0.2.0-windows-x86_64\lingose.exe
   PortableCommandAlias: lingose
-Scope: user
 UpgradeBehavior: uninstallPrevious
 Commands:
 - lingose
