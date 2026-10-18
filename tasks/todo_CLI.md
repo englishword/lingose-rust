@@ -90,6 +90,7 @@
     - `lingose-v0.2.0-macos-x86_64.tar.gz`
     - `lingose-v0.2.0-macos-aarch64.tar.gz`
   - 验收：名称、目标架构、解包目录、可执行权限和校验和正确；脱离源码的解包运行有各目标证据。未运行目标单列，不扩大支持声明，不把 CI artifact 当作已发布 Release。
+  - 当前状态：[打包/下载流程](../docs/cli-binary-assets.md)、固定 notice 全文及 Python 打包器已准备；本地 Windows ZIP、架构/许可/校验和、独立无源码/cache 工程的 16 项 smoke、99 项 Python 回归及 actionlint 通过。五平台真实工作流尚待提交/推送后核验，本项保持未完成；不进入 CLI6。
 
 ## CLI6：crates.io 与 GitHub 正式发布
 

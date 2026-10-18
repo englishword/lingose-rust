@@ -46,7 +46,7 @@ def inputs():
     return {name: identity(ROOT / name) for name in sorted(set(names)) if name}
 
 
-def smoke(executable, report, save):
+def smoke(executable, report, save, *, file_cases=False):
     # Tempfile is outside the checkout. Only the binary is copied; no source,
     # vendor directory or external dictionary is available through cwd or PATH.
     with tempfile.TemporaryDirectory(prefix="lingose-cli51-") as temporary:
@@ -68,7 +68,7 @@ def smoke(executable, report, save):
             "note": "Only the binary is copied; OS runtime libraries remain available. No network sandbox is asserted.",
         }
 
-        def invoke(name, argv, expected=None, data=b"", json_value=None, code=0):
+        def invoke(name, argv, expected=None, data=b"", json_value=None, code=0, output_file=None):
             timed_out = False
             try:
                 value = subprocess.run([str(binary), *argv], input=data, cwd=runtime,
@@ -87,15 +87,21 @@ def smoke(executable, report, save):
                 require(value.stderr == b"", f"{name}: unexpected stderr")
             else:
                 require(value.stderr != b"", f"{name}: missing diagnostic")
+            result = value.stdout
+            if output_file is not None:
+                require(value.stdout == b"", f"{name}: file output repeated on stdout")
+                result = (runtime / output_file).read_bytes()
+                row["output_file"] = output_file
+                row["output_hex"] = result.hex()
             if json_value is not None:
-                actual = json.loads(value.stdout)
+                actual = json.loads(result)
                 require(type(actual) is dict and actual == json_value,
                         f"{name}: complete JSON value differs")
                 require(all(type(actual[key]) is type(expected_value)
                             for key, expected_value in json_value.items()),
                         f"{name}: JSON types differ")
             else:
-                require(value.stdout == expected, f"{name}: stdout bytes differ")
+                require(result == expected, f"{name}: output bytes differ")
             row["passed"] = True
             save()
 
@@ -120,6 +126,16 @@ def smoke(executable, report, save):
         invoke("skip-top", ["annotate", "--text", TEXT, "--skip-top", "5062"], TEXT.encode("utf-8"))
         invoke("invalid-utf8", ["annotate"], b"", data=b"\xff", code=1)
         invoke("usage-error", ["word"], b"", code=2)
+        if file_cases:
+            text, annotated = TEXT + "\r\n", ANNOTATED + "\r\n"
+            (runtime / "文章.txt").write_bytes(text.encode("utf-8"))
+            invoke("automatic-file", ["annotate", "文章.txt"], annotated.encode("utf-8"))
+            invoke("explicit-file-json", ["annotate", "--input", "文章.txt", "--json"],
+                   json_value={"text": text, "annotate": annotated})
+            invoke("output-file", ["annotate", "--input", "文章.txt", "-o", "out.txt"],
+                   annotated.encode("utf-8"), output_file="out.txt")
+            invoke("output-json-file", ["annotate", "--text", TEXT, "--json", "-o", "out.json"],
+                   json_value={"text": TEXT, "annotate": ANNOTATED}, output_file="out.json")
 
 
 def main():

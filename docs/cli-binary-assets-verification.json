@@ -1,0 +1,41 @@
+{
+  "phase": "CLI5.2",
+  "status": "local_ready_awaiting_ci",
+  "verified_at": "2026-10-18T05:40:41.717695+00:00",
+  "base_revision": "d042a4c7920d9907739843d463bc528e90386aaa",
+  "local": {
+    "python_tests": 99,
+    "archive_guard_tests": 7,
+    "actionlint_version": "1.7.12",
+    "actionlint_passed": true,
+    "fmt_passed": true,
+    "python_compile_passed": true,
+    "diff_check_passed": true,
+    "build_report": ".local/cli52-build-final-local/report.json",
+    "package_report": ".local/cli52-package-final-local/windows.package.json",
+    "source_free_download_report": ".local/cli52-local-sourcefree/report.json",
+    "cli_tests": 29,
+    "build_smoke": 12,
+    "extracted_smoke": 16
+  },
+  "notice_catalog": {
+    "file": "release/notices.json",
+    "sha256": "4135eadfda4808a04829f6f4f89aab893a99a814978a64f758fe286d200d66cd",
+    "text_files": 44,
+    "crates": 19,
+    "counts_by_target": {
+      "x86_64-pc-windows-msvc": 18,
+      "x86_64-unknown-linux-gnu": 18,
+      "aarch64-unknown-linux-gnu": 19,
+      "x86_64-apple-darwin": 18,
+      "aarch64-apple-darwin": 19
+    }
+  },
+  "remote_ci": null,
+  "boundaries": [
+    "No tag,GitHub Release or crates.io upload",
+    "Windows VCRUNTIME140 prerequisite documented; no CRT linkage change",
+    "Frequency List/category licensing gaps remain open for CLI6.1",
+    "Private CI artifact download is not published Release download acceptance"
+  ]
+}

@@ -111,8 +111,11 @@ Release performance met the fixed warmed-process budgets; a new executable
 path's first run still exceeded the 300 ms startup budget. These measurements
 do not guarantee first-run latency. See the
 [acceptance record](docs/cli-workspace-acceptance.md).
-Other-platform execution, real 0.2.0 archives, registry installation and GitHub
-Release assets remain separate future acceptance steps.
+Native CLI builds and query/annotation/stdin/JSON smoke have passed on Windows
+x86_64, Linux x86_64/aarch64 and macOS Intel/Apple Silicon; see the
+[CI verification](docs/cli-release-ci.md). Binary archive preparation and
+download/extraction verification are tracked in [binary assets](docs/cli-binary-assets.md).
+Registry installation and published GitHub Release downloads remain separate acceptance steps.
 
 ## License and credits
 

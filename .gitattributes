@@ -80,6 +80,15 @@
 /tools/check_cli_release.py text eol=lf
 /docs/cli-release-ci.md text eol=lf
 /docs/cli-release-ci-verification.json text eol=lf
+/release/*.md text eol=lf
+/release/notices.json text eol=lf
+# Preserve upstream license bytes, including their original whitespace.
+/release/notices/** -text -whitespace
+/tools/binary_format.py text eol=lf
+/tools/package_cli_binary.py text eol=lf
+/tests/test_cli_binary_package.py text eol=lf
+/docs/cli-binary-assets.md text eol=lf
+/docs/cli-binary-assets-verification.json text eol=lf
 /tools/check_workspace_package.py text eol=lf
 /tests/test_workspace_package.py text eol=lf
 /tests/test_workspace_tools.py text eol=lf

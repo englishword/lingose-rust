@@ -1,0 +1,1234 @@
+{
+  "format_version": 1,
+  "rust_version": "1.93.1",
+  "files": {
+    "LICENSE": {
+      "snapshot": "release/notices/LICENSE",
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+      "origin": {
+        "repository_path": "crates/lingose-cli/LICENSE"
+      }
+    },
+    "licenses/ECDICT/LICENSE": {
+      "snapshot": "release/notices/licenses/ECDICT/LICENSE",
+      "bytes": 1063,
+      "sha256": "f8552dd246f61a4e064569eae6194a01c6b3d63b03bf27c6ca863593c549ed0f",
+      "origin": {
+        "url": "https://raw.githubusercontent.com/skywind3000/ECDICT/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/LICENSE",
+        "commit": "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b",
+        "scope": "Supplemental MIT text for retained upstream ECDICT attribution; not proof of original dataset snapshot revision"
+      }
+    },
+    "licenses/crates/anstyle-1.0.14/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/anstyle-1.0.14/LICENSE-APACHE",
+      "bytes": 11358,
+      "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08",
+      "origin": {
+        "crate": "anstyle",
+        "version": "1.0.14",
+        "registry_archive_sha256": "940b3a0ca603d1eade50a4846a2afffd5ef57a9feac2c0e2ec2e14f9ead76000",
+        "archive_path": "anstyle-1.0.14/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/anstyle-1.0.14/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/anstyle-1.0.14/LICENSE-MIT",
+      "bytes": 1062,
+      "sha256": "6efb0476a1cc085077ed49357026d8c173bf33017278ef440f222fb9cbcb66e6",
+      "origin": {
+        "crate": "anstyle",
+        "version": "1.0.14",
+        "registry_archive_sha256": "940b3a0ca603d1eade50a4846a2afffd5ef57a9feac2c0e2ec2e14f9ead76000",
+        "archive_path": "anstyle-1.0.14/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/block-buffer-0.10.4/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/block-buffer-0.10.4/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5",
+      "origin": {
+        "crate": "block-buffer",
+        "version": "0.10.4",
+        "registry_archive_sha256": "3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71",
+        "archive_path": "block-buffer-0.10.4/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/block-buffer-0.10.4/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/block-buffer-0.10.4/LICENSE-MIT",
+      "bytes": 1082,
+      "sha256": "d5c22aa3118d240e877ad41c5d9fa232f9c77d757d4aac0c2f943afc0a95e0ef",
+      "origin": {
+        "crate": "block-buffer",
+        "version": "0.10.4",
+        "registry_archive_sha256": "3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71",
+        "archive_path": "block-buffer-0.10.4/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/cfg-if-1.0.5/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/cfg-if-1.0.5/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "origin": {
+        "crate": "cfg-if",
+        "version": "1.0.5",
+        "registry_archive_sha256": "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600",
+        "archive_path": "cfg-if-1.0.5/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/cfg-if-1.0.5/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/cfg-if-1.0.5/LICENSE-MIT",
+      "bytes": 1057,
+      "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397",
+      "origin": {
+        "crate": "cfg-if",
+        "version": "1.0.5",
+        "registry_archive_sha256": "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600",
+        "archive_path": "cfg-if-1.0.5/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/clap-4.6.7/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/clap-4.6.7/LICENSE-APACHE",
+      "bytes": 11349,
+      "sha256": "249fdb6694467dd615b259f7ddde07be3f8ae5a72cecebb0e24f6629af4215fe",
+      "origin": {
+        "crate": "clap",
+        "version": "4.6.7",
+        "registry_archive_sha256": "aa8876b300ab35ba921adea3dfd70157a46249b33f95c9084ae5709785478946",
+        "archive_path": "clap-4.6.7/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/clap-4.6.7/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/clap-4.6.7/LICENSE-MIT",
+      "bytes": 1062,
+      "sha256": "6efb0476a1cc085077ed49357026d8c173bf33017278ef440f222fb9cbcb66e6",
+      "origin": {
+        "crate": "clap",
+        "version": "4.6.7",
+        "registry_archive_sha256": "aa8876b300ab35ba921adea3dfd70157a46249b33f95c9084ae5709785478946",
+        "archive_path": "clap-4.6.7/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/clap_builder-4.6.7/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/clap_builder-4.6.7/LICENSE-APACHE",
+      "bytes": 11349,
+      "sha256": "249fdb6694467dd615b259f7ddde07be3f8ae5a72cecebb0e24f6629af4215fe",
+      "origin": {
+        "crate": "clap_builder",
+        "version": "4.6.7",
+        "registry_archive_sha256": "ec0797fb7aeb1406c84efac526901f7ec3ead2124f946b494e72879d4b54704d",
+        "archive_path": "clap_builder-4.6.7/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/clap_builder-4.6.7/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/clap_builder-4.6.7/LICENSE-MIT",
+      "bytes": 1062,
+      "sha256": "6efb0476a1cc085077ed49357026d8c173bf33017278ef440f222fb9cbcb66e6",
+      "origin": {
+        "crate": "clap_builder",
+        "version": "4.6.7",
+        "registry_archive_sha256": "ec0797fb7aeb1406c84efac526901f7ec3ead2124f946b494e72879d4b54704d",
+        "archive_path": "clap_builder-4.6.7/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/clap_lex-1.1.1/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/clap_lex-1.1.1/LICENSE-APACHE",
+      "bytes": 11349,
+      "sha256": "249fdb6694467dd615b259f7ddde07be3f8ae5a72cecebb0e24f6629af4215fe",
+      "origin": {
+        "crate": "clap_lex",
+        "version": "1.1.1",
+        "registry_archive_sha256": "1c133bc6a41be0d194c306b5506d15e6feeea7b1d6604bd3f8310dfb2ca96486",
+        "archive_path": "clap_lex-1.1.1/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/clap_lex-1.1.1/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/clap_lex-1.1.1/LICENSE-MIT",
+      "bytes": 1062,
+      "sha256": "6efb0476a1cc085077ed49357026d8c173bf33017278ef440f222fb9cbcb66e6",
+      "origin": {
+        "crate": "clap_lex",
+        "version": "1.1.1",
+        "registry_archive_sha256": "1c133bc6a41be0d194c306b5506d15e6feeea7b1d6604bd3f8310dfb2ca96486",
+        "archive_path": "clap_lex-1.1.1/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/cpufeatures-0.2.17/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/cpufeatures-0.2.17/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5",
+      "origin": {
+        "crate": "cpufeatures",
+        "version": "0.2.17",
+        "registry_archive_sha256": "59ed5838eebb26a2bb2e58f6d5b5316989ae9d08bab10e0e6d103e656d1b0280",
+        "archive_path": "cpufeatures-0.2.17/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/cpufeatures-0.2.17/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/cpufeatures-0.2.17/LICENSE-MIT",
+      "bytes": 1082,
+      "sha256": "ae9baa7beea910273c2f384c2a6b721fb7bd02bda3436074a1072e4ee689f985",
+      "origin": {
+        "crate": "cpufeatures",
+        "version": "0.2.17",
+        "registry_archive_sha256": "59ed5838eebb26a2bb2e58f6d5b5316989ae9d08bab10e0e6d103e656d1b0280",
+        "archive_path": "cpufeatures-0.2.17/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/crypto-common-0.1.7/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/crypto-common-0.1.7/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5",
+      "origin": {
+        "crate": "crypto-common",
+        "version": "0.1.7",
+        "registry_archive_sha256": "78c8292055d1c1df0cce5d180393dc8cce0abec0a7102adb6c7b1eef6016d60a",
+        "archive_path": "crypto-common-0.1.7/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/crypto-common-0.1.7/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/crypto-common-0.1.7/LICENSE-MIT",
+      "bytes": 1065,
+      "sha256": "3521672491a3479422d5fe1aca6645dd2984090f85da6e5205abfb18fb7a6897",
+      "origin": {
+        "crate": "crypto-common",
+        "version": "0.1.7",
+        "registry_archive_sha256": "78c8292055d1c1df0cce5d180393dc8cce0abec0a7102adb6c7b1eef6016d60a",
+        "archive_path": "crypto-common-0.1.7/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/digest-0.10.7/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/digest-0.10.7/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5",
+      "origin": {
+        "crate": "digest",
+        "version": "0.10.7",
+        "registry_archive_sha256": "9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292",
+        "archive_path": "digest-0.10.7/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/digest-0.10.7/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/digest-0.10.7/LICENSE-MIT",
+      "bytes": 1057,
+      "sha256": "9e0dfd2dd4173a530e238cb6adb37aa78c34c6bc7444e0e10c1ab5d8881f63ba",
+      "origin": {
+        "crate": "digest",
+        "version": "0.10.7",
+        "registry_archive_sha256": "9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292",
+        "archive_path": "digest-0.10.7/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/generic-array-0.14.7/LICENSE": {
+      "snapshot": "release/notices/licenses/crates/generic-array-0.14.7/LICENSE",
+      "bytes": 1107,
+      "sha256": "c09aae9d3c77b531f56351a9947bc7446511d6b025b3255312d3e3442a9a7583",
+      "origin": {
+        "crate": "generic-array",
+        "version": "0.14.7",
+        "registry_archive_sha256": "85649ca51fd72272d7821adaf274ad91c288277713d9c18820d8499a7ff69e9a",
+        "archive_path": "generic-array-0.14.7/LICENSE"
+      }
+    },
+    "licenses/crates/itoa-1.0.18/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/itoa-1.0.18/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "origin": {
+        "crate": "itoa",
+        "version": "1.0.18",
+        "registry_archive_sha256": "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682",
+        "archive_path": "itoa-1.0.18/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/itoa-1.0.18/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/itoa-1.0.18/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "origin": {
+        "crate": "itoa",
+        "version": "1.0.18",
+        "registry_archive_sha256": "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682",
+        "archive_path": "itoa-1.0.18/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/libc-0.2.190/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/libc-0.2.190/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "origin": {
+        "crate": "libc",
+        "version": "0.2.190",
+        "registry_archive_sha256": "ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78",
+        "archive_path": "libc-0.2.190/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/libc-0.2.190/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/libc-0.2.190/LICENSE-MIT",
+      "bytes": 1066,
+      "sha256": "123a331b5dbf04c30097fa43b8f858bc85df671fe776de498d01f3d6b7c1f69e",
+      "origin": {
+        "crate": "libc",
+        "version": "0.2.190",
+        "registry_archive_sha256": "ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78",
+        "archive_path": "libc-0.2.190/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/memchr-2.8.3/COPYING": {
+      "snapshot": "release/notices/licenses/crates/memchr-2.8.3/COPYING",
+      "bytes": 126,
+      "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f",
+      "origin": {
+        "crate": "memchr",
+        "version": "2.8.3",
+        "registry_archive_sha256": "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98",
+        "archive_path": "memchr-2.8.3/COPYING"
+      }
+    },
+    "licenses/crates/memchr-2.8.3/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/memchr-2.8.3/LICENSE-MIT",
+      "bytes": 1081,
+      "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f",
+      "origin": {
+        "crate": "memchr",
+        "version": "2.8.3",
+        "registry_archive_sha256": "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98",
+        "archive_path": "memchr-2.8.3/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/serde_core-1.0.229/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/serde_core-1.0.229/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "origin": {
+        "crate": "serde_core",
+        "version": "1.0.229",
+        "registry_archive_sha256": "67dca2c9c51e58a4791a4b1ed58308b39c64224d349a935ab5039aa360942a48",
+        "archive_path": "serde_core-1.0.229/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/serde_core-1.0.229/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/serde_core-1.0.229/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "origin": {
+        "crate": "serde_core",
+        "version": "1.0.229",
+        "registry_archive_sha256": "67dca2c9c51e58a4791a4b1ed58308b39c64224d349a935ab5039aa360942a48",
+        "archive_path": "serde_core-1.0.229/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/serde_json-1.0.154/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/serde_json-1.0.154/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a",
+      "origin": {
+        "crate": "serde_json",
+        "version": "1.0.154",
+        "registry_archive_sha256": "e7e9cc8b1b85264074fbcc02a88680c4096b1e47df8f739dceb03bf482f04bd6",
+        "archive_path": "serde_json-1.0.154/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/serde_json-1.0.154/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/serde_json-1.0.154/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "origin": {
+        "crate": "serde_json",
+        "version": "1.0.154",
+        "registry_archive_sha256": "e7e9cc8b1b85264074fbcc02a88680c4096b1e47df8f739dceb03bf482f04bd6",
+        "archive_path": "serde_json-1.0.154/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/sha2-0.10.9/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/sha2-0.10.9/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5",
+      "origin": {
+        "crate": "sha2",
+        "version": "0.10.9",
+        "registry_archive_sha256": "a7507d819769d01a365ab707794a4084392c824f54a7a6a7862f8c3d0892b283",
+        "archive_path": "sha2-0.10.9/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/sha2-0.10.9/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/sha2-0.10.9/LICENSE-MIT",
+      "bytes": 1138,
+      "sha256": "b4eb00df6e2a4d22518fcaa6a2b4646f249b3a3c9814509b22bd2091f1392ff1",
+      "origin": {
+        "crate": "sha2",
+        "version": "0.10.9",
+        "registry_archive_sha256": "a7507d819769d01a365ab707794a4084392c824f54a7a6a7862f8c3d0892b283",
+        "archive_path": "sha2-0.10.9/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/typenum-1.20.1/LICENSE": {
+      "snapshot": "release/notices/licenses/crates/typenum-1.20.1/LICENSE",
+      "bytes": 17,
+      "sha256": "db11fec9946737df39ca3898d9cd8c10ec6f6c3a884a6802b0ad0b81b4e8f23a",
+      "origin": {
+        "crate": "typenum",
+        "version": "1.20.1",
+        "registry_archive_sha256": "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20",
+        "archive_path": "typenum-1.20.1/LICENSE"
+      }
+    },
+    "licenses/crates/typenum-1.20.1/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/typenum-1.20.1/LICENSE-APACHE",
+      "bytes": 10835,
+      "sha256": "516b24e051bf5630880ebbd55c40a25ce9552ebaf8970a53e8976eb70e522406",
+      "origin": {
+        "crate": "typenum",
+        "version": "1.20.1",
+        "registry_archive_sha256": "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20",
+        "archive_path": "typenum-1.20.1/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/typenum-1.20.1/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/typenum-1.20.1/LICENSE-MIT",
+      "bytes": 1083,
+      "sha256": "a825bd853ab71619a4923d7b4311221427848070ff44d990da39b0b274c1683f",
+      "origin": {
+        "crate": "typenum",
+        "version": "1.20.1",
+        "registry_archive_sha256": "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20",
+        "archive_path": "typenum-1.20.1/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/version_check-0.9.5/LICENSE-APACHE": {
+      "snapshot": "release/notices/licenses/crates/version_check-0.9.5/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+      "origin": {
+        "crate": "version_check",
+        "version": "0.9.5",
+        "registry_archive_sha256": "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a",
+        "archive_path": "version_check-0.9.5/LICENSE-APACHE"
+      }
+    },
+    "licenses/crates/version_check-0.9.5/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/version_check-0.9.5/LICENSE-MIT",
+      "bytes": 1085,
+      "sha256": "b7e650f3fce5c53249d1cdc608b54df156a97edd636cf9d23498d0cfe7aec63e",
+      "origin": {
+        "crate": "version_check",
+        "version": "0.9.5",
+        "registry_archive_sha256": "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a",
+        "archive_path": "version_check-0.9.5/LICENSE-MIT"
+      }
+    },
+    "licenses/crates/zmij-1.0.23/LICENSE-MIT": {
+      "snapshot": "release/notices/licenses/crates/zmij-1.0.23/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+      "origin": {
+        "crate": "zmij",
+        "version": "1.0.23",
+        "registry_archive_sha256": "29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b",
+        "archive_path": "zmij-1.0.23/LICENSE-MIT"
+      }
+    },
+    "licenses/rust-1.93.1/COPYRIGHT-library.html": {
+      "snapshot": "release/notices/licenses/rust-1.93.1/COPYRIGHT-library.html",
+      "bytes": 425661,
+      "sha256": "d93d65853736bde4e8649691233a98848ba709673873aeb39487bc1ca6ee292a",
+      "origin": {
+        "rust_version": "1.93.1",
+        "distribution": "rust-docs-1.93.1-x86_64-pc-windows-msvc",
+        "scope": "Official Rust distribution standard-library copyright/license aggregate; includes platform-conditional components",
+        "reference": "https://github.com/rust-lang/rust/blob/1.93.1/COPYRIGHT"
+      }
+    },
+    "licenses/unicode/LICENSE.txt": {
+      "snapshot": "release/notices/licenses/unicode/LICENSE.txt",
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+      "origin": {
+        "repository_path": "crates/lingose/third_party/unicode/LICENSE.txt"
+      }
+    },
+    "sources/LICENSE": {
+      "snapshot": "release/notices/sources/LICENSE",
+      "bytes": 17023,
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+      "origin": {
+        "repository_path": "crates/lingose/data/LICENSE"
+      }
+    },
+    "sources/SOURCES.json": {
+      "snapshot": "release/notices/sources/SOURCES.json",
+      "bytes": 4997,
+      "sha256": "ea7086a0b282d51829c40d1531aeb18c46037fed93168ca6c47aa7210c2e338f",
+      "origin": {
+        "repository_path": "crates/lingose/data/SOURCES.json"
+      }
+    },
+    "sources/UPSTREAM-SOURCES.md": {
+      "snapshot": "release/notices/sources/UPSTREAM-SOURCES.md",
+      "bytes": 1457,
+      "sha256": "3be10c6f764962ec654bb2c57077c634458de75d9df5410a97a52b396d5d9228",
+      "origin": {
+        "repository_path": "crates/lingose/data/UPSTREAM-SOURCES.md"
+      }
+    }
+  },
+  "common_files": [
+    "LICENSE",
+    "licenses/ECDICT/LICENSE",
+    "licenses/rust-1.93.1/COPYRIGHT-library.html",
+    "licenses/unicode/LICENSE.txt",
+    "sources/LICENSE",
+    "sources/SOURCES.json",
+    "sources/UPSTREAM-SOURCES.md"
+  ],
+  "packages": {
+    "anstyle-1.0.14": {
+      "name": "anstyle",
+      "version": "1.0.14",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "940b3a0ca603d1eade50a4846a2afffd5ef57a9feac2c0e2ec2e14f9ead76000",
+      "license_files": [
+        "licenses/crates/anstyle-1.0.14/LICENSE-APACHE",
+        "licenses/crates/anstyle-1.0.14/LICENSE-MIT"
+      ]
+    },
+    "block-buffer-0.10.4": {
+      "name": "block-buffer",
+      "version": "0.10.4",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71",
+      "license_files": [
+        "licenses/crates/block-buffer-0.10.4/LICENSE-APACHE",
+        "licenses/crates/block-buffer-0.10.4/LICENSE-MIT"
+      ]
+    },
+    "cfg-if-1.0.5": {
+      "name": "cfg-if",
+      "version": "1.0.5",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600",
+      "license_files": [
+        "licenses/crates/cfg-if-1.0.5/LICENSE-APACHE",
+        "licenses/crates/cfg-if-1.0.5/LICENSE-MIT"
+      ]
+    },
+    "clap-4.6.7": {
+      "name": "clap",
+      "version": "4.6.7",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "aa8876b300ab35ba921adea3dfd70157a46249b33f95c9084ae5709785478946",
+      "license_files": [
+        "licenses/crates/clap-4.6.7/LICENSE-APACHE",
+        "licenses/crates/clap-4.6.7/LICENSE-MIT"
+      ]
+    },
+    "clap_builder-4.6.7": {
+      "name": "clap_builder",
+      "version": "4.6.7",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "ec0797fb7aeb1406c84efac526901f7ec3ead2124f946b494e72879d4b54704d",
+      "license_files": [
+        "licenses/crates/clap_builder-4.6.7/LICENSE-APACHE",
+        "licenses/crates/clap_builder-4.6.7/LICENSE-MIT"
+      ]
+    },
+    "clap_lex-1.1.1": {
+      "name": "clap_lex",
+      "version": "1.1.1",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "1c133bc6a41be0d194c306b5506d15e6feeea7b1d6604bd3f8310dfb2ca96486",
+      "license_files": [
+        "licenses/crates/clap_lex-1.1.1/LICENSE-APACHE",
+        "licenses/crates/clap_lex-1.1.1/LICENSE-MIT"
+      ]
+    },
+    "cpufeatures-0.2.17": {
+      "name": "cpufeatures",
+      "version": "0.2.17",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "59ed5838eebb26a2bb2e58f6d5b5316989ae9d08bab10e0e6d103e656d1b0280",
+      "license_files": [
+        "licenses/crates/cpufeatures-0.2.17/LICENSE-APACHE",
+        "licenses/crates/cpufeatures-0.2.17/LICENSE-MIT"
+      ]
+    },
+    "crypto-common-0.1.7": {
+      "name": "crypto-common",
+      "version": "0.1.7",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "78c8292055d1c1df0cce5d180393dc8cce0abec0a7102adb6c7b1eef6016d60a",
+      "license_files": [
+        "licenses/crates/crypto-common-0.1.7/LICENSE-APACHE",
+        "licenses/crates/crypto-common-0.1.7/LICENSE-MIT"
+      ]
+    },
+    "digest-0.10.7": {
+      "name": "digest",
+      "version": "0.10.7",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292",
+      "license_files": [
+        "licenses/crates/digest-0.10.7/LICENSE-APACHE",
+        "licenses/crates/digest-0.10.7/LICENSE-MIT"
+      ]
+    },
+    "generic-array-0.14.7": {
+      "name": "generic-array",
+      "version": "0.14.7",
+      "license": "MIT",
+      "registry_archive_sha256": "85649ca51fd72272d7821adaf274ad91c288277713d9c18820d8499a7ff69e9a",
+      "license_files": [
+        "licenses/crates/generic-array-0.14.7/LICENSE"
+      ]
+    },
+    "itoa-1.0.18": {
+      "name": "itoa",
+      "version": "1.0.18",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682",
+      "license_files": [
+        "licenses/crates/itoa-1.0.18/LICENSE-APACHE",
+        "licenses/crates/itoa-1.0.18/LICENSE-MIT"
+      ]
+    },
+    "libc-0.2.190": {
+      "name": "libc",
+      "version": "0.2.190",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78",
+      "license_files": [
+        "licenses/crates/libc-0.2.190/LICENSE-APACHE",
+        "licenses/crates/libc-0.2.190/LICENSE-MIT"
+      ]
+    },
+    "memchr-2.8.3": {
+      "name": "memchr",
+      "version": "2.8.3",
+      "license": "Unlicense OR MIT",
+      "registry_archive_sha256": "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98",
+      "license_files": [
+        "licenses/crates/memchr-2.8.3/COPYING",
+        "licenses/crates/memchr-2.8.3/LICENSE-MIT"
+      ]
+    },
+    "serde_core-1.0.229": {
+      "name": "serde_core",
+      "version": "1.0.229",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "67dca2c9c51e58a4791a4b1ed58308b39c64224d349a935ab5039aa360942a48",
+      "license_files": [
+        "licenses/crates/serde_core-1.0.229/LICENSE-APACHE",
+        "licenses/crates/serde_core-1.0.229/LICENSE-MIT"
+      ]
+    },
+    "serde_json-1.0.154": {
+      "name": "serde_json",
+      "version": "1.0.154",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "e7e9cc8b1b85264074fbcc02a88680c4096b1e47df8f739dceb03bf482f04bd6",
+      "license_files": [
+        "licenses/crates/serde_json-1.0.154/LICENSE-APACHE",
+        "licenses/crates/serde_json-1.0.154/LICENSE-MIT"
+      ]
+    },
+    "sha2-0.10.9": {
+      "name": "sha2",
+      "version": "0.10.9",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "a7507d819769d01a365ab707794a4084392c824f54a7a6a7862f8c3d0892b283",
+      "license_files": [
+        "licenses/crates/sha2-0.10.9/LICENSE-APACHE",
+        "licenses/crates/sha2-0.10.9/LICENSE-MIT"
+      ]
+    },
+    "typenum-1.20.1": {
+      "name": "typenum",
+      "version": "1.20.1",
+      "license": "MIT OR Apache-2.0",
+      "registry_archive_sha256": "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20",
+      "license_files": [
+        "licenses/crates/typenum-1.20.1/LICENSE",
+        "licenses/crates/typenum-1.20.1/LICENSE-APACHE",
+        "licenses/crates/typenum-1.20.1/LICENSE-MIT"
+      ]
+    },
+    "version_check-0.9.5": {
+      "name": "version_check",
+      "version": "0.9.5",
+      "license": "MIT/Apache-2.0",
+      "registry_archive_sha256": "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a",
+      "license_files": [
+        "licenses/crates/version_check-0.9.5/LICENSE-APACHE",
+        "licenses/crates/version_check-0.9.5/LICENSE-MIT"
+      ]
+    },
+    "zmij-1.0.23": {
+      "name": "zmij",
+      "version": "1.0.23",
+      "license": "MIT",
+      "registry_archive_sha256": "29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b",
+      "license_files": [
+        "licenses/crates/zmij-1.0.23/LICENSE-MIT"
+      ]
+    }
+  },
+  "targets": {
+    "x86_64-pc-windows-msvc": [
+      {
+        "package": "anstyle-1.0.14",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "block-buffer-0.10.4",
+        "features": []
+      },
+      {
+        "package": "cfg-if-1.0.5",
+        "features": []
+      },
+      {
+        "package": "clap-4.6.7",
+        "features": [
+          "error-context",
+          "help",
+          "std",
+          "usage"
+        ]
+      },
+      {
+        "package": "clap_builder-4.6.7",
+        "features": [
+          "error-context",
+          "help",
+          "std",
+          "usage"
+        ]
+      },
+      {
+        "package": "clap_lex-1.1.1",
+        "features": []
+      },
+      {
+        "package": "cpufeatures-0.2.17",
+        "features": []
+      },
+      {
+        "package": "crypto-common-0.1.7",
+        "features": [
+          "std"
+        ]
+      },
+      {
+        "package": "digest-0.10.7",
+        "features": [
+          "alloc",
+          "block-buffer",
+          "core-api",
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "generic-array-0.14.7",
+        "features": [
+          "more_lengths"
+        ]
+      },
+      {
+        "package": "itoa-1.0.18",
+        "features": []
+      },
+      {
+        "package": "memchr-2.8.3",
+        "features": [
+          "alloc",
+          "std"
+        ]
+      },
+      {
+        "package": "serde_core-1.0.229",
+        "features": [
+          "result",
+          "std"
+        ]
+      },
+      {
+        "package": "serde_json-1.0.154",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "sha2-0.10.9",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "typenum-1.20.1",
+        "features": []
+      },
+      {
+        "package": "version_check-0.9.5",
+        "features": []
+      },
+      {
+        "package": "zmij-1.0.23",
+        "features": []
+      }
+    ],
+    "x86_64-unknown-linux-gnu": [
+      {
+        "package": "anstyle-1.0.14",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "block-buffer-0.10.4",
+        "features": []
+      },
+      {
+        "package": "cfg-if-1.0.5",
+        "features": []
+      },
+      {
+        "package": "clap-4.6.7",
+        "features": [
+          "error-context",
+          "help",
+          "std",
+          "usage"
+        ]
+      },
+      {
+        "package": "clap_builder-4.6.7",
+        "features": [
+          "error-context",
+          "help",
+          "std",
+          "usage"
+        ]
+      },
+      {
+        "package": "clap_lex-1.1.1",
+        "features": []
+      },
+      {
+        "package": "cpufeatures-0.2.17",
+        "features": []
+      },
+      {
+        "package": "crypto-common-0.1.7",
+        "features": [
+          "std"
+        ]
+      },
+      {
+        "package": "digest-0.10.7",
+        "features": [
+          "alloc",
+          "block-buffer",
+          "core-api",
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "generic-array-0.14.7",
+        "features": [
+          "more_lengths"
+        ]
+      },
+      {
+        "package": "itoa-1.0.18",
+        "features": []
+      },
+      {
+        "package": "memchr-2.8.3",
+        "features": [
+          "alloc",
+          "std"
+        ]
+      },
+      {
+        "package": "serde_core-1.0.229",
+        "features": [
+          "result",
+          "std"
+        ]
+      },
+      {
+        "package": "serde_json-1.0.154",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "sha2-0.10.9",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "typenum-1.20.1",
+        "features": []
+      },
+      {
+        "package": "version_check-0.9.5",
+        "features": []
+      },
+      {
+        "package": "zmij-1.0.23",
+        "features": []
+      }
+    ],
+    "aarch64-unknown-linux-gnu": [
+      {
+        "package": "anstyle-1.0.14",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "block-buffer-0.10.4",
+        "features": []
+      },
+      {
+        "package": "cfg-if-1.0.5",
+        "features": []
+      },
+      {
+        "package": "clap-4.6.7",
+        "features": [
+          "error-context",
+          "help",
+          "std",
+          "usage"
+        ]
+      },
+      {
+        "package": "clap_builder-4.6.7",
+        "features": [
+          "error-context",
+          "help",
+          "std",
+          "usage"
+        ]
+      },
+      {
+        "package": "clap_lex-1.1.1",
+        "features": []
+      },
+      {
+        "package": "cpufeatures-0.2.17",
+        "features": []
+      },
+      {
+        "package": "crypto-common-0.1.7",
+        "features": [
+          "std"
+        ]
+      },
+      {
+        "package": "digest-0.10.7",
+        "features": [
+          "alloc",
+          "block-buffer",
+          "core-api",
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "generic-array-0.14.7",
+        "features": [
+          "more_lengths"
+        ]
+      },
+      {
+        "package": "itoa-1.0.18",
+        "features": []
+      },
+      {
+        "package": "libc-0.2.190",
+        "features": []
+      },
+      {
+        "package": "memchr-2.8.3",
+        "features": [
+          "alloc",
+          "std"
+        ]
+      },
+      {
+        "package": "serde_core-1.0.229",
+        "features": [
+          "result",
+          "std"
+        ]
+      },
+      {
+        "package": "serde_json-1.0.154",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "sha2-0.10.9",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "typenum-1.20.1",
+        "features": []
+      },
+      {
+        "package": "version_check-0.9.5",
+        "features": []
+      },
+      {
+        "package": "zmij-1.0.23",
+        "features": []
+      }
+    ],
+    "x86_64-apple-darwin": [
+      {
+        "package": "anstyle-1.0.14",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "block-buffer-0.10.4",
+        "features": []
+      },
+      {
+        "package": "cfg-if-1.0.5",
+        "features": []
+      },
+      {
+        "package": "clap-4.6.7",
+        "features": [
+          "error-context",
+          "help",
+          "std",
+          "usage"
+        ]
+      },
+      {
+        "package": "clap_builder-4.6.7",
+        "features": [
+          "error-context",
+          "help",
+          "std",
+          "usage"
+        ]
+      },
+      {
+        "package": "clap_lex-1.1.1",
+        "features": []
+      },
+      {
+        "package": "cpufeatures-0.2.17",
+        "features": []
+      },
+      {
+        "package": "crypto-common-0.1.7",
+        "features": [
+          "std"
+        ]
+      },
+      {
+        "package": "digest-0.10.7",
+        "features": [
+          "alloc",
+          "block-buffer",
+          "core-api",
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "generic-array-0.14.7",
+        "features": [
+          "more_lengths"
+        ]
+      },
+      {
+        "package": "itoa-1.0.18",
+        "features": []
+      },
+      {
+        "package": "memchr-2.8.3",
+        "features": [
+          "alloc",
+          "std"
+        ]
+      },
+      {
+        "package": "serde_core-1.0.229",
+        "features": [
+          "result",
+          "std"
+        ]
+      },
+      {
+        "package": "serde_json-1.0.154",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "sha2-0.10.9",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "typenum-1.20.1",
+        "features": []
+      },
+      {
+        "package": "version_check-0.9.5",
+        "features": []
+      },
+      {
+        "package": "zmij-1.0.23",
+        "features": []
+      }
+    ],
+    "aarch64-apple-darwin": [
+      {
+        "package": "anstyle-1.0.14",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "block-buffer-0.10.4",
+        "features": []
+      },
+      {
+        "package": "cfg-if-1.0.5",
+        "features": []
+      },
+      {
+        "package": "clap-4.6.7",
+        "features": [
+          "error-context",
+          "help",
+          "std",
+          "usage"
+        ]
+      },
+      {
+        "package": "clap_builder-4.6.7",
+        "features": [
+          "error-context",
+          "help",
+          "std",
+          "usage"
+        ]
+      },
+      {
+        "package": "clap_lex-1.1.1",
+        "features": []
+      },
+      {
+        "package": "cpufeatures-0.2.17",
+        "features": []
+      },
+      {
+        "package": "crypto-common-0.1.7",
+        "features": [
+          "std"
+        ]
+      },
+      {
+        "package": "digest-0.10.7",
+        "features": [
+          "alloc",
+          "block-buffer",
+          "core-api",
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "generic-array-0.14.7",
+        "features": [
+          "more_lengths"
+        ]
+      },
+      {
+        "package": "itoa-1.0.18",
+        "features": []
+      },
+      {
+        "package": "libc-0.2.190",
+        "features": []
+      },
+      {
+        "package": "memchr-2.8.3",
+        "features": [
+          "alloc",
+          "std"
+        ]
+      },
+      {
+        "package": "serde_core-1.0.229",
+        "features": [
+          "result",
+          "std"
+        ]
+      },
+      {
+        "package": "serde_json-1.0.154",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "sha2-0.10.9",
+        "features": [
+          "default",
+          "std"
+        ]
+      },
+      {
+        "package": "typenum-1.20.1",
+        "features": []
+      },
+      {
+        "package": "version_check-0.9.5",
+        "features": []
+      },
+      {
+        "package": "zmij-1.0.23",
+        "features": []
+      }
+    ]
+  },
+  "unresolved_provenance": [
+    "Pinned Frequency List source supplies no independent license text",
+    "Some category lists lack per-label source/license records"
+  ],
+  "license_scope": "Byte-preserved available notices, not a new license grant or blanket redistribution approval"
+}

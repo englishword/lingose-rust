@@ -33,7 +33,11 @@ cargo build --offline --locked -p lingose-cli
 Add `target/debug` to PATH, or replace `lingose` in the examples with
 `target/debug/lingose` (`target/debug/lingose.exe` on Windows). Published Cargo
 installs put the executable in Cargo's binary directory, which must be on PATH.
-Release download assets and other-platform execution have not yet been verified.
+Native CLI builds and smoke runs have passed on Windows x86_64, Linux
+x86_64/aarch64 and macOS Intel/Apple Silicon. Binary archive candidates and their
+download/extraction checks are recorded in the
+[binary asset guide](https://github.com/englishword/lingose-rust/blob/main/docs/cli-binary-assets.md).
+Published GitHub Release downloads remain a separate acceptance step.
 
 ## Commands and help
 
@@ -153,7 +157,8 @@ even after UTF-8 is selected; PowerShell's
 `Get-Content` pipeline is not an exact file-byte transport. Use `--input` and
 `-o` for file-byte control, rather than relying on shell redirection encoding.
 The documented shell examples were checked on Windows PowerShell 5.1 and Git
-for Windows Bash; Linux/macOS execution remains pending.
+for Windows Bash. Native Linux/macOS stdin behavior is covered by the CI process
+smoke tests; these specific shell examples are separate from that evidence.
 
 ## JSON and output files
 

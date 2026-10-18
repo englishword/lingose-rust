@@ -50,13 +50,119 @@ jobs:
       - name: Install pinned Rust toolchain
         shell: bash
         run: rustup toolchain install 1.93.1 --profile minimal --target '${{ matrix.target }}'
+      - name: Check archive and notice guards
+        run: python -m unittest discover -s tests -p test_cli_binary_package.py
       - name: Build, test and run isolated native smoke
         run: python tools/check_cli_release.py --target ${{ matrix.target }} --output ci-evidence/${{ matrix.target }}
+      - name: Package self-contained candidate archive and notices
+        run: python tools/package_cli_binary.py package --target ${{ matrix.target }} --build-report ci-evidence/${{ matrix.target }}/report.json --output ci-packages/${{ matrix.target }} --report ci-packages/${{ matrix.target }}/${{ matrix.target }}.package.json
+      - name: Upload archive candidate
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: cli52-package-${{ matrix.target }}-${{ github.sha }}
+          path: ci-packages/${{ matrix.target }}/
+          if-no-files-found: error
+          retention-days: 14
       - name: Retain candidate and verification evidence
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: cli51-${{ matrix.target }}-${{ github.sha }}
           path: ci-evidence/${{ matrix.target }}/
+          if-no-files-found: error
+          retention-days: 14
+
+  download:
+    name: Download ${{ matrix.target }} (native)
+    needs: build
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: x86_64-pc-windows-msvc
+            runner: windows-2022
+            asset: windows-x86_64.zip
+          - target: x86_64-unknown-linux-gnu
+            runner: ubuntu-24.04
+            asset: linux-x86_64.tar.gz
+          - target: aarch64-unknown-linux-gnu
+            runner: ubuntu-24.04-arm
+            asset: linux-aarch64.tar.gz
+          - target: x86_64-apple-darwin
+            runner: macos-15-intel
+            asset: macos-x86_64.tar.gz
+          - target: aarch64-apple-darwin
+            runner: macos-15
+            asset: macos-aarch64.tar.gz
+    steps:
+      - name: Check out verifier and notices only
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            tools
+            release
+      - name: Set up verification Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Download candidate archive from this run
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: cli52-package-${{ matrix.target }}-${{ github.sha }}
+          path: downloaded
+          digest-mismatch: error
+      - name: Verify checksum, payload, architecture, modes and native runtime
+        run: python tools/package_cli_binary.py verify --target ${{ matrix.target }} --archive downloaded/lingose-v0.2.0-${{ matrix.asset }} --revision ${{ github.sha }} --require-source-free-checkout --output ci-download --report ci-download/${{ matrix.target }}.json
+      - name: Retain downloaded-archive execution evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: cli52-download-${{ matrix.target }}-${{ github.sha }}
+          path: ci-download/
+          if-no-files-found: error
+          retention-days: 14
+
+  assets:
+    name: Aggregate five verified archive candidates
+    needs: [build, download]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out verifier and notices only
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            tools
+            release
+      - name: Set up verification Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Download all archive candidates
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: cli52-package-*-${{ github.sha }}
+          path: packages
+          merge-multiple: true
+          digest-mismatch: error
+      - name: Check all archives and create SHA256SUMS
+        run: python tools/package_cli_binary.py aggregate --packages packages --revision ${{ github.sha }} --output ci-assets --report ci-evidence/cli52-assets.json
+      - name: Upload five archives and SHA256SUMS (CI only)
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: cli52-assets-${{ github.sha }}
+          path: ci-assets/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Retain aggregation evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: cli52-assets-report-${{ github.sha }}
+          path: ci-evidence/cli52-assets.json
           if-no-files-found: error
           retention-days: 14
