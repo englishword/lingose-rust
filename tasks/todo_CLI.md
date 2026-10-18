@@ -94,9 +94,10 @@
 
 ## CLI6：crates.io 与 GitHub 正式发布
 
-- [ ] CLI6.1 核对本阶段发布条件。
+- [x] CLI6.1 核对本阶段发布条件。
   - 依赖：CLI5.2。核对已有执行授权、两包 0.2.0 名称/版本可用性、账号权限、许可处置、候选身份和具体 GitHub 仓库 remote/Release 条件；已有授权不重复询问。
   - 验收：验证记录明确哪些是用户确认、哪些是独立核对；敏感凭据不进入仓库、日志或交接。保留 0.1.0 正式包与证据，不重复上传。
+  - 结果与边界：[发布条件核对](../docs/cli-publication-preflight.md)及[新收据](../docs/cli-publication-preflight-verification.json)。API/index 确认库 0.2.0 和 CLI 尚未发布，库 owner 为 Prefee；沿用已有账号/许可用户确认，四项数据与来源 blob 和确认时完全相同，独立许可资料缺口继续披露。新库包 41 文件/4,053,096 字节及 SHA 与 CLI4.3 完全一致，真实打包、7 文档测试、联网 dry-run 和五归档身份复核通过。GitHub admin/repo/workflow 权限实时核对；仍 private、无 v0.2.0/Release，现工作流只上传 CI artifact。库可进入 CLI6.2；CLI 新名称 token scope 未独立读出，公开下载可见性和 Release 上传路径留对应阶段处理。没有上传、改可见性或创建标签/Release；本轮止于 CLI6.1。
 - [ ] CLI6.2 发布 lingose 0.2.0 并确认注册表可用。
   - 依赖：CLI6.1。上传已核定库包，核对版本、索引、归档 SHA-256、docs.rs 和元数据链接，等待真实 CLI 注册表依赖可解析。
   - 验收：真实上传与注册表下载身份一致，单独记录上传/索引状态；失败或部分成功先核查远端，不能重复盲传。

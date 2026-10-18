@@ -3,35 +3,35 @@
 ## 当前恢复点
 
 - 活动计划：[todo_CLI.md](todo_CLI.md)，需求：[TASK_CLI.md](../TASK_CLI.md)，流程：[AGENTS.md](../AGENTS.md)。
-- **CLI5.2 已完成并验证**。下一项为 **CLI6.1：核对已有发布授权、0.2.0 注册表状态/账号、许可缺口处置、候选身份及具体 GitHub Release 条件**。本轮止于 CLI5.2，没有进入 CLI6。
-- 从干净的 `main / d042a4c` 恢复；本轮实现提交为 `d16c537`，收据/交接提交以 Git 历史为准，不 amend。
-- origin 为 `https://github.com/englishword/lingose-rust.git`，仓库仍 **private**。已有 workflow scope 授权，不重复询问；本轮未创建 tag、GitHub Release 或上传 crates.io。
+- **CLI6.1 已完成条件核对；下一项是 CLI6.2：仅发布并核验 `lingose 0.2.0`。** 本轮止于 CLI6.1，没有上传任何 crate、创建标签/Release、改仓库可见性或工作流。
+- 从干净的 `main / 3f27f7a6db7c46960914dce730762d97dee065c9` 恢复；本轮提交以 Git 历史为准，不 amend。仅新增发布核对文档/收据及更新计划/交接。
+- [发布核对说明](../docs/cli-publication-preflight.md)、[完整脱敏收据](../docs/cli-publication-preflight-verification.json)；本地原始响应、日志、快照和候选：`.local/cli61-3f27f7a/`。
 
-## 最终候选和证据
+## CLI6.2 精确下一步
 
-- 成功运行：[39101457134](https://github.com/englishword/lingose-rust/actions/runs/39101457134)，构建提交 `d16c53773c0fb7e6f21dd2d1544ddcdc549734f3`。
-- 11 个 job 全通过：五原生 build/package、五新 runner 下载/解包/运行、最后汇总。固定 Rust 1.93.1；Windows 2022 x64、Ubuntu 24.04 x64/arm64、macOS 15.7.9 Intel/arm64。
-- 共 147 次 CLI 测试、35 次 archive guard、60 次构建 smoke、**80 次实际下载后原生 smoke**。下载 job 仅 sparse-checkout tools/release，明确断言无 crates/.local，不安装 Rust/准备 Cargo 或词库缓存；每目标 16 项 smoke 覆盖查询、文本/stdin/文件、JSON/输出文件和错误。
-- 五安装包和 SHA256SUMS 的就绪目录：`.local/cli52-dist-d16c537/`，严格六文件，约 4.36–4.48 MB/包。精确 SHA-256 见该清单、[安装包说明](../docs/cli-binary-assets.md)及[完整收据](../docs/cli-binary-assets-verification.json)。
-- 原始 17 个 CI artifact zip、API run/jobs/artifacts 响应、build/package/download 报告、binary/日志：`.local/cli52-ci-final/`；总核验为 `verified.json`。所有 service zip digest、五 archive、闭合载荷/架构/模式/许可、57 构建和 53 打包输入已独立核验一致。
-- 下载到本机的 Windows archive 再复制到 checkout 外无 crates/cache 工程，另有 16 项 smoke，通过记录 `.local/cli52-local-downloaded/report.json`。
-- 最后 docs/plan/handoff 提交只更新验证状态，使用 `[skip ci]`；`d16c537` 是具体候选构建身份，不能把后续提交默认为同一 archive SHA。
+1. 刷新 crates.io API/index：截至 2026-10-18 07:25 UTC，`lingose` 只有已发布且未 yank 的 `0.1.0`，owner 为 `Prefee`；`0.2.0` 及整个 `lingose-cli` 尚不存在。不存在不是名称预留。不要重复上传 `0.1.0`，任何上传中断后先查远端。
+2. 核对新收据的 `workspace_inputs`（根 Cargo.toml/Cargo.lock）、`library_inputs`、`cli_inputs` 与当前 checkout 及 `.local/cli61-3f27f7a/source/` 快照一致；库候选 `.local/cli61-3f27f7a/lingose-0.2.0.crate` 为 **4,053,096 字节、41 文件**，SHA-256 **`91e164e14d3244e72de29343f9709237fe6072ae56ffaaf48f5d27999228bea5`**。
+3. 从该同字节 workspace 快照执行库真实发布，沿用正常用户已配置凭据，不输出、复制或保存令牌。该快照不带 `.git`，输入/归档与 CLI4.3 相同；直接从后续提交打包可能新增 VCS 信息，不能沿用本摘要。库已解除 publish=false，CLI 仍为 false。
+4. 本轮联网 `cargo publish -p lingose --dry-run --locked --all-features --registry crates-io` 成功，实际文件位于 `dryrun-target/package/tmp-crate/`，与候选逐字节相同。真实上传时再次核对实际归档；新 target/cargo 环境不得暗中改锁文件/来源。不要把 `.local/cargo-home` 的无凭据验证环境误当作用户发布凭据环境。
+5. 成功后核对真实上传记录、API/index/download SHA、docs.rs 和元数据链接，等待注册表库依赖可解析；更新 CLI6.2 收据/计划/交接并聚焦提交。CLI6.3 以后仍按计划单独执行。
 
-## 实现与本地验证
+## 已核对的授权、许可与权限
 
-- [工作流](../.github/workflows/cli-release.yml)、[打包器](../tools/package_cli_binary.py)、[二进制头读取器](../tools/binary_format.py)、[guard 测试](../tests/test_cli_binary_package.py)。
-- [release/README.md](../release/README.md)、[release/SOURCES.md](../release/SOURCES.md) 为包内用户说明；[notice 清单](../release/notices.json)固定 44 项可用原文及源/摘要。x86 目标 18 外部依赖、arm64 19（条件 libc），每包 46/48 文件。
-- 新增 Rust 1.93.1 官方 stdlib copyright/license aggregate 和 commit-pinned ECDICT MIT 许可；原有项目/data/Unicode/UPSTREAM 来源声明原样复制。许可原文保留 CRLF/空白，只有快照目录设 `-text -whitespace`，所有原文 SHA 均核对。
-- 每包单一顶层目录；编码固定排序、提交时间、owner/group/gzip header，每目标两次编码逐字节一致。校验和/清单拒绝多余文件、路径穿越、重复、链接、错误模式/架构。Unix 解包后模式明确核对，Windows 只记录 archive mode 和实际执行。
-- 本地 99 项 Python 回归、fmt、actionlint 1.7.12、Python 语法及空白检查通过。Windows 本地 release 29 项 CLI 测试、12 项构建 smoke、真实 ZIP 和独立工程 16 项 smoke 通过；初始本地证据 `.local/cli52-build-final-local/`、`.local/cli52-package-final-local/`、`.local/cli52-local-sourcefree/`。
-- 部分原始 artifact API 下载瞬时失败，重试后 17 个全部核对；没有忽略失败目标。受保护的库树、CLI Rust 源码/测试、Cargo manifests/lock、P0 向量、历史收据、相邻参考仓库均未改。ROOT/CLI README 仅更新过时的平台状态。
-- 没有重跑 CLI4 全量差分/性能或 Rust workspace/MSRV 检查；其既有作用范围保留，CLI4.1 首启 675.43 ms 超预算历史不变。
+- 用户已明确要求两包 0.2.0 及指定仓库五平台 Release。已有确认记录在旧 `docs/publication-preflight.json`：账号能力“本机具备发布 lingose，账号名 Prefee”；许可“已确认许可，勾选即可”。不重复询问同一授权。
+- 许可确认对应的 `1313330` 与当前 `SOURCES.json`、`UPSTREAM-SOURCES.md`、`frequency.bin`、`lexicon.bin` 四项 Git blob 完全相同，沿用既有用户处置。**未取得新增独立许可文件**；Frequency List 独立许可、部分分类逐标签来源/许可缺口仍保留，44 项 notice 和 CC BY 4.0 不能冒充全面再授权。
+- 当前库 owner API 独立确认 Prefee。Cargo token 存在；只读探针的 website-only/scope 403 与识别到 scoped token 一致，但未读出准确账号或发布 scope。库能力保留原用户确认；旧库发布和 dry-run 不证明新包 `lingose-cli` 的 publish-new/crate scope，CLI6.3 如遭权限拒绝须停止并记录。
+- GitHub 认证账号 Prefee，仓库 admin/push/maintain；OAuth scopes 含 repo/workflow，已有设备授权有效。origin 是 `https://github.com/englishword/lingose-rust.git`。仓库仍 **private**，无 `v0.2.0` 标签或 Release。
 
-## CLI6.1 精确下一步与边界
+## 后续 GitHub Release 条件
 
-1. 先核对 Git、当前计划、上述候选/收据及本地六文件 SHA。实时查询两包 0.2.0 注册表状态、账号/owner、Git remote/Release 条件，核对已有用户授权；已有授权不重复询问，不索要或记录令牌。
-2. **许可缺口仍需处置核对**：Frequency List 无独立许可文本，部分分类无逐标签来源/许可记录；提供 44 项可用许可全文不等于所有第三方再分发权限已解决，不把 CC BY 4.0 当重新授权。
-3. Windows 候选实际导入 VCRUNTIME140.dll，需要兼容的 Microsoft Visual C++ v14 x64 Runtime 和系统 UCRT，未重建静态 CRT、未捆绑微软 DLL。Linux 依赖 glibc/libgcc_s/loader；macOS 依赖 libSystem，未提供 Developer ID/公证或 browser quarantine/Gatekeeper 验收。支持声明限实际 runner，元数据最低 OS/符号版本不是旧 OS 运行证据。
-4. 当前 GitHub 为 private，CI artifact 需认证且保留 14 天，不能声称公开 Release 下载已通过；本地原始证据和六文件副本已保存。正式公开/上传条件在 CLI6 单独核对。
-5. 库/CLI 均 0.2.0，CLI 仍 publish=false；注册表状态在 CLI6.1 刷新，不重复上传 0.1.0。新 Git/VCS 包装、CLI README、后续 Cargo/notice/源码/提交变化均须重新核定候选，不沿用旧 CLI4.3 或本轮 archive SHA。
-6. 后续顺序：CLI6.1 条件核对 → CLI6.2 库真实发布/可解析 → CLI6.3 CLI 真实归档/dry-run/发布 → CLI6.4 v0.2.0 GitHub Release → CLI6.5 正式注册表/Release 下载验收。本轮安装包和 CI 下载只满足 CLI5.2，不能代替这些步骤。
+- 当前 workflow 明确 `contents: read`，只上传 CI artifacts；仓库默认 write 不覆盖该显式设置。CLI6.4 须增加仅正式标签可走的上传路径/权限，并确定最终候选提交。
+- private 仓库可创建需权限访问的 Release；若目标是匿名公开下载，CLI6.4 前须明确可见性处置或公开分发仓库。当前指令未授权公开全部源码/历史，本轮不变更可见性，不宣称公开下载就绪。
+- 五归档及 SHA256SUMS：`.local/cli52-dist-d16c537/`，本轮全部摘要/载荷/架构/模式/notice 重验通过，57 build/53 packaging 输入不变。候选身份仍为 `d16c53773c0fb7e6f21dd2d1544ddcdc549734f3`，原生 run [39101457134](https://github.com/englishword/lingose-rust/actions/runs/39101457134) 实时成功；本轮没有重跑二进制。
+- 后续 CLI manifest（解除 publish=false）、工作流/notice/源码变化都需新候选身份，不把旧 archive SHA 或 revision 当作新构建。原始 17 CI artifact 与日志在 `.local/cli52-ci-final/`；正式 Release 下载验收仍属 CLI6.5。
+- Windows 依赖 VCRUNTIME140.dll 和系统 UCRT，未捆绑微软 DLL；Linux/macOS 系统动态库仍需可用。未做 macOS Developer ID/公证或 browser quarantine/Gatekeeper 验收，旧 OS 支持不能从 runner 推断。
+
+## 本轮验证范围
+
+- 新库真实归档/编译、41 文件、19 链接、3 Rust include、来源/Unicode/许可、7 文档测试与联网 dry-run 通过；dry-run 归档完全一致，输入不变。
+- 所有库打包输入和归档与 CLI4.3 完全相同，沿用其独立消费者证据；本轮没有重复全量差分、性能、workspace/MSRV 或独立安装。CLI4.1 首启 675.43 ms 超预算历史不变。
+- 原始采集脚本 `.local/cli61_collect.py` 仅为本地审计，不入分发包。dry-run 后采集器曾找错归档路径，已用已有 `tmp-crate` 文件完成校验，未重复执行 Cargo；成功日志/纠正说明保留。
